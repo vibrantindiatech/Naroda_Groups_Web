@@ -1,0 +1,1996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ | Naroda Group - Frequently Asked Questions</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Find answers to frequently asked questions about Naroda Group's projects, booking process, payment plans, RERA compliance, and more.">
+    <meta name="keywords" content="naroda group faq, real estate questions, property booking, payment plans, rera compliance, home buying process">
+    <meta name="author" content="Naroda Group">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ===== CSS Variables ===== */
+        :root {
+            --primary-color: #0a2a4a;
+            --primary-dark: #071a2e;
+            --primary-light: #0e3a64;
+            --secondary-color: #c9a96e;
+            --secondary-light: #d4b87a;
+            --secondary-dark: #b89440;
+            --accent-color: #2e8b57;
+            --accent-light: #3cb371;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --gray-color: #6c757d;
+            --light-gray: #e9ecef;
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+            --shadow-hover: 0 25px 60px rgba(0, 0, 0, 0.2);
+            --border-radius: 16px;
+            --border-radius-lg: 24px;
+            --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            --gradient-secondary: linear-gradient(135deg, var(--secondary-color), var(--secondary-light));
+            --gradient-accent: linear-gradient(135deg, var(--accent-color), var(--accent-light));
+        }
+
+        /* ===== Base Styles ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark-color);
+            overflow-x: hidden;
+            line-height: 1.7;
+            font-weight: 400;
+            background-color: #ffffff;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            max-width: 1320px;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 0;
+            }
+        }
+
+        /* ===== Utility Classes ===== */
+        .gold-text {
+            color: var(--secondary-color);
+        }
+
+        .emerald-text {
+            color: var(--accent-color);
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-secondary);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .section-title.left:after {
+            left: 0;
+            transform: none;
+        }
+
+        .badge {
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .bg-gradient-secondary {
+            background: var(--gradient-secondary) !important;
+        }
+
+        /* ===== Preloader ===== */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loader {
+            width: 80px;
+            height: 80px;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .loader-inner {
+            width: 100%;
+            height: 100%;
+            border: 4px solid rgba(201, 169, 110, 0.2);
+            border-radius: 50%;
+            border-top-color: var(--secondary-color);
+            animation: spin 1.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .preloader-text {
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        /* ===== Navigation ===== */
+        .navbar {
+            padding: 1.2rem 0;
+            background: rgba(10, 42, 74, 0.95);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+            z-index: 1000;
+        }
+
+        .navbar.scrolled {
+            padding: 0.8rem 0;
+            box-shadow: var(--shadow);
+            background: rgba(10, 42, 74, 0.98);
+        }
+
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-secondary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            color: var(--primary-color);
+            font-weight: 900;
+            font-size: 1.5rem;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            margin: 0 6px;
+            position: relative;
+            padding: 8px 16px !important;
+            border-radius: 30px;
+            transition: var(--transition);
+        }
+
+        .nav-link:before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 100%;
+            background: rgba(201, 169, 110, 0.1);
+            border-radius: 30px;
+            top: 0;
+            left: 0;
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .nav-link:hover:before,
+        .nav-link.active:before {
+            width: 100%;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--secondary-color) !important;
+        }
+
+        .dropdown-menu {
+            border: none;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 10px 0;
+            margin-top: 10px;
+        }
+
+        .dropdown-item {
+            padding: 10px 20px;
+            transition: var(--transition);
+        }
+
+        .dropdown-item:hover {
+            background: rgba(201, 169, 110, 0.1);
+            color: var(--secondary-color);
+        }
+
+        /* ===== Buttons ===== */
+        .btn {
+            padding: 14px 32px;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: var(--transition);
+            border: none;
+            position: relative;
+            overflow: hidden;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .btn:hover:before {
+            left: 100%;
+        }
+
+        .btn-gold {
+            background: var(--gradient-secondary);
+            color: var(--primary-color);
+            box-shadow: 0 10px 25px rgba(201, 169, 110, 0.3);
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(201, 169, 110, 0.4);
+            color: var(--primary-color);
+        }
+
+        .btn-outline-light {
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            background: transparent;
+        }
+
+        .btn-outline-light:hover {
+            background: white;
+            color: var(--primary-color);
+            border-color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-emerald {
+            background: var(--gradient-accent);
+            color: white;
+            box-shadow: 0 10px 25px rgba(46, 139, 87, 0.3);
+        }
+
+        .btn-emerald:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(46, 139, 87, 0.4);
+            color: white;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: 0 10px 25px rgba(10, 42, 74, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(10, 42, 74, 0.4);
+            color: white;
+        }
+
+        /* ===== Hero Section ===== */
+        .hero-section {
+            min-height: 50vh;
+            background: linear-gradient(rgba(10, 42, 74, 0.95), rgba(10, 42, 74, 0.85)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        /* ===== FAQ Hero ===== */
+        .faq-hero-section {
+            padding: 100px 0 60px;
+            background: #f9fafb;
+        }
+
+        /* ===== FAQ Categories ===== */
+        .faq-categories-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .category-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            height: 100%;
+            text-align: center;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-secondary);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+        }
+
+        .category-card:hover:before {
+            transform: scaleX(1);
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .category-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, rgba(201, 169, 110, 0.1) 0%, rgba(201, 169, 110, 0.05) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: var(--secondary-color);
+            font-size: 32px;
+        }
+
+        .category-count {
+            display: inline-block;
+            background: rgba(46, 139, 87, 0.1);
+            color: var(--accent-color);
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            margin-top: 15px;
+        }
+
+        /* ===== FAQ Accordion ===== */
+        .faq-section {
+            padding: 80px 0;
+            background: #f9fafb;
+        }
+
+        .faq-accordion {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .accordion-item {
+            background: white;
+            border: none;
+            border-radius: var(--border-radius) !important;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.05) !important;
+        }
+
+        .accordion-button {
+            background: white;
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 25px 30px;
+            border: none;
+            box-shadow: none;
+            border-radius: var(--border-radius) !important;
+            transition: var(--transition);
+        }
+
+        .accordion-button:not(.collapsed) {
+            background: white;
+            color: var(--primary-color);
+            box-shadow: none;
+        }
+
+        .accordion-button:focus {
+            border-color: transparent;
+            box-shadow: none;
+        }
+
+        .accordion-button:after {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%230a2a4a'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+            transform: scale(1.5);
+        }
+
+        .accordion-button:not(.collapsed):after {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%230a2a4a'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+        }
+
+        .accordion-body {
+            padding: 0 30px 25px;
+            color: var(--gray-color);
+            line-height: 1.8;
+            border-top: 1px solid var(--light-gray);
+            margin-top: -10px;
+        }
+
+        .accordion-body p:last-child {
+            margin-bottom: 0;
+        }
+
+        .faq-category-header {
+            margin-top: 50px;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--light-gray);
+        }
+
+        .faq-category-header h3 {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .faq-category-header i {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+        }
+
+        /* ===== Quick Help Section ===== */
+        .quick-help-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .help-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            height: 100%;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .help-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .help-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, rgba(10, 42, 74, 0.1) 0%, rgba(10, 42, 74, 0.05) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: var(--primary-color);
+            font-size: 32px;
+        }
+
+        /* ===== Contact CTA ===== */
+        .contact-cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* ===== Footer ===== */
+        .footer {
+            background: var(--primary-dark);
+            color: #b0b7c3;
+            padding-top: 80px;
+        }
+
+        .footer-title {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--gradient-secondary);
+            border-radius: 2px;
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 30px 0;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        /* ===== Back to Top ===== */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-secondary);
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            box-shadow: 0 10px 30px rgba(201, 169, 110, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(201, 169, 110, 0.4);
+        }
+
+        /* ===== WhatsApp Float ===== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 99;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
+        }
+
+        /* ===== Mobile Bottom Nav ===== */
+        .mobile-bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 15px 0;
+            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-bottom-nav {
+                display: flex;
+            }
+            
+            .back-to-top {
+                bottom: 80px;
+            }
+            
+            .accordion-button {
+                padding: 20px;
+                font-size: 1rem;
+            }
+            
+            .accordion-body {
+                padding: 0 20px 20px;
+            }
+        }
+
+        /* ===== Toast Notifications ===== */
+        .toast-container {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            z-index: 9999;
+        }
+
+        .toast {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            box-shadow: var(--shadow);
+            margin-bottom: 15px;
+            transform: translateX(100%);
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            max-width: 350px;
+        }
+
+        .toast.show {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        /* ===== Loading Overlay ===== */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            display: none;
+        }
+
+        .loading-overlay.active {
+            display: flex;
+        }
+
+        /* ===== Additional Styles ===== */
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        
+        .social-link:hover {
+            background: var(--gradient-secondary);
+            transform: translateY(-3px);
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #b0b7c3;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+        
+        .mobile-nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--dark-color);
+            padding: 5px 10px;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+        
+        .mobile-nav-item.active {
+            color: var(--secondary-color);
+            background: rgba(201, 169, 110, 0.1);
+        }
+        
+        .mobile-nav-item i {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .mobile-nav-item span {
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .project-mini-card {
+            display: block;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+        
+        .project-mini-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .contact-info {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+        
+        .contact-info i {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+        
+        .search-box {
+            max-width: 600px;
+            margin: 0 auto 50px;
+        }
+        
+        .search-box .input-group {
+            box-shadow: var(--shadow);
+            border-radius: 50px;
+            overflow: hidden;
+        }
+        
+        .search-box input {
+            border: none;
+            padding: 20px 25px;
+            font-size: 1rem;
+        }
+        
+        .search-box .btn {
+            padding: 15px 30px;
+        }
+        
+        .faq-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .faq-list li {
+            margin-bottom: 10px;
+        }
+        
+        .faq-list a {
+            color: var(--gray-color);
+            transition: var(--transition);
+        }
+        
+        .faq-list a:hover {
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(201, 169, 110, 0.1) 0%, rgba(201, 169, 110, 0.05) 100%);
+            border-left: 4px solid var(--secondary-color);
+            padding: 20px;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader">
+            <div class="loader-inner"></div>
+        </div>
+        <div class="preloader-text">NARODA GROUP</div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay">
+        <div class="spinner-border" style="color: var(--secondary-color);" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Toast Container -->
+    <div class="toast-container"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <div class="logo-icon">NG</div>
+                <span>Naroda <span class="gold-text">Group</span></span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" data-bs-toggle="dropdown">
+                            Projects
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="projects-landmark.html">Naroda Landmark</a>
+                            <a class="dropdown-item" href="projects-irish.html">Naroda Irish</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="projects.html">All Projects</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="propertiesDropdown" data-bs-toggle="dropdown">
+                            Properties
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="properties.html">Buy</a>
+                            <a class="dropdown-item" href="properties-rent.html">Rent</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="property-detail.html">Property Details</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" data-bs-toggle="dropdown">
+                            More
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="blog.html">Blog</a>
+                            <a class="dropdown-item" href="news.html">News</a>
+                            <a class="dropdown-item" href="careers.html">Careers</a>
+                            <a class="dropdown-item" href="team.html">Our Team</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="nav-link active" href="faq.html">FAQ</a>
+                            <a class="dropdown-item" href="contact.html">Contact</a>
+                        </div>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center ms-lg-3 mt-3 mt-lg-0">
+                    <div class="dropdown">
+                        <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown">
+                            <i class="fas fa-globe me-1"></i> EN
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">English</a>
+                            <a class="dropdown-item" href="#">Hindi</a>
+                            <a class="dropdown-item" href="#">Gujarati</a>
+                        </div>
+                    </div>
+                    <a href="login.html" class="btn btn-outline-light ms-3">
+                        <i class="fas fa-user me-2"></i> Login
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Bottom Navigation -->
+    <div class="mobile-bottom-nav">
+        <a href="index.html" class="mobile-nav-item">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="projects.html" class="mobile-nav-item">
+            <i class="fas fa-building"></i>
+            <span>Projects</span>
+        </a>
+        <a href="properties.html" class="mobile-nav-item">
+            <i class="fas fa-search"></i>
+            <span>Search</span>
+        </a>
+        <a href="contact.html" class="mobile-nav-item">
+            <i class="fas fa-phone"></i>
+            <span>Contact</span>
+        </a>
+        <a href="login.html" class="mobile-nav-item">
+            <i class="fas fa-user"></i>
+            <span>Account</span>
+        </a>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="row min-vh-50 align-items-center">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <h1 class="hero-title" data-aos="fade-up">
+                            Frequently Asked <span class="gold-text">Questions</span>
+                        </h1>
+                        <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
+                            Find answers to common questions about our projects, booking process, payment plans, and more
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Introduction -->
+        <section class="faq-hero-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
+                            Need Help?
+                        </span>
+                        <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
+                            Quick Answers to Your <span class="gold-text">Questions</span>
+                        </h2>
+                        <p class="text-muted mb-5" data-aos="fade-up" data-aos-delay="200">
+                            Browse our comprehensive FAQ section below. If you don't find what you're looking for, 
+                            feel free to contact our support team.
+                        </p>
+                        
+                        <!-- Search Box -->
+                        <div class="search-box" data-aos="fade-up" data-aos-delay="300">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="faqSearch" placeholder="Search for questions or topics...">
+                                <button class="btn btn-gold" type="button" id="searchButton">
+                                    <i class="fas fa-search me-2"></i> Search
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Categories -->
+        <section class="faq-categories-section">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <h3 class="section-title left mb-4" data-aos="fade-up">
+                            Browse by <span class="gold-text">Category</span>
+                        </h3>
+                        <p class="text-muted" data-aos="fade-up" data-aos-delay="100">
+                            Select a category to find relevant questions
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                        <a href="#projects" class="category-card">
+                            <div class="category-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h4 class="mb-3">Projects</h4>
+                            <p class="text-muted mb-0">
+                                Questions about our residential and commercial projects
+                            </p>
+                            <span class="category-count">12 Questions</span>
+                        </a>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                        <a href="#booking" class="category-card">
+                            <div class="category-icon">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <h4 class="mb-3">Booking Process</h4>
+                            <p class="text-muted mb-0">
+                                Information about booking, documentation, and procedures
+                            </p>
+                            <span class="category-count">8 Questions</span>
+                        </a>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                        <a href="#payments" class="category-card">
+                            <div class="category-icon">
+                                <i class="fas fa-credit-card"></i>
+                            </div>
+                            <h4 class="mb-3">Payments & Finance</h4>
+                            <p class="text-muted mb-0">
+                                Payment plans, loans, EMIs, and financial queries
+                            </p>
+                            <span class="category-count">10 Questions</span>
+                        </a>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                        <a href="#legal" class="category-card">
+                            <div class="category-icon">
+                                <i class="fas fa-balance-scale"></i>
+                            </div>
+                            <h4 class="mb-3">Legal & RERA</h4>
+                            <p class="text-muted mb-0">
+                                Legal documentation, RERA compliance, and approvals
+                            </p>
+                            <span class="category-count">6 Questions</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Accordion -->
+        <section class="faq-section" id="faqAccordion">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 mx-auto">
+                        <!-- Projects Category -->
+                        <div class="faq-category-header" id="projects" data-aos="fade-up">
+                            <h3><i class="fas fa-building"></i> Projects Related Questions</h3>
+                        </div>
+                        
+                        <div class="faq-accordion">
+                            <div class="accordion" id="projectsAccordion">
+                                <!-- Question 1 -->
+                                <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#project1">
+                                            What types of projects does Naroda Group develop?
+                                        </button>
+                                    </h2>
+                                    <div id="project1" class="accordion-collapse collapse show" data-bs-parent="#projectsAccordion">
+                                        <div class="accordion-body">
+                                            <p>Naroda Group specializes in both residential and commercial real estate development. Our portfolio includes:</p>
+                                            <ul>
+                                                <li><strong>Residential Projects:</strong> Luxury apartments (Naroda Irish), plotted developments, and gated communities</li>
+                                                <li><strong>Commercial Projects:</strong> Office spaces (Naroda Landmark), retail complexes, and mixed-use developments</li>
+                                                <li><strong>Mixed-Use Developments:</strong> Integrated townships combining residential, commercial, and recreational spaces</li>
+                                            </ul>
+                                            <p>All our projects are strategically located in prime areas of Ahmedabad with excellent connectivity and amenities.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Question 2 -->
+                                <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#project2">
+                                            Where are Naroda Group projects located?
+                                        </button>
+                                    </h2>
+                                    <div id="project2" class="accordion-collapse collapse" data-bs-parent="#projectsAccordion">
+                                        <div class="accordion-body">
+                                            <p>Our projects are strategically located in Ahmedabad's fastest-growing corridors:</p>
+                                            <ul>
+                                                <li><strong>Naroda Landmark:</strong> Located on Naroda-Bhat Road, one of Ahmedabad's prime commercial corridors</li>
+                                                <li><strong>Naroda Irish:</strong> Situated in the developing residential belt of East Ahmedabad</li>
+                                                <li><strong>Upcoming Projects:</strong> Planned in areas like Nikol, Vastral, and Godhavi</li>
+                                            </ul>
+                                            <div class="highlight-box">
+                                                <p><strong>Key advantages of our locations:</strong></p>
+                                                <ul class="mb-0">
+                                                    <li>Excellent connectivity to major highways and city centers</li>
+                                                    <li>Proximity to schools, hospitals, shopping centers, and entertainment hubs</li>
+                                                    <li>Strong potential for property appreciation</li>
+                                                    <li>Well-developed infrastructure and utilities</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Question 3 -->
+                                <div class="accordion-item" data-aos="fade-up" data-aos-delay="300">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#project3">
+                                            What amenities are provided in Naroda Group projects?
+                                        </button>
+                                    </h2>
+                                    <div id="project3" class="accordion-collapse collapse" data-bs-parent="#projectsAccordion">
+                                        <div class="accordion-body">
+                                            <p>We provide world-class amenities in all our projects. The amenities vary by project type:</p>
+                                            
+                                            <p><strong>For Residential Projects (Naroda Irish):</strong></p>
+                                            <ul>
+                                                <li>Swimming pool, gymnasium, and clubhouse</li>
+                                                <li>Children's play area and senior citizen zone</li>
+                                                <li>Landscaped gardens and jogging tracks</li>
+                                                <li>24/7 security with CCTV surveillance</li>
+                                                <li>Power backup and water supply systems</li>
+                                                <li>Car parking facilities</li>
+                                                <li>Rainwater harvesting and waste management systems</li>
+                                            </ul>
+                                            
+                                            <p><strong>For Commercial Projects (Naroda Landmark):</strong></p>
+                                            <ul>
+                                                <li>Modern elevators and escalators</li>
+                                                <li>Central air conditioning</li>
+                                                <li>High-speed elevators and fire safety systems</li>
+                                                <li>Adequate parking spaces</li>
+                                                <li>24/7 power backup</li>
+                                                <li>Conference rooms and business centers</li>
+                                                <li>Food courts and retail spaces</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- More project questions would follow similar structure -->
+                            </div>
+                        </div>
+                        
+                        <!-- Booking Category -->
+                        <div class="faq-category-header" id="booking" data-aos="fade-up">
+                            <h3><i class="fas fa-calendar-check"></i> Booking Process Questions</h3>
+                        </div>
+                        
+                        <div class="faq-accordion">
+                            <div class="accordion" id="bookingAccordion">
+                                <!-- Question 1 -->
+                                <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#booking1">
+                                            What is the booking process for a Naroda Group property?
+                                        </button>
+                                    </h2>
+                                    <div id="booking1" class="accordion-collapse collapse" data-bs-parent="#bookingAccordion">
+                                        <div class="accordion-body">
+                                            <p>The booking process is simple and transparent:</p>
+                                            <ol>
+                                                <li><strong>Site Visit:</strong> Schedule a site visit to experience the project firsthand</li>
+                                                <li><strong>Unit Selection:</strong> Choose your preferred unit based on availability</li>
+                                                <li><strong>Booking Amount:</strong> Pay the initial booking amount (typically 10% of property value)</li>
+                                                <li><strong>Agreement:</strong> Sign the booking agreement and receive allotment letter</li>
+                                                <li><strong>Documentation:</strong> Submit required documents for verification</li>
+                                                <li><strong>Payment Plan:</strong> Choose a suitable payment plan as per construction milestones</li>
+                                                <li><strong>Loan Processing:</strong> We assist with home loan processing if required</li>
+                                                <li><strong>Possession:</strong> Receive possession upon project completion and final payment</li>
+                                            </ol>
+                                            <div class="highlight-box">
+                                                <p><strong>Note:</strong> Our sales team will guide you through each step and ensure a smooth booking experience.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Question 2 -->
+                                <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#booking2">
+                                            What documents are required for booking?
+                                        </button>
+                                    </h2>
+                                    <div id="booking2" class="accordion-collapse collapse" data-bs-parent="#bookingAccordion">
+                                        <div class="accordion-body">
+                                            <p>You will need the following documents for booking a property:</p>
+                                            
+                                            <p><strong>For Individuals:</strong></p>
+                                            <ul>
+                                                <li>Identity Proof (Aadhar Card, PAN Card, Passport, or Driving License)</li>
+                                                <li>Address Proof (Aadhar Card, Passport, Utility Bills, or Bank Statement)</li>
+                                                <li>Passport-sized photographs (2 copies)</li>
+                                                <li>PAN Card copy (mandatory for registration)</li>
+                                                <li>Income proof for loan applicants</li>
+                                            </ul>
+                                            
+                                            <p><strong>For Companies:</strong></p>
+                                            <ul>
+                                                <li>Certificate of Incorporation</li>
+                                                <li>Board Resolution authorizing the purchase</li>
+                                                <li>PAN Card of the company</li>
+                                                <li>Authorized signatory's ID and address proof</li>
+                                            </ul>
+                                            
+                                            <p><strong>Additional Documents (if applicable):</strong></p>
+                                            <ul>
+                                                <li>Power of Attorney (if booking through representative)</li>
+                                                <li>NRI documents (for NRIs)</li>
+                                                <li>Previous property documents (for resale properties)</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Question 3 -->
+                                <div class="accordion-item" data-aos="fade-up" data-aos-delay="300">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#booking3">
+                                            Can I book a property online?
+                                        </button>
+                                    </h2>
+                                    <div id="booking3" class="accordion-collapse collapse" data-bs-parent="#bookingAccordion">
+                                        <div class="accordion-body">
+                                            <p>Yes, we offer multiple options for booking:</p>
+                                            
+                                            <p><strong>Online Booking:</strong></p>
+                                            <ul>
+                                                <li>You can initiate the booking process through our website</li>
+                                                <li>Fill the online enquiry form with your details</li>
+                                                <li>Our sales representative will contact you within 24 hours</li>
+                                                <li>Virtual site tours available for remote booking</li>
+                                                <li>Online document submission facility</li>
+                                            </ul>
+                                            
+                                            <p><strong>Offline Booking:</strong></p>
+                                            <ul>
+                                                <li>Visit our sales office at Naroda-Bhat Road, Ahmedabad</li>
+                                                <li>Contact our sales team to schedule a site visit</li>
+                                                <li>Complete the booking process at our office</li>
+                                            </ul>
+                                            
+                                            <div class="highlight-box">
+                                                <p><strong>Recommendation:</strong> We recommend visiting the site in person or taking a virtual tour before making a booking decision. Our team is available to assist you through both online and offline channels.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Payments Category -->
+                        <div class="faq-category-header" id="payments" data-aos="fade-up">
+                            <h3><i class="fas fa-credit-card"></i> Payments & Finance Questions</h3>
+                        </div>
+                        
+                        <div class="faq-accordion">
+                            <div class="accordion" id="paymentAccordion">
+                                <!-- Question 1 -->
+                                <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#payment1">
+                                            What payment plans are available?
+                                        </button>
+                                    </h2>
+                                    <div id="payment1" class="accordion-collapse collapse" data-bs-parent="#paymentAccordion">
+                                        <div class="accordion-body">
+                                            <p>We offer flexible payment plans to suit different financial needs:</p>
+                                            
+                                            <p><strong>Construction-Linked Plan (Most Popular):</strong></p>
+                                            <ul>
+                                                <li>10% at time of booking</li>
+                                                <li>10% within 30 days of booking</li>
+                                                <li>Balance 80% linked to construction milestones</li>
+                                                <li>Payments spread over project duration</li>
+                                            </ul>
+                                            
+                                            <p><strong>Down Payment Plan:</strong></p>
+                                            <ul>
+                                                <li>20% down payment at time of booking</li>
+                                                <li>Balance 80% at time of possession</li>
+                                                <li>Suitable for buyers with immediate funds</li>
+                                            </ul>
+                                            
+                                            <p><strong>Flexi Payment Plan:</strong></p>
+                                            <ul>
+                                                <li>Customizable payment schedule</li>
+                                                <li>Tailored to individual financial situations</li>
+                                                <li>Extended payment timelines available</li>
+                                            </ul>
+                                            
+                                            <p><strong>Subvention Scheme (with Bank Tie-up):</strong></p>
+                                            <ul>
+                                                <li>Pay only 20% during construction</li>
+                                                <li>Balance 80% financed through bank loan</li>
+                                                <li>EMI starts only after possession</li>
+                                                <li>We pay interest during construction period</li>
+                                            </ul>
+                                            
+                                            <div class="highlight-box">
+                                                <p><strong>Note:</strong> All payment plans are subject to terms and conditions. Our finance team can help you choose the best plan based on your requirements.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Question 2 -->
+                                <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#payment2">
+                                            Do you offer home loan assistance?
+                                        </button>
+                                    </h2>
+                                    <div id="payment2" class="accordion-collapse collapse" data-bs-parent="#paymentAccordion">
+                                        <div class="accordion-body">
+                                            <p>Yes, we provide comprehensive home loan assistance through our tie-ups with leading banks and financial institutions:</p>
+                                            
+                                            <p><strong>Partner Banks:</strong></p>
+                                            <ul>
+                                                <li>State Bank of India (SBI)</li>
+                                                <li>HDFC Bank</li>
+                                                <li>ICICI Bank</li>
+                                                <li>Axis Bank</li>
+                                                <li>Bank of Baroda</li>
+                                                <li>PNB Housing Finance</li>
+                                                <li>LIC Housing Finance</li>
+                                            </ul>
+                                            
+                                            <p><strong>Our Assistance Includes:</strong></p>
+                                            <ul>
+                                                <li>Guidance on choosing the right bank and loan product</li>
+                                                <li>Documentation support for loan application</li>
+                                                <li>Liaison with bank officials for faster processing</li>
+                                                <li>Updates on loan sanction status</li>
+                                                <li>Assistance with legal and technical verification</li>
+                                            </ul>
+                                            
+                                            <p><strong>Special Benefits for Our Customers:</strong></p>
+                                            <ul>
+                                                <li>Preferential interest rates with partner banks</li>
+                                                <li>Reduced processing fees</li>
+                                                <li>Faster loan approval timelines</li>
+                                                <li>Flexible repayment options</li>
+                                            </ul>
+                                            
+                                            <div class="highlight-box">
+                                                <p><strong>Note:</strong> Loan approval is subject to the bank's eligibility criteria and documentation. Our team will help you get the best possible terms.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Legal Category -->
+                        <div class="faq-category-header" id="legal" data-aos="fade-up">
+                            <h3><i class="fas fa-balance-scale"></i> Legal & RERA Questions</h3>
+                        </div>
+                        
+                        <div class="faq-accordion">
+                            <div class="accordion" id="legalAccordion">
+                                <!-- Question 1 -->
+                                <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#legal1">
+                                            Are all Naroda Group projects RERA registered?
+                                        </button>
+                                    </h2>
+                                    <div id="legal1" class="accordion-collapse collapse" data-bs-parent="#legalAccordion">
+                                        <div class="accordion-body">
+                                            <p><strong>Yes, all our ongoing and upcoming projects are registered under RERA (Real Estate Regulatory Authority).</strong></p>
+                                            
+                                            <p>RERA registration ensures:</p>
+                                            <ul>
+                                                <li>Transparency in project details and pricing</li>
+                                                <li>Adherence to promised timelines</li>
+                                                <li>Proper utilization of customer funds in escrow accounts</li>
+                                                <li>Legal protection for homebuyers</li>
+                                                <li>Quality assurance as per approved plans</li>
+                                            </ul>
+                                            
+                                            <p><strong>Our RERA Registration Details:</strong></p>
+                                            <ul>
+                                                <li><strong>Naroda Landmark:</strong> RERA No. GUJRERA/12345/2023</li>
+                                                <li><strong>Naroda Irish:</strong> RERA No. GUJRERA/67890/2023</li>
+                                                <li>All registration details are displayed at our sales office and project sites</li>
+                                                <li>Registration certificates are provided to all customers</li>
+                                            </ul>
+                                            
+                                            <div class="highlight-box">
+                                                <p><strong>Why RERA Matters:</strong> RERA registration provides legal protection and ensures that developers deliver projects as promised. It's your assurance of a safe and secure real estate investment.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Question 2 -->
+                                <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#legal2">
+                                            What legal documents are provided during purchase?
+                                        </button>
+                                    </h2>
+                                    <div id="legal2" class="accordion-collapse collapse" data-bs-parent="#legalAccordion">
+                                        <div class="accordion-body">
+                                            <p>We provide comprehensive legal documentation for complete transparency:</p>
+                                            
+                                            <p><strong>During Booking:</strong></p>
+                                            <ul>
+                                                <li>Booking Application Form</li>
+                                                <li>Allotment Letter</li>
+                                                <li>Payment Receipts</li>
+                                                <li>Copy of RERA Registration</li>
+                                                <li>Approved Building Plans</li>
+                                            </ul>
+                                            
+                                            <p><strong>During Agreement:</strong></p>
+                                            <ul>
+                                                <li>Agreement for Sale (with all schedules)</li>
+                                                <li>Payment Plan Schedule</li>
+                                                <li>Possession Timeline</li>
+                                                <li>Specification Sheet</li>
+                                            </ul>
+                                            
+                                            <p><strong>At Possession:</strong></p>
+                                            <ul>
+                                                <li>Sale Deed/Conveyance Deed</li>
+                                                <li>Occupancy Certificate (if applicable)</li>
+                                                <li>Completion Certificate</li>
+                                                <li>No Objection Certificates (NOCs)</li>
+                                                <li>Maintenance Agreement</li>
+                                                <li>Society Share Certificate (if applicable)</li>
+                                            </ul>
+                                            
+                                            <div class="highlight-box">
+                                                <p><strong>Legal Verification:</strong> We recommend that buyers get all documents verified by their own legal advisor. We provide all necessary documents in advance for this purpose.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Help Section -->
+        <section class="quick-help-section">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <h3 class="section-title left mb-4" data-aos="fade-up">
+                            Still Have <span class="gold-text">Questions?</span>
+                        </h3>
+                        <p class="text-muted" data-aos="fade-up" data-aos-delay="100">
+                            We're here to help you with any other queries
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="help-card">
+                            <div class="help-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <h4 class="mb-3">Call Us</h4>
+                            <p class="text-muted mb-4">
+                                Speak directly with our customer support team for immediate assistance.
+                            </p>
+                            <a href="tel:+919876543210" class="btn btn-primary">
+                                <i class="fas fa-phone me-2"></i> +91 98765 43210
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="help-card">
+                            <div class="help-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h4 class="mb-3">Email Us</h4>
+                            <p class="text-muted mb-4">
+                                Send us your detailed query and we'll respond within 24 hours.
+                            </p>
+                            <a href="mailto:info@narodagroup.com" class="btn btn-gold">
+                                <i class="fas fa-envelope me-2"></i> info@narodagroup.com
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="help-card">
+                            <div class="help-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <h4 class="mb-3">Live Chat</h4>
+                            <p class="text-muted mb-4">
+                                Chat with our representatives in real-time for quick answers.
+                            </p>
+                            <button class="btn btn-emerald" id="startChatBtn">
+                                <i class="fas fa-comment me-2"></i> Start Live Chat
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact CTA -->
+        <section class="contact-cta-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <h2 class="text-white mb-4" data-aos="fade-up">
+                            Can't Find Your <span class="gold-text">Answer?</span>
+                        </h2>
+                        <p class="text-white-50 mb-5" data-aos="fade-up" data-aos-delay="100">
+                            Our team is ready to assist you with any questions not covered in our FAQ section.
+                        </p>
+                        
+                        <div class="d-flex flex-column flex-sm-row justify-content-center gap-4" data-aos="fade-up" data-aos-delay="200">
+                            <a href="contact.html" class="btn btn-gold btn-lg">
+                                <i class="fas fa-envelope me-2"></i> Contact Form
+                            </a>
+                            <a href="contact.html#visit" class="btn btn-outline-light btn-lg">
+                                <i class="fas fa-map-marker-alt me-2"></i> Visit Our Office
+                            </a>
+                            <a href="projects.html" class="btn btn-emerald btn-lg">
+                                <i class="fas fa-calendar me-2"></i> Schedule Site Visit
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <div class="mb-4">
+                        <a class="navbar-brand text-white" href="index.html">
+                            <div class="logo-icon d-inline-flex align-items-center justify-content-center me-2">NG</div>
+                            Naroda <span class="gold-text">Group</span>
+                        </a>
+                    </div>
+                    <p class="mb-4">
+                        Creating landmark properties that redefine excellence. From premium commercial spaces 
+                        to luxury residential living, we build dreams with quality and commitment.
+                    </p>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="projects.html"><i class="fas fa-chevron-right"></i> Projects</a></li>
+                        <li><a href="properties.html"><i class="fas fa-chevron-right"></i> Properties</a></li>
+                        <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="footer-title">Our Projects</h3>
+                    <a href="projects-landmark.html" class="project-mini-card">
+                        <h6 class="text-white mb-1">Naroda Landmark</h6>
+                        <p class="small text-muted mb-0">Premium Commercial Spaces</p>
+                    </a>
+                    <a href="projects-irish.html" class="project-mini-card">
+                        <h6 class="text-white mb-1">Naroda Irish</h6>
+                        <p class="small text-muted mb-0">Luxury Residential Living</p>
+                    </a>
+                    <a href="projects.html" class="project-mini-card">
+                        <h6 class="text-white mb-1">View All Projects</h6>
+                        <p class="small text-muted mb-0">Explore our portfolio</p>
+                    </a>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="footer-title">Contact Info</h3>
+                    <div class="contact-info">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h6 class="text-white mb-1">Phone Number</h6>
+                            <p class="mb-0">+91 98765 43210</p>
+                            <small class="text-muted">Mon - Sat: 10 AM - 7 PM</small>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h6 class="text-white mb-1">Email Address</h6>
+                            <p class="mb-0">info@narodagroup.com</p>
+                            <small class="text-muted">We reply within 24 hours</small>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h6 class="text-white mb-1">Office Address</h6>
+                            <p class="mb-0">Naroda - Bhat Road</p>
+                            <small class="text-muted">Ahmedabad, Gujarat 382330</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="mb-0">&copy; 2025 Naroda Group. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="privacy.html" class="text-muted me-3">Privacy Policy</a>
+                        <a href="terms.html" class="text-muted me-3">Terms of Service</a>
+                        <a href="rera.html" class="text-muted">RERA Registration</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // Wait for page to load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize AOS
+            AOS.init({
+                duration: 1000,
+                once: false,
+                offset: 100
+            });
+            
+            // Remove preloader
+            const preloader = document.getElementById('preloader');
+            setTimeout(() => {
+                preloader.style.opacity = '0';
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 500);
+            }, 1000);
+            
+            // Initialize back to top button
+            function initBackToTop() {
+                const backToTop = document.querySelector('.back-to-top');
+                
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 300) {
+                        backToTop.classList.add('active');
+                    } else {
+                        backToTop.classList.remove('active');
+                    }
+                });
+                
+                backToTop.addEventListener('click', () => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+            
+            // Initialize navbar scroll effect
+            function initNavbarScroll() {
+                const navbar = document.querySelector('.navbar');
+                
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 50) {
+                        navbar.classList.add('scrolled');
+                    } else {
+                        navbar.classList.remove('scrolled');
+                    }
+                });
+            }
+            
+            // Initialize toast notifications
+            function initToastSystem() {
+                window.showToast = function(message, type = 'success') {
+                    const toastContainer = document.querySelector('.toast-container');
+                    const toast = document.createElement('div');
+                    toast.className = `toast toast-${type}`;
+                    toast.innerHTML = `
+                        <div class="d-flex align-items-center">
+                            <i class="fas ${type === 'success' ? 'fa-check-circle text-success' : 'fa-exclamation-circle text-danger'} me-3"></i>
+                            <div>
+                                <p class="mb-0 fw-500">${message}</p>
+                            </div>
+                            <button type="button" class="btn-close ms-auto" onclick="this.parentElement.parentElement.remove()"></button>
+                        </div>
+                    `;
+                    
+                    toastContainer.appendChild(toast);
+                    
+                    setTimeout(() => toast.classList.add('show'), 10);
+                    
+                    setTimeout(() => {
+                        toast.classList.remove('show');
+                        setTimeout(() => toast.remove(), 300);
+                    }, 5000);
+                };
+            }
+            
+            // Initialize mobile navigation
+            function initMobileNav() {
+                // Update active nav item based on current page
+                const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+                document.querySelectorAll('.mobile-nav-item').forEach(item => {
+                    const href = item.getAttribute('href');
+                    if (href === currentPage) {
+                        item.classList.add('active');
+                    } else {
+                        item.classList.remove('active');
+                    }
+                });
+            }
+            
+            // FAQ Search functionality
+            function initFAQSearch() {
+                const searchInput = document.getElementById('faqSearch');
+                const searchButton = document.getElementById('searchButton');
+                
+                function searchFAQs() {
+                    const searchTerm = searchInput.value.toLowerCase().trim();
+                    
+                    if (searchTerm === '') {
+                        showToast('Please enter a search term', 'warning');
+                        return;
+                    }
+                    
+                    // Find all accordion items
+                    const accordionItems = document.querySelectorAll('.accordion-item');
+                    let foundResults = false;
+                    
+                    // Close all accordions first
+                    accordionItems.forEach(item => {
+                        const button = item.querySelector('.accordion-button');
+                        const collapse = item.querySelector('.accordion-collapse');
+                        
+                        if (button && collapse) {
+                            const question = button.textContent.toLowerCase();
+                            const answer = collapse.textContent.toLowerCase();
+                            
+                            if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                                // Show this item
+                                item.style.display = 'block';
+                                
+                                // Open the accordion
+                                button.classList.remove('collapsed');
+                                collapse.classList.add('show');
+                                
+                                // Highlight the search term
+                                highlightText(button, searchTerm);
+                                highlightText(collapse, searchTerm);
+                                
+                                // Scroll to the first found item
+                                if (!foundResults) {
+                                    item.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                    foundResults = true;
+                                }
+                            } else {
+                                item.style.display = 'none';
+                            }
+                        }
+                    });
+                    
+                    if (!foundResults) {
+                        showToast('No results found for "' + searchTerm + '"', 'warning');
+                        // Show all items again
+                        accordionItems.forEach(item => {
+                            item.style.display = 'block';
+                        });
+                    } else {
+                        showToast('Found results for "' + searchTerm + '"', 'success');
+                    }
+                }
+                
+                function highlightText(element, term) {
+                    const text = element.innerHTML;
+                    const regex = new RegExp(`(${term})`, 'gi');
+                    element.innerHTML = text.replace(regex, '<span class="bg-warning">$1</span>');
+                }
+                
+                // Event listeners
+                searchButton.addEventListener('click', searchFAQs);
+                searchInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        searchFAQs();
+                    }
+                });
+            }
+            
+            // Live chat simulation
+            function initLiveChat() {
+                const chatBtn = document.getElementById('startChatBtn');
+                
+                chatBtn.addEventListener('click', function() {
+                    showToast('Live chat feature coming soon! For now, please call or email us.', 'info');
+                    
+                    // In a real implementation, this would open a chat widget
+                    // For now, we'll just show a toast notification
+                });
+            }
+            
+            // Smooth scroll for category links
+            function initSmoothScroll() {
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        
+                        const targetId = this.getAttribute('href');
+                        if (targetId === '#') return;
+                        
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 100,
+                                behavior: 'smooth'
+                            });
+                        }
+                    });
+                });
+            }
+            
+            // Initialize all functions
+            initBackToTop();
+            initNavbarScroll();
+            initToastSystem();
+            initMobileNav();
+            initFAQSearch();
+            initLiveChat();
+            initSmoothScroll();
+            
+            // Show welcome message
+            setTimeout(() => {
+                showToast('Browse our FAQ for quick answers to common questions!', 'success');
+            }, 1500);
+        });
+        
+        // Loading overlay functions
+        window.showLoading = function() {
+            document.querySelector('.loading-overlay').classList.add('active');
+        };
+        
+        window.hideLoading = function() {
+            document.querySelector('.loading-overlay').classList.remove('active');
+        };
+    </script>
+</body>
+</html>

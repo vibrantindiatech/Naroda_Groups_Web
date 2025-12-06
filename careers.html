@@ -1,0 +1,2586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers | Join Naroda Group - Real Estate Career Opportunities</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Join Naroda Group's dynamic team. Explore career opportunities in real estate development, sales, marketing, construction, and management.">
+    <meta name="keywords" content="naroda group careers, real estate jobs, construction jobs, property sales careers, real estate careers ahmedabad">
+    <meta name="author" content="Naroda Group">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ===== CSS Variables ===== */
+        :root {
+            --primary-color: #0a2a4a;
+            --primary-dark: #071a2e;
+            --primary-light: #0e3a64;
+            --secondary-color: #c9a96e;
+            --secondary-light: #d4b87a;
+            --secondary-dark: #b89440;
+            --accent-color: #2e8b57;
+            --accent-light: #3cb371;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --gray-color: #6c757d;
+            --light-gray: #e9ecef;
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+            --shadow-hover: 0 25px 60px rgba(0, 0, 0, 0.2);
+            --border-radius: 16px;
+            --border-radius-lg: 24px;
+            --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            --gradient-secondary: linear-gradient(135deg, var(--secondary-color), var(--secondary-light));
+            --gradient-accent: linear-gradient(135deg, var(--accent-color), var(--accent-light));
+        }
+
+        /* ===== Base Styles ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark-color);
+            overflow-x: hidden;
+            line-height: 1.7;
+            font-weight: 400;
+            background-color: #ffffff;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            max-width: 1320px;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 0;
+            }
+        }
+
+        /* ===== Utility Classes ===== */
+        .gold-text {
+            color: var(--secondary-color);
+        }
+
+        .emerald-text {
+            color: var(--accent-color);
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-secondary);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .section-title.left:after {
+            left: 0;
+            transform: none;
+        }
+
+        .badge {
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .bg-gradient-secondary {
+            background: var(--gradient-secondary) !important;
+        }
+
+        /* ===== Preloader ===== */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loader {
+            width: 80px;
+            height: 80px;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .loader-inner {
+            width: 100%;
+            height: 100%;
+            border: 4px solid rgba(201, 169, 110, 0.2);
+            border-radius: 50%;
+            border-top-color: var(--secondary-color);
+            animation: spin 1.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .preloader-text {
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        /* ===== Navigation ===== */
+        .navbar {
+            padding: 1.2rem 0;
+            background: rgba(10, 42, 74, 0.95);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+            z-index: 1000;
+        }
+
+        .navbar.scrolled {
+            padding: 0.8rem 0;
+            box-shadow: var(--shadow);
+            background: rgba(10, 42, 74, 0.98);
+        }
+
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-secondary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            color: var(--primary-color);
+            font-weight: 900;
+            font-size: 1.5rem;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            margin: 0 6px;
+            position: relative;
+            padding: 8px 16px !important;
+            border-radius: 30px;
+            transition: var(--transition);
+        }
+
+        .nav-link:before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 100%;
+            background: rgba(201, 169, 110, 0.1);
+            border-radius: 30px;
+            top: 0;
+            left: 0;
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .nav-link:hover:before,
+        .nav-link.active:before {
+            width: 100%;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--secondary-color) !important;
+        }
+
+        .dropdown-menu {
+            border: none;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 10px 0;
+            margin-top: 10px;
+        }
+
+        .dropdown-item {
+            padding: 10px 20px;
+            transition: var(--transition);
+        }
+
+        .dropdown-item:hover {
+            background: rgba(201, 169, 110, 0.1);
+            color: var(--secondary-color);
+        }
+
+        /* ===== Buttons ===== */
+        .btn {
+            padding: 14px 32px;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: var(--transition);
+            border: none;
+            position: relative;
+            overflow: hidden;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .btn:hover:before {
+            left: 100%;
+        }
+
+        .btn-gold {
+            background: var(--gradient-secondary);
+            color: var(--primary-color);
+            box-shadow: 0 10px 25px rgba(201, 169, 110, 0.3);
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(201, 169, 110, 0.4);
+            color: var(--primary-color);
+        }
+
+        .btn-outline-light {
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            background: transparent;
+        }
+
+        .btn-outline-light:hover {
+            background: white;
+            color: var(--primary-color);
+            border-color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-emerald {
+            background: var(--gradient-accent);
+            color: white;
+            box-shadow: 0 10px 25px rgba(46, 139, 87, 0.3);
+        }
+
+        .btn-emerald:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(46, 139, 87, 0.4);
+            color: white;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: 0 10px 25px rgba(10, 42, 74, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(10, 42, 74, 0.4);
+            color: white;
+        }
+
+        .btn-outline-primary {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline-primary:hover {
+            background: var(--gradient-primary);
+            color: white;
+            border-color: transparent;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(10, 42, 74, 0.2);
+        }
+
+        /* ===== Hero Section ===== */
+        .hero-section {
+            min-height: 60vh;
+            background: linear-gradient(rgba(10, 42, 74, 0.95), rgba(10, 42, 74, 0.85)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        /* ===== Careers Hero ===== */
+        .careers-hero-section {
+            padding: 100px 0 60px;
+            background: #f9fafb;
+        }
+
+        /* ===== Why Join Us ===== */
+        .benefits-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .benefit-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            height: 100%;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-secondary);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+        }
+
+        .benefit-card:hover:before {
+            transform: scaleX(1);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .benefit-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, rgba(201, 169, 110, 0.1) 0%, rgba(201, 169, 110, 0.05) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: var(--secondary-color);
+            font-size: 32px;
+        }
+
+        /* ===== Job Openings ===== */
+        .jobs-section {
+            padding: 80px 0;
+            background: #f9fafb;
+        }
+
+        .job-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            margin-bottom: 25px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .job-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--gradient-secondary);
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: transform 0.5s ease;
+        }
+
+        .job-card:hover:before {
+            transform: scaleY(1);
+        }
+
+        .job-card:hover {
+            transform: translateX(10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .job-title {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .job-department {
+            color: var(--secondary-color);
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .job-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .job-tag {
+            background: rgba(10, 42, 74, 0.1);
+            color: var(--primary-color);
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .job-tag.location {
+            background: rgba(46, 139, 87, 0.1);
+            color: var(--accent-color);
+        }
+
+        .job-tag.type {
+            background: rgba(201, 169, 110, 0.1);
+            color: var(--secondary-color);
+        }
+
+        .job-tag.experience {
+            background: rgba(108, 117, 125, 0.1);
+            color: var(--gray-color);
+        }
+
+        .job-description {
+            color: var(--gray-color);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .job-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .job-posted {
+            color: var(--gray-color);
+            font-size: 0.9rem;
+        }
+
+        .job-posted i {
+            margin-right: 5px;
+        }
+
+        /* ===== Departments ===== */
+        .departments-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .department-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            height: 100%;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .department-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .department-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, rgba(10, 42, 74, 0.1) 0%, rgba(10, 42, 74, 0.05) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary-color);
+            font-size: 32px;
+        }
+
+        .department-name {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .department-openings {
+            display: inline-block;
+            background: rgba(201, 169, 110, 0.1);
+            color: var(--secondary-color);
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            margin-top: 15px;
+        }
+
+        /* ===== Application Process ===== */
+        .process-section {
+            padding: 80px 0;
+            background: #f9fafb;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .process-step:not(:last-child):after {
+            content: '';
+            position: absolute;
+            top: 40px;
+            right: -50%;
+            width: 100%;
+            height: 2px;
+            background: var(--secondary-color);
+            opacity: 0.3;
+            z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+            .process-step:not(:last-child):after {
+                display: none;
+            }
+        }
+
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: white;
+            font-size: 32px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .step-number {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 30px;
+            height: 30px;
+            background: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .step-title {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        /* ===== Employee Testimonials ===== */
+        .testimonials-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 40px 30px;
+            box-shadow: var(--shadow);
+            height: 100%;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .testimonial-rating {
+            color: #ffc107;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: var(--gray-color);
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .testimonial-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+
+        .testimonial-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h5 {
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            color: var(--gray-color);
+            margin-bottom: 0;
+            font-size: 0.9rem;
+        }
+
+        /* ===== Apply Now CTA ===== */
+        .apply-cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* ===== Footer ===== */
+        .footer {
+            background: var(--primary-dark);
+            color: #b0b7c3;
+            padding-top: 80px;
+        }
+
+        .footer-title {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--gradient-secondary);
+            border-radius: 2px;
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 30px 0;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        /* ===== Back to Top ===== */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-secondary);
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            box-shadow: 0 10px 30px rgba(201, 169, 110, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(201, 169, 110, 0.4);
+        }
+
+        /* ===== WhatsApp Float ===== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 99;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
+        }
+
+        /* ===== Mobile Bottom Nav ===== */
+        .mobile-bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 15px 0;
+            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-bottom-nav {
+                display: flex;
+            }
+            
+            .back-to-top {
+                bottom: 80px;
+            }
+            
+            .job-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .job-actions {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        /* ===== Toast Notifications ===== */
+        .toast-container {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            z-index: 9999;
+        }
+
+        .toast {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            box-shadow: var(--shadow);
+            margin-bottom: 15px;
+            transform: translateX(100%);
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            max-width: 350px;
+        }
+
+        .toast.show {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        /* ===== Loading Overlay ===== */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            display: none;
+        }
+
+        .loading-overlay.active {
+            display: flex;
+        }
+
+        /* ===== Additional Styles ===== */
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        
+        .social-link:hover {
+            background: var(--gradient-secondary);
+            transform: translateY(-3px);
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #b0b7c3;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+        
+        .mobile-nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--dark-color);
+            padding: 5px 10px;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+        
+        .mobile-nav-item.active {
+            color: var(--secondary-color);
+            background: rgba(201, 169, 110, 0.1);
+        }
+        
+        .mobile-nav-item i {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .mobile-nav-item span {
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .project-mini-card {
+            display: block;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+        
+        .project-mini-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .contact-info {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+        
+        .contact-info i {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+        
+        .search-box {
+            max-width: 600px;
+            margin: 0 auto 50px;
+        }
+        
+        .search-box .input-group {
+            box-shadow: var(--shadow);
+            border-radius: 50px;
+            overflow: hidden;
+        }
+        
+        .search-box input {
+            border: none;
+            padding: 20px 25px;
+            font-size: 1rem;
+        }
+        
+        .search-box .btn {
+            padding: 15px 30px;
+        }
+        
+        .filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+            justify-content: center;
+        }
+        
+        .filter-btn {
+            background: white;
+            border: 2px solid var(--light-gray);
+            color: var(--gray-color);
+            padding: 10px 20px;
+            border-radius: 30px;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--gradient-secondary);
+            color: white;
+            border-color: transparent;
+        }
+        
+        .no-jobs {
+            text-align: center;
+            padding: 60px 20px;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+        
+        .no-jobs-icon {
+            font-size: 4rem;
+            color: var(--light-gray);
+            margin-bottom: 20px;
+        }
+        
+        .application-form {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--shadow);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-label {
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .form-control, .form-select {
+            padding: 15px;
+            border: 2px solid var(--light-gray);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+        
+        .form-control:focus, .form-select:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 0.25rem rgba(201, 169, 110, 0.25);
+        }
+        
+        .file-upload {
+            border: 2px dashed var(--light-gray);
+            border-radius: var(--border-radius);
+            padding: 40px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .file-upload:hover {
+            border-color: var(--secondary-color);
+            background: rgba(201, 169, 110, 0.05);
+        }
+        
+        .file-upload i {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+        
+        .file-input {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader">
+            <div class="loader-inner"></div>
+        </div>
+        <div class="preloader-text">NARODA GROUP</div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay">
+        <div class="spinner-border" style="color: var(--secondary-color);" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Toast Container -->
+    <div class="toast-container"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <div class="logo-icon">NG</div>
+                <span>Naroda <span class="gold-text">Group</span></span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" data-bs-toggle="dropdown">
+                            Projects
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="projects-landmark.html">Naroda Landmark</a>
+                            <a class="dropdown-item" href="projects-irish.html">Naroda Irish</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="projects.html">All Projects</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="propertiesDropdown" data-bs-toggle="dropdown">
+                            Properties
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="properties.html">Buy</a>
+                            <a class="dropdown-item" href="properties-rent.html">Rent</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="property-detail.html">Property Details</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" data-bs-toggle="dropdown">
+                            More
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="blog.html">Blog</a>
+                            <a class="dropdown-item" href="news.html">News</a>
+                            <a class="nav-link active" href="careers.html">Careers</a>
+                            <a class="dropdown-item" href="team.html">Our Team</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="faq.html">FAQ</a>
+                            <a class="dropdown-item" href="contact.html">Contact</a>
+                        </div>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center ms-lg-3 mt-3 mt-lg-0">
+                    <div class="dropdown">
+                        <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown">
+                            <i class="fas fa-globe me-1"></i> EN
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">English</a>
+                            <a class="dropdown-item" href="#">Hindi</a>
+                            <a class="dropdown-item" href="#">Gujarati</a>
+                        </div>
+                    </div>
+                    <a href="login.html" class="btn btn-outline-light ms-3">
+                        <i class="fas fa-user me-2"></i> Login
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Bottom Navigation -->
+    <div class="mobile-bottom-nav">
+        <a href="index.html" class="mobile-nav-item">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="projects.html" class="mobile-nav-item">
+            <i class="fas fa-building"></i>
+            <span>Projects</span>
+        </a>
+        <a href="properties.html" class="mobile-nav-item">
+            <i class="fas fa-search"></i>
+            <span>Search</span>
+        </a>
+        <a href="contact.html" class="mobile-nav-item">
+            <i class="fas fa-phone"></i>
+            <span>Contact</span>
+        </a>
+        <a href="login.html" class="mobile-nav-item">
+            <i class="fas fa-user"></i>
+            <span>Account</span>
+        </a>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="row min-vh-60 align-items-center">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <h1 class="hero-title" data-aos="fade-up">
+                            Build Your Career With <span class="gold-text">Naroda Group</span>
+                        </h1>
+                        <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
+                            Join our team of innovators and help us shape Ahmedabad's skyline. 
+                            Explore exciting opportunities in real estate development.
+                        </p>
+                        <div class="d-flex flex-column flex-sm-row justify-content-center gap-4 mt-4" data-aos="fade-up" data-aos-delay="200">
+                            <a href="#jobs" class="btn btn-gold btn-lg">
+                                <i class="fas fa-search me-2"></i> View Open Positions
+                            </a>
+                            <a href="#apply" class="btn btn-outline-light btn-lg">
+                                <i class="fas fa-paper-plane me-2"></i> Submit Your CV
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Join Us -->
+        <section class="benefits-section">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
+                            Why Join Us
+                        </span>
+                        <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
+                            Grow With <span class="gold-text">Excellence</span>
+                        </h2>
+                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200">
+                            We believe in nurturing talent and providing opportunities for professional growth
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                        <div class="benefit-card">
+                            <div class="benefit-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h4 class="mb-3">Career Growth</h4>
+                            <p class="text-muted mb-0">
+                                Clear career paths with regular promotions and opportunities for advancement.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                        <div class="benefit-card">
+                            <div class="benefit-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h4 class="mb-3">Learning & Development</h4>
+                            <p class="text-muted mb-0">
+                                Regular training programs, workshops, and skill enhancement opportunities.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                        <div class="benefit-card">
+                            <div class="benefit-icon">
+                                <i class="fas fa-hand-holding-usd"></i>
+                            </div>
+                            <h4 class="mb-3">Competitive Compensation</h4>
+                            <p class="text-muted mb-0">
+                                Attractive salary packages with performance bonuses and incentives.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                        <div class="benefit-card">
+                            <div class="benefit-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <h4 class="mb-3">Work-Life Balance</h4>
+                            <p class="text-muted mb-0">
+                                Flexible work arrangements and employee wellness programs.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                        <div class="benefit-card">
+                            <div class="benefit-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4 class="mb-3">Collaborative Culture</h4>
+                            <p class="text-muted mb-0">
+                                Supportive team environment that encourages innovation and creativity.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                        <div class="benefit-card">
+                            <div class="benefit-icon">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <h4 class="mb-3">Employee Housing</h4>
+                            <p class="text-muted mb-0">
+                                Special discounts on Naroda Group properties for employees.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                        <div class="benefit-card">
+                            <div class="benefit-icon">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                            <h4 class="mb-3">Recognition</h4>
+                            <p class="text-muted mb-0">
+                                Regular recognition programs and rewards for outstanding performance.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                        <div class="benefit-card">
+                            <div class="benefit-icon">
+                                <i class="fas fa-umbrella-beach"></i>
+                            </div>
+                            <h4 class="mb-3">Paid Time Off</h4>
+                            <p class="text-muted mb-0">
+                                Generous leave policy including vacation, sick leave, and holidays.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Job Openings -->
+        <section class="jobs-section" id="jobs">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
+                            Current Openings
+                        </span>
+                        <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
+                            Explore <span class="gold-text">Job Opportunities</span>
+                        </h2>
+                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200">
+                            Join our team and contribute to landmark projects that shape Ahmedabad's future
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Job Search & Filter -->
+                <div class="row mb-5" data-aos="fade-up">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="search-box">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="jobSearch" placeholder="Search jobs by title, keyword, or department...">
+                                <button class="btn btn-gold" type="button" id="searchJobs">
+                                    <i class="fas fa-search me-2"></i> Search
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="filter-buttons">
+                            <button class="filter-btn active" data-filter="all">All Jobs</button>
+                            <button class="filter-btn" data-filter="sales">Sales & Marketing</button>
+                            <button class="filter-btn" data-filter="construction">Construction</button>
+                            <button class="filter-btn" data-filter="design">Design & Architecture</button>
+                            <button class="filter-btn" data-filter="operations">Operations</button>
+                            <button class="filter-btn" data-filter="finance">Finance & Legal</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Job Listings -->
+                <div class="row">
+                    <div class="col-lg-10 mx-auto">
+                        <!-- Sales & Marketing Jobs -->
+                        <div class="job-card" data-category="sales" data-aos="fade-up" data-aos-delay="100">
+                            <div class="job-header">
+                                <div>
+                                    <h3 class="job-title">Senior Sales Manager</h3>
+                                    <span class="job-department">Sales & Marketing</span>
+                                    <div class="job-tags">
+                                        <span class="job-tag location">Ahmedabad</span>
+                                        <span class="job-tag type">Full-time</span>
+                                        <span class="job-tag experience">8+ Years Experience</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="#apply" class="btn btn-gold" data-job="Senior Sales Manager">
+                                        Apply Now
+                                    </a>
+                                </div>
+                            </div>
+                            <p class="job-description">
+                                Lead the sales team for our premium residential and commercial projects. 
+                                Develop sales strategies, manage client relationships, and achieve sales targets. 
+                                Experience in real estate sales and team management required.
+                            </p>
+                            <div class="job-actions">
+                                <div class="job-posted">
+                                    <i class="fas fa-calendar"></i> Posted: 2 days ago
+                                </div>
+                                <a href="#job-details-1" class="text-gold" data-bs-toggle="modal">
+                                    <i class="fas fa-info-circle me-1"></i> View Details
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Construction Jobs -->
+                        <div class="job-card" data-category="construction" data-aos="fade-up" data-aos-delay="200">
+                            <div class="job-header">
+                                <div>
+                                    <h3 class="job-title">Site Engineer</h3>
+                                    <span class="job-department">Construction</span>
+                                    <div class="job-tags">
+                                        <span class="job-tag location">Ahmedabad</span>
+                                        <span class="job-tag type">Full-time</span>
+                                        <span class="job-tag experience">3+ Years Experience</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="#apply" class="btn btn-gold" data-job="Site Engineer">
+                                        Apply Now
+                                    </a>
+                                </div>
+                            </div>
+                            <p class="job-description">
+                                Supervise construction activities, ensure quality control, and manage on-site operations. 
+                                Coordinate with contractors, maintain safety standards, and monitor project timelines. 
+                                Civil Engineering degree with site experience required.
+                            </p>
+                            <div class="job-actions">
+                                <div class="job-posted">
+                                    <i class="fas fa-calendar"></i> Posted: 1 week ago
+                                </div>
+                                <a href="#job-details-2" class="text-gold" data-bs-toggle="modal">
+                                    <i class="fas fa-info-circle me-1"></i> View Details
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Design Jobs -->
+                        <div class="job-card" data-category="design" data-aos="fade-up" data-aos-delay="300">
+                            <div class="job-header">
+                                <div>
+                                    <h3 class="job-title">Interior Designer</h3>
+                                    <span class="job-department">Design & Architecture</span>
+                                    <div class="job-tags">
+                                        <span class="job-tag location">Ahmedabad</span>
+                                        <span class="job-tag type">Full-time</span>
+                                        <span class="job-tag experience">5+ Years Experience</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="#apply" class="btn btn-gold" data-job="Interior Designer">
+                                        Apply Now
+                                    </a>
+                                </div>
+                            </div>
+                            <p class="job-description">
+                                Create innovative interior design concepts for residential and commercial projects. 
+                                Develop design presentations, select materials, and coordinate with clients and contractors. 
+                                Proficiency in AutoCAD, 3D Max, and design software required.
+                            </p>
+                            <div class="job-actions">
+                                <div class="job-posted">
+                                    <i class="fas fa-calendar"></i> Posted: 3 days ago
+                                </div>
+                                <a href="#job-details-3" class="text-gold" data-bs-toggle="modal">
+                                    <i class="fas fa-info-circle me-1"></i> View Details
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Operations Jobs -->
+                        <div class="job-card" data-category="operations" data-aos="fade-up" data-aos-delay="100">
+                            <div class="job-header">
+                                <div>
+                                    <h3 class="job-title">Project Manager</h3>
+                                    <span class="job-department">Operations</span>
+                                    <div class="job-tags">
+                                        <span class="job-tag location">Ahmedabad</span>
+                                        <span class="job-tag type">Full-time</span>
+                                        <span class="job-tag experience">10+ Years Experience</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="#apply" class="btn btn-gold" data-job="Project Manager">
+                                        Apply Now
+                                    </a>
+                                </div>
+                            </div>
+                            <p class="job-description">
+                                Oversee multiple construction projects from planning to completion. 
+                                Manage budgets, timelines, resources, and stakeholder communication. 
+                                PMP certification and large-scale project management experience preferred.
+                            </p>
+                            <div class="job-actions">
+                                <div class="job-posted">
+                                    <i class="fas fa-calendar"></i> Posted: 5 days ago
+                                </div>
+                                <a href="#job-details-4" class="text-gold" data-bs-toggle="modal">
+                                    <i class="fas fa-info-circle me-1"></i> View Details
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Finance Jobs -->
+                        <div class="job-card" data-category="finance" data-aos="fade-up" data-aos-delay="200">
+                            <div class="job-header">
+                                <div>
+                                    <h3 class="job-title">Legal Executive</h3>
+                                    <span class="job-department">Finance & Legal</span>
+                                    <div class="job-tags">
+                                        <span class="job-tag location">Ahmedabad</span>
+                                        <span class="job-tag type">Full-time</span>
+                                        <span class="job-tag experience">4+ Years Experience</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="#apply" class="btn btn-gold" data-job="Legal Executive">
+                                        Apply Now
+                                    </a>
+                                </div>
+                            </div>
+                            <p class="job-description">
+                                Handle legal documentation, contracts, and compliance for real estate projects. 
+                                Ensure RERA compliance, manage property registrations, and provide legal advice. 
+                                Law degree with real estate law experience required.
+                            </p>
+                            <div class="job-actions">
+                                <div class="job-posted">
+                                    <i class="fas fa-calendar"></i> Posted: 1 week ago
+                                </div>
+                                <a href="#job-details-5" class="text-gold" data-bs-toggle="modal">
+                                    <i class="fas fa-info-circle me-1"></i> View Details
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Sales Jobs -->
+                        <div class="job-card" data-category="sales" data-aos="fade-up" data-aos-delay="300">
+                            <div class="job-header">
+                                <div>
+                                    <h3 class="job-title">Marketing Executive</h3>
+                                    <span class="job-department">Sales & Marketing</span>
+                                    <div class="job-tags">
+                                        <span class="job-tag location">Ahmedabad</span>
+                                        <span class="job-tag type">Full-time</span>
+                                        <span class="job-tag experience">2+ Years Experience</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <a href="#apply" class="btn btn-gold" data-job="Marketing Executive">
+                                        Apply Now
+                                    </a>
+                                </div>
+                            </div>
+                            <p class="job-description">
+                                Develop and implement marketing strategies for real estate projects. 
+                                Manage digital marketing campaigns, content creation, and brand promotion. 
+                                Experience in real estate marketing and social media management preferred.
+                            </p>
+                            <div class="job-actions">
+                                <div class="job-posted">
+                                    <i class="fas fa-calendar"></i> Posted: 4 days ago
+                                </div>
+                                <a href="#job-details-6" class="text-gold" data-bs-toggle="modal">
+                                    <i class="fas fa-info-circle me-1"></i> View Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- No Jobs Message (Hidden by default) -->
+                <div class="row d-none" id="noJobsMessage">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="no-jobs">
+                            <div class="no-jobs-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <h3 class="mb-3">No Jobs Found</h3>
+                            <p class="text-muted mb-4">
+                                We couldn't find any jobs matching your search criteria. 
+                                Try different keywords or check back later for new openings.
+                            </p>
+                            <button class="btn btn-primary" id="resetFilters">
+                                Reset Filters
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Departments -->
+        <section class="departments-section">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <h3 class="section-title left mb-4" data-aos="fade-up">
+                            Our <span class="gold-text">Departments</span>
+                        </h3>
+                        <p class="text-muted" data-aos="fade-up" data-aos-delay="100">
+                            Explore opportunities across various departments
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                        <a href="#jobs" class="department-card" data-filter="sales">
+                            <div class="department-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h4 class="department-name">Sales & Marketing</h4>
+                            <p class="text-muted mb-0">
+                                Drive sales growth and build our brand presence
+                            </p>
+                            <span class="department-openings">2 Open Positions</span>
+                        </a>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                        <a href="#jobs" class="department-card" data-filter="construction">
+                            <div class="department-icon">
+                                <i class="fas fa-hard-hat"></i>
+                            </div>
+                            <h4 class="department-name">Construction</h4>
+                            <p class="text-muted mb-0">
+                                Build quality structures with innovative techniques
+                            </p>
+                            <span class="department-openings">1 Open Position</span>
+                        </a>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                        <a href="#jobs" class="department-card" data-filter="design">
+                            <div class="department-icon">
+                                <i class="fas fa-drafting-compass"></i>
+                            </div>
+                            <h4 class="department-name">Design & Architecture</h4>
+                            <p class="text-muted mb-0">
+                                Create innovative designs for modern living spaces
+                            </p>
+                            <span class="department-openings">1 Open Position</span>
+                        </a>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                        <a href="#jobs" class="department-card" data-filter="operations">
+                            <div class="department-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <h4 class="department-name">Operations</h4>
+                            <p class="text-muted mb-0">
+                                Ensure smooth project execution and delivery
+                            </p>
+                            <span class="department-openings">1 Open Position</span>
+                        </a>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                        <a href="#jobs" class="department-card" data-filter="finance">
+                            <div class="department-icon">
+                                <i class="fas fa-balance-scale"></i>
+                            </div>
+                            <h4 class="department-name">Finance & Legal</h4>
+                            <p class="text-muted mb-0">
+                                Manage financial operations and legal compliance
+                            </p>
+                            <span class="department-openings">1 Open Position</span>
+                        </a>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                        <a href="#jobs" class="department-card" data-filter="hr">
+                            <div class="department-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4 class="department-name">Human Resources</h4>
+                            <p class="text-muted mb-0">
+                                Nurture talent and build our organizational culture
+                            </p>
+                            <span class="department-openings">Coming Soon</span>
+                        </a>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                        <a href="#jobs" class="department-card" data-filter="customer">
+                            <div class="department-icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <h4 class="department-name">Customer Relations</h4>
+                            <p class="text-muted mb-0">
+                                Build lasting relationships with our clients
+                            </p>
+                            <span class="department-openings">Coming Soon</span>
+                        </a>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                        <a href="#jobs" class="department-card" data-filter="it">
+                            <div class="department-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <h4 class="department-name">IT & Technology</h4>
+                            <p class="text-muted mb-0">
+                                Drive digital transformation and innovation
+                            </p>
+                            <span class="department-openings">Coming Soon</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Application Process -->
+        <section class="process-section">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
+                            Hiring Process
+                        </span>
+                        <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
+                            How to <span class="gold-text">Apply</span>
+                        </h2>
+                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200">
+                            Our simple and transparent hiring process
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                        <div class="process-step">
+                            <div class="step-icon">
+                                <i class="fas fa-search"></i>
+                                <div class="step-number">1</div>
+                            </div>
+                            <h4 class="step-title">Find Your Role</h4>
+                            <p class="text-muted mb-0">
+                                Browse our current openings and find the perfect match for your skills and aspirations.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                        <div class="process-step">
+                            <div class="step-icon">
+                                <i class="fas fa-file-upload"></i>
+                                <div class="step-number">2</div>
+                            </div>
+                            <h4 class="step-title">Submit Application</h4>
+                            <p class="text-muted mb-0">
+                                Complete the online application form and upload your resume and supporting documents.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                        <div class="process-step">
+                            <div class="step-icon">
+                                <i class="fas fa-comments"></i>
+                                <div class="step-number">3</div>
+                            </div>
+                            <h4 class="step-title">Interview Process</h4>
+                            <p class="text-muted mb-0">
+                                Participate in interviews with our HR and department heads to discuss your qualifications.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                        <div class="process-step">
+                            <div class="step-icon">
+                                <i class="fas fa-handshake"></i>
+                                <div class="step-number">4</div>
+                            </div>
+                            <h4 class="step-title">Job Offer</h4>
+                            <p class="text-muted mb-0">
+                                Receive your offer letter and join our team to start your exciting career journey.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Employee Testimonials -->
+        <section class="testimonials-section">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
+                            Employee Stories
+                        </span>
+                        <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
+                            Life at <span class="gold-text">Naroda Group</span>
+                        </h2>
+                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200">
+                            Hear from our team members about their experiences
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="testimonial-card">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">
+                                "Working at Naroda Group has been transformative for my career. The opportunities for growth and the supportive team environment make it an exceptional workplace."
+                            </p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-img">
+                                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rahul Sharma">
+                                </div>
+                                <div class="author-info">
+                                    <h5 class="mb-1">Rahul Sharma</h5>
+                                    <p>Project Manager, 5 Years</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="testimonial-card">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">
+                                "The learning opportunities here are incredible. I've grown from a junior executive to heading a department in just 4 years. The company truly invests in its employees."
+                            </p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-img">
+                                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya Patel">
+                                </div>
+                                <div class="author-info">
+                                    <h5 class="mb-1">Priya Patel</h5>
+                                    <p>Sales Head, 4 Years</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="testimonial-card">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">
+                                "What I love most is the work-life balance. The management understands personal needs while ensuring professional growth. It's the perfect workplace."
+                            </p>
+                            <div class="testimonial-author">
+                                <div class="testimonial-img">
+                                    <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Amit Desai">
+                                </div>
+                                <div class="author-info">
+                                    <h5 class="mb-1">Amit Desai</h5>
+                                    <p>Site Engineer, 3 Years</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Apply Now CTA -->
+        <section class="apply-cta-section" id="apply">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 mx-auto">
+                        <h2 class="text-white mb-4" data-aos="fade-up">
+                            Ready to <span class="gold-text">Apply?</span>
+                        </h2>
+                        <p class="text-white-50 mb-5" data-aos="fade-up" data-aos-delay="100">
+                            Submit your application and take the first step toward an exciting career with Naroda Group.
+                        </p>
+                        
+                        <div class="application-form" data-aos="fade-up" data-aos-delay="200">
+                            <h3 class="mb-4">Application Form</h3>
+                            
+                            <form id="careerForm">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label">Full Name *</label>
+                                            <input type="text" class="form-control" id="fullName" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label">Email Address *</label>
+                                            <input type="email" class="form-control" id="email" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label">Phone Number *</label>
+                                            <input type="tel" class="form-control" id="phone" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label">Position Applying For *</label>
+                                            <select class="form-select" id="position" required>
+                                                <option value="">Select a position</option>
+                                                <option value="Senior Sales Manager">Senior Sales Manager</option>
+                                                <option value="Site Engineer">Site Engineer</option>
+                                                <option value="Interior Designer">Interior Designer</option>
+                                                <option value="Project Manager">Project Manager</option>
+                                                <option value="Legal Executive">Legal Executive</option>
+                                                <option value="Marketing Executive">Marketing Executive</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label">Total Experience (Years) *</label>
+                                            <select class="form-select" id="experience" required>
+                                                <option value="">Select experience</option>
+                                                <option value="0-2">0-2 Years</option>
+                                                <option value="2-5">2-5 Years</option>
+                                                <option value="5-8">5-8 Years</option>
+                                                <option value="8-10">8-10 Years</option>
+                                                <option value="10+">10+ Years</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label">Current CTC (₹)</label>
+                                            <input type="text" class="form-control" id="ctc" placeholder="e.g., 8,00,000">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label">Cover Letter</label>
+                                    <textarea class="form-control" id="coverLetter" rows="4" placeholder="Tell us why you're interested in this position..."></textarea>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label">Upload Resume *</label>
+                                    <div class="file-upload" id="resumeUpload">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                        <h5>Click to upload your resume</h5>
+                                        <p class="text-muted">Supported formats: PDF, DOC, DOCX (Max 5MB)</p>
+                                        <input type="file" class="file-input" id="resume" accept=".pdf,.doc,.docx" required>
+                                    </div>
+                                    <div class="mt-2" id="fileName"></div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label">Additional Documents</label>
+                                    <div class="file-upload" id="additionalUpload">
+                                        <i class="fas fa-file-upload"></i>
+                                        <h5>Upload additional documents (optional)</h5>
+                                        <p class="text-muted">Portfolio, certificates, etc.</p>
+                                        <input type="file" class="file-input" id="additionalFiles" multiple>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group form-check mb-4">
+                                    <input type="checkbox" class="form-check-input" id="agreeTerms" required>
+                                    <label class="form-check-label" for="agreeTerms">
+                                        I agree to the <a href="privacy.html" class="text-gold">privacy policy</a> and consent to being contacted about this application
+                                    </label>
+                                </div>
+                                
+                                <div class="d-flex justify-content-between">
+                                    <button type="reset" class="btn btn-outline-primary">
+                                        <i class="fas fa-redo me-2"></i> Reset Form
+                                    </button>
+                                    <button type="submit" class="btn btn-gold">
+                                        <i class="fas fa-paper-plane me-2"></i> Submit Application
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <div class="mb-4">
+                        <a class="navbar-brand text-white" href="index.html">
+                            <div class="logo-icon d-inline-flex align-items-center justify-content-center me-2">NG</div>
+                            Naroda <span class="gold-text">Group</span>
+                        </a>
+                    </div>
+                    <p class="mb-4">
+                        Creating landmark properties that redefine excellence. From premium commercial spaces 
+                        to luxury residential living, we build dreams with quality and commitment.
+                    </p>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="projects.html"><i class="fas fa-chevron-right"></i> Projects</a></li>
+                        <li><a href="properties.html"><i class="fas fa-chevron-right"></i> Properties</a></li>
+                        <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="footer-title">Our Projects</h3>
+                    <a href="projects-landmark.html" class="project-mini-card">
+                        <h6 class="text-white mb-1">Naroda Landmark</h6>
+                        <p class="small text-muted mb-0">Premium Commercial Spaces</p>
+                    </a>
+                    <a href="projects-irish.html" class="project-mini-card">
+                        <h6 class="text-white mb-1">Naroda Irish</h6>
+                        <p class="small text-muted mb-0">Luxury Residential Living</p>
+                    </a>
+                    <a href="projects.html" class="project-mini-card">
+                        <h6 class="text-white mb-1">View All Projects</h6>
+                        <p class="small text-muted mb-0">Explore our portfolio</p>
+                    </a>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="footer-title">Contact Info</h3>
+                    <div class="contact-info">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h6 class="text-white mb-1">Phone Number</h6>
+                            <p class="mb-0">+91 98765 43210</p>
+                            <small class="text-muted">Mon - Sat: 10 AM - 7 PM</small>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h6 class="text-white mb-1">Email Address</h6>
+                            <p class="mb-0">info@narodagroup.com</p>
+                            <small class="text-muted">We reply within 24 hours</small>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h6 class="text-white mb-1">Office Address</h6>
+                            <p class="mb-0">Naroda - Bhat Road</p>
+                            <small class="text-muted">Ahmedabad, Gujarat 382330</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="mb-0">&copy; 2025 Naroda Group. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="privacy.html" class="text-muted me-3">Privacy Policy</a>
+                        <a href="terms.html" class="text-muted me-3">Terms of Service</a>
+                        <a href="rera.html" class="text-muted">RERA Registration</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Job Detail Modals -->
+    <!-- Senior Sales Manager Modal -->
+    <div class="modal fade" id="job-details-1" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title">Senior Sales Manager - Job Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <h4 class="mb-3">Senior Sales Manager</h4>
+                    <div class="job-tags mb-4">
+                        <span class="job-tag location">Ahmedabad</span>
+                        <span class="job-tag type">Full-time</span>
+                        <span class="job-tag experience">8+ Years Experience</span>
+                    </div>
+                    
+                    <h5>Job Description</h5>
+                    <p>We are looking for an experienced Senior Sales Manager to lead our sales team and drive revenue growth for our premium residential and commercial projects.</p>
+                    
+                    <h5>Responsibilities</h5>
+                    <ul>
+                        <li>Develop and implement sales strategies to achieve business targets</li>
+                        <li>Lead, mentor, and manage the sales team</li>
+                        <li>Build and maintain relationships with key clients and stakeholders</li>
+                        <li>Monitor market trends and competitor activities</li>
+                        <li>Prepare sales reports and forecasts for management</li>
+                        <li>Collaborate with marketing team on promotional activities</li>
+                    </ul>
+                    
+                    <h5>Requirements</h5>
+                    <ul>
+                        <li>MBA in Marketing or related field (preferred)</li>
+                        <li>8+ years of sales experience in real estate</li>
+                        <li>Proven track record of achieving sales targets</li>
+                        <li>Strong leadership and team management skills</li>
+                        <li>Excellent communication and negotiation skills</li>
+                        <li>Knowledge of Ahmedabad real estate market</li>
+                    </ul>
+                    
+                    <h5>What We Offer</h5>
+                    <ul>
+                        <li>Competitive salary with attractive commission structure</li>
+                        <li>Performance bonuses and incentives</li>
+                        <li>Health insurance and other benefits</li>
+                        <li>Opportunities for career advancement</li>
+                        <li>Professional development programs</li>
+                    </ul>
+                </div>
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="#apply" class="btn btn-gold" data-bs-dismiss="modal" data-job="Senior Sales Manager">Apply Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Additional modals for other jobs would follow similar structure -->
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // Wait for page to load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize AOS
+            AOS.init({
+                duration: 1000,
+                once: false,
+                offset: 100
+            });
+            
+            // Remove preloader
+            const preloader = document.getElementById('preloader');
+            setTimeout(() => {
+                preloader.style.opacity = '0';
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 500);
+            }, 1000);
+            
+            // Initialize back to top button
+            function initBackToTop() {
+                const backToTop = document.querySelector('.back-to-top');
+                
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 300) {
+                        backToTop.classList.add('active');
+                    } else {
+                        backToTop.classList.remove('active');
+                    }
+                });
+                
+                backToTop.addEventListener('click', () => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+            
+            // Initialize navbar scroll effect
+            function initNavbarScroll() {
+                const navbar = document.querySelector('.navbar');
+                
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 50) {
+                        navbar.classList.add('scrolled');
+                    } else {
+                        navbar.classList.remove('scrolled');
+                    }
+                });
+            }
+            
+            // Initialize toast notifications
+            function initToastSystem() {
+                window.showToast = function(message, type = 'success') {
+                    const toastContainer = document.querySelector('.toast-container');
+                    const toast = document.createElement('div');
+                    toast.className = `toast toast-${type}`;
+                    toast.innerHTML = `
+                        <div class="d-flex align-items-center">
+                            <i class="fas ${type === 'success' ? 'fa-check-circle text-success' : 'fa-exclamation-circle text-danger'} me-3"></i>
+                            <div>
+                                <p class="mb-0 fw-500">${message}</p>
+                            </div>
+                            <button type="button" class="btn-close ms-auto" onclick="this.parentElement.parentElement.remove()"></button>
+                        </div>
+                    `;
+                    
+                    toastContainer.appendChild(toast);
+                    
+                    setTimeout(() => toast.classList.add('show'), 10);
+                    
+                    setTimeout(() => {
+                        toast.classList.remove('show');
+                        setTimeout(() => toast.remove(), 300);
+                    }, 5000);
+                };
+            }
+            
+            // Initialize mobile navigation
+            function initMobileNav() {
+                // Update active nav item based on current page
+                const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+                document.querySelectorAll('.mobile-nav-item').forEach(item => {
+                    const href = item.getAttribute('href');
+                    if (href === currentPage) {
+                        item.classList.add('active');
+                    } else {
+                        item.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Job Search and Filter Functionality
+            function initJobFilters() {
+                const filterButtons = document.querySelectorAll('.filter-btn');
+                const jobCards = document.querySelectorAll('.job-card');
+                const searchInput = document.getElementById('jobSearch');
+                const searchButton = document.getElementById('searchJobs');
+                const resetButton = document.getElementById('resetFilters');
+                const noJobsMessage = document.getElementById('noJobsMessage');
+                
+                // Filter by category
+                filterButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        // Update active button
+                        filterButtons.forEach(btn => btn.classList.remove('active'));
+                        this.classList.add('active');
+                        
+                        const filter = this.getAttribute('data-filter');
+                        filterJobs(filter, searchInput.value);
+                    });
+                });
+                
+                // Search functionality
+                function searchJobs() {
+                    const searchTerm = searchInput.value.toLowerCase().trim();
+                    const activeFilter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
+                    filterJobs(activeFilter, searchTerm);
+                }
+                
+                searchButton.addEventListener('click', searchJobs);
+                searchInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        searchJobs();
+                    }
+                });
+                
+                // Reset filters
+                if (resetButton) {
+                    resetButton.addEventListener('click', function() {
+                        searchInput.value = '';
+                        filterButtons.forEach(btn => {
+                            btn.classList.remove('active');
+                            if (btn.getAttribute('data-filter') === 'all') {
+                                btn.classList.add('active');
+                            }
+                        });
+                        filterJobs('all', '');
+                    });
+                }
+                
+                // Filter function
+                function filterJobs(category, searchTerm) {
+                    let visibleJobs = 0;
+                    
+                    jobCards.forEach(card => {
+                        const cardCategory = card.getAttribute('data-category');
+                        const title = card.querySelector('.job-title').textContent.toLowerCase();
+                        const description = card.querySelector('.job-description').textContent.toLowerCase();
+                        const department = card.querySelector('.job-department').textContent.toLowerCase();
+                        
+                        const matchesCategory = category === 'all' || cardCategory === category;
+                        const matchesSearch = searchTerm === '' || 
+                                            title.includes(searchTerm) || 
+                                            description.includes(searchTerm) ||
+                                            department.includes(searchTerm);
+                        
+                        if (matchesCategory && matchesSearch) {
+                            card.style.display = 'block';
+                            visibleJobs++;
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                    
+                    // Show/hide no jobs message
+                    if (visibleJobs === 0) {
+                        noJobsMessage.classList.remove('d-none');
+                    } else {
+                        noJobsMessage.classList.add('d-none');
+                    }
+                }
+                
+                // Department card filtering
+                document.querySelectorAll('.department-card').forEach(card => {
+                    card.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const filter = this.getAttribute('data-filter');
+                        
+                        // Update active filter button
+                        filterButtons.forEach(btn => {
+                            btn.classList.remove('active');
+                            if (btn.getAttribute('data-filter') === filter) {
+                                btn.classList.add('active');
+                            }
+                        });
+                        
+                        filterJobs(filter, '');
+                        document.getElementById('jobs').scrollIntoView({ behavior: 'smooth' });
+                    });
+                });
+            }
+            
+            // Application Form Functionality
+            function initApplicationForm() {
+                const form = document.getElementById('careerForm');
+                const resumeUpload = document.getElementById('resumeUpload');
+                const resumeInput = document.getElementById('resume');
+                const additionalUpload = document.getElementById('additionalUpload');
+                const additionalInput = document.getElementById('additionalFiles');
+                const fileName = document.getElementById('fileName');
+                
+                // File upload display
+                resumeUpload.addEventListener('click', function() {
+                    resumeInput.click();
+                });
+                
+                resumeInput.addEventListener('change', function() {
+                    if (this.files.length > 0) {
+                        fileName.innerHTML = `<span class="text-success"><i class="fas fa-check-circle me-2"></i>${this.files[0].name}</span>`;
+                    }
+                });
+                
+                additionalUpload.addEventListener('click', function() {
+                    additionalInput.click();
+                });
+                
+                // Apply Now buttons populate position field
+                document.querySelectorAll('a[data-job]').forEach(button => {
+                    button.addEventListener('click', function() {
+                        const jobTitle = this.getAttribute('data-job');
+                        const positionSelect = document.getElementById('position');
+                        
+                        // Scroll to form
+                        document.getElementById('apply').scrollIntoView({ behavior: 'smooth' });
+                        
+                        // Set position in dropdown
+                        setTimeout(() => {
+                            for (let i = 0; i < positionSelect.options.length; i++) {
+                                if (positionSelect.options[i].value === jobTitle) {
+                                    positionSelect.selectedIndex = i;
+                                    break;
+                                }
+                            }
+                        }, 500);
+                    });
+                });
+                
+                // Form submission
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Validate form
+                    if (!form.checkValidity()) {
+                        showToast('Please fill all required fields correctly', 'warning');
+                        return;
+                    }
+                    
+                    // Show loading
+                    showLoading();
+                    
+                    // Simulate form submission
+                    setTimeout(() => {
+                        hideLoading();
+                        showToast('Application submitted successfully! We will contact you soon.', 'success');
+                        form.reset();
+                        fileName.innerHTML = '';
+                        
+                        // Scroll to top
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }, 2000);
+                });
+            }
+            
+            // Smooth scroll for navigation
+            function initSmoothScroll() {
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        if (this.getAttribute('href') === '#') return;
+                        
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href');
+                        const targetElement = document.querySelector(targetId);
+                        
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 100,
+                                behavior: 'smooth'
+                            });
+                        }
+                    });
+                });
+            }
+            
+            // Initialize all functions
+            initBackToTop();
+            initNavbarScroll();
+            initToastSystem();
+            initMobileNav();
+            initJobFilters();
+            initApplicationForm();
+            initSmoothScroll();
+            
+            // Show welcome message
+            setTimeout(() => {
+                showToast('Explore exciting career opportunities with Naroda Group!', 'success');
+            }, 1500);
+        });
+        
+        // Loading overlay functions
+        window.showLoading = function() {
+            document.querySelector('.loading-overlay').classList.add('active');
+        };
+        
+        window.hideLoading = function() {
+            document.querySelector('.loading-overlay').classList.remove('active');
+        };
+    </script>
+</body>
+</html>

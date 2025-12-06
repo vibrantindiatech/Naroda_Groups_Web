@@ -1,0 +1,2252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naroda Group | Premium Real Estate Developer</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Naroda Group - Ahmedabad's premier real estate developer offering premium commercial spaces at Naroda Landmark and luxury residential apartments at Naroda Irish.">
+    <meta name="keywords" content="real estate, Ahmedabad, commercial property, residential apartments, premium homes, office spaces, Naroda Group, Naroda Landmark, Naroda Irish">
+    <meta name="author" content="Naroda Group">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Naroda Group | Premium Real Estate Projects">
+    <meta property="og:description" content="Discover premium commercial spaces at Naroda Landmark and luxury residential living at Naroda Irish.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80">
+    <meta property="og:url" content="https://narodagroup.com">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Naroda Group">
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Naroda Group | Premium Real Estate Developer">
+    <meta name="twitter:description" content="Premium commercial and residential real estate projects in Ahmedabad.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://narodagroup.com">
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0a2a4a">
+    <meta name="msapplication-TileColor" content="#0a2a4a">
+    <meta name="theme-color" content="#0a2a4a">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    
+    <style>
+        /* ===== CSS Variables ===== */
+        :root {
+            --primary-color: #0a2a4a;
+            --primary-dark: #071a2e;
+            --primary-light: #0e3a64;
+            --secondary-color: #c9a96e;
+            --secondary-light: #d4b87a;
+            --secondary-dark: #b89440;
+            --accent-color: #2e8b57;
+            --accent-light: #3cb371;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --gray-color: #6c757d;
+            --light-gray: #e9ecef;
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+            --shadow-hover: 0 25px 60px rgba(0, 0, 0, 0.2);
+            --border-radius: 16px;
+            --border-radius-lg: 24px;
+            --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            --gradient-secondary: linear-gradient(135deg, var(--secondary-color), var(--secondary-light));
+            --gradient-accent: linear-gradient(135deg, var(--accent-color), var(--accent-light));
+        }
+
+        /* ===== Base Styles ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark-color);
+            overflow-x: hidden;
+            line-height: 1.7;
+            font-weight: 400;
+            background-color: #ffffff;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            max-width: 1320px;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 0;
+            }
+        }
+
+        /* ===== Utility Classes ===== */
+        .gold-text {
+            color: var(--secondary-color);
+        }
+
+        .emerald-text {
+            color: var(--accent-color);
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-secondary);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .badge {
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .bg-gradient-secondary {
+            background: var(--gradient-secondary) !important;
+        }
+
+        /* ===== Preloader ===== */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loader {
+            width: 80px;
+            height: 80px;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .loader-inner {
+            width: 100%;
+            height: 100%;
+            border: 4px solid rgba(201, 169, 110, 0.2);
+            border-radius: 50%;
+            border-top-color: var(--secondary-color);
+            animation: spin 1.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .preloader-text {
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        /* ===== Navigation ===== */
+        .navbar {
+            padding: 1.2rem 0;
+            background: rgba(10, 42, 74, 0.95);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+            z-index: 1000;
+        }
+
+        .navbar.scrolled {
+            padding: 0.8rem 0;
+            box-shadow: var(--shadow);
+            background: rgba(10, 42, 74, 0.98);
+        }
+
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-secondary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            color: var(--primary-color);
+            font-weight: 900;
+            font-size: 1.5rem;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            margin: 0 6px;
+            position: relative;
+            padding: 8px 16px !important;
+            border-radius: 30px;
+            transition: var(--transition);
+        }
+
+        .nav-link:before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 100%;
+            background: rgba(201, 169, 110, 0.1);
+            border-radius: 30px;
+            top: 0;
+            left: 0;
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .nav-link:hover:before,
+        .nav-link.active:before {
+            width: 100%;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--secondary-color) !important;
+        }
+
+        .dropdown-menu {
+            border: none;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 10px 0;
+            margin-top: 10px;
+        }
+
+        .dropdown-item {
+            padding: 10px 20px;
+            transition: var(--transition);
+        }
+
+        .dropdown-item:hover {
+            background: rgba(201, 169, 110, 0.1);
+            color: var(--secondary-color);
+        }
+
+        /* ===== Buttons ===== */
+        .btn {
+            padding: 14px 32px;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: var(--transition);
+            border: none;
+            position: relative;
+            overflow: hidden;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .btn:hover:before {
+            left: 100%;
+        }
+
+        .btn-gold {
+            background: var(--gradient-secondary);
+            color: var(--primary-color);
+            box-shadow: 0 10px 25px rgba(201, 169, 110, 0.3);
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(201, 169, 110, 0.4);
+            color: var(--primary-color);
+        }
+
+        .btn-outline-light {
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            background: transparent;
+        }
+
+        .btn-outline-light:hover {
+            background: white;
+            color: var(--primary-color);
+            border-color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-emerald {
+            background: var(--gradient-accent);
+            color: white;
+            box-shadow: 0 10px 25px rgba(46, 139, 87, 0.3);
+        }
+
+        .btn-emerald:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(46, 139, 87, 0.4);
+            color: white;
+        }
+
+        .btn-lg {
+            padding: 18px 40px;
+            font-size: 1.1rem;
+        }
+
+        /* ===== Hero Section ===== */
+        .hero-section {
+            min-height: 100vh;
+            background: linear-gradient(rgba(10, 42, 74, 0.95), rgba(10, 42, 74, 0.85)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 750px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(201, 169, 110, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(201, 169, 110, 0.3);
+            padding: 10px 24px;
+            border-radius: 30px;
+            margin-bottom: 2.5rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .hero-badge i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        /* ===== Features Section ===== */
+        .features-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 50px 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            height: 100%;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-secondary);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+        }
+
+        .feature-card:hover:before {
+            transform: scaleX(1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .feature-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, rgba(201, 169, 110, 0.1) 0%, rgba(201, 169, 110, 0.05) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            color: var(--secondary-color);
+            font-size: 40px;
+            position: relative;
+        }
+
+        /* ===== Projects Section ===== */
+        .projects-section {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .project-card {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            height: 100%;
+            background: white;
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-20px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .project-image {
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.1);
+        }
+
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 0%, rgba(10, 42, 74, 0.8) 100%);
+            display: flex;
+            align-items: flex-end;
+            padding: 30px;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .project-badge {
+            display: inline-flex;
+            align-items: center;
+            background: var(--gradient-secondary);
+            color: var(--primary-color);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 14px;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 2;
+        }
+
+        .project-badge.emerald {
+            background: var(--gradient-accent);
+            color: white;
+        }
+
+        .project-content {
+            padding: 35px;
+        }
+
+        /* ===== Stats Section ===== */
+        .stats-section {
+            padding: 100px 0;
+            background: var(--gradient-primary);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stat-number {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, var(--secondary-color), #ffd166);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+        }
+
+        /* ===== Testimonials ===== */
+        .testimonials-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 50px 40px;
+            box-shadow: var(--shadow);
+            position: relative;
+            height: 100%;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        /* ===== CTA Section ===== */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* ===== Footer ===== */
+        .footer {
+            background: var(--primary-dark);
+            color: #b0b7c3;
+            padding-top: 80px;
+        }
+
+        .footer-title {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--gradient-secondary);
+            border-radius: 2px;
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 30px 0;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        /* ===== Back to Top ===== */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-secondary);
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            box-shadow: 0 10px 30px rgba(201, 169, 110, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(201, 169, 110, 0.4);
+        }
+
+        /* ===== WhatsApp Float ===== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 99;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
+        }
+
+        /* ===== Mobile Bottom Nav ===== */
+        .mobile-bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 15px 0;
+            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-bottom-nav {
+                display: flex;
+            }
+            
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .stat-number {
+                font-size: 3rem;
+            }
+            
+            .back-to-top {
+                bottom: 80px;
+            }
+        }
+
+        /* ===== Toast Notifications ===== */
+        .toast-container {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            z-index: 9999;
+        }
+
+        .toast {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            box-shadow: var(--shadow);
+            margin-bottom: 15px;
+            transform: translateX(100%);
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            max-width: 350px;
+        }
+
+        .toast.show {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        /* ===== Property Listing Styles ===== */
+        .property-card {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            height: 100%;
+            background: white;
+            position: relative;
+        }
+
+        .property-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: var(--gradient-secondary);
+            color: var(--primary-color);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 12px;
+            z-index: 2;
+        }
+
+        .property-features {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 0;
+            border-top: 1px solid var(--light-gray);
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .property-feature {
+            text-align: center;
+        }
+
+        .property-feature i {
+            display: block;
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        /* ===== Loading Overlay ===== */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            display: none;
+        }
+
+        .loading-overlay.active {
+            display: flex;
+        }
+
+        /* ===== Additional Styles ===== */
+        .hero-image-container {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+        }
+        
+        .avatar-group {
+            display: flex;
+            align-items: center;
+        }
+        
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 3px solid white;
+            margin-right: -10px;
+            object-fit: cover;
+        }
+        
+        .avatar-more {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--gradient-secondary);
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: 3px solid white;
+        }
+        
+        .stat-icon-wrapper {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .stat-icon-inner {
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+        
+        .properties-section {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .property-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .property-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .property-card:hover .property-image img {
+            transform: scale(1.1);
+        }
+        
+        .blog-section {
+            padding: 100px 0;
+            background: #f9fafb;
+        }
+        
+        .blog-card {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            height: 100%;
+            background: white;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .blog-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .blog-card:hover .blog-image img {
+            transform: scale(1.1);
+        }
+        
+        .project-mini-card {
+            display: block;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+        
+        .project-mini-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .contact-info {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+        
+        .contact-info i {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        
+        .social-link:hover {
+            background: var(--gradient-secondary);
+            transform: translateY(-3px);
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #b0b7c3;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+        
+        .mobile-nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--dark-color);
+            padding: 5px 10px;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+        
+        .mobile-nav-item.active {
+            color: var(--secondary-color);
+            background: rgba(201, 169, 110, 0.1);
+        }
+        
+        .mobile-nav-item i {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .mobile-nav-item span {
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .video-play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 2;
+        }
+        
+        .video-play-btn:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+        
+        .hero-stats-card {
+            position: absolute;
+            bottom: -30px;
+            right: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            max-width: 250px;
+            z-index: 2;
+        }
+        
+        /* ===== Responsive Adjustments ===== */
+        @media (max-width: 1200px) {
+            .hero-title {
+                font-size: 3.5rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .feature-card {
+                padding: 40px 25px;
+            }
+            
+            .project-content {
+                padding: 25px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                padding: 12px 24px;
+                font-size: 0.9rem;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader">
+            <div class="loader-inner"></div>
+        </div>
+        <div class="preloader-text">NARODA GROUP</div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay">
+        <div class="spinner-border" style="color: var(--secondary-color);" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Toast Container -->
+    <div class="toast-container"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <div class="logo-icon">NG</div>
+                <span>Naroda <span class="gold-text">Group</span></span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" data-bs-toggle="dropdown">
+                            Projects
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="projects-landmark.html">Naroda Landmark</a>
+                            <a class="dropdown-item" href="projects-irish.html">Naroda Irish</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="projects.html">All Projects</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="propertiesDropdown" data-bs-toggle="dropdown">
+                            Properties
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="properties.html">Buy</a>
+                            <a class="dropdown-item" href="properties-rent.html">Rent</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="property-detail.html">Property Details</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" data-bs-toggle="dropdown">
+                            More
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="blog.html">Blog</a>
+                            <a class="dropdown-item" href="news.html">News</a>
+                            <a class="dropdown-item" href="careers.html">Careers</a>
+                            <a class="dropdown-item" href="team.html">Our Team</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="faq.html">FAQ</a>
+                            <a class="dropdown-item" href="contact.html">Contact</a>
+                        </div>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center ms-lg-3 mt-3 mt-lg-0">
+                    <div class="dropdown">
+                        <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown">
+                            <i class="fas fa-globe me-1"></i> EN
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">English</a>
+                            <a class="dropdown-item" href="#">Hindi</a>
+                            <a class="dropdown-item" href="#">Gujarati</a>
+                        </div>
+                    </div>
+                    <a href="login.html" class="btn btn-outline-light ms-3">
+                        <i class="fas fa-user me-2"></i> Login
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Bottom Navigation -->
+    <div class="mobile-bottom-nav">
+        <a href="index.html" class="mobile-nav-item active">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="projects.html" class="mobile-nav-item">
+            <i class="fas fa-building"></i>
+            <span>Projects</span>
+        </a>
+        <a href="properties.html" class="mobile-nav-item">
+            <i class="fas fa-search"></i>
+            <span>Search</span>
+        </a>
+        <a href="contact.html" class="mobile-nav-item">
+            <i class="fas fa-phone"></i>
+            <span>Contact</span>
+        </a>
+        <a href="login.html" class="mobile-nav-item">
+            <i class="fas fa-user"></i>
+            <span>Account</span>
+        </a>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="row align-items-center min-vh-100 py-5">
+                    <div class="col-lg-7 col-xl-6" data-aos="fade-right" data-aos-duration="1000">
+                        <div class="hero-content">
+                            <div class="hero-badge">
+                                <i class="fas fa-award"></i> Ahmedabad's Premier Real Estate Developer
+                            </div>
+                            
+                            <h1 class="hero-title">
+                                Build Your <span class="gold-text">Dream Space</span> With Excellence
+                            </h1>
+                            
+                            <p class="hero-subtitle">
+                                Discover premium commercial spaces at <strong class="gold-text">Naroda Landmark</strong> 
+                                and luxury residential living at <strong class="emerald-text">Naroda Irish</strong>. 
+                                15+ years of excellence in creating landmark properties.
+                            </p>
+                            
+                            <div class="d-flex flex-wrap gap-3">
+                                <a href="projects-landmark.html" class="btn btn-gold btn-lg">
+                                    <i class="fas fa-building me-2"></i> Naroda Landmark
+                                </a>
+                                <a href="projects-irish.html" class="btn btn-outline-light btn-lg">
+                                    <i class="fas fa-home me-2"></i> Naroda Irish
+                                </a>
+                                <a href="contact.html" class="btn btn-emerald btn-lg">
+                                    <i class="fas fa-phone me-2"></i> Get Quote
+                                </a>
+                            </div>
+                            
+                            <div class="mt-5">
+                                <div class="d-flex align-items-center flex-wrap">
+                                    <div class="d-flex me-4 mb-3 mb-md-0">
+                                        <div class="avatar-group">
+                                            <img src="https://randomuser.me/api/portraits/men/32.jpg" class="avatar" alt="Customer">
+                                            <img src="https://randomuser.me/api/portraits/women/44.jpg" class="avatar" alt="Customer">
+                                            <img src="https://randomuser.me/api/portraits/men/22.jpg" class="avatar" alt="Customer">
+                                            <div class="avatar-more">+2.5K</div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p class="mb-1"><strong>2,500+ Happy Customers</strong></p>
+                                        <div class="d-flex align-items-center">
+                                            <div class="text-warning me-2">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star-half-alt"></i>
+                                            </div>
+                                            <span>4.8/5 Rating</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-5 col-xl-6 mt-5 mt-lg-0" data-aos="fade-left" data-aos-duration="1000">
+                        <div class="hero-image-container">
+                            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80" 
+                                 alt="Premium Interior" class="hero-image">
+                            <div class="video-play-btn" id="videoPlayBtn">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            
+                            <div class="hero-stats-card">
+                                <div class="d-flex align-items-center">
+                                    <div class="stat-icon-wrapper me-3">
+                                        <div class="stat-icon-inner">
+                                            <i class="fas fa-users"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h3 class="mb-0 stat-counter" data-count="2500">0</h3>
+                                        <p class="text-muted mb-0">Happy Families</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
+                            Why Choose Us
+                        </span>
+                        <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
+                            The Naroda Group <span class="gold-text">Advantage</span>
+                        </h2>
+                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200">
+                            Experience excellence in real estate with unmatched quality, transparency, and customer satisfaction
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <h4 class="mb-3">Premium Infrastructure</h4>
+                            <p class="text-muted">
+                                World-class commercial and residential spaces with modern amenities and smart technology integration.
+                            </p>
+                            <div class="feature-link mt-3">
+                                <a href="projects.html" class="text-gold">Learn More <i class="fas fa-arrow-right ms-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h4 class="mb-3">Prime Locations</h4>
+                            <p class="text-muted">
+                                Strategically located in Ahmedabad's fastest-growing corridor with excellent connectivity.
+                            </p>
+                            <div class="feature-link mt-3">
+                                <a href="projects.html" class="text-gold">View Locations <i class="fas fa-arrow-right ms-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h4 class="mb-3">High ROI Potential</h4>
+                            <p class="text-muted">
+                                Excellent investment opportunity with strong appreciation and guaranteed returns.
+                            </p>
+                            <div class="feature-link mt-3">
+                                <a href="calculator.html" class="text-gold">Calculate ROI <i class="fas fa-arrow-right ms-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h4 class="mb-3">Trusted Developer</h4>
+                            <p class="text-muted">
+                                15+ years of excellence with RERA approval and transparent documentation.
+                            </p>
+                            <div class="feature-link mt-3">
+                                <a href="about.html" class="text-gold">View Credentials <i class="fas fa-arrow-right ms-1"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Preview -->
+        <section class="projects-section">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
+                            Featured Projects
+                        </span>
+                        <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
+                            Our <span class="gold-text">Signature Projects</span>
+                        </h2>
+                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200">
+                            Discover our landmark developments designed to exceed expectations
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-md-6" data-aos="fade-right" data-aos-duration="1000">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                                     alt="Naroda Landmark">
+                                <div class="project-badge">
+                                    <i class="fas fa-building me-2"></i> Premium Commercial
+                                </div>
+                                <div class="project-overlay">
+                                    <a href="projects-landmark.html" class="btn btn-gold">Explore Project</a>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="mb-3">Naroda Landmark</h3>
+                                <p class="text-muted mb-4">
+                                    State-of-the-art commercial complex with Grade A specifications, designed for modern businesses.
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h4 class="gold-text mb-0">₹ 12,500/sq.ft</h4>
+                                        <small class="text-muted">Starting Price</small>
+                                    </div>
+                                    <a href="projects-landmark.html" class="btn btn-gold">
+                                        View Details <i class="fas fa-arrow-right ms-2"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6" data-aos="fade-left" data-aos-duration="1000">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?ixlib=rb-4.0.3&auto=format&fit=crop&w=2065&q=80" 
+                                     alt="Naroda Irish">
+                                <div class="project-badge emerald">
+                                    <i class="fas fa-home me-2"></i> Luxury Residential
+                                </div>
+                                <div class="project-overlay">
+                                    <a href="projects-irish.html" class="btn btn-emerald">Explore Project</a>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="mb-3">Naroda Irish</h3>
+                                <p class="text-muted mb-4">
+                                    Premium apartments with thoughtfully designed spaces and world-class amenities.
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h4 class="emerald-text mb-0">₹ 8,500/sq.ft</h4>
+                                        <small class="text-muted">Starting Price</small>
+                                    </div>
+                                    <a href="projects-irish.html" class="btn btn-emerald">
+                                        View Details <i class="fas fa-arrow-right ms-2"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-5" data-aos="fade-up">
+                    <a href="projects.html" class="btn btn-outline-primary btn-lg">
+                        <i class="fas fa-building me-2"></i> View All Projects
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
+                            Our Journey
+                        </span>
+                        <h2 class="text-white" data-aos="fade-up" data-aos-delay="100">
+                            Building Trust Through <span class="gold-text">Excellence</span>
+                        </h2>
+                        <p class="text-white-50" data-aos="fade-up" data-aos-delay="200">
+                            Numbers that reflect our commitment to quality and customer satisfaction
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="stat-item">
+                            <div class="stat-icon">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <div class="stat-number">
+                                <span class="stat-counter" data-count="15">0</span>+
+                            </div>
+                            <p class="stat-text">Years of Excellence</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="stat-item">
+                            <div class="stat-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stat-number">
+                                <span class="stat-counter" data-count="2500">0</span>+
+                            </div>
+                            <p class="stat-text">Happy Families</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="300">
+                        <div class="stat-item">
+                            <div class="stat-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <div class="stat-number">
+                                <span class="stat-counter" data-count="50">0</span>+
+                            </div>
+                            <p class="stat-text">Projects Delivered</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="400">
+                        <div class="stat-item">
+                            <div class="stat-icon">
+                                <i class="fas fa-expand-arrows-alt"></i>
+                            </div>
+                            <div class="stat-number">
+                                <span class="stat-counter" data-count="5">0</span>M+
+                            </div>
+                            <p class="stat-text">Sq. Ft. Developed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Properties For Sale -->
+        <section class="properties-section">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
+                            Featured Properties
+                        </span>
+                        <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
+                            Premium <span class="gold-text">Properties</span> Available
+                        </h2>
+                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200">
+                            Explore our curated selection of premium properties
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="property-card">
+                            <div class="property-image">
+                                <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                                     alt="Property 1">
+                                <div class="property-badge">For Sale</div>
+                            </div>
+                            <div class="property-content p-4">
+                                <h4 class="mb-2">3 BHK Luxury Apartment</h4>
+                                <p class="text-muted mb-3"><i class="fas fa-map-marker-alt text-secondary me-2"></i> Naroda Irish, Ahmedabad</p>
+                                <div class="property-features">
+                                    <div class="property-feature">
+                                        <i class="fas fa-bed"></i>
+                                        <span>3 Beds</span>
+                                    </div>
+                                    <div class="property-feature">
+                                        <i class="fas fa-bath"></i>
+                                        <span>2 Baths</span>
+                                    </div>
+                                    <div class="property-feature">
+                                        <i class="fas fa-vector-square"></i>
+                                        <span>1500 sqft</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-4">
+                                    <div>
+                                        <h4 class="gold-text mb-0">₹ 85 Lakhs</h4>
+                                    </div>
+                                    <a href="property-detail.html" class="btn btn-gold btn-sm">
+                                        View Details
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="property-card">
+                            <div class="property-image">
+                                <img src="https://images.unsplash.com/photo-1558036117-15e82a2c9a9a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                                     alt="Property 2">
+                                <div class="property-badge">For Sale</div>
+                            </div>
+                            <div class="property-content p-4">
+                                <h4 class="mb-2">Commercial Office Space</h4>
+                                <p class="text-muted mb-3"><i class="fas fa-map-marker-alt text-secondary me-2"></i> Naroda Landmark, Ahmedabad</p>
+                                <div class="property-features">
+                                    <div class="property-feature">
+                                        <i class="fas fa-building"></i>
+                                        <span>Office</span>
+                                    </div>
+                                    <div class="property-feature">
+                                        <i class="fas fa-vector-square"></i>
+                                        <span>2000 sqft</span>
+                                    </div>
+                                    <div class="property-feature">
+                                        <i class="fas fa-parking"></i>
+                                        <span>2 Parking</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-4">
+                                    <div>
+                                        <h4 class="gold-text mb-0">₹ 2.5 Cr</h4>
+                                    </div>
+                                    <a href="property-detail.html" class="btn btn-gold btn-sm">
+                                        View Details
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="property-card">
+                            <div class="property-image">
+                                <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&auto=format&fit=crop&w=2096&q=80" 
+                                     alt="Property 3">
+                                <div class="property-badge">For Rent</div>
+                            </div>
+                            <div class="property-content p-4">
+                                <h4 class="mb-2">2 BHK Apartment</h4>
+                                <p class="text-muted mb-3"><i class="fas fa-map-marker-alt text-secondary me-2"></i> Naroda Irish, Ahmedabad</p>
+                                <div class="property-features">
+                                    <div class="property-feature">
+                                        <i class="fas fa-bed"></i>
+                                        <span>2 Beds</span>
+                                    </div>
+                                    <div class="property-feature">
+                                        <i class="fas fa-bath"></i>
+                                        <span>2 Baths</span>
+                                    </div>
+                                    <div class="property-feature">
+                                        <i class="fas fa-vector-square"></i>
+                                        <span>1200 sqft</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-4">
+                                    <div>
+                                        <h4 class="gold-text mb-0">₹ 25,000/month</h4>
+                                    </div>
+                                    <a href="property-detail.html" class="btn btn-gold btn-sm">
+                                        View Details
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-5" data-aos="fade-up">
+                    <a href="properties.html" class="btn btn-gold">
+                        <i class="fas fa-search me-2"></i> Browse All Properties
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials-section">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
+                            Testimonials
+                        </span>
+                        <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
+                            What Our <span class="gold-text">Clients Say</span>
+                        </h2>
+                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200">
+                            Real stories from our valued customers
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="testimonial-card">
+                            <div class="testimonial-rating text-warning mb-3">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text mb-4">
+                                "Investing in Naroda Landmark was one of the best decisions for my business. The location and infrastructure are world-class."
+                            </p>
+                            <div class="testimonial-author d-flex align-items-center">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rajesh Patel" class="rounded-circle me-3" width="60" height="60">
+                                <div>
+                                    <h5 class="mb-1">Rajesh Patel</h5>
+                                    <p class="text-muted mb-0">Business Owner</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="testimonial-card">
+                            <div class="testimonial-rating text-warning mb-3">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text mb-4">
+                                "Our family found our dream home at Naroda Irish. The attention to detail exceeded all our expectations."
+                            </p>
+                            <div class="testimonial-author d-flex align-items-center">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya Sharma" class="rounded-circle me-3" width="60" height="60">
+                                <div>
+                                    <h5 class="mb-1">Priya Sharma</h5>
+                                    <p class="text-muted mb-0">Homeowner</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="testimonial-card">
+                            <div class="testimonial-rating text-warning mb-3">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text mb-4">
+                                "The team at Naroda Group is incredibly professional. Everything was transparent and smooth from start to finish."
+                            </p>
+                            <div class="testimonial-author d-flex align-items-center">
+                                <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Amit Desai" class="rounded-circle me-3" width="60" height="60">
+                                <div>
+                                    <h5 class="mb-1">Amit Desai</h5>
+                                    <p class="text-muted mb-0">CEO, TechStart</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <h2 class="text-white mb-4" data-aos="fade-up">
+                            Ready to Find Your <span class="gold-text">Perfect Space?</span>
+                        </h2>
+                        <p class="text-white-50 mb-5" data-aos="fade-up" data-aos-delay="100">
+                            Schedule a site visit today and experience excellence firsthand.
+                        </p>
+                        
+                        <div class="d-flex flex-column flex-sm-row justify-content-center gap-4" data-aos="fade-up" data-aos-delay="200">
+                            <a href="contact.html" class="btn btn-gold btn-lg">
+                                <i class="fas fa-calendar-alt me-2"></i> Schedule a Visit
+                            </a>
+                            <a href="tel:+919876543210" class="btn btn-outline-light btn-lg">
+                                <i class="fas fa-phone me-2"></i> +91 98765 43210
+                            </a>
+                            <a href="contact.html" class="btn btn-emerald btn-lg">
+                                <i class="fas fa-download me-2"></i> Get E-Brochure
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest News -->
+        <section class="blog-section">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
+                            Latest News
+                        </span>
+                        <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
+                            Real Estate <span class="gold-text">Insights</span>
+                        </h2>
+                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200">
+                            Stay updated with the latest trends and news
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="blog-card">
+                            <div class="blog-image">
+                                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2073&q=80" 
+                                     alt="Blog 1">
+                            </div>
+                            <div class="blog-content p-4">
+                                <span class="badge bg-secondary mb-2">Market Trends</span>
+                                <h4 class="mb-3">Real Estate Market Outlook 2025</h4>
+                                <p class="text-muted mb-3">
+                                    Analysis of upcoming trends and investment opportunities in Ahmedabad's real estate market.
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <small class="text-muted"><i class="fas fa-calendar me-1"></i> Jan 15, 2025</small>
+                                    <a href="blog-detail.html" class="text-gold">Read More <i class="fas fa-arrow-right ms-1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="blog-card">
+                            <div class="blog-image">
+                                <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                                     alt="Blog 2">
+                            </div>
+                            <div class="blog-content p-4">
+                                <span class="badge bg-secondary mb-2">Investment</span>
+                                <h4 class="mb-3">Smart Home Technologies</h4>
+                                <p class="text-muted mb-3">
+                                    How smart home automation is transforming modern living spaces and increasing property value.
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <small class="text-muted"><i class="fas fa-calendar me-1"></i> Jan 10, 2025</small>
+                                    <a href="blog-detail.html" class="text-gold">Read More <i class="fas fa-arrow-right ms-1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="blog-card">
+                            <div class="blog-image">
+                                <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80" 
+                                     alt="Blog 3">
+                            </div>
+                            <div class="blog-content p-4">
+                                <span class="badge bg-secondary mb-2">Legal</span>
+                                <h4 class="mb-3">RERA Regulations Update</h4>
+                                <p class="text-muted mb-3">
+                                    Latest updates on RERA regulations and how they protect homebuyers' interests.
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <small class="text-muted"><i class="fas fa-calendar me-1"></i> Jan 5, 2025</small>
+                                    <a href="blog-detail.html" class="text-gold">Read More <i class="fas fa-arrow-right ms-1"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-5" data-aos="fade-up">
+                    <a href="blog.html" class="btn btn-outline-primary">
+                        <i class="fas fa-newspaper me-2"></i> View All Articles
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <div class="mb-4">
+                        <a class="navbar-brand text-white" href="index.html">
+                            <div class="logo-icon d-inline-flex align-items-center justify-content-center me-2">NG</div>
+                            Naroda <span class="gold-text">Group</span>
+                        </a>
+                    </div>
+                    <p class="mb-4">
+                        Creating landmark properties that redefine excellence. From premium commercial spaces 
+                        to luxury residential living, we build dreams with quality and commitment.
+                    </p>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="projects.html"><i class="fas fa-chevron-right"></i> Projects</a></li>
+                        <li><a href="properties.html"><i class="fas fa-chevron-right"></i> Properties</a></li>
+                        <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="footer-title">Our Projects</h3>
+                    <a href="projects-landmark.html" class="project-mini-card">
+                        <h6 class="text-white mb-1">Naroda Landmark</h6>
+                        <p class="small text-muted mb-0">Premium Commercial Spaces</p>
+                    </a>
+                    <a href="projects-irish.html" class="project-mini-card">
+                        <h6 class="text-white mb-1">Naroda Irish</h6>
+                        <p class="small text-muted mb-0">Luxury Residential Living</p>
+                    </a>
+                    <a href="projects.html" class="project-mini-card">
+                        <h6 class="text-white mb-1">View All Projects</h6>
+                        <p class="small text-muted mb-0">Explore our portfolio</p>
+                    </a>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="footer-title">Contact Info</h3>
+                    <div class="contact-info">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h6 class="text-white mb-1">Phone Number</h6>
+                            <p class="mb-0">+91 98765 43210</p>
+                            <small class="text-muted">Mon - Sat: 10 AM - 7 PM</small>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h6 class="text-white mb-1">Email Address</h6>
+                            <p class="mb-0">info@narodagroup.com</p>
+                            <small class="text-muted">We reply within 24 hours</small>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h6 class="text-white mb-1">Office Address</h6>
+                            <p class="mb-0">Naroda - Bhat Road</p>
+                            <small class="text-muted">Ahmedabad, Gujarat 382330</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="mb-0">&copy; 2025 Naroda Group. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="privacy.html" class="text-muted me-3">Privacy Policy</a>
+                        <a href="terms.html" class="text-muted me-3">Terms of Service</a>
+                        <a href="rera.html" class="text-muted">RERA Registration</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <script>
+        // Wait for page to load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize AOS
+            AOS.init({
+                duration: 1000,
+                once: false,
+                offset: 100
+            });
+            
+            // Remove preloader
+            const preloader = document.getElementById('preloader');
+            setTimeout(() => {
+                preloader.style.opacity = '0';
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 500);
+            }, 1000);
+            
+            // Initialize counter animation
+            function animateCounters() {
+                const counters = document.querySelectorAll('.stat-counter');
+                const speed = 200;
+                
+                counters.forEach(counter => {
+                    const updateCount = () => {
+                        const target = +counter.getAttribute('data-count');
+                        const count = +counter.innerText.replace('+', '');
+                        const increment = target / speed;
+                        
+                        if (count < target) {
+                            counter.innerText = Math.ceil(count + increment);
+                            setTimeout(updateCount, 10);
+                        } else {
+                            counter.innerText = target + '+';
+                        }
+                    };
+                    
+                    // Start animation when element is in viewport
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                updateCount();
+                                observer.unobserve(entry.target);
+                            }
+                        });
+                    });
+                    
+                    observer.observe(counter);
+                });
+            }
+            
+            // Initialize back to top button
+            function initBackToTop() {
+                const backToTop = document.querySelector('.back-to-top');
+                
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 300) {
+                        backToTop.classList.add('active');
+                    } else {
+                        backToTop.classList.remove('active');
+                    }
+                });
+                
+                backToTop.addEventListener('click', () => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+            
+            // Initialize navbar scroll effect
+            function initNavbarScroll() {
+                const navbar = document.querySelector('.navbar');
+                
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 50) {
+                        navbar.classList.add('scrolled');
+                    } else {
+                        navbar.classList.remove('scrolled');
+                    }
+                });
+            }
+            
+            // Initialize video modal
+            function initVideoModal() {
+                const videoPlayBtn = document.getElementById('videoPlayBtn');
+                if (videoPlayBtn) {
+                    videoPlayBtn.addEventListener('click', function() {
+                        // Create modal
+                        const modalHTML = `
+                            <div class="modal fade" id="videoModal" tabindex="-1">
+                                <div class="modal-dialog modal-dialog-centered modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header border-0">
+                                            <h5 class="modal-title">Naroda Group - Corporate Video</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                        </div>
+                                        <div class="modal-body p-0">
+                                            <div class="ratio ratio-16x9">
+                                                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" 
+                                                        title="Naroda Group Video"
+                                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                                        allowfullscreen></iframe>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        
+                        document.body.insertAdjacentHTML('beforeend', modalHTML);
+                        
+                        const videoModal = new bootstrap.Modal(document.getElementById('videoModal'));
+                        videoModal.show();
+                        
+                        document.getElementById('videoModal').addEventListener('hidden.bs.modal', function() {
+                            this.remove();
+                        });
+                    });
+                }
+            }
+            
+            // Initialize toast notifications
+            function initToastSystem() {
+                window.showToast = function(message, type = 'success') {
+                    const toastContainer = document.querySelector('.toast-container');
+                    const toast = document.createElement('div');
+                    toast.className = `toast toast-${type}`;
+                    toast.innerHTML = `
+                        <div class="d-flex align-items-center">
+                            <i class="fas ${type === 'success' ? 'fa-check-circle text-success' : 'fa-exclamation-circle text-danger'} me-3"></i>
+                            <div>
+                                <p class="mb-0 fw-500">${message}</p>
+                            </div>
+                            <button type="button" class="btn-close ms-auto" onclick="this.parentElement.parentElement.remove()"></button>
+                        </div>
+                    `;
+                    
+                    toastContainer.appendChild(toast);
+                    
+                    setTimeout(() => toast.classList.add('show'), 10);
+                    
+                    setTimeout(() => {
+                        toast.classList.remove('show');
+                        setTimeout(() => toast.remove(), 300);
+                    }, 5000);
+                };
+            }
+            
+            // Initialize mobile navigation
+            function initMobileNav() {
+                // Update active nav item based on current page
+                const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+                document.querySelectorAll('.mobile-nav-item').forEach(item => {
+                    const href = item.getAttribute('href');
+                    if (href === currentPage) {
+                        item.classList.add('active');
+                    } else {
+                        item.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Initialize all functions
+            animateCounters();
+            initBackToTop();
+            initNavbarScroll();
+            initVideoModal();
+            initToastSystem();
+            initMobileNav();
+            
+            // Show welcome message
+            setTimeout(() => {
+                showToast('Welcome to Naroda Group!', 'success');
+            }, 1500);
+        });
+        
+        // Loading overlay functions
+        window.showLoading = function() {
+            document.querySelector('.loading-overlay').classList.add('active');
+        };
+        
+        window.hideLoading = function() {
+            document.querySelector('.loading-overlay').classList.remove('active');
+        };
+    </script>
+</body>
+</html>

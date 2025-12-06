@@ -1,0 +1,2202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Naroda Group - Real Estate Insights & News</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Read the latest real estate insights, market trends, investment tips, and news from Naroda Group's expert team.">
+    <meta name="keywords" content="real estate blog, property market trends, investment tips, home buying guide, Ahmedabad real estate news">
+    <meta name="author" content="Naroda Group">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ===== CSS Variables ===== */
+        :root {
+            --primary-color: #0a2a4a;
+            --primary-dark: #071a2e;
+            --primary-light: #0e3a64;
+            --secondary-color: #c9a96e;
+            --secondary-light: #d4b87a;
+            --secondary-dark: #b89440;
+            --accent-color: #2e8b57;
+            --accent-light: #3cb371;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --gray-color: #6c757d;
+            --light-gray: #e9ecef;
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+            --shadow-hover: 0 25px 60px rgba(0, 0, 0, 0.2);
+            --border-radius: 16px;
+            --border-radius-lg: 24px;
+            --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            --gradient-secondary: linear-gradient(135deg, var(--secondary-color), var(--secondary-light));
+            --gradient-accent: linear-gradient(135deg, var(--accent-color), var(--accent-light));
+        }
+
+        /* ===== Base Styles ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark-color);
+            overflow-x: hidden;
+            line-height: 1.7;
+            font-weight: 400;
+            background-color: #ffffff;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            max-width: 1320px;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 0;
+            }
+        }
+
+        /* ===== Utility Classes ===== */
+        .gold-text {
+            color: var(--secondary-color);
+        }
+
+        .emerald-text {
+            color: var(--accent-color);
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-secondary);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .section-title.left:after {
+            left: 0;
+            transform: none;
+        }
+
+        .badge {
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .bg-gradient-secondary {
+            background: var(--gradient-secondary) !important;
+        }
+
+        /* ===== Preloader ===== */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loader {
+            width: 80px;
+            height: 80px;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .loader-inner {
+            width: 100%;
+            height: 100%;
+            border: 4px solid rgba(201, 169, 110, 0.2);
+            border-radius: 50%;
+            border-top-color: var(--secondary-color);
+            animation: spin 1.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .preloader-text {
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        /* ===== Navigation ===== */
+        .navbar {
+            padding: 1.2rem 0;
+            background: rgba(10, 42, 74, 0.95);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+            z-index: 1000;
+        }
+
+        .navbar.scrolled {
+            padding: 0.8rem 0;
+            box-shadow: var(--shadow);
+            background: rgba(10, 42, 74, 0.98);
+        }
+
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-secondary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            color: var(--primary-color);
+            font-weight: 900;
+            font-size: 1.5rem;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            margin: 0 6px;
+            position: relative;
+            padding: 8px 16px !important;
+            border-radius: 30px;
+            transition: var(--transition);
+        }
+
+        .nav-link:before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 100%;
+            background: rgba(201, 169, 110, 0.1);
+            border-radius: 30px;
+            top: 0;
+            left: 0;
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .nav-link:hover:before,
+        .nav-link.active:before {
+            width: 100%;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--secondary-color) !important;
+        }
+
+        .dropdown-menu {
+            border: none;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 10px 0;
+            margin-top: 10px;
+        }
+
+        .dropdown-item {
+            padding: 10px 20px;
+            transition: var(--transition);
+        }
+
+        .dropdown-item:hover {
+            background: rgba(201, 169, 110, 0.1);
+            color: var(--secondary-color);
+        }
+
+        /* ===== Buttons ===== */
+        .btn {
+            padding: 14px 32px;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: var(--transition);
+            border: none;
+            position: relative;
+            overflow: hidden;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .btn:hover:before {
+            left: 100%;
+        }
+
+        .btn-gold {
+            background: var(--gradient-secondary);
+            color: var(--primary-color);
+            box-shadow: 0 10px 25px rgba(201, 169, 110, 0.3);
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(201, 169, 110, 0.4);
+            color: var(--primary-color);
+        }
+
+        .btn-outline-light {
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            background: transparent;
+        }
+
+        .btn-outline-light:hover {
+            background: white;
+            color: var(--primary-color);
+            border-color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-emerald {
+            background: var(--gradient-accent);
+            color: white;
+            box-shadow: 0 10px 25px rgba(46, 139, 87, 0.3);
+        }
+
+        .btn-emerald:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(46, 139, 87, 0.4);
+            color: white;
+        }
+
+        /* ===== Hero Section ===== */
+        .hero-section {
+            min-height: 60vh;
+            background: linear-gradient(rgba(10, 42, 74, 0.95), rgba(10, 42, 74, 0.85)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        /* ===== Blog Content ===== */
+        .blog-section {
+            padding: 100px 0;
+            background: #f9fafb;
+        }
+
+        .blog-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 992px) {
+            .blog-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== Blog Grid ===== */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            height: 100%;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .blog-card.featured {
+            grid-column: 1 / -1;
+        }
+
+        .blog-image {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .blog-card:hover .blog-image img {
+            transform: scale(1.1);
+        }
+
+        .blog-category {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: var(--gradient-secondary);
+            color: var(--primary-color);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .blog-content {
+            padding: 30px;
+        }
+
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: var(--gray-color);
+            font-size: 0.9rem;
+        }
+
+        .blog-meta-item {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+
+        .blog-meta-item i {
+            margin-right: 6px;
+            color: var(--secondary-color);
+        }
+
+        .blog-author {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid var(--light-gray);
+        }
+
+        .blog-author-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+
+        .blog-author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* ===== Sidebar ===== */
+        .sidebar {
+            position: sticky;
+            top: 100px;
+        }
+
+        .sidebar-widget {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+        }
+
+        .widget-title {
+            position: relative;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+        }
+
+        .widget-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--gradient-secondary);
+            border-radius: 2px;
+        }
+
+        .search-widget {
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 15px 20px 15px 50px;
+            border: 2px solid var(--light-gray);
+            border-radius: 50px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .search-input:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 0.25rem rgba(201, 169, 110, 0.25);
+            outline: none;
+        }
+
+        .search-btn {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--gray-color);
+        }
+
+        .categories-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .categories-list li {
+            margin-bottom: 12px;
+        }
+
+        .categories-list a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--dark-color);
+            padding: 10px 0;
+            border-bottom: 1px solid var(--light-gray);
+            transition: var(--transition);
+        }
+
+        .categories-list a:hover {
+            color: var(--secondary-color);
+            padding-left: 10px;
+        }
+
+        .categories-count {
+            background: var(--light-gray);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .recent-posts {
+            list-style: none;
+            padding: 0;
+        }
+
+        .recent-post-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .recent-post-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .recent-post-img {
+            width: 80px;
+            height: 80px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .recent-post-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .recent-post-item:hover .recent-post-img img {
+            transform: scale(1.1);
+        }
+
+        .recent-post-content h6 {
+            margin-bottom: 5px;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .recent-post-date {
+            font-size: 0.8rem;
+            color: var(--gray-color);
+        }
+
+        .tags-widget {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            background: var(--light-gray);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            color: var(--dark-color);
+            transition: var(--transition);
+        }
+
+        .tag:hover {
+            background: var(--gradient-secondary);
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        .newsletter-widget {
+            background: var(--gradient-primary);
+            color: white;
+            text-align: center;
+        }
+
+        .newsletter-widget .widget-title {
+            color: white;
+        }
+
+        .newsletter-widget .widget-title:after {
+            background: var(--gradient-secondary);
+        }
+
+        /* ===== Blog Details ===== */
+        .blog-detail-section {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .blog-detail-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .blog-detail-header {
+            margin-bottom: 40px;
+        }
+
+        .blog-detail-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .blog-detail-image {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        .blog-detail-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .blog-detail-content {
+            line-height: 1.8;
+        }
+
+        .blog-detail-content h3 {
+            margin: 30px 0 15px;
+            color: var(--primary-color);
+        }
+
+        .blog-detail-content p {
+            margin-bottom: 20px;
+        }
+
+        .blog-detail-content blockquote {
+            border-left: 4px solid var(--secondary-color);
+            padding-left: 20px;
+            margin: 30px 0;
+            font-style: italic;
+            color: var(--gray-color);
+            font-size: 1.1rem;
+        }
+
+        .blog-detail-content ul,
+        .blog-detail-content ol {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+
+        .blog-detail-content li {
+            margin-bottom: 10px;
+        }
+
+        /* ===== Pagination ===== */
+        .pagination {
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .page-link {
+            border: none;
+            color: var(--primary-color);
+            margin: 0 5px;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .page-link:hover,
+        .page-link.active {
+            background: var(--gradient-secondary);
+            color: var(--primary-color);
+        }
+
+        /* ===== Footer ===== */
+        .footer {
+            background: var(--primary-dark);
+            color: #b0b7c3;
+            padding-top: 80px;
+        }
+
+        .footer-title {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--gradient-secondary);
+            border-radius: 2px;
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 30px 0;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        /* ===== Back to Top ===== */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-secondary);
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            box-shadow: 0 10px 30px rgba(201, 169, 110, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(201, 169, 110, 0.4);
+        }
+
+        /* ===== WhatsApp Float ===== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 99;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
+        }
+
+        /* ===== Mobile Bottom Nav ===== */
+        .mobile-bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 15px 0;
+            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-bottom-nav {
+                display: flex;
+            }
+            
+            .back-to-top {
+                bottom: 80px;
+            }
+        }
+
+        /* ===== Toast Notifications ===== */
+        .toast-container {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            z-index: 9999;
+        }
+
+        .toast {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            box-shadow: var(--shadow);
+            margin-bottom: 15px;
+            transform: translateX(100%);
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            max-width: 350px;
+        }
+
+        .toast.show {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        /* ===== Loading Overlay ===== */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            display: none;
+        }
+
+        .loading-overlay.active {
+            display: flex;
+        }
+
+        /* ===== Additional Styles ===== */
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        
+        .social-link:hover {
+            background: var(--gradient-secondary);
+            transform: translateY(-3px);
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #b0b7c3;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+        
+        .mobile-nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--dark-color);
+            padding: 5px 10px;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+        
+        .mobile-nav-item.active {
+            color: var(--secondary-color);
+            background: rgba(201, 169, 110, 0.1);
+        }
+        
+        .mobile-nav-item i {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .mobile-nav-item span {
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .project-mini-card {
+            display: block;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+        
+        .project-mini-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .contact-info {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+        
+        .contact-info i {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+
+        /* ===== Read Time ===== */
+        .read-time {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(46, 139, 87, 0.1);
+            color: var(--accent-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-left: auto;
+        }
+
+        /* ===== Share Widget ===== */
+        .share-widget {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid var(--light-gray);
+        }
+
+        .share-widget span {
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .share-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .share-btn.facebook { background: #3b5998; }
+        .share-btn.twitter { background: #1da1f2; }
+        .share-btn.linkedin { background: #0077b5; }
+        .share-btn.whatsapp { background: #25d366; }
+
+        .share-btn:hover {
+            transform: translateY(-3px);
+            opacity: 0.9;
+        }
+
+        /* ===== Newsletter Form ===== */
+        .newsletter-form {
+            margin-top: 20px;
+        }
+
+        .newsletter-form input {
+            width: 100%;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 50px;
+            margin-bottom: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .newsletter-form input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .newsletter-form input:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* ===== Blog Filter ===== */
+        .blog-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            padding: 10px 24px;
+            background: white;
+            border: 2px solid var(--light-gray);
+            border-radius: 50px;
+            font-weight: 600;
+            color: var(--dark-color);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--gradient-secondary);
+            color: var(--primary-color);
+            border-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(201, 169, 110, 0.2);
+        }
+
+        .filter-btn.active {
+            transform: translateY(-3px) scale(1.05);
+        }
+
+        /* ===== No Results ===== */
+        .no-results {
+            text-align: center;
+            padding: 60px 20px;
+            grid-column: 1 / -1;
+        }
+
+        .no-results-icon {
+            font-size: 4rem;
+            color: var(--light-gray);
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader">
+            <div class="loader-inner"></div>
+        </div>
+        <div class="preloader-text">NARODA GROUP</div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay">
+        <div class="spinner-border" style="color: var(--secondary-color);" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Toast Container -->
+    <div class="toast-container"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <div class="logo-icon">NG</div>
+                <span>Naroda <span class="gold-text">Group</span></span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" data-bs-toggle="dropdown">
+                            Projects
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="projects-landmark.html">Naroda Landmark</a>
+                            <a class="dropdown-item" href="projects-irish.html">Naroda Irish</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="projects.html">All Projects</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="propertiesDropdown" data-bs-toggle="dropdown">
+                            Properties
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="properties.html">Buy</a>
+                            <a class="dropdown-item" href="properties-rent.html">Rent</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="property-detail.html">Property Details</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="moreDropdown" data-bs-toggle="dropdown">
+                            More
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item active" href="blog.html">Blog</a>
+                            <a class="dropdown-item" href="news.html">News</a>
+                            <a class="dropdown-item" href="careers.html">Careers</a>
+                            <a class="dropdown-item" href="team.html">Our Team</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="faq.html">FAQ</a>
+                            <a class="dropdown-item" href="contact.html">Contact</a>
+                        </div>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center ms-lg-3 mt-3 mt-lg-0">
+                    <div class="dropdown">
+                        <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown">
+                            <i class="fas fa-globe me-1"></i> EN
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">English</a>
+                            <a class="dropdown-item" href="#">Hindi</a>
+                            <a class="dropdown-item" href="#">Gujarati</a>
+                        </div>
+                    </div>
+                    <a href="login.html" class="btn btn-outline-light ms-3">
+                        <i class="fas fa-user me-2"></i> Login
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Bottom Navigation -->
+    <div class="mobile-bottom-nav">
+        <a href="index.html" class="mobile-nav-item">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="projects.html" class="mobile-nav-item">
+            <i class="fas fa-building"></i>
+            <span>Projects</span>
+        </a>
+        <a href="properties.html" class="mobile-nav-item">
+            <i class="fas fa-search"></i>
+            <span>Search</span>
+        </a>
+        <a href="contact.html" class="mobile-nav-item">
+            <i class="fas fa-phone"></i>
+            <span>Contact</span>
+        </a>
+        <a href="login.html" class="mobile-nav-item">
+            <i class="fas fa-user"></i>
+            <span>Account</span>
+        </a>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="row min-vh-60 align-items-center">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <h1 class="hero-title" data-aos="fade-up">
+                            Real Estate <span class="gold-text">Blog</span>
+                        </h1>
+                        <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
+                            Insights, trends, and expert advice for smart real estate decisions
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Filter -->
+        <section class="blog-section">
+            <div class="container">
+                <div class="blog-filter" data-aos="fade-up">
+                    <button class="filter-btn active" data-filter="all">All Articles</button>
+                    <button class="filter-btn" data-filter="market-trends">Market Trends</button>
+                    <button class="filter-btn" data-filter="investment">Investment Tips</button>
+                    <button class="filter-btn" data-filter="home-buying">Home Buying</button>
+                    <button class="filter-btn" data-filter="legal">Legal Advice</button>
+                    <button class="filter-btn" data-filter="design">Design & Decor</button>
+                    <button class="filter-btn" data-filter="sustainability">Sustainability</button>
+                </div>
+                
+                <div class="blog-container">
+                    <!-- Main Blog Content -->
+                    <div class="main-content">
+                        <!-- Featured Blog Post -->
+                        <div class="blog-grid">
+                            <div class="blog-card featured" data-aos="fade-up">
+                                <div class="blog-image">
+                                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2073&q=80" 
+                                         alt="Real Estate Market Outlook">
+                                    <span class="blog-category">Market Trends</span>
+                                </div>
+                                <div class="blog-content">
+                                    <div class="blog-meta">
+                                        <div class="blog-meta-item">
+                                            <i class="far fa-calendar"></i> Jan 15, 2025
+                                        </div>
+                                        <div class="blog-meta-item">
+                                            <i class="far fa-user"></i> By Rajesh Mehta
+                                        </div>
+                                        <span class="read-time">
+                                            <i class="far fa-clock"></i> 8 min read
+                                        </span>
+                                    </div>
+                                    <h3 class="mb-3">Real Estate Market Outlook 2025: Trends & Predictions</h3>
+                                    <p class="text-muted mb-4">
+                                        Analysis of upcoming trends and investment opportunities in Ahmedabad's real estate market. 
+                                        Discover what experts are predicting for the coming year.
+                                    </p>
+                                    <a href="blog-detail.html" class="btn btn-gold">
+                                        Read More <i class="fas fa-arrow-right ms-2"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Regular Blog Posts -->
+                        <div class="blog-grid" id="blogGrid">
+                            <!-- Blog posts will be loaded here dynamically -->
+                        </div>
+                        
+                        <!-- No Results Message -->
+                        <div class="no-results" id="noResults" style="display: none;">
+                            <div class="no-results-icon">
+                                <i class="fas fa-newspaper"></i>
+                            </div>
+                            <h3 class="mb-3">No Articles Found</h3>
+                            <p class="text-muted mb-4">Try selecting a different category</p>
+                        </div>
+                        
+                        <!-- Pagination -->
+                        <nav aria-label="Page navigation" class="mt-5">
+                            <ul class="pagination" id="pagination">
+                                <!-- Pagination will be generated here -->
+                            </ul>
+                        </nav>
+                    </div>
+                    
+                    <!-- Sidebar -->
+                    <div class="sidebar">
+                        <!-- Search Widget -->
+                        <div class="sidebar-widget" data-aos="fade-left" data-aos-delay="100">
+                            <div class="search-widget">
+                                <input type="text" class="search-input" placeholder="Search articles...">
+                                <button class="search-btn">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Categories Widget -->
+                        <div class="sidebar-widget" data-aos="fade-left" data-aos-delay="200">
+                            <h4 class="widget-title">Categories</h4>
+                            <ul class="categories-list" id="categoriesList">
+                                <!-- Categories will be loaded dynamically -->
+                            </ul>
+                        </div>
+                        
+                        <!-- Recent Posts Widget -->
+                        <div class="sidebar-widget" data-aos="fade-left" data-aos-delay="300">
+                            <h4 class="widget-title">Recent Posts</h4>
+                            <ul class="recent-posts" id="recentPosts">
+                                <!-- Recent posts will be loaded dynamically -->
+                            </ul>
+                        </div>
+                        
+                        <!-- Tags Widget -->
+                        <div class="sidebar-widget" data-aos="fade-left" data-aos-delay="400">
+                            <h4 class="widget-title">Popular Tags</h4>
+                            <div class="tags-widget">
+                                <a href="#" class="tag">Real Estate</a>
+                                <a href="#" class="tag">Investment</a>
+                                <a href="#" class="tag">Ahmedabad</a>
+                                <a href="#" class="tag">Market Trends</a>
+                                <a href="#" class="tag">Property</a>
+                                <a href="#" class="tag">Home Buying</a>
+                                <a href="#" class="tag">RERA</a>
+                                <a href="#" class="tag">Commercial</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Newsletter Widget -->
+                        <div class="sidebar-widget newsletter-widget" data-aos="fade-left" data-aos-delay="500">
+                            <h4 class="widget-title">Subscribe</h4>
+                            <p class="mb-4">Get the latest real estate insights delivered to your inbox</p>
+                            <div class="newsletter-form">
+                                <input type="email" placeholder="Your email address">
+                                <button class="btn btn-gold w-100">Subscribe</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="blog-section" style="background: white; padding-top: 0;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <div class="bg-light rounded-3 p-5" data-aos="fade-up">
+                            <h2 class="mb-4">Looking for Property Advice?</h2>
+                            <p class="text-muted mb-4">
+                                Our real estate experts are ready to help you make informed decisions about 
+                                buying, selling, or investing in property.
+                            </p>
+                            <a href="contact.html" class="btn btn-gold btn-lg">
+                                <i class="fas fa-phone me-2"></i> Consult Our Experts
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <div class="mb-4">
+                        <a class="navbar-brand text-white" href="index.html">
+                            <div class="logo-icon d-inline-flex align-items-center justify-content-center me-2">NG</div>
+                            Naroda <span class="gold-text">Group</span>
+                        </a>
+                    </div>
+                    <p class="mb-4">
+                        Creating landmark properties that redefine excellence. From premium commercial spaces 
+                        to luxury residential living, we build dreams with quality and commitment.
+                    </p>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="projects.html"><i class="fas fa-chevron-right"></i> Projects</a></li>
+                        <li><a href="properties.html"><i class="fas fa-chevron-right"></i> Properties</a></li>
+                        <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="footer-title">Our Projects</h3>
+                    <a href="projects-landmark.html" class="project-mini-card">
+                        <h6 class="text-white mb-1">Naroda Landmark</h6>
+                        <p class="small text-muted mb-0">Premium Commercial Spaces</p>
+                    </a>
+                    <a href="projects-irish.html" class="project-mini-card">
+                        <h6 class="text-white mb-1">Naroda Irish</h6>
+                        <p class="small text-muted mb-0">Luxury Residential Living</p>
+                    </a>
+                    <a href="projects.html" class="project-mini-card">
+                        <h6 class="text-white mb-1">View All Projects</h6>
+                        <p class="small text-muted mb-0">Explore our portfolio</p>
+                    </a>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="footer-title">Contact Info</h3>
+                    <div class="contact-info">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h6 class="text-white mb-1">Phone Number</h6>
+                            <p class="mb-0">+91 98765 43210</p>
+                            <small class="text-muted">Mon - Sat: 10 AM - 7 PM</small>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h6 class="text-white mb-1">Email Address</h6>
+                            <p class="mb-0">info@narodagroup.com</p>
+                            <small class="text-muted">We reply within 24 hours</small>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h6 class="text-white mb-1">Office Address</h6>
+                            <p class="mb-0">Naroda - Bhat Road</p>
+                            <small class="text-muted">Ahmedabad, Gujarat 382330</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="mb-0">&copy; 2025 Naroda Group. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="privacy.html" class="text-muted me-3">Privacy Policy</a>
+                        <a href="terms.html" class="text-muted me-3">Terms of Service</a>
+                        <a href="rera.html" class="text-muted">RERA Registration</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // Blog Data
+        const blogData = [
+            {
+                id: 1,
+                title: 'Smart Home Technologies for Modern Living',
+                category: 'design',
+                image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2053&q=80',
+                excerpt: 'How smart home automation is transforming modern living spaces and increasing property value.',
+                author: 'Priya Shah',
+                date: 'Jan 10, 2025',
+                readTime: '6 min',
+                featured: false
+            },
+            {
+                id: 2,
+                title: 'RERA Regulations: Latest Updates 2025',
+                category: 'legal',
+                image: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80',
+                excerpt: 'Latest updates on RERA regulations and how they protect homebuyers interests.',
+                author: 'Amit Patel',
+                date: 'Jan 5, 2025',
+                readTime: '10 min',
+                featured: false
+            },
+            {
+                id: 3,
+                title: 'Investment Strategies for Commercial Real Estate',
+                category: 'investment',
+                image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80',
+                excerpt: 'Expert strategies for investing in commercial real estate with maximum returns.',
+                author: 'Rajesh Mehta',
+                date: 'Dec 28, 2024',
+                readTime: '8 min',
+                featured: false
+            },
+            {
+                id: 4,
+                title: 'Sustainable Building Materials for Eco-Friendly Homes',
+                category: 'sustainability',
+                image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+                excerpt: 'Explore eco-friendly building materials that reduce environmental impact and save energy.',
+                author: 'Neha Gupta',
+                date: 'Dec 20, 2024',
+                readTime: '7 min',
+                featured: false
+            },
+            {
+                id: 5,
+                title: 'First-Time Home Buyer Guide: Step-by-Step Process',
+                category: 'home-buying',
+                image: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+                excerpt: 'Complete guide for first-time home buyers with essential tips and checklist.',
+                author: 'Priya Sharma',
+                date: 'Dec 15, 2024',
+                readTime: '12 min',
+                featured: false
+            },
+            {
+                id: 6,
+                title: 'Ahmedabad Property Market Analysis Q4 2024',
+                category: 'market-trends',
+                image: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?ixlib=rb-4.0.3&auto=format&fit=crop&w=2065&q=80',
+                excerpt: 'Detailed analysis of Ahmedabad property market performance in the last quarter.',
+                author: 'Rajesh Mehta',
+                date: 'Dec 10, 2024',
+                readTime: '9 min',
+                featured: false
+            },
+            {
+                id: 7,
+                title: 'Vastu Tips for Home Design and Placement',
+                category: 'design',
+                image: 'https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&auto=format&fit=crop&w=2096&q=80',
+                excerpt: 'Traditional Vastu principles for modern home design and positive energy flow.',
+                author: 'Neha Gupta',
+                date: 'Dec 5, 2024',
+                readTime: '5 min',
+                featured: false
+            },
+            {
+                id: 8,
+                title: 'Tax Benefits for Real Estate Investors',
+                category: 'investment',
+                image: 'https://images.unsplash.com/photo-1558036117-15e82a2c9a9a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+                excerpt: 'Understanding tax deductions and benefits available for real estate investors.',
+                author: 'Amit Patel',
+                date: 'Nov 28, 2024',
+                readTime: '11 min',
+                featured: false
+            }
+        ];
+
+        // Categories Data
+        const categoriesData = [
+            { name: 'Market Trends', count: 12, slug: 'market-trends' },
+            { name: 'Investment Tips', count: 8, slug: 'investment' },
+            { name: 'Home Buying', count: 10, slug: 'home-buying' },
+            { name: 'Legal Advice', count: 6, slug: 'legal' },
+            { name: 'Design & Decor', count: 9, slug: 'design' },
+            { name: 'Sustainability', count: 7, slug: 'sustainability' }
+        ];
+
+        // Wait for page to load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize AOS
+            AOS.init({
+                duration: 1000,
+                once: false,
+                offset: 100
+            });
+            
+            // Remove preloader
+            const preloader = document.getElementById('preloader');
+            setTimeout(() => {
+                preloader.style.opacity = '0';
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 500);
+            }, 1000);
+            
+            // Initialize blog
+            initBlog();
+            
+            // Initialize back to top
+            initBackToTop();
+            
+            // Initialize navbar scroll effect
+            initNavbarScroll();
+            
+            // Initialize toast notifications
+            initToastSystem();
+            
+            // Initialize mobile navigation
+            initMobileNav();
+            
+            // Initialize search functionality
+            initSearch();
+            
+            // Show welcome message
+            setTimeout(() => {
+                showToast('Explore our real estate insights and expert advice!', 'info');
+            }, 1500);
+        });
+        
+        function initBlog() {
+            const blogGrid = document.getElementById('blogGrid');
+            const categoriesList = document.getElementById('categoriesList');
+            const recentPosts = document.getElementById('recentPosts');
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const pagination = document.getElementById('pagination');
+            const noResults = document.getElementById('noResults');
+            
+            let currentFilter = 'all';
+            let currentPage = 1;
+            const itemsPerPage = 6;
+            
+            // Load initial content
+            loadBlogPosts();
+            loadCategories();
+            loadRecentPosts();
+            updatePagination();
+            
+            // Filter functionality
+            filterButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Update active button
+                    filterButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Update filter
+                    currentFilter = this.getAttribute('data-filter');
+                    
+                    // Reset page
+                    currentPage = 1;
+                    
+                    // Load filtered posts
+                    loadBlogPosts();
+                    updatePagination();
+                    
+                    // Show toast
+                    const filterName = currentFilter === 'all' ? 'All Articles' : this.textContent;
+                    showToast(`Showing ${filterName}`, 'info');
+                });
+            });
+            
+            // Category click handler
+            categoriesList.addEventListener('click', function(e) {
+                if (e.target.closest('.categories-list a')) {
+                    e.preventDefault();
+                    const categorySlug = e.target.closest('.categories-list a').getAttribute('data-category');
+                    
+                    // Update active filter button
+                    filterButtons.forEach(b => b.classList.remove('active'));
+                    const matchingBtn = Array.from(filterButtons).find(btn => 
+                        btn.getAttribute('data-filter') === categorySlug
+                    );
+                    if (matchingBtn) {
+                        matchingBtn.classList.add('active');
+                    }
+                    
+                    // Update filter and load posts
+                    currentFilter = categorySlug;
+                    currentPage = 1;
+                    loadBlogPosts();
+                    updatePagination();
+                    
+                    // Scroll to blog grid
+                    blogGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+            
+            function loadBlogPosts() {
+                blogGrid.innerHTML = '';
+                noResults.style.display = 'none';
+                
+                const filteredPosts = currentFilter === 'all' 
+                    ? blogData 
+                    : blogData.filter(post => post.category === currentFilter);
+                
+                if (filteredPosts.length === 0) {
+                    noResults.style.display = 'block';
+                    return;
+                }
+                
+                const startIndex = (currentPage - 1) * itemsPerPage;
+                const endIndex = startIndex + itemsPerPage;
+                const postsToShow = filteredPosts.slice(startIndex, endIndex);
+                
+                postsToShow.forEach(post => {
+                    const blogCard = createBlogCard(post);
+                    blogGrid.appendChild(blogCard);
+                });
+            }
+            
+            function createBlogCard(post) {
+                const card = document.createElement('article');
+                card.className = 'blog-card';
+                card.setAttribute('data-category', post.category);
+                
+                // Format category name
+                const categoryName = categoriesData.find(c => c.slug === post.category)?.name || post.category;
+                
+                card.innerHTML = `
+                    <div class="blog-image">
+                        <img src="${post.image}" alt="${post.title}" loading="lazy">
+                        <span class="blog-category">${categoryName}</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <div class="blog-meta-item">
+                                <i class="far fa-calendar"></i> ${post.date}
+                            </div>
+                            <div class="blog-meta-item">
+                                <i class="far fa-user"></i> By ${post.author}
+                            </div>
+                            <span class="read-time">
+                                <i class="far fa-clock"></i> ${post.readTime} read
+                            </span>
+                        </div>
+                        <h3 class="mb-3">${post.title}</h3>
+                        <p class="text-muted mb-4">${post.excerpt}</p>
+                        
+                        <div class="blog-author">
+                            <div class="blog-author-img">
+                                <img src="https://randomuser.me/api/portraits/${post.author === 'Priya Shah' ? 'women' : 'men'}/${Math.floor(Math.random() * 70)}.jpg" 
+                                     alt="${post.author}">
+                            </div>
+                            <div>
+                                <h6 class="mb-1">${post.author}</h6>
+                                <small class="text-muted">Real Estate Expert</small>
+                            </div>
+                            <a href="blog-detail.html?id=${post.id}" class="btn btn-gold ms-auto">
+                                Read More
+                            </a>
+                        </div>
+                    </div>
+                `;
+                
+                return card;
+            }
+            
+            function loadCategories() {
+                categoriesList.innerHTML = '';
+                
+                categoriesData.forEach(category => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `
+                        <a href="#" data-category="${category.slug}">
+                            ${category.name}
+                            <span class="categories-count">${category.count}</span>
+                        </a>
+                    `;
+                    categoriesList.appendChild(li);
+                });
+            }
+            
+            function loadRecentPosts() {
+                recentPosts.innerHTML = '';
+                
+                // Get 3 most recent posts
+                const recentPostsData = [...blogData]
+                    .sort((a, b) => new Date(b.date) - new Date(a.date))
+                    .slice(0, 3);
+                
+                recentPostsData.forEach(post => {
+                    const li = document.createElement('li');
+                    li.className = 'recent-post-item';
+                    
+                    li.innerHTML = `
+                        <div class="recent-post-img">
+                            <img src="${post.image}" alt="${post.title}">
+                        </div>
+                        <div class="recent-post-content">
+                            <h6><a href="blog-detail.html?id=${post.id}">${post.title}</a></h6>
+                            <div class="recent-post-date">${post.date}</div>
+                        </div>
+                    `;
+                    
+                    recentPosts.appendChild(li);
+                });
+            }
+            
+            function updatePagination() {
+                const filteredPosts = currentFilter === 'all' 
+                    ? blogData 
+                    : blogData.filter(post => post.category === currentFilter);
+                
+                const totalPages = Math.ceil(filteredPosts.length / itemsPerPage);
+                pagination.innerHTML = '';
+                
+                // Previous button
+                const prevLi = document.createElement('li');
+                prevLi.className = 'page-item';
+                if (currentPage === 1) prevLi.classList.add('disabled');
+                
+                const prevA = document.createElement('a');
+                prevA.className = 'page-link';
+                prevA.href = '#';
+                prevA.innerHTML = '<i class="fas fa-chevron-left"></i>';
+                prevA.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    if (currentPage > 1) {
+                        currentPage--;
+                        loadBlogPosts();
+                        updatePagination();
+                        window.scrollTo({ top: blogGrid.offsetTop - 100, behavior: 'smooth' });
+                    }
+                });
+                
+                prevLi.appendChild(prevA);
+                pagination.appendChild(prevLi);
+                
+                // Page numbers
+                const maxVisiblePages = 5;
+                let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
+                let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+                
+                if (endPage - startPage + 1 < maxVisiblePages) {
+                    startPage = Math.max(1, endPage - maxVisiblePages + 1);
+                }
+                
+                for (let i = startPage; i <= endPage; i++) {
+                    const li = document.createElement('li');
+                    li.className = 'page-item';
+                    if (i === currentPage) li.classList.add('active');
+                    
+                    const a = document.createElement('a');
+                    a.className = 'page-link';
+                    a.href = '#';
+                    a.textContent = i;
+                    a.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        currentPage = i;
+                        loadBlogPosts();
+                        updatePagination();
+                        window.scrollTo({ top: blogGrid.offsetTop - 100, behavior: 'smooth' });
+                    });
+                    
+                    li.appendChild(a);
+                    pagination.appendChild(li);
+                }
+                
+                // Next button
+                const nextLi = document.createElement('li');
+                nextLi.className = 'page-item';
+                if (currentPage === totalPages) nextLi.classList.add('disabled');
+                
+                const nextA = document.createElement('a');
+                nextA.className = 'page-link';
+                nextA.href = '#';
+                nextA.innerHTML = '<i class="fas fa-chevron-right"></i>';
+                nextA.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    if (currentPage < totalPages) {
+                        currentPage++;
+                        loadBlogPosts();
+                        updatePagination();
+                        window.scrollTo({ top: blogGrid.offsetTop - 100, behavior: 'smooth' });
+                    }
+                });
+                
+                nextLi.appendChild(nextA);
+                pagination.appendChild(nextLi);
+            }
+            
+            // Initialize pagination
+            updatePagination();
+        }
+        
+        function initSearch() {
+            const searchInput = document.querySelector('.search-input');
+            const searchBtn = document.querySelector('.search-btn');
+            
+            searchBtn.addEventListener('click', function() {
+                performSearch(searchInput.value);
+            });
+            
+            searchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    performSearch(this.value);
+                }
+            });
+            
+            function performSearch(query) {
+                if (!query.trim()) {
+                    showToast('Please enter a search term', 'warning');
+                    return;
+                }
+                
+                // Filter blog posts
+                const filteredPosts = blogData.filter(post => 
+                    post.title.toLowerCase().includes(query.toLowerCase()) ||
+                    post.excerpt.toLowerCase().includes(query.toLowerCase()) ||
+                    post.author.toLowerCase().includes(query.toLowerCase())
+                );
+                
+                // Update UI
+                const blogGrid = document.getElementById('blogGrid');
+                const noResults = document.getElementById('noResults');
+                
+                blogGrid.innerHTML = '';
+                
+                if (filteredPosts.length === 0) {
+                    noResults.style.display = 'block';
+                    noResults.querySelector('h3').textContent = 'No Results Found';
+                    noResults.querySelector('p').textContent = `No articles found for "${query}"`;
+                } else {
+                    noResults.style.display = 'none';
+                    
+                    filteredPosts.forEach(post => {
+                        const blogCard = createBlogCard(post);
+                        blogGrid.appendChild(blogCard);
+                    });
+                    
+                    showToast(`Found ${filteredPosts.length} articles for "${query}"`, 'success');
+                }
+                
+                // Hide pagination during search
+                document.querySelector('.pagination').style.display = 'none';
+                
+                // Reset button to show all
+                const resetBtn = document.createElement('button');
+                resetBtn.className = 'btn btn-outline-primary mt-4';
+                resetBtn.innerHTML = '<i class="fas fa-redo me-2"></i> Show All Articles';
+                resetBtn.addEventListener('click', function() {
+                    blogGrid.innerHTML = '';
+                    document.querySelector('.pagination').style.display = 'flex';
+                    searchInput.value = '';
+                    
+                    // Re-initialize blog
+                    initBlog();
+                    
+                    this.remove();
+                });
+                
+                if (!document.querySelector('.search-reset-btn')) {
+                    resetBtn.className += ' search-reset-btn';
+                    blogGrid.parentNode.insertBefore(resetBtn, blogGrid.nextSibling);
+                }
+            }
+            
+            function createBlogCard(post) {
+                const card = document.createElement('article');
+                card.className = 'blog-card';
+                
+                const categoryName = categoriesData.find(c => c.slug === post.category)?.name || post.category;
+                
+                card.innerHTML = `
+                    <div class="blog-image">
+                        <img src="${post.image}" alt="${post.title}">
+                        <span class="blog-category">${categoryName}</span>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <div class="blog-meta-item">
+                                <i class="far fa-calendar"></i> ${post.date}
+                            </div>
+                            <div class="blog-meta-item">
+                                <i class="far fa-user"></i> By ${post.author}
+                            </div>
+                            <span class="read-time">
+                                <i class="far fa-clock"></i> ${post.readTime} read
+                            </span>
+                        </div>
+                        <h3 class="mb-3">${post.title}</h3>
+                        <p class="text-muted mb-4">${post.excerpt}</p>
+                        <a href="blog-detail.html?id=${post.id}" class="btn btn-gold">
+                            Read More <i class="fas fa-arrow-right ms-2"></i>
+                        </a>
+                    </div>
+                `;
+                
+                return card;
+            }
+        }
+        
+        function initBackToTop() {
+            const backToTop = document.querySelector('.back-to-top');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    backToTop.classList.add('active');
+                } else {
+                    backToTop.classList.remove('active');
+                }
+            });
+            
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+        
+        function initNavbarScroll() {
+            const navbar = document.querySelector('.navbar');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+        }
+        
+        function initToastSystem() {
+            window.showToast = function(message, type = 'success') {
+                const toastContainer = document.querySelector('.toast-container');
+                const toast = document.createElement('div');
+                toast.className = `toast toast-${type}`;
+                toast.innerHTML = `
+                    <div class="d-flex align-items-center">
+                        <i class="fas ${type === 'success' ? 'fa-check-circle text-success' : 'fa-exclamation-circle text-danger'} me-3"></i>
+                        <div>
+                            <p class="mb-0 fw-500">${message}</p>
+                        </div>
+                        <button type="button" class="btn-close ms-auto" onclick="this.parentElement.parentElement.remove()"></button>
+                    </div>
+                `;
+                
+                toastContainer.appendChild(toast);
+                
+                setTimeout(() => toast.classList.add('show'), 10);
+                
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                    setTimeout(() => toast.remove(), 300);
+                }, 5000);
+            };
+        }
+        
+        function initMobileNav() {
+            // Update active nav item based on current page
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('.mobile-nav-item').forEach(item => {
+                const href = item.getAttribute('href');
+                if (href === currentPage) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+        }
+        
+        // Newsletter subscription
+        const newsletterBtn = document.querySelector('.newsletter-widget .btn');
+        newsletterBtn.addEventListener('click', function() {
+            const emailInput = document.querySelector('.newsletter-form input');
+            const email = emailInput.value.trim();
+            
+            if (!email) {
+                showToast('Please enter your email address', 'warning');
+                return;
+            }
+            
+            if (!isValidEmail(email)) {
+                showToast('Please enter a valid email address', 'warning');
+                return;
+            }
+            
+            // Simulate subscription
+            showLoading();
+            
+            setTimeout(() => {
+                hideLoading();
+                showToast('Successfully subscribed to our newsletter!', 'success');
+                emailInput.value = '';
+            }, 1500);
+        });
+        
+        function isValidEmail(email) {
+            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return regex.test(email);
+        }
+        
+        // Loading overlay functions
+        window.showLoading = function() {
+            document.querySelector('.loading-overlay').classList.add('active');
+        };
+        
+        window.hideLoading = function() {
+            document.querySelector('.loading-overlay').classList.remove('active');
+        };
+    </script>
+</body>
+</html>

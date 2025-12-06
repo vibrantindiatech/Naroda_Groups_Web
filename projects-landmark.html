@@ -1,0 +1,2337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naroda Landmark | Premium Commercial Spaces | Naroda Group</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Naroda Landmark - Ahmedabad's premium commercial complex with Grade A office spaces, retail shops, and modern amenities. Invest in prime commercial real estate.">
+    <meta name="keywords" content="naroda landmark, commercial spaces ahmedabad, office spaces, retail shops, commercial complex, grade a offices">
+    <meta name="author" content="Naroda Group">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
+    
+    <style>
+        /* ===== CSS Variables ===== */
+        :root {
+            --primary-color: #0a2a4a;
+            --primary-dark: #071a2e;
+            --primary-light: #0e3a64;
+            --secondary-color: #c9a96e;
+            --secondary-light: #d4b87a;
+            --secondary-dark: #b89440;
+            --accent-color: #2e8b57;
+            --accent-light: #3cb371;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --gray-color: #6c757d;
+            --light-gray: #e9ecef;
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+            --shadow-hover: 0 25px 60px rgba(0, 0, 0, 0.2);
+            --border-radius: 16px;
+            --border-radius-lg: 24px;
+            --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            --gradient-secondary: linear-gradient(135deg, var(--secondary-color), var(--secondary-light));
+            --gradient-accent: linear-gradient(135deg, var(--accent-color), var(--accent-light));
+        }
+
+        /* ===== Base Styles ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark-color);
+            overflow-x: hidden;
+            line-height: 1.7;
+            font-weight: 400;
+            background-color: #ffffff;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            max-width: 1320px;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 0;
+            }
+        }
+
+        /* ===== Utility Classes ===== */
+        .gold-text {
+            color: var(--secondary-color);
+        }
+
+        .emerald-text {
+            color: var(--accent-color);
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-secondary);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .section-title.left:after {
+            left: 0;
+            transform: none;
+        }
+
+        .badge {
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .bg-gradient-secondary {
+            background: var(--gradient-secondary) !important;
+        }
+
+        /* ===== Preloader ===== */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loader {
+            width: 80px;
+            height: 80px;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .loader-inner {
+            width: 100%;
+            height: 100%;
+            border: 4px solid rgba(201, 169, 110, 0.2);
+            border-radius: 50%;
+            border-top-color: var(--secondary-color);
+            animation: spin 1.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .preloader-text {
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        /* ===== Navigation ===== */
+        .navbar {
+            padding: 1.2rem 0;
+            background: rgba(10, 42, 74, 0.95);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+            z-index: 1000;
+        }
+
+        .navbar.scrolled {
+            padding: 0.8rem 0;
+            box-shadow: var(--shadow);
+            background: rgba(10, 42, 74, 0.98);
+        }
+
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-secondary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            color: var(--primary-color);
+            font-weight: 900;
+            font-size: 1.5rem;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            margin: 0 6px;
+            position: relative;
+            padding: 8px 16px !important;
+            border-radius: 30px;
+            transition: var(--transition);
+        }
+
+        .nav-link:before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 100%;
+            background: rgba(201, 169, 110, 0.1);
+            border-radius: 30px;
+            top: 0;
+            left: 0;
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .nav-link:hover:before,
+        .nav-link.active:before {
+            width: 100%;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--secondary-color) !important;
+        }
+
+        .dropdown-menu {
+            border: none;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 10px 0;
+            margin-top: 10px;
+        }
+
+        .dropdown-item {
+            padding: 10px 20px;
+            transition: var(--transition);
+        }
+
+        .dropdown-item:hover {
+            background: rgba(201, 169, 110, 0.1);
+            color: var(--secondary-color);
+        }
+
+        /* ===== Buttons ===== */
+        .btn {
+            padding: 14px 32px;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: var(--transition);
+            border: none;
+            position: relative;
+            overflow: hidden;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .btn:hover:before {
+            left: 100%;
+        }
+
+        .btn-gold {
+            background: var(--gradient-secondary);
+            color: var(--primary-color);
+            box-shadow: 0 10px 25px rgba(201, 169, 110, 0.3);
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(201, 169, 110, 0.4);
+            color: var(--primary-color);
+        }
+
+        .btn-outline-light {
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            background: transparent;
+        }
+
+        .btn-outline-light:hover {
+            background: white;
+            color: var(--primary-color);
+            border-color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-emerald {
+            background: var(--gradient-accent);
+            color: white;
+            box-shadow: 0 10px 25px rgba(46, 139, 87, 0.3);
+        }
+
+        .btn-emerald:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(46, 139, 87, 0.4);
+            color: white;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: 0 10px 25px rgba(10, 42, 74, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(10, 42, 74, 0.4);
+            color: white;
+        }
+
+        .btn-outline-primary {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline-primary:hover {
+            background: var(--gradient-primary);
+            color: white;
+            border-color: transparent;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(10, 42, 74, 0.2);
+        }
+
+        .btn-lg {
+            padding: 18px 40px;
+            font-size: 1.1rem;
+        }
+
+        /* ===== Hero Section ===== */
+        .hero-section {
+            min-height: 80vh;
+            background: linear-gradient(rgba(10, 42, 74, 0.95), rgba(10, 42, 74, 0.85)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(201, 169, 110, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(201, 169, 110, 0.3);
+            padding: 10px 24px;
+            border-radius: 30px;
+            margin-bottom: 2.5rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        /* ===== Project Stats ===== */
+        .project-stats {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--shadow);
+            margin-top: -80px;
+            position: relative;
+            z-index: 2;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+
+        .stat-text {
+            font-size: 0.9rem;
+            color: var(--gray-color);
+            font-weight: 500;
+        }
+
+        /* ===== Project Overview ===== */
+        .overview-section {
+            padding: 100px 0;
+            background: #f9fafb;
+        }
+
+        .overview-image {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 100%;
+        }
+
+        .overview-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .overview-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .overview-features {
+            margin-top: 30px;
+        }
+
+        .overview-feature {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(201, 169, 110, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+        }
+
+        /* ===== Amenities Section ===== */
+        .amenities-section {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .amenity-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            height: 100%;
+            transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .amenity-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .amenity-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(201, 169, 110, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: var(--secondary-color);
+            font-size: 2rem;
+        }
+
+        /* ===== Floor Plans ===== */
+        .floorplans-section {
+            padding: 100px 0;
+            background: #f9fafb;
+        }
+
+        .floorplan-tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .floorplan-tab {
+            padding: 15px 30px;
+            background: white;
+            border: 2px solid var(--light-gray);
+            border-radius: 50px;
+            font-weight: 600;
+            color: var(--gray-color);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .floorplan-tab.active {
+            background: var(--gradient-secondary);
+            color: var(--primary-color);
+            border-color: transparent;
+        }
+
+        .floorplan-tab:hover {
+            background: var(--gradient-secondary);
+            color: var(--primary-color);
+            border-color: transparent;
+        }
+
+        .floorplan-content {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        .floorplan-image {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .floorplan-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .floorplan-specs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .spec-item {
+            padding: 20px;
+            background: rgba(201, 169, 110, 0.05);
+            border-radius: var(--border-radius);
+            text-align: center;
+        }
+
+        .spec-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+        }
+
+        .spec-label {
+            font-size: 0.9rem;
+            color: var(--gray-color);
+        }
+
+        /* ===== Location Section ===== */
+        .location-section {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .location-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--shadow);
+            height: 100%;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .location-feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .location-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(201, 169, 110, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+            color: var(--secondary-color);
+        }
+
+        /* ===== Gallery Section ===== */
+        .gallery-section {
+            padding: 100px 0;
+            background: #f9fafb;
+        }
+
+        .gallery-container {
+            position: relative;
+        }
+
+        .gallery-slider {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .swiper-slide {
+            position: relative;
+            height: 500px;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(10, 42, 74, 0.9), transparent);
+            color: white;
+            padding: 30px;
+        }
+
+        /* ===== Price Section ===== */
+        .price-section {
+            padding: 100px 0;
+            background: var(--gradient-primary);
+            color: white;
+        }
+
+        .price-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            height: 100%;
+            text-align: center;
+        }
+
+        .price-amount {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, var(--secondary-color), #ffd166);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .price-details {
+            list-style: none;
+            padding: 0;
+            margin: 30px 0;
+        }
+
+        .price-details li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .price-details li:last-child {
+            border-bottom: none;
+        }
+
+        /* ===== CTA Section ===== */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* ===== Footer ===== */
+        .footer {
+            background: var(--primary-dark);
+            color: #b0b7c3;
+            padding-top: 80px;
+        }
+
+        .footer-title {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--gradient-secondary);
+            border-radius: 2px;
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 30px 0;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        /* ===== Back to Top ===== */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-secondary);
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            box-shadow: 0 10px 30px rgba(201, 169, 110, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(201, 169, 110, 0.4);
+        }
+
+        /* ===== WhatsApp Float ===== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 99;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
+        }
+
+        /* ===== Mobile Bottom Nav ===== */
+        .mobile-bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 15px 0;
+            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-bottom-nav {
+                display: flex;
+            }
+            
+            .back-to-top {
+                bottom: 80px;
+            }
+            
+            .project-stats {
+                margin-top: -40px;
+                padding: 30px 20px;
+            }
+            
+            .stat-item {
+                padding: 15px 10px;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+
+        /* ===== Toast Notifications ===== */
+        .toast-container {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            z-index: 9999;
+        }
+
+        .toast {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            box-shadow: var(--shadow);
+            margin-bottom: 15px;
+            transform: translateX(100%);
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            max-width: 350px;
+        }
+
+        .toast.show {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        /* ===== Loading Overlay ===== */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            display: none;
+        }
+
+        .loading-overlay.active {
+            display: flex;
+        }
+
+        /* ===== Additional Styles ===== */
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        
+        .social-link:hover {
+            background: var(--gradient-secondary);
+            transform: translateY(-3px);
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #b0b7c3;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+        
+        .mobile-nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--dark-color);
+            padding: 5px 10px;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+        
+        .mobile-nav-item.active {
+            color: var(--secondary-color);
+            background: rgba(201, 169, 110, 0.1);
+        }
+        
+        .mobile-nav-item i {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .mobile-nav-item span {
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .project-mini-card {
+            display: block;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+        
+        .project-mini-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .contact-info {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+        
+        .contact-info i {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+            margin-top: 30px;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--secondary-color);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            padding-left: 30px;
+        }
+        
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -36px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background: var(--secondary-color);
+            border-radius: 50%;
+        }
+        
+        .timeline-date {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+        }
+        
+        .project-highlight {
+            background: linear-gradient(135deg, rgba(201, 169, 110, 0.05) 0%, rgba(201, 169, 110, 0.02) 100%);
+            border-left: 4px solid var(--secondary-color);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            margin: 30px 0;
+        }
+        
+        .download-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+        
+        .download-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .download-icon {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+        
+        .brochure-btn {
+            width: 100%;
+            margin-top: 20px;
+        }
+        
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: white;
+            background: rgba(0, 0, 0, 0.3);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            backdrop-filter: blur(10px);
+        }
+        
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
+            font-size: 1.5rem;
+        }
+        
+        .swiper-pagination-bullet {
+            background: white;
+            opacity: 0.5;
+            width: 12px;
+            height: 12px;
+        }
+        
+        .swiper-pagination-bullet-active {
+            background: var(--secondary-color);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader">
+            <div class="loader-inner"></div>
+        </div>
+        <div class="preloader-text">NARODA GROUP</div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay">
+        <div class="spinner-border" style="color: var(--secondary-color);" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Toast Container -->
+    <div class="toast-container"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <div class="logo-icon">NG</div>
+                <span>Naroda <span class="gold-text">Group</span></span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="projectsDropdown" data-bs-toggle="dropdown">
+                            Projects
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="nav-link active" href="projects-landmark.html">Naroda Landmark</a>
+                            <a class="dropdown-item" href="projects-irish.html">Naroda Irish</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="projects.html">All Projects</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="propertiesDropdown" data-bs-toggle="dropdown">
+                            Properties
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="properties.html">Buy</a>
+                            <a class="dropdown-item" href="properties-rent.html">Rent</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="property-detail.html">Property Details</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" data-bs-toggle="dropdown">
+                            More
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="blog.html">Blog</a>
+                            <a class="dropdown-item" href="news.html">News</a>
+                            <a class="dropdown-item" href="careers.html">Careers</a>
+                            <a class="dropdown-item" href="team.html">Our Team</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="faq.html">FAQ</a>
+                            <a class="dropdown-item" href="contact.html">Contact</a>
+                        </div>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center ms-lg-3 mt-3 mt-lg-0">
+                    <div class="dropdown">
+                        <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown">
+                            <i class="fas fa-globe me-1"></i> EN
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">English</a>
+                            <a class="dropdown-item" href="#">Hindi</a>
+                            <a class="dropdown-item" href="#">Gujarati</a>
+                        </div>
+                    </div>
+                    <a href="login.html" class="btn btn-outline-light ms-3">
+                        <i class="fas fa-user me-2"></i> Login
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Bottom Navigation -->
+    <div class="mobile-bottom-nav">
+        <a href="index.html" class="mobile-nav-item">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="projects.html" class="mobile-nav-item active">
+            <i class="fas fa-building"></i>
+            <span>Projects</span>
+        </a>
+        <a href="properties.html" class="mobile-nav-item">
+            <i class="fas fa-search"></i>
+            <span>Search</span>
+        </a>
+        <a href="contact.html" class="mobile-nav-item">
+            <i class="fas fa-phone"></i>
+            <span>Contact</span>
+        </a>
+        <a href="login.html" class="mobile-nav-item">
+            <i class="fas fa-user"></i>
+            <span>Account</span>
+        </a>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="row min-vh-80 align-items-center">
+                    <div class="col-lg-8">
+                        <div class="hero-badge" data-aos="fade-up">
+                            <i class="fas fa-award"></i> Ahmedabad's Premier Commercial Complex
+                        </div>
+                        
+                        <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">
+                            <span class="gold-text">Naroda Landmark</span><br>
+                            Redefining Commercial Excellence
+                        </h1>
+                        
+                        <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
+                            Grade A commercial complex with state-of-the-art amenities, premium office spaces, 
+                            and retail outlets. Designed for modern businesses to thrive.
+                        </p>
+                        
+                        <div class="d-flex flex-wrap gap-3" data-aos="fade-up" data-aos-delay="300">
+                            <a href="#pricing" class="btn btn-gold btn-lg">
+                                <i class="fas fa-tag me-2"></i> View Pricing
+                            </a>
+                            <a href="#gallery" class="btn btn-outline-light btn-lg">
+                                <i class="fas fa-images me-2"></i> View Gallery
+                            </a>
+                            <a href="contact.html" class="btn btn-emerald btn-lg">
+                                <i class="fas fa-calendar-alt me-2"></i> Schedule Visit
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Stats -->
+        <section>
+            <div class="container">
+                <div class="project-stats">
+                    <div class="row g-4">
+                        <div class="col-md-3 col-6" data-aos="fade-up">
+                            <div class="stat-item">
+                                <div class="stat-number">5</div>
+                                <div class="stat-text">Storeys</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="100">
+                            <div class="stat-item">
+                                <div class="stat-number">2.5L+</div>
+                                <div class="stat-text">Sq. Ft. Area</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="200">
+                            <div class="stat-item">
+                                <div class="stat-number">200+</div>
+                                <div class="stat-text">Parking Spaces</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="300">
+                            <div class="stat-item">
+                                <div class="stat-number">85%</div>
+                                <div class="stat-text">Sold Out</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Overview -->
+        <section class="overview-section" id="overview">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
+                            Project Overview
+                        </span>
+                        <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
+                            About <span class="gold-text">Naroda Landmark</span>
+                        </h2>
+                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200">
+                            A landmark commercial development designed for the modern business era
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+                        <div class="overview-image">
+                            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                                 alt="Naroda Landmark Building">
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6" data-aos="fade-left">
+                        <h3 class="mb-4">Premier Commercial Destination</h3>
+                        <p class="text-muted mb-4">
+                            Naroda Landmark stands as Ahmedabad's most prestigious commercial address, 
+                            offering Grade A office spaces, premium retail outlets, and exceptional 
+                            amenities. Strategically located in the heart of the city's business district, 
+                            this landmark development is designed to cater to the evolving needs of 
+                            modern businesses.
+                        </p>
+                        
+                        <p class="text-muted mb-4">
+                            With its contemporary architecture, sustainable design, and world-class 
+                            facilities, Naroda Landmark provides the perfect environment for 
+                            productivity, collaboration, and business growth.
+                        </p>
+                        
+                        <div class="overview-features">
+                            <div class="overview-feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-building"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-2">Modern Architecture</h5>
+                                    <p class="text-muted mb-0">Contemporary design with glass facade and energy-efficient features</p>
+                                </div>
+                            </div>
+                            
+                            <div class="overview-feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-leaf"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-2">Green Building</h5>
+                                    <p class="text-muted mb-0">IGBC Green Certified with sustainable practices and energy conservation</p>
+                                </div>
+                            </div>
+                            
+                            <div class="overview-feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-2">RERA Approved</h5>
+                                    <p class="text-muted mb-0">Fully compliant with RERA regulations ensuring complete transparency</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Amenities -->
+        <section class="amenities-section" id="amenities">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
+                            World-Class Amenities
+                        </span>
+                        <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
+                            Premium <span class="gold-text">Facilities</span>
+                        </h2>
+                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200">
+                            Designed to enhance productivity and business experience
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="amenity-card">
+                            <div class="amenity-icon">
+                                <i class="fas fa-wifi"></i>
+                            </div>
+                            <h4 class="mb-3">High-Speed Connectivity</h4>
+                            <p class="text-muted mb-0">
+                                Fiber optic internet, dedicated leased lines, and seamless connectivity 
+                                for uninterrupted business operations.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="amenity-card">
+                            <div class="amenity-icon">
+                                <i class="fas fa-car"></i>
+                            </div>
+                            <h4 class="mb-3">Ample Parking</h4>
+                            <p class="text-muted mb-0">
+                                Multi-level automated parking for 200+ vehicles with EV charging stations 
+                                and valet services.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="amenity-card">
+                            <div class="amenity-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h4 class="mb-3">24/7 Security</h4>
+                            <p class="text-muted mb-0">
+                                Advanced security systems with CCTV surveillance, biometric access, 
+                                and professional security personnel.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                        <div class="amenity-card">
+                            <div class="amenity-icon">
+                                <i class="fas fa-snowflake"></i>
+                            </div>
+                            <h4 class="mb-3">Central AC</h4>
+                            <p class="text-muted mb-0">
+                                Energy-efficient central air conditioning with individual zone control 
+                                for optimal comfort and cost savings.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
+                        <div class="amenity-card">
+                            <div class="amenity-icon">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <h4 class="mb-3">Food Court & Cafeteria</h4>
+                            <p class="text-muted mb-0">
+                                Premium food court with multiple cuisine options, coffee shops, 
+                                and fine dining restaurants.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
+                        <div class="amenity-card">
+                            <div class="amenity-icon">
+                                <i class="fas fa-dumbbell"></i>
+                            </div>
+                            <h4 class="mb-3">Fitness Center</h4>
+                            <p class="text-muted mb-0">
+                                State-of-the-art gym, yoga studio, and wellness center for employee 
+                                health and well-being.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Floor Plans -->
+        <section class="floorplans-section" id="floorplans">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
+                            Floor Plans
+                        </span>
+                        <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
+                            Smart <span class="gold-text">Layouts</span>
+                        </h2>
+                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200">
+                            Flexible office spaces designed for maximum efficiency
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="floorplan-tabs" data-aos="fade-up">
+                    <div class="floorplan-tab active" data-floor="ground">Ground Floor</div>
+                    <div class="floorplan-tab" data-floor="first">First Floor</div>
+                    <div class="floorplan-tab" data-floor="second">Second Floor</div>
+                    <div class="floorplan-tab" data-floor="penthouse">Penthouse</div>
+                </div>
+                
+                <div class="floorplan-content" data-aos="fade-up" data-aos-delay="100">
+                    <div class="floorplan-image">
+                        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80" 
+                             alt="Ground Floor Plan" id="floorplanImage">
+                    </div>
+                    
+                    <div class="floorplan-specs">
+                        <div class="spec-item">
+                            <div class="spec-value">500-5000</div>
+                            <div class="spec-label">Office Size (Sq. Ft.)</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-value">3.5m</div>
+                            <div class="spec-label">Floor Height</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-value">80%</div>
+                            <div class="spec-label">Efficiency Ratio</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-value">4</div>
+                            <div class="spec-label">Lifts</div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-4">
+                        <a href="#" class="btn btn-gold">
+                            <i class="fas fa-download me-2"></i> Download Floor Plans
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location Advantage -->
+        <section class="location-section" id="location">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
+                            Location Advantage
+                        </span>
+                        <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
+                            Prime <span class="gold-text">Location</span>
+                        </h2>
+                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200">
+                            Strategically located in Ahmedabad's fastest-growing commercial corridor
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-lg-6" data-aos="fade-right">
+                        <div class="location-card">
+                            <h3 class="mb-4">Connectivity & Accessibility</h3>
+                            <p class="text-muted mb-4">
+                                Naroda Landmark enjoys unparalleled connectivity with easy access to 
+                                major business hubs, transportation networks, and essential services. 
+                                Located just 15 minutes from the airport and 20 minutes from the railway 
+                                station.
+                            </p>
+                            
+                            <div class="location-feature">
+                                <div class="location-icon">
+                                    <i class="fas fa-plane"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1">Ahmedabad Airport</h5>
+                                    <p class="text-muted mb-0">15 minutes drive | 8 km distance</p>
+                                </div>
+                            </div>
+                            
+                            <div class="location-feature">
+                                <div class="location-icon">
+                                    <i class="fas fa-train"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1">Ahmedabad Railway Station</h5>
+                                    <p class="text-muted mb-0">20 minutes drive | 12 km distance</p>
+                                </div>
+                            </div>
+                            
+                            <div class="location-feature">
+                                <div class="location-icon">
+                                    <i class="fas fa-subway"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1">Metro Station</h5>
+                                    <p class="text-muted mb-0">5 minutes walk | 300 meters distance</p>
+                                </div>
+                            </div>
+                            
+                            <div class="location-feature">
+                                <div class="location-icon">
+                                    <i class="fas fa-hospital"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1">Hospitals & Medical Facilities</h5>
+                                    <p class="text-muted mb-0">Multiple premium hospitals within 2 km radius</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6" data-aos="fade-left">
+                        <div class="location-card">
+                            <h3 class="mb-4">Business Ecosystem</h3>
+                            <p class="text-muted mb-4">
+                                Surrounded by a thriving business ecosystem with corporate offices, 
+                                banks, restaurants, and retail establishments creating a dynamic 
+                                commercial environment.
+                            </p>
+                            
+                            <div class="mb-4">
+                                <h5 class="mb-3">Nearby Business Hubs</h5>
+                                <div class="row g-2">
+                                    <div class="col-6">
+                                        <div class="d-flex align-items-center mb-2">
+                                            <i class="fas fa-circle text-gold me-2" style="font-size: 0.5rem;"></i>
+                                            <span>Corporate Park</span>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-2">
+                                            <i class="fas fa-circle text-gold me-2" style="font-size: 0.5rem;"></i>
+                                            <span>IT Park</span>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-2">
+                                            <i class="fas fa-circle text-gold me-2" style="font-size: 0.5rem;"></i>
+                                            <span>Financial District</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="d-flex align-items-center mb-2">
+                                            <i class="fas fa-circle text-gold me-2" style="font-size: 0.5rem;"></i>
+                                            <span>SEZ Zone</span>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-2">
+                                            <i class="fas fa-circle text-gold me-2" style="font-size: 0.5rem;"></i>
+                                            <span>Retail Mall</span>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-2">
+                                            <i class="fas fa-circle text-gold me-2" style="font-size: 0.5rem;"></i>
+                                            <span>Exhibition Center</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="project-highlight">
+                                <h5 class="gold-text mb-3"><i class="fas fa-chart-line me-2"></i> Investment Potential</h5>
+                                <p class="mb-0">Expected appreciation of 15-20% annually. High rental yield of 8-10% makes this an excellent investment opportunity.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery -->
+        <section class="gallery-section" id="gallery">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
+                            Project Gallery
+                        </span>
+                        <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
+                            Visual <span class="gold-text">Journey</span>
+                        </h2>
+                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200">
+                            Explore our premium commercial spaces through images
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="gallery-container" data-aos="fade-up">
+                    <div class="swiper gallery-slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                                     alt="Building Exterior">
+                                <div class="gallery-overlay">
+                                    <h4 class="text-white">Modern Architectural Design</h4>
+                                    <p class="text-white-50">Glass facade with sustainable features</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80" 
+                                     alt="Office Interior">
+                                <div class="gallery-overlay">
+                                    <h4 class="text-white">Premium Office Spaces</h4>
+                                    <p class="text-white-50">Flexible layouts for modern businesses</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80" 
+                                     alt="Lobby Area">
+                                <div class="gallery-overlay">
+                                    <h4 class="text-white">Grand Entrance Lobby</h4>
+                                    <p class="text-white-50">Spacious reception with premium finishes</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://images.unsplash.com/photo-1558036117-15e82a2c9a9a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                                     alt="Meeting Room">
+                                <div class="gallery-overlay">
+                                    <h4 class="text-white">Conference Facilities</h4>
+                                    <p class="text-white-50">State-of-the-art meeting rooms</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="100">
+                    <a href="gallery.html" class="btn btn-gold">
+                        <i class="fas fa-images me-2"></i> View Full Gallery
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing -->
+        <section class="price-section" id="pricing">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
+                            Investment Opportunity
+                        </span>
+                        <h2 class="text-white" data-aos="fade-up" data-aos-delay="100">
+                            Pricing & <span class="gold-text">Payment Plans</span>
+                        </h2>
+                        <p class="text-white-50" data-aos="fade-up" data-aos-delay="200">
+                            Flexible payment options with attractive returns
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="price-card">
+                            <h4 class="mb-3">Office Spaces</h4>
+                            <div class="price-amount">₹ 12,500/sq.ft</div>
+                            <p class="text-white-50 mb-4">Starting Price</p>
+                            
+                            <ul class="price-details">
+                                <li>500 - 5000 Sq. Ft. Available</li>
+                                <li>Flexible Partition Options</li>
+                                <li>Built-to-Suit Available</li>
+                                <li>Leaseback Option</li>
+                            </ul>
+                            
+                            <a href="contact.html" class="btn btn-gold w-100">
+                                <i class="fas fa-calendar-alt me-2"></i> Book Site Visit
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="price-card">
+                            <h4 class="mb-3">Retail Shops</h4>
+                            <div class="price-amount">₹ 18,000/sq.ft</div>
+                            <p class="text-white-50 mb-4">Starting Price</p>
+                            
+                            <ul class="price-details">
+                                <li>Ground Floor Locations</li>
+                                <li>High Street Frontage</li>
+                                <li>Custom Storefronts</li>
+                                <li>Maximum Visibility</li>
+                            </ul>
+                            
+                            <a href="contact.html" class="btn btn-gold w-100">
+                                <i class="fas fa-store me-2"></i> View Retail Spaces
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="price-card">
+                            <h4 class="mb-3">Payment Plans</h4>
+                            <div class="price-amount">Flexible</div>
+                            <p class="text-white-50 mb-4">Choose Your Plan</p>
+                            
+                            <ul class="price-details">
+                                <li>20:80 Construction Linked</li>
+                                <li>Flexi Payment - 60 Months</li>
+                                <li>Bank Loans Available</li>
+                                <li>Corporate Discounts</li>
+                            </ul>
+                            
+                            <a href="contact.html" class="btn btn-gold w-100">
+                                <i class="fas fa-calculator me-2"></i> Calculate EMI
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-5">
+                    <div class="col-lg-10 mx-auto">
+                        <div class="project-highlight" style="background: rgba(255, 255, 255, 0.1);">
+                            <div class="row align-items-center">
+                                <div class="col-md-8">
+                                    <h5 class="gold-text mb-2"><i class="fas fa-percentage me-2"></i> Special Offer</h5>
+                                    <p class="text-white-50 mb-0">Limited period offer: Book now and get 2 years maintenance free + guaranteed rental returns for 3 years.</p>
+                                </div>
+                                <div class="col-md-4 text-md-end">
+                                    <a href="contact.html" class="btn btn-gold">
+                                        <i class="fas fa-gift me-2"></i> Avail Offer
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download Brochure -->
+        <section class="overview-section">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-md-6" data-aos="fade-right">
+                        <div class="download-card">
+                            <div class="download-icon">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <h4 class="mb-3">Download Brochure</h4>
+                            <p class="text-muted mb-4">
+                                Get detailed information about Naroda Landmark including specifications, 
+                                floor plans, amenities, and pricing.
+                            </p>
+                            <a href="#" class="btn btn-gold brochure-btn">
+                                <i class="fas fa-download me-2"></i> Download PDF (5.2 MB)
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6" data-aos="fade-left">
+                        <div class="download-card">
+                            <div class="download-icon">
+                                <i class="fas fa-video"></i>
+                            </div>
+                            <h4 class="mb-3">Virtual Tour</h4>
+                            <p class="text-muted mb-4">
+                                Experience Naroda Landmark through our immersive virtual tour. 
+                                Explore every corner from the comfort of your home or office.
+                            </p>
+                            <a href="#" class="btn btn-gold brochure-btn" id="virtualTourBtn">
+                                <i class="fas fa-play-circle me-2"></i> Start Virtual Tour
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline -->
+        <section class="overview-section">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
+                            Project Timeline
+                        </span>
+                        <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
+                            Development <span class="gold-text">Schedule</span>
+                        </h2>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-8 mx-auto" data-aos="fade-up">
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-date">January 2023</div>
+                                <h5 class="mb-2">Project Launch</h5>
+                                <p class="text-muted mb-0">Official launch with RERA approval and commencement of construction</p>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">June 2023</div>
+                                <h5 class="mb-2">Foundation Complete</h5>
+                                <p class="text-muted mb-0">Foundation work completed and structural framework begins</p>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">December 2023</div>
+                                <h5 class="mb-2">Structure Complete</h5>
+                                <p class="text-muted mb-0">Building structure completed, 60% sold out milestone achieved</p>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">June 2024</div>
+                                <h5 class="mb-2">Interior Work</h5>
+                                <p class="text-muted mb-0">Interior finishing, façade work, and amenity development begins</p>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-date">December 2024</div>
+                                <h5 class="mb-2">Project Completion</h5>
+                                <p class="text-muted mb-0">Final completion and handover of commercial spaces</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <h2 class="text-white mb-4" data-aos="fade-up">
+                            Ready to <span class="gold-text">Elevate Your Business?</span>
+                        </h2>
+                        <p class="text-white-50 mb-5" data-aos="fade-up" data-aos-delay="100">
+                            Join 50+ premium businesses at Naroda Landmark. Schedule a site visit 
+                            today and experience commercial excellence firsthand.
+                        </p>
+                        
+                        <div class="d-flex flex-column flex-sm-row justify-content-center gap-4" data-aos="fade-up" data-aos-delay="200">
+                            <a href="contact.html" class="btn btn-gold btn-lg">
+                                <i class="fas fa-calendar-alt me-2"></i> Schedule Site Visit
+                            </a>
+                            <a href="tel:+919876543210" class="btn btn-outline-light btn-lg">
+                                <i class="fas fa-phone me-2"></i> Call Now
+                            </a>
+                            <a href="contact.html" class="btn btn-emerald btn-lg">
+                                <i class="fas fa-envelope me-2"></i> Get Quote
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <div class="mb-4">
+                        <a class="navbar-brand text-white" href="index.html">
+                            <div class="logo-icon d-inline-flex align-items-center justify-content-center me-2">NG</div>
+                            Naroda <span class="gold-text">Group</span>
+                        </a>
+                    </div>
+                    <p class="mb-4">
+                        Creating landmark properties that redefine excellence. From premium commercial spaces 
+                        to luxury residential living, we build dreams with quality and commitment.
+                    </p>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="projects.html"><i class="fas fa-chevron-right"></i> Projects</a></li>
+                        <li><a href="properties.html"><i class="fas fa-chevron-right"></i> Properties</a></li>
+                        <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="footer-title">Our Projects</h3>
+                    <a href="projects-landmark.html" class="project-mini-card">
+                        <h6 class="text-white mb-1">Naroda Landmark</h6>
+                        <p class="small text-muted mb-0">Premium Commercial Spaces</p>
+                    </a>
+                    <a href="projects-irish.html" class="project-mini-card">
+                        <h6 class="text-white mb-1">Naroda Irish</h6>
+                        <p class="small text-muted mb-0">Luxury Residential Living</p>
+                    </a>
+                    <a href="projects.html" class="project-mini-card">
+                        <h6 class="text-white mb-1">View All Projects</h6>
+                        <p class="small text-muted mb-0">Explore our portfolio</p>
+                    </a>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="footer-title">Contact Info</h3>
+                    <div class="contact-info">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h6 class="text-white mb-1">Phone Number</h6>
+                            <p class="mb-0">+91 98765 43210</p>
+                            <small class="text-muted">Mon - Sat: 10 AM - 7 PM</small>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h6 class="text-white mb-1">Email Address</h6>
+                            <p class="mb-0">landmark@narodagroup.com</p>
+                            <small class="text-muted">Project-specific inquiries</small>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h6 class="text-white mb-1">Site Address</h6>
+                            <p class="mb-0">Naroda - Bhat Road</p>
+                            <small class="text-muted">Ahmedabad, Gujarat 382330</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="mb-0">&copy; 2025 Naroda Group. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="privacy.html" class="text-muted me-3">Privacy Policy</a>
+                        <a href="terms.html" class="text-muted me-3">Terms of Service</a>
+                        <a href="rera.html" class="text-muted">RERA: A1234567890</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <script>
+        // Wait for page to load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize AOS
+            AOS.init({
+                duration: 1000,
+                once: false,
+                offset: 100
+            });
+            
+            // Remove preloader
+            const preloader = document.getElementById('preloader');
+            setTimeout(() => {
+                preloader.style.opacity = '0';
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 500);
+            }, 1000);
+            
+            // Initialize Swiper
+            const swiper = new Swiper('.gallery-slider', {
+                loop: true,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                effect: 'fade',
+                fadeEffect: {
+                    crossFade: true
+                },
+            });
+            
+            // Initialize back to top button
+            function initBackToTop() {
+                const backToTop = document.querySelector('.back-to-top');
+                
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 300) {
+                        backToTop.classList.add('active');
+                    } else {
+                        backToTop.classList.remove('active');
+                    }
+                });
+                
+                backToTop.addEventListener('click', () => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+            
+            // Initialize navbar scroll effect
+            function initNavbarScroll() {
+                const navbar = document.querySelector('.navbar');
+                
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 50) {
+                        navbar.classList.add('scrolled');
+                    } else {
+                        navbar.classList.remove('scrolled');
+                    }
+                });
+            }
+            
+            // Initialize toast notifications
+            function initToastSystem() {
+                window.showToast = function(message, type = 'success') {
+                    const toastContainer = document.querySelector('.toast-container');
+                    const toast = document.createElement('div');
+                    toast.className = `toast toast-${type}`;
+                    toast.innerHTML = `
+                        <div class="d-flex align-items-center">
+                            <i class="fas ${type === 'success' ? 'fa-check-circle text-success' : 'fa-exclamation-circle text-danger'} me-3"></i>
+                            <div>
+                                <p class="mb-0 fw-500">${message}</p>
+                            </div>
+                            <button type="button" class="btn-close ms-auto" onclick="this.parentElement.parentElement.remove()"></button>
+                        </div>
+                    `;
+                    
+                    toastContainer.appendChild(toast);
+                    
+                    setTimeout(() => toast.classList.add('show'), 10);
+                    
+                    setTimeout(() => {
+                        toast.classList.remove('show');
+                        setTimeout(() => toast.remove(), 300);
+                    }, 5000);
+                };
+            }
+            
+            // Initialize mobile navigation
+            function initMobileNav() {
+                // Update active nav item based on current page
+                const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+                document.querySelectorAll('.mobile-nav-item').forEach(item => {
+                    const href = item.getAttribute('href');
+                    if (href === currentPage) {
+                        item.classList.add('active');
+                    } else {
+                        item.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Initialize floor plan tabs
+            function initFloorPlanTabs() {
+                const floorTabs = document.querySelectorAll('.floorplan-tab');
+                const floorplanImage = document.getElementById('floorplanImage');
+                
+                const floorImages = {
+                    'ground': 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80',
+                    'first': 'https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80',
+                    'second': 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2058&q=80',
+                    'penthouse': 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
+                };
+                
+                floorTabs.forEach(tab => {
+                    tab.addEventListener('click', function() {
+                        // Remove active class from all tabs
+                        floorTabs.forEach(t => t.classList.remove('active'));
+                        
+                        // Add active class to clicked tab
+                        this.classList.add('active');
+                        
+                        // Update floor plan image
+                        const floor = this.getAttribute('data-floor');
+                        floorplanImage.src = floorImages[floor];
+                        
+                        // Add loading effect
+                        floorplanImage.style.opacity = '0.5';
+                        setTimeout(() => {
+                            floorplanImage.style.opacity = '1';
+                        }, 300);
+                        
+                        // Update image alt text
+                        const floorNames = {
+                            'ground': 'Ground Floor Plan',
+                            'first': 'First Floor Plan',
+                            'second': 'Second Floor Plan',
+                            'penthouse': 'Penthouse Floor Plan'
+                        };
+                        floorplanImage.alt = floorNames[floor];
+                    });
+                });
+            }
+            
+            // Initialize virtual tour
+            function initVirtualTour() {
+                const virtualTourBtn = document.getElementById('virtualTourBtn');
+                virtualTourBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Create modal for virtual tour
+                    const modalHTML = `
+                        <div class="modal fade" id="virtualTourModal" tabindex="-1">
+                            <div class="modal-dialog modal-dialog-centered modal-xl">
+                                <div class="modal-content">
+                                    <div class="modal-header border-0">
+                                        <h5 class="modal-title">Naroda Landmark Virtual Tour</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+                                    <div class="modal-body p-0">
+                                        <div class="ratio ratio-16x9">
+                                            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" 
+                                                    title="Naroda Landmark Virtual Tour"
+                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                                    allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    
+                    document.body.insertAdjacentHTML('beforeend', modalHTML);
+                    
+                    const virtualTourModal = new bootstrap.Modal(document.getElementById('virtualTourModal'));
+                    virtualTourModal.show();
+                    
+                    document.getElementById('virtualTourModal').addEventListener('hidden.bs.modal', function() {
+                        this.remove();
+                    });
+                });
+            }
+            
+            // Initialize download functionality
+            function initDownloads() {
+                // Brochure download
+                const brochureBtn = document.querySelector('.brochure-btn');
+                if (brochureBtn) {
+                    brochureBtn.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        showToast('Brochure download started. Check your downloads folder.', 'success');
+                        
+                        // Simulate download
+                        setTimeout(() => {
+                            showToast('Brochure downloaded successfully!', 'success');
+                        }, 2000);
+                    });
+                }
+            }
+            
+            // Initialize all functions
+            initBackToTop();
+            initNavbarScroll();
+            initToastSystem();
+            initMobileNav();
+            initFloorPlanTabs();
+            initVirtualTour();
+            initDownloads();
+            
+            // Show welcome message
+            setTimeout(() => {
+                showToast('Welcome to Naroda Landmark! Explore our premium commercial spaces.', 'success');
+            }, 1500);
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+        
+        // Loading overlay functions
+        window.showLoading = function() {
+            document.querySelector('.loading-overlay').classList.add('active');
+        };
+        
+        window.hideLoading = function() {
+            document.querySelector('.loading-overlay').classList.remove('active');
+        };
+    </script>
+</body>
+</html>

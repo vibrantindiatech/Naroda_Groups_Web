@@ -1,0 +1,2506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News | Naroda Group - Latest Real Estate Updates & Announcements</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Latest news, announcements, and updates from Naroda Group. Stay informed about new projects, awards, and industry developments.">
+    <meta name="keywords" content="naroda group news, real estate updates, property announcements, industry news, project launches">
+    <meta name="author" content="Naroda Group">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ===== CSS Variables ===== */
+        :root {
+            --primary-color: #0a2a4a;
+            --primary-dark: #071a2e;
+            --primary-light: #0e3a64;
+            --secondary-color: #c9a96e;
+            --secondary-light: #d4b87a;
+            --secondary-dark: #b89440;
+            --accent-color: #2e8b57;
+            --accent-light: #3cb371;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --gray-color: #6c757d;
+            --light-gray: #e9ecef;
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+            --shadow-hover: 0 25px 60px rgba(0, 0, 0, 0.2);
+            --border-radius: 16px;
+            --border-radius-lg: 24px;
+            --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            --gradient-secondary: linear-gradient(135deg, var(--secondary-color), var(--secondary-light));
+            --gradient-accent: linear-gradient(135deg, var(--accent-color), var(--accent-light));
+        }
+
+        /* ===== Base Styles ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark-color);
+            overflow-x: hidden;
+            line-height: 1.7;
+            font-weight: 400;
+            background-color: #ffffff;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            max-width: 1320px;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 0;
+            }
+        }
+
+        /* ===== Utility Classes ===== */
+        .gold-text {
+            color: var(--secondary-color);
+        }
+
+        .emerald-text {
+            color: var(--accent-color);
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-secondary);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .section-title.left:after {
+            left: 0;
+            transform: none;
+        }
+
+        .badge {
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .bg-gradient-secondary {
+            background: var(--gradient-secondary) !important;
+        }
+
+        /* ===== Preloader ===== */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loader {
+            width: 80px;
+            height: 80px;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .loader-inner {
+            width: 100%;
+            height: 100%;
+            border: 4px solid rgba(201, 169, 110, 0.2);
+            border-radius: 50%;
+            border-top-color: var(--secondary-color);
+            animation: spin 1.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .preloader-text {
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        /* ===== Navigation ===== */
+        .navbar {
+            padding: 1.2rem 0;
+            background: rgba(10, 42, 74, 0.95);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+            z-index: 1000;
+        }
+
+        .navbar.scrolled {
+            padding: 0.8rem 0;
+            box-shadow: var(--shadow);
+            background: rgba(10, 42, 74, 0.98);
+        }
+
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-secondary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            color: var(--primary-color);
+            font-weight: 900;
+            font-size: 1.5rem;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            margin: 0 6px;
+            position: relative;
+            padding: 8px 16px !important;
+            border-radius: 30px;
+            transition: var(--transition);
+        }
+
+        .nav-link:before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 100%;
+            background: rgba(201, 169, 110, 0.1);
+            border-radius: 30px;
+            top: 0;
+            left: 0;
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .nav-link:hover:before,
+        .nav-link.active:before {
+            width: 100%;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--secondary-color) !important;
+        }
+
+        .dropdown-menu {
+            border: none;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 10px 0;
+            margin-top: 10px;
+        }
+
+        .dropdown-item {
+            padding: 10px 20px;
+            transition: var(--transition);
+        }
+
+        .dropdown-item:hover {
+            background: rgba(201, 169, 110, 0.1);
+            color: var(--secondary-color);
+        }
+
+        /* ===== Buttons ===== */
+        .btn {
+            padding: 14px 32px;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: var(--transition);
+            border: none;
+            position: relative;
+            overflow: hidden;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .btn:hover:before {
+            left: 100%;
+        }
+
+        .btn-gold {
+            background: var(--gradient-secondary);
+            color: var(--primary-color);
+            box-shadow: 0 10px 25px rgba(201, 169, 110, 0.3);
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(201, 169, 110, 0.4);
+            color: var(--primary-color);
+        }
+
+        .btn-outline-light {
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            background: transparent;
+        }
+
+        .btn-outline-light:hover {
+            background: white;
+            color: var(--primary-color);
+            border-color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-emerald {
+            background: var(--gradient-accent);
+            color: white;
+            box-shadow: 0 10px 25px rgba(46, 139, 87, 0.3);
+        }
+
+        .btn-emerald:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(46, 139, 87, 0.4);
+            color: white;
+        }
+
+        /* ===== Hero Section ===== */
+        .hero-section {
+            min-height: 60vh;
+            background: linear-gradient(rgba(10, 42, 74, 0.95), rgba(10, 42, 74, 0.85)), url('https://images.unsplash.com/photo-1588681664899-f142ff2dc9b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        /* ===== News Content ===== */
+        .news-section {
+            padding: 100px 0;
+            background: #f9fafb;
+        }
+
+        .news-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 992px) {
+            .news-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== News Grid ===== */
+        .news-grid {
+            display: grid;
+            gap: 30px;
+        }
+
+        .news-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .news-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .news-card.featured {
+            grid-column: 1 / -1;
+        }
+
+        .news-image {
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .news-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .news-card:hover .news-image img {
+            transform: scale(1.1);
+        }
+
+        .news-tag {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: var(--gradient-secondary);
+            color: var(--primary-color);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .news-content {
+            padding: 30px;
+        }
+
+        .news-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: var(--gray-color);
+            font-size: 0.9rem;
+        }
+
+        .news-meta-item {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+
+        .news-meta-item i {
+            margin-right: 6px;
+            color: var(--secondary-color);
+        }
+
+        .news-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid var(--light-gray);
+        }
+
+        /* ===== Sidebar ===== */
+        .sidebar {
+            position: sticky;
+            top: 100px;
+        }
+
+        .sidebar-widget {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow);
+        }
+
+        .widget-title {
+            position: relative;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+        }
+
+        .widget-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--gradient-secondary);
+            border-radius: 2px;
+        }
+
+        .news-categories {
+            list-style: none;
+            padding: 0;
+        }
+
+        .news-categories li {
+            margin-bottom: 12px;
+        }
+
+        .news-categories a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--dark-color);
+            padding: 10px 0;
+            border-bottom: 1px solid var(--light-gray);
+            transition: var(--transition);
+        }
+
+        .news-categories a:hover {
+            color: var(--secondary-color);
+            padding-left: 10px;
+        }
+
+        .category-count {
+            background: var(--light-gray);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .updates-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .update-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .update-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .update-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--primary-color);
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .update-content h6 {
+            margin-bottom: 5px;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .update-date {
+            font-size: 0.8rem;
+            color: var(--gray-color);
+        }
+
+        .social-widget {
+            text-align: center;
+        }
+
+        .social-counts {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+
+        .social-count {
+            text-align: center;
+        }
+
+        .social-number {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--secondary-color);
+            line-height: 1;
+        }
+
+        .social-label {
+            font-size: 0.85rem;
+            color: var(--gray-color);
+            margin-top: 5px;
+        }
+
+        .subscribe-widget {
+            background: var(--gradient-primary);
+            color: white;
+            text-align: center;
+        }
+
+        .subscribe-widget .widget-title {
+            color: white;
+        }
+
+        .subscribe-widget .widget-title:after {
+            background: var(--gradient-secondary);
+        }
+
+        /* ===== Breaking News Banner ===== */
+        .breaking-news {
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-light));
+            color: white;
+            padding: 20px 0;
+            margin-bottom: 40px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .breaking-label {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-right: 20px;
+            white-space: nowrap;
+        }
+
+        .breaking-content {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .breaking-text {
+            display: inline-block;
+            white-space: nowrap;
+            padding-left: 100%;
+            animation: scrollText 20s linear infinite;
+        }
+
+        @keyframes scrollText {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* ===== Media Coverage ===== */
+        .media-section {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .media-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .media-logo {
+            opacity: 0.6;
+            transition: var(--transition);
+            height: 40px;
+        }
+
+        .media-logo:hover {
+            opacity: 1;
+            transform: translateY(-5px);
+        }
+
+        /* ===== Press Releases ===== */
+        .press-section {
+            padding: 100px 0;
+            background: #f9fafb;
+        }
+
+        .press-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            height: 100%;
+        }
+
+        .press-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .press-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, rgba(201, 169, 110, 0.1) 0%, rgba(201, 169, 110, 0.05) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            color: var(--secondary-color);
+            font-size: 24px;
+        }
+
+        /* ===== Calendar Section ===== */
+        .calendar-section {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .calendar-card {
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        .calendar-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .calendar-month {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+
+        .calendar-year {
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+        }
+
+        .calendar-day {
+            text-align: center;
+            padding: 15px 5px;
+            border-radius: 10px;
+            font-weight: 600;
+        }
+
+        .calendar-day.weekday {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .calendar-day.event {
+            background: rgba(255, 255, 255, 0.2);
+            position: relative;
+            cursor: pointer;
+        }
+
+        .calendar-day.event:after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 6px;
+            height: 6px;
+            background: var(--secondary-color);
+            border-radius: 50%;
+        }
+
+        .calendar-day.today {
+            background: var(--gradient-secondary);
+            color: var(--primary-color);
+        }
+
+        /* ===== Footer ===== */
+        .footer {
+            background: var(--primary-dark);
+            color: #b0b7c3;
+            padding-top: 80px;
+        }
+
+        .footer-title {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--gradient-secondary);
+            border-radius: 2px;
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 30px 0;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        /* ===== Back to Top ===== */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-secondary);
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            box-shadow: 0 10px 30px rgba(201, 169, 110, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(201, 169, 110, 0.4);
+        }
+
+        /* ===== WhatsApp Float ===== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 99;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
+        }
+
+        /* ===== Mobile Bottom Nav ===== */
+        .mobile-bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 15px 0;
+            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-bottom-nav {
+                display: flex;
+            }
+            
+            .back-to-top {
+                bottom: 80px;
+            }
+        }
+
+        /* ===== Toast Notifications ===== */
+        .toast-container {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            z-index: 9999;
+        }
+
+        .toast {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            box-shadow: var(--shadow);
+            margin-bottom: 15px;
+            transform: translateX(100%);
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            max-width: 350px;
+        }
+
+        .toast.show {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        /* ===== Loading Overlay ===== */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            display: none;
+        }
+
+        .loading-overlay.active {
+            display: flex;
+        }
+
+        /* ===== Additional Styles ===== */
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        
+        .social-link:hover {
+            background: var(--gradient-secondary);
+            transform: translateY(-3px);
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #b0b7c3;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+        
+        .mobile-nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--dark-color);
+            padding: 5px 10px;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+        
+        .mobile-nav-item.active {
+            color: var(--secondary-color);
+            background: rgba(201, 169, 110, 0.1);
+        }
+        
+        .mobile-nav-item i {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .mobile-nav-item span {
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .project-mini-card {
+            display: block;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+        
+        .project-mini-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .contact-info {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+        
+        .contact-info i {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+
+        /* ===== News Filter ===== */
+        .news-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            padding: 10px 24px;
+            background: white;
+            border: 2px solid var(--light-gray);
+            border-radius: 50px;
+            font-weight: 600;
+            color: var(--dark-color);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--gradient-secondary);
+            color: var(--primary-color);
+            border-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(201, 169, 110, 0.2);
+        }
+
+        .filter-btn.active {
+            transform: translateY(-3px) scale(1.05);
+        }
+
+        /* ===== No Results ===== */
+        .no-results {
+            text-align: center;
+            padding: 60px 20px;
+            grid-column: 1 / -1;
+        }
+
+        .no-results-icon {
+            font-size: 4rem;
+            color: var(--light-gray);
+            margin-bottom: 20px;
+        }
+
+        /* ===== Share Buttons ===== */
+        .share-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .share-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .share-btn.facebook { background: #3b5998; }
+        .share-btn.twitter { background: #1da1f2; }
+        .share-btn.linkedin { background: #0077b5; }
+        .share-btn.whatsapp { background: #25d366; }
+
+        .share-btn:hover {
+            transform: translateY(-3px);
+            opacity: 0.9;
+        }
+
+        /* ===== Media Player ===== */
+        .media-player {
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .player-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .play-btn {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .play-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .progress-bar {
+            flex: 1;
+            height: 4px;
+            background: var(--light-gray);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--gradient-secondary);
+            width: 30%;
+        }
+
+        /* ===== Newsletter Form ===== */
+        .newsletter-form {
+            margin-top: 20px;
+        }
+
+        .newsletter-form input {
+            width: 100%;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 50px;
+            margin-bottom: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .newsletter-form input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .newsletter-form input:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* ===== Pagination ===== */
+        .pagination {
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .page-link {
+            border: none;
+            color: var(--primary-color);
+            margin: 0 5px;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .page-link:hover,
+        .page-link.active {
+            background: var(--gradient-secondary);
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader">
+            <div class="loader-inner"></div>
+        </div>
+        <div class="preloader-text">NARODA GROUP</div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay">
+        <div class="spinner-border" style="color: var(--secondary-color);" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Toast Container -->
+    <div class="toast-container"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <div class="logo-icon">NG</div>
+                <span>Naroda <span class="gold-text">Group</span></span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" data-bs-toggle="dropdown">
+                            Projects
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="projects-landmark.html">Naroda Landmark</a>
+                            <a class="dropdown-item" href="projects-irish.html">Naroda Irish</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="projects.html">All Projects</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="propertiesDropdown" data-bs-toggle="dropdown">
+                            Properties
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="properties.html">Buy</a>
+                            <a class="dropdown-item" href="properties-rent.html">Rent</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="property-detail.html">Property Details</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="moreDropdown" data-bs-toggle="dropdown">
+                            More
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="blog.html">Blog</a>
+                            <a class="dropdown-item active" href="news.html">News</a>
+                            <a class="dropdown-item" href="careers.html">Careers</a>
+                            <a class="dropdown-item" href="team.html">Our Team</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="faq.html">FAQ</a>
+                            <a class="dropdown-item" href="contact.html">Contact</a>
+                        </div>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center ms-lg-3 mt-3 mt-lg-0">
+                    <div class="dropdown">
+                        <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown">
+                            <i class="fas fa-globe me-1"></i> EN
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">English</a>
+                            <a class="dropdown-item" href="#">Hindi</a>
+                            <a class="dropdown-item" href="#">Gujarati</a>
+                        </div>
+                    </div>
+                    <a href="login.html" class="btn btn-outline-light ms-3">
+                        <i class="fas fa-user me-2"></i> Login
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Bottom Navigation -->
+    <div class="mobile-bottom-nav">
+        <a href="index.html" class="mobile-nav-item">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="projects.html" class="mobile-nav-item">
+            <i class="fas fa-building"></i>
+            <span>Projects</span>
+        </a>
+        <a href="properties.html" class="mobile-nav-item">
+            <i class="fas fa-search"></i>
+            <span>Search</span>
+        </a>
+        <a href="contact.html" class="mobile-nav-item">
+            <i class="fas fa-phone"></i>
+            <span>Contact</span>
+        </a>
+        <a href="login.html" class="mobile-nav-item">
+            <i class="fas fa-user"></i>
+            <span>Account</span>
+        </a>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="row min-vh-60 align-items-center">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <h1 class="hero-title" data-aos="fade-up">
+                            Latest <span class="gold-text">News</span>
+                        </h1>
+                        <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
+                            Stay updated with our latest announcements, achievements, and industry developments
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Breaking News Banner -->
+        <section style="padding: 40px 0 0;">
+            <div class="container">
+                <div class="breaking-news" data-aos="fade-up">
+                    <div class="d-flex align-items-center">
+                        <div class="breaking-label">
+                            <i class="fas fa-bolt me-2"></i> BREAKING
+                        </div>
+                        <div class="breaking-content">
+                            <div class="breaking-text">
+                                Naroda Group launches new luxury project "Naroda Elite" with pre-launch offers starting from ₹ 75 Lakhs. Book your dream home today!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Content -->
+        <section class="news-section">
+            <div class="container">
+                <div class="news-filter" data-aos="fade-up">
+                    <button class="filter-btn active" data-filter="all">All News</button>
+                    <button class="filter-btn" data-filter="announcements">Announcements</button>
+                    <button class="filter-btn" data-filter="awards">Awards</button>
+                    <button class="filter-btn" data-filter="projects">Projects</button>
+                    <button class="filter-btn" data-filter="events">Events</button>
+                    <button class="filter-btn" data-filter="media">Media Coverage</button>
+                </div>
+                
+                <div class="news-container">
+                    <!-- Main News Content -->
+                    <div class="main-content">
+                        <!-- Featured News -->
+                        <div class="news-grid">
+                            <div class="news-card featured" data-aos="fade-up">
+                                <div class="news-image">
+                                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2073&q=80" 
+                                         alt="Naroda Group Wins Best Developer Award">
+                                    <span class="news-tag">Award</span>
+                                </div>
+                                <div class="news-content">
+                                    <div class="news-meta">
+                                        <div class="news-meta-item">
+                                            <i class="far fa-calendar"></i> Jan 20, 2025
+                                        </div>
+                                        <div class="news-meta-item">
+                                            <i class="far fa-clock"></i> 2 min read
+                                        </div>
+                                        <div class="news-meta-item">
+                                            <i class="fas fa-map-marker-alt"></i> Ahmedabad
+                                        </div>
+                                    </div>
+                                    <h2 class="mb-3">Naroda Group Wins "Best Real Estate Developer" Award 2024</h2>
+                                    <p class="text-muted mb-4">
+                                        Naroda Group has been honored with the prestigious "Best Real Estate Developer" award 
+                                        at the National Real Estate Excellence Awards 2024. The award recognizes our commitment 
+                                        to quality, innovation, and customer satisfaction.
+                                    </p>
+                                    <div class="news-actions">
+                                        <div class="share-buttons">
+                                            <a href="#" class="share-btn facebook" aria-label="Share on Facebook">
+                                                <i class="fab fa-facebook-f"></i>
+                                            </a>
+                                            <a href="#" class="share-btn twitter" aria-label="Share on Twitter">
+                                                <i class="fab fa-twitter"></i>
+                                            </a>
+                                            <a href="#" class="share-btn linkedin" aria-label="Share on LinkedIn">
+                                                <i class="fab fa-linkedin-in"></i>
+                                            </a>
+                                            <a href="#" class="share-btn whatsapp" aria-label="Share on WhatsApp">
+                                                <i class="fab fa-whatsapp"></i>
+                                            </a>
+                                        </div>
+                                        <a href="news-detail.html" class="btn btn-gold">
+                                            Read Full Story <i class="fas fa-arrow-right ms-2"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Regular News Grid -->
+                        <div class="news-grid mt-4" id="newsGrid">
+                            <!-- News items will be loaded here dynamically -->
+                        </div>
+                        
+                        <!-- No Results Message -->
+                        <div class="no-results" id="noResults" style="display: none;">
+                            <div class="no-results-icon">
+                                <i class="fas fa-newspaper"></i>
+                            </div>
+                            <h3 class="mb-3">No News Found</h3>
+                            <p class="text-muted mb-4">Try selecting a different category</p>
+                        </div>
+                        
+                        <!-- Pagination -->
+                        <nav aria-label="Page navigation" class="mt-5">
+                            <ul class="pagination" id="pagination">
+                                <!-- Pagination will be generated here -->
+                            </ul>
+                        </nav>
+                    </div>
+                    
+                    <!-- Sidebar -->
+                    <div class="sidebar">
+                        <!-- Categories Widget -->
+                        <div class="sidebar-widget" data-aos="fade-left" data-aos-delay="100">
+                            <h4 class="widget-title">News Categories</h4>
+                            <ul class="news-categories" id="newsCategories">
+                                <!-- Categories will be loaded dynamically -->
+                            </ul>
+                        </div>
+                        
+                        <!-- Latest Updates Widget -->
+                        <div class="sidebar-widget" data-aos="fade-left" data-aos-delay="200">
+                            <h4 class="widget-title">Latest Updates</h4>
+                            <ul class="updates-list" id="updatesList">
+                                <!-- Updates will be loaded dynamically -->
+                            </ul>
+                        </div>
+                        
+                        <!-- Media Player Widget -->
+                        <div class="sidebar-widget" data-aos="fade-left" data-aos-delay="300">
+                            <h4 class="widget-title">Media Coverage</h4>
+                            <div class="media-player">
+                                <h6 class="mb-3">CEO Interview on Real Estate Trends</h6>
+                                <div class="player-controls">
+                                    <div class="play-btn">
+                                        <i class="fas fa-play"></i>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill"></div>
+                                    </div>
+                                    <span class="text-muted">2:45 / 15:30</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Social Stats Widget -->
+                        <div class="sidebar-widget social-widget" data-aos="fade-left" data-aos-delay="400">
+                            <h4 class="widget-title">Follow Us</h4>
+                            <div class="social-counts">
+                                <div class="social-count">
+                                    <div class="social-number">25K</div>
+                                    <div class="social-label">Facebook</div>
+                                </div>
+                                <div class="social-count">
+                                    <div class="social-number">12K</div>
+                                    <div class="social-label">Twitter</div>
+                                </div>
+                                <div class="social-count">
+                                    <div class="social-number">18K</div>
+                                    <div class="social-label">LinkedIn</div>
+                                </div>
+                            </div>
+                            <div class="social-links justify-content-center">
+                                <a href="#" class="social-link" aria-label="Facebook">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="social-link" aria-label="Twitter">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="social-link" aria-label="Instagram">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="social-link" aria-label="LinkedIn">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="social-link" aria-label="YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Subscribe Widget -->
+                        <div class="sidebar-widget subscribe-widget" data-aos="fade-left" data-aos-delay="500">
+                            <h4 class="widget-title">News Alerts</h4>
+                            <p class="mb-3">Get instant notifications for important announcements</p>
+                            <div class="newsletter-form">
+                                <input type="email" placeholder="Your email address">
+                                <button class="btn btn-gold w-100">
+                                    <i class="fas fa-bell me-2"></i> Subscribe
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Press Releases -->
+        <section class="press-section">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
+                            Press Releases
+                        </span>
+                        <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
+                            Official <span class="gold-text">Announcements</span>
+                        </h2>
+                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200">
+                            Important announcements and official statements from Naroda Group
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="press-card">
+                            <div class="press-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h4 class="mb-3">Financial Results Q4 2024</h4>
+                            <p class="text-muted mb-4">
+                                Naroda Group announces strong financial results for Q4 2024 with 25% revenue growth and expansion plans.
+                            </p>
+                            <a href="#" class="btn btn-outline-primary">
+                                <i class="fas fa-download me-2"></i> Download PDF
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="press-card">
+                            <div class="press-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4 class="mb-3">CSR Initiative Launch</h4>
+                            <p class="text-muted mb-4">
+                                Naroda Group launches "Green Homes" initiative to promote sustainable living and community development.
+                            </p>
+                            <a href="#" class="btn btn-outline-primary">
+                                <i class="fas fa-download me-2"></i> Download PDF
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="press-card">
+                            <div class="press-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <h4 class="mb-3">Strategic Partnership</h4>
+                            <p class="text-muted mb-4">
+                                Naroda Group announces strategic partnership with leading international architecture firm for upcoming projects.
+                            </p>
+                            <a href="#" class="btn btn-outline-primary">
+                                <i class="fas fa-download me-2"></i> Download PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Media Coverage -->
+        <section class="media-section">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
+                            In The Media
+                        </span>
+                        <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
+                            Featured In <span class="gold-text">Media</span>
+                        </h2>
+                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200">
+                            Our work and achievements featured in leading publications
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="media-logos" data-aos="fade-up">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/The_Times_of_India_logo.svg" alt="Times of India" class="media-logo" style="height: 30px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/The_Economic_Times_logo.png" alt="Economic Times" class="media-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/79/Business_Standard_logo.svg" alt="Business Standard" class="media-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5d/CNBC_Awaaz_Logo.png" alt="CNBC Awaaz" class="media-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/7/7c/ET_Now_logo.png" alt="ET Now" class="media-logo">
+                </div>
+            </div>
+        </section>
+
+        <!-- Calendar Section -->
+        <section class="calendar-section">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
+                            Events Calendar
+                        </span>
+                        <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
+                            Upcoming <span class="gold-text">Events</span>
+                        </h2>
+                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200">
+                            Mark your calendar for important events and activities
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-6" data-aos="fade-right">
+                        <div class="calendar-card">
+                            <div class="calendar-header">
+                                <div class="calendar-month">January 2025</div>
+                                <div class="calendar-year">Upcoming Events</div>
+                            </div>
+                            <div class="calendar-grid">
+                                <div class="calendar-day weekday">Mon</div>
+                                <div class="calendar-day weekday">Tue</div>
+                                <div class="calendar-day weekday">Wed</div>
+                                <div class="calendar-day weekday">Thu</div>
+                                <div class="calendar-day weekday">Fri</div>
+                                <div class="calendar-day weekday">Sat</div>
+                                <div class="calendar-day weekday">Sun</div>
+                                
+                                <!-- Calendar days will be populated dynamically -->
+                                <div class="calendar-day">1</div>
+                                <div class="calendar-day">2</div>
+                                <div class="calendar-day">3</div>
+                                <div class="calendar-day">4</div>
+                                <div class="calendar-day">5</div>
+                                <div class="calendar-day">6</div>
+                                <div class="calendar-day">7</div>
+                                <div class="calendar-day">8</div>
+                                <div class="calendar-day">9</div>
+                                <div class="calendar-day">10</div>
+                                <div class="calendar-day event" title="Project Launch">11</div>
+                                <div class="calendar-day">12</div>
+                                <div class="calendar-day">13</div>
+                                <div class="calendar-day event" title="Investor Meet">14</div>
+                                <div class="calendar-day">15</div>
+                                <div class="calendar-day">16</div>
+                                <div class="calendar-day">17</div>
+                                <div class="calendar-day">18</div>
+                                <div class="calendar-day event" title="Site Visit">19</div>
+                                <div class="calendar-day today">20</div>
+                                <div class="calendar-day">21</div>
+                                <div class="calendar-day">22</div>
+                                <div class="calendar-day">23</div>
+                                <div class="calendar-day event" title="Award Ceremony">24</div>
+                                <div class="calendar-day">25</div>
+                                <div class="calendar-day">26</div>
+                                <div class="calendar-day">27</div>
+                                <div class="calendar-day">28</div>
+                                <div class="calendar-day">29</div>
+                                <div class="calendar-day">30</div>
+                                <div class="calendar-day">31</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6" data-aos="fade-left">
+                        <div class="upcoming-events">
+                            <h3 class="mb-4">Upcoming Events</h3>
+                            
+                            <div class="update-item">
+                                <div class="update-icon">
+                                    <i class="fas fa-rocket"></i>
+                                </div>
+                                <div class="update-content">
+                                    <h6>Naroda Elite Project Launch</h6>
+                                    <p class="text-muted mb-2">Grand launch of our new luxury residential project</p>
+                                    <div class="update-date">
+                                        <i class="far fa-calendar me-1"></i> Jan 11, 2025 | 
+                                        <i class="fas fa-map-marker-alt ms-2 me-1"></i> Naroda, Ahmedabad
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="update-item">
+                                <div class="update-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="update-content">
+                                    <h6>Quarterly Investor Meet</h6>
+                                    <p class="text-muted mb-2">Discussion on financial performance and future plans</p>
+                                    <div class="update-date">
+                                        <i class="far fa-calendar me-1"></i> Jan 14, 2025 | 
+                                        <i class="fas fa-map-marker-alt ms-2 me-1"></i> Corporate Office
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="update-item">
+                                <div class="update-icon">
+                                    <i class="fas fa-trophy"></i>
+                                </div>
+                                <div class="update-content">
+                                    <h6>Real Estate Excellence Awards</h6>
+                                    <p class="text-muted mb-2">Award ceremony recognizing industry leaders</p>
+                                    <div class="update-date">
+                                        <i class="far fa-calendar me-1"></i> Jan 24, 2025 | 
+                                        <i class="fas fa-map-marker-alt ms-2 me-1"></i> Mumbai
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="text-center mt-4">
+                                <a href="#" class="btn btn-gold">
+                                    <i class="fas fa-calendar-alt me-2"></i> View All Events
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <div class="mb-4">
+                        <a class="navbar-brand text-white" href="index.html">
+                            <div class="logo-icon d-inline-flex align-items-center justify-content-center me-2">NG</div>
+                            Naroda <span class="gold-text">Group</span>
+                        </a>
+                    </div>
+                    <p class="mb-4">
+                        Creating landmark properties that redefine excellence. From premium commercial spaces 
+                        to luxury residential living, we build dreams with quality and commitment.
+                    </p>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="projects.html"><i class="fas fa-chevron-right"></i> Projects</a></li>
+                        <li><a href="properties.html"><i class="fas fa-chevron-right"></i> Properties</a></li>
+                        <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="footer-title">Our Projects</h3>
+                    <a href="projects-landmark.html" class="project-mini-card">
+                        <h6 class="text-white mb-1">Naroda Landmark</h6>
+                        <p class="small text-muted mb-0">Premium Commercial Spaces</p>
+                    </a>
+                    <a href="projects-irish.html" class="project-mini-card">
+                        <h6 class="text-white mb-1">Naroda Irish</h6>
+                        <p class="small text-muted mb-0">Luxury Residential Living</p>
+                    </a>
+                    <a href="projects.html" class="project-mini-card">
+                        <h6 class="text-white mb-1">View All Projects</h6>
+                        <p class="small text-muted mb-0">Explore our portfolio</p>
+                    </a>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="footer-title">Contact Info</h3>
+                    <div class="contact-info">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h6 class="text-white mb-1">Phone Number</h6>
+                            <p class="mb-0">+91 98765 43210</p>
+                            <small class="text-muted">Mon - Sat: 10 AM - 7 PM</small>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h6 class="text-white mb-1">Email Address</h6>
+                            <p class="mb-0">info@narodagroup.com</p>
+                            <small class="text-muted">We reply within 24 hours</small>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h6 class="text-white mb-1">Office Address</h6>
+                            <p class="mb-0">Naroda - Bhat Road</p>
+                            <small class="text-muted">Ahmedabad, Gujarat 382330</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="mb-0">&copy; 2025 Naroda Group. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="privacy.html" class="text-muted me-3">Privacy Policy</a>
+                        <a href="terms.html" class="text-muted me-3">Terms of Service</a>
+                        <a href="rera.html" class="text-muted">RERA Registration</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // News Data
+        const newsData = [
+            {
+                id: 1,
+                title: 'Naroda Irish Phase 2 Completion Ahead of Schedule',
+                category: 'projects',
+                image: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?ixlib=rb-4.0.3&auto=format&fit=crop&w=2065&q=80',
+                excerpt: 'Phase 2 of Naroda Irish residential project completed 3 months ahead of schedule. Possession to begin next month.',
+                date: 'Jan 18, 2025',
+                readTime: '3 min',
+                location: 'Ahmedabad',
+                featured: false
+            },
+            {
+                id: 2,
+                title: 'New CSR Initiative: "Green Schools Project" Launch',
+                category: 'announcements',
+                image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+                excerpt: 'Naroda Group launches Green Schools Project to promote environmental education in partnership with local schools.',
+                date: 'Jan 15, 2025',
+                readTime: '4 min',
+                location: 'Multiple Cities',
+                featured: false
+            },
+            {
+                id: 3,
+                title: 'Record Sales in Q4 2024: 25% Growth Achieved',
+                category: 'announcements',
+                image: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80',
+                excerpt: 'Company achieves record sales with 25% growth in Q4 2024, exceeding market expectations.',
+                date: 'Jan 12, 2025',
+                readTime: '5 min',
+                location: 'Corporate Office',
+                featured: false
+            },
+            {
+                id: 4,
+                title: 'Featured in Economic Times Real Estate Special',
+                category: 'media',
+                image: 'https://images.unsplash.com/photo-1588681664899-f142ff2dc9b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+                excerpt: 'Naroda Group featured in Economic Times special edition on innovative real estate practices.',
+                date: 'Jan 10, 2025',
+                readTime: '3 min',
+                location: 'National',
+                featured: false
+            },
+            {
+                id: 5,
+                title: 'Sustainability Award for Green Building Practices',
+                category: 'awards',
+                image: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80',
+                excerpt: 'Recognized with Sustainability Excellence Award for innovative green building practices and energy efficiency.',
+                date: 'Jan 8, 2025',
+                readTime: '4 min',
+                location: 'New Delhi',
+                featured: false
+            },
+            {
+                id: 6,
+                title: 'Annual Customer Meet & Site Visit Event',
+                category: 'events',
+                image: 'https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-4.0.3&auto=format&fit=crop&w=2080&q=80',
+                excerpt: 'Successful annual customer meet organized with site visits and interactive sessions.',
+                date: 'Jan 5, 2025',
+                readTime: '3 min',
+                location: 'Naroda Site',
+                featured: false
+            },
+            {
+                id: 7,
+                title: 'New Appointment: VP of Business Development',
+                category: 'announcements',
+                image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2067&q=80',
+                excerpt: 'Mr. Sanjay Mehta appointed as Vice President of Business Development to lead expansion plans.',
+                date: 'Jan 3, 2025',
+                readTime: '2 min',
+                location: 'Corporate Office',
+                featured: false
+            },
+            {
+                id: 8,
+                title: 'Partnership with Leading Home Automation Company',
+                category: 'projects',
+                image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80',
+                excerpt: 'Strategic partnership announced with SmartHome Tech for integrated home automation in upcoming projects.',
+                date: 'Dec 28, 2024',
+                readTime: '4 min',
+                location: 'Ahmedabad',
+                featured: false
+            }
+        ];
+
+        // Categories Data
+        const categoriesData = [
+            { name: 'Announcements', count: 8, slug: 'announcements' },
+            { name: 'Awards', count: 5, slug: 'awards' },
+            { name: 'Projects', count: 12, slug: 'projects' },
+            { name: 'Events', count: 6, slug: 'events' },
+            { name: 'Media Coverage', count: 9, slug: 'media' }
+        ];
+
+        // Updates Data
+        const updatesData = [
+            {
+                icon: 'fas fa-rocket',
+                title: 'Naroda Elite Launch Event',
+                date: 'Jan 11, 2025',
+                description: 'Grand launch of new luxury project'
+            },
+            {
+                icon: 'fas fa-chart-line',
+                title: 'Q4 Results Announcement',
+                date: 'Jan 15, 2025',
+                description: 'Financial performance report release'
+            },
+            {
+                icon: 'fas fa-award',
+                title: 'Industry Awards Ceremony',
+                date: 'Jan 20, 2025',
+                description: 'National real estate awards event'
+            },
+            {
+                icon: 'fas fa-users',
+                title: 'Investor Conference',
+                date: 'Jan 25, 2025',
+                description: 'Quarterly investor meeting'
+            }
+        ];
+
+        // Wait for page to load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize AOS
+            AOS.init({
+                duration: 1000,
+                once: false,
+                offset: 100
+            });
+            
+            // Remove preloader
+            const preloader = document.getElementById('preloader');
+            setTimeout(() => {
+                preloader.style.opacity = '0';
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 500);
+            }, 1000);
+            
+            // Initialize news
+            initNews();
+            
+            // Initialize back to top
+            initBackToTop();
+            
+            // Initialize navbar scroll effect
+            initNavbarScroll();
+            
+            // Initialize toast notifications
+            initToastSystem();
+            
+            // Initialize mobile navigation
+            initMobileNav();
+            
+            // Initialize media player
+            initMediaPlayer();
+            
+            // Initialize newsletter subscription
+            initNewsletter();
+            
+            // Show welcome message
+            setTimeout(() => {
+                showToast('Stay updated with our latest news and announcements!', 'info');
+            }, 1500);
+        });
+        
+        function initNews() {
+            const newsGrid = document.getElementById('newsGrid');
+            const newsCategories = document.getElementById('newsCategories');
+            const updatesList = document.getElementById('updatesList');
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const pagination = document.getElementById('pagination');
+            const noResults = document.getElementById('noResults');
+            
+            let currentFilter = 'all';
+            let currentPage = 1;
+            const itemsPerPage = 6;
+            
+            // Load initial content
+            loadNewsItems();
+            loadCategories();
+            loadUpdates();
+            updatePagination();
+            
+            // Filter functionality
+            filterButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Update active button
+                    filterButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Update filter
+                    currentFilter = this.getAttribute('data-filter');
+                    
+                    // Reset page
+                    currentPage = 1;
+                    
+                    // Load filtered news
+                    loadNewsItems();
+                    updatePagination();
+                    
+                    // Show toast
+                    const filterName = currentFilter === 'all' ? 'All News' : this.textContent;
+                    showToast(`Showing ${filterName}`, 'info');
+                });
+            });
+            
+            // Category click handler
+            newsCategories.addEventListener('click', function(e) {
+                if (e.target.closest('.news-categories a')) {
+                    e.preventDefault();
+                    const categorySlug = e.target.closest('.news-categories a').getAttribute('data-category');
+                    
+                    // Update active filter button
+                    filterButtons.forEach(b => b.classList.remove('active'));
+                    const matchingBtn = Array.from(filterButtons).find(btn => 
+                        btn.getAttribute('data-filter') === categorySlug
+                    );
+                    if (matchingBtn) {
+                        matchingBtn.classList.add('active');
+                    }
+                    
+                    // Update filter and load news
+                    currentFilter = categorySlug;
+                    currentPage = 1;
+                    loadNewsItems();
+                    updatePagination();
+                    
+                    // Scroll to news grid
+                    newsGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+            
+            function loadNewsItems() {
+                newsGrid.innerHTML = '';
+                noResults.style.display = 'none';
+                
+                const filteredNews = currentFilter === 'all' 
+                    ? newsData 
+                    : newsData.filter(item => item.category === currentFilter);
+                
+                if (filteredNews.length === 0) {
+                    noResults.style.display = 'block';
+                    return;
+                }
+                
+                const startIndex = (currentPage - 1) * itemsPerPage;
+                const endIndex = startIndex + itemsPerPage;
+                const newsToShow = filteredNews.slice(startIndex, endIndex);
+                
+                newsToShow.forEach(item => {
+                    const newsCard = createNewsCard(item);
+                    newsGrid.appendChild(newsCard);
+                });
+            }
+            
+            function createNewsCard(item) {
+                const card = document.createElement('article');
+                card.className = 'news-card';
+                card.setAttribute('data-category', item.category);
+                
+                // Format category name
+                const categoryName = categoriesData.find(c => c.slug === item.category)?.name || item.category;
+                
+                card.innerHTML = `
+                    <div class="news-image">
+                        <img src="${item.image}" alt="${item.title}" loading="lazy">
+                        <span class="news-tag">${categoryName}</span>
+                    </div>
+                    <div class="news-content">
+                        <div class="news-meta">
+                            <div class="news-meta-item">
+                                <i class="far fa-calendar"></i> ${item.date}
+                            </div>
+                            <div class="news-meta-item">
+                                <i class="far fa-clock"></i> ${item.readTime} read
+                            </div>
+                            <div class="news-meta-item">
+                                <i class="fas fa-map-marker-alt"></i> ${item.location}
+                            </div>
+                        </div>
+                        <h3 class="mb-3">${item.title}</h3>
+                        <p class="text-muted mb-4">${item.excerpt}</p>
+                        
+                        <div class="news-actions">
+                            <div class="share-buttons">
+                                <a href="#" class="share-btn facebook" aria-label="Share on Facebook">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="share-btn twitter" aria-label="Share on Twitter">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="share-btn linkedin" aria-label="Share on LinkedIn">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="share-btn whatsapp" aria-label="Share on WhatsApp">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            </div>
+                            <a href="news-detail.html?id=${item.id}" class="btn btn-gold">
+                                Read More <i class="fas fa-arrow-right ms-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                `;
+                
+                return card;
+            }
+            
+            function loadCategories() {
+                newsCategories.innerHTML = '';
+                
+                categoriesData.forEach(category => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `
+                        <a href="#" data-category="${category.slug}">
+                            ${category.name}
+                            <span class="category-count">${category.count}</span>
+                        </a>
+                    `;
+                    newsCategories.appendChild(li);
+                });
+            }
+            
+            function loadUpdates() {
+                updatesList.innerHTML = '';
+                
+                updatesData.forEach(update => {
+                    const li = document.createElement('li');
+                    li.className = 'update-item';
+                    
+                    li.innerHTML = `
+                        <div class="update-icon">
+                            <i class="${update.icon}"></i>
+                        </div>
+                        <div class="update-content">
+                            <h6>${update.title}</h6>
+                            <p class="text-muted mb-2">${update.description}</p>
+                            <div class="update-date">
+                                <i class="far fa-calendar me-1"></i> ${update.date}
+                            </div>
+                        </div>
+                    `;
+                    
+                    updatesList.appendChild(li);
+                });
+            }
+            
+            function updatePagination() {
+                const filteredNews = currentFilter === 'all' 
+                    ? newsData 
+                    : newsData.filter(item => item.category === currentFilter);
+                
+                const totalPages = Math.ceil(filteredNews.length / itemsPerPage);
+                pagination.innerHTML = '';
+                
+                // Previous button
+                const prevLi = document.createElement('li');
+                prevLi.className = 'page-item';
+                if (currentPage === 1) prevLi.classList.add('disabled');
+                
+                const prevA = document.createElement('a');
+                prevA.className = 'page-link';
+                prevA.href = '#';
+                prevA.innerHTML = '<i class="fas fa-chevron-left"></i>';
+                prevA.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    if (currentPage > 1) {
+                        currentPage--;
+                        loadNewsItems();
+                        updatePagination();
+                        window.scrollTo({ top: newsGrid.offsetTop - 100, behavior: 'smooth' });
+                    }
+                });
+                
+                prevLi.appendChild(prevA);
+                pagination.appendChild(prevLi);
+                
+                // Page numbers
+                const maxVisiblePages = 5;
+                let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
+                let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+                
+                if (endPage - startPage + 1 < maxVisiblePages) {
+                    startPage = Math.max(1, endPage - maxVisiblePages + 1);
+                }
+                
+                for (let i = startPage; i <= endPage; i++) {
+                    const li = document.createElement('li');
+                    li.className = 'page-item';
+                    if (i === currentPage) li.classList.add('active');
+                    
+                    const a = document.createElement('a');
+                    a.className = 'page-link';
+                    a.href = '#';
+                    a.textContent = i;
+                    a.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        currentPage = i;
+                        loadNewsItems();
+                        updatePagination();
+                        window.scrollTo({ top: newsGrid.offsetTop - 100, behavior: 'smooth' });
+                    });
+                    
+                    li.appendChild(a);
+                    pagination.appendChild(li);
+                }
+                
+                // Next button
+                const nextLi = document.createElement('li');
+                nextLi.className = 'page-item';
+                if (currentPage === totalPages) nextLi.classList.add('disabled');
+                
+                const nextA = document.createElement('a');
+                nextA.className = 'page-link';
+                nextA.href = '#';
+                nextA.innerHTML = '<i class="fas fa-chevron-right"></i>';
+                nextA.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    if (currentPage < totalPages) {
+                        currentPage++;
+                        loadNewsItems();
+                        updatePagination();
+                        window.scrollTo({ top: newsGrid.offsetTop - 100, behavior: 'smooth' });
+                    }
+                });
+                
+                nextLi.appendChild(nextA);
+                pagination.appendChild(nextLi);
+            }
+            
+            // Initialize pagination
+            updatePagination();
+            
+            // Add click handlers to calendar event days
+            const eventDays = document.querySelectorAll('.calendar-day.event');
+            eventDays.forEach(day => {
+                day.addEventListener('click', function() {
+                    const eventTitle = this.getAttribute('title');
+                    showToast(`Event: ${eventTitle}`, 'info');
+                });
+            });
+        }
+        
+        function initMediaPlayer() {
+            const playBtn = document.querySelector('.play-btn');
+            const progressFill = document.querySelector('.progress-fill');
+            
+            let isPlaying = false;
+            
+            playBtn.addEventListener('click', function() {
+                isPlaying = !isPlaying;
+                
+                if (isPlaying) {
+                    this.innerHTML = '<i class="fas fa-pause"></i>';
+                    // Simulate progress
+                    let width = 30;
+                    const interval = setInterval(() => {
+                        if (width >= 100) {
+                            clearInterval(interval);
+                            isPlaying = false;
+                            this.innerHTML = '<i class="fas fa-play"></i>';
+                            progressFill.style.width = '30%';
+                        } else {
+                            width += 0.5;
+                            progressFill.style.width = width + '%';
+                        }
+                    }, 100);
+                } else {
+                    this.innerHTML = '<i class="fas fa-play"></i>';
+                }
+            });
+        }
+        
+        function initNewsletter() {
+            const subscribeBtn = document.querySelector('.subscribe-widget .btn');
+            
+            subscribeBtn.addEventListener('click', function() {
+                const emailInput = document.querySelector('.subscribe-widget input');
+                const email = emailInput.value.trim();
+                
+                if (!email) {
+                    showToast('Please enter your email address', 'warning');
+                    return;
+                }
+                
+                if (!isValidEmail(email)) {
+                    showToast('Please enter a valid email address', 'warning');
+                    return;
+                }
+                
+                // Simulate subscription
+                showLoading();
+                
+                setTimeout(() => {
+                    hideLoading();
+                    showToast('Successfully subscribed to news alerts!', 'success');
+                    emailInput.value = '';
+                }, 1500);
+            });
+        }
+        
+        function isValidEmail(email) {
+            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return regex.test(email);
+        }
+        
+        function initBackToTop() {
+            const backToTop = document.querySelector('.back-to-top');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    backToTop.classList.add('active');
+                } else {
+                    backToTop.classList.remove('active');
+                }
+            });
+            
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+        
+        function initNavbarScroll() {
+            const navbar = document.querySelector('.navbar');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+        }
+        
+        function initToastSystem() {
+            window.showToast = function(message, type = 'success') {
+                const toastContainer = document.querySelector('.toast-container');
+                const toast = document.createElement('div');
+                toast.className = `toast toast-${type}`;
+                toast.innerHTML = `
+                    <div class="d-flex align-items-center">
+                        <i class="fas ${type === 'success' ? 'fa-check-circle text-success' : 'fa-exclamation-circle text-danger'} me-3"></i>
+                        <div>
+                            <p class="mb-0 fw-500">${message}</p>
+                        </div>
+                        <button type="button" class="btn-close ms-auto" onclick="this.parentElement.parentElement.remove()"></button>
+                    </div>
+                `;
+                
+                toastContainer.appendChild(toast);
+                
+                setTimeout(() => toast.classList.add('show'), 10);
+                
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                    setTimeout(() => toast.remove(), 300);
+                }, 5000);
+            };
+        }
+        
+        function initMobileNav() {
+            // Update active nav item based on current page
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('.mobile-nav-item').forEach(item => {
+                const href = item.getAttribute('href');
+                if (href === currentPage) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+        }
+        
+        // Loading overlay functions
+        window.showLoading = function() {
+            document.querySelector('.loading-overlay').classList.add('active');
+        };
+        
+        window.hideLoading = function() {
+            document.querySelector('.loading-overlay').classList.remove('active');
+        };
+    </script>
+</body>
+</html>

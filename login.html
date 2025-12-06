@@ -1,0 +1,2343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Naroda Group</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Login to your Naroda Group account to access exclusive features, manage properties, and track your investments.">
+    <meta name="keywords" content="naroda group login, real estate account, property management, investor portal">
+    <meta name="author" content="Naroda Group">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ===== CSS Variables ===== */
+        :root {
+            --primary-color: #0a2a4a;
+            --primary-dark: #071a2e;
+            --primary-light: #0e3a64;
+            --secondary-color: #c9a96e;
+            --secondary-light: #d4b87a;
+            --secondary-dark: #b89440;
+            --accent-color: #2e8b57;
+            --accent-light: #3cb371;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --gray-color: #6c757d;
+            --light-gray: #e9ecef;
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+            --shadow-hover: 0 25px 60px rgba(0, 0, 0, 0.2);
+            --border-radius: 16px;
+            --border-radius-lg: 24px;
+            --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            --gradient-secondary: linear-gradient(135deg, var(--secondary-color), var(--secondary-light));
+            --gradient-accent: linear-gradient(135deg, var(--accent-color), var(--accent-light));
+        }
+
+        /* ===== Base Styles ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark-color);
+            overflow-x: hidden;
+            line-height: 1.7;
+            font-weight: 400;
+            background-color: #f9fafb;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            max-width: 1320px;
+            padding: 0 20px;
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 0;
+            }
+        }
+
+        /* ===== Utility Classes ===== */
+        .gold-text {
+            color: var(--secondary-color);
+        }
+
+        .emerald-text {
+            color: var(--accent-color);
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-secondary);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .badge {
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .bg-gradient-secondary {
+            background: var(--gradient-secondary) !important;
+        }
+
+        /* ===== Preloader ===== */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loader {
+            width: 80px;
+            height: 80px;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .loader-inner {
+            width: 100%;
+            height: 100%;
+            border: 4px solid rgba(201, 169, 110, 0.2);
+            border-radius: 50%;
+            border-top-color: var(--secondary-color);
+            animation: spin 1.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .preloader-text {
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        /* ===== Navigation ===== */
+        .navbar {
+            padding: 1.2rem 0;
+            background: rgba(10, 42, 74, 0.95);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+            z-index: 1000;
+        }
+
+        .navbar.scrolled {
+            padding: 0.8rem 0;
+            box-shadow: var(--shadow);
+            background: rgba(10, 42, 74, 0.98);
+        }
+
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-secondary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            color: var(--primary-color);
+            font-weight: 900;
+            font-size: 1.5rem;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            margin: 0 6px;
+            position: relative;
+            padding: 8px 16px !important;
+            border-radius: 30px;
+            transition: var(--transition);
+        }
+
+        .nav-link:before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 100%;
+            background: rgba(201, 169, 110, 0.1);
+            border-radius: 30px;
+            top: 0;
+            left: 0;
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .nav-link:hover:before,
+        .nav-link.active:before {
+            width: 100%;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--secondary-color) !important;
+        }
+
+        .dropdown-menu {
+            border: none;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 10px 0;
+            margin-top: 10px;
+        }
+
+        .dropdown-item {
+            padding: 10px 20px;
+            transition: var(--transition);
+        }
+
+        .dropdown-item:hover {
+            background: rgba(201, 169, 110, 0.1);
+            color: var(--secondary-color);
+        }
+
+        /* ===== Buttons ===== */
+        .btn {
+            padding: 14px 32px;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: var(--transition);
+            border: none;
+            position: relative;
+            overflow: hidden;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .btn:hover:before {
+            left: 100%;
+        }
+
+        .btn-gold {
+            background: var(--gradient-secondary);
+            color: var(--primary-color);
+            box-shadow: 0 10px 25px rgba(201, 169, 110, 0.3);
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(201, 169, 110, 0.4);
+            color: var(--primary-color);
+        }
+
+        .btn-outline-gold {
+            border: 2px solid var(--secondary-color);
+            color: var(--secondary-color);
+            background: transparent;
+        }
+
+        .btn-outline-gold:hover {
+            background: var(--gradient-secondary);
+            color: var(--primary-color);
+            border-color: var(--secondary-color);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(201, 169, 110, 0.2);
+        }
+
+        .btn-outline-light {
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            background: transparent;
+        }
+
+        .btn-outline-light:hover {
+            background: white;
+            color: var(--primary-color);
+            border-color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-emerald {
+            background: var(--gradient-accent);
+            color: white;
+            box-shadow: 0 10px 25px rgba(46, 139, 87, 0.3);
+        }
+
+        .btn-emerald:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(46, 139, 87, 0.4);
+            color: white;
+        }
+
+        .btn-link {
+            background: none;
+            border: none;
+            color: var(--secondary-color);
+            font-weight: 500;
+            padding: 5px 10px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-link:hover {
+            text-decoration: underline;
+            transform: translateX(5px);
+        }
+
+        /* ===== Auth Container ===== */
+        .auth-section {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 20px 80px;
+            background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .auth-container {
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .auth-card {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            display: flex;
+            min-height: 650px;
+        }
+
+        @media (max-width: 992px) {
+            .auth-card {
+                flex-direction: column;
+                min-height: auto;
+            }
+        }
+
+        /* ===== Auth Left Side ===== */
+        .auth-left {
+            flex: 1;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 60px 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .auth-left::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .auth-left::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+
+        @media (max-width: 992px) {
+            .auth-left {
+                padding: 40px 30px;
+            }
+        }
+
+        .auth-brand {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .auth-brand .logo-icon {
+            width: 80px;
+            height: 80px;
+            font-size: 2.5rem;
+            margin-right: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .auth-brand h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .auth-features {
+            position: relative;
+            z-index: 2;
+        }
+
+        .auth-feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+        }
+
+        .auth-feature:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateX(10px);
+        }
+
+        .auth-feature i {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            flex-shrink: 0;
+        }
+
+        .auth-feature-content h4 {
+            margin-bottom: 5px;
+            color: white;
+        }
+
+        .auth-feature-content p {
+            margin-bottom: 0;
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        .auth-support {
+            margin-top: 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .auth-support p {
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        /* ===== Auth Right Side ===== */
+        .auth-right {
+            flex: 1;
+            padding: 60px 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        @media (max-width: 992px) {
+            .auth-right {
+                padding: 40px 30px;
+            }
+        }
+
+        .auth-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .auth-header h2 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .auth-header p {
+            color: var(--gray-color);
+            font-size: 1.1rem;
+        }
+
+        /* ===== Form Styles ===== */
+        .auth-form {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .form-label i {
+            margin-right: 10px;
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 16px 20px;
+            border: 2px solid var(--light-gray);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            transition: var(--transition);
+            background: white;
+        }
+
+        .form-control:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(201, 169, 110, 0.2);
+            outline: none;
+        }
+
+        .form-control.with-icon {
+            padding-left: 50px;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 20px;
+            top: 45px;
+            color: var(--gray-color);
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .form-control:focus + .input-icon {
+            color: var(--secondary-color);
+        }
+
+        .password-toggle {
+            position: absolute;
+            right: 20px;
+            top: 45px;
+            background: none;
+            border: none;
+            color: var(--gray-color);
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 2;
+        }
+
+        .password-toggle:hover {
+            color: var(--secondary-color);
+        }
+
+        .form-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .form-check {
+            display: flex;
+            align-items: center;
+        }
+
+        .form-check-input {
+            width: 18px;
+            height: 18px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .form-check-input:checked {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+
+        .form-check-label {
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        .auth-btn {
+            width: 100%;
+            padding: 18px;
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+        }
+
+        .auth-divider {
+            display: flex;
+            align-items: center;
+            margin: 25px 0;
+            color: var(--gray-color);
+        }
+
+        .auth-divider:before, .auth-divider:after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--light-gray);
+        }
+
+        .auth-divider span {
+            padding: 0 20px;
+            font-size: 0.9rem;
+        }
+
+        .social-auth {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .social-btn {
+            flex: 1;
+            padding: 16px;
+            border-radius: var(--border-radius);
+            border: 2px solid var(--light-gray);
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-weight: 500;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-btn.google:hover {
+            border-color: #DB4437;
+            background: rgba(219, 68, 55, 0.05);
+            color: #DB4437;
+        }
+
+        .social-btn.facebook:hover {
+            border-color: #4267B2;
+            background: rgba(66, 103, 178, 0.05);
+            color: #4267B2;
+        }
+
+        .social-btn.linkedin:hover {
+            border-color: #0077B5;
+            background: rgba(0, 119, 181, 0.05);
+            color: #0077B5;
+        }
+
+        .auth-footer {
+            text-align: center;
+            margin-top: 20px;
+            color: var(--gray-color);
+        }
+
+        .auth-footer a {
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+
+        .auth-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== Form Steps ===== */
+        .form-step {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .form-step.active {
+            display: block;
+        }
+
+        /* ===== Password Strength Meter ===== */
+        .password-strength {
+            margin-top: 10px;
+        }
+
+        .strength-meter {
+            height: 6px;
+            background: var(--light-gray);
+            border-radius: 3px;
+            overflow: hidden;
+            margin-bottom: 5px;
+        }
+
+        .strength-fill {
+            height: 100%;
+            width: 0%;
+            transition: var(--transition);
+            border-radius: 3px;
+        }
+
+        .strength-fill.weak {
+            width: 33%;
+            background: #dc3545;
+        }
+
+        .strength-fill.fair {
+            width: 66%;
+            background: #ffc107;
+        }
+
+        .strength-fill.good {
+            width: 100%;
+            background: #28a745;
+        }
+
+        .strength-text {
+            font-size: 0.85rem;
+            color: var(--gray-color);
+        }
+
+        /* ===== Success Message ===== */
+        .success-message {
+            text-align: center;
+            padding: 40px 20px;
+            display: none;
+        }
+
+        .success-message.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .success-icon {
+            width: 100px;
+            height: 100px;
+            background: var(--gradient-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            color: white;
+            font-size: 3rem;
+        }
+
+        /* ===== Progress Steps ===== */
+        .progress-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .progress-steps:before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--light-gray);
+            z-index: 1;
+        }
+
+        .progress-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            margin-bottom: 10px;
+            transition: var(--transition);
+        }
+
+        .step-label {
+            font-size: 0.9rem;
+            color: var(--gray-color);
+            transition: var(--transition);
+        }
+
+        .progress-step.active .step-number {
+            background: var(--gradient-secondary);
+            color: white;
+            box-shadow: 0 5px 15px rgba(201, 169, 110, 0.3);
+        }
+
+        .progress-step.active .step-label {
+            color: var(--secondary-color);
+            font-weight: 500;
+        }
+
+        .progress-step.completed .step-number {
+            background: var(--gradient-accent);
+            color: white;
+        }
+
+        .progress-step.completed .step-label {
+            color: var(--accent-color);
+        }
+
+        /* ===== Step Navigation ===== */
+        .step-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        /* ===== Terms Checkbox ===== */
+        .terms-checkbox {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .terms-checkbox .form-check-input {
+            margin-top: 5px;
+            margin-right: 10px;
+        }
+
+        .terms-checkbox .form-check-label {
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .terms-checkbox .form-check-label a {
+            color: var(--secondary-color);
+        }
+
+        .terms-checkbox .form-check-label a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== Back to Top ===== */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-secondary);
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            box-shadow: 0 10px 30px rgba(201, 169, 110, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(201, 169, 110, 0.4);
+        }
+
+        /* ===== WhatsApp Float ===== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 99;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
+        }
+
+        /* ===== Toast Notifications ===== */
+        .toast-container {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            z-index: 9999;
+        }
+
+        .toast {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            box-shadow: var(--shadow);
+            margin-bottom: 15px;
+            transform: translateX(100%);
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            max-width: 350px;
+        }
+
+        .toast.show {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        /* ===== Loading Overlay ===== */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            display: none;
+        }
+
+        .loading-overlay.active {
+            display: flex;
+        }
+
+        /* ===== Footer ===== */
+        .footer {
+            background: var(--primary-dark);
+            color: #b0b7c3;
+            padding-top: 80px;
+        }
+
+        .footer-title {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--gradient-secondary);
+            border-radius: 2px;
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 30px 0;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        /* ===== Additional Styles ===== */
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        
+        .social-link:hover {
+            background: var(--gradient-secondary);
+            transform: translateY(-3px);
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #b0b7c3;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+        
+        .project-mini-card {
+            display: block;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+        
+        .project-mini-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .contact-info {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+        
+        .contact-info i {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+
+        /* ===== Mobile Responsive ===== */
+        @media (max-width: 768px) {
+            .auth-section {
+                padding: 100px 20px 60px;
+            }
+            
+            .auth-left, .auth-right {
+                padding: 40px 25px;
+            }
+            
+            .auth-brand h1 {
+                font-size: 2.2rem;
+            }
+            
+            .social-auth {
+                flex-direction: column;
+            }
+            
+            .back-to-top {
+                bottom: 80px;
+            }
+            
+            .progress-steps {
+                flex-direction: column;
+                gap: 20px;
+                align-items: flex-start;
+            }
+            
+            .progress-steps:before {
+                display: none;
+            }
+            
+            .progress-step {
+                flex-direction: row;
+                gap: 15px;
+            }
+            
+            .step-label {
+                margin-bottom: 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .auth-brand {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .auth-brand .logo-icon {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            
+            .form-options {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            
+            .step-navigation {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .step-navigation .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader">
+            <div class="loader-inner"></div>
+        </div>
+        <div class="preloader-text">NARODA GROUP</div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay">
+        <div class="spinner-border" style="color: var(--secondary-color);" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Toast Container -->
+    <div class="toast-container"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <div class="logo-icon">NG</div>
+                <span>Naroda <span class="gold-text">Group</span></span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" data-bs-toggle="dropdown">
+                            Projects
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="projects-landmark.html">Naroda Landmark</a>
+                            <a class="dropdown-item" href="projects-irish.html">Naroda Irish</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="projects.html">All Projects</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="propertiesDropdown" data-bs-toggle="dropdown">
+                            Properties
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="properties.html">Buy</a>
+                            <a class="dropdown-item" href="properties-rent.html">Rent</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="property-detail.html">Property Details</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" data-bs-toggle="dropdown">
+                            More
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="blog.html">Blog</a>
+                            <a class="dropdown-item" href="news.html">News</a>
+                            <a class="dropdown-item" href="careers.html">Careers</a>
+                            <a class="dropdown-item" href="team.html">Our Team</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="faq.html">FAQ</a>
+                            <a class="dropdown-item" href="contact.html">Contact</a>
+                        </div>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center ms-lg-3 mt-3 mt-lg-0">
+                    <div class="dropdown">
+                        <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown">
+                            <i class="fas fa-globe me-1"></i> EN
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">English</a>
+                            <a class="dropdown-item" href="#">Hindi</a>
+                            <a class="dropdown-item" href="#">Gujarati</a>
+                        </div>
+                    </div>
+                    <a href="login.html" class="btn btn-outline-light ms-3 active">
+                        <i class="fas fa-user me-2"></i> Login
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Auth Section -->
+        <section class="auth-section">
+            <div class="container">
+                <div class="auth-container" data-aos="fade-up">
+                    <div class="auth-card">
+                        <!-- Left Side - Features -->
+                        <div class="auth-left">
+                            <div class="auth-brand">
+                                <div class="logo-icon">NG</div>
+                                <h1>Naroda <span class="gold-text">Group</span></h1>
+                            </div>
+                            
+                            <h2 class="mb-4">Welcome to Naroda Group</h2>
+                            <p class="mb-4">
+                                Join thousands of satisfied customers who trust us with their real estate dreams.
+                                Manage properties, track investments, and discover exclusive opportunities.
+                            </p>
+                            
+                            <div class="auth-features">
+                                <div class="auth-feature">
+                                    <i class="fas fa-home"></i>
+                                    <div class="auth-feature-content">
+                                        <h4>Property Management</h4>
+                                        <p>View and manage all your properties in one dashboard</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="auth-feature">
+                                    <i class="fas fa-chart-line"></i>
+                                    <div class="auth-feature-content">
+                                        <h4>Investment Tracking</h4>
+                                        <p>Monitor ROI and property performance with detailed analytics</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="auth-feature">
+                                    <i class="fas fa-bell"></i>
+                                    <div class="auth-feature-content">
+                                        <h4>Exclusive Updates</h4>
+                                        <p>Be the first to know about new projects and special offers</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="auth-support">
+                                <p class="mb-2">Need assistance with your account?</p>
+                                <a href="contact.html" class="btn btn-outline-light">
+                                    <i class="fas fa-headset me-2"></i> Contact Support
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Right Side - Forms -->
+                        <div class="auth-right">
+                            <!-- Login Form -->
+                            <div class="auth-form" id="loginForm">
+                                <div class="auth-header">
+                                    <h2>Welcome <span class="gold-text">Back</span></h2>
+                                    <p>Sign in to your account</p>
+                                </div>
+                                
+                                <form id="loginFormActual">
+                                    <div class="form-group">
+                                        <label for="loginEmail" class="form-label">
+                                            <i class="fas fa-envelope"></i> Email Address
+                                        </label>
+                                        <div class="position-relative">
+                                            <input type="email" id="loginEmail" class="form-control with-icon" placeholder="Enter your email" required>
+                                            <i class="fas fa-envelope input-icon"></i>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="loginPassword" class="form-label">
+                                            <i class="fas fa-lock"></i> Password
+                                        </label>
+                                        <div class="position-relative">
+                                            <input type="password" id="loginPassword" class="form-control with-icon" placeholder="Enter your password" required>
+                                            <i class="fas fa-lock input-icon"></i>
+                                            <button type="button" class="password-toggle" data-target="loginPassword">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-options">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="rememberLogin">
+                                            <label class="form-check-label" for="rememberLogin">
+                                                Remember me
+                                            </label>
+                                        </div>
+                                        <button type="button" class="btn-link" id="showForgot">
+                                            Forgot Password?
+                                        </button>
+                                    </div>
+                                    
+                                    <button type="submit" class="btn btn-gold auth-btn">
+                                        <i class="fas fa-sign-in-alt me-2"></i> Sign In
+                                    </button>
+                                </form>
+                                
+                                <div class="auth-divider">
+                                    <span>Or continue with</span>
+                                </div>
+                                
+                                <div class="social-auth">
+                                    <button type="button" class="social-btn google">
+                                        <i class="fab fa-google"></i>
+                                        <span>Google</span>
+                                    </button>
+                                    <button type="button" class="social-btn facebook">
+                                        <i class="fab fa-facebook-f"></i>
+                                        <span>Facebook</span>
+                                    </button>
+                                    <button type="button" class="social-btn linkedin">
+                                        <i class="fab fa-linkedin-in"></i>
+                                        <span>LinkedIn</span>
+                                    </button>
+                                </div>
+                                
+                                <div class="auth-footer">
+                                    <p>Don't have an account? 
+                                        <button type="button" class="btn-link" id="showRegister">
+                                            <i class="fas fa-user-plus me-1"></i> Sign up here
+                                        </button>
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <!-- Registration Form -->
+                            <div class="auth-form" id="registerForm" style="display: none;">
+                                <div class="auth-header">
+                                    <h2>Create <span class="gold-text">Account</span></h2>
+                                    <p>Join Naroda Group today</p>
+                                </div>
+                                
+                                <!-- Progress Steps -->
+                                <div class="progress-steps">
+                                    <div class="progress-step active" data-step="1">
+                                        <div class="step-number">1</div>
+                                        <div class="step-label">Personal</div>
+                                    </div>
+                                    <div class="progress-step" data-step="2">
+                                        <div class="step-number">2</div>
+                                        <div class="step-label">Account</div>
+                                    </div>
+                                    <div class="progress-step" data-step="3">
+                                        <div class="step-number">3</div>
+                                        <div class="step-label">Complete</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Step 1: Personal Information -->
+                                <div class="form-step active" data-step="1">
+                                    <form>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="firstName" class="form-label">
+                                                        <i class="fas fa-user"></i> First Name
+                                                    </label>
+                                                    <input type="text" id="firstName" class="form-control" placeholder="Enter first name" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="lastName" class="form-label">
+                                                        <i class="fas fa-user"></i> Last Name
+                                                    </label>
+                                                    <input type="text" id="lastName" class="form-control" placeholder="Enter last name" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="phone" class="form-label">
+                                                <i class="fas fa-phone"></i> Phone Number
+                                            </label>
+                                            <input type="tel" id="phone" class="form-control" placeholder="Enter phone number" required>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="registerEmail" class="form-label">
+                                                <i class="fas fa-envelope"></i> Email Address
+                                            </label>
+                                            <input type="email" id="registerEmail" class="form-control" placeholder="Enter email address" required>
+                                        </div>
+                                        
+                                        <div class="step-navigation">
+                                            <button type="button" class="btn btn-outline-gold" data-next-step="2">
+                                                Next Step <i class="fas fa-arrow-right ms-2"></i>
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                                
+                                <!-- Step 2: Account Setup -->
+                                <div class="form-step" data-step="2">
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="registerPassword" class="form-label">
+                                                <i class="fas fa-lock"></i> Create Password
+                                            </label>
+                                            <div class="position-relative">
+                                                <input type="password" id="registerPassword" class="form-control with-icon" placeholder="Create a password" required>
+                                                <i class="fas fa-lock input-icon"></i>
+                                                <button type="button" class="password-toggle" data-target="registerPassword">
+                                                    <i class="fas fa-eye"></i>
+                                                </button>
+                                            </div>
+                                            <div class="password-strength">
+                                                <div class="strength-meter">
+                                                    <div class="strength-fill" id="passwordStrength"></div>
+                                                </div>
+                                                <div class="strength-text" id="passwordStrengthText">Password strength</div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="confirmPassword" class="form-label">
+                                                <i class="fas fa-lock"></i> Confirm Password
+                                            </label>
+                                            <div class="position-relative">
+                                                <input type="password" id="confirmPassword" class="form-control with-icon" placeholder="Confirm password" required>
+                                                <i class="fas fa-lock input-icon"></i>
+                                                <button type="button" class="password-toggle" data-target="confirmPassword">
+                                                    <i class="fas fa-eye"></i>
+                                                </button>
+                                            </div>
+                                            <div id="passwordMatch" class="mt-2 small"></div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="userType" class="form-label">
+                                                <i class="fas fa-user-tag"></i> I am a
+                                            </label>
+                                            <select id="userType" class="form-control" required>
+                                                <option value="">Select your role</option>
+                                                <option value="buyer">Property Buyer</option>
+                                                <option value="investor">Investor</option>
+                                                <option value="tenant">Tenant</option>
+                                                <option value="agent">Real Estate Agent</option>
+                                                <option value="other">Other</option>
+                                            </select>
+                                        </div>
+                                        
+                                        <div class="terms-checkbox">
+                                            <input class="form-check-input" type="checkbox" id="agreeTerms" required>
+                                            <label class="form-check-label" for="agreeTerms">
+                                                I agree to the <a href="terms.html">Terms of Service</a> and <a href="privacy.html">Privacy Policy</a>
+                                            </label>
+                                        </div>
+                                        
+                                        <div class="step-navigation">
+                                            <button type="button" class="btn btn-outline-gold" data-prev-step="1">
+                                                <i class="fas fa-arrow-left me-2"></i> Back
+                                            </button>
+                                            <button type="button" class="btn btn-gold" id="completeRegistration">
+                                                Create Account
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                                
+                                <!-- Step 3: Success -->
+                                <div class="form-step" data-step="3">
+                                    <div class="success-message active">
+                                        <div class="success-icon">
+                                            <i class="fas fa-check"></i>
+                                        </div>
+                                        <h3 class="mb-3">Account Created!</h3>
+                                        <p class="text-muted mb-4">
+                                            Welcome to Naroda Group! Your account has been created successfully.
+                                            A verification email has been sent to your inbox.
+                                        </p>
+                                        <div class="d-flex flex-column flex-sm-row gap-3">
+                                            <button type="button" class="btn btn-gold" id="backToLogin">
+                                                <i class="fas fa-sign-in-alt me-2"></i> Sign In Now
+                                            </button>
+                                            <a href="index.html" class="btn btn-outline-gold">
+                                                <i class="fas fa-home me-2"></i> Go to Homepage
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Forgot Password Form -->
+                            <div class="auth-form" id="forgotForm" style="display: none;">
+                                <div class="auth-header">
+                                    <h2>Reset <span class="gold-text">Password</span></h2>
+                                    <p>Enter your email to reset your password</p>
+                                </div>
+                                
+                                <form id="forgotPasswordForm">
+                                    <div class="form-group">
+                                        <label for="forgotEmail" class="form-label">
+                                            <i class="fas fa-envelope"></i> Email Address
+                                        </label>
+                                        <div class="position-relative">
+                                            <input type="email" id="forgotEmail" class="form-control with-icon" placeholder="Enter your email" required>
+                                            <i class="fas fa-envelope input-icon"></i>
+                                        </div>
+                                    </div>
+                                    
+                                    <button type="submit" class="btn btn-gold auth-btn">
+                                        <i class="fas fa-paper-plane me-2"></i> Send Reset Link
+                                    </button>
+                                    
+                                    <div class="auth-divider">
+                                        <span>Remember your password?</span>
+                                    </div>
+                                    
+                                    <div class="auth-footer">
+                                        <button type="button" class="btn-link" id="backToLoginFromForgot">
+                                            <i class="fas fa-sign-in-alt me-2"></i> Back to Sign In
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                            
+                            <!-- Reset Password Form -->
+                            <div class="auth-form" id="resetForm" style="display: none;">
+                                <div class="auth-header">
+                                    <h2>New <span class="gold-text">Password</span></h2>
+                                    <p>Create your new password</p>
+                                </div>
+                                
+                                <form id="resetPasswordForm">
+                                    <div class="form-group">
+                                        <label for="resetPassword" class="form-label">
+                                            <i class="fas fa-lock"></i> New Password
+                                        </label>
+                                        <div class="position-relative">
+                                            <input type="password" id="resetPassword" class="form-control with-icon" placeholder="Enter new password" required>
+                                            <i class="fas fa-lock input-icon"></i>
+                                            <button type="button" class="password-toggle" data-target="resetPassword">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                        </div>
+                                        <div class="password-strength">
+                                            <div class="strength-meter">
+                                                <div class="strength-fill" id="resetPasswordStrength"></div>
+                                            </div>
+                                            <div class="strength-text" id="resetPasswordStrengthText">Password strength</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="confirmResetPassword" class="form-label">
+                                            <i class="fas fa-lock"></i> Confirm Password
+                                        </label>
+                                        <div class="position-relative">
+                                            <input type="password" id="confirmResetPassword" class="form-control with-icon" placeholder="Confirm new password" required>
+                                            <i class="fas fa-lock input-icon"></i>
+                                            <button type="button" class="password-toggle" data-target="confirmResetPassword">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                        </div>
+                                        <div id="resetPasswordMatch" class="mt-2 small"></div>
+                                    </div>
+                                    
+                                    <button type="submit" class="btn btn-gold auth-btn">
+                                        <i class="fas fa-save me-2"></i> Reset Password
+                                    </button>
+                                    
+                                    <div class="auth-footer">
+                                        <button type="button" class="btn-link" id="backToLoginFromReset">
+                                            <i class="fas fa-sign-in-alt me-2"></i> Back to Sign In
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                            
+                            <!-- Verification Success -->
+                            <div class="auth-form" id="verificationSuccess" style="display: none;">
+                                <div class="success-message active">
+                                    <div class="success-icon">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <h3 class="mb-3">Password Reset!</h3>
+                                    <p class="text-muted mb-4">
+                                        Your password has been reset successfully. You can now sign in with your new password.
+                                    </p>
+                                    <button type="button" class="btn btn-gold" id="backToLoginFromSuccess">
+                                        <i class="fas fa-sign-in-alt me-2"></i> Sign In Now
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <div class="mb-4">
+                        <a class="navbar-brand text-white" href="index.html">
+                            <div class="logo-icon d-inline-flex align-items-center justify-content-center me-2">NG</div>
+                            Naroda <span class="gold-text">Group</span>
+                        </a>
+                    </div>
+                    <p class="mb-4">
+                        Creating landmark properties that redefine excellence. From premium commercial spaces 
+                        to luxury residential living, we build dreams with quality and commitment.
+                    </p>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="projects.html"><i class="fas fa-chevron-right"></i> Projects</a></li>
+                        <li><a href="properties.html"><i class="fas fa-chevron-right"></i> Properties</a></li>
+                        <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="footer-title">Our Projects</h3>
+                    <a href="projects-landmark.html" class="project-mini-card">
+                        <h6 class="text-white mb-1">Naroda Landmark</h6>
+                        <p class="small text-muted mb-0">Premium Commercial Spaces</p>
+                    </a>
+                    <a href="projects-irish.html" class="project-mini-card">
+                        <h6 class="text-white mb-1">Naroda Irish</h6>
+                        <p class="small text-muted mb-0">Luxury Residential Living</p>
+                    </a>
+                    <a href="projects.html" class="project-mini-card">
+                        <h6 class="text-white mb-1">View All Projects</h6>
+                        <p class="small text-muted mb-0">Explore our portfolio</p>
+                    </a>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="footer-title">Contact Info</h3>
+                    <div class="contact-info">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h6 class="text-white mb-1">Phone Number</h6>
+                            <p class="mb-0">+91 98765 43210</p>
+                            <small class="text-muted">Mon - Sat: 10 AM - 7 PM</small>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h6 class="text-white mb-1">Email Address</h6>
+                            <p class="mb-0">info@narodagroup.com</p>
+                            <small class="text-muted">We reply within 24 hours</small>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h6 class="text-white mb-1">Office Address</h6>
+                            <p class="mb-0">Naroda - Bhat Road</p>
+                            <small class="text-muted">Ahmedabad, Gujarat 382330</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="mb-0">&copy; 2025 Naroda Group. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="privacy.html" class="text-muted me-3">Privacy Policy</a>
+                        <a href="terms.html" class="text-muted me-3">Terms of Service</a>
+                        <a href="rera.html" class="text-muted">RERA Registration</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // Wait for page to load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize AOS
+            AOS.init({
+                duration: 1000,
+                once: false,
+                offset: 100
+            });
+            
+            // Remove preloader
+            const preloader = document.getElementById('preloader');
+            setTimeout(() => {
+                preloader.style.opacity = '0';
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 500);
+            }, 1000);
+            
+            // Initialize all form functionality
+            initAuthenticationSystem();
+            
+            // Initialize back to top button
+            initBackToTop();
+            
+            // Initialize navbar scroll effect
+            initNavbarScroll();
+            
+            // Initialize toast notifications
+            initToastSystem();
+            
+            // Show welcome message
+            setTimeout(() => {
+                showToast('Welcome to Naroda Group Authentication', 'success');
+            }, 1500);
+        });
+        
+        // Authentication System
+        function initAuthenticationSystem() {
+            // Form navigation
+            const showRegisterBtn = document.getElementById('showRegister');
+            const showForgotBtn = document.getElementById('showForgot');
+            const backToLoginBtns = document.querySelectorAll('#backToLogin, #backToLoginFromForgot, #backToLoginFromReset, #backToLoginFromSuccess');
+            
+            // Show registration form
+            if (showRegisterBtn) {
+                showRegisterBtn.addEventListener('click', function() {
+                    document.getElementById('loginForm').style.display = 'none';
+                    document.getElementById('registerForm').style.display = 'block';
+                    document.getElementById('forgotForm').style.display = 'none';
+                    document.getElementById('resetForm').style.display = 'none';
+                    document.getElementById('verificationSuccess').style.display = 'none';
+                    resetRegistrationForm();
+                });
+            }
+            
+            // Show forgot password form
+            if (showForgotBtn) {
+                showForgotBtn.addEventListener('click', function() {
+                    document.getElementById('loginForm').style.display = 'none';
+                    document.getElementById('registerForm').style.display = 'none';
+                    document.getElementById('forgotForm').style.display = 'block';
+                    document.getElementById('resetForm').style.display = 'none';
+                    document.getElementById('verificationSuccess').style.display = 'none';
+                });
+            }
+            
+            // Back to login from all forms
+            backToLoginBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.getElementById('loginForm').style.display = 'block';
+                    document.getElementById('registerForm').style.display = 'none';
+                    document.getElementById('forgotForm').style.display = 'none';
+                    document.getElementById('resetForm').style.display = 'none';
+                    document.getElementById('verificationSuccess').style.display = 'none';
+                });
+            });
+            
+            // Initialize password toggles
+            initPasswordToggles();
+            
+            // Initialize password strength checkers
+            initPasswordStrength();
+            
+            // Initialize multi-step registration form
+            initMultiStepForm();
+            
+            // Initialize form submissions
+            initFormSubmissions();
+            
+            // Initialize social login buttons
+            initSocialLogin();
+            
+            // Check URL parameters
+            checkUrlParams();
+        }
+        
+        // Password toggle functionality
+        function initPasswordToggles() {
+            const toggleButtons = document.querySelectorAll('.password-toggle');
+            
+            toggleButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const targetId = this.getAttribute('data-target');
+                    const passwordInput = document.getElementById(targetId);
+                    const icon = this.querySelector('i');
+                    
+                    if (passwordInput.type === 'password') {
+                        passwordInput.type = 'text';
+                        icon.classList.remove('fa-eye');
+                        icon.classList.add('fa-eye-slash');
+                    } else {
+                        passwordInput.type = 'password';
+                        icon.classList.remove('fa-eye-slash');
+                        icon.classList.add('fa-eye');
+                    }
+                });
+            });
+        }
+        
+        // Password strength checker
+        function initPasswordStrength() {
+            const passwordInput = document.getElementById('registerPassword');
+            const resetPasswordInput = document.getElementById('resetPassword');
+            
+            if (passwordInput) {
+                passwordInput.addEventListener('input', checkPasswordStrength);
+            }
+            
+            if (resetPasswordInput) {
+                resetPasswordInput.addEventListener('input', checkResetPasswordStrength);
+            }
+            
+            function checkPasswordStrength() {
+                const password = passwordInput.value;
+                const strengthFill = document.getElementById('passwordStrength');
+                const strengthText = document.getElementById('passwordStrengthText');
+                
+                // Check password strength
+                let strength = 0;
+                if (password.length >= 8) strength++;
+                if (/[A-Z]/.test(password)) strength++;
+                if (/[0-9]/.test(password)) strength++;
+                if (/[^A-Za-z0-9]/.test(password)) strength++;
+                
+                // Update strength indicator
+                strengthFill.className = 'strength-fill';
+                if (password.length === 0) {
+                    strengthFill.style.width = '0%';
+                    strengthText.textContent = 'Password strength';
+                } else if (strength <= 1) {
+                    strengthFill.classList.add('weak');
+                    strengthText.textContent = 'Weak password';
+                } else if (strength <= 2) {
+                    strengthFill.classList.add('fair');
+                    strengthText.textContent = 'Fair password';
+                } else {
+                    strengthFill.classList.add('good');
+                    strengthText.textContent = 'Strong password';
+                }
+                
+                // Check password match
+                const confirmPassword = document.getElementById('confirmPassword');
+                const matchIndicator = document.getElementById('passwordMatch');
+                
+                if (confirmPassword.value) {
+                    if (password === confirmPassword.value) {
+                        matchIndicator.innerHTML = '<span style="color: #28a745;"><i class="fas fa-check-circle"></i> Passwords match</span>';
+                    } else {
+                        matchIndicator.innerHTML = '<span style="color: #dc3545;"><i class="fas fa-times-circle"></i> Passwords do not match</span>';
+                    }
+                } else {
+                    matchIndicator.innerHTML = '';
+                }
+            }
+            
+            function checkResetPasswordStrength() {
+                const password = resetPasswordInput.value;
+                const strengthFill = document.getElementById('resetPasswordStrength');
+                const strengthText = document.getElementById('resetPasswordStrengthText');
+                
+                // Check password strength
+                let strength = 0;
+                if (password.length >= 8) strength++;
+                if (/[A-Z]/.test(password)) strength++;
+                if (/[0-9]/.test(password)) strength++;
+                if (/[^A-Za-z0-9]/.test(password)) strength++;
+                
+                // Update strength indicator
+                strengthFill.className = 'strength-fill';
+                if (password.length === 0) {
+                    strengthFill.style.width = '0%';
+                    strengthText.textContent = 'Password strength';
+                } else if (strength <= 1) {
+                    strengthFill.classList.add('weak');
+                    strengthText.textContent = 'Weak password';
+                } else if (strength <= 2) {
+                    strengthFill.classList.add('fair');
+                    strengthText.textContent = 'Fair password';
+                } else {
+                    strengthFill.classList.add('good');
+                    strengthText.textContent = 'Strong password';
+                }
+                
+                // Check password match
+                const confirmPassword = document.getElementById('confirmResetPassword');
+                const matchIndicator = document.getElementById('resetPasswordMatch');
+                
+                if (confirmPassword.value) {
+                    if (password === confirmPassword.value) {
+                        matchIndicator.innerHTML = '<span style="color: #28a745;"><i class="fas fa-check-circle"></i> Passwords match</span>';
+                    } else {
+                        matchIndicator.innerHTML = '<span style="color: #dc3545;"><i class="fas fa-times-circle"></i> Passwords do not match</span>';
+                    }
+                } else {
+                    matchIndicator.innerHTML = '';
+                }
+            }
+        }
+        
+        // Multi-step registration form
+        function initMultiStepForm() {
+            const nextButtons = document.querySelectorAll('[data-next-step]');
+            const prevButtons = document.querySelectorAll('[data-prev-step]');
+            const completeRegistrationBtn = document.getElementById('completeRegistration');
+            
+            nextButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const nextStep = this.getAttribute('data-next-step');
+                    goToStep(nextStep);
+                });
+            });
+            
+            prevButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const prevStep = this.getAttribute('data-prev-step');
+                    goToStep(prevStep);
+                });
+            });
+            
+            if (completeRegistrationBtn) {
+                completeRegistrationBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const firstName = document.getElementById('firstName').value;
+                    const lastName = document.getElementById('lastName').value;
+                    const email = document.getElementById('registerEmail').value;
+                    const password = document.getElementById('registerPassword').value;
+                    const agreeTerms = document.getElementById('agreeTerms').checked;
+                    
+                    // Show loading
+                    showLoading();
+                    
+                    // Simulate account creation
+                    setTimeout(() => {
+                        hideLoading();
+                        
+                        if (firstName && lastName && email && password && agreeTerms) {
+                            goToStep('3');
+                            showToast('Account created successfully!', 'success');
+                        } else {
+                            showToast('Please fill in all required fields and agree to terms', 'error');
+                        }
+                    }, 1500);
+                });
+            }
+            
+            function goToStep(step) {
+                const progressSteps = document.querySelectorAll('.progress-step');
+                const formSteps = document.querySelectorAll('.form-step');
+                
+                // Update progress steps
+                progressSteps.forEach(progressStep => {
+                    const stepNumber = progressStep.getAttribute('data-step');
+                    
+                    if (stepNumber < step) {
+                        progressStep.classList.remove('active');
+                        progressStep.classList.add('completed');
+                    } else if (stepNumber == step) {
+                        progressStep.classList.add('active');
+                        progressStep.classList.remove('completed');
+                    } else {
+                        progressStep.classList.remove('active', 'completed');
+                    }
+                });
+                
+                // Show/hide form steps
+                formSteps.forEach(formStep => {
+                    if (formStep.getAttribute('data-step') == step) {
+                        formStep.classList.add('active');
+                    } else {
+                        formStep.classList.remove('active');
+                    }
+                });
+            }
+            
+            window.goToStep = goToStep;
+        }
+        
+        // Reset registration form
+        function resetRegistrationForm() {
+            document.getElementById('firstName').value = '';
+            document.getElementById('lastName').value = '';
+            document.getElementById('phone').value = '';
+            document.getElementById('registerEmail').value = '';
+            document.getElementById('registerPassword').value = '';
+            document.getElementById('confirmPassword').value = '';
+            document.getElementById('userType').value = '';
+            document.getElementById('agreeTerms').checked = false;
+            
+            // Reset progress steps
+            const progressSteps = document.querySelectorAll('.progress-step');
+            progressSteps.forEach(step => {
+                step.classList.remove('active', 'completed');
+            });
+            progressSteps[0].classList.add('active');
+            
+            // Reset form steps
+            const formSteps = document.querySelectorAll('.form-step');
+            formSteps.forEach(step => {
+                step.classList.remove('active');
+            });
+            formSteps[0].classList.add('active');
+        }
+        
+        // Form submissions
+        function initFormSubmissions() {
+            // Login form
+            const loginForm = document.getElementById('loginFormActual');
+            if (loginForm) {
+                loginForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const email = document.getElementById('loginEmail').value;
+                    const password = document.getElementById('loginPassword').value;
+                    
+                    // Show loading
+                    showLoading();
+                    
+                    // Simulate login process
+                    setTimeout(() => {
+                        hideLoading();
+                        
+                        if (email && password) {
+                            showToast('Login successful! Redirecting to dashboard...', 'success');
+                            
+                            // Redirect to dashboard after 2 seconds
+                            setTimeout(() => {
+                                window.location.href = 'dashboard.html';
+                            }, 2000);
+                        } else {
+                            showToast('Please fill in all required fields', 'error');
+                        }
+                    }, 1500);
+                });
+            }
+            
+            // Forgot password form
+            const forgotForm = document.getElementById('forgotPasswordForm');
+            if (forgotForm) {
+                forgotForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const email = document.getElementById('forgotEmail').value;
+                    
+                    // Show loading
+                    showLoading();
+                    
+                    // Simulate sending reset link
+                    setTimeout(() => {
+                        hideLoading();
+                        
+                        if (email) {
+                            showToast('Password reset link sent to your email!', 'success');
+                            
+                            // Show reset form after 2 seconds
+                            setTimeout(() => {
+                                document.getElementById('forgotForm').style.display = 'none';
+                                document.getElementById('resetForm').style.display = 'block';
+                            }, 2000);
+                        } else {
+                            showToast('Please enter your email address', 'error');
+                        }
+                    }, 1500);
+                });
+            }
+            
+            // Reset password form
+            const resetForm = document.getElementById('resetPasswordForm');
+            if (resetForm) {
+                resetForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const newPassword = document.getElementById('resetPassword').value;
+                    const confirmPassword = document.getElementById('confirmResetPassword').value;
+                    
+                    // Show loading
+                    showLoading();
+                    
+                    // Simulate password reset
+                    setTimeout(() => {
+                        hideLoading();
+                        
+                        if (newPassword && confirmPassword && newPassword === confirmPassword) {
+                            showToast('Password reset successful!', 'success');
+                            
+                            // Show success message after 2 seconds
+                            setTimeout(() => {
+                                document.getElementById('resetForm').style.display = 'none';
+                                document.getElementById('verificationSuccess').style.display = 'block';
+                            }, 2000);
+                        } else {
+                            showToast('Passwords do not match or are invalid', 'error');
+                        }
+                    }, 1500);
+                });
+            }
+        }
+        
+        // Social login buttons
+        function initSocialLogin() {
+            const socialButtons = document.querySelectorAll('.social-btn');
+            socialButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const platform = this.classList.contains('google') ? 'Google' : 
+                                   this.classList.contains('facebook') ? 'Facebook' : 'LinkedIn';
+                    
+                    showToast(`${platform} login integration would be configured here`, 'info');
+                });
+            });
+        }
+        
+        // Check URL parameters
+        function checkUrlParams() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const action = urlParams.get('action');
+            
+            if (action === 'register') {
+                document.getElementById('showRegister').click();
+            } else if (action === 'forgot') {
+                document.getElementById('showForgot').click();
+            } else if (action === 'reset') {
+                document.getElementById('showForgot').click();
+                setTimeout(() => {
+                    document.getElementById('forgotForm').style.display = 'none';
+                    document.getElementById('resetForm').style.display = 'block';
+                }, 100);
+            }
+        }
+        
+        // Back to top button
+        function initBackToTop() {
+            const backToTop = document.querySelector('.back-to-top');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    backToTop.classList.add('active');
+                } else {
+                    backToTop.classList.remove('active');
+                }
+            });
+            
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+        
+        // Navbar scroll effect
+        function initNavbarScroll() {
+            const navbar = document.querySelector('.navbar');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+        }
+        
+        // Toast notifications
+        function initToastSystem() {
+            window.showToast = function(message, type = 'success') {
+                const toastContainer = document.querySelector('.toast-container');
+                const toast = document.createElement('div');
+                toast.className = `toast toast-${type}`;
+                toast.innerHTML = `
+                    <div class="d-flex align-items-center">
+                        <i class="fas ${type === 'success' ? 'fa-check-circle text-success' : 'fa-exclamation-circle text-danger'} me-3"></i>
+                        <div>
+                            <p class="mb-0 fw-500">${message}</p>
+                        </div>
+                        <button type="button" class="btn-close ms-auto" onclick="this.parentElement.parentElement.remove()"></button>
+                    </div>
+                `;
+                
+                toastContainer.appendChild(toast);
+                
+                setTimeout(() => toast.classList.add('show'), 10);
+                
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                    setTimeout(() => toast.remove(), 300);
+                }, 5000);
+            };
+        }
+        
+        // Loading overlay functions
+        window.showLoading = function() {
+            document.querySelector('.loading-overlay').classList.add('active');
+        };
+        
+        window.hideLoading = function() {
+            document.querySelector('.loading-overlay').classList.remove('active');
+        };
+    </script>
+</body>
+</html>
