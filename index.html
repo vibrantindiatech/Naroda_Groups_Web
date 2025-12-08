@@ -1325,6 +1325,15 @@
         .lazy-loaded {
             opacity: 1;
         }
+        
+        /* ===== Language Specific Styles ===== */
+        body.hindi, body.gujarati {
+            font-family: 'Noto Sans', 'Inter', sans-serif;
+        }
+        
+        .language-content {
+            transition: opacity 0.3s ease;
+        }
     </style>
 </head>
 <body>
@@ -1371,48 +1380,48 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Home</a>
+                        <a class="nav-link active" href="index.html" data-i18n="nav.home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
+                        <a class="nav-link" href="about.html" data-i18n="nav.about">About</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-i18n="nav.projects">
                             Projects
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="projectsDropdown">
-                            <li><a class="dropdown-item" href="projects-landmark.html">Naroda Landmark</a></li>
-                            <li><a class="dropdown-item" href="projects-irish.html">Naroda Irish</a></li>
+                            <li><a class="dropdown-item" href="projects-landmark.html" data-i18n="nav.landmark">Naroda Landmark</a></li>
+                            <li><a class="dropdown-item" href="projects-irish.html" data-i18n="nav.irish">Naroda Irish</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="projects.html">All Projects</a></li>
+                            <li><a class="dropdown-item" href="projects.html" data-i18n="nav.all_projects">All Projects</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="propertiesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="propertiesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-i18n="nav.properties">
                             Properties
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="propertiesDropdown">
-                            <li><a class="dropdown-item" href="properties.html">Buy</a></li>
-                            <li><a class="dropdown-item" href="properties-rent.html">Rent</a></li>
+                            <li><a class="dropdown-item" href="properties.html" data-i18n="nav.buy">Buy</a></li>
+                            <li><a class="dropdown-item" href="properties-rent.html" data-i18n="nav.rent">Rent</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="property-detail.html">Property Details</a></li>
+                            <li><a class="dropdown-item" href="property-detail.html" data-i18n="nav.property_details">Property Details</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="gallery.html">Gallery</a>
+                        <a class="nav-link" href="gallery.html" data-i18n="nav.gallery">Gallery</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-i18n="nav.more">
                             More
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="moreDropdown">
-                            <li><a class="dropdown-item" href="blog.html">Blog</a></li>
-                            <li><a class="dropdown-item" href="news.html">News</a></li>
-                            <li><a class="dropdown-item" href="careers.html">Careers</a></li>
-                            <li><a class="dropdown-item" href="team.html">Our Team</a></li>
+                            <li><a class="dropdown-item" href="blog.html" data-i18n="nav.blog">Blog</a></li>
+                            <li><a class="dropdown-item" href="news.html" data-i18n="nav.news">News</a></li>
+                            <li><a class="dropdown-item" href="careers.html" data-i18n="nav.careers">Careers</a></li>
+                            <li><a class="dropdown-item" href="team.html" data-i18n="nav.team">Our Team</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
-                            <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+                            <li><a class="dropdown-item" href="faq.html" data-i18n="nav.faq">FAQ</a></li>
+                            <li><a class="dropdown-item" href="contact.html" data-i18n="nav.contact">Contact</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -1420,16 +1429,16 @@
                 <div class="d-flex align-items-center ms-lg-3 mt-3 mt-lg-0">
                     <div class="dropdown">
                         <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fas fa-globe me-1" aria-hidden="true"></i> EN
+                            <i class="fas fa-globe me-1" aria-hidden="true"></i> <span id="currentLanguage">EN</span>
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="languageDropdown">
-                            <li><a class="dropdown-item" href="#" lang="en">English</a></li>
-                            <li><a class="dropdown-item" href="#" lang="hi">Hindi</a></li>
-                            <li><a class="dropdown-item" href="#" lang="gu">Gujarati</a></li>
+                            <li><a class="dropdown-item language-selector" href="#" data-lang="en">English</a></li>
+                            <li><a class="dropdown-item language-selector" href="#" data-lang="hi">हिंदी (Hindi)</a></li>
+                            <li><a class="dropdown-item language-selector" href="#" data-lang="gu">ગુજરાતી (Gujarati)</a></li>
                         </ul>
                     </div>
                     <a href="login.html" class="btn btn-outline-light ms-3">
-                        <i class="fas fa-user me-2" aria-hidden="true"></i> Login
+                        <i class="fas fa-user me-2" aria-hidden="true"></i> <span data-i18n="nav.login">Login</span>
                     </a>
                 </div>
             </div>
@@ -1440,28 +1449,28 @@
     <div class="mobile-bottom-nav no-print">
         <a href="index.html" class="mobile-nav-item active">
             <i class="fas fa-home"></i>
-            <span>Home</span>
+            <span data-i18n="nav.home">Home</span>
         </a>
         <a href="projects.html" class="mobile-nav-item">
             <i class="fas fa-building"></i>
-            <span>Projects</span>
+            <span data-i18n="nav.projects">Projects</span>
         </a>
         <a href="properties.html" class="mobile-nav-item">
             <i class="fas fa-search"></i>
-            <span>Search</span>
+            <span data-i18n="nav.search">Search</span>
         </a>
         <a href="contact.html" class="mobile-nav-item">
             <i class="fas fa-phone"></i>
-            <span>Contact</span>
+            <span data-i18n="nav.contact">Contact</span>
         </a>
         <a href="login.html" class="mobile-nav-item">
             <i class="fas fa-user"></i>
-            <span>Account</span>
+            <span data-i18n="nav.account">Account</span>
         </a>
     </div>
 
     <!-- Main Content -->
-    <main>
+    <main class="language-content">
         <!-- Hero Section -->
         <section class="hero-section">
             <div class="container">
@@ -1469,14 +1478,14 @@
                     <div class="col-lg-7 col-xl-6" data-aos="fade-right" data-aos-duration="1000">
                         <div class="hero-content">
                             <div class="hero-badge">
-                                <i class="fas fa-award" aria-hidden="true"></i> Ahmedabad's Premier Real Estate Developer
+                                <i class="fas fa-award" aria-hidden="true"></i> <span data-i18n="hero.badge">Ahmedabad's Premier Real Estate Developer</span>
                             </div>
                             
                             <h1 class="hero-title">
-                                Build Your <span class="gold-text">Dream Space</span> With Excellence
+                                <span data-i18n="hero.title.part1">Build Your</span> <span class="gold-text"><span data-i18n="hero.title.part2">Dream Space</span></span> <span data-i18n="hero.title.part3">With Excellence</span>
                             </h1>
                             
-                            <p class="hero-subtitle">
+                            <p class="hero-subtitle" data-i18n="hero.subtitle">
                                 Discover premium commercial spaces at <strong class="gold-text">Naroda Landmark</strong> 
                                 and luxury residential living at <strong class="emerald-text">Naroda Irish</strong>. 
                                 15+ years of excellence in creating landmark properties.
@@ -1484,13 +1493,13 @@
                             
                             <div class="btn-group-responsive">
                                 <a href="projects-landmark.html" class="btn btn-gold btn-lg">
-                                    <i class="fas fa-building me-2" aria-hidden="true"></i> Naroda Landmark
+                                    <i class="fas fa-building me-2" aria-hidden="true"></i> <span data-i18n="hero.btn1">Naroda Landmark</span>
                                 </a>
                                 <a href="projects-irish.html" class="btn btn-outline-light btn-lg">
-                                    <i class="fas fa-home me-2" aria-hidden="true"></i> Naroda Irish
+                                    <i class="fas fa-home me-2" aria-hidden="true"></i> <span data-i18n="hero.btn2">Naroda Irish</span>
                                 </a>
                                 <a href="contact.html" class="btn btn-emerald btn-lg">
-                                    <i class="fas fa-phone me-2" aria-hidden="true"></i> Get Quote
+                                    <i class="fas fa-phone me-2" aria-hidden="true"></i> <span data-i18n="hero.btn3">Get Quote</span>
                                 </a>
                             </div>
                             
@@ -1505,7 +1514,7 @@
                                         </div>
                                     </div>
                                     <div>
-                                        <p class="mb-1"><strong>2,500+ Happy Customers</strong></p>
+                                        <p class="mb-1"><strong data-i18n="hero.customers">2,500+ Happy Customers</strong></p>
                                         <div class="d-flex align-items-center">
                                             <div class="text-warning me-2">
                                                 <i class="fas fa-star" aria-hidden="true"></i>
@@ -1514,7 +1523,7 @@
                                                 <i class="fas fa-star" aria-hidden="true"></i>
                                                 <i class="fas fa-star-half-alt" aria-hidden="true"></i>
                                             </div>
-                                            <span>4.8/5 Rating</span>
+                                            <span data-i18n="hero.rating">4.8/5 Rating</span>
                                         </div>
                                     </div>
                                 </div>
@@ -1539,7 +1548,7 @@
                                     </div>
                                     <div>
                                         <h3 class="mb-0 stat-counter" data-count="2500">0</h3>
-                                        <p class="text-muted mb-0">Happy Families</p>
+                                        <p class="text-muted mb-0" data-i18n="hero.stats">Happy Families</p>
                                     </div>
                                 </div>
                             </div>
@@ -1555,12 +1564,12 @@
                 <div class="row mb-5">
                     <div class="col-lg-8 mx-auto text-center">
                         <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
-                            Why Choose Us
+                            <span data-i18n="features.badge">Why Choose Us</span>
                         </span>
                         <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
-                            The Naroda Group <span class="gold-text">Advantage</span>
+                            <span data-i18n="features.title.part1">The Naroda Group</span> <span class="gold-text"><span data-i18n="features.title.part2">Advantage</span></span>
                         </h2>
-                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200">
+                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200" data-i18n="features.subtitle">
                             Experience excellence in real estate with unmatched quality, transparency, and customer satisfaction
                         </p>
                     </div>
@@ -1572,12 +1581,12 @@
                             <div class="feature-icon">
                                 <i class="fas fa-building" aria-hidden="true"></i>
                             </div>
-                            <h4 class="mb-3">Premium Infrastructure</h4>
-                            <p class="text-muted">
+                            <h4 class="mb-3" data-i18n="features.card1.title">Premium Infrastructure</h4>
+                            <p class="text-muted" data-i18n="features.card1.text">
                                 World-class commercial and residential spaces with modern amenities and smart technology integration.
                             </p>
                             <div class="feature-link mt-3">
-                                <a href="projects.html" class="text-gold">Learn More <i class="fas fa-arrow-right ms-1" aria-hidden="true"></i></a>
+                                <a href="projects.html" class="text-gold"><span data-i18n="features.learn_more">Learn More</span> <i class="fas fa-arrow-right ms-1" aria-hidden="true"></i></a>
                             </div>
                         </div>
                     </div>
@@ -1587,12 +1596,12 @@
                             <div class="feature-icon">
                                 <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                             </div>
-                            <h4 class="mb-3">Prime Locations</h4>
-                            <p class="text-muted">
+                            <h4 class="mb-3" data-i18n="features.card2.title">Prime Locations</h4>
+                            <p class="text-muted" data-i18n="features.card2.text">
                                 Strategically located in Ahmedabad's fastest-growing corridor with excellent connectivity.
                             </p>
                             <div class="feature-link mt-3">
-                                <a href="projects.html" class="text-gold">View Locations <i class="fas fa-arrow-right ms-1" aria-hidden="true"></i></a>
+                                <a href="projects.html" class="text-gold"><span data-i18n="features.view_locations">View Locations</span> <i class="fas fa-arrow-right ms-1" aria-hidden="true"></i></a>
                             </div>
                         </div>
                     </div>
@@ -1602,12 +1611,12 @@
                             <div class="feature-icon">
                                 <i class="fas fa-chart-line" aria-hidden="true"></i>
                             </div>
-                            <h4 class="mb-3">High ROI Potential</h4>
-                            <p class="text-muted">
+                            <h4 class="mb-3" data-i18n="features.card3.title">High ROI Potential</h4>
+                            <p class="text-muted" data-i18n="features.card3.text">
                                 Excellent investment opportunity with strong appreciation and guaranteed returns.
                             </p>
                             <div class="feature-link mt-3">
-                                <a href="calculator.html" class="text-gold">Calculate ROI <i class="fas fa-arrow-right ms-1" aria-hidden="true"></i></a>
+                                <a href="calculator.html" class="text-gold"><span data-i18n="features.calculate_roi">Calculate ROI</span> <i class="fas fa-arrow-right ms-1" aria-hidden="true"></i></a>
                             </div>
                         </div>
                     </div>
@@ -1617,12 +1626,12 @@
                             <div class="feature-icon">
                                 <i class="fas fa-shield-alt" aria-hidden="true"></i>
                             </div>
-                            <h4 class="mb-3">Trusted Developer</h4>
-                            <p class="text-muted">
+                            <h4 class="mb-3" data-i18n="features.card4.title">Trusted Developer</h4>
+                            <p class="text-muted" data-i18n="features.card4.text">
                                 15+ years of excellence with RERA approval and transparent documentation.
                             </p>
                             <div class="feature-link mt-3">
-                                <a href="about.html" class="text-gold">View Credentials <i class="fas fa-arrow-right ms-1" aria-hidden="true"></i></a>
+                                <a href="about.html" class="text-gold"><span data-i18n="features.view_credentials">View Credentials</span> <i class="fas fa-arrow-right ms-1" aria-hidden="true"></i></a>
                             </div>
                         </div>
                     </div>
@@ -1636,12 +1645,12 @@
                 <div class="row mb-5">
                     <div class="col-lg-8 mx-auto text-center">
                         <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
-                            Featured Projects
+                            <span data-i18n="projects.badge">Featured Projects</span>
                         </span>
                         <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
-                            Our <span class="gold-text">Signature Projects</span>
+                            <span data-i18n="projects.title.part1">Our</span> <span class="gold-text"><span data-i18n="projects.title.part2">Signature Projects</span></span>
                         </h2>
-                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200">
+                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200" data-i18n="projects.subtitle">
                             Discover our landmark developments designed to exceed expectations
                         </p>
                     </div>
@@ -1654,24 +1663,24 @@
                                 <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
                                      alt="Naroda Landmark" class="lazy-load" loading="lazy">
                                 <div class="project-badge">
-                                    <i class="fas fa-building me-2" aria-hidden="true"></i> Premium Commercial
+                                    <i class="fas fa-building me-2" aria-hidden="true"></i> <span data-i18n="projects.commercial">Premium Commercial</span>
                                 </div>
                                 <div class="project-overlay">
-                                    <a href="projects-landmark.html" class="btn btn-gold">Explore Project</a>
+                                    <a href="projects-landmark.html" class="btn btn-gold" data-i18n="projects.explore">Explore Project</a>
                                 </div>
                             </div>
                             <div class="project-content">
-                                <h3 class="mb-3">Naroda Landmark</h3>
-                                <p class="text-muted mb-4">
+                                <h3 class="mb-3" data-i18n="projects.landmark.title">Naroda Landmark</h3>
+                                <p class="text-muted mb-4" data-i18n="projects.landmark.text">
                                     State-of-the-art commercial complex with Grade A specifications, designed for modern businesses.
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div>
-                                        <h4 class="gold-text mb-0">₹ 12,500/sq.ft</h4>
-                                        <small class="text-muted">Starting Price</small>
+                                        <h4 class="gold-text mb-0" data-i18n="projects.landmark.price">₹ 12,500/sq.ft</h4>
+                                        <small class="text-muted" data-i18n="projects.starting_price">Starting Price</small>
                                     </div>
                                     <a href="projects-landmark.html" class="btn btn-gold">
-                                        View Details <i class="fas fa-arrow-right ms-2" aria-hidden="true"></i>
+                                        <span data-i18n="projects.view_details">View Details</span> <i class="fas fa-arrow-right ms-2" aria-hidden="true"></i>
                                     </a>
                                 </div>
                             </div>
@@ -1684,24 +1693,24 @@
                                 <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?ixlib=rb-4.0.3&auto=format&fit=crop&w=2065&q=80" 
                                      alt="Naroda Irish" class="lazy-load" loading="lazy">
                                 <div class="project-badge emerald">
-                                    <i class="fas fa-home me-2" aria-hidden="true"></i> Luxury Residential
+                                    <i class="fas fa-home me-2" aria-hidden="true"></i> <span data-i18n="projects.residential">Luxury Residential</span>
                                 </div>
                                 <div class="project-overlay">
-                                    <a href="projects-irish.html" class="btn btn-emerald">Explore Project</a>
+                                    <a href="projects-irish.html" class="btn btn-emerald" data-i18n="projects.explore">Explore Project</a>
                                 </div>
                             </div>
                             <div class="project-content">
-                                <h3 class="mb-3">Naroda Irish</h3>
-                                <p class="text-muted mb-4">
+                                <h3 class="mb-3" data-i18n="projects.irish.title">Naroda Irish</h3>
+                                <p class="text-muted mb-4" data-i18n="projects.irish.text">
                                     Premium apartments with thoughtfully designed spaces and world-class amenities.
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div>
-                                        <h4 class="emerald-text mb-0">₹ 8,500/sq.ft</h4>
-                                        <small class="text-muted">Starting Price</small>
+                                        <h4 class="emerald-text mb-0" data-i18n="projects.irish.price">₹ 8,500/sq.ft</h4>
+                                        <small class="text-muted" data-i18n="projects.starting_price">Starting Price</small>
                                     </div>
                                     <a href="projects-irish.html" class="btn btn-emerald">
-                                        View Details <i class="fas fa-arrow-right ms-2" aria-hidden="true"></i>
+                                        <span data-i18n="projects.view_details">View Details</span> <i class="fas fa-arrow-right ms-2" aria-hidden="true"></i>
                                     </a>
                                 </div>
                             </div>
@@ -1711,7 +1720,7 @@
                 
                 <div class="text-center mt-5" data-aos="fade-up">
                     <a href="projects.html" class="btn btn-outline-primary btn-lg">
-                        <i class="fas fa-building me-2" aria-hidden="true"></i> View All Projects
+                        <i class="fas fa-building me-2" aria-hidden="true"></i> <span data-i18n="projects.view_all">View All Projects</span>
                     </a>
                 </div>
             </div>
@@ -1723,12 +1732,12 @@
                 <div class="row mb-5">
                     <div class="col-lg-8 mx-auto text-center">
                         <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
-                            Our Journey
+                            <span data-i18n="stats.badge">Our Journey</span>
                         </span>
                         <h2 class="text-white" data-aos="fade-up" data-aos-delay="100">
-                            Building Trust Through <span class="gold-text">Excellence</span>
+                            <span data-i18n="stats.title.part1">Building Trust Through</span> <span class="gold-text"><span data-i18n="stats.title.part2">Excellence</span></span>
                         </h2>
-                        <p class="text-white-50" data-aos="fade-up" data-aos-delay="200">
+                        <p class="text-white-50" data-aos="fade-up" data-aos-delay="200" data-i18n="stats.subtitle">
                             Numbers that reflect our commitment to quality and customer satisfaction
                         </p>
                     </div>
@@ -1743,7 +1752,7 @@
                             <div class="stat-number">
                                 <span class="stat-counter" data-count="15">0</span>+
                             </div>
-                            <p class="stat-text">Years of Excellence</p>
+                            <p class="stat-text" data-i18n="stats.stat1">Years of Excellence</p>
                         </div>
                     </div>
                     
@@ -1755,7 +1764,7 @@
                             <div class="stat-number">
                                 <span class="stat-counter" data-count="2500">0</span>+
                             </div>
-                            <p class="stat-text">Happy Families</p>
+                            <p class="stat-text" data-i18n="stats.stat2">Happy Families</p>
                         </div>
                     </div>
                     
@@ -1767,7 +1776,7 @@
                             <div class="stat-number">
                                 <span class="stat-counter" data-count="50">0</span>+
                             </div>
-                            <p class="stat-text">Projects Delivered</p>
+                            <p class="stat-text" data-i18n="stats.stat3">Projects Delivered</p>
                         </div>
                     </div>
                     
@@ -1779,7 +1788,7 @@
                             <div class="stat-number">
                                 <span class="stat-counter" data-count="5">0</span>M+
                             </div>
-                            <p class="stat-text">Sq. Ft. Developed</p>
+                            <p class="stat-text" data-i18n="stats.stat4">Sq. Ft. Developed</p>
                         </div>
                     </div>
                 </div>
@@ -1792,12 +1801,12 @@
                 <div class="row mb-5">
                     <div class="col-lg-8 mx-auto text-center">
                         <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
-                            Featured Properties
+                            <span data-i18n="properties.badge">Featured Properties</span>
                         </span>
                         <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
-                            Premium <span class="gold-text">Properties</span> Available
+                            <span data-i18n="properties.title.part1">Premium</span> <span class="gold-text"><span data-i18n="properties.title.part2">Properties</span></span> <span data-i18n="properties.title.part3">Available</span>
                         </h2>
-                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200">
+                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200" data-i18n="properties.subtitle">
                             Explore our curated selection of premium properties
                         </p>
                     </div>
@@ -1809,19 +1818,19 @@
                             <div class="property-image">
                                 <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
                                      alt="3 BHK Luxury Apartment" class="lazy-load" loading="lazy">
-                                <div class="property-badge">For Sale</div>
+                                <div class="property-badge" data-i18n="properties.for_sale">For Sale</div>
                             </div>
                             <div class="property-content p-4">
-                                <h4 class="mb-2">3 BHK Luxury Apartment</h4>
-                                <p class="text-muted mb-3"><i class="fas fa-map-marker-alt text-secondary me-2" aria-hidden="true"></i> Naroda Irish, Ahmedabad</p>
+                                <h4 class="mb-2" data-i18n="properties.property1.title">3 BHK Luxury Apartment</h4>
+                                <p class="text-muted mb-3"><i class="fas fa-map-marker-alt text-secondary me-2" aria-hidden="true"></i> <span data-i18n="properties.property1.location">Naroda Irish, Ahmedabad</span></p>
                                 <div class="property-features">
                                     <div class="property-feature">
                                         <i class="fas fa-bed" aria-hidden="true"></i>
-                                        <span>3 Beds</span>
+                                        <span data-i18n="properties.beds">3 Beds</span>
                                     </div>
                                     <div class="property-feature">
                                         <i class="fas fa-bath" aria-hidden="true"></i>
-                                        <span>2 Baths</span>
+                                        <span data-i18n="properties.baths">2 Baths</span>
                                     </div>
                                     <div class="property-feature">
                                         <i class="fas fa-vector-square" aria-hidden="true"></i>
@@ -1830,10 +1839,10 @@
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center mt-4">
                                     <div>
-                                        <h4 class="gold-text mb-0">₹ 85 Lakhs</h4>
+                                        <h4 class="gold-text mb-0" data-i18n="properties.property1.price">₹ 85 Lakhs</h4>
                                     </div>
                                     <a href="property-detail.html" class="btn btn-gold btn-sm">
-                                        View Details
+                                        <span data-i18n="properties.view_details">View Details</span>
                                     </a>
                                 </div>
                             </div>
@@ -1845,15 +1854,15 @@
                             <div class="property-image">
                                 <img src="https://images.unsplash.com/photo-1558036117-15e82a2c9a9a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
                                      alt="Commercial Office Space" class="lazy-load" loading="lazy">
-                                <div class="property-badge">For Sale</div>
+                                <div class="property-badge" data-i18n="properties.for_sale">For Sale</div>
                             </div>
                             <div class="property-content p-4">
-                                <h4 class="mb-2">Commercial Office Space</h4>
-                                <p class="text-muted mb-3"><i class="fas fa-map-marker-alt text-secondary me-2" aria-hidden="true"></i> Naroda Landmark, Ahmedabad</p>
+                                <h4 class="mb-2" data-i18n="properties.property2.title">Commercial Office Space</h4>
+                                <p class="text-muted mb-3"><i class="fas fa-map-marker-alt text-secondary me-2" aria-hidden="true"></i> <span data-i18n="properties.property2.location">Naroda Landmark, Ahmedabad</span></p>
                                 <div class="property-features">
                                     <div class="property-feature">
                                         <i class="fas fa-building" aria-hidden="true"></i>
-                                        <span>Office</span>
+                                        <span data-i18n="properties.office">Office</span>
                                     </div>
                                     <div class="property-feature">
                                         <i class="fas fa-vector-square" aria-hidden="true"></i>
@@ -1861,15 +1870,15 @@
                                     </div>
                                     <div class="property-feature">
                                         <i class="fas fa-parking" aria-hidden="true"></i>
-                                        <span>2 Parking</span>
+                                        <span data-i18n="properties.parking">2 Parking</span>
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center mt-4">
                                     <div>
-                                        <h4 class="gold-text mb-0">₹ 2.5 Cr</h4>
+                                        <h4 class="gold-text mb-0" data-i18n="properties.property2.price">₹ 2.5 Cr</h4>
                                     </div>
                                     <a href="property-detail.html" class="btn btn-gold btn-sm">
-                                        View Details
+                                        <span data-i18n="properties.view_details">View Details</span>
                                     </a>
                                 </div>
                             </div>
@@ -1881,19 +1890,19 @@
                             <div class="property-image">
                                 <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&auto=format&fit=crop&w=2096&q=80" 
                                      alt="2 BHK Apartment" class="lazy-load" loading="lazy">
-                                <div class="property-badge">For Rent</div>
+                                <div class="property-badge" data-i18n="properties.for_rent">For Rent</div>
                             </div>
                             <div class="property-content p-4">
-                                <h4 class="mb-2">2 BHK Apartment</h4>
-                                <p class="text-muted mb-3"><i class="fas fa-map-marker-alt text-secondary me-2" aria-hidden="true"></i> Naroda Irish, Ahmedabad</p>
+                                <h4 class="mb-2" data-i18n="properties.property3.title">2 BHK Apartment</h4>
+                                <p class="text-muted mb-3"><i class="fas fa-map-marker-alt text-secondary me-2" aria-hidden="true"></i> <span data-i18n="properties.property3.location">Naroda Irish, Ahmedabad</span></p>
                                 <div class="property-features">
                                     <div class="property-feature">
                                         <i class="fas fa-bed" aria-hidden="true"></i>
-                                        <span>2 Beds</span>
+                                        <span data-i18n="properties.beds2">2 Beds</span>
                                     </div>
                                     <div class="property-feature">
                                         <i class="fas fa-bath" aria-hidden="true"></i>
-                                        <span>2 Baths</span>
+                                        <span data-i18n="properties.baths2">2 Baths</span>
                                     </div>
                                     <div class="property-feature">
                                         <i class="fas fa-vector-square" aria-hidden="true"></i>
@@ -1902,10 +1911,10 @@
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center mt-4">
                                     <div>
-                                        <h4 class="gold-text mb-0">₹ 25,000/month</h4>
+                                        <h4 class="gold-text mb-0" data-i18n="properties.property3.price">₹ 25,000/month</h4>
                                     </div>
                                     <a href="property-detail.html" class="btn btn-gold btn-sm">
-                                        View Details
+                                        <span data-i18n="properties.view_details">View Details</span>
                                     </a>
                                 </div>
                             </div>
@@ -1915,7 +1924,7 @@
                 
                 <div class="text-center mt-5" data-aos="fade-up">
                     <a href="properties.html" class="btn btn-gold">
-                        <i class="fas fa-search me-2" aria-hidden="true"></i> Browse All Properties
+                        <i class="fas fa-search me-2" aria-hidden="true"></i> <span data-i18n="properties.browse_all">Browse All Properties</span>
                     </a>
                 </div>
             </div>
@@ -1927,12 +1936,12 @@
                 <div class="row mb-5">
                     <div class="col-lg-8 mx-auto text-center">
                         <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
-                            Testimonials
+                            <span data-i18n="testimonials.badge">Testimonials</span>
                         </span>
                         <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
-                            What Our <span class="gold-text">Clients Say</span>
+                            <span data-i18n="testimonials.title.part1">What Our</span> <span class="gold-text"><span data-i18n="testimonials.title.part2">Clients Say</span></span>
                         </h2>
-                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200">
+                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200" data-i18n="testimonials.subtitle">
                             Real stories from our valued customers
                         </p>
                     </div>
@@ -1948,14 +1957,14 @@
                                 <i class="fas fa-star" aria-hidden="true"></i>
                                 <i class="fas fa-star" aria-hidden="true"></i>
                             </div>
-                            <p class="testimonial-text mb-4">
+                            <p class="testimonial-text mb-4" data-i18n="testimonials.testimonial1">
                                 "Investing in Naroda Landmark was one of the best decisions for my business. The location and infrastructure are world-class."
                             </p>
                             <div class="testimonial-author d-flex align-items-center">
                                 <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rajesh Patel" class="rounded-circle me-3" width="60" height="60" loading="lazy">
                                 <div>
-                                    <h5 class="mb-1">Rajesh Patel</h5>
-                                    <p class="text-muted mb-0">Business Owner</p>
+                                    <h5 class="mb-1" data-i18n="testimonials.author1.name">Rajesh Patel</h5>
+                                    <p class="text-muted mb-0" data-i18n="testimonials.author1.role">Business Owner</p>
                                 </div>
                             </div>
                         </div>
@@ -1970,14 +1979,14 @@
                                 <i class="fas fa-star" aria-hidden="true"></i>
                                 <i class="fas fa-star" aria-hidden="true"></i>
                             </div>
-                            <p class="testimonial-text mb-4">
+                            <p class="testimonial-text mb-4" data-i18n="testimonials.testimonial2">
                                 "Our family found our dream home at Naroda Irish. The attention to detail exceeded all our expectations."
                             </p>
                             <div class="testimonial-author d-flex align-items-center">
                                 <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya Sharma" class="rounded-circle me-3" width="60" height="60" loading="lazy">
                                 <div>
-                                    <h5 class="mb-1">Priya Sharma</h5>
-                                    <p class="text-muted mb-0">Homeowner</p>
+                                    <h5 class="mb-1" data-i18n="testimonials.author2.name">Priya Sharma</h5>
+                                    <p class="text-muted mb-0" data-i18n="testimonials.author2.role">Homeowner</p>
                                 </div>
                             </div>
                         </div>
@@ -1992,14 +2001,14 @@
                                 <i class="fas fa-star" aria-hidden="true"></i>
                                 <i class="fas fa-star" aria-hidden="true"></i>
                             </div>
-                            <p class="testimonial-text mb-4">
+                            <p class="testimonial-text mb-4" data-i18n="testimonials.testimonial3">
                                 "The team at Naroda Group is incredibly professional. Everything was transparent and smooth from start to finish."
                             </p>
                             <div class="testimonial-author d-flex align-items-center">
                                 <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Amit Desai" class="rounded-circle me-3" width="60" height="60" loading="lazy">
                                 <div>
-                                    <h5 class="mb-1">Amit Desai</h5>
-                                    <p class="text-muted mb-0">CEO, TechStart</p>
+                                    <h5 class="mb-1" data-i18n="testimonials.author3.name">Amit Desai</h5>
+                                    <p class="text-muted mb-0" data-i18n="testimonials.author3.role">CEO, TechStart</p>
                                 </div>
                             </div>
                         </div>
@@ -2014,21 +2023,21 @@
                 <div class="row">
                     <div class="col-lg-8 mx-auto text-center">
                         <h2 class="text-white mb-4" data-aos="fade-up">
-                            Ready to Find Your <span class="gold-text">Perfect Space?</span>
+                            <span data-i18n="cta.title.part1">Ready to Find Your</span> <span class="gold-text"><span data-i18n="cta.title.part2">Perfect Space?</span></span>
                         </h2>
-                        <p class="text-white-50 mb-5" data-aos="fade-up" data-aos-delay="100">
+                        <p class="text-white-50 mb-5" data-aos="fade-up" data-aos-delay="100" data-i18n="cta.subtitle">
                             Schedule a site visit today and experience excellence firsthand.
                         </p>
                         
                         <div class="btn-group-responsive" data-aos="fade-up" data-aos-delay="200">
                             <a href="contact.html" class="btn btn-gold btn-lg">
-                                <i class="fas fa-calendar-alt me-2" aria-hidden="true"></i> Schedule a Visit
+                                <i class="fas fa-calendar-alt me-2" aria-hidden="true"></i> <span data-i18n="cta.btn1">Schedule a Visit</span>
                             </a>
                             <a href="tel:+919876543210" class="btn btn-outline-light btn-lg">
                                 <i class="fas fa-phone me-2" aria-hidden="true"></i> +91 98765 43210
                             </a>
                             <a href="contact.html" class="btn btn-emerald btn-lg">
-                                <i class="fas fa-download me-2" aria-hidden="true"></i> Get E-Brochure
+                                <i class="fas fa-download me-2" aria-hidden="true"></i> <span data-i18n="cta.btn3">Get E-Brochure</span>
                             </a>
                         </div>
                     </div>
@@ -2042,12 +2051,12 @@
                 <div class="row mb-5">
                     <div class="col-lg-8 mx-auto text-center">
                         <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
-                            Latest News
+                            <span data-i18n="blog.badge">Latest News</span>
                         </span>
                         <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
-                            Real Estate <span class="gold-text">Insights</span>
+                            <span data-i18n="blog.title.part1">Real Estate</span> <span class="gold-text"><span data-i18n="blog.title.part2">Insights</span></span>
                         </h2>
-                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200">
+                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200" data-i18n="blog.subtitle">
                             Stay updated with the latest trends and news
                         </p>
                     </div>
@@ -2061,14 +2070,14 @@
                                      alt="Real Estate Market Outlook 2025" class="lazy-load" loading="lazy">
                             </div>
                             <div class="blog-content p-4">
-                                <span class="badge bg-secondary mb-2">Market Trends</span>
-                                <h4 class="mb-3">Real Estate Market Outlook 2025</h4>
-                                <p class="text-muted mb-3">
+                                <span class="badge bg-secondary mb-2" data-i18n="blog.category1">Market Trends</span>
+                                <h4 class="mb-3" data-i18n="blog.article1.title">Real Estate Market Outlook 2025</h4>
+                                <p class="text-muted mb-3" data-i18n="blog.article1.text">
                                     Analysis of upcoming trends and investment opportunities in Ahmedabad's real estate market.
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <small class="text-muted"><i class="fas fa-calendar me-1" aria-hidden="true"></i> Jan 15, 2025</small>
-                                    <a href="blog-detail.html" class="text-gold">Read More <i class="fas fa-arrow-right ms-1" aria-hidden="true"></i></a>
+                                    <small class="text-muted"><i class="fas fa-calendar me-1" aria-hidden="true"></i> <span data-i18n="blog.article1.date">Jan 15, 2025</span></small>
+                                    <a href="blog-detail.html" class="text-gold"><span data-i18n="blog.read_more">Read More</span> <i class="fas fa-arrow-right ms-1" aria-hidden="true"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -2081,14 +2090,14 @@
                                      alt="Smart Home Technologies" class="lazy-load" loading="lazy">
                             </div>
                             <div class="blog-content p-4">
-                                <span class="badge bg-secondary mb-2">Investment</span>
-                                <h4 class="mb-3">Smart Home Technologies</h4>
-                                <p class="text-muted mb-3">
+                                <span class="badge bg-secondary mb-2" data-i18n="blog.category2">Investment</span>
+                                <h4 class="mb-3" data-i18n="blog.article2.title">Smart Home Technologies</h4>
+                                <p class="text-muted mb-3" data-i18n="blog.article2.text">
                                     How smart home automation is transforming modern living spaces and increasing property value.
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <small class="text-muted"><i class="fas fa-calendar me-1" aria-hidden="true"></i> Jan 10, 2025</small>
-                                    <a href="blog-detail.html" class="text-gold">Read More <i class="fas fa-arrow-right ms-1" aria-hidden="true"></i></a>
+                                    <small class="text-muted"><i class="fas fa-calendar me-1" aria-hidden="true"></i> <span data-i18n="blog.article2.date">Jan 10, 2025</span></small>
+                                    <a href="blog-detail.html" class="text-gold"><span data-i18n="blog.read_more">Read More</span> <i class="fas fa-arrow-right ms-1" aria-hidden="true"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -2101,14 +2110,14 @@
                                      alt="RERA Regulations Update" class="lazy-load" loading="lazy">
                             </div>
                             <div class="blog-content p-4">
-                                <span class="badge bg-secondary mb-2">Legal</span>
-                                <h4 class="mb-3">RERA Regulations Update</h4>
-                                <p class="text-muted mb-3">
+                                <span class="badge bg-secondary mb-2" data-i18n="blog.category3">Legal</span>
+                                <h4 class="mb-3" data-i18n="blog.article3.title">RERA Regulations Update</h4>
+                                <p class="text-muted mb-3" data-i18n="blog.article3.text">
                                     Latest updates on RERA regulations and how they protect homebuyers' interests.
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <small class="text-muted"><i class="fas fa-calendar me-1" aria-hidden="true"></i> Jan 5, 2025</small>
-                                    <a href="blog-detail.html" class="text-gold">Read More <i class="fas fa-arrow-right ms-1" aria-hidden="true"></i></a>
+                                    <small class="text-muted"><i class="fas fa-calendar me-1" aria-hidden="true"></i> <span data-i18n="blog.article3.date">Jan 5, 2025</span></small>
+                                    <a href="blog-detail.html" class="text-gold"><span data-i18n="blog.read_more">Read More</span> <i class="fas fa-arrow-right ms-1" aria-hidden="true"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -2117,7 +2126,7 @@
                 
                 <div class="text-center mt-5" data-aos="fade-up">
                     <a href="blog.html" class="btn btn-outline-primary">
-                        <i class="fas fa-newspaper me-2" aria-hidden="true"></i> View All Articles
+                        <i class="fas fa-newspaper me-2" aria-hidden="true"></i> <span data-i18n="blog.view_all">View All Articles</span>
                     </a>
                 </div>
             </div>
@@ -2135,7 +2144,7 @@
                             Naroda <span class="gold-text">Group</span>
                         </a>
                     </div>
-                    <p class="mb-4">
+                    <p class="mb-4" data-i18n="footer.description">
                         Creating landmark properties that redefine excellence. From premium commercial spaces 
                         to luxury residential living, we build dreams with quality and commitment.
                     </p>
@@ -2160,59 +2169,59 @@
                 </div>
                 
                 <div class="col-lg-2 col-md-6">
-                    <h3 class="footer-title">Quick Links</h3>
+                    <h3 class="footer-title" data-i18n="footer.quick_links">Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
-                        <li><a href="projects.html"><i class="fas fa-chevron-right"></i> Projects</a></li>
-                        <li><a href="properties.html"><i class="fas fa-chevron-right"></i> Properties</a></li>
-                        <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
-                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.home">Home</span></a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.about">About Us</span></a></li>
+                        <li><a href="projects.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.projects">Projects</span></a></li>
+                        <li><a href="properties.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.properties">Properties</span></a></li>
+                        <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.gallery">Gallery</span></a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.contact">Contact</span></a></li>
                     </ul>
                 </div>
                 
                 <div class="col-lg-3 col-md-6">
-                    <h3 class="footer-title">Our Projects</h3>
+                    <h3 class="footer-title" data-i18n="footer.our_projects">Our Projects</h3>
                     <a href="projects-landmark.html" class="project-mini-card">
-                        <h6 class="text-white mb-1">Naroda Landmark</h6>
-                        <p class="small text-muted mb-0">Premium Commercial Spaces</p>
+                        <h6 class="text-white mb-1" data-i18n="nav.landmark">Naroda Landmark</h6>
+                        <p class="small text-muted mb-0" data-i18n="footer.landmark_desc">Premium Commercial Spaces</p>
                     </a>
                     <a href="projects-irish.html" class="project-mini-card">
-                        <h6 class="text-white mb-1">Naroda Irish</h6>
-                        <p class="small text-muted mb-0">Luxury Residential Living</p>
+                        <h6 class="text-white mb-1" data-i18n="nav.irish">Naroda Irish</h6>
+                        <p class="small text-muted mb-0" data-i18n="footer.irish_desc">Luxury Residential Living</p>
                     </a>
                     <a href="projects.html" class="project-mini-card">
-                        <h6 class="text-white mb-1">View All Projects</h6>
-                        <p class="small text-muted mb-0">Explore our portfolio</p>
+                        <h6 class="text-white mb-1" data-i18n="footer.view_all_projects">View All Projects</h6>
+                        <p class="small text-muted mb-0" data-i18n="footer.explore_portfolio">Explore our portfolio</p>
                     </a>
                 </div>
                 
                 <div class="col-lg-3 col-md-6">
-                    <h3 class="footer-title">Contact Info</h3>
+                    <h3 class="footer-title" data-i18n="footer.contact_info">Contact Info</h3>
                     <div class="contact-info">
                         <i class="fas fa-phone"></i>
                         <div>
-                            <h6 class="text-white mb-1">Phone Number</h6>
+                            <h6 class="text-white mb-1" data-i18n="footer.phone">Phone Number</h6>
                             <p class="mb-0">+91 98765 43210</p>
-                            <small class="text-muted">Mon - Sat: 10 AM - 7 PM</small>
+                            <small class="text-muted" data-i18n="footer.phone_hours">Mon - Sat: 10 AM - 7 PM</small>
                         </div>
                     </div>
                     
                     <div class="contact-info">
                         <i class="fas fa-envelope"></i>
                         <div>
-                            <h6 class="text-white mb-1">Email Address</h6>
+                            <h6 class="text-white mb-1" data-i18n="footer.email">Email Address</h6>
                             <p class="mb-0">info@narodagroup.com</p>
-                            <small class="text-muted">We reply within 24 hours</small>
+                            <small class="text-muted" data-i18n="footer.email_response">We reply within 24 hours</small>
                         </div>
                     </div>
                     
                     <div class="contact-info">
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
-                            <h6 class="text-white mb-1">Office Address</h6>
-                            <p class="mb-0">Naroda - Bhat Road</p>
-                            <small class="text-muted">Ahmedabad, Gujarat 382330</small>
+                            <h6 class="text-white mb-1" data-i18n="footer.address">Office Address</h6>
+                            <p class="mb-0" data-i18n="footer.address_line1">Naroda - Bhat Road</p>
+                            <small class="text-muted" data-i18n="footer.address_line2">Ahmedabad, Gujarat 382330</small>
                         </div>
                     </div>
                 </div>
@@ -2221,12 +2230,12 @@
             <div class="copyright">
                 <div class="row align-items-center">
                     <div class="col-md-6">
-                        <p class="mb-0">&copy; 2025 Naroda Group. All rights reserved.</p>
+                        <p class="mb-0">&copy; 2025 Naroda Group. <span data-i18n="footer.rights">All rights reserved.</span></p>
                     </div>
                     <div class="col-md-6 text-md-end">
-                        <a href="privacy.html" class="text-muted me-3">Privacy Policy</a>
-                        <a href="terms.html" class="text-muted me-3">Terms of Service</a>
-                        <a href="rera.html" class="text-muted">RERA Registration</a>
+                        <a href="privacy.html" class="text-muted me-3" data-i18n="footer.privacy">Privacy Policy</a>
+                        <a href="terms.html" class="text-muted me-3" data-i18n="footer.terms">Terms of Service</a>
+                        <a href="rera.html" class="text-muted" data-i18n="footer.rera">RERA Registration</a>
                     </div>
                 </div>
             </div>
@@ -2239,6 +2248,528 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <!-- Language Translation Data -->
+    <script>
+        const translations = {
+            en: {
+                // Navigation
+                "nav.home": "Home",
+                "nav.about": "About",
+                "nav.projects": "Projects",
+                "nav.landmark": "Naroda Landmark",
+                "nav.irish": "Naroda Irish",
+                "nav.all_projects": "All Projects",
+                "nav.properties": "Properties",
+                "nav.buy": "Buy",
+                "nav.rent": "Rent",
+                "nav.property_details": "Property Details",
+                "nav.gallery": "Gallery",
+                "nav.more": "More",
+                "nav.blog": "Blog",
+                "nav.news": "News",
+                "nav.careers": "Careers",
+                "nav.team": "Our Team",
+                "nav.faq": "FAQ",
+                "nav.contact": "Contact",
+                "nav.login": "Login",
+                "nav.search": "Search",
+                "nav.account": "Account",
+                
+                // Hero Section
+                "hero.badge": "Ahmedabad's Premier Real Estate Developer",
+                "hero.title.part1": "Build Your",
+                "hero.title.part2": "Dream Space",
+                "hero.title.part3": "With Excellence",
+                "hero.subtitle": "Discover premium commercial spaces at Naroda Landmark and luxury residential living at Naroda Irish. 15+ years of excellence in creating landmark properties.",
+                "hero.btn1": "Naroda Landmark",
+                "hero.btn2": "Naroda Irish",
+                "hero.btn3": "Get Quote",
+                "hero.customers": "2,500+ Happy Customers",
+                "hero.rating": "4.8/5 Rating",
+                "hero.stats": "Happy Families",
+                
+                // Features Section
+                "features.badge": "Why Choose Us",
+                "features.title.part1": "The Naroda Group",
+                "features.title.part2": "Advantage",
+                "features.subtitle": "Experience excellence in real estate with unmatched quality, transparency, and customer satisfaction",
+                "features.card1.title": "Premium Infrastructure",
+                "features.card1.text": "World-class commercial and residential spaces with modern amenities and smart technology integration.",
+                "features.learn_more": "Learn More",
+                "features.card2.title": "Prime Locations",
+                "features.card2.text": "Strategically located in Ahmedabad's fastest-growing corridor with excellent connectivity.",
+                "features.view_locations": "View Locations",
+                "features.card3.title": "High ROI Potential",
+                "features.card3.text": "Excellent investment opportunity with strong appreciation and guaranteed returns.",
+                "features.calculate_roi": "Calculate ROI",
+                "features.card4.title": "Trusted Developer",
+                "features.card4.text": "15+ years of excellence with RERA approval and transparent documentation.",
+                "features.view_credentials": "View Credentials",
+                
+                // Projects Section
+                "projects.badge": "Featured Projects",
+                "projects.title.part1": "Our",
+                "projects.title.part2": "Signature Projects",
+                "projects.subtitle": "Discover our landmark developments designed to exceed expectations",
+                "projects.commercial": "Premium Commercial",
+                "projects.residential": "Luxury Residential",
+                "projects.explore": "Explore Project",
+                "projects.landmark.title": "Naroda Landmark",
+                "projects.landmark.text": "State-of-the-art commercial complex with Grade A specifications, designed for modern businesses.",
+                "projects.landmark.price": "₹ 12,500/sq.ft",
+                "projects.irish.title": "Naroda Irish",
+                "projects.irish.text": "Premium apartments with thoughtfully designed spaces and world-class amenities.",
+                "projects.irish.price": "₹ 8,500/sq.ft",
+                "projects.starting_price": "Starting Price",
+                "projects.view_details": "View Details",
+                "projects.view_all": "View All Projects",
+                
+                // Stats Section
+                "stats.badge": "Our Journey",
+                "stats.title.part1": "Building Trust Through",
+                "stats.title.part2": "Excellence",
+                "stats.subtitle": "Numbers that reflect our commitment to quality and customer satisfaction",
+                "stats.stat1": "Years of Excellence",
+                "stats.stat2": "Happy Families",
+                "stats.stat3": "Projects Delivered",
+                "stats.stat4": "Sq. Ft. Developed",
+                
+                // Properties Section
+                "properties.badge": "Featured Properties",
+                "properties.title.part1": "Premium",
+                "properties.title.part2": "Properties",
+                "properties.title.part3": "Available",
+                "properties.subtitle": "Explore our curated selection of premium properties",
+                "properties.for_sale": "For Sale",
+                "properties.for_rent": "For Rent",
+                "properties.property1.title": "3 BHK Luxury Apartment",
+                "properties.property1.location": "Naroda Irish, Ahmedabad",
+                "properties.property1.price": "₹ 85 Lakhs",
+                "properties.property2.title": "Commercial Office Space",
+                "properties.property2.location": "Naroda Landmark, Ahmedabad",
+                "properties.property2.price": "₹ 2.5 Cr",
+                "properties.property3.title": "2 BHK Apartment",
+                "properties.property3.location": "Naroda Irish, Ahmedabad",
+                "properties.property3.price": "₹ 25,000/month",
+                "properties.beds": "3 Beds",
+                "properties.beds2": "2 Beds",
+                "properties.baths": "2 Baths",
+                "properties.baths2": "2 Baths",
+                "properties.office": "Office",
+                "properties.parking": "2 Parking",
+                "properties.view_details": "View Details",
+                "properties.browse_all": "Browse All Properties",
+                
+                // Testimonials
+                "testimonials.badge": "Testimonials",
+                "testimonials.title.part1": "What Our",
+                "testimonials.title.part2": "Clients Say",
+                "testimonials.subtitle": "Real stories from our valued customers",
+                "testimonials.testimonial1": "\"Investing in Naroda Landmark was one of the best decisions for my business. The location and infrastructure are world-class.\"",
+                "testimonials.author1.name": "Rajesh Patel",
+                "testimonials.author1.role": "Business Owner",
+                "testimonials.testimonial2": "\"Our family found our dream home at Naroda Irish. The attention to detail exceeded all our expectations.\"",
+                "testimonials.author2.name": "Priya Sharma",
+                "testimonials.author2.role": "Homeowner",
+                "testimonials.testimonial3": "\"The team at Naroda Group is incredibly professional. Everything was transparent and smooth from start to finish.\"",
+                "testimonials.author3.name": "Amit Desai",
+                "testimonials.author3.role": "CEO, TechStart",
+                
+                // CTA Section
+                "cta.title.part1": "Ready to Find Your",
+                "cta.title.part2": "Perfect Space?",
+                "cta.subtitle": "Schedule a site visit today and experience excellence firsthand.",
+                "cta.btn1": "Schedule a Visit",
+                "cta.btn3": "Get E-Brochure",
+                
+                // Blog Section
+                "blog.badge": "Latest News",
+                "blog.title.part1": "Real Estate",
+                "blog.title.part2": "Insights",
+                "blog.subtitle": "Stay updated with the latest trends and news",
+                "blog.category1": "Market Trends",
+                "blog.category2": "Investment",
+                "blog.category3": "Legal",
+                "blog.article1.title": "Real Estate Market Outlook 2025",
+                "blog.article1.text": "Analysis of upcoming trends and investment opportunities in Ahmedabad's real estate market.",
+                "blog.article1.date": "Jan 15, 2025",
+                "blog.article2.title": "Smart Home Technologies",
+                "blog.article2.text": "How smart home automation is transforming modern living spaces and increasing property value.",
+                "blog.article2.date": "Jan 10, 2025",
+                "blog.article3.title": "RERA Regulations Update",
+                "blog.article3.text": "Latest updates on RERA regulations and how they protect homebuyers' interests.",
+                "blog.article3.date": "Jan 5, 2025",
+                "blog.read_more": "Read More",
+                "blog.view_all": "View All Articles",
+                
+                // Footer
+                "footer.description": "Creating landmark properties that redefine excellence. From premium commercial spaces to luxury residential living, we build dreams with quality and commitment.",
+                "footer.quick_links": "Quick Links",
+                "footer.our_projects": "Our Projects",
+                "footer.landmark_desc": "Premium Commercial Spaces",
+                "footer.irish_desc": "Luxury Residential Living",
+                "footer.view_all_projects": "View All Projects",
+                "footer.explore_portfolio": "Explore our portfolio",
+                "footer.contact_info": "Contact Info",
+                "footer.phone": "Phone Number",
+                "footer.phone_hours": "Mon - Sat: 10 AM - 7 PM",
+                "footer.email": "Email Address",
+                "footer.email_response": "We reply within 24 hours",
+                "footer.address": "Office Address",
+                "footer.address_line1": "Naroda - Bhat Road",
+                "footer.address_line2": "Ahmedabad, Gujarat 382330",
+                "footer.rights": "All rights reserved.",
+                "footer.privacy": "Privacy Policy",
+                "footer.terms": "Terms of Service",
+                "footer.rera": "RERA Registration"
+            },
+            hi: {
+                // Navigation
+                "nav.home": "होम",
+                "nav.about": "हमारे बारे में",
+                "nav.projects": "प्रोजेक्ट्स",
+                "nav.landmark": "नरोड़ा लैंडमार्क",
+                "nav.irish": "नरोड़ा आयरिश",
+                "nav.all_projects": "सभी प्रोजेक्ट्स",
+                "nav.properties": "संपत्तियाँ",
+                "nav.buy": "खरीदें",
+                "nav.rent": "किराए पर लें",
+                "nav.property_details": "संपत्ति विवरण",
+                "nav.gallery": "गैलरी",
+                "nav.more": "अधिक",
+                "nav.blog": "ब्लॉग",
+                "nav.news": "समाचार",
+                "nav.careers": "करियर",
+                "nav.team": "हमारी टीम",
+                "nav.faq": "सामान्य प्रश्न",
+                "nav.contact": "संपर्क करें",
+                "nav.login": "लॉगिन",
+                "nav.search": "खोजें",
+                "nav.account": "खाता",
+                
+                // Hero Section
+                "hero.badge": "अहमदाबाद के प्रीमियम रियल एस्टेट डेवलपर",
+                "hero.title.part1": "एक्सीलेंस के साथ बनाएं अपना",
+                "hero.title.part2": "ड्रीम स्पेस",
+                "hero.title.part3": "",
+                "hero.subtitle": "नरोड़ा लैंडमार्क में प्रीमियम कमर्शियल स्पेस और नरोड़ा आयरिश में लग्ज़री रेजिडेंशियल लिविंग की खोज करें। लैंडमार्क प्रॉपर्टीज बनाने में 15+ वर्षों का अनुभव।",
+                "hero.btn1": "नरोड़ा लैंडमार्क",
+                "hero.btn2": "नरोड़ा आयरिश",
+                "hero.btn3": "कोटेशन प्राप्त करें",
+                "hero.customers": "2,500+ संतुष्ट ग्राहक",
+                "hero.rating": "4.8/5 रेटिंग",
+                "hero.stats": "खुश परिवार",
+                
+                // Features Section
+                "features.badge": "हमें क्यों चुनें",
+                "features.title.part1": "नरोड़ा ग्रुप का",
+                "features.title.part2": "लाभ",
+                "features.subtitle": "अद्वितीय गुणवत्ता, पारदर्शिता और ग्राहक संतुष्टि के साथ रियल एस्टेट में उत्कृष्टता का अनुभव करें",
+                "features.card1.title": "प्रीमियम इन्फ्रास्ट्रक्चर",
+                "features.card1.text": "आधुनिक सुविधाओं और स्मार्ट टेक्नोलॉजी इंटीग्रेशन के साथ विश्व स्तरीय कमर्शियल और रेजिडेंशियल स्पेस।",
+                "features.learn_more": "अधिक जानें",
+                "features.card2.title": "प्राइम लोकेशन",
+                "features.card2.text": "अहमदाबाद के सबसे तेजी से बढ़ते कॉरिडोर में रणनीतिक रूप से स्थित, उत्कृष्ट कनेक्टिविटी के साथ।",
+                "features.view_locations": "लोकेशन देखें",
+                "features.card3.title": "उच्च आरओआई संभावना",
+                "features.card3.text": "मजबूत प्रशंसा और गारंटीकृत रिटर्न के साथ उत्कृष्ट निवेश अवसर।",
+                "features.calculate_roi": "आरओआई की गणना करें",
+                "features.card4.title": "विश्वसनीय डेवलपर",
+                "features.card4.text": "15+ वर्षों की उत्कृष्टता, RERA अनुमोदन और पारदर्शी दस्तावेज़ीकरण के साथ।",
+                "features.view_credentials": "प्रमाणपत्र देखें",
+                
+                // Projects Section
+                "projects.badge": "फीचर्ड प्रोजेक्ट्स",
+                "projects.title.part1": "हमारे",
+                "projects.title.part2": "सिग्नेचर प्रोजेक्ट्स",
+                "projects.subtitle": "हमारे लैंडमार्क डेवलपमेंट की खोज करें जो अपेक्षाओं से परे हैं",
+                "projects.commercial": "प्रीमियम कमर्शियल",
+                "projects.residential": "लग्ज़री रेजिडेंशियल",
+                "projects.explore": "प्रोजेक्ट एक्सप्लोर करें",
+                "projects.landmark.title": "नरोड़ा लैंडमार्क",
+                "projects.landmark.text": "ग्रेड ए स्पेसिफिकेशन के साथ अत्याधुनिक कमर्शियल कॉम्प्लेक्स, आधुनिक व्यवसायों के लिए डिज़ाइन किया गया।",
+                "projects.landmark.price": "₹ 12,500/वर्ग फुट",
+                "projects.irish.title": "नरोड़ा आयरिश",
+                "projects.irish.text": "सोच-समझकर डिज़ाइन किए गए स्पेस और विश्व स्तरीय सुविधाओं के साथ प्रीमियम अपार्टमेंट्स।",
+                "projects.irish.price": "₹ 8,500/वर्ग फुट",
+                "projects.starting_price": "शुरुआती कीमत",
+                "projects.view_details": "विवरण देखें",
+                "projects.view_all": "सभी प्रोजेक्ट्स देखें",
+                
+                // Stats Section
+                "stats.badge": "हमारी यात्रा",
+                "stats.title.part1": "उत्कृष्टता के माध्यम से",
+                "stats.title.part2": "विश्वास निर्माण",
+                "stats.subtitle": "वे संख्याएँ जो गुणवत्ता और ग्राहक संतुष्टि के प्रति हमारी प्रतिबद्धता को दर्शाती हैं",
+                "stats.stat1": "उत्कृष्टता के वर्ष",
+                "stats.stat2": "खुश परिवार",
+                "stats.stat3": "प्रोजेक्ट्स डिलीवर किए",
+                "stats.stat4": "विकसित वर्ग फुट",
+                
+                // Properties Section
+                "properties.badge": "फीचर्ड संपत्तियाँ",
+                "properties.title.part1": "प्रीमियम",
+                "properties.title.part2": "संपत्तियाँ",
+                "properties.title.part3": "उपलब्ध",
+                "properties.subtitle": "हमारी प्रीमियम संपत्तियों के चयनित संग्रह का अन्वेषण करें",
+                "properties.for_sale": "बिक्री के लिए",
+                "properties.for_rent": "किराए के लिए",
+                "properties.property1.title": "3 बीएचके लग्ज़री अपार्टमेंट",
+                "properties.property1.location": "नरोड़ा आयरिश, अहमदाबाद",
+                "properties.property1.price": "₹ 85 लाख",
+                "properties.property2.title": "कमर्शियल ऑफिस स्पेस",
+                "properties.property2.location": "नरोड़ा लैंडमार्क, अहमदाबाद",
+                "properties.property2.price": "₹ 2.5 करोड़",
+                "properties.property3.title": "2 बीएचके अपार्टमेंट",
+                "properties.property3.location": "नरोड़ा आयरिश, अहमदाबाद",
+                "properties.property3.price": "₹ 25,000/माह",
+                "properties.beds": "3 बेड",
+                "properties.beds2": "2 बेड",
+                "properties.baths": "2 बाथ",
+                "properties.baths2": "2 बाथ",
+                "properties.office": "ऑफिस",
+                "properties.parking": "2 पार्किंग",
+                "properties.view_details": "विवरण देखें",
+                "properties.browse_all": "सभी संपत्तियाँ ब्राउज़ करें",
+                
+                // Testimonials
+                "testimonials.badge": "ग्राहक प्रशंसापत्र",
+                "testimonials.title.part1": "हमारे",
+                "testimonials.title.part2": "ग्राहक क्या कहते हैं",
+                "testimonials.subtitle": "हमारे मूल्यवान ग्राहकों की वास्तविक कहानियाँ",
+                "testimonials.testimonial1": "\"नरोड़ा लैंडमार्क में निवेश मेरे व्यवसाय के लिए सबसे अच्छे निर्णयों में से एक था। स्थान और बुनियादी ढांचा विश्व स्तरीय है।\"",
+                "testimonials.author1.name": "राजेश पटेल",
+                "testimonials.author1.role": "व्यवसाय मालिक",
+                "testimonials.testimonial2": "\"हमारे परिवार को नरोड़ा आयरिश में हमारा सपनों का घर मिला। विस्तार पर ध्यान ने हमारी सभी अपेक्षाओं को पार कर लिया।\"",
+                "testimonials.author2.name": "प्रिया शर्मा",
+                "testimonials.author2.role": "होमओनर",
+                "testimonials.testimonial3": "\"नरोड़ा ग्रुप की टीम अविश्वसनीय रूप से पेशेवर है। शुरुआत से अंत तक सब कुछ पारदर्शी और सुचारू था।\"",
+                "testimonials.author3.name": "अमित देसाई",
+                "testimonials.author3.role": "सीईओ, टेकस्टार्ट",
+                
+                // CTA Section
+                "cta.title.part1": "अपना",
+                "cta.title.part2": "परफेक्ट स्पेस खोजने के लिए तैयार हैं?",
+                "cta.subtitle": "आज ही साइट विजिट शेड्यूल करें और उत्कृष्टता का प्रत्यक्ष अनुभव करें।",
+                "cta.btn1": "साइट विजिट शेड्यूल करें",
+                "cta.btn3": "ई-ब्रोशर प्राप्त करें",
+                
+                // Blog Section
+                "blog.badge": "ताज़ा खबर",
+                "blog.title.part1": "रियल एस्टेट",
+                "blog.title.part2": "इनसाइट्स",
+                "blog.subtitle": "नवीनतम रुझानों और समाचारों के साथ अपडेट रहें",
+                "blog.category1": "बाजार रुझान",
+                "blog.category2": "निवेश",
+                "blog.category3": "कानूनी",
+                "blog.article1.title": "2025 के लिए रियल एस्टेट मार्केट आउटलुक",
+                "blog.article1.text": "अहमदाबाद के रियल एस्टेट बाजार में आगामी रुझानों और निवेश अवसरों का विश्लेषण।",
+                "blog.article1.date": "15 जनवरी, 2025",
+                "blog.article2.title": "स्मार्ट होम टेक्नोलॉजीज़",
+                "blog.article2.text": "स्मार्ट होम ऑटोमेशन कैसे आधुनिक लिविंग स्पेस को बदल रहा है और संपत्ति मूल्य बढ़ा रहा है।",
+                "blog.article2.date": "10 जनवरी, 2025",
+                "blog.article3.title": "RERA नियम अपडेट",
+                "blog.article3.text": "RERA नियमों पर नवीनतम अपडेट और वे कैसे होमबायर्स के हितों की रक्षा करते हैं।",
+                "blog.article3.date": "5 जनवरी, 2025",
+                "blog.read_more": "अधिक पढ़ें",
+                "blog.view_all": "सभी लेख देखें",
+                
+                // Footer
+                "footer.description": "लैंडमार्क संपत्तियाँ बनाना जो उत्कृष्टता को फिर से परिभाषित करती हैं। प्रीमियम कमर्शियल स्पेस से लेकर लग्ज़री रेजिडेंशियल लिविंग तक, हम गुणवत्ता और प्रतिबद्धता के साथ सपने बनाते हैं।",
+                "footer.quick_links": "त्वरित लिंक",
+                "footer.our_projects": "हमारे प्रोजेक्ट्स",
+                "footer.landmark_desc": "प्रीमियम कमर्शियल स्पेस",
+                "footer.irish_desc": "लग्ज़री रेजिडेंशियल लिविंग",
+                "footer.view_all_projects": "सभी प्रोजेक्ट्स देखें",
+                "footer.explore_portfolio": "हमारे पोर्टफोलियो का अन्वेषण करें",
+                "footer.contact_info": "संपर्क जानकारी",
+                "footer.phone": "फोन नंबर",
+                "footer.phone_hours": "सोम - शनि: सुबह 10 - शाम 7 बजे",
+                "footer.email": "ईमेल पता",
+                "footer.email_response": "हम 24 घंटे के भीतर जवाब देते हैं",
+                "footer.address": "कार्यालय पता",
+                "footer.address_line1": "नरोड़ा - भाट रोड",
+                "footer.address_line2": "अहमदाबाद, गुजरात 382330",
+                "footer.rights": "सर्वाधिकार सुरक्षित।",
+                "footer.privacy": "गोपनीयता नीति",
+                "footer.terms": "सेवा की शर्तें",
+                "footer.rera": "RERA पंजीकरण"
+            },
+            gu: {
+                // Navigation
+                "nav.home": "હોમ",
+                "nav.about": "અમારા વિશે",
+                "nav.projects": "પ્રોજેક્ટ્સ",
+                "nav.landmark": "નરોડા લેન્ડમાર્ક",
+                "nav.irish": "નરોડા આયરિશ",
+                "nav.all_projects": "બધા પ્રોજેક્ટ્સ",
+                "nav.properties": "પ્રોપર્ટીઝ",
+                "nav.buy": "ખરીદો",
+                "nav.rent": "ભાડે લો",
+                "nav.property_details": "પ્રોપર્ટી વિગતો",
+                "nav.gallery": "ગેલેરી",
+                "nav.more": "વધુ",
+                "nav.blog": "બ્લોગ",
+                "nav.news": "સમાચાર",
+                "nav.careers": "કરિયર",
+                "nav.team": "અમારી ટીમ",
+                "nav.faq": "સામાન્ય પ્રશ્નો",
+                "nav.contact": "સંપર્ક કરો",
+                "nav.login": "લોગિન",
+                "nav.search": "શોધો",
+                "nav.account": "એકાઉન્ટ",
+                
+                // Hero Section
+                "hero.badge": "અમદાવાદના પ્રીમિયમ રિઅલ એસ્ટેટ ડેવલપર",
+                "hero.title.part1": "એક્સલન્સ સાથે બનાવો તમારું",
+                "hero.title.part2": "સ્વપ્ન સ્પેસ",
+                "hero.title.part3": "",
+                "hero.subtitle": "નરોડા લેન્ડમાર્કમાં પ્રીમિયમ કોમર્શિયલ સ્પેસ અને નરોડા આયરિશમાં લગ્ઝરી રેસિડેન્શિયલ લિવિંગ શોધો. લેન્ડમાર્ક પ્રોપર્ટીઝ બનાવવામાં 15+ વર્ષનો અનુભવ.",
+                "hero.btn1": "નરોડા લેન્ડમાર્ક",
+                "hero.btn2": "નરોડા આયરિશ",
+                "hero.btn3": "કોટેશન મેળવો",
+                "hero.customers": "2,500+ સંતુષ્ટ ગ્રાહકો",
+                "hero.rating": "4.8/5 રેટિંગ",
+                "hero.stats": "સુખી પરિવારો",
+                
+                // Features Section
+                "features.badge": "અમને શા માટે પસંદ કરો",
+                "features.title.part1": "નરોડા ગ્રુપનો",
+                "features.title.part2": "ફાયદો",
+                "features.subtitle": "અનુપમ ગુણવત્તા, પારદર્શિતા અને ગ્રાહક સંતુષ્ટિ સાથે રિઅલ એસ્ટેટમાં એક્સલન્સનો અનુભવ કરો",
+                "features.card1.title": "પ્રીમિયમ ઇન્ફ્રાસ્ટ્રક્ચર",
+                "features.card1.text": "આધુનિક સુવિધાઓ અને સ્માર્ટ ટેક્નોલોજી ઇન્ટિગ્રેશન સાથે વર્લ્ડ-ક્લાસ કોમર્શિયલ અને રેસિડેન્શિયલ સ્પેસ.",
+                "features.learn_more": "વધુ જાણો",
+                "features.card2.title": "પ્રાઇમ લોકેશન",
+                "features.card2.text": "અમદાવાદના સૌથી વેગથી વધતા કોરિડોરમાં વ્યૂહાત્મક રીતે સ્થિત, ઉત્તમ કનેક્ટિવિટી સાથે.",
+                "features.view_locations": "લોકેશન જુઓ",
+                "features.card3.title": "ઊંચી આરઓઆઈ સંભાવના",
+                "features.card3.text": "મજબૂત અપ્રિસીએશન અને ગેરંટીડ રિટર્ન સાથે ઉત્તમ નિવેશ તક.",
+                "features.calculate_roi": "આરઓઆઈ કેલ્ક્યુલેટ કરો",
+                "features.card4.title": "ટ્રસ્ટેડ ડેવલપર",
+                "features.card4.text": "15+ વર્ષની એક્સલન્સ, RERA મંજૂરી અને પારદર્શી દસ્તાવેજીકરણ સાથે.",
+                "features.view_credentials": "ક્રેડેન્શિયલ્સ જુઓ",
+                
+                // Projects Section
+                "projects.badge": "ફીચર્ડ પ્રોજેક્ટ્સ",
+                "projects.title.part1": "અમારા",
+                "projects.title.part2": "સિગ્નેચર પ્રોજેક્ટ્સ",
+                "projects.subtitle": "અમારા લેન્ડમાર્ક ડેવલપમેન્ટ્સ શોધો જે અપેક્ષાઓથી આગળ છે",
+                "projects.commercial": "પ્રીમિયમ કોમર્શિયલ",
+                "projects.residential": "લગ્ઝરી રેસિડેન્શિયલ",
+                "projects.explore": "પ્રોજેક્ટ એક્સપ્લોર કરો",
+                "projects.landmark.title": "નરોડા લેન્ડમાર્ક",
+                "projects.landmark.text": "ગ્રેડ એ સ્પેસિફિકેશન્સ સાથે સ્ટેટ-ઓફ-ધ-આર્ટ કોમર્શિયલ કોમ્પ્લેક્સ, આધુનિક બિઝનેસ માટે ડિઝાઇન કરેલ.",
+                "projects.landmark.price": "₹ 12,500/ચોરસ ફૂટ",
+                "projects.irish.title": "નરોડા આયરિશ",
+                "projects.irish.text": "વિચારપૂર્વક ડિઝાઇન કરેલા સ્પેસ અને વર્લ્ડ-ક્લાસ સુવિધાઓ સાથે પ્રીમિયમ એપાર્ટમેન્ટ્સ.",
+                "projects.irish.price": "₹ 8,500/ચોરસ ફૂટ",
+                "projects.starting_price": "શરૂઆતની કિંમત",
+                "projects.view_details": "વિગતો જુઓ",
+                "projects.view_all": "બધા પ્રોજેક્ટ્સ જુઓ",
+                
+                // Stats Section
+                "stats.badge": "અમારી યાત્રા",
+                "stats.title.part1": "એક્સલન્સ દ્વારા",
+                "stats.title.part2": "વિશ્વાસ નિર્માણ",
+                "stats.subtitle": "તે સંખ્યાઓ જે ગુણવત્તા અને ગ્રાહક સંતુષ્ટિ માટેની અમારી પ્રતિબદ્ધતા દર્શાવે છે",
+                "stats.stat1": "એક્સલન્સના વર્ષો",
+                "stats.stat2": "સુખી પરિવારો",
+                "stats.stat3": "પ્રોજેક્ટ્સ ડિલિવર કર્યા",
+                "stats.stat4": "વિકસિત ચોરસ ફૂટ",
+                
+                // Properties Section
+                "properties.badge": "ફીચર્ડ પ્રોપર્ટીઝ",
+                "properties.title.part1": "પ્રીમિયમ",
+                "properties.title.part2": "પ્રોપર્ટીઝ",
+                "properties.title.part3": "ઉપલબ્ધ",
+                "properties.subtitle": "અમારી પ્રીમિયમ પ્રોપર્ટીઝના ક્યુરેટેડ સિલેક્શનનું અન્વેષણ કરો",
+                "properties.for_sale": "વેચાણ માટે",
+                "properties.for_rent": "ભાડા માટે",
+                "properties.property1.title": "3 બીએચકે લગ્ઝરી એપાર્ટમેન્ટ",
+                "properties.property1.location": "નરોડા આયરિશ, અમદાવાદ",
+                "properties.property1.price": "₹ 85 લાખ",
+                "properties.property2.title": "કોમર્શિયલ ઓફિસ સ્પેસ",
+                "properties.property2.location": "નરોડા લેન્ડમાર્ક, અમદાવાદ",
+                "properties.property2.price": "₹ 2.5 કરોડ",
+                "properties.property3.title": "2 બીએચકે એપાર્ટમેન્ટ",
+                "properties.property3.location": "નરોડા આયરિશ, અમદાવાદ",
+                "properties.property3.price": "₹ 25,000/મહિનો",
+                "properties.beds": "3 બેડ",
+                "properties.beds2": "2 બેડ",
+                "properties.baths": "2 બાથ",
+                "properties.baths2": "2 બાથ",
+                "properties.office": "ઓફિસ",
+                "properties.parking": "2 પાર્કિંગ",
+                "properties.view_details": "વિગતો જુઓ",
+                "properties.browse_all": "બધી પ્રોપર્ટીઝ બ્રાઉઝ કરો",
+                
+                // Testimonials
+                "testimonials.badge": "કસ્ટમર ટેસ્ટિમોનિયલ્સ",
+                "testimonials.title.part1": "અમારા",
+                "testimonials.title.part2": "કસ્ટમર્સ શું કહે છે",
+                "testimonials.subtitle": "અમારા મૂલ્યવાન ગ્રાહકોની વાસ્તવિક કહાણીઓ",
+                "testimonials.testimonial1": "\"નરોડા લેન્ડમાર્કમાં નિવેશ મારા બિઝનેસ માટેના શ્રેષ્ઠ નિર્ણયોમાંનો એક હતો. સ્થાન અને ઇન્ફ્રાસ્ટ્રક્ચર વર્લ્ડ-ક્લાસ છે.\"",
+                "testimonials.author1.name": "રાજેશ પટેલ",
+                "testimonials.author1.role": "બિઝનેસ ઓનર",
+                "testimonials.testimonial2": "\"અમારા પરિવારને નરોડા આયરિશમાં અમારું સપનાનું ઘર મળ્યું. વિગતો પર ધ્યાને અમારી બધી અપેક્ષાઓથી આગળ નીકળી ગયું.\"",
+                "testimonials.author2.name": "પ્રિયા શર્મા",
+                "testimonials.author2.role": "હોમઓનર",
+                "testimonials.testimonial3": "\"નરોડા ગ્રુપની ટીમ અવિશ્વસનીય રીતે પ્રોફેશનલ છે. શરૂઆતથી અંત સુધી બધું પારદર્શી અને સરળ હતું.\"",
+                "testimonials.author3.name": "અમિત દેસાઈ",
+                "testimonials.author3.role": "સીઈઓ, ટેકસ્ટાર્ટ",
+                
+                // CTA Section
+                "cta.title.part1": "તમારું",
+                "cta.title.part2": "પરફેક્ટ સ્પેસ શોધવા માટે તૈયાર છો?",
+                "cta.subtitle": "આજે જ સાઇટ વિઝિટ શેડ્યૂલ કરો અને એક્સલન્સનો પ્રત્યક્ષ અનુભવ કરો.",
+                "cta.btn1": "સાઇટ વિઝિટ શેડ્યૂલ કરો",
+                "cta.btn3": "ઈ-બ્રોશર મેળવો",
+                
+                // Blog Section
+                "blog.badge": "તાજા સમાચાર",
+                "blog.title.part1": "રિઅલ એસ્ટેટ",
+                "blog.title.part2": "ઇનસાઇટ્સ",
+                "blog.subtitle": "નવીનતમ ટ્રેન્ડ્સ અને સમાચારો સાથે અપડેટ રહો",
+                "blog.category1": "માર્કેટ ટ્રેન્ડ્સ",
+                "blog.category2": "નિવેશ",
+                "blog.category3": "કાનૂની",
+                "blog.article1.title": "2025 માટે રિઅલ એસ્ટેટ માર્કેટ આઉટલુક",
+                "blog.article1.text": "અમદાવાદના રિઅલ એસ્ટેટ માર્કેટમાં આવતા ટ્રેન્ડ્સ અને નિવેશ તકોનું વિશ્લેષણ.",
+                "blog.article1.date": "15 જાન્યુઆરી, 2025",
+                "blog.article2.title": "સ્માર્ટ હોમ ટેક્નોલોજીઝ",
+                "blog.article2.text": "સ્માર્ટ હોમ ઓટોમેશન કેવી રીતે આધુનિક લિવિંગ સ્પેસને પરિવર્તિત કરી રહ્યું છે અને પ્રોપર્ટી વેલ્યુ વધારી રહ્યું છે.",
+                "blog.article2.date": "10 જાન્યુઆરી, 2025",
+                "blog.article3.title": "RERA નિયમો અપડેટ",
+                "blog.article3.text": "RERA નિયમો પર નવીનતમ અપડેટ્સ અને તેઓ કેવી રીતે હોમબાયર્સના હિતોનું રક્ષણ કરે છે.",
+                "blog.article3.date": "5 જાન્યુઆરી, 2025",
+                "blog.read_more": "વધુ વાંચો",
+                "blog.view_all": "બધા લેખો જુઓ",
+                
+                // Footer
+                "footer.description": "લેન્ડમાર્ક પ્રોપર્ટીઝ બનાવવી જે એક્સલન્સને પુનઃવ્યાખ્યાયિત કરે છે. પ્રીમિયમ કોમર્શિયલ સ્પેસથી લગ્ઝરી રેસિડેન્શિયલ લિવિંગ સુધી, અમે ગુણવત્તા અને પ્રતિબદ્ધતા સાથે સપના બનાવીએ છીએ.",
+                "footer.quick_links": "ઝડપી લિંક્સ",
+                "footer.our_projects": "અમારા પ્રોજેક્ટ્સ",
+                "footer.landmark_desc": "પ્રીમિયમ કોમર્શિયલ સ્પેસ",
+                "footer.irish_desc": "લગ્ઝરી રેસિડેન્શિયલ લિવિંગ",
+                "footer.view_all_projects": "બધા પ્રોજેક્ટ્સ જુઓ",
+                "footer.explore_portfolio": "અમારા પોર્ટફોલિયોનું અન્વેષણ કરો",
+                "footer.contact_info": "સંપર્ક માહિતી",
+                "footer.phone": "ફોન નંબર",
+                "footer.phone_hours": "સોમ - શનિ: સવારે 10 - સાંજે 7 વાગ્યા",
+                "footer.email": "ઈમેલ એડ્રેસ",
+                "footer.email_response": "અમે 24 કલાકમાં જવાબ આપીએ છીએ",
+                "footer.address": "ઓફિસ એડ્રેસ",
+                "footer.address_line1": "નરોડા - ભાટ રોડ",
+                "footer.address_line2": "અમદાવાદ, ગુજરાત 382330",
+                "footer.rights": "બધા હક્કો સુરક્ષિત.",
+                "footer.privacy": "ગોપનીયતા નીતિ",
+                "footer.terms": "સેવાની શરતો",
+                "footer.rera": "RERA રજિસ્ટ્રેશન"
+            }
+        };
+    </script>
 
     <script>
         // Wait for page to load
@@ -2259,6 +2790,82 @@
                     preloader.style.display = 'none';
                 }, 500);
             }, 1000);
+            
+            // Language switching functionality
+            const languageSelectors = document.querySelectorAll('.language-selector');
+            const currentLanguageElement = document.getElementById('currentLanguage');
+            
+            // Load saved language from localStorage or default to English
+            let currentLang = localStorage.getItem('preferredLanguage') || 'en';
+            
+            // Apply language on page load
+            applyLanguage(currentLang);
+            
+            // Set up language selector event listeners
+            languageSelectors.forEach(selector => {
+                selector.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const lang = this.getAttribute('data-lang');
+                    setLanguage(lang);
+                });
+            });
+            
+            function setLanguage(lang) {
+                currentLang = lang;
+                localStorage.setItem('preferredLanguage', lang);
+                applyLanguage(lang);
+                showToast(`Language changed to ${getLanguageName(lang)}`, 'success');
+            }
+            
+            function applyLanguage(lang) {
+                // Update body class for language-specific styling
+                document.body.classList.remove('hindi', 'gujarati');
+                if (lang === 'hi') document.body.classList.add('hindi');
+                if (lang === 'gu') document.body.classList.add('gujarati');
+                
+                // Update current language display
+                currentLanguageElement.textContent = getLanguageCode(lang);
+                
+                // Fade out content
+                document.querySelector('.language-content').style.opacity = '0.5';
+                
+                // Apply translations after a short delay for smoother transition
+                setTimeout(() => {
+                    const elements = document.querySelectorAll('[data-i18n]');
+                    elements.forEach(element => {
+                        const key = element.getAttribute('data-i18n');
+                        if (translations[lang] && translations[lang][key]) {
+                            // Handle placeholder replacement for text with HTML
+                            if (element.hasAttribute('data-i18n-html')) {
+                                element.innerHTML = translations[lang][key];
+                            } else {
+                                element.textContent = translations[lang][key];
+                            }
+                        }
+                    });
+                    
+                    // Fade content back in
+                    document.querySelector('.language-content').style.opacity = '1';
+                }, 300);
+            }
+            
+            function getLanguageName(code) {
+                const names = {
+                    'en': 'English',
+                    'hi': 'Hindi',
+                    'gu': 'Gujarati'
+                };
+                return names[code] || 'English';
+            }
+            
+            function getLanguageCode(code) {
+                const codes = {
+                    'en': 'EN',
+                    'hi': 'HI',
+                    'gu': 'GU'
+                };
+                return codes[code] || 'EN';
+            }
             
             // Lazy load images
             function lazyLoadImages() {
@@ -2436,7 +3043,12 @@
             
             // Show welcome message
             setTimeout(() => {
-                showToast('Welcome to Naroda Group!', 'success');
+                const welcomeMessages = {
+                    'en': 'Welcome to Naroda Group!',
+                    'hi': 'नरोड़ा ग्रुप में आपका स्वागत है!',
+                    'gu': 'નરોડા ગ્રુપમાં આપનું સ્વાગત છે!'
+                };
+                showToast(welcomeMessages[currentLang] || 'Welcome to Naroda Group!', 'success');
             }, 1500);
             
             // Add responsive class to body for mobile detection
