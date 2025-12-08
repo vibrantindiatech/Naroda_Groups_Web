@@ -1,0 +1,2766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Investment Trends in 2025 | Naroda Group Blog</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Discover the latest real estate investment trends for 2025. Learn about sustainable properties, smart homes, and emerging markets in Ahmedabad.">
+    <meta name="keywords" content="real estate trends, property investment, Ahmedabad real estate, sustainable housing, smart homes, Naroda Group blog">
+    <meta name="author" content="Naroda Group">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ===== CSS Variables ===== */
+        :root {
+            --primary-color: #0a2a4a;
+            --primary-dark: #071a2e;
+            --primary-light: #0e3a64;
+            --secondary-color: #c9a96e;
+            --secondary-light: #d4b87a;
+            --secondary-dark: #b89440;
+            --accent-color: #2e8b57;
+            --accent-light: #3cb371;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+            --gray-color: #6c757d;
+            --light-gray: #e9ecef;
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+            --shadow-hover: 0 25px 60px rgba(0, 0, 0, 0.2);
+            --border-radius: 16px;
+            --border-radius-lg: 24px;
+            --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            --gradient-secondary: linear-gradient(135deg, var(--secondary-color), var(--secondary-light));
+            --gradient-accent: linear-gradient(135deg, var(--accent-color), var(--accent-light));
+        }
+
+        /* ===== Base Styles ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark-color);
+            overflow-x: hidden;
+            line-height: 1.7;
+            font-weight: 400;
+            background-color: #ffffff;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            max-width: 1320px;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 0;
+            }
+        }
+
+        /* ===== Utility Classes ===== */
+        .gold-text {
+            color: var(--secondary-color);
+        }
+
+        .emerald-text {
+            color: var(--accent-color);
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 4px;
+            background: var(--gradient-secondary);
+            bottom: -10px;
+            left: 0;
+            border-radius: 2px;
+        }
+
+        .badge {
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .bg-gradient-secondary {
+            background: var(--gradient-secondary) !important;
+        }
+
+        /* ===== Preloader ===== */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loader {
+            width: 80px;
+            height: 80px;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .loader-inner {
+            width: 100%;
+            height: 100%;
+            border: 4px solid rgba(201, 169, 110, 0.2);
+            border-radius: 50%;
+            border-top-color: var(--secondary-color);
+            animation: spin 1.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .preloader-text {
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        /* ===== Navigation ===== */
+        .navbar {
+            padding: 1.2rem 0;
+            background: rgba(10, 42, 74, 0.95);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+            z-index: 1000;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 1rem 0;
+            }
+            
+            .navbar-brand {
+                font-size: 1.5rem;
+            }
+            
+            .logo-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+        }
+
+        .navbar.scrolled {
+            padding: 0.8rem 0;
+            box-shadow: var(--shadow);
+            background: rgba(10, 42, 74, 0.98);
+        }
+
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-secondary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            color: var(--primary-color);
+            font-weight: 900;
+            font-size: 1.5rem;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            margin: 0 6px;
+            position: relative;
+            padding: 8px 16px !important;
+            border-radius: 30px;
+            transition: var(--transition);
+        }
+
+        .nav-link:before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 100%;
+            background: rgba(201, 169, 110, 0.1);
+            border-radius: 30px;
+            top: 0;
+            left: 0;
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .nav-link:hover:before,
+        .nav-link.active:before {
+            width: 100%;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--secondary-color) !important;
+        }
+
+        .dropdown-menu {
+            border: none;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 10px 0;
+            margin-top: 10px;
+        }
+
+        .dropdown-item {
+            padding: 10px 20px;
+            transition: var(--transition);
+        }
+
+        .dropdown-item:hover {
+            background: rgba(201, 169, 110, 0.1);
+            color: var(--secondary-color);
+        }
+
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                background: rgba(10, 42, 74, 0.98);
+                padding: 20px;
+                border-radius: 0 0 var(--border-radius) var(--border-radius);
+                margin-top: 10px;
+            }
+            
+            .nav-link {
+                margin: 5px 0;
+                padding: 12px 16px !important;
+            }
+            
+            .dropdown-menu {
+                background: rgba(10, 42, 74, 0.9);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                margin-top: 5px;
+                margin-left: 15px;
+            }
+        }
+
+        /* ===== Buttons ===== */
+        .btn {
+            padding: 14px 32px;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: var(--transition);
+            border: none;
+            position: relative;
+            overflow: hidden;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 576px) {
+            .btn {
+                padding: 12px 24px;
+                font-size: 0.9rem;
+            }
+        }
+
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .btn:hover:before {
+            left: 100%;
+        }
+
+        .btn-gold {
+            background: var(--gradient-secondary);
+            color: var(--primary-color);
+            box-shadow: 0 10px 25px rgba(201, 169, 110, 0.3);
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(201, 169, 110, 0.4);
+            color: var(--primary-color);
+        }
+
+        .btn-outline-light {
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            background: transparent;
+        }
+
+        .btn-outline-light:hover {
+            background: white;
+            color: var(--primary-color);
+            border-color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-emerald {
+            background: var(--gradient-accent);
+            color: white;
+            box-shadow: 0 10px 25px rgba(46, 139, 87, 0.3);
+        }
+
+        .btn-emerald:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(46, 139, 87, 0.4);
+            color: white;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: 0 10px 25px rgba(10, 42, 74, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(10, 42, 74, 0.4);
+            color: white;
+        }
+
+        .btn-outline-primary {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline-primary:hover {
+            background: var(--gradient-primary);
+            color: white;
+            border-color: transparent;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(10, 42, 74, 0.2);
+        }
+
+        .btn-sm {
+            padding: 10px 24px;
+            font-size: 0.9rem;
+        }
+
+        /* ===== Blog Hero ===== */
+        .blog-hero-section {
+            padding: 140px 0 60px;
+            background: linear-gradient(135deg, rgba(10, 42, 74, 0.9), rgba(10, 42, 74, 0.8)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            position: relative;
+        }
+
+        @media (max-width: 768px) {
+            .blog-hero-section {
+                padding: 120px 0 40px;
+            }
+        }
+
+        .blog-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        @media (max-width: 992px) {
+            .blog-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .blog-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .blog-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 576px) {
+            .blog-meta {
+                gap: 15px;
+            }
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        .meta-item i {
+            color: var(--secondary-color);
+        }
+
+        .blog-category {
+            display: inline-block;
+            background: var(--gradient-secondary);
+            color: var(--primary-color);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        /* ===== Blog Content ===== */
+        .blog-content-section {
+            padding: 60px 0;
+            background: #f9fafb;
+        }
+
+        .blog-content-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 50px;
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        @media (max-width: 992px) {
+            .blog-content-card {
+                padding: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .blog-content-card {
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .blog-content-card {
+                padding: 25px 20px;
+            }
+        }
+
+        .featured-image {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            margin-bottom: 40px;
+            height: 500px;
+            position: relative;
+        }
+
+        @media (max-width: 992px) {
+            .featured-image {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .featured-image {
+                height: 300px;
+                margin-bottom: 30px;
+            }
+        }
+
+        .featured-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .content-block {
+            margin-bottom: 40px;
+        }
+
+        .content-block h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        @media (max-width: 768px) {
+            .content-block h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        .content-block h3 {
+            font-size: 1.5rem;
+            margin: 2.5rem 0 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .content-block p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--dark-color);
+        }
+
+        @media (max-width: 768px) {
+            .content-block p {
+                font-size: 1rem;
+            }
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(10, 42, 74, 0.05) 0%, rgba(10, 42, 74, 0.02) 100%);
+            border-left: 4px solid var(--secondary-color);
+            padding: 30px;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            margin: 40px 0;
+        }
+
+        @media (max-width: 576px) {
+            .highlight-box {
+                padding: 20px;
+            }
+        }
+
+        .highlight-box h4 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .image-caption {
+            text-align: center;
+            font-style: italic;
+            color: var(--gray-color);
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+
+        .quote-block {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            margin: 40px 0;
+            position: relative;
+        }
+
+        @media (max-width: 576px) {
+            .quote-block {
+                padding: 30px 20px;
+            }
+        }
+
+        .quote-block:before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-size: 5rem;
+            font-family: 'Playfair Display', serif;
+            color: rgba(255, 255, 255, 0.2);
+            line-height: 1;
+        }
+
+        .quote-text {
+            font-size: 1.3rem;
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+            .quote-text {
+                font-size: 1.1rem;
+            }
+        }
+
+        .quote-author {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        /* ===== Sidebar ===== */
+        .sidebar-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        @media (max-width: 576px) {
+            .sidebar-card {
+                padding: 25px 20px;
+            }
+        }
+
+        .sidebar-title {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--light-gray);
+            position: relative;
+        }
+
+        .sidebar-title:after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: var(--gradient-secondary);
+        }
+
+        .author-card {
+            text-align: center;
+        }
+
+        .author-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 20px;
+            border: 5px solid white;
+            box-shadow: var(--shadow);
+        }
+
+        @media (max-width: 576px) {
+            .author-avatar {
+                width: 100px;
+                height: 100px;
+                border-width: 3px;
+            }
+        }
+
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-name {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+
+        .author-title {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .author-bio {
+            color: var(--gray-color);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(10, 42, 74, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        @media (max-width: 576px) {
+            .social-link {
+                width: 36px;
+                height: 36px;
+            }
+        }
+
+        .social-link:hover {
+            background: var(--gradient-secondary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .recent-post {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .recent-post:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .recent-post-image {
+            width: 80px;
+            height: 80px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 576px) {
+            .recent-post-image {
+                width: 70px;
+                height: 70px;
+            }
+        }
+
+        .recent-post-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .recent-post-content h4 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .recent-post-content h4 a {
+            color: var(--dark-color);
+            transition: var(--transition);
+        }
+
+        .recent-post-content h4 a:hover {
+            color: var(--secondary-color);
+        }
+
+        .recent-post-date {
+            color: var(--gray-color);
+            font-size: 0.85rem;
+        }
+
+        .category-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .category-item {
+            margin-bottom: 12px;
+        }
+
+        .category-item a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 15px;
+            background: rgba(10, 42, 74, 0.05);
+            border-radius: var(--border-radius);
+            color: var(--dark-color);
+            transition: var(--transition);
+        }
+
+        .category-item a:hover {
+            background: var(--gradient-primary);
+            color: white;
+            transform: translateX(10px);
+        }
+
+        .category-count {
+            background: var(--gradient-secondary);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 8px 16px;
+            background: rgba(10, 42, 74, 0.1);
+            color: var(--primary-color);
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .tag:hover {
+            background: var(--gradient-secondary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* ===== Share & Navigation ===== */
+        .share-navigation {
+            padding: 40px 0;
+            background: #f9fafb;
+        }
+
+        .share-box {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .share-box {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        .share-title {
+            font-size: 1.2rem;
+            margin-bottom: 0;
+            color: var(--primary-color);
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        @media (max-width: 576px) {
+            .share-buttons {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+        }
+
+        .share-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: var(--transition);
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 576px) {
+            .share-btn {
+                width: 45px;
+                height: 45px;
+                font-size: 1.1rem;
+            }
+        }
+
+        .share-btn.facebook {
+            background: #3b5998;
+        }
+
+        .share-btn.twitter {
+            background: #1da1f2;
+        }
+
+        .share-btn.linkedin {
+            background: #0077b5;
+        }
+
+        .share-btn.whatsapp {
+            background: #25d366;
+        }
+
+        .share-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 40px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-buttons {
+                flex-direction: column;
+            }
+        }
+
+        .nav-btn {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px 30px;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            flex: 1;
+            max-width: 48%;
+        }
+
+        @media (max-width: 768px) {
+            .nav-btn {
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            background: var(--gradient-primary);
+            color: white;
+        }
+
+        .nav-btn:hover .nav-btn-icon {
+            background: white;
+            color: var(--primary-color);
+        }
+
+        .nav-btn.prev {
+            text-align: left;
+        }
+
+        .nav-btn.next {
+            text-align: right;
+            flex-direction: row-reverse;
+        }
+
+        .nav-btn-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-secondary);
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            transition: var(--transition);
+        }
+
+        @media (max-width: 576px) {
+            .nav-btn-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
+            }
+            
+            .nav-btn {
+                padding: 15px 20px;
+            }
+        }
+
+        .nav-btn-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .nav-btn-content p {
+            margin-bottom: 0;
+            font-size: 0.9rem;
+            color: var(--gray-color);
+        }
+
+        .nav-btn:hover .nav-btn-content p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* ===== Related Posts ===== */
+        .related-posts-section {
+            padding: 60px 0;
+            background: #f9fafb;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            height: 100%;
+            position: relative;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .blog-card-image {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        @media (max-width: 768px) {
+            .blog-card-image {
+                height: 200px;
+            }
+        }
+
+        .blog-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .blog-card:hover .blog-card-image img {
+            transform: scale(1.1);
+        }
+
+        .blog-card-category {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: var(--gradient-secondary);
+            color: var(--primary-color);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            z-index: 2;
+        }
+
+        .blog-card-content {
+            padding: 25px;
+        }
+
+        @media (max-width: 576px) {
+            .blog-card-content {
+                padding: 20px;
+            }
+        }
+
+        .blog-card-meta {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-size: 0.85rem;
+            color: var(--gray-color);
+        }
+
+        .blog-card-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .blog-card-title a {
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .blog-card-title a:hover {
+            color: var(--secondary-color);
+        }
+
+        .blog-card-excerpt {
+            color: var(--gray-color);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--secondary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .read-more:hover {
+            gap: 12px;
+        }
+
+        /* ===== Comments ===== */
+        .comments-section {
+            padding: 60px 0;
+            background: white;
+        }
+
+        .comment-card {
+            background: #f9fafb;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid var(--light-gray);
+        }
+
+        @media (max-width: 576px) {
+            .comment-card {
+                padding: 20px;
+            }
+        }
+
+        .comment-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .comment-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 576px) {
+            .comment-avatar {
+                width: 50px;
+                height: 50px;
+                margin-right: 15px;
+            }
+        }
+
+        .comment-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .comment-author {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .comment-date {
+            color: var(--gray-color);
+            font-size: 0.9rem;
+        }
+
+        .comment-reply {
+            margin-left: 80px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .comment-reply {
+                margin-left: 40px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .comment-reply {
+                margin-left: 20px;
+            }
+        }
+
+        /* ===== Comment Form ===== */
+        .comment-form-section {
+            padding: 60px 0;
+            background: #f9fafb;
+        }
+
+        .comment-form-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 50px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        @media (max-width: 768px) {
+            .comment-form-card {
+                padding: 40px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .comment-form-card {
+                padding: 30px 20px;
+            }
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-label {
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .form-control, .form-select {
+            padding: 15px;
+            border: 2px solid var(--light-gray);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        @media (max-width: 576px) {
+            .form-control, .form-select {
+                padding: 12px;
+            }
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 0.25rem rgba(201, 169, 110, 0.25);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        /* ===== Footer ===== */
+        .footer {
+            background: var(--primary-dark);
+            color: #b0b7c3;
+            padding-top: 80px;
+        }
+
+        @media (max-width: 768px) {
+            .footer {
+                padding-top: 60px;
+            }
+        }
+
+        .footer-title {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--gradient-secondary);
+            border-radius: 2px;
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 30px 0;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        /* ===== Back to Top ===== */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-secondary);
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            box-shadow: 0 10px 30px rgba(201, 169, 110, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .back-to-top {
+                bottom: 80px;
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(201, 169, 110, 0.4);
+        }
+
+        /* ===== WhatsApp Float ===== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 99;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                bottom: 140px;
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        .whatsapp-float:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
+        }
+
+        /* ===== Mobile Bottom Nav ===== */
+        .mobile-bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 15px 0;
+            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-bottom-nav {
+                display: flex;
+            }
+            
+            .back-to-top {
+                bottom: 80px;
+            }
+        }
+
+        /* ===== Toast Notifications ===== */
+        .toast-container {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            z-index: 9999;
+        }
+
+        @media (max-width: 768px) {
+            .toast-container {
+                top: 80px;
+                left: 20px;
+                right: 20px;
+            }
+        }
+
+        .toast {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            box-shadow: var(--shadow);
+            margin-bottom: 15px;
+            transform: translateX(100%);
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            max-width: 350px;
+        }
+
+        @media (max-width: 768px) {
+            .toast {
+                max-width: 100%;
+                transform: translateY(-20px);
+            }
+        }
+
+        .toast.show {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .toast.show {
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== Loading Overlay ===== */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            display: none;
+        }
+
+        .loading-overlay.active {
+            display: flex;
+        }
+
+        /* ===== Additional Styles ===== */
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: #b0b7c3;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+        
+        .mobile-nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--dark-color);
+            padding: 5px 10px;
+            border-radius: 8px;
+            transition: var(--transition);
+            min-width: 60px;
+            text-align: center;
+        }
+        
+        .mobile-nav-item.active {
+            color: var(--secondary-color);
+            background: rgba(201, 169, 110, 0.1);
+        }
+        
+        .mobile-nav-item i {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        @media (max-width: 576px) {
+            .mobile-nav-item i {
+                font-size: 1rem;
+            }
+            
+            .mobile-nav-item span {
+                font-size: 0.7rem;
+            }
+        }
+        
+        .mobile-nav-item span {
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .project-mini-card {
+            display: block;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+        
+        .project-mini-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .contact-info {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+        
+        .contact-info i {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+        
+        /* Text Truncation */
+        .text-truncate-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .text-truncate-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        /* Better touch targets */
+        @media (max-width: 768px) {
+            .btn, 
+            .form-control,
+            .form-select,
+            .nav-link,
+            .share-btn,
+            .mobile-nav-item {
+                min-height: 44px;
+            }
+            
+            .form-check-input {
+                min-width: 20px;
+                min-height: 20px;
+            }
+        }
+        
+        /* Fix for sticky elements on mobile */
+        @media (max-width: 768px) {
+            .fixed-top {
+                position: fixed;
+            }
+            
+            body {
+                padding-top: 76px;
+            }
+        }
+        
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        th {
+            background: var(--gradient-primary);
+            color: white;
+            font-weight: 600;
+        }
+        
+        tr:hover {
+            background: rgba(10, 42, 74, 0.05);
+        }
+        
+        /* List Styles */
+        ul.custom-list, ol.custom-list {
+            margin: 20px 0 30px 20px;
+        }
+        
+        ul.custom-list li, ol.custom-list li {
+            margin-bottom: 10px;
+        }
+        
+        ul.custom-list li {
+            list-style-type: disc;
+        }
+        
+        ol.custom-list li {
+            list-style-type: decimal;
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader">
+            <div class="loader-inner"></div>
+        </div>
+        <div class="preloader-text">NARODA GROUP</div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay">
+        <div class="spinner-border" style="width: 3rem; height: 3rem; color: var(--secondary-color);" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Toast Container -->
+    <div class="toast-container"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <div class="logo-icon">NG</div>
+                <span>Naroda <span class="gold-text">Group</span></span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Projects
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="projectsDropdown">
+                            <a class="dropdown-item" href="projects-landmark.html">Naroda Landmark</a>
+                            <a class="dropdown-item" href="projects-irish.html">Naroda Irish</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="projects.html">All Projects</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="propertiesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Properties
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="propertiesDropdown">
+                            <a class="dropdown-item" href="properties.html">Buy</a>
+                            <a class="dropdown-item" href="properties-rent.html">Rent</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="property-detail.html">Property Details</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="moreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            More
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="moreDropdown">
+                            <a class="dropdown-item active" href="blog.html">Blog</a>
+                            <a class="dropdown-item" href="news.html">News</a>
+                            <a class="dropdown-item" href="careers.html">Careers</a>
+                            <a class="dropdown-item" href="team.html">Our Team</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="faq.html">FAQ</a>
+                            <a class="dropdown-item" href="contact.html">Contact</a>
+                        </div>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center ms-lg-3 mt-3 mt-lg-0">
+                    <div class="dropdown">
+                        <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-globe me-1"></i> EN
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="languageDropdown">
+                            <a class="dropdown-item" href="#">English</a>
+                            <a class="dropdown-item" href="#">Hindi</a>
+                            <a class="dropdown-item" href="#">Gujarati</a>
+                        </div>
+                    </div>
+                    <a href="login.html" class="btn btn-outline-light ms-3">
+                        <i class="fas fa-user me-2"></i> Login
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Bottom Navigation -->
+    <div class="mobile-bottom-nav">
+        <a href="index.html" class="mobile-nav-item">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="projects.html" class="mobile-nav-item">
+            <i class="fas fa-building"></i>
+            <span>Projects</span>
+        </a>
+        <a href="properties.html" class="mobile-nav-item">
+            <i class="fas fa-search"></i>
+            <span>Search</span>
+        </a>
+        <a href="blog.html" class="mobile-nav-item active">
+            <i class="fas fa-blog"></i>
+            <span>Blog</span>
+        </a>
+        <a href="login.html" class="mobile-nav-item">
+            <i class="fas fa-user"></i>
+            <span>Account</span>
+        </a>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Blog Hero -->
+        <section class="blog-hero-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
+                        <span class="blog-category">Real Estate Trends</span>
+                        <h1 class="blog-title">Real Estate Investment Trends to Watch in 2025</h1>
+                        
+                        <div class="blog-meta justify-content-center">
+                            <div class="meta-item">
+                                <i class="fas fa-user-circle"></i>
+                                <span>By Rajesh Mehta</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>March 15, 2025</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-clock"></i>
+                                <span>8 min read</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-comments"></i>
+                                <span>24 Comments</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Content -->
+        <section class="blog-content-section">
+            <div class="container">
+                <div class="row">
+                    <!-- Main Content -->
+                    <div class="col-lg-8" data-aos="fade-up">
+                        <div class="blog-content-card">
+                            <!-- Featured Image -->
+                            <div class="featured-image">
+                                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                                     alt="Modern Real Estate Investment Trends">
+                            </div>
+                            
+                            <!-- Content -->
+                            <div class="content-block">
+                                <p>The real estate landscape is undergoing a significant transformation as we approach 2025. With technological advancements, changing lifestyle preferences, and evolving economic factors, investors and homebuyers need to stay informed about emerging trends.</p>
+                                
+                                <p>In this comprehensive guide, we'll explore the key real estate investment trends that are shaping the market in Ahmedabad and beyond, providing insights for both seasoned investors and first-time buyers.</p>
+                            </div>
+                            
+                            <div class="content-block">
+                                <h2>1. Sustainable and Green Buildings</h2>
+                                <p>The demand for sustainable living spaces has skyrocketed in recent years. Buyers are increasingly prioritizing energy efficiency, water conservation, and eco-friendly construction materials.</p>
+                                
+                                <div class="highlight-box">
+                                    <h4><i class="fas fa-leaf me-2"></i> Key Sustainable Features:</h4>
+                                    <ul class="custom-list">
+                                        <li>Solar panel installations for renewable energy</li>
+                                        <li>Rainwater harvesting systems</li>
+                                        <li>Energy-efficient HVAC systems</li>
+                                        <li>Green roofs and vertical gardens</li>
+                                        <li>Use of recycled and sustainable materials</li>
+                                    </ul>
+                                </div>
+                                
+                                <p>At Naroda Group, we've incorporated sustainable practices in our Naroda Irish project, featuring rainwater harvesting, solar-ready infrastructure, and energy-efficient designs that reduce carbon footprint by up to 30%.</p>
+                            </div>
+                            
+                            <div class="content-block">
+                                <h2>2. Smart Home Technology Integration</h2>
+                                <p>The concept of smart homes has evolved from luxury to necessity. Modern homebuyers expect integrated technology that enhances convenience, security, and energy management.</p>
+                                
+                                <div class="quote-block">
+                                    <p class="quote-text">"The home of the future isn't just about bricks and mortar—it's about creating intelligent living spaces that adapt to our needs and enhance our quality of life."</p>
+                                    <p class="quote-author">— Sarah Chen, Smart Home Technology Expert</p>
+                                </div>
+                                
+                                <p>Key smart home features gaining popularity include:</p>
+                                
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Technology</th>
+                                            <th>Benefits</th>
+                                            <th>Adoption Rate</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Home Automation Systems</td>
+                                            <td>Remote control of lighting, climate, security</td>
+                                            <td>65%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Smart Security Systems</td>
+                                            <td>24/7 monitoring, facial recognition</td>
+                                            <td>72%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Energy Management</td>
+                                            <td>Real-time consumption tracking</td>
+                                            <td>58%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Voice-Activated Controls</td>
+                                            <td>Hands-free operation</td>
+                                            <td>81%</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <div class="content-block">
+                                <h2>3. Co-Living and Flexible Spaces</h2>
+                                <p>The rise of remote work and changing lifestyle preferences have accelerated the demand for flexible living arrangements. Co-living spaces and properties with adaptable layouts are becoming increasingly popular.</p>
+                                
+                                <p>Key trends in this segment include:</p>
+                                <ol class="custom-list">
+                                    <li><strong>Shared Amenities:</strong> Community workspaces, gyms, and recreational areas</li>
+                                    <li><strong>Flexible Leases:</strong> Short-term and customizable rental options</li>
+                                    <li><strong>Multi-functional Rooms:</strong> Convertible spaces for work, exercise, and entertainment</li>
+                                    <li><strong>Community Focus:</strong> Designed to foster social connections among residents</li>
+                                </ol>
+                            </div>
+                            
+                            <div class="content-block">
+                                <h2>4. Suburban and Satellite City Growth</h2>
+                                <p>While city centers remain important, there's a noticeable shift toward suburban areas and satellite cities. Ahmedabad's growth corridors are witnessing unprecedented development.</p>
+                                
+                                <div class="highlight-box">
+                                    <h4><i class="fas fa-chart-line me-2"></i> Growth Statistics:</h4>
+                                    <p>Areas like Naroda, Gota, and Thaltej have seen property value appreciation of 15-20% annually, driven by infrastructure development, improved connectivity, and the availability of larger living spaces at competitive prices.</p>
+                                </div>
+                                
+                                <p>Factors driving suburban growth:</p>
+                                <ul class="custom-list">
+                                    <li>Improved metro and road connectivity</li>
+                                    <li>Availability of larger plots and green spaces</li>
+                                    <li>Lower property prices compared to city centers</li>
+                                    <li>Development of commercial hubs in suburban areas</li>
+                                    <li>Better quality of life with less congestion</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="content-block">
+                                <h2>5. Commercial Real Estate Evolution</h2>
+                                <p>The commercial real estate sector is adapting to new work models. While traditional offices remain, there's growing demand for hybrid workspaces and smaller commercial units.</p>
+                                
+                                <p>Our Naroda Landmark project addresses these evolving needs with:</p>
+                                <ul class="custom-list">
+                                    <li>Flexible office spaces with modular designs</li>
+                                    <li>High-speed internet and tech infrastructure</li>
+                                    <li>Collaboration zones and meeting pods</li>
+                                    <li>Sustainable building certifications</li>
+                                    <li>Mixed-use developments combining retail and office spaces</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="content-block">
+                                <h2>Investment Strategies for 2025</h2>
+                                <p>Based on these trends, here are strategic approaches for real estate investment in the coming year:</p>
+                                
+                                <div class="highlight-box">
+                                    <h4><i class="fas fa-lightbulb me-2"></i> Expert Recommendations:</h4>
+                                    <p><strong>1. Diversify Your Portfolio:</strong> Consider a mix of residential, commercial, and rental properties to spread risk.</p>
+                                    <p><strong>2. Focus on Sustainability:</strong> Properties with green certifications tend to have better long-term value.</p>
+                                    <p><strong>3. Consider Emerging Locations:</strong> Identify areas with upcoming infrastructure projects.</p>
+                                    <p><strong>4. Leverage Technology:</strong> Use proptech tools for market analysis and property management.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="content-block">
+                                <h2>Conclusion</h2>
+                                <p>The real estate market in 2025 presents both challenges and opportunities. By understanding these emerging trends and adapting investment strategies accordingly, investors can position themselves for success in a rapidly evolving market.</p>
+                                
+                                <p>At Naroda Group, we're committed to staying ahead of these trends, incorporating innovative features and sustainable practices into all our projects to ensure they meet the evolving needs of modern homebuyers and investors.</p>
+                                
+                                <p>Stay tuned for our next blog post where we'll dive deeper into sustainable building practices and how they're transforming the Ahmedabad real estate landscape.</p>
+                            </div>
+                            
+                            <!-- Tags -->
+                            <div class="tags-container mt-5">
+                                <span class="fw-600 me-3">Tags:</span>
+                                <a href="#" class="tag">Real Estate</a>
+                                <a href="#" class="tag">Investment</a>
+                                <a href="#" class="tag">Trends 2025</a>
+                                <a href="#" class="tag">Ahmedabad</a>
+                                <a href="#" class="tag">Sustainable Living</a>
+                                <a href="#" class="tag">Smart Homes</a>
+                                <a href="#" class="tag">Property Market</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Sidebar -->
+                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                        <!-- Author Card -->
+                        <div class="sidebar-card author-card">
+                            <div class="sidebar-title">About The Author</div>
+                            <div class="author-avatar">
+                                <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Rajesh Mehta">
+                            </div>
+                            <h3 class="author-name">Rajesh Mehta</h3>
+                            <p class="author-title">Chief Investment Strategist</p>
+                            <p class="author-bio">With over 15 years of experience in real estate investment and market analysis, Rajesh provides expert insights on property trends and investment strategies.</p>
+                            <div class="social-links">
+                                <a href="#" class="social-link" aria-label="LinkedIn">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="social-link" aria-label="Twitter">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="social-link" aria-label="Email">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Recent Posts -->
+                        <div class="sidebar-card">
+                            <div class="sidebar-title">Recent Posts</div>
+                            <div class="recent-post">
+                                <div class="recent-post-image">
+                                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Home Buying Guide">
+                                </div>
+                                <div class="recent-post-content">
+                                    <h4><a href="blog-detail.html">Complete Guide to Home Buying in Ahmedabad</a></h4>
+                                    <div class="recent-post-date">March 10, 2025</div>
+                                </div>
+                            </div>
+                            
+                            <div class="recent-post">
+                                <div class="recent-post-image">
+                                    <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Sustainable Homes">
+                                </div>
+                                <div class="recent-post-content">
+                                    <h4><a href="blog-detail.html">The Future of Sustainable Homes in India</a></h4>
+                                    <div class="recent-post-date">March 5, 2025</div>
+                                </div>
+                            </div>
+                            
+                            <div class="recent-post">
+                                <div class="recent-post-image">
+                                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="RERA Impact">
+                                </div>
+                                <div class="recent-post-content">
+                                    <h4><a href="blog-detail.html">How RERA is Changing Indian Real Estate</a></h4>
+                                    <div class="recent-post-date">February 28, 2025</div>
+                                </div>
+                            </div>
+                            
+                            <div class="recent-post">
+                                <div class="recent-post-image">
+                                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Commercial Real Estate">
+                                </div>
+                                <div class="recent-post-content">
+                                    <h4><a href="blog-detail.html">Commercial Real Estate: Opportunities in 2025</a></h4>
+                                    <div class="recent-post-date">February 22, 2025</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Categories -->
+                        <div class="sidebar-card">
+                            <div class="sidebar-title">Categories</div>
+                            <ul class="category-list">
+                                <li class="category-item">
+                                    <a href="#">
+                                        <span>Real Estate Trends</span>
+                                        <span class="category-count">12</span>
+                                    </a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#">
+                                        <span>Investment Tips</span>
+                                        <span class="category-count">8</span>
+                                    </a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#">
+                                        <span>Home Buying Guide</span>
+                                        <span class="category-count">15</span>
+                                    </a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#">
+                                        <span>Property Law</span>
+                                        <span class="category-count">6</span>
+                                    </a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#">
+                                        <span>Sustainable Living</span>
+                                        <span class="category-count">9</span>
+                                    </a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#">
+                                        <span>Market Analysis</span>
+                                        <span class="category-count">11</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Newsletter -->
+                        <div class="sidebar-card">
+                            <div class="sidebar-title">Subscribe to Newsletter</div>
+                            <p class="mb-3">Get the latest real estate insights and investment tips delivered to your inbox.</p>
+                            <form id="newsletterForm">
+                                <div class="mb-3">
+                                    <input type="email" class="form-control" placeholder="Your email address" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">
+                                    <i class="fas fa-paper-plane me-2"></i> Subscribe
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Share & Navigation -->
+        <section class="share-navigation">
+            <div class="container">
+                <!-- Share Box -->
+                <div class="share-box" data-aos="fade-up">
+                    <h4 class="share-title">Share this article</h4>
+                    <div class="share-buttons">
+                        <a href="#" class="share-btn facebook" aria-label="Share on Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="share-btn twitter" aria-label="Share on Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="share-btn linkedin" aria-label="Share on LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://wa.me/?text=Check%20out%20this%20article" class="share-btn whatsapp" aria-label="Share on WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Navigation Buttons -->
+                <div class="nav-buttons" data-aos="fade-up" data-aos-delay="100">
+                    <a href="blog-detail.html" class="nav-btn prev">
+                        <div class="nav-btn-icon">
+                            <i class="fas fa-arrow-left"></i>
+                        </div>
+                        <div class="nav-btn-content">
+                            <h4>Previous Article</h4>
+                            <p>Complete Guide to Home Buying in Ahmedabad</p>
+                        </div>
+                    </a>
+                    
+                    <a href="blog-detail.html" class="nav-btn next">
+                        <div class="nav-btn-icon">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <div class="nav-btn-content">
+                            <h4>Next Article</h4>
+                            <p>The Future of Sustainable Homes in India</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Posts -->
+        <section class="related-posts-section">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
+                            You May Also Like
+                        </span>
+                        <h2 class="section-title text-center" data-aos="fade-up" data-aos-delay="100">
+                            Related <span class="gold-text">Articles</span>
+                        </h2>
+                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200">
+                            Explore more insights from our real estate experts
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="blog-card">
+                            <div class="blog-card-image">
+                                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                                     alt="Home Buying Guide" class="img-fluid">
+                                <span class="blog-card-category">Home Buying</span>
+                            </div>
+                            <div class="blog-card-content">
+                                <div class="blog-card-meta">
+                                    <span><i class="far fa-calendar me-1"></i> Mar 10, 2025</span>
+                                    <span><i class="far fa-clock me-1"></i> 6 min read</span>
+                                </div>
+                                <h3 class="blog-card-title"><a href="blog-detail.html">Complete Guide to Home Buying in Ahmedabad</a></h3>
+                                <p class="blog-card-excerpt">A comprehensive guide covering everything from budget planning to legal documentation for first-time home buyers in Ahmedabad.</p>
+                                <a href="blog-detail.html" class="read-more">
+                                    Read More <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="blog-card">
+                            <div class="blog-card-image">
+                                <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                                     alt="Sustainable Homes" class="img-fluid">
+                                <span class="blog-card-category">Sustainability</span>
+                            </div>
+                            <div class="blog-card-content">
+                                <div class="blog-card-meta">
+                                    <span><i class="far fa-calendar me-1"></i> Mar 5, 2025</span>
+                                    <span><i class="far fa-clock me-1"></i> 7 min read</span>
+                                </div>
+                                <h3 class="blog-card-title"><a href="blog-detail.html">The Future of Sustainable Homes in India</a></h3>
+                                <p class="blog-card-excerpt">Exploring innovative sustainable building practices and their impact on property values and living experiences in Indian cities.</p>
+                                <a href="blog-detail.html" class="read-more">
+                                    Read More <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="blog-card">
+                            <div class="blog-card-image">
+                                <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                                     alt="Commercial Real Estate" class="img-fluid">
+                                <span class="blog-card-category">Commercial</span>
+                            </div>
+                            <div class="blog-card-content">
+                                <div class="blog-card-meta">
+                                    <span><i class="far fa-calendar me-1"></i> Feb 22, 2025</span>
+                                    <span><i class="far fa-clock me-1"></i> 5 min read</span>
+                                </div>
+                                <h3 class="blog-card-title"><a href="blog-detail.html">Commercial Real Estate: Opportunities in 2025</a></h3>
+                                <p class="blog-card-excerpt">Analysis of emerging opportunities in commercial real estate, including coworking spaces, retail hubs, and industrial properties.</p>
+                                <a href="blog-detail.html" class="read-more">
+                                    Read More <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-5" data-aos="fade-up">
+                    <a href="blog.html" class="btn btn-primary">
+                        <i class="fas fa-newspaper me-2"></i> View All Articles
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comments -->
+        <section class="comments-section">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <h2 class="section-title text-center" data-aos="fade-up">
+                            Reader <span class="gold-text">Comments</span>
+                        </h2>
+                        <p class="text-muted" data-aos="fade-up" data-aos-delay="100">
+                            Join the discussion and share your thoughts
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-8 mx-auto" data-aos="fade-up">
+                        <!-- Comment 1 -->
+                        <div class="comment-card">
+                            <div class="comment-header">
+                                <div class="comment-avatar">
+                                    <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Priya Sharma">
+                                </div>
+                                <div>
+                                    <div class="comment-author">Priya Sharma</div>
+                                    <div class="comment-date">March 16, 2025 at 10:30 AM</div>
+                                </div>
+                            </div>
+                            <p>Excellent insights on sustainable building trends! As an architect, I appreciate how Naroda Group is incorporating these practices. The rainwater harvesting and solar-ready features are exactly what modern homebuyers are looking for.</p>
+                        </div>
+                        
+                        <!-- Comment 2 (Reply) -->
+                        <div class="comment-card comment-reply">
+                            <div class="comment-header">
+                                <div class="comment-avatar">
+                                    <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Amit Patel">
+                                </div>
+                                <div>
+                                    <div class="comment-author">Amit Patel</div>
+                                    <div class="comment-date">March 16, 2025 at 2:45 PM</div>
+                                </div>
+                            </div>
+                            <p>@Priya Sharma - Completely agree! The focus on sustainability isn't just an environmental concern anymore; it's becoming a major factor in property valuation too. Properties with green certifications command premium prices.</p>
+                        </div>
+                        
+                        <!-- Comment 3 -->
+                        <div class="comment-card">
+                            <div class="comment-header">
+                                <div class="comment-avatar">
+                                    <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Rahul Verma">
+                                </div>
+                                <div>
+                                    <div class="comment-author">Rahul Verma</div>
+                                    <div class="comment-date">March 15, 2025 at 5:20 PM</div>
+                                </div>
+                            </div>
+                            <p>The section on suburban growth is particularly relevant. I've been tracking property prices in Naroda area and the 15-20% annual appreciation mentioned here matches my observations. Infrastructure development has been a game-changer.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comment Form -->
+        <section class="comment-form-section">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <h2 class="section-title text-center" data-aos="fade-up">
+                            Leave a <span class="gold-text">Comment</span>
+                        </h2>
+                        <p class="text-muted" data-aos="fade-up" data-aos-delay="100">
+                            Share your thoughts and join the conversation
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-8 mx-auto" data-aos="fade-up">
+                        <div class="comment-form-card">
+                            <form id="commentForm">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label">Full Name *</label>
+                                            <input type="text" class="form-control" id="commentName" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label class="form-label">Email Address *</label>
+                                            <input type="email" class="form-control" id="commentEmail" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label">Website (Optional)</label>
+                                    <input type="url" class="form-control" id="commentWebsite">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-label">Comment *</label>
+                                    <textarea class="form-control" id="commentMessage" rows="6" 
+                                              placeholder="Share your thoughts on this article..." required></textarea>
+                                </div>
+                                
+                                <div class="form-group form-check mb-4">
+                                    <input type="checkbox" class="form-check-input" id="commentSave" required>
+                                    <label class="form-check-label" for="commentSave">
+                                        Save my name, email, and website in this browser for the next time I comment.
+                                    </label>
+                                </div>
+                                
+                                <button type="submit" class="btn btn-gold w-100">
+                                    <i class="fas fa-paper-plane me-2"></i> Post Comment
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <div class="mb-4">
+                        <a class="navbar-brand text-white" href="index.html">
+                            <div class="logo-icon d-inline-flex align-items-center justify-content-center me-2">NG</div>
+                            Naroda <span class="gold-text">Group</span>
+                        </a>
+                    </div>
+                    <p class="mb-4">
+                        Creating landmark properties that redefine excellence. From premium commercial spaces 
+                        to luxury residential living, we build dreams with quality and commitment.
+                    </p>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="projects.html"><i class="fas fa-chevron-right"></i> Projects</a></li>
+                        <li><a href="properties.html"><i class="fas fa-chevron-right"></i> Properties</a></li>
+                        <li><a href="blog.html"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="footer-title">Our Projects</h3>
+                    <a href="projects-landmark.html" class="project-mini-card">
+                        <h6 class="text-white mb-1">Naroda Landmark</h6>
+                        <p class="small text-muted mb-0">Premium Commercial Spaces</p>
+                    </a>
+                    <a href="projects-irish.html" class="project-mini-card">
+                        <h6 class="text-white mb-1">Naroda Irish</h6>
+                        <p class="small text-muted mb-0">Luxury Residential Living</p>
+                    </a>
+                    <a href="projects.html" class="project-mini-card">
+                        <h6 class="text-white mb-1">View All Projects</h6>
+                        <p class="small text-muted mb-0">Explore our portfolio</p>
+                    </a>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <h3 class="footer-title">Contact Info</h3>
+                    <div class="contact-info">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h6 class="text-white mb-1">Phone Number</h6>
+                            <p class="mb-0">+91 98765 43210</p>
+                            <small class="text-muted">Mon - Sat: 10 AM - 7 PM</small>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h6 class="text-white mb-1">Email Address</h6>
+                            <p class="mb-0">info@narodagroup.com</p>
+                            <small class="text-muted">We reply within 24 hours</small>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h6 class="text-white mb-1">Office Address</h6>
+                            <p class="mb-0">Naroda - Bhat Road</p>
+                            <small class="text-muted">Ahmedabad, Gujarat 382330</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="mb-0">&copy; 2025 Naroda Group. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="privacy.html" class="text-muted me-3">Privacy Policy</a>
+                        <a href="terms.html" class="text-muted me-3">Terms of Service</a>
+                        <a href="rera.html" class="text-muted">RERA Registration</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // Wait for page to load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize AOS
+            AOS.init({
+                duration: 800,
+                once: true,
+                offset: 100,
+                disable: function() {
+                    return window.innerWidth < 768;
+                }
+            });
+            
+            // Remove preloader
+            const preloader = document.getElementById('preloader');
+            setTimeout(() => {
+                preloader.style.opacity = '0';
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 500);
+            }, 800);
+            
+            // Initialize back to top button
+            function initBackToTop() {
+                const backToTop = document.querySelector('.back-to-top');
+                
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 300) {
+                        backToTop.classList.add('active');
+                    } else {
+                        backToTop.classList.remove('active');
+                    }
+                });
+                
+                backToTop.addEventListener('click', () => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+            
+            // Initialize navbar scroll effect
+            function initNavbarScroll() {
+                const navbar = document.querySelector('.navbar');
+                
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 50) {
+                        navbar.classList.add('scrolled');
+                    } else {
+                        navbar.classList.remove('scrolled');
+                    }
+                });
+            }
+            
+            // Initialize toast notifications
+            function initToastSystem() {
+                window.showToast = function(message, type = 'success') {
+                    const toastContainer = document.querySelector('.toast-container');
+                    const toast = document.createElement('div');
+                    toast.className = `toast toast-${type}`;
+                    toast.innerHTML = `
+                        <div class="d-flex align-items-center">
+                            <i class="fas ${type === 'success' ? 'fa-check-circle text-success' : 'fa-exclamation-circle text-danger'} me-3 fs-5"></i>
+                            <div class="flex-grow-1">
+                                <p class="mb-0 fw-500">${message}</p>
+                            </div>
+                            <button type="button" class="btn-close ms-auto" onclick="this.parentElement.parentElement.remove()"></button>
+                        </div>
+                    `;
+                    
+                    toastContainer.appendChild(toast);
+                    
+                    setTimeout(() => toast.classList.add('show'), 10);
+                    
+                    setTimeout(() => {
+                        toast.classList.remove('show');
+                        setTimeout(() => toast.remove(), 300);
+                    }, 5000);
+                };
+            }
+            
+            // Initialize mobile navigation
+            function initMobileNav() {
+                // Update active nav item based on current page
+                const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+                document.querySelectorAll('.mobile-nav-item').forEach(item => {
+                    const href = item.getAttribute('href');
+                    if (href === currentPage) {
+                        item.classList.add('active');
+                    } else {
+                        item.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Comment Form Submission
+            function initCommentForm() {
+                const form = document.getElementById('commentForm');
+                
+                if (form) {
+                    form.addEventListener('submit', function(e) {
+                        e.preventDefault();
+                        
+                        // Validate form
+                        if (!form.checkValidity()) {
+                            showToast('Please fill all required fields correctly', 'warning');
+                            return;
+                        }
+                        
+                        // Show loading
+                        showLoading();
+                        
+                        // Simulate form submission
+                        setTimeout(() => {
+                            hideLoading();
+                            showToast('Thank you for your comment! It will be visible after moderation.', 'success');
+                            form.reset();
+                        }, 2000);
+                    });
+                }
+            }
+            
+            // Newsletter Form Submission
+            function initNewsletterForm() {
+                const form = document.getElementById('newsletterForm');
+                
+                if (form) {
+                    form.addEventListener('submit', function(e) {
+                        e.preventDefault();
+                        
+                        // Validate form
+                        if (!form.checkValidity()) {
+                            showToast('Please enter a valid email address', 'warning');
+                            return;
+                        }
+                        
+                        // Show loading
+                        showLoading();
+                        
+                        // Simulate form submission
+                        setTimeout(() => {
+                            hideLoading();
+                            showToast('Thank you for subscribing to our newsletter!', 'success');
+                            form.reset();
+                        }, 2000);
+                    });
+                }
+            }
+            
+            // Smooth scroll for comments
+            function initSmoothScroll() {
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function(e) {
+                        if (this.getAttribute('href') === '#') return;
+                        
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href');
+                        const targetElement = document.querySelector(targetId);
+                        
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 100,
+                                behavior: 'smooth'
+                            });
+                        }
+                    });
+                });
+            }
+            
+            // Share buttons functionality
+            function initShareButtons() {
+                const shareButtons = document.querySelectorAll('.share-btn');
+                
+                shareButtons.forEach(button => {
+                    button.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        
+                        const platform = this.classList[1];
+                        let url = window.location.href;
+                        let text = document.title;
+                        
+                        // Different platforms have different sharing URLs
+                        let shareUrl = '';
+                        switch(platform) {
+                            case 'facebook':
+                                shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+                                break;
+                            case 'twitter':
+                                shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`;
+                                break;
+                            case 'linkedin':
+                                shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(url)}&title=${encodeURIComponent(text)}`;
+                                break;
+                            case 'whatsapp':
+                                shareUrl = `https://wa.me/?text=${encodeURIComponent(text + ' ' + url)}`;
+                                break;
+                        }
+                        
+                        // Open sharing window
+                        if (shareUrl) {
+                            window.open(shareUrl, '_blank', 'width=600,height=400');
+                            showToast('Sharing article...', 'info');
+                        }
+                    });
+                });
+            }
+            
+            // Initialize all functions
+            initBackToTop();
+            initNavbarScroll();
+            initToastSystem();
+            initMobileNav();
+            initCommentForm();
+            initNewsletterForm();
+            initSmoothScroll();
+            initShareButtons();
+            
+            // Show welcome message
+            setTimeout(() => {
+                showToast('Welcome to our blog! Enjoy reading.', 'success');
+            }, 1500);
+            
+            // Fix mobile viewport height
+            function setViewportHeight() {
+                let vh = window.innerHeight * 0.01;
+                document.documentElement.style.setProperty('--vh', `${vh}px`);
+            }
+            
+            setViewportHeight();
+            window.addEventListener('resize', setViewportHeight);
+        });
+        
+        // Loading overlay functions
+        window.showLoading = function() {
+            document.querySelector('.loading-overlay').classList.add('active');
+        };
+        
+        window.hideLoading = function() {
+            document.querySelector('.loading-overlay').classList.remove('active');
+        };
+    </script>
+</body>
+</html>

@@ -87,6 +87,7 @@
         img {
             max-width: 100%;
             height: auto;
+            display: block;
         }
 
         .container {
@@ -108,6 +109,14 @@
         /* ===== Utility Classes ===== */
         .gold-text {
             color: var(--secondary-color);
+        }
+        
+        .text-gold {
+            color: var(--secondary-color) !important;
+        }
+        
+        .text-emerald {
+            color: var(--accent-color) !important;
         }
 
         .emerald-text {
@@ -862,8 +871,12 @@
                 display: flex;
             }
             
-            .back-to-top {
+            .back-to-top,
+            .whatsapp-float {
                 bottom: 80px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
             }
             
             .project-stats {
@@ -877,6 +890,11 @@
             
             .stat-number {
                 font-size: 2rem;
+            }
+            
+            .hero-badge {
+                padding: 8px 16px;
+                font-size: 0.9rem;
             }
         }
 
@@ -1168,6 +1186,252 @@
             right: 30px;
             z-index: 2;
         }
+        
+        /* ===== Responsive Fixes ===== */
+        @media (max-width: 992px) {
+            .hero-section {
+                min-height: 60vh;
+            }
+            
+            .swiper-slide {
+                height: 400px;
+            }
+            
+            .virtual-apartment {
+                height: 350px;
+            }
+            
+            .apartment-tabs {
+                gap: 10px;
+            }
+            
+            .apartment-tab {
+                padding: 12px 20px;
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                min-height: 50vh;
+                padding: 80px 0 40px;
+            }
+            
+            .swiper-slide {
+                height: 300px;
+            }
+            
+            .gallery-overlay {
+                padding: 20px;
+            }
+            
+            .gallery-overlay h4 {
+                font-size: 1.2rem;
+            }
+            
+            .virtual-apartment {
+                height: 250px;
+            }
+            
+            .walkthrough-btn {
+                bottom: 20px;
+                right: 20px;
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+            
+            .apartment-content {
+                padding: 25px 20px;
+            }
+            
+            .apartment-specs {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            
+            .spec-item {
+                padding: 15px;
+            }
+            
+            .spec-value {
+                font-size: 1.3rem;
+            }
+            
+            .location-card {
+                padding: 25px 20px;
+            }
+            
+            .price-card {
+                padding: 30px 20px;
+            }
+            
+            .price-amount {
+                font-size: 2.5rem;
+            }
+            
+            .download-card {
+                padding: 25px 20px;
+            }
+            
+            .timeline {
+                padding-left: 20px;
+            }
+            
+            .timeline-item {
+                padding-left: 20px;
+            }
+            
+            .timeline-item:before {
+                left: -26px;
+            }
+            
+            .btn-lg {
+                padding: 15px 30px;
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .section-title:after {
+                width: 60px;
+                bottom: -12px;
+            }
+            
+            .project-stats {
+                margin-top: -30px;
+                padding: 20px 15px;
+            }
+            
+            .stat-item {
+                padding: 10px 5px;
+            }
+            
+            .stat-number {
+                font-size: 1.8rem;
+            }
+            
+            .overview-feature {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .feature-icon {
+                margin-bottom: 15px;
+                margin-right: 0;
+            }
+            
+            .apartment-tabs {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .apartment-tab {
+                text-align: center;
+            }
+            
+            .apartment-specs {
+                grid-template-columns: 1fr;
+            }
+            
+            .swiper-button-next,
+            .swiper-button-prev {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .swiper-button-next:after,
+            .swiper-button-prev:after {
+                font-size: 1.2rem;
+            }
+        }
+        
+        /* ===== Accessibility Improvements ===== */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        
+        .focus-visible {
+            outline: 2px solid var(--accent-color);
+            outline-offset: 2px;
+        }
+        
+        /* ===== Image Loading Placeholders ===== */
+        .img-placeholder {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+        
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        
+        /* ===== Print Styles ===== */
+        @media print {
+            .navbar,
+            .mobile-bottom-nav,
+            .back-to-top,
+            .whatsapp-float,
+            .loading-overlay,
+            .toast-container,
+            .swiper-button-next,
+            .swiper-button-prev,
+            .swiper-pagination,
+            .walkthrough-btn {
+                display: none !important;
+            }
+            
+            body {
+                font-size: 12pt;
+            }
+            
+            .hero-section {
+                background: white !important;
+                color: black !important;
+                min-height: auto;
+                padding: 50px 0;
+            }
+            
+            .hero-title {
+                color: black !important;
+            }
+            
+            section {
+                padding: 50px 0;
+                page-break-inside: avoid;
+            }
+            
+            .project-stats {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                margin-top: 20px;
+            }
+            
+            .btn {
+                display: none !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1187,7 +1451,7 @@
     </div>
 
     <!-- Back to Top Button -->
-    <div class="back-to-top">
+    <div class="back-to-top" aria-label="Back to top">
         <i class="fas fa-chevron-up"></i>
     </div>
 
@@ -1203,11 +1467,12 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <div class="logo-icon">NG</div>
+                <div class="logo-icon" aria-hidden="true">NG</div>
                 <span>Naroda <span class="gold-text">Group</span></span>
             </a>
             
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             
@@ -1220,59 +1485,63 @@
                         <a class="nav-link" href="about.html">About</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" id="projectsDropdown" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="projectsDropdown" role="button" 
+                           data-bs-toggle="dropdown" aria-expanded="false">
                             Projects
                         </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="projects-landmark.html">Naroda Landmark</a>
-                            <a class="nav-link active" href="projects-irish.html">Naroda Irish</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="projects.html">All Projects</a>
-                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="projectsDropdown">
+                            <li><a class="dropdown-item" href="projects-landmark.html">Naroda Landmark</a></li>
+                            <li><a class="dropdown-item active" href="projects-irish.html">Naroda Irish</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="projects.html">All Projects</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="propertiesDropdown" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="propertiesDropdown" role="button" 
+                           data-bs-toggle="dropdown" aria-expanded="false">
                             Properties
                         </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="properties.html">Buy</a>
-                            <a class="dropdown-item" href="properties-rent.html">Rent</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="property-detail.html">Property Details</a>
-                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="propertiesDropdown">
+                            <li><a class="dropdown-item" href="properties.html">Buy</a></li>
+                            <li><a class="dropdown-item" href="properties-rent.html">Rent</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="property-detail.html">Property Details</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="gallery.html">Gallery</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" role="button" 
+                           data-bs-toggle="dropdown" aria-expanded="false">
                             More
                         </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="blog.html">Blog</a>
-                            <a class="dropdown-item" href="news.html">News</a>
-                            <a class="dropdown-item" href="careers.html">Careers</a>
-                            <a class="dropdown-item" href="team.html">Our Team</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="faq.html">FAQ</a>
-                            <a class="dropdown-item" href="contact.html">Contact</a>
-                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="moreDropdown">
+                            <li><a class="dropdown-item" href="blog.html">Blog</a></li>
+                            <li><a class="dropdown-item" href="news.html">News</a></li>
+                            <li><a class="dropdown-item" href="careers.html">Careers</a></li>
+                            <li><a class="dropdown-item" href="team.html">Our Team</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+                            <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+                        </ul>
                     </li>
                 </ul>
                 
                 <div class="d-flex align-items-center ms-lg-3 mt-3 mt-lg-0">
                     <div class="dropdown">
-                        <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown">
-                            <i class="fas fa-globe me-1"></i> EN
+                        <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" 
+                                id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-globe me-1" aria-hidden="true"></i> EN
                         </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">English</a>
-                            <a class="dropdown-item" href="#">Hindi</a>
-                            <a class="dropdown-item" href="#">Gujarati</a>
-                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                            <li><a class="dropdown-item" href="#" lang="en">English</a></li>
+                            <li><a class="dropdown-item" href="#" lang="hi">Hindi</a></li>
+                            <li><a class="dropdown-item" href="#" lang="gu">Gujarati</a></li>
+                        </ul>
                     </div>
                     <a href="login.html" class="btn btn-outline-light ms-3">
-                        <i class="fas fa-user me-2"></i> Login
+                        <i class="fas fa-user me-2" aria-hidden="true"></i> Login
                     </a>
                 </div>
             </div>
@@ -1282,23 +1551,23 @@
     <!-- Mobile Bottom Navigation -->
     <div class="mobile-bottom-nav">
         <a href="index.html" class="mobile-nav-item">
-            <i class="fas fa-home"></i>
+            <i class="fas fa-home" aria-hidden="true"></i>
             <span>Home</span>
         </a>
         <a href="projects.html" class="mobile-nav-item active">
-            <i class="fas fa-building"></i>
+            <i class="fas fa-building" aria-hidden="true"></i>
             <span>Projects</span>
         </a>
         <a href="properties.html" class="mobile-nav-item">
-            <i class="fas fa-search"></i>
+            <i class="fas fa-search" aria-hidden="true"></i>
             <span>Search</span>
         </a>
         <a href="contact.html" class="mobile-nav-item">
-            <i class="fas fa-phone"></i>
+            <i class="fas fa-phone" aria-hidden="true"></i>
             <span>Contact</span>
         </a>
         <a href="login.html" class="mobile-nav-item">
-            <i class="fas fa-user"></i>
+            <i class="fas fa-user" aria-hidden="true"></i>
             <span>Account</span>
         </a>
     </div>
@@ -1326,13 +1595,13 @@
                         
                         <div class="d-flex flex-wrap gap-3" data-aos="fade-up" data-aos-delay="300">
                             <a href="#pricing" class="btn btn-gold btn-lg">
-                                <i class="fas fa-tag me-2"></i> View Pricing
+                                <i class="fas fa-tag me-2" aria-hidden="true"></i> View Pricing
                             </a>
                             <a href="#gallery" class="btn btn-outline-light btn-lg">
-                                <i class="fas fa-images me-2"></i> View Gallery
+                                <i class="fas fa-images me-2" aria-hidden="true"></i> View Gallery
                             </a>
                             <a href="contact.html" class="btn btn-emerald btn-lg">
-                                <i class="fas fa-calendar-alt me-2"></i> Schedule Visit
+                                <i class="fas fa-calendar-alt me-2" aria-hidden="true"></i> Schedule Visit
                             </a>
                         </div>
                     </div>
@@ -1394,8 +1663,8 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
                         <div class="overview-image">
-                            <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-                                 alt="Naroda Irish Building">
+                            <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                 alt="Naroda Irish Building" class="img-placeholder" loading="lazy" width="800" height="600">
                         </div>
                     </div>
                     
@@ -1416,7 +1685,7 @@
                         <div class="overview-features">
                             <div class="overview-feature">
                                 <div class="feature-icon">
-                                    <i class="fas fa-home"></i>
+                                    <i class="fas fa-home" aria-hidden="true"></i>
                                 </div>
                                 <div>
                                     <h5 class="mb-2">Spacious Apartments</h5>
@@ -1426,7 +1695,7 @@
                             
                             <div class="overview-feature">
                                 <div class="feature-icon">
-                                    <i class="fas fa-leaf"></i>
+                                    <i class="fas fa-leaf" aria-hidden="true"></i>
                                 </div>
                                 <div>
                                     <h5 class="mb-2">Green Living</h5>
@@ -1436,7 +1705,7 @@
                             
                             <div class="overview-feature">
                                 <div class="feature-icon">
-                                    <i class="fas fa-shield-alt"></i>
+                                    <i class="fas fa-shield-alt" aria-hidden="true"></i>
                                 </div>
                                 <div>
                                     <h5 class="mb-2">RERA Approved</h5>
@@ -1470,7 +1739,7 @@
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                         <div class="amenity-card">
                             <div class="amenity-icon">
-                                <i class="fas fa-swimming-pool"></i>
+                                <i class="fas fa-swimming-pool" aria-hidden="true"></i>
                             </div>
                             <h4 class="mb-3">Swimming Pool</h4>
                             <p class="text-muted mb-0">
@@ -1482,7 +1751,7 @@
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
                         <div class="amenity-card">
                             <div class="amenity-icon">
-                                <i class="fas fa-dumbbell"></i>
+                                <i class="fas fa-dumbbell" aria-hidden="true"></i>
                             </div>
                             <h4 class="mb-3">Fitness Center</h4>
                             <p class="text-muted mb-0">
@@ -1494,7 +1763,7 @@
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
                         <div class="amenity-card">
                             <div class="amenity-icon">
-                                <i class="fas fa-tree"></i>
+                                <i class="fas fa-tree" aria-hidden="true"></i>
                             </div>
                             <h4 class="mb-3">Landscaped Gardens</h4>
                             <p class="text-muted mb-0">
@@ -1506,7 +1775,7 @@
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
                         <div class="amenity-card">
                             <div class="amenity-icon">
-                                <i class="fas fa-gamepad"></i>
+                                <i class="fas fa-gamepad" aria-hidden="true"></i>
                             </div>
                             <h4 class="mb-3">Club House</h4>
                             <p class="text-muted mb-0">
@@ -1518,7 +1787,7 @@
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
                         <div class="amenity-card">
                             <div class="amenity-icon">
-                                <i class="fas fa-shield-alt"></i>
+                                <i class="fas fa-shield-alt" aria-hidden="true"></i>
                             </div>
                             <h4 class="mb-3">24/7 Security</h4>
                             <p class="text-muted mb-0">
@@ -1530,7 +1799,7 @@
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
                         <div class="amenity-card">
                             <div class="amenity-icon">
-                                <i class="fas fa-car"></i>
+                                <i class="fas fa-car" aria-hidden="true"></i>
                             </div>
                             <h4 class="mb-3">Ample Parking</h4>
                             <p class="text-muted mb-0">
@@ -1559,17 +1828,17 @@
                 <div class="row">
                     <div class="col-lg-10 mx-auto" data-aos="fade-up">
                         <div class="virtual-apartment">
-                            <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-                                 alt="3 BHK Apartment Interior">
+                            <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                 alt="3 BHK Apartment Interior" class="img-placeholder" loading="lazy" width="800" height="400">
                             <div class="virtual-overlay">
                                 <h3 class="text-white mb-3">Experience 3 BHK Luxury</h3>
                                 <p class="text-white-50 mb-4">Walk through our premium apartment with panoramic city views</p>
                                 <button class="btn btn-gold btn-lg" id="startVirtualTour">
-                                    <i class="fas fa-play-circle me-2"></i> Start Virtual Tour
+                                    <i class="fas fa-play-circle me-2" aria-hidden="true"></i> Start Virtual Tour
                                 </button>
                             </div>
-                            <a href="#" class="btn btn-outline-light walkthrough-btn">
-                                <i class="fas fa-walking me-2"></i> 360° Walkthrough
+                            <a href="#" class="btn btn-outline-light walkthrough-btn" aria-label="360° walkthrough">
+                                <i class="fas fa-walking me-2" aria-hidden="true"></i> 360° Walkthrough
                             </a>
                         </div>
                     </div>
@@ -1595,18 +1864,18 @@
                 </div>
                 
                 <div class="apartment-tabs" data-aos="fade-up">
-                    <div class="apartment-tab active" data-type="2bhk">2 BHK</div>
-                    <div class="apartment-tab" data-type="3bhk">3 BHK</div>
-                    <div class="apartment-tab" data-type="4bhk">4 BHK</div>
-                    <div class="apartment-tab" data-type="penthouse">Penthouse</div>
+                    <button class="apartment-tab active" data-type="2bhk" aria-pressed="true">2 BHK</button>
+                    <button class="apartment-tab" data-type="3bhk" aria-pressed="false">3 BHK</button>
+                    <button class="apartment-tab" data-type="4bhk" aria-pressed="false">4 BHK</button>
+                    <button class="apartment-tab" data-type="penthouse" aria-pressed="false">Penthouse</button>
                 </div>
                 
                 <div class="apartment-content" data-aos="fade-up" data-aos-delay="100">
                     <div class="row align-items-center">
                         <div class="col-lg-6">
                             <div class="apartment-image">
-                                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-                                     alt="2 BHK Floor Plan" id="apartmentImage">
+                                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                     alt="2 BHK Floor Plan" id="apartmentImage" class="img-placeholder" loading="lazy" width="800" height="600">
                             </div>
                         </div>
                         <div class="col-lg-6">
@@ -1638,9 +1907,9 @@
                     </div>
                     
                     <div class="text-center mt-4">
-                        <a href="#" class="btn btn-gold">
-                            <i class="fas fa-download me-2"></i> Download Floor Plans
-                        </a>
+                        <button class="btn btn-gold" id="downloadFloorPlans">
+                            <i class="fas fa-download me-2" aria-hidden="true"></i> Download Floor Plans
+                        </button>
                     </div>
                 </div>
             </div>
@@ -1675,7 +1944,7 @@
                             
                             <div class="location-feature">
                                 <div class="location-icon">
-                                    <i class="fas fa-graduation-cap"></i>
+                                    <i class="fas fa-graduation-cap" aria-hidden="true"></i>
                                 </div>
                                 <div>
                                     <h5 class="mb-1">Educational Institutions</h5>
@@ -1685,7 +1954,7 @@
                             
                             <div class="location-feature">
                                 <div class="location-icon">
-                                    <i class="fas fa-hospital"></i>
+                                    <i class="fas fa-hospital" aria-hidden="true"></i>
                                 </div>
                                 <div>
                                     <h5 class="mb-1">Healthcare Facilities</h5>
@@ -1695,7 +1964,7 @@
                             
                             <div class="location-feature">
                                 <div class="location-icon">
-                                    <i class="fas fa-shopping-cart"></i>
+                                    <i class="fas fa-shopping-cart" aria-hidden="true"></i>
                                 </div>
                                 <div>
                                     <h5 class="mb-1">Shopping & Entertainment</h5>
@@ -1705,7 +1974,7 @@
                             
                             <div class="location-feature">
                                 <div class="location-icon">
-                                    <i class="fas fa-subway"></i>
+                                    <i class="fas fa-subway" aria-hidden="true"></i>
                                 </div>
                                 <div>
                                     <h5 class="mb-1">Public Transport</h5>
@@ -1728,29 +1997,29 @@
                                 <div class="row g-2">
                                     <div class="col-6">
                                         <div class="d-flex align-items-center mb-2">
-                                            <i class="fas fa-circle text-emerald me-2" style="font-size: 0.5rem;"></i>
+                                            <i class="fas fa-circle text-emerald me-2" style="font-size: 0.5rem;" aria-hidden="true"></i>
                                             <span>International School</span>
                                         </div>
                                         <div class="d-flex align-items-center mb-2">
-                                            <i class="fas fa-circle text-emerald me-2" style="font-size: 0.5rem;"></i>
+                                            <i class="fas fa-circle text-emerald me-2" style="font-size: 0.5rem;" aria-hidden="true"></i>
                                             <span>Super Specialty Hospital</span>
                                         </div>
                                         <div class="d-flex align-items-center mb-2">
-                                            <i class="fas fa-circle text-emerald me-2" style="font-size: 0.5rem;"></i>
+                                            <i class="fas fa-circle text-emerald me-2" style="font-size: 0.5rem;" aria-hidden="true"></i>
                                             <span>Central Business District</span>
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="d-flex align-items-center mb-2">
-                                            <i class="fas fa-circle text-emerald me-2" style="font-size: 0.5rem;"></i>
+                                            <i class="fas fa-circle text-emerald me-2" style="font-size: 0.5rem;" aria-hidden="true"></i>
                                             <span>Premium Mall</span>
                                         </div>
                                         <div class="d-flex align-items-center mb-2">
-                                            <i class="fas fa-circle text-emerald me-2" style="font-size: 0.5rem;"></i>
+                                            <i class="fas fa-circle text-emerald me-2" style="font-size: 0.5rem;" aria-hidden="true"></i>
                                             <span>City Park</span>
                                         </div>
                                         <div class="d-flex align-items-center mb-2">
-                                            <i class="fas fa-circle text-emerald me-2" style="font-size: 0.5rem;"></i>
+                                            <i class="fas fa-circle text-emerald me-2" style="font-size: 0.5rem;" aria-hidden="true"></i>
                                             <span>Sports Complex</span>
                                         </div>
                                     </div>
@@ -1758,7 +2027,7 @@
                             </div>
                             
                             <div class="project-highlight">
-                                <h5 class="emerald-text mb-3"><i class="fas fa-chart-line me-2"></i> Investment Potential</h5>
+                                <h5 class="emerald-text mb-3"><i class="fas fa-chart-line me-2" aria-hidden="true"></i> Investment Potential</h5>
                                 <p class="mb-0">Expected appreciation of 12-15% annually. High rental demand makes this an excellent investment for future returns.</p>
                             </div>
                         </div>
@@ -1785,7 +2054,7 @@
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                         <div class="community-card">
                             <div class="community-icon">
-                                <i class="fas fa-users"></i>
+                                <i class="fas fa-users" aria-hidden="true"></i>
                             </div>
                             <h4 class="mb-3">Community Events</h4>
                             <p class="text-muted mb-0">
@@ -1798,7 +2067,7 @@
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
                         <div class="community-card">
                             <div class="community-icon">
-                                <i class="fas fa-child"></i>
+                                <i class="fas fa-child" aria-hidden="true"></i>
                             </div>
                             <h4 class="mb-3">Children's Activities</h4>
                             <p class="text-muted mb-0">
@@ -1811,7 +2080,7 @@
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
                         <div class="community-card">
                             <div class="community-icon">
-                                <i class="fas fa-heartbeat"></i>
+                                <i class="fas fa-heartbeat" aria-hidden="true"></i>
                             </div>
                             <h4 class="mb-3">Wellness Programs</h4>
                             <p class="text-muted mb-0">
@@ -1845,47 +2114,47 @@
                     <div class="swiper gallery-slider">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-                                     alt="Building Exterior">
+                                <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                     alt="Modern Architectural Design" loading="lazy" width="800" height="500">
                                 <div class="gallery-overlay">
                                     <h4 class="text-white">Modern Architectural Design</h4>
                                     <p class="text-white-50">Contemporary facade with lush landscaping</p>
                                 </div>
                             </div>
                             <div class="swiper-slide">
-                                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-                                     alt="Apartment Interior">
+                                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                     alt="Luxury Living Spaces" loading="lazy" width="800" height="500">
                                 <div class="gallery-overlay">
                                     <h4 class="text-white">Luxury Living Spaces</h4>
                                     <p class="text-white-50">Spacious rooms with premium finishes</p>
                                 </div>
                             </div>
                             <div class="swiper-slide">
-                                <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-                                     alt="Swimming Pool">
+                                <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                     alt="Resort-style Pool" loading="lazy" width="800" height="500">
                                 <div class="gallery-overlay">
                                     <h4 class="text-white">Resort-style Pool</h4>
                                     <p class="text-white-50">Olympic-size swimming pool area</p>
                                 </div>
                             </div>
                             <div class="swiper-slide">
-                                <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-                                     alt="Club House">
+                                <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                     alt="Premium Club House" loading="lazy" width="800" height="500">
                                 <div class="gallery-overlay">
                                     <h4 class="text-white">Premium Club House</h4>
                                     <p class="text-white-50">Multi-purpose entertainment facility</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next" aria-label="Next slide"></div>
+                        <div class="swiper-button-prev" aria-label="Previous slide"></div>
                         <div class="swiper-pagination"></div>
                     </div>
                 </div>
                 
                 <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="100">
                     <a href="gallery.html" class="btn btn-gold">
-                        <i class="fas fa-images me-2"></i> View Full Gallery
+                        <i class="fas fa-images me-2" aria-hidden="true"></i> View Full Gallery
                     </a>
                 </div>
             </div>
@@ -1923,7 +2192,7 @@
                             </ul>
                             
                             <a href="contact.html" class="btn btn-gold w-100">
-                                <i class="fas fa-calendar-alt me-2"></i> Book Site Visit
+                                <i class="fas fa-calendar-alt me-2" aria-hidden="true"></i> Book Site Visit
                             </a>
                         </div>
                     </div>
@@ -1942,7 +2211,7 @@
                             </ul>
                             
                             <a href="contact.html" class="btn btn-gold w-100">
-                                <i class="fas fa-home me-2"></i> View 3 BHK Plans
+                                <i class="fas fa-home me-2" aria-hidden="true"></i> View 3 BHK Plans
                             </a>
                         </div>
                     </div>
@@ -1961,7 +2230,7 @@
                             </ul>
                             
                             <a href="contact.html" class="btn btn-gold w-100">
-                                <i class="fas fa-calculator me-2"></i> Calculate EMI
+                                <i class="fas fa-calculator me-2" aria-hidden="true"></i> Calculate EMI
                             </a>
                         </div>
                     </div>
@@ -1972,12 +2241,12 @@
                         <div class="project-highlight" style="background: rgba(255, 255, 255, 0.1);">
                             <div class="row align-items-center">
                                 <div class="col-md-8">
-                                    <h5 class="gold-text mb-2"><i class="fas fa-gift me-2"></i> Special Offer</h5>
+                                    <h5 class="gold-text mb-2"><i class="fas fa-gift me-2" aria-hidden="true"></i> Special Offer</h5>
                                     <p class="text-white-50 mb-0">Limited period offer: Book now and get modular kitchen + ACs free + 2 years maintenance free.</p>
                                 </div>
                                 <div class="col-md-4 text-md-end">
                                     <a href="contact.html" class="btn btn-gold">
-                                        <i class="fas fa-gift me-2"></i> Avail Offer
+                                        <i class="fas fa-gift me-2" aria-hidden="true"></i> Avail Offer
                                     </a>
                                 </div>
                             </div>
@@ -1994,32 +2263,32 @@
                     <div class="col-md-6" data-aos="fade-right">
                         <div class="download-card">
                             <div class="download-icon">
-                                <i class="fas fa-file-pdf"></i>
+                                <i class="fas fa-file-pdf" aria-hidden="true"></i>
                             </div>
                             <h4 class="mb-3">Download Brochure</h4>
                             <p class="text-muted mb-4">
                                 Get detailed information about Naroda Irish including specifications, 
                                 floor plans, amenities, and pricing.
                             </p>
-                            <a href="#" class="btn btn-gold brochure-btn">
-                                <i class="fas fa-download me-2"></i> Download PDF (4.8 MB)
-                            </a>
+                            <button class="btn btn-gold brochure-btn" id="downloadBrochure">
+                                <i class="fas fa-download me-2" aria-hidden="true"></i> Download PDF (4.8 MB)
+                            </button>
                         </div>
                     </div>
                     
                     <div class="col-md-6" data-aos="fade-left">
                         <div class="download-card">
                             <div class="download-icon">
-                                <i class="fas fa-video"></i>
+                                <i class="fas fa-video" aria-hidden="true"></i>
                             </div>
                             <h4 class="mb-3">Virtual Tour</h4>
                             <p class="text-muted mb-4">
                                 Experience Naroda Irish through our immersive virtual tour. 
                                 Explore every corner from the comfort of your home.
                             </p>
-                            <a href="#" class="btn btn-gold brochure-btn" id="virtualTourBtn">
-                                <i class="fas fa-play-circle me-2"></i> Start Virtual Tour
-                            </a>
+                            <button class="btn btn-gold brochure-btn" id="virtualTourBtn">
+                                <i class="fas fa-play-circle me-2" aria-hidden="true"></i> Start Virtual Tour
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -2093,13 +2362,13 @@
                         
                         <div class="d-flex flex-column flex-sm-row justify-content-center gap-4" data-aos="fade-up" data-aos-delay="200">
                             <a href="contact.html" class="btn btn-gold btn-lg">
-                                <i class="fas fa-calendar-alt me-2"></i> Schedule Site Visit
+                                <i class="fas fa-calendar-alt me-2" aria-hidden="true"></i> Schedule Site Visit
                             </a>
                             <a href="tel:+919876543210" class="btn btn-outline-light btn-lg">
-                                <i class="fas fa-phone me-2"></i> Call Now
+                                <i class="fas fa-phone me-2" aria-hidden="true"></i> Call Now
                             </a>
                             <a href="contact.html" class="btn btn-emerald btn-lg">
-                                <i class="fas fa-envelope me-2"></i> Get Quote
+                                <i class="fas fa-envelope me-2" aria-hidden="true"></i> Get Quote
                             </a>
                         </div>
                     </div>
@@ -2125,20 +2394,20 @@
                     </p>
                     
                     <div class="social-links">
-                        <a href="#" class="social-link" aria-label="Facebook">
-                            <i class="fab fa-facebook-f"></i>
+                        <a href="#" class="social-link" aria-label="Facebook page">
+                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
                         </a>
-                        <a href="#" class="social-link" aria-label="Twitter">
-                            <i class="fab fa-twitter"></i>
+                        <a href="#" class="social-link" aria-label="Twitter profile">
+                            <i class="fab fa-twitter" aria-hidden="true"></i>
                         </a>
-                        <a href="#" class="social-link" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
+                        <a href="#" class="social-link" aria-label="Instagram profile">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
                         </a>
-                        <a href="#" class="social-link" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
+                        <a href="#" class="social-link" aria-label="LinkedIn company page">
+                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
                         </a>
-                        <a href="#" class="social-link" aria-label="YouTube">
-                            <i class="fab fa-youtube"></i>
+                        <a href="#" class="social-link" aria-label="YouTube channel">
+                            <i class="fab fa-youtube" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
@@ -2146,12 +2415,12 @@
                 <div class="col-lg-2 col-md-6">
                     <h3 class="footer-title">Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
-                        <li><a href="projects.html"><i class="fas fa-chevron-right"></i> Projects</a></li>
-                        <li><a href="properties.html"><i class="fas fa-chevron-right"></i> Properties</a></li>
-                        <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
-                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        <li><a href="index.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> About Us</a></li>
+                        <li><a href="projects.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Projects</a></li>
+                        <li><a href="properties.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Properties</a></li>
+                        <li><a href="gallery.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Gallery</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Contact</a></li>
                     </ul>
                 </div>
                 
@@ -2174,7 +2443,7 @@
                 <div class="col-lg-3 col-md-6">
                     <h3 class="footer-title">Contact Info</h3>
                     <div class="contact-info">
-                        <i class="fas fa-phone"></i>
+                        <i class="fas fa-phone" aria-hidden="true"></i>
                         <div>
                             <h6 class="text-white mb-1">Phone Number</h6>
                             <p class="mb-0">+91 98765 43210</p>
@@ -2183,7 +2452,7 @@
                     </div>
                     
                     <div class="contact-info">
-                        <i class="fas fa-envelope"></i>
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
                         <div>
                             <h6 class="text-white mb-1">Email Address</h6>
                             <p class="mb-0">irish@narodagroup.com</p>
@@ -2192,7 +2461,7 @@
                     </div>
                     
                     <div class="contact-info">
-                        <i class="fas fa-map-marker-alt"></i>
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                         <div>
                             <h6 class="text-white mb-1">Site Address</h6>
                             <p class="mb-0">Naroda - Bhat Road</p>
@@ -2231,7 +2500,8 @@
             AOS.init({
                 duration: 1000,
                 once: false,
-                offset: 100
+                offset: 100,
+                disable: window.innerWidth < 768 ? true : false
             });
             
             // Remove preloader
@@ -2262,6 +2532,20 @@
                 fadeEffect: {
                     crossFade: true
                 },
+                breakpoints: {
+                    320: {
+                        slidesPerView: 1,
+                        spaceBetween: 10
+                    },
+                    768: {
+                        slidesPerView: 1,
+                        spaceBetween: 20
+                    },
+                    1024: {
+                        slidesPerView: 1,
+                        spaceBetween: 30
+                    }
+                }
             });
             
             // Initialize back to top button
@@ -2306,7 +2590,7 @@
                             <div>
                                 <p class="mb-0 fw-500">${message}</p>
                             </div>
-                            <button type="button" class="btn-close ms-auto" onclick="this.parentElement.parentElement.remove()"></button>
+                            <button type="button" class="btn-close ms-auto" onclick="this.parentElement.parentElement.remove()" aria-label="Close"></button>
                         </div>
                     `;
                     
@@ -2348,7 +2632,7 @@
                 
                 const apartmentData = {
                     '2bhk': {
-                        image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+                        image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
                         title: '2 BHK Premium Apartment',
                         desc: 'Perfect for young couples and small families. Spacious living area with attached balconies, modern kitchen, and premium fittings throughout.',
                         area: '1100',
@@ -2357,7 +2641,7 @@
                         balcony: '2'
                     },
                     '3bhk': {
-                        image: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+                        image: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
                         title: '3 BHK Luxury Apartment',
                         desc: 'Ideal for growing families. Features spacious bedrooms, modern kitchen with utility area, living room with balcony, and premium amenities.',
                         area: '1500',
@@ -2366,7 +2650,7 @@
                         balcony: '3'
                     },
                     '4bhk': {
-                        image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+                        image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
                         title: '4 BHK Premium Apartment',
                         desc: 'Designed for large families. Offers expansive living spaces, separate dining area, servant room, and premium finishes throughout.',
                         area: '2200',
@@ -2375,7 +2659,7 @@
                         balcony: '4'
                     },
                     'penthouse': {
-                        image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+                        image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
                         title: 'Penthouse Duplex',
                         desc: 'Ultimate luxury living. Features private terrace, panoramic views, spacious rooms, premium fixtures, and exclusive amenities.',
                         area: '3500',
@@ -2387,6 +2671,10 @@
                 
                 apartmentTabs.forEach(tab => {
                     tab.addEventListener('click', function() {
+                        // Update aria-pressed attribute
+                        apartmentTabs.forEach(t => t.setAttribute('aria-pressed', 'false'));
+                        this.setAttribute('aria-pressed', 'true');
+                        
                         // Remove active class from all tabs
                         apartmentTabs.forEach(t => t.classList.remove('active'));
                         
@@ -2405,12 +2693,6 @@
                         specBathrooms.textContent = data.bathrooms;
                         specBalcony.textContent = data.balcony;
                         
-                        // Add loading effect
-                        apartmentImage.style.opacity = '0.5';
-                        setTimeout(() => {
-                            apartmentImage.style.opacity = '1';
-                        }, 300);
-                        
                         // Update image alt text
                         apartmentImage.alt = data.title;
                     });
@@ -2427,12 +2709,12 @@
                     
                     // Create modal for virtual tour
                     const modalHTML = `
-                        <div class="modal fade" id="virtualTourModal" tabindex="-1">
+                        <div class="modal fade" id="virtualTourModal" tabindex="-1" aria-labelledby="virtualTourModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered modal-xl">
                                 <div class="modal-content">
                                     <div class="modal-header border-0">
-                                        <h5 class="modal-title">Naroda Irish Virtual Tour</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                        <h5 class="modal-title" id="virtualTourModalLabel">Naroda Irish Virtual Tour</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body p-0">
                                         <div class="ratio ratio-16x9">
@@ -2464,17 +2746,25 @@
             // Initialize download functionality
             function initDownloads() {
                 // Brochure download
-                const brochureBtn = document.querySelector('.brochure-btn');
-                if (brochureBtn) {
-                    brochureBtn.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        showToast('Brochure download started. Check your downloads folder.', 'success');
-                        
-                        // Simulate download
-                        setTimeout(() => {
-                            showToast('Brochure downloaded successfully!', 'success');
-                        }, 2000);
-                    });
+                const downloadBrochure = document.getElementById('downloadBrochure');
+                const downloadFloorPlans = document.getElementById('downloadFloorPlans');
+                
+                const downloadFile = function(e, fileName) {
+                    e.preventDefault();
+                    showToast(`${fileName} download started. Check your downloads folder.`, 'success');
+                    
+                    // Simulate download
+                    setTimeout(() => {
+                        showToast(`${fileName} downloaded successfully!`, 'success');
+                    }, 2000);
+                };
+                
+                if (downloadBrochure) {
+                    downloadBrochure.addEventListener('click', (e) => downloadFile(e, 'Naroda Irish Brochure'));
+                }
+                
+                if (downloadFloorPlans) {
+                    downloadFloorPlans.addEventListener('click', (e) => downloadFile(e, 'Floor Plans'));
                 }
             }
             
@@ -2487,12 +2777,12 @@
                         
                         // Create modal for 360° walkthrough
                         const modalHTML = `
-                            <div class="modal fade" id="walkthroughModal" tabindex="-1">
+                            <div class="modal fade" id="walkthroughModal" tabindex="-1" aria-labelledby="walkthroughModalLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered modal-xl">
                                     <div class="modal-content">
                                         <div class="modal-header border-0">
-                                            <h5 class="modal-title">360° Apartment Walkthrough</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                            <h5 class="modal-title" id="walkthroughModalLabel">360° Apartment Walkthrough</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body p-0">
                                             <div class="ratio ratio-16x9">
@@ -2519,6 +2809,26 @@
                 }
             }
             
+            // Smooth scrolling for anchor links
+            function initSmoothScroll() {
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        
+                        const targetId = this.getAttribute('href');
+                        if (targetId === '#') return;
+                        
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 80,
+                                behavior: 'smooth'
+                            });
+                        }
+                    });
+                });
+            }
+            
             // Initialize all functions
             initBackToTop();
             initNavbarScroll();
@@ -2528,28 +2838,16 @@
             initVirtualTour();
             initDownloads();
             initWalkthrough();
+            initSmoothScroll();
             
             // Show welcome message
             setTimeout(() => {
                 showToast('Welcome to Naroda Irish! Explore our luxury residential apartments.', 'success');
             }, 1500);
             
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
+            // Handle window resize for AOS
+            window.addEventListener('resize', function() {
+                AOS.refresh();
             });
         });
         

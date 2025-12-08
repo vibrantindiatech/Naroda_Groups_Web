@@ -85,6 +85,7 @@
         img {
             max-width: 100%;
             height: auto;
+            display: block;
         }
 
         .container {
@@ -105,7 +106,11 @@
 
         /* ===== Utility Classes ===== */
         .gold-text {
-            color: var(--secondary-color);
+            color: var(--secondary-color) !important;
+        }
+
+        .text-gold {
+            color: var(--secondary-color) !important;
         }
 
         .emerald-text {
@@ -340,6 +345,19 @@
             box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
         }
 
+        .btn-outline-primary {
+            border: 2px solid #0d6efd;
+            color: #0d6efd;
+            background: transparent;
+        }
+
+        .btn-outline-primary:hover {
+            background: #0d6efd;
+            color: white;
+            border-color: #0d6efd;
+            transform: translateY(-3px);
+        }
+
         .btn-emerald {
             background: var(--gradient-accent);
             color: white;
@@ -405,6 +423,12 @@
             height: 100%;
         }
 
+        @media (max-width: 768px) {
+            .contact-form-card {
+                padding: 30px;
+            }
+        }
+
         .form-control, .form-select {
             padding: 15px 20px;
             border: 2px solid var(--light-gray);
@@ -439,6 +463,8 @@
             height: 100%;
             transition: var(--transition);
             border: 1px solid rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
         }
 
         .contact-info-card:hover {
@@ -464,11 +490,23 @@
             padding: 0 0 100px;
         }
 
+        @media (max-width: 768px) {
+            .map-section {
+                padding: 0 0 60px;
+            }
+        }
+
         .map-container {
             height: 500px;
             border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--shadow);
+        }
+
+        @media (max-width: 768px) {
+            .map-container {
+                height: 300px;
+            }
         }
 
         /* ===== FAQ Section ===== */
@@ -482,6 +520,7 @@
             font-weight: 600;
             border: none;
             box-shadow: none;
+            font-size: 1rem;
         }
 
         .accordion-button:not(.collapsed) {
@@ -516,6 +555,9 @@
             box-shadow: var(--shadow);
             transition: var(--transition);
             height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .team-contact-card:hover {
@@ -553,6 +595,12 @@
             padding: 60px;
             border: 1px solid rgba(255, 255, 255, 0.2);
             text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .cta-card {
+                padding: 40px 20px;
+            }
         }
 
         /* ===== Footer ===== */
@@ -667,6 +715,10 @@
             
             .back-to-top {
                 bottom: 80px;
+            }
+            
+            .whatsapp-float {
+                bottom: 150px;
             }
         }
 
@@ -836,6 +888,39 @@
         .hour-item:last-child {
             border-bottom: none;
         }
+
+        /* ===== Responsive Adjustments ===== */
+        @media (max-width: 576px) {
+            .hero-section {
+                min-height: 50vh;
+            }
+            
+            .contact-form-card {
+                padding: 20px;
+            }
+            
+            .contact-info-card {
+                padding: 30px 20px;
+            }
+            
+            .cta-card .btn {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            
+            .cta-card .d-flex {
+                flex-direction: column;
+            }
+            
+            .team-contact-card {
+                padding: 20px;
+            }
+            
+            .btn-lg {
+                padding: 12px 24px;
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -875,7 +960,7 @@
                 <span>Naroda <span class="gold-text">Group</span></span>
             </a>
             
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             
@@ -888,56 +973,56 @@
                         <a class="nav-link" href="about.html">About</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Projects
                         </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="projects-landmark.html">Naroda Landmark</a>
-                            <a class="dropdown-item" href="projects-irish.html">Naroda Irish</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="projects.html">All Projects</a>
-                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="projectsDropdown">
+                            <li><a class="dropdown-item" href="projects-landmark.html">Naroda Landmark</a></li>
+                            <li><a class="dropdown-item" href="projects-irish.html">Naroda Irish</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="projects.html">All Projects</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="propertiesDropdown" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="propertiesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Properties
                         </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="properties.html">Buy</a>
-                            <a class="dropdown-item" href="properties-rent.html">Rent</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="property-detail.html">Property Details</a>
-                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="propertiesDropdown">
+                            <li><a class="dropdown-item" href="properties.html">Buy</a></li>
+                            <li><a class="dropdown-item" href="properties-rent.html">Rent</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="property-detail.html">Property Details</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="gallery.html">Gallery</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="moreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             More
                         </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="blog.html">Blog</a>
-                            <a class="dropdown-item" href="news.html">News</a>
-                            <a class="dropdown-item" href="careers.html">Careers</a>
-                            <a class="dropdown-item" href="team.html">Our Team</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="faq.html">FAQ</a>
-                            <a class="nav-link active" href="contact.html">Contact</a>
-                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="moreDropdown">
+                            <li><a class="dropdown-item" href="blog.html">Blog</a></li>
+                            <li><a class="dropdown-item" href="news.html">News</a></li>
+                            <li><a class="dropdown-item" href="careers.html">Careers</a></li>
+                            <li><a class="dropdown-item" href="team.html">Our Team</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+                            <li><a class="dropdown-item active" href="contact.html">Contact</a></li>
+                        </ul>
                     </li>
                 </ul>
                 
                 <div class="d-flex align-items-center ms-lg-3 mt-3 mt-lg-0">
                     <div class="dropdown">
-                        <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown">
+                        <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fas fa-globe me-1"></i> EN
                         </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">English</a>
-                            <a class="dropdown-item" href="#">Hindi</a>
-                            <a class="dropdown-item" href="#">Gujarati</a>
-                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                            <li><a class="dropdown-item" href="#">English</a></li>
+                            <li><a class="dropdown-item" href="#">Hindi</a></li>
+                            <li><a class="dropdown-item" href="#">Gujarati</a></li>
+                        </ul>
                     </div>
                     <a href="login.html" class="btn btn-outline-light ms-3">
                         <i class="fas fa-user me-2"></i> Login
@@ -1091,7 +1176,7 @@
                                 Near Naroda Bus Stand<br>
                                 Ahmedabad, Gujarat 382330
                             </p>
-                            <a href="https://goo.gl/maps/example" target="_blank" class="btn btn-outline-primary">
+                            <a href="https://goo.gl/maps/example" target="_blank" class="btn btn-outline-primary mt-auto">
                                 <i class="fas fa-directions me-2"></i> Get Directions
                             </a>
                         </div>
@@ -1110,7 +1195,7 @@
                             <p class="text-muted mb-4">
                                 <strong>Emergency:</strong> +91 98765 43212
                             </p>
-                            <a href="tel:+919876543210" class="btn btn-outline-primary">
+                            <a href="tel:+919876543210" class="btn btn-outline-primary mt-auto">
                                 <i class="fas fa-phone me-2"></i> Call Now
                             </a>
                         </div>
@@ -1129,7 +1214,7 @@
                             <p class="text-muted mb-4">
                                 <strong>Support:</strong> support@narodagroup.com
                             </p>
-                            <a href="mailto:info@narodagroup.com" class="btn btn-outline-primary">
+                            <a href="mailto:info@narodagroup.com" class="btn btn-outline-primary mt-auto">
                                 <i class="fas fa-envelope me-2"></i> Send Email
                             </a>
                         </div>
@@ -1211,12 +1296,12 @@
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                         <div class="team-contact-card">
                             <div class="team-contact-img">
-                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rajesh Patel">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rajesh Patel" loading="lazy">
                             </div>
                             <h4 class="mb-2">Rajesh Patel</h4>
                             <p class="text-gold mb-2">Senior Sales Manager</p>
                             <p class="text-muted mb-3">Specializes in commercial properties</p>
-                            <div class="d-flex flex-column gap-2">
+                            <div class="d-flex flex-column gap-2 w-100">
                                 <a href="tel:+919876543213" class="btn btn-outline-primary btn-sm">
                                     <i class="fas fa-phone me-2"></i> +91 98765 43213
                                 </a>
@@ -1230,12 +1315,12 @@
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
                         <div class="team-contact-card">
                             <div class="team-contact-img">
-                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya Sharma">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya Sharma" loading="lazy">
                             </div>
                             <h4 class="mb-2">Priya Sharma</h4>
                             <p class="text-gold mb-2">Residential Sales Head</p>
                             <p class="text-muted mb-3">Expert in residential properties</p>
-                            <div class="d-flex flex-column gap-2">
+                            <div class="d-flex flex-column gap-2 w-100">
                                 <a href="tel:+919876543214" class="btn btn-outline-primary btn-sm">
                                     <i class="fas fa-phone me-2"></i> +91 98765 43214
                                 </a>
@@ -1249,12 +1334,12 @@
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
                         <div class="team-contact-card">
                             <div class="team-contact-img">
-                                <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Amit Desai">
+                                <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Amit Desai" loading="lazy">
                             </div>
                             <h4 class="mb-2">Amit Desai</h4>
                             <p class="text-gold mb-2">Customer Relations Manager</p>
                             <p class="text-muted mb-3">Handles customer queries and support</p>
-                            <div class="d-flex flex-column gap-2">
+                            <div class="d-flex flex-column gap-2 w-100">
                                 <a href="tel:+919876543215" class="btn btn-outline-primary btn-sm">
                                     <i class="fas fa-phone me-2"></i> +91 98765 43215
                                 </a>
@@ -1290,11 +1375,11 @@
                         <div class="accordion" id="faqAccordion">
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
                                         How do I schedule a site visit?
                                     </button>
                                 </h2>
-                                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                     <div class="accordion-body">
                                         You can schedule a site visit by filling out our contact form, calling our sales team directly, or using the WhatsApp button on our website. Our representatives will coordinate with you to arrange a convenient time for the visit.
                                     </div>
@@ -1367,7 +1452,7 @@
                         Our team is ready to assist you with any questions about our projects, payment plans, or the buying process.
                     </p>
                     
-                    <div class="d-flex flex-column flex-sm-row justify-content-center gap-4">
+                    <div class="d-flex flex-wrap justify-content-center gap-4">
                         <a href="tel:+919876543210" class="btn btn-gold btn-lg">
                             <i class="fas fa-phone me-2"></i> Call Now
                         </a>
@@ -1421,12 +1506,12 @@
                 <div class="col-lg-2 col-md-6">
                     <h3 class="footer-title">Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
-                        <li><a href="projects.html"><i class="fas fa-chevron-right"></i> Projects</a></li>
-                        <li><a href="properties.html"><i class="fas fa-chevron-right"></i> Properties</a></li>
-                        <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
-                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        <li><a href="index.html"><i class="fas fa-chevron-right me-2"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right me-2"></i> About Us</a></li>
+                        <li><a href="projects.html"><i class="fas fa-chevron-right me-2"></i> Projects</a></li>
+                        <li><a href="properties.html"><i class="fas fa-chevron-right me-2"></i> Properties</a></li>
+                        <li><a href="gallery.html"><i class="fas fa-chevron-right me-2"></i> Gallery</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right me-2"></i> Contact</a></li>
                     </ul>
                 </div>
                 
@@ -1504,7 +1589,8 @@
             AOS.init({
                 duration: 1000,
                 once: false,
-                offset: 100
+                offset: 100,
+                easing: 'ease-in-out'
             });
             
             // Remove preloader
@@ -1539,6 +1625,8 @@
         
         function initContactForm() {
             const contactForm = document.getElementById('contactForm');
+            
+            if (!contactForm) return;
             
             contactForm.addEventListener('submit', function(e) {
                 e.preventDefault();
@@ -1595,8 +1683,14 @@
                 
                 // Clear previous validation
                 field.classList.remove('is-invalid');
-                const feedback = field.nextElementSibling;
-                if (feedback && feedback.classList.contains('invalid-feedback')) {
+                let feedback = field.nextElementSibling;
+                
+                // Find invalid-feedback element
+                if (!feedback || !feedback.classList.contains('invalid-feedback')) {
+                    feedback = field.parentNode.querySelector('.invalid-feedback');
+                }
+                
+                if (feedback) {
                     feedback.textContent = '';
                 }
                 
@@ -1620,7 +1714,8 @@
                 // Phone validation
                 else if (field.id === 'phone' && value) {
                     const phoneRegex = /^[0-9]{10}$/;
-                    if (!phoneRegex.test(value.replace(/[^0-9]/g, ''))) {
+                    const cleanedPhone = value.replace(/[^0-9]/g, '');
+                    if (!phoneRegex.test(cleanedPhone)) {
                         field.classList.add('is-invalid');
                         if (feedback) feedback.textContent = 'Please enter a valid 10-digit phone number.';
                         isValid = false;
@@ -1633,6 +1728,8 @@
         
         function initBackToTop() {
             const backToTop = document.querySelector('.back-to-top');
+            
+            if (!backToTop) return;
             
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 300) {
@@ -1650,6 +1747,8 @@
         function initNavbarScroll() {
             const navbar = document.querySelector('.navbar');
             
+            if (!navbar) return;
+            
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 50) {
                     navbar.classList.add('scrolled');
@@ -1662,11 +1761,28 @@
         function initToastSystem() {
             window.showToast = function(message, type = 'success') {
                 const toastContainer = document.querySelector('.toast-container');
+                if (!toastContainer) return;
+                
                 const toast = document.createElement('div');
                 toast.className = `toast toast-${type}`;
+                
+                let icon = 'fa-check-circle';
+                let iconColor = 'text-success';
+                
+                if (type === 'warning') {
+                    icon = 'fa-exclamation-triangle';
+                    iconColor = 'text-warning';
+                } else if (type === 'info') {
+                    icon = 'fa-info-circle';
+                    iconColor = 'text-info';
+                } else if (type === 'danger') {
+                    icon = 'fa-exclamation-circle';
+                    iconColor = 'text-danger';
+                }
+                
                 toast.innerHTML = `
                     <div class="d-flex align-items-center">
-                        <i class="fas ${type === 'success' ? 'fa-check-circle text-success' : 'fa-exclamation-circle text-danger'} me-3"></i>
+                        <i class="fas ${icon} ${iconColor} me-3"></i>
                         <div>
                             <p class="mb-0 fw-500">${message}</p>
                         </div>
@@ -1700,11 +1816,13 @@
         
         // Loading overlay functions
         window.showLoading = function() {
-            document.querySelector('.loading-overlay').classList.add('active');
+            const overlay = document.querySelector('.loading-overlay');
+            if (overlay) overlay.classList.add('active');
         };
         
         window.hideLoading = function() {
-            document.querySelector('.loading-overlay').classList.remove('active');
+            const overlay = document.querySelector('.loading-overlay');
+            if (overlay) overlay.classList.remove('active');
         };
     </script>
 </body>

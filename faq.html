@@ -85,6 +85,7 @@
         img {
             max-width: 100%;
             height: auto;
+            display: block;
         }
 
         .container {
@@ -97,6 +98,12 @@
             position: relative;
         }
 
+        @media (max-width: 992px) {
+            section {
+                padding: 80px 0;
+            }
+        }
+
         @media (max-width: 768px) {
             section {
                 padding: 60px 0;
@@ -105,11 +112,11 @@
 
         /* ===== Utility Classes ===== */
         .gold-text {
-            color: var(--secondary-color);
+            color: var(--secondary-color) !important;
         }
 
         .emerald-text {
-            color: var(--accent-color);
+            color: var(--accent-color) !important;
         }
 
         .section-title {
@@ -138,10 +145,15 @@
         .badge {
             font-weight: 500;
             letter-spacing: 0.5px;
+            font-size: 0.85rem;
         }
 
         .bg-gradient-secondary {
             background: var(--gradient-secondary) !important;
+        }
+
+        .text-primary {
+            color: var(--primary-color) !important;
         }
 
         /* ===== Preloader ===== */
@@ -297,6 +309,7 @@
             gap: 10px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            cursor: pointer;
         }
 
         .btn:before {
@@ -316,14 +329,14 @@
 
         .btn-gold {
             background: var(--gradient-secondary);
-            color: var(--primary-color);
+            color: var(--primary-color) !important;
             box-shadow: 0 10px 25px rgba(201, 169, 110, 0.3);
         }
 
         .btn-gold:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 35px rgba(201, 169, 110, 0.4);
-            color: var(--primary-color);
+            color: var(--primary-color) !important;
         }
 
         .btn-outline-light {
@@ -334,7 +347,7 @@
 
         .btn-outline-light:hover {
             background: white;
-            color: var(--primary-color);
+            color: var(--primary-color) !important;
             border-color: white;
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
@@ -342,26 +355,36 @@
 
         .btn-emerald {
             background: var(--gradient-accent);
-            color: white;
+            color: white !important;
             box-shadow: 0 10px 25px rgba(46, 139, 87, 0.3);
         }
 
         .btn-emerald:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 35px rgba(46, 139, 87, 0.4);
-            color: white;
+            color: white !important;
         }
 
         .btn-primary {
             background: var(--gradient-primary);
-            color: white;
+            color: white !important;
             box-shadow: 0 10px 25px rgba(10, 42, 74, 0.3);
         }
 
         .btn-primary:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 35px rgba(10, 42, 74, 0.4);
-            color: white;
+            color: white !important;
+        }
+
+        .btn-lg {
+            padding: 18px 40px;
+            font-size: 1.1rem;
+        }
+
+        .btn-sm {
+            padding: 10px 20px;
+            font-size: 0.9rem;
         }
 
         /* ===== Hero Section ===== */
@@ -383,6 +406,12 @@
             line-height: 1.1;
         }
 
+        @media (max-width: 1200px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+        }
+
         @media (max-width: 992px) {
             .hero-title {
                 font-size: 2.5rem;
@@ -395,12 +424,24 @@
             }
         }
 
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+        }
+
         .hero-subtitle {
             font-size: 1.25rem;
             margin-bottom: 2.5rem;
             opacity: 0.9;
             font-weight: 300;
             line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
         }
 
         /* ===== FAQ Hero ===== */
@@ -426,6 +467,7 @@
             border: 1px solid rgba(0, 0, 0, 0.05);
             position: relative;
             overflow: hidden;
+            display: block;
         }
 
         .category-card:before {
@@ -538,6 +580,28 @@
             margin-bottom: 0;
         }
 
+        @media (max-width: 768px) {
+            .accordion-button {
+                padding: 20px;
+                font-size: 1rem;
+            }
+            
+            .accordion-body {
+                padding: 0 20px 20px;
+            }
+            
+            .category-card {
+                padding: 25px 20px;
+            }
+            
+            .category-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 28px;
+                margin-bottom: 20px;
+            }
+        }
+
         .faq-category-header {
             margin-top: 50px;
             margin-bottom: 30px;
@@ -591,6 +655,19 @@
             font-size: 32px;
         }
 
+        @media (max-width: 768px) {
+            .help-card {
+                padding: 30px 20px;
+            }
+            
+            .help-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 28px;
+                margin-bottom: 20px;
+            }
+        }
+
         /* ===== Contact CTA ===== */
         .contact-cta-section {
             padding: 100px 0;
@@ -641,7 +718,7 @@
             width: 60px;
             height: 60px;
             background: var(--gradient-secondary);
-            color: var(--primary-color);
+            color: var(--primary-color) !important;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -665,6 +742,14 @@
             box-shadow: 0 15px 35px rgba(201, 169, 110, 0.4);
         }
 
+        @media (max-width: 768px) {
+            .back-to-top {
+                bottom: 100px;
+                width: 50px;
+                height: 50px;
+            }
+        }
+
         /* ===== WhatsApp Float ===== */
         .whatsapp-float {
             position: fixed;
@@ -673,7 +758,7 @@
             width: 60px;
             height: 60px;
             background: #25D366;
-            color: white;
+            color: white !important;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -688,6 +773,14 @@
         .whatsapp-float:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                bottom: 160px;
+                width: 50px;
+                height: 50px;
+            }
         }
 
         /* ===== Mobile Bottom Nav ===== */
@@ -710,17 +803,9 @@
                 display: flex;
             }
             
-            .back-to-top {
-                bottom: 80px;
-            }
-            
-            .accordion-button {
-                padding: 20px;
-                font-size: 1rem;
-            }
-            
-            .accordion-body {
-                padding: 0 20px 20px;
+            .hero-section {
+                padding-top: 80px;
+                min-height: 40vh;
             }
         }
 
@@ -784,6 +869,7 @@
             align-items: center;
             justify-content: center;
             transition: var(--transition);
+            color: white !important;
         }
         
         .social-link:hover {
@@ -818,6 +904,7 @@
             padding: 5px 10px;
             border-radius: 8px;
             transition: var(--transition);
+            text-decoration: none;
         }
         
         .mobile-nav-item.active {
@@ -908,6 +995,139 @@
             border-radius: 0 var(--border-radius) var(--border-radius) 0;
             margin: 20px 0;
         }
+
+        /* ===== Button Group Responsive ===== */
+        .btn-group-responsive {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        @media (max-width: 576px) {
+            .btn-group-responsive {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .btn-group-responsive .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .search-box .input-group {
+                flex-direction: column;
+                border-radius: var(--border-radius);
+            }
+            
+            .search-box input {
+                border-radius: var(--border-radius) var(--border-radius) 0 0 !important;
+                text-align: center;
+            }
+            
+            .search-box .btn {
+                border-radius: 0 0 var(--border-radius) var(--border-radius) !important;
+                width: 100%;
+            }
+        }
+
+        /* ===== FAQ Search Highlight ===== */
+        .search-highlight {
+            background-color: #fff3cd;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+
+        /* ===== Print Styles ===== */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            
+            .hero-section {
+                background: none !important;
+                color: black !important;
+                min-height: auto;
+            }
+            
+            .accordion-button:not(.collapsed) {
+                color: black !important;
+            }
+            
+            .accordion-collapse {
+                display: block !important;
+                height: auto !important;
+            }
+        }
+
+        /* ===== Accessibility Improvements ===== */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        
+        /* ===== Focus Styles for Accessibility ===== */
+        a:focus,
+        button:focus,
+        .btn:focus,
+        .accordion-button:focus {
+            outline: 2px solid var(--secondary-color);
+            outline-offset: 2px;
+        }
+
+        /* ===== Sticky Category Navigation ===== */
+        .category-navigation {
+            position: sticky;
+            top: 100px;
+            z-index: 10;
+            background: white;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+        }
+        
+        .category-navigation h5 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .category-nav-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .category-nav-list li {
+            margin-bottom: 10px;
+        }
+        
+        .category-nav-list a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 15px;
+            border-radius: 8px;
+            transition: var(--transition);
+            color: var(--gray-color);
+        }
+        
+        .category-nav-list a:hover,
+        .category-nav-list a.active {
+            background: rgba(201, 169, 110, 0.1);
+            color: var(--secondary-color);
+        }
+        
+        .category-nav-list i {
+            width: 20px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -921,18 +1141,18 @@
 
     <!-- Loading Overlay -->
     <div class="loading-overlay">
-        <div class="spinner-border" style="color: var(--secondary-color);" role="status">
-            <span class="visually-hidden">Loading...</span>
+        <div class="spinner-border text-gold" role="status">
+            <span class="sr-only">Loading...</span>
         </div>
     </div>
 
     <!-- Back to Top Button -->
-    <div class="back-to-top">
+    <button class="back-to-top" aria-label="Back to top">
         <i class="fas fa-chevron-up"></i>
-    </div>
+    </button>
 
     <!-- WhatsApp Float -->
-    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -943,11 +1163,11 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <div class="logo-icon">NG</div>
+                <div class="logo-icon" aria-hidden="true">NG</div>
                 <span>Naroda <span class="gold-text">Group</span></span>
             </a>
             
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             
@@ -960,59 +1180,59 @@
                         <a class="nav-link" href="about.html">About</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Projects
                         </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="projects-landmark.html">Naroda Landmark</a>
-                            <a class="dropdown-item" href="projects-irish.html">Naroda Irish</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="projects.html">All Projects</a>
-                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="projectsDropdown">
+                            <li><a class="dropdown-item" href="projects-landmark.html">Naroda Landmark</a></li>
+                            <li><a class="dropdown-item" href="projects-irish.html">Naroda Irish</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="projects.html">All Projects</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="propertiesDropdown" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="propertiesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Properties
                         </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="properties.html">Buy</a>
-                            <a class="dropdown-item" href="properties-rent.html">Rent</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="property-detail.html">Property Details</a>
-                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="propertiesDropdown">
+                            <li><a class="dropdown-item" href="properties.html">Buy</a></li>
+                            <li><a class="dropdown-item" href="properties-rent.html">Rent</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="property-detail.html">Property Details</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="gallery.html">Gallery</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             More
                         </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="blog.html">Blog</a>
-                            <a class="dropdown-item" href="news.html">News</a>
-                            <a class="dropdown-item" href="careers.html">Careers</a>
-                            <a class="dropdown-item" href="team.html">Our Team</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="nav-link active" href="faq.html">FAQ</a>
-                            <a class="dropdown-item" href="contact.html">Contact</a>
-                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="moreDropdown">
+                            <li><a class="dropdown-item" href="blog.html">Blog</a></li>
+                            <li><a class="dropdown-item" href="news.html">News</a></li>
+                            <li><a class="dropdown-item" href="careers.html">Careers</a></li>
+                            <li><a class="dropdown-item" href="team.html">Our Team</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item active" href="faq.html">FAQ</a></li>
+                            <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+                        </ul>
                     </li>
                 </ul>
                 
                 <div class="d-flex align-items-center ms-lg-3 mt-3 mt-lg-0">
                     <div class="dropdown">
-                        <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown">
-                            <i class="fas fa-globe me-1"></i> EN
+                        <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-globe me-1" aria-hidden="true"></i> EN
                         </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">English</a>
-                            <a class="dropdown-item" href="#">Hindi</a>
-                            <a class="dropdown-item" href="#">Gujarati</a>
-                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                            <li><a class="dropdown-item" href="#" lang="en">English</a></li>
+                            <li><a class="dropdown-item" href="#" lang="hi">Hindi</a></li>
+                            <li><a class="dropdown-item" href="#" lang="gu">Gujarati</a></li>
+                        </ul>
                     </div>
                     <a href="login.html" class="btn btn-outline-light ms-3">
-                        <i class="fas fa-user me-2"></i> Login
+                        <i class="fas fa-user me-2" aria-hidden="true"></i> Login
                     </a>
                 </div>
             </div>
@@ -1020,7 +1240,7 @@
     </nav>
 
     <!-- Mobile Bottom Navigation -->
-    <div class="mobile-bottom-nav">
+    <div class="mobile-bottom-nav no-print">
         <a href="index.html" class="mobile-nav-item">
             <i class="fas fa-home"></i>
             <span>Home</span>
@@ -1082,7 +1302,7 @@
                             <div class="input-group">
                                 <input type="text" class="form-control" id="faqSearch" placeholder="Search for questions or topics...">
                                 <button class="btn btn-gold" type="button" id="searchButton">
-                                    <i class="fas fa-search me-2"></i> Search
+                                    <i class="fas fa-search me-2" aria-hidden="true"></i> Search
                                 </button>
                             </div>
                         </div>
@@ -1109,7 +1329,7 @@
                     <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
                         <a href="#projects" class="category-card">
                             <div class="category-icon">
-                                <i class="fas fa-building"></i>
+                                <i class="fas fa-building" aria-hidden="true"></i>
                             </div>
                             <h4 class="mb-3">Projects</h4>
                             <p class="text-muted mb-0">
@@ -1122,7 +1342,7 @@
                     <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
                         <a href="#booking" class="category-card">
                             <div class="category-icon">
-                                <i class="fas fa-calendar-check"></i>
+                                <i class="fas fa-calendar-check" aria-hidden="true"></i>
                             </div>
                             <h4 class="mb-3">Booking Process</h4>
                             <p class="text-muted mb-0">
@@ -1135,7 +1355,7 @@
                     <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
                         <a href="#payments" class="category-card">
                             <div class="category-icon">
-                                <i class="fas fa-credit-card"></i>
+                                <i class="fas fa-credit-card" aria-hidden="true"></i>
                             </div>
                             <h4 class="mb-3">Payments & Finance</h4>
                             <p class="text-muted mb-0">
@@ -1148,7 +1368,7 @@
                     <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
                         <a href="#legal" class="category-card">
                             <div class="category-icon">
-                                <i class="fas fa-balance-scale"></i>
+                                <i class="fas fa-balance-scale" aria-hidden="true"></i>
                             </div>
                             <h4 class="mb-3">Legal & RERA</h4>
                             <p class="text-muted mb-0">
@@ -1165,7 +1385,21 @@
         <section class="faq-section" id="faqAccordion">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-10 mx-auto">
+                    <!-- Category Navigation (Desktop) -->
+                    <div class="col-lg-3 d-none d-lg-block" data-aos="fade-right">
+                        <div class="category-navigation">
+                            <h5>Categories</h5>
+                            <ul class="category-nav-list">
+                                <li><a href="#projects" class="active"><i class="fas fa-building"></i> Projects</a></li>
+                                <li><a href="#booking"><i class="fas fa-calendar-check"></i> Booking Process</a></li>
+                                <li><a href="#payments"><i class="fas fa-credit-card"></i> Payments & Finance</a></li>
+                                <li><a href="#legal"><i class="fas fa-balance-scale"></i> Legal & RERA</a></li>
+                                <li><a href="#quick-help"><i class="fas fa-question-circle"></i> Quick Help</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-9">
                         <!-- Projects Category -->
                         <div class="faq-category-header" id="projects" data-aos="fade-up">
                             <h3><i class="fas fa-building"></i> Projects Related Questions</h3>
@@ -1256,8 +1490,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                
-                                <!-- More project questions would follow similar structure -->
                             </div>
                         </div>
                         
@@ -1566,7 +1798,7 @@
         </section>
 
         <!-- Quick Help Section -->
-        <section class="quick-help-section">
+        <section class="quick-help-section" id="quick-help">
             <div class="container">
                 <div class="row mb-5">
                     <div class="col-lg-8 mx-auto text-center">
@@ -1583,14 +1815,14 @@
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                         <div class="help-card">
                             <div class="help-icon">
-                                <i class="fas fa-phone-alt"></i>
+                                <i class="fas fa-phone-alt" aria-hidden="true"></i>
                             </div>
                             <h4 class="mb-3">Call Us</h4>
                             <p class="text-muted mb-4">
                                 Speak directly with our customer support team for immediate assistance.
                             </p>
                             <a href="tel:+919876543210" class="btn btn-primary">
-                                <i class="fas fa-phone me-2"></i> +91 98765 43210
+                                <i class="fas fa-phone me-2" aria-hidden="true"></i> +91 98765 43210
                             </a>
                         </div>
                     </div>
@@ -1598,14 +1830,14 @@
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
                         <div class="help-card">
                             <div class="help-icon">
-                                <i class="fas fa-envelope"></i>
+                                <i class="fas fa-envelope" aria-hidden="true"></i>
                             </div>
                             <h4 class="mb-3">Email Us</h4>
                             <p class="text-muted mb-4">
                                 Send us your detailed query and we'll respond within 24 hours.
                             </p>
                             <a href="mailto:info@narodagroup.com" class="btn btn-gold">
-                                <i class="fas fa-envelope me-2"></i> info@narodagroup.com
+                                <i class="fas fa-envelope me-2" aria-hidden="true"></i> info@narodagroup.com
                             </a>
                         </div>
                     </div>
@@ -1613,14 +1845,14 @@
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
                         <div class="help-card">
                             <div class="help-icon">
-                                <i class="fas fa-comments"></i>
+                                <i class="fas fa-comments" aria-hidden="true"></i>
                             </div>
                             <h4 class="mb-3">Live Chat</h4>
                             <p class="text-muted mb-4">
                                 Chat with our representatives in real-time for quick answers.
                             </p>
                             <button class="btn btn-emerald" id="startChatBtn">
-                                <i class="fas fa-comment me-2"></i> Start Live Chat
+                                <i class="fas fa-comment me-2" aria-hidden="true"></i> Start Live Chat
                             </button>
                         </div>
                     </div>
@@ -1640,15 +1872,15 @@
                             Our team is ready to assist you with any questions not covered in our FAQ section.
                         </p>
                         
-                        <div class="d-flex flex-column flex-sm-row justify-content-center gap-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="btn-group-responsive" data-aos="fade-up" data-aos-delay="200">
                             <a href="contact.html" class="btn btn-gold btn-lg">
-                                <i class="fas fa-envelope me-2"></i> Contact Form
+                                <i class="fas fa-envelope me-2" aria-hidden="true"></i> Contact Form
                             </a>
                             <a href="contact.html#visit" class="btn btn-outline-light btn-lg">
-                                <i class="fas fa-map-marker-alt me-2"></i> Visit Our Office
+                                <i class="fas fa-map-marker-alt me-2" aria-hidden="true"></i> Visit Our Office
                             </a>
                             <a href="projects.html" class="btn btn-emerald btn-lg">
-                                <i class="fas fa-calendar me-2"></i> Schedule Site Visit
+                                <i class="fas fa-calendar me-2" aria-hidden="true"></i> Schedule Site Visit
                             </a>
                         </div>
                     </div>
@@ -1778,7 +2010,8 @@
             AOS.init({
                 duration: 1000,
                 once: false,
-                offset: 100
+                offset: 100,
+                disable: 'mobile'
             });
             
             // Remove preloader
@@ -1832,7 +2065,7 @@
                             <div>
                                 <p class="mb-0 fw-500">${message}</p>
                             </div>
-                            <button type="button" class="btn-close ms-auto" onclick="this.parentElement.parentElement.remove()"></button>
+                            <button type="button" class="btn-close ms-auto" onclick="this.parentElement.parentElement.remove()" aria-label="Close"></button>
                         </div>
                     `;
                     
@@ -1871,6 +2104,10 @@
                     
                     if (searchTerm === '') {
                         showToast('Please enter a search term', 'warning');
+                        // Show all items
+                        document.querySelectorAll('.accordion-item').forEach(item => {
+                            item.style.display = 'block';
+                        });
                         return;
                     }
                     
@@ -1878,7 +2115,17 @@
                     const accordionItems = document.querySelectorAll('.accordion-item');
                     let foundResults = false;
                     
-                    // Close all accordions first
+                    // First, show all items
+                    accordionItems.forEach(item => {
+                        item.style.display = 'block';
+                    });
+                    
+                    // Remove previous highlights
+                    document.querySelectorAll('.search-highlight').forEach(highlight => {
+                        highlight.outerHTML = highlight.innerHTML;
+                    });
+                    
+                    // Search through questions and answers
                     accordionItems.forEach(item => {
                         const button = item.querySelector('.accordion-button');
                         const collapse = item.querySelector('.accordion-collapse');
@@ -1892,8 +2139,8 @@
                                 item.style.display = 'block';
                                 
                                 // Open the accordion
-                                button.classList.remove('collapsed');
-                                collapse.classList.add('show');
+                                const bsCollapse = new bootstrap.Collapse(collapse, { toggle: false });
+                                bsCollapse.show();
                                 
                                 // Highlight the search term
                                 highlightText(button, searchTerm);
@@ -1901,7 +2148,9 @@
                                 
                                 // Scroll to the first found item
                                 if (!foundResults) {
-                                    item.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                    setTimeout(() => {
+                                        item.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                    }, 300);
                                     foundResults = true;
                                 }
                             } else {
@@ -1922,43 +2171,71 @@
                 }
                 
                 function highlightText(element, term) {
+                    if (!element) return;
+                    
                     const text = element.innerHTML;
-                    const regex = new RegExp(`(${term})`, 'gi');
-                    element.innerHTML = text.replace(regex, '<span class="bg-warning">$1</span>');
+                    const regex = new RegExp(`(${term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+                    element.innerHTML = text.replace(regex, '<span class="search-highlight">$1</span>');
                 }
                 
                 // Event listeners
-                searchButton.addEventListener('click', searchFAQs);
-                searchInput.addEventListener('keypress', function(e) {
-                    if (e.key === 'Enter') {
-                        searchFAQs();
-                    }
-                });
+                if (searchButton) {
+                    searchButton.addEventListener('click', searchFAQs);
+                }
+                if (searchInput) {
+                    searchInput.addEventListener('keypress', function(e) {
+                        if (e.key === 'Enter') {
+                            searchFAQs();
+                        }
+                    });
+                    
+                    // Clear search when input is cleared
+                    searchInput.addEventListener('input', function() {
+                        if (this.value === '') {
+                            document.querySelectorAll('.accordion-item').forEach(item => {
+                                item.style.display = 'block';
+                            });
+                            document.querySelectorAll('.search-highlight').forEach(highlight => {
+                                highlight.outerHTML = highlight.innerHTML;
+                            });
+                        }
+                    });
+                }
             }
             
             // Live chat simulation
             function initLiveChat() {
                 const chatBtn = document.getElementById('startChatBtn');
                 
-                chatBtn.addEventListener('click', function() {
-                    showToast('Live chat feature coming soon! For now, please call or email us.', 'info');
-                    
-                    // In a real implementation, this would open a chat widget
-                    // For now, we'll just show a toast notification
-                });
+                if (chatBtn) {
+                    chatBtn.addEventListener('click', function() {
+                        showToast('Live chat feature coming soon! For now, please call or email us.', 'info');
+                        
+                        // In a real implementation, this would open a chat widget
+                        // For now, we'll just show a toast notification
+                    });
+                }
             }
             
             // Smooth scroll for category links
             function initSmoothScroll() {
                 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                     anchor.addEventListener('click', function (e) {
+                        if (this.getAttribute('href') === '#') return;
+                        
                         e.preventDefault();
                         
                         const targetId = this.getAttribute('href');
-                        if (targetId === '#') return;
-                        
                         const targetElement = document.querySelector(targetId);
+                        
                         if (targetElement) {
+                            // Update active state in category navigation
+                            document.querySelectorAll('.category-nav-list a').forEach(link => {
+                                link.classList.remove('active');
+                            });
+                            this.classList.add('active');
+                            
+                            // Scroll to target
                             window.scrollTo({
                                 top: targetElement.offsetTop - 100,
                                 behavior: 'smooth'
@@ -1966,6 +2243,62 @@
                         }
                     });
                 });
+            }
+            
+            // Update active category on scroll
+            function initScrollSpy() {
+                const categoryHeaders = document.querySelectorAll('.faq-category-header');
+                const categoryLinks = document.querySelectorAll('.category-nav-list a');
+                
+                function updateActiveCategory() {
+                    let currentCategory = '';
+                    
+                    categoryHeaders.forEach(header => {
+                        const rect = header.getBoundingClientRect();
+                        if (rect.top <= 150 && rect.bottom >= 150) {
+                            currentCategory = header.id;
+                        }
+                    });
+                    
+                    categoryLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${currentCategory}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+                
+                window.addEventListener('scroll', updateActiveCategory);
+                updateActiveCategory(); // Initial call
+            }
+            
+            // Print FAQ functionality
+            function initPrintFAQ() {
+                const printBtn = document.getElementById('printFaqBtn');
+                if (printBtn) {
+                    printBtn.addEventListener('click', function() {
+                        window.print();
+                    });
+                }
+            }
+            
+            // Share FAQ functionality
+            function initShareFAQ() {
+                const shareBtn = document.getElementById('shareFaqBtn');
+                if (shareBtn && navigator.share) {
+                    shareBtn.style.display = 'block';
+                    shareBtn.addEventListener('click', async function() {
+                        try {
+                            await navigator.share({
+                                title: 'Naroda Group FAQ',
+                                text: 'Check out these frequently asked questions about Naroda Group properties',
+                                url: window.location.href
+                            });
+                        } catch (err) {
+                            console.log('Error sharing:', err);
+                        }
+                    });
+                }
             }
             
             // Initialize all functions
@@ -1976,11 +2309,26 @@
             initFAQSearch();
             initLiveChat();
             initSmoothScroll();
+            initScrollSpy();
+            initPrintFAQ();
+            initShareFAQ();
             
             // Show welcome message
             setTimeout(() => {
                 showToast('Browse our FAQ for quick answers to common questions!', 'success');
             }, 1500);
+            
+            // Add responsive class to body for mobile detection
+            function detectMobile() {
+                if (window.innerWidth <= 768) {
+                    document.body.classList.add('mobile');
+                } else {
+                    document.body.classList.remove('mobile');
+                }
+            }
+            
+            window.addEventListener('resize', detectMobile);
+            detectMobile();
         });
         
         // Loading overlay functions
@@ -1991,6 +2339,13 @@
         window.hideLoading = function() {
             document.querySelector('.loading-overlay').classList.remove('active');
         };
+        
+        // Handle image loading errors
+        document.addEventListener('error', function(e) {
+            if (e.target.tagName === 'IMG') {
+                console.warn('Image failed to load:', e.target.src);
+            }
+        }, true);
     </script>
 </body>
 </html>

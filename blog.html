@@ -85,6 +85,7 @@
         img {
             max-width: 100%;
             height: auto;
+            display: block;
         }
 
         .container {
@@ -431,6 +432,8 @@
             box-shadow: var(--shadow);
             transition: var(--transition);
             height: 100%;
+            display: flex;
+            flex-direction: column;
         }
 
         .blog-card:hover {
@@ -475,6 +478,9 @@
 
         .blog-content {
             padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .blog-meta {
@@ -483,23 +489,24 @@
             margin-bottom: 15px;
             color: var(--gray-color);
             font-size: 0.9rem;
+            flex-wrap: wrap;
+            gap: 20px;
         }
 
         .blog-meta-item {
             display: flex;
             align-items: center;
-            margin-right: 20px;
+            gap: 5px;
         }
 
         .blog-meta-item i {
-            margin-right: 6px;
             color: var(--secondary-color);
         }
 
         .blog-author {
             display: flex;
             align-items: center;
-            margin-top: 20px;
+            margin-top: auto;
             padding-top: 20px;
             border-top: 1px solid var(--light-gray);
         }
@@ -510,6 +517,7 @@
             border-radius: 50%;
             overflow: hidden;
             margin-right: 15px;
+            flex-shrink: 0;
         }
 
         .blog-author-img img {
@@ -522,6 +530,13 @@
         .sidebar {
             position: sticky;
             top: 100px;
+        }
+
+        @media (max-width: 992px) {
+            .sidebar {
+                position: static;
+                margin-top: 50px;
+            }
         }
 
         .sidebar-widget {
@@ -576,6 +591,7 @@
             background: none;
             border: none;
             color: var(--gray-color);
+            cursor: pointer;
         }
 
         .categories-list {
@@ -673,6 +689,7 @@
             font-size: 0.85rem;
             color: var(--dark-color);
             transition: var(--transition);
+            display: inline-block;
         }
 
         .tag:hover {
@@ -898,6 +915,10 @@
             .back-to-top {
                 bottom: 80px;
             }
+            
+            .whatsapp-float {
+                bottom: 150px;
+            }
         }
 
         /* ===== Toast Notifications ===== */
@@ -1046,7 +1067,7 @@
             padding: 4px 12px;
             border-radius: 20px;
             font-size: 0.85rem;
-            margin-left: auto;
+            gap: 5px;
         }
 
         /* ===== Share Widget ===== */
@@ -1159,6 +1180,44 @@
             color: var(--light-gray);
             margin-bottom: 20px;
         }
+
+        /* ===== Responsive Adjustments ===== */
+        @media (max-width: 576px) {
+            .hero-section {
+                min-height: 50vh;
+            }
+            
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .blog-filter {
+                gap: 8px;
+            }
+            
+            .filter-btn {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+            
+            .blog-content {
+                padding: 20px;
+            }
+            
+            .blog-author {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+            
+            .blog-author .btn {
+                width: 100%;
+                margin-top: 10px;
+            }
+            
+            .sidebar-widget {
+                padding: 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1198,7 +1257,7 @@
                 <span>Naroda <span class="gold-text">Group</span></span>
             </a>
             
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             
@@ -1211,56 +1270,56 @@
                         <a class="nav-link" href="about.html">About</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Projects
                         </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="projects-landmark.html">Naroda Landmark</a>
-                            <a class="dropdown-item" href="projects-irish.html">Naroda Irish</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="projects.html">All Projects</a>
-                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="projectsDropdown">
+                            <li><a class="dropdown-item" href="projects-landmark.html">Naroda Landmark</a></li>
+                            <li><a class="dropdown-item" href="projects-irish.html">Naroda Irish</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="projects.html">All Projects</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="propertiesDropdown" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="propertiesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Properties
                         </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="properties.html">Buy</a>
-                            <a class="dropdown-item" href="properties-rent.html">Rent</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="property-detail.html">Property Details</a>
-                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="propertiesDropdown">
+                            <li><a class="dropdown-item" href="properties.html">Buy</a></li>
+                            <li><a class="dropdown-item" href="properties-rent.html">Rent</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="property-detail.html">Property Details</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="gallery.html">Gallery</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" id="moreDropdown" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="moreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             More
                         </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item active" href="blog.html">Blog</a>
-                            <a class="dropdown-item" href="news.html">News</a>
-                            <a class="dropdown-item" href="careers.html">Careers</a>
-                            <a class="dropdown-item" href="team.html">Our Team</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="faq.html">FAQ</a>
-                            <a class="dropdown-item" href="contact.html">Contact</a>
-                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="moreDropdown">
+                            <li><a class="dropdown-item active" href="blog.html">Blog</a></li>
+                            <li><a class="dropdown-item" href="news.html">News</a></li>
+                            <li><a class="dropdown-item" href="careers.html">Careers</a></li>
+                            <li><a class="dropdown-item" href="team.html">Our Team</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+                            <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+                        </ul>
                     </li>
                 </ul>
                 
                 <div class="d-flex align-items-center ms-lg-3 mt-3 mt-lg-0">
                     <div class="dropdown">
-                        <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown">
+                        <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fas fa-globe me-1"></i> EN
                         </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">English</a>
-                            <a class="dropdown-item" href="#">Hindi</a>
-                            <a class="dropdown-item" href="#">Gujarati</a>
-                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                            <li><a class="dropdown-item" href="#">English</a></li>
+                            <li><a class="dropdown-item" href="#">Hindi</a></li>
+                            <li><a class="dropdown-item" href="#">Gujarati</a></li>
+                        </ul>
                     </div>
                     <a href="login.html" class="btn btn-outline-light ms-3">
                         <i class="fas fa-user me-2"></i> Login
@@ -1353,9 +1412,18 @@
                                         Analysis of upcoming trends and investment opportunities in Ahmedabad's real estate market. 
                                         Discover what experts are predicting for the coming year.
                                     </p>
-                                    <a href="blog-detail.html" class="btn btn-gold">
-                                        Read More <i class="fas fa-arrow-right ms-2"></i>
-                                    </a>
+                                    <div class="blog-author">
+                                        <div class="blog-author-img">
+                                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rajesh Mehta">
+                                        </div>
+                                        <div>
+                                            <h6 class="mb-1">Rajesh Mehta</h6>
+                                            <small class="text-muted">Market Analyst</small>
+                                        </div>
+                                        <a href="blog-detail.html?id=featured" class="btn btn-gold ms-auto">
+                                            Read More
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1430,8 +1498,8 @@
                             <h4 class="widget-title">Subscribe</h4>
                             <p class="mb-4">Get the latest real estate insights delivered to your inbox</p>
                             <div class="newsletter-form">
-                                <input type="email" placeholder="Your email address">
-                                <button class="btn btn-gold w-100">Subscribe</button>
+                                <input type="email" id="newsletterEmail" placeholder="Your email address">
+                                <button class="btn btn-gold w-100" id="newsletterBtn">Subscribe</button>
                             </div>
                         </div>
                     </div>
@@ -1498,12 +1566,12 @@
                 <div class="col-lg-2 col-md-6">
                     <h3 class="footer-title">Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
-                        <li><a href="projects.html"><i class="fas fa-chevron-right"></i> Projects</a></li>
-                        <li><a href="properties.html"><i class="fas fa-chevron-right"></i> Properties</a></li>
-                        <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
-                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        <li><a href="index.html"><i class="fas fa-chevron-right me-2"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right me-2"></i> About Us</a></li>
+                        <li><a href="projects.html"><i class="fas fa-chevron-right me-2"></i> Projects</a></li>
+                        <li><a href="properties.html"><i class="fas fa-chevron-right me-2"></i> Properties</a></li>
+                        <li><a href="gallery.html"><i class="fas fa-chevron-right me-2"></i> Gallery</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right me-2"></i> Contact</a></li>
                     </ul>
                 </div>
                 
@@ -1683,7 +1751,8 @@
             AOS.init({
                 duration: 1000,
                 once: false,
-                offset: 100
+                offset: 100,
+                easing: 'ease-in-out'
             });
             
             // Remove preloader
@@ -1712,6 +1781,9 @@
             
             // Initialize search functionality
             initSearch();
+            
+            // Initialize newsletter subscription
+            initNewsletter();
             
             // Show welcome message
             setTimeout(() => {
@@ -1839,8 +1911,8 @@
                         
                         <div class="blog-author">
                             <div class="blog-author-img">
-                                <img src="https://randomuser.me/api/portraits/${post.author === 'Priya Shah' ? 'women' : 'men'}/${Math.floor(Math.random() * 70)}.jpg" 
-                                     alt="${post.author}">
+                                <img src="https://randomuser.me/api/portraits/${post.author === 'Priya Shah' || post.author === 'Priya Sharma' || post.author === 'Neha Gupta' ? 'women' : 'men'}/${Math.floor(Math.random() * 70)}.jpg" 
+                                     alt="${post.author}" loading="lazy">
                             </div>
                             <div>
                                 <h6 class="mb-1">${post.author}</h6>
@@ -1885,7 +1957,7 @@
                     
                     li.innerHTML = `
                         <div class="recent-post-img">
-                            <img src="${post.image}" alt="${post.title}">
+                            <img src="${post.image}" alt="${post.title}" loading="lazy">
                         </div>
                         <div class="recent-post-content">
                             <h6><a href="blog-detail.html?id=${post.id}">${post.title}</a></h6>
@@ -1979,9 +2051,6 @@
                 nextLi.appendChild(nextA);
                 pagination.appendChild(nextLi);
             }
-            
-            // Initialize pagination
-            updatePagination();
         }
         
         function initSearch() {
@@ -2004,6 +2073,10 @@
                     return;
                 }
                 
+                const blogGrid = document.getElementById('blogGrid');
+                const noResults = document.getElementById('noResults');
+                const pagination = document.getElementById('pagination');
+                
                 // Filter blog posts
                 const filteredPosts = blogData.filter(post => 
                     post.title.toLowerCase().includes(query.toLowerCase()) ||
@@ -2012,9 +2085,6 @@
                 );
                 
                 // Update UI
-                const blogGrid = document.getElementById('blogGrid');
-                const noResults = document.getElementById('noResults');
-                
                 blogGrid.innerHTML = '';
                 
                 if (filteredPosts.length === 0) {
@@ -2033,27 +2103,37 @@
                 }
                 
                 // Hide pagination during search
-                document.querySelector('.pagination').style.display = 'none';
+                pagination.style.display = 'none';
                 
-                // Reset button to show all
+                // Remove existing reset button if any
+                const existingResetBtn = document.querySelector('.search-reset-btn');
+                if (existingResetBtn) {
+                    existingResetBtn.remove();
+                }
+                
+                // Add reset button to show all
                 const resetBtn = document.createElement('button');
-                resetBtn.className = 'btn btn-outline-primary mt-4';
+                resetBtn.className = 'btn btn-outline-primary mt-4 search-reset-btn';
                 resetBtn.innerHTML = '<i class="fas fa-redo me-2"></i> Show All Articles';
                 resetBtn.addEventListener('click', function() {
                     blogGrid.innerHTML = '';
-                    document.querySelector('.pagination').style.display = 'flex';
+                    pagination.style.display = 'flex';
                     searchInput.value = '';
                     
                     // Re-initialize blog
-                    initBlog();
+                    const filterButtons = document.querySelectorAll('.filter-btn');
+                    filterButtons.forEach(b => b.classList.remove('active'));
+                    filterButtons[0].classList.add('active');
+                    
+                    currentFilter = 'all';
+                    currentPage = 1;
+                    loadBlogPosts();
+                    updatePagination();
                     
                     this.remove();
                 });
                 
-                if (!document.querySelector('.search-reset-btn')) {
-                    resetBtn.className += ' search-reset-btn';
-                    blogGrid.parentNode.insertBefore(resetBtn, blogGrid.nextSibling);
-                }
+                blogGrid.parentNode.insertBefore(resetBtn, blogGrid.nextSibling);
             }
             
             function createBlogCard(post) {
@@ -2064,7 +2144,7 @@
                 
                 card.innerHTML = `
                     <div class="blog-image">
-                        <img src="${post.image}" alt="${post.title}">
+                        <img src="${post.image}" alt="${post.title}" loading="lazy">
                         <span class="blog-category">${categoryName}</span>
                     </div>
                     <div class="blog-content">
@@ -2081,14 +2161,57 @@
                         </div>
                         <h3 class="mb-3">${post.title}</h3>
                         <p class="text-muted mb-4">${post.excerpt}</p>
-                        <a href="blog-detail.html?id=${post.id}" class="btn btn-gold">
-                            Read More <i class="fas fa-arrow-right ms-2"></i>
-                        </a>
+                        <div class="blog-author">
+                            <div class="blog-author-img">
+                                <img src="https://randomuser.me/api/portraits/${post.author === 'Priya Shah' || post.author === 'Priya Sharma' || post.author === 'Neha Gupta' ? 'women' : 'men'}/${Math.floor(Math.random() * 70)}.jpg" 
+                                     alt="${post.author}" loading="lazy">
+                            </div>
+                            <div>
+                                <h6 class="mb-1">${post.author}</h6>
+                                <small class="text-muted">Real Estate Expert</small>
+                            </div>
+                            <a href="blog-detail.html?id=${post.id}" class="btn btn-gold ms-auto">
+                                Read More
+                            </a>
+                        </div>
                     </div>
                 `;
                 
                 return card;
             }
+        }
+        
+        function initNewsletter() {
+            const newsletterBtn = document.getElementById('newsletterBtn');
+            const newsletterEmail = document.getElementById('newsletterEmail');
+            
+            newsletterBtn.addEventListener('click', function() {
+                const email = newsletterEmail.value.trim();
+                
+                if (!email) {
+                    showToast('Please enter your email address', 'warning');
+                    return;
+                }
+                
+                if (!isValidEmail(email)) {
+                    showToast('Please enter a valid email address', 'warning');
+                    return;
+                }
+                
+                // Simulate subscription
+                showLoading();
+                
+                setTimeout(() => {
+                    hideLoading();
+                    showToast('Successfully subscribed to our newsletter!', 'success');
+                    newsletterEmail.value = '';
+                }, 1500);
+            });
+        }
+        
+        function isValidEmail(email) {
+            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return regex.test(email);
         }
         
         function initBackToTop() {
@@ -2124,9 +2247,24 @@
                 const toastContainer = document.querySelector('.toast-container');
                 const toast = document.createElement('div');
                 toast.className = `toast toast-${type}`;
+                
+                let icon = 'fa-check-circle';
+                let iconColor = 'text-success';
+                
+                if (type === 'warning') {
+                    icon = 'fa-exclamation-triangle';
+                    iconColor = 'text-warning';
+                } else if (type === 'info') {
+                    icon = 'fa-info-circle';
+                    iconColor = 'text-info';
+                } else if (type === 'danger') {
+                    icon = 'fa-exclamation-circle';
+                    iconColor = 'text-danger';
+                }
+                
                 toast.innerHTML = `
                     <div class="d-flex align-items-center">
-                        <i class="fas ${type === 'success' ? 'fa-check-circle text-success' : 'fa-exclamation-circle text-danger'} me-3"></i>
+                        <i class="fas ${icon} ${iconColor} me-3"></i>
                         <div>
                             <p class="mb-0 fw-500">${message}</p>
                         </div>
@@ -2156,37 +2294,6 @@
                     item.classList.remove('active');
                 }
             });
-        }
-        
-        // Newsletter subscription
-        const newsletterBtn = document.querySelector('.newsletter-widget .btn');
-        newsletterBtn.addEventListener('click', function() {
-            const emailInput = document.querySelector('.newsletter-form input');
-            const email = emailInput.value.trim();
-            
-            if (!email) {
-                showToast('Please enter your email address', 'warning');
-                return;
-            }
-            
-            if (!isValidEmail(email)) {
-                showToast('Please enter a valid email address', 'warning');
-                return;
-            }
-            
-            // Simulate subscription
-            showLoading();
-            
-            setTimeout(() => {
-                hideLoading();
-                showToast('Successfully subscribed to our newsletter!', 'success');
-                emailInput.value = '';
-            }, 1500);
-        });
-        
-        function isValidEmail(email) {
-            const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return regex.test(email);
         }
         
         // Loading overlay functions

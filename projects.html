@@ -89,6 +89,7 @@
         img {
             max-width: 100%;
             height: auto;
+            display: block;
         }
 
         .container {
@@ -296,6 +297,7 @@
             gap: 10px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            cursor: pointer;
         }
 
         .btn:before {
@@ -367,6 +369,13 @@
             align-items: center;
             position: relative;
             overflow: hidden;
+            margin-top: 76px;
+        }
+
+        @media (max-width: 991.98px) {
+            .hero-section {
+                margin-top: 72px;
+            }
         }
 
         .hero-title {
@@ -408,6 +417,12 @@
             box-shadow: var(--shadow);
         }
 
+        @media (max-width: 768px) {
+            .filter-card {
+                padding: 25px;
+            }
+        }
+
         .filter-header {
             display: flex;
             justify-content: space-between;
@@ -423,6 +438,12 @@
             min-width: 300px;
         }
 
+        @media (max-width: 768px) {
+            .filter-search {
+                min-width: 100%;
+            }
+        }
+
         .filter-search input {
             width: 100%;
             padding: 15px 20px 15px 50px;
@@ -430,6 +451,7 @@
             border-radius: 50px;
             font-size: 1rem;
             transition: var(--transition);
+            font-family: 'Inter', sans-serif;
         }
 
         .filter-search input:focus {
@@ -453,6 +475,12 @@
             margin-bottom: 30px;
         }
 
+        @media (max-width: 768px) {
+            .filter-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         .filter-group label {
             display: block;
             font-weight: 600;
@@ -466,6 +494,13 @@
             align-items: center;
             flex-wrap: wrap;
             gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .filter-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
         }
 
         .filter-tags {
@@ -498,6 +533,12 @@
             padding: 60px 0 100px;
         }
 
+        @media (max-width: 768px) {
+            .projects-grid-section {
+                padding: 40px 0 60px;
+            }
+        }
+
         .projects-header {
             display: flex;
             justify-content: space-between;
@@ -507,10 +548,25 @@
             gap: 20px;
         }
 
+        @media (max-width: 768px) {
+            .projects-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
         .sort-options {
             display: flex;
             align-items: center;
             gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .sort-options {
+                width: 100%;
+                justify-content: space-between;
+            }
         }
 
         .view-toggle {
@@ -539,6 +595,7 @@
             border-color: var(--secondary-color);
         }
 
+        /* Grid and List Views */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -546,9 +603,20 @@
             margin-bottom: 50px;
         }
 
+        .projects-list {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
         @media (max-width: 768px) {
             .projects-grid {
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .projects-list {
                 gap: 20px;
             }
         }
@@ -560,11 +628,40 @@
             box-shadow: var(--shadow);
             transition: var(--transition);
             position: relative;
+            height: 100%;
         }
 
         .project-card:hover {
             transform: translateY(-15px);
             box-shadow: var(--shadow-hover);
+        }
+
+        /* List view specific styles */
+        .projects-list .project-card {
+            display: flex;
+            flex-direction: row;
+        }
+
+        @media (max-width: 992px) {
+            .projects-list .project-card {
+                flex-direction: column;
+            }
+        }
+
+        .projects-list .project-image {
+            flex: 0 0 300px;
+            height: auto;
+        }
+
+        @media (max-width: 992px) {
+            .projects-list .project-image {
+                flex: 0 0 250px;
+            }
+        }
+
+        .projects-list .project-content {
+            flex: 1;
+            padding: 30px;
         }
 
         .project-card.featured {
@@ -585,10 +682,20 @@
             z-index: 2;
         }
 
+        @media (max-width: 768px) {
+            .project-card.featured:before {
+                top: 15px;
+                right: 15px;
+                font-size: 11px;
+                padding: 6px 12px;
+            }
+        }
+
         .project-image {
             height: 250px;
             overflow: hidden;
             position: relative;
+            background: var(--light-gray);
         }
 
         .project-image img {
@@ -625,13 +732,13 @@
             position: absolute;
             top: 20px;
             left: 20px;
-            background: var(--gradient-accent);
             color: white;
             padding: 8px 16px;
             border-radius: 30px;
             font-size: 12px;
             font-weight: 600;
             z-index: 2;
+            border: none;
         }
 
         .project-status.completed {
@@ -648,8 +755,23 @@
             color: white;
         }
 
+        @media (max-width: 768px) {
+            .project-status {
+                top: 15px;
+                left: 15px;
+                font-size: 11px;
+                padding: 6px 12px;
+            }
+        }
+
         .project-content {
             padding: 25px;
+        }
+
+        @media (max-width: 768px) {
+            .project-content {
+                padding: 20px;
+            }
         }
 
         .project-meta {
@@ -657,6 +779,8 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
         .project-type {
@@ -667,6 +791,7 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
+            border: none;
         }
 
         .project-type.commercial {
@@ -679,10 +804,21 @@
             color: var(--accent-color);
         }
 
+        .project-type.mixed {
+            background: rgba(108, 117, 125, 0.1);
+            color: var(--gray-color);
+        }
+
         .project-price {
             font-size: 1.5rem;
             font-weight: 900;
             color: var(--secondary-color);
+        }
+
+        @media (max-width: 768px) {
+            .project-price {
+                font-size: 1.3rem;
+            }
         }
 
         .project-features {
@@ -692,10 +828,21 @@
             border-top: 1px solid var(--light-gray);
             border-bottom: 1px solid var(--light-gray);
             margin: 20px 0;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .project-features {
+                padding: 15px 0;
+                margin: 15px 0;
+            }
         }
 
         .project-feature {
             text-align: center;
+            flex: 1;
+            min-width: 80px;
         }
 
         .project-feature i {
@@ -714,6 +861,18 @@
             flex: 1;
             padding: 10px 20px;
             font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 768px) {
+            .project-actions {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .project-actions .btn {
+                width: 100%;
+            }
         }
 
         /* ===== Comparison Section ===== */
@@ -722,11 +881,18 @@
             background: #f9fafb;
         }
 
+        @media (max-width: 768px) {
+            .comparison-section {
+                padding: 60px 0;
+            }
+        }
+
         .comparison-table {
             background: white;
             border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--shadow);
+            overflow-x: auto;
         }
 
         .comparison-header {
@@ -735,6 +901,7 @@
             background: var(--gradient-primary);
             color: white;
             padding: 20px;
+            min-width: 800px;
         }
 
         .comparison-row {
@@ -743,6 +910,7 @@
             padding: 20px;
             border-bottom: 1px solid var(--light-gray);
             transition: var(--transition);
+            min-width: 800px;
         }
 
         .comparison-row:hover {
@@ -771,6 +939,12 @@
             background: white;
         }
 
+        @media (max-width: 768px) {
+            .timeline-section {
+                padding: 60px 0;
+            }
+        }
+
         .timeline {
             position: relative;
             padding: 40px 0;
@@ -787,6 +961,12 @@
             transform: translateX(-50%);
         }
 
+        @media (max-width: 768px) {
+            .timeline:before {
+                left: 30px;
+            }
+        }
+
         .timeline-item {
             position: relative;
             margin-bottom: 50px;
@@ -801,8 +981,22 @@
             width: calc(50% - 40px);
         }
 
+        @media (max-width: 768px) {
+            .timeline-content {
+                width: calc(100% - 70px);
+                margin-left: 70px !important;
+                padding: 20px;
+            }
+        }
+
         .timeline-item:nth-child(odd) .timeline-content {
             margin-left: auto;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-item:nth-child(odd) .timeline-content {
+                margin-left: 70px !important;
+            }
         }
 
         .timeline-item:nth-child(even) .timeline-content {
@@ -820,6 +1014,14 @@
             box-shadow: 0 0 0 4px var(--secondary-color);
         }
 
+        @media (max-width: 768px) {
+            .timeline-dot {
+                left: 20px !important;
+                right: auto !important;
+                top: 20px;
+            }
+        }
+
         .timeline-item:nth-child(odd) .timeline-dot {
             left: -50px;
         }
@@ -835,6 +1037,12 @@
             color: white;
         }
 
+        @media (max-width: 768px) {
+            .stats-section {
+                padding: 60px 0;
+            }
+        }
+
         .stat-card {
             text-align: center;
             padding: 40px 20px;
@@ -843,6 +1051,13 @@
             border-radius: var(--border-radius);
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: var(--transition);
+            height: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .stat-card {
+                padding: 30px 15px;
+            }
         }
 
         .stat-card:hover {
@@ -860,11 +1075,23 @@
             background-clip: text;
         }
 
+        @media (max-width: 768px) {
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+
         /* ===== CTA Section ===== */
         .cta-section {
             padding: 100px 0;
             background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
             color: white;
+        }
+
+        @media (max-width: 768px) {
+            .cta-section {
+                padding: 60px 0;
+            }
         }
 
         .cta-card {
@@ -876,11 +1103,23 @@
             text-align: center;
         }
 
+        @media (max-width: 768px) {
+            .cta-card {
+                padding: 40px 20px;
+            }
+        }
+
         /* ===== Footer ===== */
         .footer {
             background: var(--primary-dark);
             color: #b0b7c3;
             padding-top: 80px;
+        }
+
+        @media (max-width: 768px) {
+            .footer {
+                padding-top: 60px;
+            }
         }
 
         .footer-title {
@@ -909,6 +1148,13 @@
             text-align: center;
         }
 
+        @media (max-width: 768px) {
+            .copyright {
+                margin-top: 40px;
+                padding: 20px 0;
+            }
+        }
+
         /* ===== Back to Top ===== */
         .back-to-top {
             position: fixed;
@@ -929,6 +1175,15 @@
             transition: var(--transition);
             box-shadow: 0 10px 30px rgba(201, 169, 110, 0.3);
             border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .back-to-top {
+                width: 50px;
+                height: 50px;
+                bottom: 80px;
+                right: 20px;
+            }
         }
 
         .back-to-top.active {
@@ -961,6 +1216,15 @@
             text-decoration: none;
         }
 
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 140px;
+                right: 20px;
+            }
+        }
+
         .whatsapp-float:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
@@ -985,29 +1249,6 @@
             .mobile-bottom-nav {
                 display: flex;
             }
-            
-            .back-to-top {
-                bottom: 80px;
-            }
-            
-            .whatsapp-float {
-                bottom: 140px;
-            }
-            
-            .timeline:before {
-                left: 30px;
-            }
-            
-            .timeline-content {
-                width: calc(100% - 70px);
-                margin-left: 70px !important;
-                margin-right: 0 !important;
-            }
-            
-            .timeline-dot {
-                left: 20px !important;
-                right: auto !important;
-            }
         }
 
         /* ===== Toast Notifications ===== */
@@ -1016,6 +1257,14 @@
             top: 100px;
             right: 20px;
             z-index: 9999;
+        }
+
+        @media (max-width: 768px) {
+            .toast-container {
+                top: 80px;
+                right: 10px;
+                left: 10px;
+            }
         }
 
         .toast {
@@ -1028,6 +1277,13 @@
             opacity: 0;
             transition: transform 0.3s ease, opacity 0.3s ease;
             max-width: 350px;
+        }
+
+        @media (max-width: 768px) {
+            .toast {
+                max-width: 100%;
+                padding: 15px;
+            }
         }
 
         .toast.show {
@@ -1066,8 +1322,20 @@
             padding: 30px 30px 0;
         }
 
+        @media (max-width: 768px) {
+            .project-modal .modal-header {
+                padding: 20px 20px 0;
+            }
+        }
+
         .project-modal .modal-body {
             padding: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .project-modal .modal-body {
+                padding: 20px;
+            }
         }
 
         /* ===== Progress Bar ===== */
@@ -1079,6 +1347,8 @@
             display: flex;
             justify-content: space-between;
             margin-bottom: 8px;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
         .progress-bar {
@@ -1140,6 +1410,9 @@
         .footer-links a {
             color: #b0b7c3;
             transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
         
         .footer-links a:hover {
@@ -1155,6 +1428,7 @@
             padding: 5px 10px;
             border-radius: 8px;
             transition: var(--transition);
+            text-decoration: none;
         }
         
         .mobile-nav-item.active {
@@ -1179,6 +1453,7 @@
             background: rgba(255, 255, 255, 0.05);
             border-radius: var(--border-radius);
             transition: var(--transition);
+            text-decoration: none;
         }
         
         .project-mini-card:hover {
@@ -1219,6 +1494,12 @@
         /* ===== Comparison Modal ===== */
         .comparison-modal .modal-dialog {
             max-width: 1200px;
+        }
+
+        @media (max-width: 1200px) {
+            .comparison-modal .modal-dialog {
+                max-width: 95%;
+            }
         }
 
         /* ===== Pagination ===== */
@@ -1262,6 +1543,125 @@
         .quick-view-modal .modal-dialog {
             max-width: 800px;
         }
+
+        /* ===== Responsive Navbar ===== */
+        .navbar-collapse {
+            background: rgba(10, 42, 74, 0.98);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            margin-top: 15px;
+        }
+
+        @media (min-width: 992px) {
+            .navbar-collapse {
+                background: transparent;
+                padding: 0;
+                margin-top: 0;
+            }
+        }
+
+        /* ===== Image Loading ===== */
+        .image-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #f0f0f0 25%, #e0e0e0 25%, #e0e0e0 50%, #f0f0f0 50%, #f0f0f0 75%, #e0e0e0 75%, #e0e0e0);
+            background-size: 100px 100px;
+            animation: loading 1s infinite linear;
+            border-radius: var(--border-radius);
+        }
+
+        @keyframes loading {
+            0% { background-position: 0 0; }
+            100% { background-position: 100px 0; }
+        }
+
+        /* ===== Select2 Customization ===== */
+        .select2-container--default .select2-selection--single {
+            border: 2px solid var(--light-gray);
+            border-radius: 8px;
+            height: 50px;
+            padding: 8px 12px;
+        }
+
+        .select2-container--default .select2-selection--single .select2-selection__rendered {
+            line-height: 34px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .select2-container--default .select2-selection--single .select2-selection__arrow {
+            height: 48px;
+        }
+
+        .select2-container--default.select2-container--open .select2-selection--single {
+            border-color: var(--secondary-color);
+        }
+
+        /* ===== Custom Scrollbar ===== */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--light-gray);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--secondary-color);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--secondary-dark);
+        }
+
+        /* ===== Touch Improvements ===== */
+        @media (hover: none) and (pointer: coarse) {
+            .project-card:hover {
+                transform: none;
+            }
+            
+            .btn:hover:before {
+                left: -100%;
+            }
+            
+            .project-card-3d:hover {
+                transform: none;
+            }
+        }
+
+        /* ===== Print Styles ===== */
+        @media print {
+            .navbar,
+            .mobile-bottom-nav,
+            .back-to-top,
+            .whatsapp-float,
+            .footer {
+                display: none !important;
+            }
+            
+            body {
+                background: white;
+                color: black;
+            }
+            
+            .hero-section {
+                background: white !important;
+                color: black;
+                min-height: auto;
+                margin-top: 0;
+            }
+            
+            section {
+                padding: 30px 0;
+                page-break-inside: avoid;
+            }
+            
+            .project-card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1275,18 +1675,18 @@
 
     <!-- Loading Overlay -->
     <div class="loading-overlay">
-        <div class="spinner-border" style="color: var(--secondary-color);" role="status">
+        <div class="spinner-border" style="width: 3rem; height: 3rem; color: var(--secondary-color);" role="status">
             <span class="visually-hidden">Loading...</span>
         </div>
     </div>
 
     <!-- Back to Top Button -->
-    <div class="back-to-top">
+    <div class="back-to-top" aria-label="Back to top">
         <i class="fas fa-chevron-up"></i>
     </div>
 
     <!-- WhatsApp Float -->
-    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -1301,7 +1701,7 @@
                 <span>Naroda <span class="gold-text">Group</span></span>
             </a>
             
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             
@@ -1314,56 +1714,56 @@
                         <a class="nav-link" href="about.html">About</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" id="projectsDropdown" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="projectsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Projects
                         </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="projects-landmark.html">Naroda Landmark</a>
-                            <a class="dropdown-item" href="projects-irish.html">Naroda Irish</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="projects.html">All Projects</a>
-                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="projectsDropdown">
+                            <li><a class="dropdown-item" href="projects-landmark.html">Naroda Landmark</a></li>
+                            <li><a class="dropdown-item" href="projects-irish.html">Naroda Irish</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="projects.html">All Projects</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="propertiesDropdown" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="propertiesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Properties
                         </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="properties.html">Buy</a>
-                            <a class="dropdown-item" href="properties-rent.html">Rent</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="property-detail.html">Property Details</a>
-                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="propertiesDropdown">
+                            <li><a class="dropdown-item" href="properties.html">Buy</a></li>
+                            <li><a class="dropdown-item" href="properties-rent.html">Rent</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="property-detail.html">Property Details</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="gallery.html">Gallery</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             More
                         </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="blog.html">Blog</a>
-                            <a class="dropdown-item" href="news.html">News</a>
-                            <a class="dropdown-item" href="careers.html">Careers</a>
-                            <a class="dropdown-item" href="team.html">Our Team</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="faq.html">FAQ</a>
-                            <a class="dropdown-item" href="contact.html">Contact</a>
-                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="moreDropdown">
+                            <li><a class="dropdown-item" href="blog.html">Blog</a></li>
+                            <li><a class="dropdown-item" href="news.html">News</a></li>
+                            <li><a class="dropdown-item" href="careers.html">Careers</a></li>
+                            <li><a class="dropdown-item" href="team.html">Our Team</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+                            <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+                        </ul>
                     </li>
                 </ul>
                 
                 <div class="d-flex align-items-center ms-lg-3 mt-3 mt-lg-0">
                     <div class="dropdown">
-                        <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown">
+                        <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fas fa-globe me-1"></i> EN
                         </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">English</a>
-                            <a class="dropdown-item" href="#">Hindi</a>
-                            <a class="dropdown-item" href="#">Gujarati</a>
-                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                            <li><a class="dropdown-item" href="#">English</a></li>
+                            <li><a class="dropdown-item" href="#">Hindi</a></li>
+                            <li><a class="dropdown-item" href="#">Gujarati</a></li>
+                        </ul>
                     </div>
                     <a href="login.html" class="btn btn-outline-light ms-3">
                         <i class="fas fa-user me-2"></i> Login
@@ -1500,10 +1900,10 @@
                     
                     <div class="sort-options">
                         <div class="view-toggle">
-                            <div class="view-btn active" id="gridView">
+                            <div class="view-btn active" id="gridView" role="button" aria-label="Grid view">
                                 <i class="fas fa-th"></i>
                             </div>
-                            <div class="view-btn" id="listView">
+                            <div class="view-btn" id="listView" role="button" aria-label="List view">
                                 <i class="fas fa-list"></i>
                             </div>
                         </div>
@@ -1520,6 +1920,11 @@
                 
                 <div class="projects-grid" id="projectsContainer">
                     <!-- Projects will be loaded here dynamically -->
+                </div>
+                
+                <!-- List View Container (hidden by default) -->
+                <div class="projects-list" id="projectsListContainer" style="display: none;">
+                    <!-- Projects in list view will be loaded here -->
                 </div>
                 
                 <!-- No Results Message -->
@@ -1904,12 +2309,12 @@
     <!-- Modals -->
     
     <!-- Project Detail Modal -->
-    <div class="modal fade project-modal" id="projectDetailModal" tabindex="-1">
+    <div class="modal fade project-modal" id="projectDetailModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="modalProjectTitle">Project Details</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div id="modalProjectContent">
@@ -1921,12 +2326,12 @@
     </div>
     
     <!-- Quick View Modal -->
-    <div class="modal fade quick-view-modal" id="quickViewModal" tabindex="-1">
+    <div class="modal fade quick-view-modal" id="quickViewModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Quick View</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div id="quickViewContent">
@@ -1938,12 +2343,12 @@
     </div>
     
     <!-- Comparison Modal -->
-    <div class="modal fade comparison-modal" id="comparisonModal" tabindex="-1">
+    <div class="modal fade comparison-modal" id="comparisonModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Compare Projects</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div id="comparisonContent">
@@ -1960,8 +2365,6 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Select2 JS -->
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
     <script>
         // Projects Data
@@ -1984,7 +2387,8 @@
                 amenities: ['24/7 Security', 'Power Backup', 'Lift', 'Parking', 'CCTV'],
                 featured: true,
                 progress: 100,
-                rera: true
+                rera: true,
+                reraNumber: 'GJ/01/AHM/RERA/12345/2022'
             },
             {
                 id: 2,
@@ -2004,7 +2408,8 @@
                 amenities: ['Club House', 'Swimming Pool', 'Gym', 'Garden', 'Play Area'],
                 featured: true,
                 progress: 80,
-                rera: true
+                rera: true,
+                reraNumber: 'GJ/01/AHM/RERA/12346/2023'
             },
             {
                 id: 3,
@@ -2024,7 +2429,8 @@
                 amenities: ['Commercial Shops', 'Residential Apartments', 'Parking', 'Security'],
                 featured: false,
                 progress: 60,
-                rera: true
+                rera: true,
+                reraNumber: 'GJ/01/AHM/RERA/12347/2023'
             },
             {
                 id: 4,
@@ -2064,7 +2470,8 @@
                 amenities: ['Conference Rooms', 'Cafeteria', 'Fitness Center', 'Visitor Parking'],
                 featured: true,
                 progress: 100,
-                rera: true
+                rera: true,
+                reraNumber: 'GJ/01/AHM/RERA/12348/2021'
             },
             {
                 id: 6,
@@ -2084,7 +2491,8 @@
                 amenities: ['Private Garden', 'Rooftop Terrace', 'Private Pool', 'Home Automation'],
                 featured: false,
                 progress: 50,
-                rera: true
+                rera: true,
+                reraNumber: 'GJ/01/AHM/RERA/12349/2024'
             }
         ];
 
@@ -2094,7 +2502,8 @@
             AOS.init({
                 duration: 1000,
                 once: false,
-                offset: 100
+                offset: 100,
+                disable: window.innerWidth < 768 ? true : false
             });
             
             // Remove preloader
@@ -2103,12 +2512,19 @@
                 preloader.style.opacity = '0';
                 setTimeout(() => {
                     preloader.style.display = 'none';
+                    document.body.style.overflow = 'visible';
                 }, 500);
             }, 1000);
             
             // Initialize Select2
             $('.form-select').select2({
-                minimumResultsForSearch: 10
+                minimumResultsForSearch: 10,
+                placeholder: function() {
+                    return $(this).data('placeholder');
+                },
+                width: '100%',
+                dropdownAutoWidth: true,
+                dropdownParent: $('.filter-section')
             });
             
             // Initialize projects
@@ -2133,10 +2549,14 @@
             setTimeout(() => {
                 showToast('Browse our premium real estate projects!', 'info');
             }, 1500);
+            
+            // Initialize modals
+            initModals();
         });
         
         function initProjects() {
             const projectsContainer = document.getElementById('projectsContainer');
+            const projectsListContainer = document.getElementById('projectsListContainer');
             const projectCount = document.getElementById('projectCount');
             const loadMoreBtn = document.getElementById('loadMore');
             const loadSpinner = document.getElementById('loadSpinner');
@@ -2159,6 +2579,8 @@
                     currentView = 'grid';
                     this.classList.add('active');
                     document.getElementById('listView').classList.remove('active');
+                    projectsContainer.style.display = 'grid';
+                    projectsListContainer.style.display = 'none';
                     loadProjects();
                     showToast('Switched to grid view', 'info');
                 }
@@ -2169,6 +2591,8 @@
                     currentView = 'list';
                     this.classList.add('active');
                     document.getElementById('gridView').classList.remove('active');
+                    projectsContainer.style.display = 'none';
+                    projectsListContainer.style.display = 'flex';
                     loadProjects();
                     showToast('Switched to list view', 'info');
                 }
@@ -2208,21 +2632,27 @@
                 
                 if (!append) {
                     projectsContainer.innerHTML = '';
+                    projectsListContainer.innerHTML = '';
                     currentPage = 1;
                 }
                 
                 if (projectsToShow.length === 0) {
                     projectsContainer.style.display = 'none';
+                    projectsListContainer.style.display = 'none';
                     noResults.style.display = 'block';
                     loadMoreContainer.style.display = 'none';
                     paginationContainer.classList.add('d-none');
                 } else {
-                    projectsContainer.style.display = 'grid';
                     noResults.style.display = 'none';
                     
                     projectsToShow.forEach(project => {
-                        const projectCard = createProjectCard(project);
-                        projectsContainer.appendChild(projectCard);
+                        if (currentView === 'grid') {
+                            const projectCard = createProjectCard(project, 'grid');
+                            projectsContainer.appendChild(projectCard);
+                        } else {
+                            const projectCard = createProjectCard(project, 'list');
+                            projectsListContainer.appendChild(projectCard);
+                        }
                     });
                     
                     // Update count
@@ -2240,9 +2670,9 @@
                 }
             }
             
-            function createProjectCard(project) {
+            function createProjectCard(project, view = 'grid') {
                 const card = document.createElement('div');
-                card.className = `project-card ${project.featured ? 'featured' : ''} ${currentView === 'list' ? 'project-card-3d' : ''}`;
+                card.className = `project-card ${project.featured ? 'featured' : ''} ${view === 'grid' ? 'project-card-3d' : ''}`;
                 card.setAttribute('data-id', project.id);
                 card.setAttribute('data-type', project.type);
                 card.setAttribute('data-status', project.status);
@@ -2251,62 +2681,139 @@
                 const statusClass = project.status === 'completed' ? 'completed' : 
                                   project.status === 'ongoing' ? 'ongoing' : 'upcoming';
                 
-                const typeClass = project.type === 'commercial' ? 'commercial' : 'residential';
+                const typeClass = project.type === 'commercial' ? 'commercial' : 
+                                 project.type === 'residential' ? 'residential' : 'mixed';
                 
-                card.innerHTML = `
-                    <div class="project-image">
-                        <img src="${project.image}" alt="${project.name}" loading="lazy">
-                        <div class="project-overlay">
-                            <div class="d-flex flex-column">
-                                <h3 class="text-white mb-2">${project.name}</h3>
-                                <p class="text-white-50 mb-3">${project.description}</p>
-                                <div class="d-flex gap-3">
-                                    <button class="btn btn-gold btn-sm quick-view-btn" data-id="${project.id}">
-                                        <i class="fas fa-eye me-2"></i> Quick View
+                const statusText = project.status === 'completed' ? 'Completed' :
+                                 project.status === 'ongoing' ? 'Ongoing' : 'Upcoming';
+                
+                const typeText = project.type === 'commercial' ? 'Commercial' :
+                               project.type === 'residential' ? 'Residential' : 'Mixed Use';
+                
+                if (view === 'list') {
+                    card.innerHTML = `
+                        <div class="project-image">
+                            <img src="${project.image}" alt="${project.name}" loading="lazy">
+                            <div class="project-overlay">
+                                <div class="d-flex flex-column">
+                                    <h3 class="text-white mb-2">${project.name}</h3>
+                                    <p class="text-white-50 mb-3">${project.description}</p>
+                                    <div class="d-flex gap-3">
+                                        <button class="btn btn-gold btn-sm quick-view-btn" data-id="${project.id}">
+                                            <i class="fas fa-eye me-2"></i> Quick View
+                                        </button>
+                                        <button class="btn btn-outline-light btn-sm compare-btn" data-id="${project.id}">
+                                            <i class="fas fa-exchange-alt me-2"></i> Compare
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-status ${statusClass}">
+                                ${statusText}
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-meta">
+                                <span class="project-type ${typeClass}">${typeText}</span>
+                                <span class="project-price">${project.price}</span>
+                            </div>
+                            <h4 class="mb-3">${project.name}</h4>
+                            <p class="text-muted mb-3">${project.description}</p>
+                            
+                            <div class="project-features">
+                                <div class="project-feature">
+                                    <i class="fas fa-layer-group"></i>
+                                    <span>${project.features.floors} Floors</span>
+                                </div>
+                                <div class="project-feature">
+                                    <i class="fas fa-home"></i>
+                                    <span>${project.features.units} Units</span>
+                                </div>
+                                <div class="project-feature">
+                                    <i class="fas fa-vector-square"></i>
+                                    <span>${project.features.area}</span>
+                                </div>
+                                <div class="project-feature">
+                                    <i class="fas fa-car"></i>
+                                    <span>${project.features.parking}</span>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex align-items-center justify-content-between mt-4">
+                                <div>
+                                    <strong>Progress:</strong>
+                                    <span class="ms-2">${project.progress}%</span>
+                                    <div class="progress-bar mt-1" style="width: 150px; height: 6px;">
+                                        <div class="progress-fill" style="width: ${project.progress}%"></div>
+                                    </div>
+                                </div>
+                                <div class="project-actions">
+                                    <button class="btn btn-gold view-details-btn" data-id="${project.id}">
+                                        <i class="fas fa-info-circle me-2"></i> Details
                                     </button>
-                                    <button class="btn btn-outline-light btn-sm compare-btn" data-id="${project.id}">
-                                        <i class="fas fa-exchange-alt me-2"></i> Compare
+                                    <button class="btn btn-outline-primary contact-btn" data-id="${project.id}">
+                                        <i class="fas fa-phone me-2"></i> Contact
                                     </button>
                                 </div>
                             </div>
                         </div>
-                        <div class="project-status ${statusClass}">
-                            ${project.status.charAt(0).toUpperCase() + project.status.slice(1)}
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-meta">
-                            <span class="project-type ${typeClass}">${project.type}</span>
-                            <span class="project-price">${project.price}</span>
-                        </div>
-                        <h4 class="mb-3">${project.name}</h4>
-                        <p class="text-muted mb-3">${project.description}</p>
-                        
-                        <div class="project-features">
-                            <div class="project-feature">
-                                <i class="fas fa-layer-group"></i>
-                                <span>${project.features.floors} Floors</span>
+                    `;
+                } else {
+                    card.innerHTML = `
+                        <div class="project-image">
+                            <img src="${project.image}" alt="${project.name}" loading="lazy">
+                            <div class="project-overlay">
+                                <div class="d-flex flex-column">
+                                    <h3 class="text-white mb-2">${project.name}</h3>
+                                    <p class="text-white-50 mb-3">${project.description}</p>
+                                    <div class="d-flex gap-3">
+                                        <button class="btn btn-gold btn-sm quick-view-btn" data-id="${project.id}">
+                                            <i class="fas fa-eye me-2"></i> Quick View
+                                        </button>
+                                        <button class="btn btn-outline-light btn-sm compare-btn" data-id="${project.id}">
+                                            <i class="fas fa-exchange-alt me-2"></i> Compare
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="project-feature">
-                                <i class="fas fa-home"></i>
-                                <span>${project.features.units} Units</span>
-                            </div>
-                            <div class="project-feature">
-                                <i class="fas fa-vector-square"></i>
-                                <span>${project.features.area}</span>
+                            <div class="project-status ${statusClass}">
+                                ${statusText}
                             </div>
                         </div>
-                        
-                        <div class="project-actions">
-                            <button class="btn btn-gold view-details-btn" data-id="${project.id}">
-                                <i class="fas fa-info-circle me-2"></i> Details
-                            </button>
-                            <button class="btn btn-outline-primary contact-btn" data-id="${project.id}">
-                                <i class="fas fa-phone me-2"></i> Contact
-                            </button>
+                        <div class="project-content">
+                            <div class="project-meta">
+                                <span class="project-type ${typeClass}">${typeText}</span>
+                                <span class="project-price">${project.price}</span>
+                            </div>
+                            <h4 class="mb-3">${project.name}</h4>
+                            <p class="text-muted mb-3">${project.description}</p>
+                            
+                            <div class="project-features">
+                                <div class="project-feature">
+                                    <i class="fas fa-layer-group"></i>
+                                    <span>${project.features.floors} Floors</span>
+                                </div>
+                                <div class="project-feature">
+                                    <i class="fas fa-home"></i>
+                                    <span>${project.features.units} Units</span>
+                                </div>
+                                <div class="project-feature">
+                                    <i class="fas fa-vector-square"></i>
+                                    <span>${project.features.area}</span>
+                                </div>
+                            </div>
+                            
+                            <div class="project-actions">
+                                <button class="btn btn-gold view-details-btn" data-id="${project.id}">
+                                    <i class="fas fa-info-circle me-2"></i> Details
+                                </button>
+                                <button class="btn btn-outline-primary contact-btn" data-id="${project.id}">
+                                    <i class="fas fa-phone me-2"></i> Contact
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                `;
+                    `;
+                }
                 
                 return card;
             }
@@ -2358,7 +2865,7 @@
                         e.preventDefault();
                         currentPage = i;
                         loadProjects();
-                        window.scrollTo({ top: projectsContainer.offsetTop - 100, behavior: 'smooth' });
+                        window.scrollTo({ top: document.querySelector('.projects-grid-section').offsetTop - 100, behavior: 'smooth' });
                     });
                     
                     li.appendChild(a);
@@ -2425,12 +2932,19 @@
                 applyFilters();
             });
             
+            // Add keyboard shortcut for search
+            projectSearch.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter') {
+                    applyFilters();
+                }
+            });
+            
             function applyFilters() {
                 const typeFilter = document.getElementById('projectType').value;
                 const statusFilter = document.getElementById('projectStatus').value;
                 const locationFilter = document.getElementById('location').value;
                 const priceFilter = document.getElementById('priceRange').value;
-                const searchTerm = projectSearch.value.toLowerCase();
+                const searchTerm = projectSearch.value.toLowerCase().trim();
                 
                 // Update active filters display
                 updateActiveFilters(typeFilter, statusFilter, locationFilter, priceFilter, searchTerm);
@@ -2459,9 +2973,20 @@
                     }
                     
                     // Search filter
-                    if (searchTerm && !project.name.toLowerCase().includes(searchTerm) && 
-                        !project.description.toLowerCase().includes(searchTerm)) {
-                        return false;
+                    if (searchTerm) {
+                        const searchFields = [
+                            project.name,
+                            project.description,
+                            project.type,
+                            project.status,
+                            project.location
+                        ];
+                        
+                        const matchesSearch = searchFields.some(field => 
+                            field.toLowerCase().includes(searchTerm)
+                        );
+                        
+                        if (!matchesSearch) return false;
                     }
                     
                     return true;
@@ -2473,21 +2998,21 @@
                 // Update project count and summary
                 document.getElementById('projectCount').textContent = filtered.length;
                 
-                let summary = '';
-                if (typeFilter) summary += `${typeFilter}, `;
-                if (statusFilter) summary += `${statusFilter}, `;
-                if (locationFilter) summary += `${locationFilter}, `;
-                if (priceFilter) summary += `${priceFilter}, `;
-                if (searchTerm) summary += `"${searchTerm}", `;
+                let summaryParts = [];
+                if (typeFilter) summaryParts.push(typeFilter);
+                if (statusFilter) summaryParts.push(statusFilter);
+                if (locationFilter) summaryParts.push(locationFilter);
+                if (priceFilter) summaryParts.push(priceFilter.replace('-', ' to ').replace('+', '+'));
+                if (searchTerm) summaryParts.push(`"${searchTerm}"`);
                 
-                filterSummary.textContent = summary ? summary.slice(0, -2) : 'All projects';
+                filterSummary.textContent = summaryParts.length > 0 ? summaryParts.join(', ') : 'All projects';
                 
                 // Reload projects
                 if (typeof loadProjects === 'function') {
                     loadProjects();
                 }
                 
-                showToast(`Found ${filtered.length} projects`, 'success');
+                showToast(`Found ${filtered.length} project${filtered.length !== 1 ? 's' : ''}`, 'success');
             }
             
             function clearFilters() {
@@ -2555,19 +3080,19 @@
                     switch(filterType) {
                         case 'type':
                             document.getElementById('projectType').value = '';
-                            $('.form-select').val(null).trigger('change');
+                            $('#projectType').val(null).trigger('change');
                             break;
                         case 'status':
                             document.getElementById('projectStatus').value = '';
-                            $('.form-select').val(null).trigger('change');
+                            $('#projectStatus').val(null).trigger('change');
                             break;
                         case 'location':
                             document.getElementById('location').value = '';
-                            $('.form-select').val(null).trigger('change');
+                            $('#location').val(null).trigger('change');
                             break;
                         case 'price':
                             document.getElementById('priceRange').value = '';
-                            $('.form-select').val(null).trigger('change');
+                            $('#priceRange').val(null).trigger('change');
                             break;
                         case 'search':
                             projectSearch.value = '';
@@ -2580,16 +3105,80 @@
             }
         }
         
+        function initModals() {
+            // Initialize comparison modal content
+            const comparisonContent = document.getElementById('comparisonContent');
+            if (comparisonContent) {
+                // Create a more detailed comparison table for the modal
+                const comparisonProjects = projectsData.slice(0, 3);
+                
+                let tableHTML = `
+                    <div class="comparison-table">
+                        <div class="comparison-header">
+                            <div class="comparison-feature">Features</div>
+                `;
+                
+                // Add project headers
+                comparisonProjects.forEach(project => {
+                    tableHTML += `<div class="comparison-value">${project.name}</div>`;
+                });
+                
+                tableHTML += `</div>`;
+                
+                // Add rows for different features
+                const features = [
+                    { label: 'Project Type', key: 'type', format: v => v.charAt(0).toUpperCase() + v.slice(1) },
+                    { label: 'Status', key: 'status', format: v => v.charAt(0).toUpperCase() + v.slice(1) },
+                    { label: 'Starting Price', key: 'price' },
+                    { label: 'RERA Approved', key: 'rera', format: v => v ? '<i class="fas fa-check text-success"></i>' : '<i class="fas fa-times text-danger"></i>' },
+                    { label: 'RERA Number', key: 'reraNumber', format: v => v || 'N/A' },
+                    { label: 'Parking', key: 'features.parking' },
+                    { label: 'Floors', key: 'features.floors' },
+                    { label: 'Total Units', key: 'features.units' },
+                    { label: 'Area Range', key: 'features.area' },
+                    { label: 'Construction Progress', key: 'progress', format: v => `${v}%` }
+                ];
+                
+                features.forEach(feature => {
+                    tableHTML += `<div class="comparison-row">
+                        <div class="comparison-feature">${feature.label}</div>`;
+                    
+                    comparisonProjects.forEach(project => {
+                        let value = feature.key.includes('.') ? 
+                            feature.key.split('.').reduce((obj, key) => obj[key], project) :
+                            project[feature.key];
+                        
+                        if (feature.format) {
+                            value = feature.format(value);
+                        }
+                        
+                        tableHTML += `<div class="comparison-value">${value}</div>`;
+                    });
+                    
+                    tableHTML += `</div>`;
+                });
+                
+                tableHTML += `</div>`;
+                comparisonContent.innerHTML = tableHTML;
+            }
+        }
+        
         function showProjectDetails(project) {
             const modalTitle = document.getElementById('modalProjectTitle');
             const modalContent = document.getElementById('modalProjectContent');
             
             modalTitle.textContent = project.name;
             
+            const statusText = project.status === 'completed' ? 'Completed' :
+                             project.status === 'ongoing' ? 'Ongoing' : 'Upcoming';
+            
+            const typeText = project.type === 'commercial' ? 'Commercial' :
+                           project.type === 'residential' ? 'Residential' : 'Mixed Use';
+            
             modalContent.innerHTML = `
                 <div class="row">
                     <div class="col-lg-6 mb-4">
-                        <img src="${project.image}" alt="${project.name}" class="img-fluid rounded-3">
+                        <img src="${project.image}" alt="${project.name}" class="img-fluid rounded-3" loading="lazy">
                     </div>
                     <div class="col-lg-6">
                         <div class="d-flex justify-content-between align-items-start mb-4">
@@ -2601,37 +3190,69 @@
                         </div>
                         
                         <div class="row mb-4">
-                            <div class="col-6">
+                            <div class="col-md-6 col-12">
                                 <div class="mb-3">
                                     <strong>Project Type:</strong>
-                                    <div class="text-muted">${project.type.charAt(0).toUpperCase() + project.type.slice(1)}</div>
+                                    <div class="text-muted">${typeText}</div>
                                 </div>
                             </div>
-                            <div class="col-6">
+                            <div class="col-md-6 col-12">
                                 <div class="mb-3">
                                     <strong>Status:</strong>
-                                    <div class="text-muted">${project.status.charAt(0).toUpperCase() + project.status.slice(1)}</div>
+                                    <div class="text-muted">${statusText}</div>
                                 </div>
                             </div>
-                            <div class="col-6">
+                            <div class="col-md-6 col-12">
+                                <div class="mb-3">
+                                    <strong>Location:</strong>
+                                    <div class="text-muted">${project.location.charAt(0).toUpperCase() + project.location.slice(1)}, Ahmedabad</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12">
                                 <div class="mb-3">
                                     <strong>Floors:</strong>
                                     <div class="text-muted">${project.features.floors}</div>
                                 </div>
                             </div>
-                            <div class="col-6">
+                            <div class="col-md-6 col-12">
                                 <div class="mb-3">
                                     <strong>Units:</strong>
                                     <div class="text-muted">${project.features.units}</div>
                                 </div>
                             </div>
+                            <div class="col-md-6 col-12">
+                                <div class="mb-3">
+                                    <strong>Area Range:</strong>
+                                    <div class="text-muted">${project.features.area}</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="mb-3">
+                                    <strong>Parking:</strong>
+                                    <div class="text-muted">${project.features.parking}</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="mb-3">
+                                    <strong>RERA Approved:</strong>
+                                    <div class="text-muted">${project.rera ? 'Yes' : 'No'}</div>
+                                </div>
+                            </div>
+                            ${project.reraNumber ? `
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <strong>RERA Number:</strong>
+                                        <div class="text-muted">${project.reraNumber}</div>
+                                    </div>
+                                </div>
+                            ` : ''}
                         </div>
                         
                         <div class="mb-4">
                             <h6 class="mb-3">Amenities</h6>
                             <div class="d-flex flex-wrap gap-2">
                                 ${project.amenities.map(amenity => `
-                                    <span class="badge bg-light text-dark">${amenity}</span>
+                                    <span class="badge bg-light text-dark border">${amenity}</span>
                                 `).join('')}
                             </div>
                         </div>
@@ -2649,13 +3270,16 @@
                             </div>
                         </div>
                         
-                        <div class="d-flex gap-3">
-                            <a href="contact.html" class="btn btn-gold flex-fill">
+                        <div class="d-flex gap-3 flex-column flex-sm-row">
+                            <a href="contact.html?project=${encodeURIComponent(project.name)}" class="btn btn-gold flex-fill">
                                 <i class="fas fa-calendar-alt me-2"></i> Schedule Visit
                             </a>
-                            <a href="contact.html" class="btn btn-outline-primary flex-fill">
+                            <a href="contact.html?project=${encodeURIComponent(project.name)}" class="btn btn-outline-primary flex-fill">
                                 <i class="fas fa-download me-2"></i> Download Brochure
                             </a>
+                            <button class="btn btn-emerald flex-fill compare-btn" data-id="${project.id}" data-bs-dismiss="modal">
+                                <i class="fas fa-exchange-alt me-2"></i> Compare
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -2668,10 +3292,16 @@
         function showQuickView(project) {
             const quickViewContent = document.getElementById('quickViewContent');
             
+            const statusText = project.status === 'completed' ? 'Completed' :
+                             project.status === 'ongoing' ? 'Ongoing' : 'Upcoming';
+            
+            const typeText = project.type === 'commercial' ? 'Commercial' :
+                           project.type === 'residential' ? 'Residential' : 'Mixed Use';
+            
             quickViewContent.innerHTML = `
                 <div class="row">
                     <div class="col-md-5 mb-4 mb-md-0">
-                        <img src="${project.image}" alt="${project.name}" class="img-fluid rounded-3">
+                        <img src="${project.image}" alt="${project.name}" class="img-fluid rounded-3" loading="lazy">
                     </div>
                     <div class="col-md-7">
                         <h4 class="mb-2">${project.name}</h4>
@@ -2681,13 +3311,13 @@
                             <div class="col-6">
                                 <div class="mb-2">
                                     <strong>Type:</strong>
-                                    <span class="text-muted">${project.type}</span>
+                                    <span class="text-muted">${typeText}</span>
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="mb-2">
                                     <strong>Status:</strong>
-                                    <span class="text-muted">${project.status}</span>
+                                    <span class="text-muted">${statusText}</span>
                                 </div>
                             </div>
                             <div class="col-6">
@@ -2704,17 +3334,17 @@
                             </div>
                         </div>
                         
-                        <div class="d-flex gap-2 mb-4">
-                            ${project.amenities.slice(0, 3).map(amenity => `
-                                <span class="badge bg-light text-dark">${amenity}</span>
+                        <div class="d-flex flex-wrap gap-2 mb-4">
+                            ${project.amenities.slice(0, 4).map(amenity => `
+                                <span class="badge bg-light text-dark border">${amenity}</span>
                             `).join('')}
                         </div>
                         
-                        <div class="d-flex gap-3">
-                            <button class="btn btn-gold flex-fill" onclick="showProjectDetails(${JSON.stringify(project).replace(/"/g, '&quot;')})">
+                        <div class="d-flex gap-3 flex-column flex-sm-row">
+                            <button class="btn btn-gold flex-fill" onclick="showProjectDetails(${JSON.stringify(project).replace(/"/g, '&quot;')})" data-bs-dismiss="modal">
                                 <i class="fas fa-info-circle me-2"></i> View Details
                             </button>
-                            <a href="contact.html" class="btn btn-outline-primary flex-fill">
+                            <a href="contact.html?project=${encodeURIComponent(project.name)}" class="btn btn-outline-primary flex-fill">
                                 <i class="fas fa-phone me-2"></i> Contact Us
                             </a>
                         </div>
@@ -2740,6 +3370,11 @@
                 comparison.push(project);
                 localStorage.setItem('projectComparison', JSON.stringify(comparison));
                 showToast(`${project.name} added to comparison`, 'success');
+                
+                // Update comparison modal if open
+                if (document.getElementById('comparisonModal').classList.contains('show')) {
+                    initModals();
+                }
             } else {
                 showToast(`${project.name} is already in comparison`, 'info');
             }
@@ -2747,51 +3382,80 @@
         
         function showContactForm(project) {
             // This would typically open a contact form modal
-            showToast(`Contact form for ${project.name}`, 'info');
-            // In a real implementation, this would open a modal with a contact form
-            // pre-filled with project information
+            showToast(`Contact form for ${project.name} will open shortly`, 'info');
+            
+            // Simulate opening contact form
+            setTimeout(() => {
+                window.location.href = `contact.html?project=${encodeURIComponent(project.name)}`;
+            }, 500);
         }
         
         function initBackToTop() {
             const backToTop = document.querySelector('.back-to-top');
             
-            window.addEventListener('scroll', () => {
+            function toggleBackToTop() {
                 if (window.scrollY > 300) {
                     backToTop.classList.add('active');
                 } else {
                     backToTop.classList.remove('active');
                 }
-            });
+            }
+            
+            window.addEventListener('scroll', toggleBackToTop);
+            toggleBackToTop(); // Check on load
             
             backToTop.addEventListener('click', () => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
+                backToTop.blur();
+            });
+            
+            // Keyboard support
+            backToTop.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    backToTop.click();
+                }
             });
         }
         
         function initNavbarScroll() {
             const navbar = document.querySelector('.navbar');
             
-            window.addEventListener('scroll', () => {
+            function toggleNavbar() {
                 if (window.scrollY > 50) {
                     navbar.classList.add('scrolled');
                 } else {
                     navbar.classList.remove('scrolled');
                 }
-            });
+            }
+            
+            window.addEventListener('scroll', toggleNavbar);
+            toggleNavbar(); // Check on load
         }
         
         function initToastSystem() {
             window.showToast = function(message, type = 'success') {
                 const toastContainer = document.querySelector('.toast-container');
+                const toastId = 'toast-' + Date.now();
+                const icon = type === 'success' ? 'fa-check-circle text-success' : 
+                            type === 'error' ? 'fa-exclamation-circle text-danger' : 
+                            type === 'warning' ? 'fa-exclamation-triangle text-warning' :
+                            'fa-info-circle text-info';
+                
                 const toast = document.createElement('div');
-                toast.className = `toast toast-${type}`;
+                toast.className = `toast`;
+                toast.id = toastId;
+                toast.setAttribute('role', 'alert');
+                toast.setAttribute('aria-live', 'assertive');
+                toast.setAttribute('aria-atomic', 'true');
+                
                 toast.innerHTML = `
                     <div class="d-flex align-items-center">
-                        <i class="fas ${type === 'success' ? 'fa-check-circle text-success' : 'fa-exclamation-circle text-danger'} me-3"></i>
-                        <div>
+                        <i class="fas ${icon} me-3 fs-5"></i>
+                        <div class="flex-grow-1">
                             <p class="mb-0 fw-500">${message}</p>
                         </div>
-                        <button type="button" class="btn-close ms-auto" onclick="this.parentElement.parentElement.remove()"></button>
+                        <button type="button" class="btn-close ms-3" onclick="closeToast('${toastId}')" aria-label="Close"></button>
                     </div>
                 `;
                 
@@ -2799,10 +3463,18 @@
                 
                 setTimeout(() => toast.classList.add('show'), 10);
                 
+                // Auto remove after 5 seconds
                 setTimeout(() => {
+                    closeToast(toastId);
+                }, 5000);
+            };
+            
+            window.closeToast = function(toastId) {
+                const toast = document.getElementById(toastId);
+                if (toast) {
                     toast.classList.remove('show');
                     setTimeout(() => toast.remove(), 300);
-                }, 5000);
+                }
             };
         }
         
@@ -2816,17 +3488,83 @@
                 } else {
                     item.classList.remove('active');
                 }
+                
+                // Add touch feedback
+                item.addEventListener('touchstart', function() {
+                    this.style.transform = 'scale(0.95)';
+                });
+                
+                item.addEventListener('touchend', function() {
+                    this.style.transform = 'scale(1)';
+                });
             });
         }
         
         // Loading overlay functions
         window.showLoading = function() {
             document.querySelector('.loading-overlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
         };
         
         window.hideLoading = function() {
             document.querySelector('.loading-overlay').classList.remove('active');
+            document.body.style.overflow = 'visible';
         };
+        
+        // Handle window resize
+        let resizeTimeout;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(function() {
+                AOS.refresh();
+                // Reinitialize Select2 for mobile
+                if (window.innerWidth < 768) {
+                    $('.form-select').select2('destroy');
+                    $('.form-select').select2({
+                        minimumResultsForSearch: -1,
+                        dropdownParent: $('.filter-section')
+                    });
+                }
+            }, 250);
+        });
+        
+        // Handle mobile menu close on click
+        document.addEventListener('click', function(e) {
+            if (window.innerWidth < 992) {
+                const navbarCollapse = document.getElementById('navbarNav');
+                const navbarToggler = document.querySelector('.navbar-toggler');
+                
+                if (navbarCollapse.classList.contains('show') && 
+                    !e.target.closest('.navbar-collapse') && 
+                    !e.target.closest('.navbar-toggler')) {
+                    navbarToggler.click();
+                }
+            }
+        });
+        
+        // Improve touch experience
+        document.addEventListener('touchstart', function() {}, {passive: true});
+        
+        // Add print functionality
+        window.addEventListener('beforeprint', function() {
+            document.body.classList.add('printing');
+        });
+        
+        window.addEventListener('afterprint', function() {
+            document.body.classList.remove('printing');
+        });
+        
+        // Add keyboard navigation for projects
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                // Close modals on escape
+                const modals = document.querySelectorAll('.modal.show');
+                if (modals.length > 0) {
+                    const modal = bootstrap.Modal.getInstance(modals[0]);
+                    if (modal) modal.hide();
+                }
+            }
+        });
     </script>
 </body>
 </html>

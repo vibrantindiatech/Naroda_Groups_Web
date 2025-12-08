@@ -85,6 +85,7 @@
         img {
             max-width: 100%;
             height: auto;
+            display: block;
         }
 
         .container {
@@ -106,6 +107,10 @@
         /* ===== Utility Classes ===== */
         .gold-text {
             color: var(--secondary-color);
+        }
+        
+        .text-gold {
+            color: var(--secondary-color) !important;
         }
 
         .emerald-text {
@@ -142,6 +147,16 @@
 
         .bg-gradient-secondary {
             background: var(--gradient-secondary) !important;
+        }
+        
+        .btn-outline-primary {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary-color);
+            color: white;
         }
 
         /* ===== Preloader ===== */
@@ -402,6 +417,13 @@
             border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--shadow);
+        }
+        
+        .about-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            min-height: 400px;
         }
 
         .experience-badge {
@@ -810,6 +832,16 @@
             
             .back-to-top {
                 bottom: 80px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+            }
+            
+            .whatsapp-float {
+                bottom: 80px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
             }
         }
 
@@ -949,6 +981,189 @@
             margin-right: 15px;
             margin-top: 5px;
         }
+        
+        /* ===== Responsive Fixes ===== */
+        @media (max-width: 992px) {
+            .hero-section {
+                min-height: 50vh;
+            }
+            
+            .team-img {
+                width: 180px;
+                height: 180px;
+            }
+            
+            .mission-vision-card,
+            .value-card {
+                padding: 30px 20px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                min-height: 40vh;
+            }
+            
+            .about-image-container {
+                margin-bottom: 30px;
+            }
+            
+            .experience-badge {
+                top: 20px;
+                left: 20px;
+                padding: 15px;
+                min-width: 100px;
+            }
+            
+            .experience-years {
+                font-size: 2rem;
+            }
+            
+            .achievement-number {
+                font-size: 2.5rem;
+            }
+            
+            .team-img {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .btn {
+                padding: 12px 24px;
+                font-size: 0.9rem;
+            }
+            
+            .footer {
+                padding-top: 60px;
+            }
+            
+            .footer .row {
+                margin-bottom: 0;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .mission-vision-card,
+            .value-card,
+            .timeline-content {
+                padding: 25px 20px;
+            }
+            
+            .achievement-card {
+                padding: 20px 15px;
+            }
+            
+            .achievement-number {
+                font-size: 2rem;
+            }
+            
+            .achievement-icon {
+                font-size: 2.5rem;
+            }
+            
+            .team-img {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .timeline-section {
+                padding: 60px 0;
+            }
+            
+            .timeline:before {
+                left: 20px;
+            }
+            
+            .timeline-year {
+                width: 50px;
+                height: 50px;
+                font-size: 0.9rem;
+                left: -35px !important;
+            }
+            
+            .timeline-content {
+                width: calc(100% - 50px);
+                margin-left: 50px !important;
+            }
+        }
+        
+        /* ===== Accessibility Improvements ===== */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        
+        .focus-visible {
+            outline: 2px solid var(--secondary-color);
+            outline-offset: 2px;
+        }
+        
+        /* ===== Image Loading Placeholders ===== */
+        .img-placeholder {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+        
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        
+        /* ===== Print Styles ===== */
+        @media print {
+            .navbar,
+            .mobile-bottom-nav,
+            .back-to-top,
+            .whatsapp-float,
+            .loading-overlay,
+            .toast-container {
+                display: none !important;
+            }
+            
+            body {
+                font-size: 12pt;
+            }
+            
+            .hero-section {
+                background: white !important;
+                color: black !important;
+                min-height: auto;
+                padding: 50px 0;
+            }
+            
+            .hero-title {
+                color: black !important;
+            }
+            
+            section {
+                padding: 50px 0;
+                page-break-inside: avoid;
+            }
+            
+            .btn {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
@@ -968,7 +1183,7 @@
     </div>
 
     <!-- Back to Top Button -->
-    <div class="back-to-top">
+    <div class="back-to-top" aria-label="Back to top">
         <i class="fas fa-chevron-up"></i>
     </div>
 
@@ -984,11 +1199,12 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <div class="logo-icon">NG</div>
+                <div class="logo-icon" aria-hidden="true">NG</div>
                 <span>Naroda <span class="gold-text">Group</span></span>
             </a>
             
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             
@@ -998,62 +1214,66 @@
                         <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="about.html">About</a>
+                        <a class="nav-link active" href="about.html" aria-current="page">About</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" role="button" 
+                           data-bs-toggle="dropdown" aria-expanded="false">
                             Projects
                         </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="projects-landmark.html">Naroda Landmark</a>
-                            <a class="dropdown-item" href="projects-irish.html">Naroda Irish</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="projects.html">All Projects</a>
-                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="projectsDropdown">
+                            <li><a class="dropdown-item" href="projects-landmark.html">Naroda Landmark</a></li>
+                            <li><a class="dropdown-item" href="projects-irish.html">Naroda Irish</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="projects.html">All Projects</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="propertiesDropdown" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="propertiesDropdown" role="button" 
+                           data-bs-toggle="dropdown" aria-expanded="false">
                             Properties
                         </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="properties.html">Buy</a>
-                            <a class="dropdown-item" href="properties-rent.html">Rent</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="property-detail.html">Property Details</a>
-                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="propertiesDropdown">
+                            <li><a class="dropdown-item" href="properties.html">Buy</a></li>
+                            <li><a class="dropdown-item" href="properties-rent.html">Rent</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="property-detail.html">Property Details</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="gallery.html">Gallery</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" role="button" 
+                           data-bs-toggle="dropdown" aria-expanded="false">
                             More
                         </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="blog.html">Blog</a>
-                            <a class="dropdown-item" href="news.html">News</a>
-                            <a class="dropdown-item" href="careers.html">Careers</a>
-                            <a class="dropdown-item" href="team.html">Our Team</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="faq.html">FAQ</a>
-                            <a class="dropdown-item" href="contact.html">Contact</a>
-                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="moreDropdown">
+                            <li><a class="dropdown-item" href="blog.html">Blog</a></li>
+                            <li><a class="dropdown-item" href="news.html">News</a></li>
+                            <li><a class="dropdown-item" href="careers.html">Careers</a></li>
+                            <li><a class="dropdown-item" href="team.html">Our Team</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+                            <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+                        </ul>
                     </li>
                 </ul>
                 
                 <div class="d-flex align-items-center ms-lg-3 mt-3 mt-lg-0">
                     <div class="dropdown">
-                        <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown">
-                            <i class="fas fa-globe me-1"></i> EN
+                        <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" 
+                                id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-globe me-1" aria-hidden="true"></i> EN
                         </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">English</a>
-                            <a class="dropdown-item" href="#">Hindi</a>
-                            <a class="dropdown-item" href="#">Gujarati</a>
-                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                            <li><a class="dropdown-item" href="#" lang="en">English</a></li>
+                            <li><a class="dropdown-item" href="#" lang="hi">Hindi</a></li>
+                            <li><a class="dropdown-item" href="#" lang="gu">Gujarati</a></li>
+                        </ul>
                     </div>
                     <a href="login.html" class="btn btn-outline-light ms-3">
-                        <i class="fas fa-user me-2"></i> Login
+                        <i class="fas fa-user me-2" aria-hidden="true"></i> Login
                     </a>
                 </div>
             </div>
@@ -1063,23 +1283,23 @@
     <!-- Mobile Bottom Navigation -->
     <div class="mobile-bottom-nav">
         <a href="index.html" class="mobile-nav-item">
-            <i class="fas fa-home"></i>
+            <i class="fas fa-home" aria-hidden="true"></i>
             <span>Home</span>
         </a>
         <a href="projects.html" class="mobile-nav-item">
-            <i class="fas fa-building"></i>
+            <i class="fas fa-building" aria-hidden="true"></i>
             <span>Projects</span>
         </a>
         <a href="properties.html" class="mobile-nav-item">
-            <i class="fas fa-search"></i>
+            <i class="fas fa-search" aria-hidden="true"></i>
             <span>Search</span>
         </a>
         <a href="contact.html" class="mobile-nav-item">
-            <i class="fas fa-phone"></i>
+            <i class="fas fa-phone" aria-hidden="true"></i>
             <span>Contact</span>
         </a>
         <a href="login.html" class="mobile-nav-item">
-            <i class="fas fa-user"></i>
+            <i class="fas fa-user" aria-hidden="true"></i>
             <span>Account</span>
         </a>
     </div>
@@ -1108,8 +1328,9 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
                         <div class="about-image-container">
-                            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-                                 alt="About Naroda Group" class="img-fluid">
+                            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                 alt="About Naroda Group - Modern office building" class="img-fluid img-placeholder" 
+                                 loading="lazy" width="800" height="600">
                             <div class="experience-badge" data-aos="fade-up" data-aos-delay="200">
                                 <div class="experience-years">15+</div>
                                 <div class="experience-text">Years Experience</div>
@@ -1138,7 +1359,7 @@
                         <div class="row mt-4">
                             <div class="col-md-6">
                                 <div class="d-flex align-items-center mb-3">
-                                    <i class="fas fa-check-circle text-gold me-3 fs-4"></i>
+                                    <i class="fas fa-check-circle text-gold me-3 fs-4" aria-hidden="true"></i>
                                     <div>
                                         <h5 class="mb-1">Vision</h5>
                                         <p class="text-muted mb-0">To redefine urban living through innovative design</p>
@@ -1147,7 +1368,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="d-flex align-items-center mb-3">
-                                    <i class="fas fa-check-circle text-gold me-3 fs-4"></i>
+                                    <i class="fas fa-check-circle text-gold me-3 fs-4" aria-hidden="true"></i>
                                     <div>
                                         <h5 class="mb-1">Mission</h5>
                                         <p class="text-muted mb-0">Create sustainable communities with exceptional value</p>
@@ -1163,7 +1384,7 @@
                     <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
                         <div class="mission-vision-card">
                             <div class="mission-vision-icon">
-                                <i class="fas fa-eye"></i>
+                                <i class="fas fa-eye" aria-hidden="true"></i>
                             </div>
                             <h3 class="mb-3">Our Vision</h3>
                             <p class="text-muted mb-0">
@@ -1177,7 +1398,7 @@
                     <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
                         <div class="mission-vision-card">
                             <div class="mission-vision-icon">
-                                <i class="fas fa-bullseye"></i>
+                                <i class="fas fa-bullseye" aria-hidden="true"></i>
                             </div>
                             <h3 class="mb-3">Our Mission</h3>
                             <p class="text-muted mb-0">
@@ -1212,7 +1433,7 @@
                     <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
                         <div class="value-card">
                             <div class="value-icon">
-                                <i class="fas fa-shield-alt"></i>
+                                <i class="fas fa-shield-alt" aria-hidden="true"></i>
                             </div>
                             <h4 class="mb-3">Integrity</h4>
                             <p class="text-muted mb-0">
@@ -1224,7 +1445,7 @@
                     <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
                         <div class="value-card">
                             <div class="value-icon">
-                                <i class="fas fa-users"></i>
+                                <i class="fas fa-users" aria-hidden="true"></i>
                             </div>
                             <h4 class="mb-3">Customer First</h4>
                             <p class="text-muted mb-0">
@@ -1236,7 +1457,7 @@
                     <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
                         <div class="value-card">
                             <div class="value-icon">
-                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star" aria-hidden="true"></i>
                             </div>
                             <h4 class="mb-3">Excellence</h4>
                             <p class="text-muted mb-0">
@@ -1248,7 +1469,7 @@
                     <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
                         <div class="value-card">
                             <div class="value-icon">
-                                <i class="fas fa-leaf"></i>
+                                <i class="fas fa-leaf" aria-hidden="true"></i>
                             </div>
                             <h4 class="mb-3">Sustainability</h4>
                             <p class="text-muted mb-0">
@@ -1260,7 +1481,7 @@
                     <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
                         <div class="value-card">
                             <div class="value-icon">
-                                <i class="fas fa-lightbulb"></i>
+                                <i class="fas fa-lightbulb" aria-hidden="true"></i>
                             </div>
                             <h4 class="mb-3">Innovation</h4>
                             <p class="text-muted mb-0">
@@ -1272,7 +1493,7 @@
                     <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="600">
                         <div class="value-card">
                             <div class="value-icon">
-                                <i class="fas fa-handshake"></i>
+                                <i class="fas fa-handshake" aria-hidden="true"></i>
                             </div>
                             <h4 class="mb-3">Commitment</h4>
                             <p class="text-muted mb-0">
@@ -1305,17 +1526,18 @@
                     <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
                         <div class="team-card">
                             <div class="team-img">
-                                <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Rajesh Mehta">
+                                <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Rajesh Mehta - Founder & CEO" 
+                                     loading="lazy" width="200" height="200">
                             </div>
                             <h4 class="mb-2">Rajesh Mehta</h4>
                             <p class="text-gold mb-2">Founder & CEO</p>
                             <p class="text-muted mb-3">20+ years in real estate development</p>
                             <div class="team-social-links">
-                                <a href="#" class="team-social-link" aria-label="LinkedIn">
-                                    <i class="fab fa-linkedin-in"></i>
+                                <a href="#" class="team-social-link" aria-label="LinkedIn profile of Rajesh Mehta">
+                                    <i class="fab fa-linkedin-in" aria-hidden="true"></i>
                                 </a>
-                                <a href="#" class="team-social-link" aria-label="Twitter">
-                                    <i class="fab fa-twitter"></i>
+                                <a href="#" class="team-social-link" aria-label="Twitter profile of Rajesh Mehta">
+                                    <i class="fab fa-twitter" aria-hidden="true"></i>
                                 </a>
                             </div>
                         </div>
@@ -1324,17 +1546,18 @@
                     <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
                         <div class="team-card">
                             <div class="team-img">
-                                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Priya Shah">
+                                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Priya Shah - Director of Projects" 
+                                     loading="lazy" width="200" height="200">
                             </div>
                             <h4 class="mb-2">Priya Shah</h4>
                             <p class="text-gold mb-2">Director - Projects</p>
                             <p class="text-muted mb-3">Architect with 15 years experience</p>
                             <div class="team-social-links">
-                                <a href="#" class="team-social-link" aria-label="LinkedIn">
-                                    <i class="fab fa-linkedin-in"></i>
+                                <a href="#" class="team-social-link" aria-label="LinkedIn profile of Priya Shah">
+                                    <i class="fab fa-linkedin-in" aria-hidden="true"></i>
                                 </a>
-                                <a href="#" class="team-social-link" aria-label="Twitter">
-                                    <i class="fab fa-twitter"></i>
+                                <a href="#" class="team-social-link" aria-label="Twitter profile of Priya Shah">
+                                    <i class="fab fa-twitter" aria-hidden="true"></i>
                                 </a>
                             </div>
                         </div>
@@ -1343,17 +1566,18 @@
                     <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
                         <div class="team-card">
                             <div class="team-img">
-                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Amit Patel">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Amit Patel - Chief Financial Officer" 
+                                     loading="lazy" width="200" height="200">
                             </div>
                             <h4 class="mb-2">Amit Patel</h4>
                             <p class="text-gold mb-2">Chief Financial Officer</p>
                             <p class="text-muted mb-3">Finance professional with 18 years experience</p>
                             <div class="team-social-links">
-                                <a href="#" class="team-social-link" aria-label="LinkedIn">
-                                    <i class="fab fa-linkedin-in"></i>
+                                <a href="#" class="team-social-link" aria-label="LinkedIn profile of Amit Patel">
+                                    <i class="fab fa-linkedin-in" aria-hidden="true"></i>
                                 </a>
-                                <a href="#" class="team-social-link" aria-label="Twitter">
-                                    <i class="fab fa-twitter"></i>
+                                <a href="#" class="team-social-link" aria-label="Twitter profile of Amit Patel">
+                                    <i class="fab fa-twitter" aria-hidden="true"></i>
                                 </a>
                             </div>
                         </div>
@@ -1362,17 +1586,18 @@
                     <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
                         <div class="team-card">
                             <div class="team-img">
-                                <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Neha Gupta">
+                                <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Neha Gupta - Head of Sales & Marketing" 
+                                     loading="lazy" width="200" height="200">
                             </div>
                             <h4 class="mb-2">Neha Gupta</h4>
                             <p class="text-gold mb-2">Head of Sales & Marketing</p>
                             <p class="text-muted mb-3">Sales professional with 12 years experience</p>
                             <div class="team-social-links">
-                                <a href="#" class="team-social-link" aria-label="LinkedIn">
-                                    <i class="fab fa-linkedin-in"></i>
+                                <a href="#" class="team-social-link" aria-label="LinkedIn profile of Neha Gupta">
+                                    <i class="fab fa-linkedin-in" aria-hidden="true"></i>
                                 </a>
-                                <a href="#" class="team-social-link" aria-label="Twitter">
-                                    <i class="fab fa-twitter"></i>
+                                <a href="#" class="team-social-link" aria-label="Twitter profile of Neha Gupta">
+                                    <i class="fab fa-twitter" aria-hidden="true"></i>
                                 </a>
                             </div>
                         </div>
@@ -1483,7 +1708,7 @@
                     <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="100">
                         <div class="achievement-card">
                             <div class="achievement-icon">
-                                <i class="fas fa-calendar-alt"></i>
+                                <i class="fas fa-calendar-alt" aria-hidden="true"></i>
                             </div>
                             <div class="achievement-number">15+</div>
                             <p class="mb-0">Years of Excellence</p>
@@ -1493,7 +1718,7 @@
                     <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="200">
                         <div class="achievement-card">
                             <div class="achievement-icon">
-                                <i class="fas fa-users"></i>
+                                <i class="fas fa-users" aria-hidden="true"></i>
                             </div>
                             <div class="achievement-number">2500+</div>
                             <p class="mb-0">Happy Families</p>
@@ -1503,7 +1728,7 @@
                     <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="300">
                         <div class="achievement-card">
                             <div class="achievement-icon">
-                                <i class="fas fa-building"></i>
+                                <i class="fas fa-building" aria-hidden="true"></i>
                             </div>
                             <div class="achievement-number">50+</div>
                             <p class="mb-0">Projects Delivered</p>
@@ -1513,7 +1738,7 @@
                     <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="400">
                         <div class="achievement-card">
                             <div class="achievement-icon">
-                                <i class="fas fa-expand-arrows-alt"></i>
+                                <i class="fas fa-expand-arrows-alt" aria-hidden="true"></i>
                             </div>
                             <div class="achievement-number">5M+</div>
                             <p class="mb-0">Sq. Ft. Developed</p>
@@ -1537,13 +1762,13 @@
                         
                         <div class="d-flex flex-column flex-sm-row justify-content-center gap-4" data-aos="fade-up" data-aos-delay="200">
                             <a href="contact.html" class="btn btn-gold btn-lg">
-                                <i class="fas fa-phone me-2"></i> Contact Us
+                                <i class="fas fa-phone me-2" aria-hidden="true"></i> Contact Us
                             </a>
                             <a href="projects.html" class="btn btn-outline-primary btn-lg">
-                                <i class="fas fa-building me-2"></i> View Projects
+                                <i class="fas fa-building me-2" aria-hidden="true"></i> View Projects
                             </a>
                             <a href="careers.html" class="btn btn-emerald btn-lg">
-                                <i class="fas fa-briefcase me-2"></i> Join Our Team
+                                <i class="fas fa-briefcase me-2" aria-hidden="true"></i> Join Our Team
                             </a>
                         </div>
                     </div>
@@ -1569,20 +1794,20 @@
                     </p>
                     
                     <div class="social-links">
-                        <a href="#" class="social-link" aria-label="Facebook">
-                            <i class="fab fa-facebook-f"></i>
+                        <a href="#" class="social-link" aria-label="Facebook page">
+                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
                         </a>
-                        <a href="#" class="social-link" aria-label="Twitter">
-                            <i class="fab fa-twitter"></i>
+                        <a href="#" class="social-link" aria-label="Twitter profile">
+                            <i class="fab fa-twitter" aria-hidden="true"></i>
                         </a>
-                        <a href="#" class="social-link" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
+                        <a href="#" class="social-link" aria-label="Instagram profile">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
                         </a>
-                        <a href="#" class="social-link" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
+                        <a href="#" class="social-link" aria-label="LinkedIn company page">
+                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
                         </a>
-                        <a href="#" class="social-link" aria-label="YouTube">
-                            <i class="fab fa-youtube"></i>
+                        <a href="#" class="social-link" aria-label="YouTube channel">
+                            <i class="fab fa-youtube" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
@@ -1590,12 +1815,12 @@
                 <div class="col-lg-2 col-md-6">
                     <h3 class="footer-title">Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
-                        <li><a href="projects.html"><i class="fas fa-chevron-right"></i> Projects</a></li>
-                        <li><a href="properties.html"><i class="fas fa-chevron-right"></i> Properties</a></li>
-                        <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
-                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        <li><a href="index.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> About Us</a></li>
+                        <li><a href="projects.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Projects</a></li>
+                        <li><a href="properties.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Properties</a></li>
+                        <li><a href="gallery.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Gallery</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Contact</a></li>
                     </ul>
                 </div>
                 
@@ -1618,7 +1843,7 @@
                 <div class="col-lg-3 col-md-6">
                     <h3 class="footer-title">Contact Info</h3>
                     <div class="contact-info">
-                        <i class="fas fa-phone"></i>
+                        <i class="fas fa-phone" aria-hidden="true"></i>
                         <div>
                             <h6 class="text-white mb-1">Phone Number</h6>
                             <p class="mb-0">+91 98765 43210</p>
@@ -1627,7 +1852,7 @@
                     </div>
                     
                     <div class="contact-info">
-                        <i class="fas fa-envelope"></i>
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
                         <div>
                             <h6 class="text-white mb-1">Email Address</h6>
                             <p class="mb-0">info@narodagroup.com</p>
@@ -1636,7 +1861,7 @@
                     </div>
                     
                     <div class="contact-info">
-                        <i class="fas fa-map-marker-alt"></i>
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                         <div>
                             <h6 class="text-white mb-1">Office Address</h6>
                             <p class="mb-0">Naroda - Bhat Road</p>
@@ -1673,7 +1898,8 @@
             AOS.init({
                 duration: 1000,
                 once: false,
-                offset: 100
+                offset: 100,
+                disable: window.innerWidth < 768 ? true : false
             });
             
             // Remove preloader
@@ -1727,7 +1953,7 @@
                             <div>
                                 <p class="mb-0 fw-500">${message}</p>
                             </div>
-                            <button type="button" class="btn-close ms-auto" onclick="this.parentElement.parentElement.remove()"></button>
+                            <button type="button" class="btn-close ms-auto" onclick="this.parentElement.parentElement.remove()" aria-label="Close"></button>
                         </div>
                     `;
                     
@@ -1756,25 +1982,100 @@
                 });
             }
             
+            // Image lazy loading enhancement
+            function initLazyLoading() {
+                const images = document.querySelectorAll('img[loading="lazy"]');
+                
+                if ('loading' in HTMLImageElement.prototype) {
+                    // Browser supports lazy loading natively
+                    images.forEach(img => {
+                        img.classList.remove('img-placeholder');
+                    });
+                } else {
+                    // Fallback for browsers that don't support lazy loading
+                    const imageObserver = new IntersectionObserver((entries, observer) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                const img = entry.target;
+                                img.classList.remove('img-placeholder');
+                                observer.unobserve(img);
+                            }
+                        });
+                    });
+                    
+                    images.forEach(img => imageObserver.observe(img));
+                }
+            }
+            
+            // Handle responsive image loading
+            function handleResponsiveImages() {
+                const aboutImage = document.querySelector('.about-image-container img');
+                if (aboutImage && window.innerWidth < 768) {
+                    aboutImage.src = aboutImage.src.replace('w=800', 'w=600');
+                }
+            }
+            
             // Initialize all functions
             initBackToTop();
             initNavbarScroll();
             initToastSystem();
             initMobileNav();
+            initLazyLoading();
+            handleResponsiveImages();
+            
+            // Handle window resize
+            window.addEventListener('resize', handleResponsiveImages);
             
             // Show welcome message
             setTimeout(() => {
-                showToast('Welcome to Naroda Group!', 'success');
+                if (window.showToast) {
+                    showToast('Welcome to Naroda Group!', 'success');
+                }
             }, 1500);
+            
+            // Add keyboard navigation support
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    const activeDropdowns = document.querySelectorAll('.dropdown-menu.show');
+                    activeDropdowns.forEach(dropdown => {
+                        dropdown.classList.remove('show');
+                    });
+                }
+            });
+            
+            // Mobile menu improvements
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            const navbarCollapse = document.querySelector('#navbarNav');
+            
+            if (navbarToggler && navbarCollapse) {
+                navbarToggler.addEventListener('click', function() {
+                    this.classList.toggle('collapsed');
+                });
+                
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!navbarToggler.contains(event.target) && !navbarCollapse.contains(event.target)) {
+                        if (navbarCollapse.classList.contains('show')) {
+                            navbarToggler.click();
+                        }
+                    }
+                });
+            }
         });
         
         // Loading overlay functions
         window.showLoading = function() {
-            document.querySelector('.loading-overlay').classList.add('active');
+            const loadingOverlay = document.querySelector('.loading-overlay');
+            if (loadingOverlay) {
+                loadingOverlay.classList.add('active');
+            }
         };
         
         window.hideLoading = function() {
-            document.querySelector('.loading-overlay').classList.remove('active');
+            const loadingOverlay = document.querySelector('.loading-overlay');
+            if (loadingOverlay) {
+                loadingOverlay.classList.remove('active');
+            }
         };
     </script>
 </body>

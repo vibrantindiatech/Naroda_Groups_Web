@@ -85,6 +85,7 @@
         img {
             max-width: 100%;
             height: auto;
+            display: block;
         }
 
         .container {
@@ -105,7 +106,7 @@
 
         /* ===== Utility Classes ===== */
         .gold-text {
-            color: var(--secondary-color);
+            color: var(--secondary-color) !important;
         }
 
         .emerald-text {
@@ -414,6 +415,8 @@
             position: relative;
             overflow: hidden;
             border: 1px solid rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
         }
 
         .leader-card:before {
@@ -462,6 +465,7 @@
 
         .leader-info {
             margin-bottom: 20px;
+            flex-grow: 1;
         }
 
         .leader-name {
@@ -533,6 +537,9 @@
             height: 100%;
             text-align: center;
             border: 1px solid rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .department-card:hover {
@@ -778,9 +785,17 @@
                 bottom: 80px;
             }
             
+            .whatsapp-float {
+                bottom: 150px;
+            }
+            
             .leader-img {
                 width: 150px;
                 height: 150px;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
             }
         }
 
@@ -920,6 +935,38 @@
             height: 100%;
             object-fit: cover;
         }
+        
+        /* ===== Responsive Adjustments ===== */
+        @media (max-width: 576px) {
+            .hero-section {
+                min-height: 40vh;
+            }
+            
+            .leader-card {
+                padding: 20px;
+            }
+            
+            .department-card {
+                padding: 20px 15px;
+            }
+            
+            .value-card {
+                padding: 30px 20px;
+            }
+            
+            .stat-card {
+                padding: 20px 15px;
+            }
+            
+            .cta-section .btn-lg {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            
+            .cta-section .d-flex {
+                flex-direction: column;
+            }
+        }
     </style>
 </head>
 <body>
@@ -959,7 +1006,7 @@
                 <span>Naroda <span class="gold-text">Group</span></span>
             </a>
             
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             
@@ -972,56 +1019,56 @@
                         <a class="nav-link" href="about.html">About</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Projects
                         </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="projects-landmark.html">Naroda Landmark</a>
-                            <a class="dropdown-item" href="projects-irish.html">Naroda Irish</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="projects.html">All Projects</a>
-                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="projectsDropdown">
+                            <li><a class="dropdown-item" href="projects-landmark.html">Naroda Landmark</a></li>
+                            <li><a class="dropdown-item" href="projects-irish.html">Naroda Irish</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="projects.html">All Projects</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="propertiesDropdown" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="propertiesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Properties
                         </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="properties.html">Buy</a>
-                            <a class="dropdown-item" href="properties-rent.html">Rent</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="property-detail.html">Property Details</a>
-                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="propertiesDropdown">
+                            <li><a class="dropdown-item" href="properties.html">Buy</a></li>
+                            <li><a class="dropdown-item" href="properties-rent.html">Rent</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="property-detail.html">Property Details</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="gallery.html">Gallery</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="moreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             More
                         </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="blog.html">Blog</a>
-                            <a class="dropdown-item" href="news.html">News</a>
-                            <a class="dropdown-item" href="careers.html">Careers</a>
-                            <a class="nav-link active" href="team.html">Our Team</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="faq.html">FAQ</a>
-                            <a class="dropdown-item" href="contact.html">Contact</a>
-                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="moreDropdown">
+                            <li><a class="dropdown-item" href="blog.html">Blog</a></li>
+                            <li><a class="dropdown-item" href="news.html">News</a></li>
+                            <li><a class="dropdown-item" href="careers.html">Careers</a></li>
+                            <li><a class="dropdown-item active" href="team.html">Our Team</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+                            <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+                        </ul>
                     </li>
                 </ul>
                 
                 <div class="d-flex align-items-center ms-lg-3 mt-3 mt-lg-0">
                     <div class="dropdown">
-                        <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown">
+                        <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fas fa-globe me-1"></i> EN
                         </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">English</a>
-                            <a class="dropdown-item" href="#">Hindi</a>
-                            <a class="dropdown-item" href="#">Gujarati</a>
-                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                            <li><a class="dropdown-item" href="#">English</a></li>
+                            <li><a class="dropdown-item" href="#">Hindi</a></li>
+                            <li><a class="dropdown-item" href="#">Gujarati</a></li>
+                        </ul>
                     </div>
                     <a href="login.html" class="btn btn-outline-light ms-3">
                         <i class="fas fa-user me-2"></i> Login
@@ -1113,7 +1160,7 @@
                     <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
                         <div class="leader-card">
                             <div class="leader-img">
-                                <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Rajesh Mehta">
+                                <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Rajesh Mehta" loading="lazy">
                             </div>
                             <div class="leader-info">
                                 <h3 class="leader-name">Rajesh Mehta</h3>
@@ -1145,7 +1192,7 @@
                     <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
                         <div class="leader-card">
                             <div class="leader-img">
-                                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Priya Shah">
+                                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Priya Shah" loading="lazy">
                             </div>
                             <div class="leader-info">
                                 <h3 class="leader-name">Priya Shah</h3>
@@ -1177,7 +1224,7 @@
                     <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
                         <div class="leader-card">
                             <div class="leader-img">
-                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Amit Patel">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Amit Patel" loading="lazy">
                             </div>
                             <div class="leader-info">
                                 <h3 class="leader-name">Amit Patel</h3>
@@ -1209,7 +1256,7 @@
                     <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
                         <div class="leader-card">
                             <div class="leader-img">
-                                <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Neha Gupta">
+                                <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Neha Gupta" loading="lazy">
                             </div>
                             <div class="leader-info">
                                 <h3 class="leader-name">Neha Gupta</h3>
@@ -1241,7 +1288,7 @@
                     <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
                         <div class="leader-card">
                             <div class="leader-img">
-                                <img src="https://randomuser.me/api/portraits/men/55.jpg" alt="Vikram Singh">
+                                <img src="https://randomuser.me/api/portraits/men/55.jpg" alt="Vikram Singh" loading="lazy">
                             </div>
                             <div class="leader-info">
                                 <h3 class="leader-name">Vikram Singh</h3>
@@ -1273,7 +1320,7 @@
                     <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
                         <div class="leader-card">
                             <div class="leader-img">
-                                <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Anjali Desai">
+                                <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Anjali Desai" loading="lazy">
                             </div>
                             <div class="leader-info">
                                 <h3 class="leader-name">Anjali Desai</h3>
@@ -1546,7 +1593,7 @@
                             We're always looking for talented professionals to join our growing team.
                         </p>
                         
-                        <div class="d-flex flex-column flex-sm-row justify-content-center gap-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="d-flex flex-wrap justify-content-center gap-4" data-aos="fade-up" data-aos-delay="200">
                             <a href="careers.html" class="btn btn-gold btn-lg">
                                 <i class="fas fa-briefcase me-2"></i> View Careers
                             </a>
@@ -1601,12 +1648,12 @@
                 <div class="col-lg-2 col-md-6">
                     <h3 class="footer-title">Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
-                        <li><a href="projects.html"><i class="fas fa-chevron-right"></i> Projects</a></li>
-                        <li><a href="properties.html"><i class="fas fa-chevron-right"></i> Properties</a></li>
-                        <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
-                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        <li><a href="index.html"><i class="fas fa-chevron-right me-2"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right me-2"></i> About Us</a></li>
+                        <li><a href="projects.html"><i class="fas fa-chevron-right me-2"></i> Projects</a></li>
+                        <li><a href="properties.html"><i class="fas fa-chevron-right me-2"></i> Properties</a></li>
+                        <li><a href="gallery.html"><i class="fas fa-chevron-right me-2"></i> Gallery</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right me-2"></i> Contact</a></li>
                     </ul>
                 </div>
                 
@@ -1679,13 +1726,13 @@
             <div class="modal-content">
                 <div class="modal-header border-0">
                     <h5 class="modal-title">Rajesh Mehta - Founder & CEO</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-4 text-center mb-4 mb-md-0">
                             <div class="modal-team-img">
-                                <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Rajesh Mehta">
+                                <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Rajesh Mehta" loading="lazy">
                             </div>
                             <div class="leader-social justify-content-center mt-3">
                                 <a href="#" class="social-link" aria-label="LinkedIn">
@@ -1734,13 +1781,13 @@
             <div class="modal-content">
                 <div class="modal-header border-0">
                     <h5 class="modal-title">Priya Shah - Director - Projects</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-4 text-center mb-4 mb-md-0">
                             <div class="modal-team-img">
-                                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Priya Shah">
+                                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Priya Shah" loading="lazy">
                             </div>
                             <div class="leader-social justify-content-center mt-3">
                                 <a href="#" class="social-link" aria-label="LinkedIn">
@@ -1782,7 +1829,217 @@
         </div>
     </div>
 
-    <!-- Additional modals would follow similar structure for other team members -->
+    <!-- Modal 3: Amit Patel -->
+    <div class="modal fade" id="leaderModal3" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title">Amit Patel - Chief Financial Officer</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-4 text-center mb-4 mb-md-0">
+                            <div class="modal-team-img">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Amit Patel" loading="lazy">
+                            </div>
+                            <div class="leader-social justify-content-center mt-3">
+                                <a href="#" class="social-link" aria-label="LinkedIn">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="social-link" aria-label="Twitter">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="social-link" aria-label="Email">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <h4 class="mb-3">Professional Background</h4>
+                            <p class="text-muted mb-3">
+                                Amit Patel oversees all financial operations at Naroda Group, bringing 20+ years 
+                                of experience in real estate finance, investment strategy, and financial planning.
+                            </p>
+                            
+                            <h5 class="mb-2">Key Achievements</h5>
+                            <ul class="text-muted mb-3">
+                                <li>Managed financing for 40+ real estate projects</li>
+                                <li>Optimized investment portfolio yielding 25% ROI</li>
+                                <li>Implemented financial controls reducing costs by 15%</li>
+                                <li>Successfully raised capital for major developments</li>
+                            </ul>
+                            
+                            <h5 class="mb-2">Education</h5>
+                            <p class="text-muted mb-3">
+                                Chartered Accountant (CA)<br>
+                                MBA in Finance from Gujarat University
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 4: Neha Gupta -->
+    <div class="modal fade" id="leaderModal4" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title">Neha Gupta - Head of Sales & Marketing</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-4 text-center mb-4 mb-md-0">
+                            <div class="modal-team-img">
+                                <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Neha Gupta" loading="lazy">
+                            </div>
+                            <div class="leader-social justify-content-center mt-3">
+                                <a href="#" class="social-link" aria-label="LinkedIn">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="social-link" aria-label="Twitter">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="social-link" aria-label="Email">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <h4 class="mb-3">Professional Background</h4>
+                            <p class="text-muted mb-3">
+                                Neha Gupta leads the sales and marketing division with 15+ years of experience in 
+                                brand building, customer relationship management, and sales strategy development.
+                            </p>
+                            
+                            <h5 class="mb-2">Key Achievements</h5>
+                            <ul class="text-muted mb-3">
+                                <li>Increased sales revenue by 40% over 3 years</li>
+                                <li>Built a 32-member high-performing sales team</li>
+                                <li>Launched 5 successful marketing campaigns</li>
+                                <li>Improved customer satisfaction scores by 35%</li>
+                            </ul>
+                            
+                            <h5 class="mb-2">Education</h5>
+                            <p class="text-muted mb-3">
+                                MBA in Marketing from MICA, Ahmedabad<br>
+                                B.Com from Gujarat University
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 5: Vikram Singh -->
+    <div class="modal fade" id="leaderModal5" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title">Vikram Singh - Head of Construction</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-4 text-center mb-4 mb-md-0">
+                            <div class="modal-team-img">
+                                <img src="https://randomuser.me/api/portraits/men/55.jpg" alt="Vikram Singh" loading="lazy">
+                            </div>
+                            <div class="leader-social justify-content-center mt-3">
+                                <a href="#" class="social-link" aria-label="LinkedIn">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="social-link" aria-label="Twitter">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="social-link" aria-label="Email">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <h4 class="mb-3">Professional Background</h4>
+                            <p class="text-muted mb-3">
+                                Vikram Singh manages all construction operations with 22+ years of experience in 
+                                civil engineering, project execution, and quality control.
+                            </p>
+                            
+                            <h5 class="mb-2">Key Achievements</h5>
+                            <ul class="text-muted mb-3">
+                                <li>Supervised construction of 30+ major projects</li>
+                                <li>Reduced construction time by 25% through innovative methods</li>
+                                <li>Maintained 99% safety record across all sites</li>
+                                <li>Implemented cost-saving measures reducing expenses by 18%</li>
+                            </ul>
+                            
+                            <h5 class="mb-2">Education</h5>
+                            <p class="text-muted mb-3">
+                                B.E. in Civil Engineering from LD College of Engineering<br>
+                                Advanced Diploma in Construction Management
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 6: Anjali Desai -->
+    <div class="modal fade" id="leaderModal6" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title">Anjali Desai - Legal & Compliance Head</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-4 text-center mb-4 mb-md-0">
+                            <div class="modal-team-img">
+                                <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Anjali Desai" loading="lazy">
+                            </div>
+                            <div class="leader-social justify-content-center mt-3">
+                                <a href="#" class="social-link" aria-label="LinkedIn">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="social-link" aria-label="Twitter">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="social-link" aria-label="Email">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <h4 class="mb-3">Professional Background</h4>
+                            <p class="text-muted mb-3">
+                                Anjali Desai ensures all legal and regulatory compliance for Naroda Group with 
+                                16+ years of experience in real estate law, contract management, and regulatory affairs.
+                            </p>
+                            
+                            <h5 class="mb-2">Key Achievements</h5>
+                            <ul class="text-muted mb-3">
+                                <li>Successfully handled legal aspects of 50+ property transactions</li>
+                                <li>Ensured 100% RERA compliance across all projects</li>
+                                <li>Reduced legal disputes by 40% through proactive measures</li>
+                                <li>Streamlined documentation process saving 200+ hours annually</li>
+                            </ul>
+                            
+                            <h5 class="mb-2">Education</h5>
+                            <p class="text-muted mb-3">
+                                LL.B. from Gujarat University<br>
+                                Specialized in Real Estate Law
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Bootstrap 5 JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -1796,7 +2053,8 @@
             AOS.init({
                 duration: 1000,
                 once: false,
-                offset: 100
+                offset: 100,
+                easing: 'ease-in-out'
             });
             
             // Remove preloader
@@ -1811,6 +2069,7 @@
             // Initialize back to top button
             function initBackToTop() {
                 const backToTop = document.querySelector('.back-to-top');
+                if (!backToTop) return;
                 
                 window.addEventListener('scroll', () => {
                     if (window.scrollY > 300) {
@@ -1828,6 +2087,7 @@
             // Initialize navbar scroll effect
             function initNavbarScroll() {
                 const navbar = document.querySelector('.navbar');
+                if (!navbar) return;
                 
                 window.addEventListener('scroll', () => {
                     if (window.scrollY > 50) {
@@ -1842,11 +2102,28 @@
             function initToastSystem() {
                 window.showToast = function(message, type = 'success') {
                     const toastContainer = document.querySelector('.toast-container');
+                    if (!toastContainer) return;
+                    
                     const toast = document.createElement('div');
                     toast.className = `toast toast-${type}`;
+                    
+                    let icon = 'fa-check-circle';
+                    let iconColor = 'text-success';
+                    
+                    if (type === 'warning') {
+                        icon = 'fa-exclamation-triangle';
+                        iconColor = 'text-warning';
+                    } else if (type === 'info') {
+                        icon = 'fa-info-circle';
+                        iconColor = 'text-info';
+                    } else if (type === 'danger') {
+                        icon = 'fa-exclamation-circle';
+                        iconColor = 'text-danger';
+                    }
+                    
                     toast.innerHTML = `
                         <div class="d-flex align-items-center">
-                            <i class="fas ${type === 'success' ? 'fa-check-circle text-success' : 'fa-exclamation-circle text-danger'} me-3"></i>
+                            <i class="fas ${icon} ${iconColor} me-3"></i>
                             <div>
                                 <p class="mb-0 fw-500">${message}</p>
                             </div>
@@ -1879,31 +2156,43 @@
                 });
             }
             
-            // Team member modal functionality
-            function initTeamModals() {
-                // Additional modals can be initialized here if needed
-            }
-            
             // Initialize all functions
             initBackToTop();
             initNavbarScroll();
             initToastSystem();
             initMobileNav();
-            initTeamModals();
             
             // Show welcome message
             setTimeout(() => {
                 showToast('Meet our experienced leadership team!', 'success');
             }, 1500);
+            
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const href = this.getAttribute('href');
+                    if (href !== '#') {
+                        e.preventDefault();
+                        const target = document.querySelector(href);
+                        if (target) {
+                            target.scrollIntoView({
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
         });
         
         // Loading overlay functions
         window.showLoading = function() {
-            document.querySelector('.loading-overlay').classList.add('active');
+            const overlay = document.querySelector('.loading-overlay');
+            if (overlay) overlay.classList.add('active');
         };
         
         window.hideLoading = function() {
-            document.querySelector('.loading-overlay').classList.remove('active');
+            const overlay = document.querySelector('.loading-overlay');
+            if (overlay) overlay.classList.remove('active');
         };
     </script>
 </body>

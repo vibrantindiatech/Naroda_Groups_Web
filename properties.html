@@ -20,6 +20,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Select2 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <!-- NoUiSlider CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/nouislider@15.6.0/dist/nouislider.min.css" rel="stylesheet">
     
     <style>
         /* ===== CSS Variables ===== */
@@ -130,6 +132,10 @@
             left: 50%;
             transform: translateX(-50%);
             border-radius: 2px;
+        }
+
+        .section-title.left {
+            text-align: left;
         }
 
         .section-title.left:after {
@@ -396,6 +402,7 @@
             align-items: center;
             position: relative;
             overflow: hidden;
+            margin-top: 80px;
         }
 
         .hero-title {
@@ -424,12 +431,6 @@
             line-height: 1.8;
         }
 
-        /* ===== Properties Hero ===== */
-        .properties-hero-section {
-            padding: 100px 0 60px;
-            background: #f9fafb;
-        }
-
         /* ===== Search & Filter Section ===== */
         .search-section {
             padding: 60px 0 30px;
@@ -448,6 +449,7 @@
             display: flex;
             border-bottom: 2px solid var(--light-gray);
             margin-bottom: 30px;
+            flex-wrap: wrap;
         }
 
         .filter-tab {
@@ -459,6 +461,7 @@
             font-size: 1.1rem;
             transition: var(--transition);
             position: relative;
+            cursor: pointer;
         }
 
         .filter-tab.active {
@@ -486,6 +489,12 @@
             margin-bottom: 25px;
         }
 
+        @media (max-width: 768px) {
+            .filter-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
         .filter-group {
             margin-bottom: 0;
         }
@@ -503,6 +512,7 @@
             border-radius: var(--border-radius);
             transition: var(--transition);
             width: 100%;
+            font-size: 1rem;
         }
 
         .form-control:focus, .form-select:focus {
@@ -514,6 +524,17 @@
             display: flex;
             align-items: center;
             gap: 15px;
+        }
+
+        @media (max-width: 480px) {
+            .price-range {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .price-range span {
+                display: none;
+            }
         }
 
         .price-input {
@@ -558,6 +579,18 @@
             margin-top: 20px;
         }
 
+        @media (max-width: 768px) {
+            .checkbox-group {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .checkbox-group {
+                grid-template-columns: 1fr;
+            }
+        }
+
         .form-check {
             display: flex;
             align-items: center;
@@ -569,6 +602,7 @@
             height: 20px;
             border-radius: 4px;
             border: 2px solid var(--light-gray);
+            cursor: pointer;
         }
 
         .form-check-input:checked {
@@ -579,6 +613,7 @@
         .form-check-label {
             font-weight: 500;
             color: var(--gray-color);
+            cursor: pointer;
         }
 
         /* ===== Properties Grid ===== */
@@ -596,6 +631,13 @@
             gap: 20px;
         }
 
+        @media (max-width: 768px) {
+            .properties-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
         .sort-options {
             display: flex;
             align-items: center;
@@ -603,8 +645,20 @@
             flex-wrap: wrap;
         }
 
+        @media (max-width: 768px) {
+            .sort-options {
+                width: 100%;
+            }
+        }
+
         .sort-select {
             min-width: 200px;
+        }
+
+        @media (max-width: 480px) {
+            .sort-select {
+                min-width: 100%;
+            }
         }
 
         .view-options {
@@ -623,6 +677,7 @@
             border: 2px solid var(--light-gray);
             color: var(--gray-color);
             transition: var(--transition);
+            cursor: pointer;
         }
 
         .view-btn.active {
@@ -643,6 +698,12 @@
             gap: 30px;
         }
 
+        @media (max-width: 1200px) {
+            .properties-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+
         @media (max-width: 768px) {
             .properties-grid {
                 grid-template-columns: 1fr;
@@ -657,6 +718,8 @@
             transition: var(--transition);
             height: 100%;
             position: relative;
+            display: flex;
+            flex-direction: column;
         }
 
         .property-card:hover {
@@ -668,6 +731,7 @@
             height: 250px;
             overflow: hidden;
             position: relative;
+            flex-shrink: 0;
         }
 
         .property-image img {
@@ -724,6 +788,8 @@
             color: var(--dark-color);
             transition: var(--transition);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: none;
+            cursor: pointer;
         }
 
         .property-action-btn:hover {
@@ -739,6 +805,9 @@
 
         .property-content {
             padding: 25px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .property-title {
@@ -783,7 +852,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-top: 20px;
+            margin-top: auto;
+            padding-top: 20px;
         }
 
         .price-amount {
@@ -823,6 +893,7 @@
             .property-list-item {
                 flex-direction: column;
                 align-items: stretch;
+                gap: 20px;
             }
         }
 
@@ -837,6 +908,7 @@
             border-radius: var(--border-radius);
             overflow: hidden;
             flex-shrink: 0;
+            position: relative;
         }
 
         @media (max-width: 992px) {
@@ -865,6 +937,13 @@
             display: flex;
             gap: 30px;
             margin: 15px 0;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .list-features {
+                gap: 15px;
+            }
         }
 
         .list-price {
@@ -877,6 +956,7 @@
             .list-price {
                 text-align: left;
                 margin-top: 20px;
+                min-width: auto;
             }
         }
 
@@ -925,11 +1005,23 @@
             overflow: hidden;
         }
 
+        @media (max-width: 768px) {
+            .cta-section {
+                padding: 60px 0;
+            }
+        }
+
         /* ===== Footer ===== */
         .footer {
             background: var(--primary-dark);
             color: #b0b7c3;
             padding-top: 80px;
+        }
+
+        @media (max-width: 768px) {
+            .footer {
+                padding-top: 60px;
+            }
         }
 
         .footer-title {
@@ -1037,15 +1129,16 @@
             
             .back-to-top {
                 bottom: 80px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
             }
             
-            .filter-row {
-                grid-template-columns: 1fr;
-            }
-            
-            .properties-header {
-                flex-direction: column;
-                align-items: flex-start;
+            .whatsapp-float {
+                bottom: 140px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
             }
         }
 
@@ -1055,6 +1148,18 @@
             top: 100px;
             right: 20px;
             z-index: 9999;
+        }
+
+        @media (max-width: 768px) {
+            .toast-container {
+                top: 80px;
+                right: 10px;
+                left: 10px;
+            }
+            
+            .toast {
+                max-width: 100%;
+            }
         }
 
         .toast {
@@ -1128,6 +1233,9 @@
         .footer-links a {
             color: #b0b7c3;
             transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         
         .footer-links a:hover {
@@ -1143,6 +1251,7 @@
             padding: 5px 10px;
             border-radius: 8px;
             transition: var(--transition);
+            text-decoration: none;
         }
         
         .mobile-nav-item.active {
@@ -1167,6 +1276,7 @@
             background: rgba(255, 255, 255, 0.05);
             border-radius: var(--border-radius);
             transition: var(--transition);
+            text-decoration: none;
         }
         
         .project-mini-card:hover {
@@ -1193,6 +1303,7 @@
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
             grid-column: 1 / -1;
+            display: none;
         }
         
         .no-results-icon {
@@ -1230,6 +1341,7 @@
             display: flex;
             gap: 10px;
             margin-bottom: 20px;
+            flex-wrap: wrap;
         }
         
         .status-badge {
@@ -1273,43 +1385,6 @@
             font-size: 0.9rem;
         }
         
-        .price-range-slider {
-            padding: 0 10px;
-        }
-        
-        .noUi-target {
-            background: var(--light-gray);
-            border: none;
-            box-shadow: none;
-            height: 8px;
-        }
-        
-        .noUi-connect {
-            background: var(--gradient-secondary);
-        }
-        
-        .noUi-handle {
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            background: white;
-            border: 2px solid var(--secondary-color);
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-        }
-        
-        .noUi-handle:before, .noUi-handle:after {
-            display: none;
-        }
-        
-        .range-values {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 10px;
-            color: var(--gray-color);
-            font-size: 0.9rem;
-        }
-        
         .mobile-filter-btn {
             display: none;
             width: 100%;
@@ -1331,6 +1406,7 @@
                 z-index: 9999;
                 overflow-y: auto;
                 border-radius: 0;
+                padding: 80px 20px 40px;
             }
             
             .filter-card.show {
@@ -1342,6 +1418,128 @@
                 top: 20px;
                 right: 20px;
                 z-index: 10000;
+                background: none;
+                border: none;
+                font-size: 1.5rem;
+                color: var(--gray-color);
+                cursor: pointer;
+            }
+            
+            .hero-section {
+                margin-top: 70px;
+            }
+        }
+
+        /* Fix for Bootstrap Select2 integration */
+        .select2-container--bootstrap-5 .select2-selection {
+            min-height: calc(1.5em + 1rem + 2px);
+            padding: 0.5rem 1rem;
+        }
+
+        /* Fix for property card height consistency */
+        .property-card .property-content {
+            min-height: 300px;
+        }
+
+        @media (max-width: 768px) {
+            .property-card .property-content {
+                min-height: auto;
+            }
+        }
+
+        /* Fix for list view on mobile */
+        @media (max-width: 768px) {
+            .property-list-item .list-content p {
+                display: none;
+            }
+        }
+
+        /* Fix for button spacing on mobile */
+        @media (max-width: 576px) {
+            .search-actions .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .cta-section .btn {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            
+            .cta-section .d-flex {
+                flex-direction: column;
+                gap: 10px !important;
+            }
+        }
+
+        /* Fix for mobile navigation active state */
+        .navbar-nav .nav-item .nav-link.active {
+            color: var(--secondary-color) !important;
+        }
+
+        /* Price slider styles */
+        .price-range-slider {
+            padding: 20px 0;
+            margin: 15px 0;
+        }
+
+        .noUi-target {
+            background: var(--light-gray);
+            border: none;
+            box-shadow: none;
+            height: 8px;
+            border-radius: 4px;
+        }
+
+        .noUi-connect {
+            background: var(--gradient-secondary);
+        }
+
+        .noUi-handle {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: white;
+            border: 2px solid var(--secondary-color);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            top: -8px;
+        }
+
+        .noUi-handle:before, .noUi-handle:after {
+            display: none;
+        }
+
+        .range-values {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            color: var(--gray-color);
+            font-size: 0.9rem;
+        }
+
+        /* Fix for dropdown alignment */
+        .dropdown-menu {
+            min-width: 200px;
+        }
+
+        /* Fix for navbar on mobile */
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                background: rgba(10, 42, 74, 0.98);
+                padding: 20px;
+                border-radius: var(--border-radius);
+                margin-top: 15px;
+                backdrop-filter: blur(15px);
+            }
+            
+            .navbar-nav {
+                padding-bottom: 15px;
+            }
+            
+            .d-flex.align-items-center.ms-lg-3 {
+                padding-top: 15px;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
             }
         }
     </style>
@@ -1357,7 +1555,7 @@
 
     <!-- Loading Overlay -->
     <div class="loading-overlay">
-        <div class="spinner-border" style="color: var(--secondary-color);" role="status">
+        <div class="spinner-border" style="width: 3rem; height: 3rem; color: var(--secondary-color);" role="status">
             <span class="visually-hidden">Loading...</span>
         </div>
     </div>
@@ -1383,7 +1581,7 @@
                 <span>Naroda <span class="gold-text">Group</span></span>
             </a>
             
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             
@@ -1396,56 +1594,56 @@
                         <a class="nav-link" href="about.html">About</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Projects
                         </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="projects-landmark.html">Naroda Landmark</a>
-                            <a class="dropdown-item" href="projects-irish.html">Naroda Irish</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="projects.html">All Projects</a>
-                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="projectsDropdown">
+                            <li><a class="dropdown-item" href="projects-landmark.html">Naroda Landmark</a></li>
+                            <li><a class="dropdown-item" href="projects-irish.html">Naroda Irish</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="projects.html">All Projects</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" id="propertiesDropdown" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="propertiesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Properties
                         </a>
-                        <div class="dropdown-menu">
-                            <a class="nav-link active" href="properties.html">Buy</a>
-                            <a class="dropdown-item" href="properties-rent.html">Rent</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="property-detail.html">Property Details</a>
-                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="propertiesDropdown">
+                            <li><a class="dropdown-item active" href="properties.html">Buy</a></li>
+                            <li><a class="dropdown-item" href="properties-rent.html">Rent</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="property-detail.html">Property Details</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="gallery.html">Gallery</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             More
                         </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="blog.html">Blog</a>
-                            <a class="dropdown-item" href="news.html">News</a>
-                            <a class="dropdown-item" href="careers.html">Careers</a>
-                            <a class="dropdown-item" href="team.html">Our Team</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="faq.html">FAQ</a>
-                            <a class="dropdown-item" href="contact.html">Contact</a>
-                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="moreDropdown">
+                            <li><a class="dropdown-item" href="blog.html">Blog</a></li>
+                            <li><a class="dropdown-item" href="news.html">News</a></li>
+                            <li><a class="dropdown-item" href="careers.html">Careers</a></li>
+                            <li><a class="dropdown-item" href="team.html">Our Team</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+                            <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+                        </ul>
                     </li>
                 </ul>
                 
                 <div class="d-flex align-items-center ms-lg-3 mt-3 mt-lg-0">
                     <div class="dropdown">
-                        <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown">
+                        <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fas fa-globe me-1"></i> EN
                         </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">English</a>
-                            <a class="dropdown-item" href="#">Hindi</a>
-                            <a class="dropdown-item" href="#">Gujarati</a>
-                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                            <li><a class="dropdown-item" href="#">English</a></li>
+                            <li><a class="dropdown-item" href="#">Hindi</a></li>
+                            <li><a class="dropdown-item" href="#">Gujarati</a></li>
+                        </ul>
                     </div>
                     <a href="login.html" class="btn btn-outline-light ms-3">
                         <i class="fas fa-user me-2"></i> Login
@@ -1514,18 +1712,18 @@
                 </button>
                 
                 <div class="filter-card" id="filterCard">
-                    <button class="btn btn-close close-filter" id="closeFilter"></button>
+                    <button class="btn-close close-filter" id="closeFilter"></button>
                     
                     <div class="filter-tabs">
-                        <button class="filter-tab active" data-type="buy">Buy Properties</button>
-                        <button class="filter-tab" data-type="rent">Rent Properties</button>
-                        <button class="filter-tab" data-type="commercial">Commercial</button>
+                        <button type="button" class="filter-tab active" data-type="buy">Buy Properties</button>
+                        <button type="button" class="filter-tab" data-type="rent">Rent Properties</button>
+                        <button type="button" class="filter-tab" data-type="commercial">Commercial</button>
                     </div>
                     
                     <form id="propertySearchForm">
                         <div class="filter-row">
                             <div class="filter-group">
-                                <label class="filter-label">Location</label>
+                                <label class="filter-label" for="location">Location</label>
                                 <select class="form-select" id="location">
                                     <option value="">All Locations</option>
                                     <option value="naroda-irish">Naroda Irish</option>
@@ -1537,7 +1735,7 @@
                             </div>
                             
                             <div class="filter-group">
-                                <label class="filter-label">Property Type</label>
+                                <label class="filter-label" for="propertyType">Property Type</label>
                                 <select class="form-select" id="propertyType">
                                     <option value="">All Types</option>
                                     <option value="apartment">Apartment</option>
@@ -1549,7 +1747,7 @@
                             </div>
                             
                             <div class="filter-group">
-                                <label class="filter-label">Bedrooms</label>
+                                <label class="filter-label" for="bedrooms">Bedrooms</label>
                                 <select class="form-select" id="bedrooms">
                                     <option value="">Any</option>
                                     <option value="1">1 BHK</option>
@@ -1561,11 +1759,11 @@
                             </div>
                             
                             <div class="filter-group">
-                                <label class="filter-label">Budget</label>
+                                <label class="filter-label">Budget (₹)</label>
                                 <div class="price-range">
-                                    <input type="text" class="form-control price-input" id="minPrice" placeholder="Min Price">
+                                    <input type="number" class="form-control price-input" id="minPrice" placeholder="Min Price">
                                     <span>to</span>
-                                    <input type="text" class="form-control price-input" id="maxPrice" placeholder="Max Price">
+                                    <input type="number" class="form-control price-input" id="maxPrice" placeholder="Max Price">
                                 </div>
                             </div>
                         </div>
@@ -1589,7 +1787,7 @@
                                     </div>
                                     
                                     <div class="filter-group">
-                                        <label class="filter-label">Furnishing</label>
+                                        <label class="filter-label" for="furnishing">Furnishing</label>
                                         <select class="form-select" id="furnishing">
                                             <option value="">Any</option>
                                             <option value="fully-furnished">Fully Furnished</option>
@@ -1599,7 +1797,7 @@
                                     </div>
                                     
                                     <div class="filter-group">
-                                        <label class="filter-label">Possession Status</label>
+                                        <label class="filter-label" for="possession">Possession Status</label>
                                         <select class="form-select" id="possession">
                                             <option value="">Any</option>
                                             <option value="ready-to-move">Ready to Move</option>
@@ -1682,10 +1880,10 @@
                         </select>
                         
                         <div class="view-options">
-                            <button class="view-btn active" data-view="grid">
+                            <button class="view-btn active" data-view="grid" aria-label="Grid view">
                                 <i class="fas fa-th-large"></i>
                             </button>
-                            <button class="view-btn" data-view="list">
+                            <button class="view-btn" data-view="list" aria-label="List view">
                                 <i class="fas fa-list"></i>
                             </button>
                         </div>
@@ -1698,13 +1896,13 @@
                     <div class="property-card" data-aos="fade-up">
                         <div class="property-image">
                             <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-                                 alt="3 BHK Luxury Apartment">
+                                 alt="3 BHK Luxury Apartment" loading="lazy">
                             <div class="property-badge">For Sale</div>
                             <div class="property-actions">
-                                <button class="property-action-btn save-property" data-property="1">
-                                    <i class="fas fa-heart"></i>
+                                <button class="property-action-btn save-property" data-property="1" aria-label="Save property">
+                                    <i class="far fa-heart"></i>
                                 </button>
-                                <button class="property-action-btn">
+                                <button class="property-action-btn" aria-label="Compare property">
                                     <i class="fas fa-exchange-alt"></i>
                                 </button>
                             </div>
@@ -1757,13 +1955,13 @@
                     <div class="property-card" data-aos="fade-up" data-aos-delay="100">
                         <div class="property-image">
                             <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-                                 alt="2 BHK Apartment">
+                                 alt="2 BHK Apartment" loading="lazy">
                             <div class="property-badge">For Sale</div>
                             <div class="property-actions">
-                                <button class="property-action-btn save-property" data-property="2">
-                                    <i class="fas fa-heart"></i>
+                                <button class="property-action-btn save-property" data-property="2" aria-label="Save property">
+                                    <i class="far fa-heart"></i>
                                 </button>
-                                <button class="property-action-btn">
+                                <button class="property-action-btn" aria-label="Compare property">
                                     <i class="fas fa-exchange-alt"></i>
                                 </button>
                             </div>
@@ -1816,13 +2014,13 @@
                     <div class="property-card" data-aos="fade-up" data-aos-delay="200">
                         <div class="property-image">
                             <img src="https://images.unsplash.com/photo-1558036117-15e82a2c9a9a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-                                 alt="Commercial Office">
+                                 alt="Commercial Office" loading="lazy">
                             <div class="property-badge">For Sale</div>
                             <div class="property-actions">
-                                <button class="property-action-btn save-property" data-property="3">
-                                    <i class="fas fa-heart"></i>
+                                <button class="property-action-btn save-property" data-property="3" aria-label="Save property">
+                                    <i class="far fa-heart"></i>
                                 </button>
-                                <button class="property-action-btn">
+                                <button class="property-action-btn" aria-label="Compare property">
                                     <i class="fas fa-exchange-alt"></i>
                                 </button>
                             </div>
@@ -1872,16 +2070,16 @@
                     </div>
                     
                     <!-- Property 4 -->
-                    <div class="property-card" data-aos="fade-up">
+                    <div class="property-card" data-aos="fade-up" data-aos-delay="300">
                         <div class="property-image">
                             <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&auto=format&fit=crop&w=2096&q=80" 
-                                 alt="4 BHK Villa">
+                                 alt="4 BHK Villa" loading="lazy">
                             <div class="property-badge rent">For Rent</div>
                             <div class="property-actions">
-                                <button class="property-action-btn save-property" data-property="4">
-                                    <i class="fas fa-heart"></i>
+                                <button class="property-action-btn save-property" data-property="4" aria-label="Save property">
+                                    <i class="far fa-heart"></i>
                                 </button>
-                                <button class="property-action-btn">
+                                <button class="property-action-btn" aria-label="Compare property">
                                     <i class="fas fa-exchange-alt"></i>
                                 </button>
                             </div>
@@ -1931,16 +2129,16 @@
                     </div>
                     
                     <!-- Property 5 -->
-                    <div class="property-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="property-card" data-aos="fade-up" data-aos-delay="400">
                         <div class="property-image">
                             <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-                                 alt="Penthouse">
+                                 alt="Penthouse" loading="lazy">
                             <div class="property-badge new">New Launch</div>
                             <div class="property-actions">
-                                <button class="property-action-btn save-property" data-property="5">
-                                    <i class="fas fa-heart"></i>
+                                <button class="property-action-btn save-property" data-property="5" aria-label="Save property">
+                                    <i class="far fa-heart"></i>
                                 </button>
-                                <button class="property-action-btn">
+                                <button class="property-action-btn" aria-label="Compare property">
                                     <i class="fas fa-exchange-alt"></i>
                                 </button>
                             </div>
@@ -1990,16 +2188,16 @@
                     </div>
                     
                     <!-- Property 6 -->
-                    <div class="property-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="property-card" data-aos="fade-up" data-aos-delay="500">
                         <div class="property-image">
                             <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80" 
-                                 alt="1 BHK Apartment">
+                                 alt="1 BHK Apartment" loading="lazy">
                             <div class="property-badge rent">For Rent</div>
                             <div class="property-actions">
-                                <button class="property-action-btn save-property" data-property="6">
-                                    <i class="fas fa-heart"></i>
+                                <button class="property-action-btn save-property" data-property="6" aria-label="Save property">
+                                    <i class="far fa-heart"></i>
                                 </button>
-                                <button class="property-action-btn">
+                                <button class="property-action-btn" aria-label="Compare property">
                                     <i class="fas fa-exchange-alt"></i>
                                 </button>
                             </div>
@@ -2047,8 +2245,6 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- More properties would be loaded here -->
                 </div>
                 
                 <!-- List View -->
@@ -2057,7 +2253,7 @@
                     <div class="property-list-item" data-aos="fade-up">
                         <div class="list-image">
                             <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-                                 alt="3 BHK Luxury Apartment">
+                                 alt="3 BHK Luxury Apartment" loading="lazy">
                             <div class="property-badge">For Sale</div>
                         </div>
                         <div class="list-content">
@@ -2100,8 +2296,8 @@
                             <div class="price-amount">₹ 85,00,000</div>
                             <div class="price-unit mb-3">85 Lakhs</div>
                             <div class="d-flex gap-2">
-                                <button class="property-action-btn save-property" data-property="1">
-                                    <i class="fas fa-heart"></i>
+                                <button class="property-action-btn save-property" data-property="1" aria-label="Save property">
+                                    <i class="far fa-heart"></i>
                                 </button>
                                 <a href="property-detail.html" class="btn btn-gold btn-sm">
                                     View Details
@@ -2118,7 +2314,7 @@
                     <div class="property-list-item" data-aos="fade-up" data-aos-delay="100">
                         <div class="list-image">
                             <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-                                 alt="2 BHK Apartment">
+                                 alt="2 BHK Apartment" loading="lazy">
                             <div class="property-badge">For Sale</div>
                         </div>
                         <div class="list-content">
@@ -2151,14 +2347,18 @@
                                     <span>1 Parking</span>
                                 </div>
                             </div>
+                            
+                            <p class="text-muted">
+                                Modern 2 BHK apartment with premium amenities, spacious rooms, and 
+                                excellent natural lighting. Ideal for young professionals.
+                            </p>
                         </div>
-                    
-                                            <div class="list-price">
+                        <div class="list-price">
                             <div class="price-amount">₹ 65,00,000</div>
                             <div class="price-unit mb-3">65 Lakhs</div>
                             <div class="d-flex gap-2">
-                                <button class="property-action-btn save-property" data-property="2">
-                                    <i class="fas fa-heart"></i>
+                                <button class="property-action-btn save-property" data-property="2" aria-label="Save property">
+                                    <i class="far fa-heart"></i>
                                 </button>
                                 <a href="property-detail.html" class="btn btn-gold btn-sm">
                                     View Details
@@ -2170,71 +2370,10 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- List Item 3 -->
-                    <div class="property-list-item" data-aos="fade-up" data-aos-delay="200">
-                        <div class="list-image">
-                            <img src="https://images.unsplash.com/photo-1558036117-15e82a2c9a9a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-                                 alt="Commercial Office">
-                            <div class="property-badge">For Sale</div>
-                        </div>
-                        <div class="list-content">
-                            <h3 class="property-title">Commercial Office Space</h3>
-                            <div class="property-location">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Naroda Landmark, Ahmedabad</span>
-                            </div>
-                            
-                            <div class="property-status">
-                                <span class="status-badge ready">Ready to Move</span>
-                                <span class="status-badge rera">RERA Approved</span>
-                            </div>
-                            
-                            <div class="list-features">
-                                <div class="property-feature">
-                                    <i class="fas fa-building"></i>
-                                    <span>Office</span>
-                                </div>
-                                <div class="property-feature">
-                                    <i class="fas fa-vector-square"></i>
-                                    <span>2000 sqft</span>
-                                </div>
-                                <div class="property-feature">
-                                    <i class="fas fa-car"></i>
-                                    <span>4 Parking</span>
-                                </div>
-                                <div class="property-feature">
-                                    <i class="fas fa-users"></i>
-                                    <span>20 Person</span>
-                                </div>
-                            </div>
-                            
-                            <p class="text-muted">
-                                Premium office space in Naroda Landmark with modern amenities, high-speed elevators, 
-                                24/7 security, and excellent connectivity.
-                            </p>
-                        </div>
-                        <div class="list-price">
-                            <div class="price-amount">₹ 2.5 Cr</div>
-                            <div class="price-unit mb-3">2.5 Crores</div>
-                            <div class="d-flex gap-2">
-                                <button class="property-action-btn save-property" data-property="3">
-                                    <i class="fas fa-heart"></i>
-                                </button>
-                                <a href="property-detail.html" class="btn btn-gold btn-sm">
-                                    View Details
-                                </a>
-                            </div>
-                            <div class="property-meta mt-3">
-                                <div class="property-id">ID: NG-PR-003</div>
-                                <div class="property-date">1 week ago</div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 
                 <!-- No Results Message -->
-                <div class="no-results" id="noResults" style="display: none;">
+                <div class="no-results" id="noResults">
                     <div class="no-results-icon">
                         <i class="fas fa-search"></i>
                     </div>
@@ -2419,7 +2558,6 @@
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <!-- NoUiSlider JS -->
     <script src="https://cdn.jsdelivr.net/npm/nouislider@15.6.0/dist/nouislider.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nouislider@15.6.0/dist/nouislider.min.css">
 
     <script>
         // Wait for page to load
@@ -2428,7 +2566,8 @@
             AOS.init({
                 duration: 1000,
                 once: false,
-                offset: 100
+                offset: 100,
+                disable: window.innerWidth < 768
             });
             
             // Remove preloader
@@ -2443,7 +2582,8 @@
             // Initialize Select2
             $('#location, #propertyType, #bedrooms, #furnishing, #possession, #sortBy').select2({
                 theme: 'bootstrap-5',
-                width: '100%'
+                width: '100%',
+                dropdownParent: $('#filterCard')
             });
             
             // Initialize back to top button
@@ -2488,7 +2628,7 @@
                             <div>
                                 <p class="mb-0 fw-500">${message}</p>
                             </div>
-                            <button type="button" class="btn-close ms-auto" onclick="this.parentElement.parentElement.remove()"></button>
+                            <button type="button" class="btn-close ms-auto" onclick="this.parentElement.parentElement.remove()" aria-label="Close"></button>
                         </div>
                     `;
                     
@@ -2529,9 +2669,9 @@
                         // Update property count based on selected tab
                         const countElement = document.getElementById('propertyCount');
                         const type = this.getAttribute('data-type');
-                        if (type === 'buy') countElement.textContent = '8';
-                        else if (type === 'rent') countElement.textContent = '4';
-                        else if (type === 'commercial') countElement.textContent = '3';
+                        if (type === 'buy') countElement.textContent = '6';
+                        else if (type === 'rent') countElement.textContent = '2';
+                        else if (type === 'commercial') countElement.textContent = '1';
                     });
                 });
                 
@@ -2563,6 +2703,7 @@
                         } else {
                             gridView.style.display = 'none';
                             listView.style.display = 'block';
+                            listView.classList.add('active');
                         }
                     });
                 });
@@ -2571,14 +2712,16 @@
                 const saveButtons = document.querySelectorAll('.save-property');
                 saveButtons.forEach(button => {
                     button.addEventListener('click', function() {
-                        this.classList.toggle('saved');
-                        const propertyId = this.getAttribute('data-property');
-                        
-                        if (this.classList.contains('saved')) {
-                            this.innerHTML = '<i class="fas fa-heart"></i>';
+                        const icon = this.querySelector('i');
+                        if (icon.classList.contains('far')) {
+                            icon.classList.remove('far');
+                            icon.classList.add('fas');
+                            this.classList.add('saved');
                             showToast('Property added to favorites', 'success');
                         } else {
-                            this.innerHTML = '<i class="far fa-heart"></i>';
+                            icon.classList.remove('fas');
+                            icon.classList.add('far');
+                            this.classList.remove('saved');
                             showToast('Property removed from favorites', 'info');
                         }
                     });
@@ -2587,7 +2730,8 @@
                 // Search form submission
                 const searchForm = document.getElementById('propertySearchForm');
                 const noResults = document.getElementById('noResults');
-                const propertyCards = document.querySelectorAll('.property-card, .property-list-item');
+                const propertyCards = document.querySelectorAll('.property-card');
+                const listItems = document.querySelectorAll('.property-list-item');
                 
                 searchForm.addEventListener('submit', function(e) {
                     e.preventDefault();
@@ -2601,6 +2745,8 @@
                         const location = document.getElementById('location').value;
                         const propertyType = document.getElementById('propertyType').value;
                         const bedrooms = document.getElementById('bedrooms').value;
+                        const minPrice = document.getElementById('minPrice').value;
+                        const maxPrice = document.getElementById('maxPrice').value;
                         
                         // Simple filter logic
                         let visibleCount = 0;
@@ -2609,12 +2755,22 @@
                             visibleCount++;
                         });
                         
+                        listItems.forEach(item => {
+                            item.style.display = 'flex';
+                        });
+                        
                         // Hide no results message if properties are visible
                         if (visibleCount > 0) {
                             noResults.style.display = 'none';
                             document.getElementById('propertyCount').textContent = visibleCount;
                         } else {
                             noResults.style.display = 'block';
+                            propertyCards.forEach(card => {
+                                card.style.display = 'none';
+                            });
+                            listItems.forEach(item => {
+                                item.style.display = 'none';
+                            });
                         }
                         
                         hideLoading();
@@ -2639,6 +2795,9 @@
                         propertyCards.forEach(card => {
                             card.style.display = 'flex';
                         });
+                        listItems.forEach(item => {
+                            item.style.display = 'flex';
+                        });
                         noResults.style.display = 'none';
                         document.getElementById('propertyCount').textContent = propertyCards.length;
                         
@@ -2657,15 +2816,19 @@
                 const filterCard = document.getElementById('filterCard');
                 const closeFilter = document.getElementById('closeFilter');
                 
-                mobileFilterToggle.addEventListener('click', function() {
-                    filterCard.classList.add('show');
-                    document.body.style.overflow = 'hidden';
-                });
+                if (mobileFilterToggle) {
+                    mobileFilterToggle.addEventListener('click', function() {
+                        filterCard.classList.add('show');
+                        document.body.style.overflow = 'hidden';
+                    });
+                }
                 
-                closeFilter.addEventListener('click', function() {
-                    filterCard.classList.remove('show');
-                    document.body.style.overflow = 'auto';
-                });
+                if (closeFilter) {
+                    closeFilter.addEventListener('click', function() {
+                        filterCard.classList.remove('show');
+                        document.body.style.overflow = 'auto';
+                    });
+                }
                 
                 // Close mobile filter when clicking outside
                 filterCard.addEventListener('click', function(e) {
@@ -2693,6 +2856,15 @@
             setTimeout(() => {
                 showToast('Browse our premium properties! Use filters to find your perfect match.', 'success');
             }, 1500);
+            
+            // Handle window resize
+            let resizeTimer;
+            window.addEventListener('resize', function() {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(function() {
+                    AOS.refresh();
+                }, 250);
+            });
         });
         
         // Loading overlay functions

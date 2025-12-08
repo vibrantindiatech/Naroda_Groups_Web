@@ -53,7 +53,7 @@
 
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 80px;
+            scroll-padding-top: 100px;
         }
 
         body {
@@ -63,6 +63,7 @@
             line-height: 1.7;
             font-weight: 400;
             background-color: #ffffff;
+            padding-top: 80px;
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -85,6 +86,7 @@
         img {
             max-width: 100%;
             height: auto;
+            display: block;
         }
 
         .container {
@@ -93,13 +95,19 @@
         }
 
         section {
-            padding: 100px 0;
+            padding: 80px 0;
             position: relative;
+        }
+
+        @media (max-width: 992px) {
+            section {
+                padding: 60px 0;
+            }
         }
 
         @media (max-width: 768px) {
             section {
-                padding: 60px 0;
+                padding: 40px 0;
             }
         }
 
@@ -213,30 +221,44 @@
         .navbar-brand {
             font-family: 'Playfair Display', serif;
             font-weight: 900;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             display: flex;
             align-items: center;
         }
 
+        @media (max-width: 576px) {
+            .navbar-brand {
+                font-size: 1.2rem;
+            }
+        }
+
         .logo-icon {
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             background: var(--gradient-secondary);
-            border-radius: 12px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 12px;
+            margin-right: 10px;
             color: var(--primary-color);
             font-weight: 900;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: 576px) {
+            .logo-icon {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
         }
 
         .nav-link {
             font-weight: 500;
-            margin: 0 6px;
+            margin: 0 4px;
             position: relative;
-            padding: 8px 16px !important;
+            padding: 8px 12px !important;
             border-radius: 30px;
             transition: var(--transition);
         }
@@ -284,7 +306,7 @@
 
         /* ===== Buttons ===== */
         .btn {
-            padding: 14px 32px;
+            padding: 12px 24px;
             font-weight: 600;
             border-radius: 50px;
             transition: var(--transition);
@@ -294,9 +316,17 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 8px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.85rem;
+            }
         }
 
         .btn:before {
@@ -321,7 +351,7 @@
         }
 
         .btn-gold:hover {
-            transform: translateY(-5px);
+            transform: translateY(-3px);
             box-shadow: 0 15px 35px rgba(201, 169, 110, 0.4);
             color: var(--primary-color);
         }
@@ -336,7 +366,7 @@
             background: white;
             color: var(--primary-color);
             border-color: white;
-            transform: translateY(-5px);
+            transform: translateY(-3px);
             box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
         }
 
@@ -347,14 +377,14 @@
         }
 
         .btn-emerald:hover {
-            transform: translateY(-5px);
+            transform: translateY(-3px);
             box-shadow: 0 15px 35px rgba(46, 139, 87, 0.4);
             color: white;
         }
 
         /* ===== Hero Section ===== */
         .hero-section {
-            min-height: 60vh;
+            min-height: 40vh;
             background: linear-gradient(rgba(10, 42, 74, 0.95), rgba(10, 42, 74, 0.85)), url('https://images.unsplash.com/photo-1588681664899-f142ff2dc9b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
             background-size: cover;
             background-position: center;
@@ -363,37 +393,51 @@
             align-items: center;
             position: relative;
             overflow: hidden;
-        }
-
-        .hero-title {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
-        }
-
-        @media (max-width: 992px) {
-            .hero-title {
-                font-size: 2.5rem;
-            }
+            padding: 80px 0 60px;
+            margin-top: -80px;
         }
 
         @media (max-width: 768px) {
+            .hero-section {
+                min-height: 30vh;
+                padding: 100px 0 40px;
+            }
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        @media (max-width: 992px) {
             .hero-title {
                 font-size: 2rem;
             }
         }
 
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+        }
+
         .hero-subtitle {
-            font-size: 1.25rem;
-            margin-bottom: 2.5rem;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
             opacity: 0.9;
             font-weight: 300;
-            line-height: 1.8;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .hero-subtitle {
+                font-size: 1rem;
+            }
         }
 
         /* ===== News Content ===== */
         .news-section {
-            padding: 100px 0;
             background: #f9fafb;
         }
 
@@ -403,9 +447,14 @@
             gap: 40px;
         }
 
-        @media (max-width: 992px) {
+        @media (max-width: 1200px) {
             .news-container {
                 grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .sidebar {
+                order: -1;
             }
         }
 
@@ -424,7 +473,7 @@
         }
 
         .news-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-5px);
             box-shadow: var(--shadow-hover);
         }
 
@@ -433,9 +482,15 @@
         }
 
         .news-image {
-            height: 300px;
+            height: 250px;
             overflow: hidden;
             position: relative;
+        }
+
+        @media (max-width: 768px) {
+            .news-image {
+                height: 200px;
+            }
         }
 
         .news-image img {
@@ -446,43 +501,50 @@
         }
 
         .news-card:hover .news-image img {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
 
         .news-tag {
             position: absolute;
-            top: 20px;
-            left: 20px;
+            top: 15px;
+            left: 15px;
             background: var(--gradient-secondary);
             color: var(--primary-color);
-            padding: 8px 16px;
+            padding: 6px 12px;
             border-radius: 30px;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
         .news-content {
-            padding: 30px;
+            padding: 25px;
+        }
+
+        @media (max-width: 768px) {
+            .news-content {
+                padding: 20px;
+            }
         }
 
         .news-meta {
             display: flex;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
             margin-bottom: 15px;
             color: var(--gray-color);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         .news-meta-item {
             display: flex;
             align-items: center;
-            margin-right: 20px;
+            gap: 5px;
         }
 
         .news-meta-item i {
-            margin-right: 6px;
             color: var(--secondary-color);
         }
 
@@ -490,9 +552,11 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-top: 25px;
+            margin-top: 20px;
             padding-top: 20px;
             border-top: 1px solid var(--light-gray);
+            flex-wrap: wrap;
+            gap: 15px;
         }
 
         /* ===== Sidebar ===== */
@@ -501,17 +565,23 @@
             top: 100px;
         }
 
+        @media (max-width: 1200px) {
+            .sidebar {
+                position: static;
+            }
+        }
+
         .sidebar-widget {
             background: white;
             border-radius: var(--border-radius);
-            padding: 30px;
+            padding: 25px;
             margin-bottom: 30px;
             box-shadow: var(--shadow);
         }
 
         .widget-title {
             position: relative;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             padding-bottom: 15px;
         }
 
@@ -532,7 +602,7 @@
         }
 
         .news-categories li {
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .news-categories a {
@@ -552,9 +622,9 @@
 
         .category-count {
             background: var(--light-gray);
-            padding: 4px 10px;
+            padding: 4px 8px;
             border-radius: 20px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 600;
         }
 
@@ -566,8 +636,8 @@
         .update-item {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 20px;
-            padding-bottom: 20px;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
             border-bottom: 1px solid var(--light-gray);
         }
 
@@ -578,27 +648,27 @@
         }
 
         .update-icon {
-            width: 40px;
-            height: 40px;
+            width: 35px;
+            height: 35px;
             background: var(--gradient-secondary);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 15px;
+            margin-right: 12px;
             color: var(--primary-color);
-            font-size: 1rem;
+            font-size: 0.9rem;
             flex-shrink: 0;
         }
 
         .update-content h6 {
             margin-bottom: 5px;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             line-height: 1.4;
         }
 
         .update-date {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: var(--gray-color);
         }
 
@@ -610,21 +680,24 @@
             display: flex;
             justify-content: space-around;
             margin: 20px 0;
+            flex-wrap: wrap;
+            gap: 15px;
         }
 
         .social-count {
             text-align: center;
+            min-width: 70px;
         }
 
         .social-number {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 900;
             color: var(--secondary-color);
             line-height: 1;
         }
 
         .social-label {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: var(--gray-color);
             margin-top: 5px;
         }
@@ -647,21 +720,34 @@
         .breaking-news {
             background: linear-gradient(135deg, var(--accent-color), var(--accent-light));
             color: white;
-            padding: 20px 0;
-            margin-bottom: 40px;
+            padding: 15px 20px;
+            margin-bottom: 30px;
             border-radius: var(--border-radius);
             overflow: hidden;
             position: relative;
         }
 
+        @media (max-width: 768px) {
+            .breaking-news {
+                padding: 12px 15px;
+            }
+        }
+
         .breaking-label {
             background: rgba(0, 0, 0, 0.2);
-            padding: 8px 20px;
+            padding: 6px 15px;
             border-radius: 30px;
             font-weight: 600;
-            font-size: 0.9rem;
-            margin-right: 20px;
+            font-size: 0.85rem;
+            margin-right: 15px;
             white-space: nowrap;
+        }
+
+        @media (max-width: 576px) {
+            .breaking-label {
+                font-size: 0.75rem;
+                padding: 5px 12px;
+            }
         }
 
         .breaking-content {
@@ -674,7 +760,7 @@
             display: inline-block;
             white-space: nowrap;
             padding-left: 100%;
-            animation: scrollText 20s linear infinite;
+            animation: scrollText 25s linear infinite;
         }
 
         @keyframes scrollText {
@@ -684,7 +770,6 @@
 
         /* ===== Media Coverage ===== */
         .media-section {
-            padding: 100px 0;
             background: white;
         }
 
@@ -693,57 +778,76 @@
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
-            gap: 40px;
-            margin-top: 50px;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .media-logos {
+                gap: 20px;
+            }
         }
 
         .media-logo {
             opacity: 0.6;
             transition: var(--transition);
-            height: 40px;
+            height: 30px;
+            max-width: 150px;
+        }
+
+        @media (max-width: 768px) {
+            .media-logo {
+                height: 25px;
+                max-width: 120px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .media-logo {
+                height: 20px;
+                max-width: 100px;
+            }
         }
 
         .media-logo:hover {
             opacity: 1;
-            transform: translateY(-5px);
+            transform: translateY(-3px);
         }
 
         /* ===== Press Releases ===== */
         .press-section {
-            padding: 100px 0;
             background: #f9fafb;
         }
 
         .press-card {
             background: white;
             border-radius: var(--border-radius);
-            padding: 40px;
+            padding: 30px;
             box-shadow: var(--shadow);
             transition: var(--transition);
             height: 100%;
         }
 
         .press-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-5px);
             box-shadow: var(--shadow-hover);
         }
 
         .press-icon {
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             background: linear-gradient(135deg, rgba(201, 169, 110, 0.1) 0%, rgba(201, 169, 110, 0.05) 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             color: var(--secondary-color);
-            font-size: 24px;
+            font-size: 20px;
         }
 
         /* ===== Calendar Section ===== */
         .calendar-section {
-            padding: 100px 0;
             background: white;
         }
 
@@ -751,42 +855,68 @@
             background: var(--gradient-primary);
             color: white;
             border-radius: var(--border-radius);
-            padding: 40px;
+            padding: 30px;
             box-shadow: var(--shadow);
+        }
+
+        @media (max-width: 768px) {
+            .calendar-card {
+                padding: 20px;
+            }
         }
 
         .calendar-header {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         .calendar-month {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 900;
             margin-bottom: 10px;
         }
 
+        @media (max-width: 768px) {
+            .calendar-month {
+                font-size: 1.5rem;
+            }
+        }
+
         .calendar-year {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             opacity: 0.8;
         }
 
         .calendar-grid {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
-            gap: 10px;
+            gap: 8px;
+        }
+
+        @media (max-width: 576px) {
+            .calendar-grid {
+                gap: 5px;
+            }
         }
 
         .calendar-day {
             text-align: center;
-            padding: 15px 5px;
-            border-radius: 10px;
+            padding: 10px 5px;
+            border-radius: 8px;
             font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 576px) {
+            .calendar-day {
+                padding: 8px 2px;
+                font-size: 0.8rem;
+            }
         }
 
         .calendar-day.weekday {
             color: rgba(255, 255, 255, 0.7);
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
@@ -800,11 +930,11 @@
         .calendar-day.event:after {
             content: '';
             position: absolute;
-            bottom: 5px;
+            bottom: 3px;
             left: 50%;
             transform: translateX(-50%);
-            width: 6px;
-            height: 6px;
+            width: 4px;
+            height: 4px;
             background: var(--secondary-color);
             border-radius: 50%;
         }
@@ -818,15 +948,21 @@
         .footer {
             background: var(--primary-dark);
             color: #b0b7c3;
-            padding-top: 80px;
+            padding-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .footer {
+                padding-top: 40px;
+            }
         }
 
         .footer-title {
             color: white;
-            font-size: 1.3rem;
-            margin-bottom: 25px;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
             position: relative;
-            padding-bottom: 15px;
+            padding-bottom: 12px;
         }
 
         .footer-title:after {
@@ -834,7 +970,7 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 40px;
+            width: 35px;
             height: 3px;
             background: var(--gradient-secondary);
             border-radius: 2px;
@@ -842,9 +978,16 @@
 
         .copyright {
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 30px 0;
-            margin-top: 60px;
+            padding: 25px 0;
+            margin-top: 40px;
             text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .copyright {
+                padding: 20px 0;
+                margin-top: 30px;
+            }
         }
 
         /* ===== Back to Top ===== */
@@ -852,8 +995,8 @@
             position: fixed;
             bottom: 30px;
             right: 30px;
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             background: var(--gradient-secondary);
             color: var(--primary-color);
             border-radius: 50%;
@@ -869,23 +1012,32 @@
             border: 2px solid rgba(255, 255, 255, 0.2);
         }
 
+        @media (max-width: 768px) {
+            .back-to-top {
+                width: 45px;
+                height: 45px;
+                bottom: 80px;
+                right: 20px;
+            }
+        }
+
         .back-to-top.active {
             opacity: 1;
             visibility: visible;
         }
 
         .back-to-top:hover {
-            transform: translateY(-5px);
+            transform: translateY(-3px);
             box-shadow: 0 15px 35px rgba(201, 169, 110, 0.4);
         }
 
         /* ===== WhatsApp Float ===== */
         .whatsapp-float {
             position: fixed;
-            bottom: 100px;
+            bottom: 90px;
             right: 30px;
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             background: #25D366;
             color: white;
             border-radius: 50%;
@@ -899,8 +1051,17 @@
             text-decoration: none;
         }
 
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                width: 45px;
+                height: 45px;
+                bottom: 140px;
+                right: 20px;
+            }
+        }
+
         .whatsapp-float:hover {
-            transform: translateY(-5px);
+            transform: translateY(-3px);
             box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
         }
 
@@ -913,7 +1074,7 @@
             background: white;
             display: flex;
             justify-content: space-around;
-            padding: 15px 0;
+            padding: 12px 0;
             box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
             z-index: 999;
             display: none;
@@ -927,6 +1088,10 @@
             .back-to-top {
                 bottom: 80px;
             }
+            
+            body {
+                padding-bottom: 60px;
+            }
         }
 
         /* ===== Toast Notifications ===== */
@@ -937,16 +1102,31 @@
             z-index: 9999;
         }
 
+        @media (max-width: 768px) {
+            .toast-container {
+                top: 80px;
+                right: 15px;
+                left: 15px;
+            }
+        }
+
         .toast {
             background: white;
             border-radius: var(--border-radius);
-            padding: 20px;
+            padding: 15px;
             box-shadow: var(--shadow);
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             transform: translateX(100%);
             opacity: 0;
             transition: transform 0.3s ease, opacity 0.3s ease;
             max-width: 350px;
+        }
+
+        @media (max-width: 768px) {
+            .toast {
+                max-width: none;
+                margin-bottom: 8px;
+            }
         }
 
         .toast.show {
@@ -976,13 +1156,14 @@
         /* ===== Additional Styles ===== */
         .social-links {
             display: flex;
-            gap: 15px;
+            gap: 12px;
             margin-top: 20px;
+            flex-wrap: wrap;
         }
         
         .social-link {
-            width: 40px;
-            height: 40px;
+            width: 35px;
+            height: 35px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             display: flex;
@@ -1002,17 +1183,18 @@
         }
         
         .footer-links li {
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
         
         .footer-links a {
             color: #b0b7c3;
             transition: var(--transition);
+            display: inline-block;
         }
         
         .footer-links a:hover {
             color: var(--secondary-color);
-            padding-left: 5px;
+            transform: translateX(5px);
         }
         
         .mobile-nav-item {
@@ -1023,6 +1205,7 @@
             padding: 5px 10px;
             border-radius: 8px;
             transition: var(--transition);
+            font-size: 0.8rem;
         }
         
         .mobile-nav-item.active {
@@ -1031,19 +1214,14 @@
         }
         
         .mobile-nav-item i {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-bottom: 5px;
-        }
-        
-        .mobile-nav-item span {
-            font-size: 0.8rem;
-            font-weight: 500;
         }
         
         .project-mini-card {
             display: block;
-            margin-bottom: 20px;
-            padding: 15px;
+            margin-bottom: 15px;
+            padding: 12px;
             background: rgba(255, 255, 255, 0.05);
             border-radius: var(--border-radius);
             transition: var(--transition);
@@ -1056,13 +1234,13 @@
         .contact-info {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
         
         .contact-info i {
             color: var(--secondary-color);
-            font-size: 1.2rem;
-            margin-right: 15px;
+            font-size: 1.1rem;
+            margin-right: 12px;
             margin-top: 5px;
         }
 
@@ -1071,12 +1249,12 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 40px;
+            gap: 8px;
+            margin-bottom: 30px;
         }
 
         .filter-btn {
-            padding: 10px 24px;
+            padding: 8px 18px;
             background: white;
             border: 2px solid var(--light-gray);
             border-radius: 50px;
@@ -1084,6 +1262,14 @@
             color: var(--dark-color);
             transition: var(--transition);
             cursor: pointer;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 576px) {
+            .filter-btn {
+                padding: 6px 14px;
+                font-size: 0.8rem;
+            }
         }
 
         .filter-btn:hover,
@@ -1091,42 +1277,51 @@
             background: var(--gradient-secondary);
             color: var(--primary-color);
             border-color: var(--secondary-color);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(201, 169, 110, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(201, 169, 110, 0.2);
         }
 
         .filter-btn.active {
-            transform: translateY(-3px) scale(1.05);
+            transform: translateY(-2px) scale(1.05);
         }
 
         /* ===== No Results ===== */
         .no-results {
             text-align: center;
-            padding: 60px 20px;
+            padding: 40px 20px;
             grid-column: 1 / -1;
         }
 
         .no-results-icon {
-            font-size: 4rem;
+            font-size: 3rem;
             color: var(--light-gray);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         /* ===== Share Buttons ===== */
         .share-buttons {
             display: flex;
-            gap: 10px;
+            gap: 8px;
         }
 
         .share-btn {
-            width: 40px;
-            height: 40px;
+            width: 35px;
+            height: 35px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 576px) {
+            .share-btn {
+                width: 32px;
+                height: 32px;
+                font-size: 0.8rem;
+            }
         }
 
         .share-btn.facebook { background: #3b5998; }
@@ -1135,7 +1330,7 @@
         .share-btn.whatsapp { background: #25d366; }
 
         .share-btn:hover {
-            transform: translateY(-3px);
+            transform: translateY(-2px);
             opacity: 0.9;
         }
 
@@ -1143,19 +1338,19 @@
         .media-player {
             background: rgba(0, 0, 0, 0.05);
             border-radius: var(--border-radius);
-            padding: 20px;
-            margin-top: 20px;
+            padding: 15px;
+            margin-top: 15px;
         }
 
         .player-controls {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
         }
 
         .play-btn {
-            width: 50px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
             background: var(--gradient-secondary);
             border-radius: 50%;
             display: flex;
@@ -1164,10 +1359,11 @@
             color: var(--primary-color);
             cursor: pointer;
             transition: var(--transition);
+            flex-shrink: 0;
         }
 
         .play-btn:hover {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
 
         .progress-bar {
@@ -1191,12 +1387,13 @@
 
         .newsletter-form input {
             width: 100%;
-            padding: 12px 20px;
+            padding: 12px 18px;
             border: none;
             border-radius: 50px;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             background: rgba(255, 255, 255, 0.2);
             color: white;
+            font-size: 0.9rem;
         }
 
         .newsletter-form input::placeholder {
@@ -1211,20 +1408,29 @@
         /* ===== Pagination ===== */
         .pagination {
             justify-content: center;
-            margin-top: 50px;
+            margin-top: 40px;
         }
 
         .page-link {
             border: none;
             color: var(--primary-color);
-            margin: 0 5px;
+            margin: 0 3px;
             border-radius: 50%;
-            width: 45px;
-            height: 45px;
+            width: 40px;
+            height: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
             transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 576px) {
+            .page-link {
+                width: 35px;
+                height: 35px;
+                font-size: 0.85rem;
+            }
         }
 
         .page-link:hover,
@@ -1232,9 +1438,63 @@
             background: var(--gradient-secondary);
             color: var(--primary-color);
         }
+
+        /* ===== Custom Spinner ===== */
+        .custom-spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(201, 169, 110, 0.2);
+            border-top-color: var(--secondary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        /* ===== Accessibility Improvements ===== */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* ===== Focus States ===== */
+        a:focus,
+        button:focus,
+        input:focus,
+        .btn:focus {
+            outline: 2px solid var(--secondary-color);
+            outline-offset: 2px;
+        }
+
+        /* ===== Skip to Content ===== */
+        .skip-to-content {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--gradient-secondary);
+            color: var(--primary-color);
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            z-index: 1001;
+            transition: top 0.3s;
+        }
+
+        .skip-to-content:focus {
+            top: 10px;
+        }
     </style>
 </head>
 <body>
+    <!-- Skip to Content Link -->
+    <a href="#main-content" class="skip-to-content">Skip to Content</a>
+
     <!-- Preloader -->
     <div id="preloader">
         <div class="loader">
@@ -1245,15 +1505,13 @@
 
     <!-- Loading Overlay -->
     <div class="loading-overlay">
-        <div class="spinner-border" style="color: var(--secondary-color);" role="status">
-            <span class="visually-hidden">Loading...</span>
-        </div>
+        <div class="custom-spinner"></div>
     </div>
 
     <!-- Back to Top Button -->
-    <div class="back-to-top">
+    <button class="back-to-top" aria-label="Back to top">
         <i class="fas fa-chevron-up"></i>
-    </div>
+    </button>
 
     <!-- WhatsApp Float -->
     <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
@@ -1271,7 +1529,8 @@
                 <span>Naroda <span class="gold-text">Group</span></span>
             </a>
             
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             
@@ -1284,10 +1543,11 @@
                         <a class="nav-link" href="about.html">About</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" 
+                           data-bs-toggle="dropdown" aria-expanded="false">
                             Projects
                         </a>
-                        <div class="dropdown-menu">
+                        <div class="dropdown-menu" aria-labelledby="projectsDropdown">
                             <a class="dropdown-item" href="projects-landmark.html">Naroda Landmark</a>
                             <a class="dropdown-item" href="projects-irish.html">Naroda Irish</a>
                             <div class="dropdown-divider"></div>
@@ -1295,10 +1555,11 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="propertiesDropdown" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="propertiesDropdown" 
+                           data-bs-toggle="dropdown" aria-expanded="false">
                             Properties
                         </a>
-                        <div class="dropdown-menu">
+                        <div class="dropdown-menu" aria-labelledby="propertiesDropdown">
                             <a class="dropdown-item" href="properties.html">Buy</a>
                             <a class="dropdown-item" href="properties-rent.html">Rent</a>
                             <div class="dropdown-divider"></div>
@@ -1309,10 +1570,11 @@
                         <a class="nav-link" href="gallery.html">Gallery</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" id="moreDropdown" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="moreDropdown" 
+                           data-bs-toggle="dropdown" aria-expanded="false">
                             More
                         </a>
-                        <div class="dropdown-menu">
+                        <div class="dropdown-menu" aria-labelledby="moreDropdown">
                             <a class="dropdown-item" href="blog.html">Blog</a>
                             <a class="dropdown-item active" href="news.html">News</a>
                             <a class="dropdown-item" href="careers.html">Careers</a>
@@ -1326,10 +1588,11 @@
                 
                 <div class="d-flex align-items-center ms-lg-3 mt-3 mt-lg-0">
                     <div class="dropdown">
-                        <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown">
+                        <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" 
+                                id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fas fa-globe me-1"></i> EN
                         </button>
-                        <div class="dropdown-menu">
+                        <div class="dropdown-menu" aria-labelledby="languageDropdown">
                             <a class="dropdown-item" href="#">English</a>
                             <a class="dropdown-item" href="#">Hindi</a>
                             <a class="dropdown-item" href="#">Gujarati</a>
@@ -1368,11 +1631,11 @@
     </div>
 
     <!-- Main Content -->
-    <main>
+    <main id="main-content">
         <!-- Hero Section -->
         <section class="hero-section">
             <div class="container">
-                <div class="row min-vh-60 align-items-center">
+                <div class="row align-items-center">
                     <div class="col-lg-8 mx-auto text-center">
                         <h1 class="hero-title" data-aos="fade-up">
                             Latest <span class="gold-text">News</span>
@@ -1386,7 +1649,7 @@
         </section>
 
         <!-- Breaking News Banner -->
-        <section style="padding: 40px 0 0;">
+        <section style="padding: 20px 0 0;">
             <div class="container">
                 <div class="breaking-news" data-aos="fade-up">
                     <div class="d-flex align-items-center">
@@ -1420,7 +1683,7 @@
                     <div class="main-content">
                         <!-- Featured News -->
                         <div class="news-grid">
-                            <div class="news-card featured" data-aos="fade-up">
+                            <article class="news-card featured" data-aos="fade-up">
                                 <div class="news-image">
                                     <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2073&q=80" 
                                          alt="Naroda Group Wins Best Developer Award">
@@ -1438,7 +1701,7 @@
                                             <i class="fas fa-map-marker-alt"></i> Ahmedabad
                                         </div>
                                     </div>
-                                    <h2 class="mb-3">Naroda Group Wins "Best Real Estate Developer" Award 2024</h2>
+                                    <h2 class="h3 mb-3">Naroda Group Wins "Best Real Estate Developer" Award 2024</h2>
                                     <p class="text-muted mb-4">
                                         Naroda Group has been honored with the prestigious "Best Real Estate Developer" award 
                                         at the National Real Estate Excellence Awards 2024. The award recognizes our commitment 
@@ -1446,25 +1709,25 @@
                                     </p>
                                     <div class="news-actions">
                                         <div class="share-buttons">
-                                            <a href="#" class="share-btn facebook" aria-label="Share on Facebook">
+                                            <button class="share-btn facebook" aria-label="Share on Facebook">
                                                 <i class="fab fa-facebook-f"></i>
-                                            </a>
-                                            <a href="#" class="share-btn twitter" aria-label="Share on Twitter">
+                                            </button>
+                                            <button class="share-btn twitter" aria-label="Share on Twitter">
                                                 <i class="fab fa-twitter"></i>
-                                            </a>
-                                            <a href="#" class="share-btn linkedin" aria-label="Share on LinkedIn">
+                                            </button>
+                                            <button class="share-btn linkedin" aria-label="Share on LinkedIn">
                                                 <i class="fab fa-linkedin-in"></i>
-                                            </a>
-                                            <a href="#" class="share-btn whatsapp" aria-label="Share on WhatsApp">
+                                            </button>
+                                            <button class="share-btn whatsapp" aria-label="Share on WhatsApp">
                                                 <i class="fab fa-whatsapp"></i>
-                                            </a>
+                                            </button>
                                         </div>
                                         <a href="news-detail.html" class="btn btn-gold">
                                             Read Full Story <i class="fas fa-arrow-right ms-2"></i>
                                         </a>
                                     </div>
                                 </div>
-                            </div>
+                            </article>
                         </div>
                         
                         <!-- Regular News Grid -->
@@ -1482,7 +1745,7 @@
                         </div>
                         
                         <!-- Pagination -->
-                        <nav aria-label="Page navigation" class="mt-5">
+                        <nav aria-label="News pagination" class="mt-5">
                             <ul class="pagination" id="pagination">
                                 <!-- Pagination will be generated here -->
                             </ul>
@@ -1490,10 +1753,10 @@
                     </div>
                     
                     <!-- Sidebar -->
-                    <div class="sidebar">
+                    <aside class="sidebar">
                         <!-- Categories Widget -->
                         <div class="sidebar-widget" data-aos="fade-left" data-aos-delay="100">
-                            <h4 class="widget-title">News Categories</h4>
+                            <h2 class="h4 widget-title">News Categories</h2>
                             <ul class="news-categories" id="newsCategories">
                                 <!-- Categories will be loaded dynamically -->
                             </ul>
@@ -1501,7 +1764,7 @@
                         
                         <!-- Latest Updates Widget -->
                         <div class="sidebar-widget" data-aos="fade-left" data-aos-delay="200">
-                            <h4 class="widget-title">Latest Updates</h4>
+                            <h2 class="h4 widget-title">Latest Updates</h2>
                             <ul class="updates-list" id="updatesList">
                                 <!-- Updates will be loaded dynamically -->
                             </ul>
@@ -1509,13 +1772,13 @@
                         
                         <!-- Media Player Widget -->
                         <div class="sidebar-widget" data-aos="fade-left" data-aos-delay="300">
-                            <h4 class="widget-title">Media Coverage</h4>
+                            <h2 class="h4 widget-title">Media Coverage</h2>
                             <div class="media-player">
-                                <h6 class="mb-3">CEO Interview on Real Estate Trends</h6>
+                                <h3 class="h6 mb-3">CEO Interview on Real Estate Trends</h3>
                                 <div class="player-controls">
-                                    <div class="play-btn">
+                                    <button class="play-btn" aria-label="Play/pause audio">
                                         <i class="fas fa-play"></i>
-                                    </div>
+                                    </button>
                                     <div class="progress-bar">
                                         <div class="progress-fill"></div>
                                     </div>
@@ -1526,7 +1789,7 @@
                         
                         <!-- Social Stats Widget -->
                         <div class="sidebar-widget social-widget" data-aos="fade-left" data-aos-delay="400">
-                            <h4 class="widget-title">Follow Us</h4>
+                            <h2 class="h4 widget-title">Follow Us</h2>
                             <div class="social-counts">
                                 <div class="social-count">
                                     <div class="social-number">25K</div>
@@ -1562,16 +1825,16 @@
                         
                         <!-- Subscribe Widget -->
                         <div class="sidebar-widget subscribe-widget" data-aos="fade-left" data-aos-delay="500">
-                            <h4 class="widget-title">News Alerts</h4>
+                            <h2 class="h4 widget-title">News Alerts</h2>
                             <p class="mb-3">Get instant notifications for important announcements</p>
-                            <div class="newsletter-form">
-                                <input type="email" placeholder="Your email address">
-                                <button class="btn btn-gold w-100">
+                            <form class="newsletter-form" id="newsletterForm">
+                                <input type="email" placeholder="Your email address" required>
+                                <button type="submit" class="btn btn-gold w-100">
                                     <i class="fas fa-bell me-2"></i> Subscribe
                                 </button>
-                            </div>
+                            </form>
                         </div>
-                    </div>
+                    </aside>
                 </div>
             </div>
         </section>
@@ -1595,48 +1858,48 @@
                 
                 <div class="row g-4">
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                        <div class="press-card">
+                        <article class="press-card">
                             <div class="press-icon">
                                 <i class="fas fa-chart-line"></i>
                             </div>
-                            <h4 class="mb-3">Financial Results Q4 2024</h4>
+                            <h3 class="h4 mb-3">Financial Results Q4 2024</h3>
                             <p class="text-muted mb-4">
                                 Naroda Group announces strong financial results for Q4 2024 with 25% revenue growth and expansion plans.
                             </p>
                             <a href="#" class="btn btn-outline-primary">
                                 <i class="fas fa-download me-2"></i> Download PDF
                             </a>
-                        </div>
+                        </article>
                     </div>
                     
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                        <div class="press-card">
+                        <article class="press-card">
                             <div class="press-icon">
                                 <i class="fas fa-users"></i>
                             </div>
-                            <h4 class="mb-3">CSR Initiative Launch</h4>
+                            <h3 class="h4 mb-3">CSR Initiative Launch</h3>
                             <p class="text-muted mb-4">
                                 Naroda Group launches "Green Homes" initiative to promote sustainable living and community development.
                             </p>
                             <a href="#" class="btn btn-outline-primary">
                                 <i class="fas fa-download me-2"></i> Download PDF
                             </a>
-                        </div>
+                        </article>
                     </div>
                     
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                        <div class="press-card">
+                        <article class="press-card">
                             <div class="press-icon">
                                 <i class="fas fa-handshake"></i>
                             </div>
-                            <h4 class="mb-3">Strategic Partnership</h4>
+                            <h3 class="h4 mb-3">Strategic Partnership</h3>
                             <p class="text-muted mb-4">
                                 Naroda Group announces strategic partnership with leading international architecture firm for upcoming projects.
                             </p>
                             <a href="#" class="btn btn-outline-primary">
                                 <i class="fas fa-download me-2"></i> Download PDF
                             </a>
-                        </div>
+                        </article>
                     </div>
                 </div>
             </div>
@@ -1660,11 +1923,16 @@
                 </div>
                 
                 <div class="media-logos" data-aos="fade-up">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/The_Times_of_India_logo.svg" alt="Times of India" class="media-logo" style="height: 30px;">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/The_Economic_Times_logo.png" alt="Economic Times" class="media-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/79/Business_Standard_logo.svg" alt="Business Standard" class="media-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5d/CNBC_Awaaz_Logo.png" alt="CNBC Awaaz" class="media-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/en/7/7c/ET_Now_logo.png" alt="ET Now" class="media-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/The_Times_of_India_logo.svg" 
+                         alt="Times of India" class="media-logo" style="height: 30px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/The_Economic_Times_logo.png" 
+                         alt="Economic Times" class="media-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/79/Business_Standard_logo.svg" 
+                         alt="Business Standard" class="media-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5d/CNBC_Awaaz_Logo.png" 
+                         alt="CNBC Awaaz" class="media-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/7/7c/ET_Now_logo.png" 
+                         alt="ET Now" class="media-logo">
                 </div>
             </div>
         </section>
@@ -1702,7 +1970,7 @@
                                 <div class="calendar-day weekday">Sat</div>
                                 <div class="calendar-day weekday">Sun</div>
                                 
-                                <!-- Calendar days will be populated dynamically -->
+                                <!-- Calendar days -->
                                 <div class="calendar-day">1</div>
                                 <div class="calendar-day">2</div>
                                 <div class="calendar-day">3</div>
@@ -1713,20 +1981,20 @@
                                 <div class="calendar-day">8</div>
                                 <div class="calendar-day">9</div>
                                 <div class="calendar-day">10</div>
-                                <div class="calendar-day event" title="Project Launch">11</div>
+                                <button class="calendar-day event" title="Project Launch" aria-label="January 11 - Project Launch">11</button>
                                 <div class="calendar-day">12</div>
                                 <div class="calendar-day">13</div>
-                                <div class="calendar-day event" title="Investor Meet">14</div>
+                                <button class="calendar-day event" title="Investor Meet" aria-label="January 14 - Investor Meet">14</button>
                                 <div class="calendar-day">15</div>
                                 <div class="calendar-day">16</div>
                                 <div class="calendar-day">17</div>
                                 <div class="calendar-day">18</div>
-                                <div class="calendar-day event" title="Site Visit">19</div>
+                                <button class="calendar-day event" title="Site Visit" aria-label="January 19 - Site Visit">19</button>
                                 <div class="calendar-day today">20</div>
                                 <div class="calendar-day">21</div>
                                 <div class="calendar-day">22</div>
                                 <div class="calendar-day">23</div>
-                                <div class="calendar-day event" title="Award Ceremony">24</div>
+                                <button class="calendar-day event" title="Award Ceremony" aria-label="January 24 - Award Ceremony">24</button>
                                 <div class="calendar-day">25</div>
                                 <div class="calendar-day">26</div>
                                 <div class="calendar-day">27</div>
@@ -1747,7 +2015,7 @@
                                     <i class="fas fa-rocket"></i>
                                 </div>
                                 <div class="update-content">
-                                    <h6>Naroda Elite Project Launch</h6>
+                                    <h4 class="h6">Naroda Elite Project Launch</h4>
                                     <p class="text-muted mb-2">Grand launch of our new luxury residential project</p>
                                     <div class="update-date">
                                         <i class="far fa-calendar me-1"></i> Jan 11, 2025 | 
@@ -1761,7 +2029,7 @@
                                     <i class="fas fa-users"></i>
                                 </div>
                                 <div class="update-content">
-                                    <h6>Quarterly Investor Meet</h6>
+                                    <h4 class="h6">Quarterly Investor Meet</h4>
                                     <p class="text-muted mb-2">Discussion on financial performance and future plans</p>
                                     <div class="update-date">
                                         <i class="far fa-calendar me-1"></i> Jan 14, 2025 | 
@@ -1775,7 +2043,7 @@
                                     <i class="fas fa-trophy"></i>
                                 </div>
                                 <div class="update-content">
-                                    <h6>Real Estate Excellence Awards</h6>
+                                    <h4 class="h6">Real Estate Excellence Awards</h4>
                                     <p class="text-muted mb-2">Award ceremony recognizing industry leaders</p>
                                     <div class="update-date">
                                         <i class="far fa-calendar me-1"></i> Jan 24, 2025 | 
@@ -1799,7 +2067,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="row g-5">
+            <div class="row g-4">
                 <div class="col-lg-4">
                     <div class="mb-4">
                         <a class="navbar-brand text-white" href="index.html">
@@ -1846,15 +2114,15 @@
                 <div class="col-lg-3 col-md-6">
                     <h3 class="footer-title">Our Projects</h3>
                     <a href="projects-landmark.html" class="project-mini-card">
-                        <h6 class="text-white mb-1">Naroda Landmark</h6>
+                        <h4 class="h6 text-white mb-1">Naroda Landmark</h4>
                         <p class="small text-muted mb-0">Premium Commercial Spaces</p>
                     </a>
                     <a href="projects-irish.html" class="project-mini-card">
-                        <h6 class="text-white mb-1">Naroda Irish</h6>
+                        <h4 class="h6 text-white mb-1">Naroda Irish</h4>
                         <p class="small text-muted mb-0">Luxury Residential Living</p>
                     </a>
                     <a href="projects.html" class="project-mini-card">
-                        <h6 class="text-white mb-1">View All Projects</h6>
+                        <h4 class="h6 text-white mb-1">View All Projects</h4>
                         <p class="small text-muted mb-0">Explore our portfolio</p>
                     </a>
                 </div>
@@ -1864,7 +2132,7 @@
                     <div class="contact-info">
                         <i class="fas fa-phone"></i>
                         <div>
-                            <h6 class="text-white mb-1">Phone Number</h6>
+                            <h4 class="h6 text-white mb-1">Phone Number</h4>
                             <p class="mb-0">+91 98765 43210</p>
                             <small class="text-muted">Mon - Sat: 10 AM - 7 PM</small>
                         </div>
@@ -1873,7 +2141,7 @@
                     <div class="contact-info">
                         <i class="fas fa-envelope"></i>
                         <div>
-                            <h6 class="text-white mb-1">Email Address</h6>
+                            <h4 class="h6 text-white mb-1">Email Address</h4>
                             <p class="mb-0">info@narodagroup.com</p>
                             <small class="text-muted">We reply within 24 hours</small>
                         </div>
@@ -1882,7 +2150,7 @@
                     <div class="contact-info">
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
-                            <h6 class="text-white mb-1">Office Address</h6>
+                            <h4 class="h6 text-white mb-1">Office Address</h4>
                             <p class="mb-0">Naroda - Bhat Road</p>
                             <small class="text-muted">Ahmedabad, Gujarat 382330</small>
                         </div>
@@ -2044,9 +2312,10 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Initialize AOS
             AOS.init({
-                duration: 1000,
-                once: false,
-                offset: 100
+                duration: 800,
+                once: true,
+                offset: 100,
+                disable: window.innerWidth < 768
             });
             
             // Remove preloader
@@ -2056,7 +2325,7 @@
                 setTimeout(() => {
                     preloader.style.display = 'none';
                 }, 500);
-            }, 1000);
+            }, 800);
             
             // Initialize news
             initNews();
@@ -2079,10 +2348,16 @@
             // Initialize newsletter subscription
             initNewsletter();
             
+            // Initialize breaking news animation
+            initBreakingNews();
+            
             // Show welcome message
             setTimeout(() => {
                 showToast('Stay updated with our latest news and announcements!', 'info');
             }, 1500);
+            
+            // Add touch event handlers for mobile
+            initTouchEvents();
         });
         
         function initNews() {
@@ -2179,6 +2454,7 @@
                 const card = document.createElement('article');
                 card.className = 'news-card';
                 card.setAttribute('data-category', item.category);
+                card.setAttribute('aria-labelledby', `news-title-${item.id}`);
                 
                 // Format category name
                 const categoryName = categoriesData.find(c => c.slug === item.category)?.name || item.category;
@@ -2191,35 +2467,35 @@
                     <div class="news-content">
                         <div class="news-meta">
                             <div class="news-meta-item">
-                                <i class="far fa-calendar"></i> ${item.date}
+                                <i class="far fa-calendar" aria-hidden="true"></i> ${item.date}
                             </div>
                             <div class="news-meta-item">
-                                <i class="far fa-clock"></i> ${item.readTime} read
+                                <i class="far fa-clock" aria-hidden="true"></i> ${item.readTime} read
                             </div>
                             <div class="news-meta-item">
-                                <i class="fas fa-map-marker-alt"></i> ${item.location}
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i> ${item.location}
                             </div>
                         </div>
-                        <h3 class="mb-3">${item.title}</h3>
+                        <h3 class="h4 mb-3" id="news-title-${item.id}">${item.title}</h3>
                         <p class="text-muted mb-4">${item.excerpt}</p>
                         
                         <div class="news-actions">
                             <div class="share-buttons">
-                                <a href="#" class="share-btn facebook" aria-label="Share on Facebook">
+                                <button class="share-btn facebook" aria-label="Share on Facebook" onclick="shareToFacebook('${item.title}', '${window.location.href}')">
                                     <i class="fab fa-facebook-f"></i>
-                                </a>
-                                <a href="#" class="share-btn twitter" aria-label="Share on Twitter">
+                                </button>
+                                <button class="share-btn twitter" aria-label="Share on Twitter" onclick="shareToTwitter('${item.title}', '${window.location.href}')">
                                     <i class="fab fa-twitter"></i>
-                                </a>
-                                <a href="#" class="share-btn linkedin" aria-label="Share on LinkedIn">
+                                </button>
+                                <button class="share-btn linkedin" aria-label="Share on LinkedIn" onclick="shareToLinkedIn('${item.title}', '${window.location.href}')">
                                     <i class="fab fa-linkedin-in"></i>
-                                </a>
-                                <a href="#" class="share-btn whatsapp" aria-label="Share on WhatsApp">
+                                </button>
+                                <button class="share-btn whatsapp" aria-label="Share on WhatsApp" onclick="shareToWhatsApp('${item.title}', '${window.location.href}')">
                                     <i class="fab fa-whatsapp"></i>
-                                </a>
+                                </button>
                             </div>
                             <a href="news-detail.html?id=${item.id}" class="btn btn-gold">
-                                Read More <i class="fas fa-arrow-right ms-2"></i>
+                                Read More <i class="fas fa-arrow-right ms-2" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>
@@ -2252,13 +2528,13 @@
                     
                     li.innerHTML = `
                         <div class="update-icon">
-                            <i class="${update.icon}"></i>
+                            <i class="${update.icon}" aria-hidden="true"></i>
                         </div>
                         <div class="update-content">
-                            <h6>${update.title}</h6>
+                            <h4 class="h6">${update.title}</h4>
                             <p class="text-muted mb-2">${update.description}</p>
                             <div class="update-date">
-                                <i class="far fa-calendar me-1"></i> ${update.date}
+                                <i class="far fa-calendar me-1" aria-hidden="true"></i> ${update.date}
                             </div>
                         </div>
                     `;
@@ -2283,6 +2559,7 @@
                 const prevA = document.createElement('a');
                 prevA.className = 'page-link';
                 prevA.href = '#';
+                prevA.setAttribute('aria-label', 'Previous page');
                 prevA.innerHTML = '<i class="fas fa-chevron-left"></i>';
                 prevA.addEventListener('click', function(e) {
                     e.preventDefault();
@@ -2315,6 +2592,7 @@
                     a.className = 'page-link';
                     a.href = '#';
                     a.textContent = i;
+                    a.setAttribute('aria-label', `Page ${i}`);
                     a.addEventListener('click', function(e) {
                         e.preventDefault();
                         currentPage = i;
@@ -2335,6 +2613,7 @@
                 const nextA = document.createElement('a');
                 nextA.className = 'page-link';
                 nextA.href = '#';
+                nextA.setAttribute('aria-label', 'Next page');
                 nextA.innerHTML = '<i class="fas fa-chevron-right"></i>';
                 nextA.addEventListener('click', function(e) {
                     e.preventDefault();
@@ -2374,6 +2653,7 @@
                 
                 if (isPlaying) {
                     this.innerHTML = '<i class="fas fa-pause"></i>';
+                    this.setAttribute('aria-label', 'Pause audio');
                     // Simulate progress
                     let width = 30;
                     const interval = setInterval(() => {
@@ -2381,6 +2661,7 @@
                             clearInterval(interval);
                             isPlaying = false;
                             this.innerHTML = '<i class="fas fa-play"></i>';
+                            this.setAttribute('aria-label', 'Play audio');
                             progressFill.style.width = '30%';
                         } else {
                             width += 0.5;
@@ -2389,15 +2670,17 @@
                     }, 100);
                 } else {
                     this.innerHTML = '<i class="fas fa-play"></i>';
+                    this.setAttribute('aria-label', 'Play audio');
                 }
             });
         }
         
         function initNewsletter() {
-            const subscribeBtn = document.querySelector('.subscribe-widget .btn');
+            const newsletterForm = document.getElementById('newsletterForm');
             
-            subscribeBtn.addEventListener('click', function() {
-                const emailInput = document.querySelector('.subscribe-widget input');
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const emailInput = this.querySelector('input[type="email"]');
                 const email = emailInput.value.trim();
                 
                 if (!email) {
@@ -2424,6 +2707,31 @@
         function isValidEmail(email) {
             const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return regex.test(email);
+        }
+        
+        function initBreakingNews() {
+            const breakingText = document.querySelector('.breaking-text');
+            if (breakingText) {
+                // Pause animation on hover/touch
+                breakingText.addEventListener('mouseenter', () => {
+                    breakingText.style.animationPlayState = 'paused';
+                });
+                
+                breakingText.addEventListener('mouseleave', () => {
+                    breakingText.style.animationPlayState = 'running';
+                });
+                
+                // For touch devices
+                breakingText.addEventListener('touchstart', () => {
+                    breakingText.style.animationPlayState = 'paused';
+                });
+                
+                breakingText.addEventListener('touchend', () => {
+                    setTimeout(() => {
+                        breakingText.style.animationPlayState = 'running';
+                    }, 1000);
+                });
+            }
         }
         
         function initBackToTop() {
@@ -2459,13 +2767,37 @@
                 const toastContainer = document.querySelector('.toast-container');
                 const toast = document.createElement('div');
                 toast.className = `toast toast-${type}`;
+                toast.setAttribute('role', 'alert');
+                toast.setAttribute('aria-live', 'assertive');
+                toast.setAttribute('aria-atomic', 'true');
+                
+                let icon = 'fa-check-circle';
+                let iconColor = 'text-success';
+                
+                switch(type) {
+                    case 'warning':
+                        icon = 'fa-exclamation-triangle';
+                        iconColor = 'text-warning';
+                        break;
+                    case 'error':
+                        icon = 'fa-exclamation-circle';
+                        iconColor = 'text-danger';
+                        break;
+                    case 'info':
+                        icon = 'fa-info-circle';
+                        iconColor = 'text-info';
+                        break;
+                }
+                
                 toast.innerHTML = `
                     <div class="d-flex align-items-center">
-                        <i class="fas ${type === 'success' ? 'fa-check-circle text-success' : 'fa-exclamation-circle text-danger'} me-3"></i>
+                        <i class="fas ${icon} ${iconColor} me-3" aria-hidden="true"></i>
                         <div>
                             <p class="mb-0 fw-500">${message}</p>
                         </div>
-                        <button type="button" class="btn-close ms-auto" onclick="this.parentElement.parentElement.remove()"></button>
+                        <button type="button" class="btn-close ms-auto" 
+                                onclick="this.parentElement.parentElement.remove()"
+                                aria-label="Close notification"></button>
                     </div>
                 `;
                 
@@ -2487,9 +2819,34 @@
                 const href = item.getAttribute('href');
                 if (href === currentPage) {
                     item.classList.add('active');
+                    item.setAttribute('aria-current', 'page');
                 } else {
                     item.classList.remove('active');
+                    item.removeAttribute('aria-current');
                 }
+            });
+        }
+        
+        function initTouchEvents() {
+            // Prevent zoom on double tap
+            let lastTouchEnd = 0;
+            document.addEventListener('touchend', function(event) {
+                const now = Date.now();
+                if (now - lastTouchEnd <= 300) {
+                    event.preventDefault();
+                }
+                lastTouchEnd = now;
+            }, false);
+            
+            // Add touch feedback for buttons
+            document.querySelectorAll('.btn, .filter-btn, .share-btn').forEach(btn => {
+                btn.addEventListener('touchstart', function() {
+                    this.style.transform = 'scale(0.98)';
+                });
+                
+                btn.addEventListener('touchend', function() {
+                    this.style.transform = '';
+                });
             });
         }
         
@@ -2501,6 +2858,47 @@
         window.hideLoading = function() {
             document.querySelector('.loading-overlay').classList.remove('active');
         };
+        
+        // Social sharing functions
+        window.shareToFacebook = function(title, url) {
+            const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}&quote=${encodeURIComponent(title)}`;
+            window.open(shareUrl, '_blank', 'width=600,height=400');
+            showToast('Sharing to Facebook...', 'info');
+        };
+        
+        window.shareToTwitter = function(title, url) {
+            const shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`;
+            window.open(shareUrl, '_blank', 'width=600,height=400');
+            showToast('Sharing to Twitter...', 'info');
+        };
+        
+        window.shareToLinkedIn = function(title, url) {
+            const shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
+            window.open(shareUrl, '_blank', 'width=600,height=400');
+            showToast('Sharing to LinkedIn...', 'info');
+        };
+        
+        window.shareToWhatsApp = function(title, url) {
+            const shareUrl = `https://wa.me/?text=${encodeURIComponent(title + ' ' + url)}`;
+            window.open(shareUrl, '_blank');
+            showToast('Sharing to WhatsApp...', 'info');
+        };
+        
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            AOS.refresh();
+        });
+        
+        // Add keyboard navigation for calendar events
+        document.querySelectorAll('.calendar-day.event').forEach(day => {
+            day.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    const eventTitle = this.getAttribute('title');
+                    showToast(`Event: ${eventTitle}`, 'info');
+                }
+            });
+        });
     </script>
 </body>
 </html>

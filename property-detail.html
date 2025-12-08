@@ -214,6 +214,18 @@
             align-items: center;
         }
 
+        @media (max-width: 768px) {
+            .navbar-brand {
+                font-size: 1.5rem;
+            }
+            
+            .logo-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+        }
+
         .logo-icon {
             width: 50px;
             height: 50px;
@@ -278,6 +290,27 @@
             color: var(--secondary-color);
         }
 
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                background: rgba(10, 42, 74, 0.98);
+                padding: 20px;
+                border-radius: 0 0 var(--border-radius) var(--border-radius);
+                margin-top: 10px;
+            }
+            
+            .nav-link {
+                margin: 5px 0;
+                padding: 12px 16px !important;
+            }
+            
+            .dropdown-menu {
+                background: rgba(10, 42, 74, 0.9);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                margin-top: 5px;
+                margin-left: 15px;
+            }
+        }
+
         /* ===== Buttons ===== */
         .btn {
             padding: 14px 32px;
@@ -293,6 +326,18 @@
             gap: 10px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 576px) {
+            .btn {
+                padding: 12px 24px;
+                font-size: 0.9rem;
+            }
+            
+            .btn-sm {
+                padding: 8px 16px;
+                font-size: 0.85rem;
+            }
         }
 
         .btn:before {
@@ -385,6 +430,12 @@
             background: #f9fafb;
         }
 
+        @media (max-width: 768px) {
+            .property-hero-section {
+                padding: 100px 0 30px;
+            }
+        }
+
         .property-title {
             font-size: 2.5rem;
             margin-bottom: 0.5rem;
@@ -393,7 +444,14 @@
 
         @media (max-width: 768px) {
             .property-title {
-                font-size: 2rem;
+                font-size: 1.8rem;
+                margin-bottom: 0.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .property-title {
+                font-size: 1.5rem;
             }
         }
 
@@ -404,6 +462,13 @@
             display: flex;
             align-items: center;
             gap: 10px;
+        }
+
+        @media (max-width: 576px) {
+            .property-location {
+                font-size: 0.95rem;
+                flex-wrap: wrap;
+            }
         }
 
         .property-location i {
@@ -417,10 +482,22 @@
             margin-bottom: 1.5rem;
         }
 
+        @media (max-width: 768px) {
+            .property-price {
+                font-size: 1.6rem;
+            }
+        }
+
         .price-unit {
             font-size: 1rem;
             color: var(--gray-color);
             font-weight: normal;
+        }
+
+        @media (max-width: 576px) {
+            .price-unit {
+                font-size: 0.9rem;
+            }
         }
 
         /* ===== Image Gallery ===== */
@@ -437,6 +514,18 @@
             position: relative;
         }
 
+        @media (max-width: 992px) {
+            .main-image {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-image {
+                height: 300px;
+            }
+        }
+
         .main-image img {
             width: 100%;
             height: 100%;
@@ -449,6 +538,12 @@
             gap: 15px;
         }
 
+        @media (max-width: 768px) {
+            .thumbnails {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         .thumbnail {
             border-radius: var(--border-radius);
             overflow: hidden;
@@ -456,10 +551,17 @@
             transition: var(--transition);
             height: 120px;
             position: relative;
+            border: 3px solid transparent;
+        }
+
+        @media (max-width: 576px) {
+            .thumbnail {
+                height: 100px;
+            }
         }
 
         .thumbnail.active {
-            border: 3px solid var(--secondary-color);
+            border-color: var(--secondary-color);
         }
 
         .thumbnail:hover {
@@ -480,6 +582,18 @@
             z-index: 2;
         }
 
+        @media (max-width: 576px) {
+            .video-tour {
+                top: 10px;
+                right: 10px;
+            }
+            
+            .video-tour .btn {
+                padding: 8px 16px;
+                font-size: 0.8rem;
+            }
+        }
+
         .property-badge {
             position: absolute;
             top: 20px;
@@ -491,6 +605,15 @@
             border-radius: 30px;
             font-weight: 600;
             font-size: 0.9rem;
+        }
+
+        @media (max-width: 576px) {
+            .property-badge {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+                top: 10px;
+                left: 10px;
+            }
         }
 
         /* ===== Property Details ===== */
@@ -507,11 +630,35 @@
             border: 1px solid rgba(0, 0, 0, 0.05);
         }
 
+        @media (max-width: 768px) {
+            .details-card {
+                padding: 25px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .details-card {
+                padding: 20px;
+            }
+        }
+
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
             margin-top: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .feature-item {
@@ -522,6 +669,13 @@
             background: rgba(10, 42, 74, 0.05);
             border-radius: var(--border-radius);
             transition: var(--transition);
+        }
+
+        @media (max-width: 576px) {
+            .feature-item {
+                padding: 12px;
+                gap: 12px;
+            }
         }
 
         .feature-item:hover {
@@ -539,6 +693,15 @@
             justify-content: center;
             color: var(--primary-color);
             font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 576px) {
+            .feature-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
         }
 
         .feature-content h4 {
@@ -574,6 +737,7 @@
         .amenity-item i {
             color: var(--accent-color);
             font-size: 1.1rem;
+            flex-shrink: 0;
         }
 
         /* ===== Floor Plans ===== */
@@ -605,6 +769,12 @@
             height: 300px;
         }
 
+        @media (max-width: 768px) {
+            .floorplan-image {
+                height: 250px;
+            }
+        }
+
         .floorplan-image img {
             width: 100%;
             height: 100%;
@@ -616,6 +786,12 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 15px;
             margin-top: 20px;
+        }
+
+        @media (max-width: 576px) {
+            .floorplan-specs {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         .spec-item {
@@ -650,6 +826,12 @@
             position: relative;
         }
 
+        @media (max-width: 768px) {
+            .map-container {
+                height: 300px;
+            }
+        }
+
         .map-placeholder {
             width: 100%;
             height: 100%;
@@ -672,6 +854,13 @@
             margin-bottom: 25px;
         }
 
+        @media (max-width: 576px) {
+            .location-item {
+                gap: 12px;
+                margin-bottom: 20px;
+            }
+        }
+
         .location-icon {
             width: 50px;
             height: 50px;
@@ -683,6 +872,14 @@
             color: var(--secondary-color);
             font-size: 1.2rem;
             flex-shrink: 0;
+        }
+
+        @media (max-width: 576px) {
+            .location-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
         }
 
         /* ===== Contact Agent ===== */
@@ -700,6 +897,12 @@
             border: 1px solid rgba(0, 0, 0, 0.05);
         }
 
+        @media (max-width: 768px) {
+            .agent-card {
+                padding: 30px;
+            }
+        }
+
         .agent-avatar {
             width: 120px;
             height: 120px;
@@ -708,6 +911,14 @@
             margin: 0 auto 20px;
             border: 5px solid white;
             box-shadow: var(--shadow);
+        }
+
+        @media (max-width: 576px) {
+            .agent-avatar {
+                width: 100px;
+                height: 100px;
+                border-width: 3px;
+            }
         }
 
         .agent-avatar img {
@@ -730,6 +941,13 @@
             border-radius: var(--border-radius);
         }
 
+        @media (max-width: 576px) {
+            .contact-item {
+                padding: 10px 15px;
+                gap: 12px;
+            }
+        }
+
         .contact-item i {
             color: var(--secondary-color);
             font-size: 1.2rem;
@@ -748,6 +966,18 @@
             border: 1px solid rgba(0, 0, 0, 0.05);
         }
 
+        @media (max-width: 768px) {
+            .inquiry-form {
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .inquiry-form {
+                padding: 25px 20px;
+            }
+        }
+
         .form-group {
             margin-bottom: 25px;
         }
@@ -763,6 +993,12 @@
             border: 2px solid var(--light-gray);
             border-radius: var(--border-radius);
             transition: var(--transition);
+        }
+
+        @media (max-width: 576px) {
+            .form-control, .form-select {
+                padding: 12px;
+            }
         }
 
         .form-control:focus, .form-select:focus {
@@ -797,6 +1033,12 @@
             position: relative;
         }
 
+        @media (max-width: 768px) {
+            .property-card-image {
+                height: 200px;
+            }
+        }
+
         .property-card-image img {
             width: 100%;
             height: 100%;
@@ -825,6 +1067,12 @@
             padding: 25px;
         }
 
+        @media (max-width: 576px) {
+            .property-card-content {
+                padding: 20px;
+            }
+        }
+
         .property-card-features {
             display: flex;
             justify-content: space-between;
@@ -834,8 +1082,16 @@
             margin: 15px 0;
         }
 
+        @media (max-width: 576px) {
+            .property-card-features {
+                padding: 10px 0;
+                margin: 10px 0;
+            }
+        }
+
         .property-card-feature {
             text-align: center;
+            flex: 1;
         }
 
         .property-card-feature i {
@@ -850,6 +1106,12 @@
             background: var(--primary-dark);
             color: #b0b7c3;
             padding-top: 80px;
+        }
+
+        @media (max-width: 768px) {
+            .footer {
+                padding-top: 60px;
+            }
         }
 
         .footer-title {
@@ -900,6 +1162,14 @@
             border: 2px solid rgba(255, 255, 255, 0.2);
         }
 
+        @media (max-width: 768px) {
+            .back-to-top {
+                bottom: 80px;
+                width: 50px;
+                height: 50px;
+            }
+        }
+
         .back-to-top.active {
             opacity: 1;
             visibility: visible;
@@ -928,6 +1198,14 @@
             box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
             transition: var(--transition);
             text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                bottom: 140px;
+                width: 50px;
+                height: 50px;
+            }
         }
 
         .whatsapp-float:hover {
@@ -980,6 +1258,14 @@
             z-index: 9999;
         }
 
+        @media (max-width: 768px) {
+            .toast-container {
+                top: 80px;
+                left: 20px;
+                right: 20px;
+            }
+        }
+
         .toast {
             background: white;
             border-radius: var(--border-radius);
@@ -992,9 +1278,22 @@
             max-width: 350px;
         }
 
+        @media (max-width: 768px) {
+            .toast {
+                max-width: 100%;
+                transform: translateY(-20px);
+            }
+        }
+
         .toast.show {
             transform: translateX(0);
             opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .toast.show {
+                transform: translateY(0);
+            }
         }
 
         /* ===== Loading Overlay ===== */
@@ -1066,6 +1365,8 @@
             padding: 5px 10px;
             border-radius: 8px;
             transition: var(--transition);
+            min-width: 60px;
+            text-align: center;
         }
         
         .mobile-nav-item.active {
@@ -1076,6 +1377,16 @@
         .mobile-nav-item i {
             font-size: 1.2rem;
             margin-bottom: 5px;
+        }
+        
+        @media (max-width: 576px) {
+            .mobile-nav-item i {
+                font-size: 1rem;
+            }
+            
+            .mobile-nav-item span {
+                font-size: 0.7rem;
+            }
         }
         
         .mobile-nav-item span {
@@ -1116,10 +1427,34 @@
             margin-top: 30px;
         }
         
+        @media (max-width: 768px) {
+            .action-buttons {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .action-buttons {
+                flex-direction: column;
+            }
+            
+            .action-buttons .btn {
+                width: 100%;
+            }
+        }
+        
         .share-buttons {
             display: flex;
+            align-items: center;
             gap: 10px;
             margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        @media (max-width: 576px) {
+            .share-buttons {
+                justify-content: center;
+            }
         }
         
         .share-btn {
@@ -1131,6 +1466,14 @@
             justify-content: center;
             color: white;
             transition: var(--transition);
+            text-decoration: none;
+        }
+        
+        @media (max-width: 576px) {
+            .share-btn {
+                width: 40px;
+                height: 40px;
+            }
         }
         
         .share-btn.facebook {
@@ -1155,6 +1498,12 @@
             padding: 20px;
             border-radius: 0 var(--border-radius) var(--border-radius) 0;
             margin: 20px 0;
+        }
+        
+        @media (max-width: 576px) {
+            .highlight-box {
+                padding: 15px;
+            }
         }
         
         .swiper {
@@ -1186,6 +1535,17 @@
             border-radius: 50%;
         }
         
+        @media (max-width: 768px) {
+            .swiper-button-next, .swiper-button-prev {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .swiper-button-next:after, .swiper-button-prev:after {
+                font-size: 1.2rem;
+            }
+        }
+        
         .swiper-button-next:after, .swiper-button-prev:after {
             font-size: 1.5rem;
         }
@@ -1215,15 +1575,45 @@
         
         .nav-tabs {
             border-bottom: 2px solid var(--light-gray);
+            overflow-x: auto;
+            flex-wrap: nowrap;
+            white-space: nowrap;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-tabs {
+                display: flex;
+                overflow-x: scroll;
+                -webkit-overflow-scrolling: touch;
+            }
         }
         
         .nav-tabs .nav-link {
             border: none;
             color: var(--gray-color);
             font-weight: 600;
-            padding: 15px 30px;
+            padding: 15px 25px;
             border-radius: var(--border-radius) var(--border-radius) 0 0;
             transition: var(--transition);
+            white-space: nowrap;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-tabs .nav-link {
+                padding: 12px 20px;
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .nav-tabs .nav-link {
+                padding: 10px 15px;
+                font-size: 0.85rem;
+            }
+            
+            .nav-tabs .nav-link i {
+                margin-right: 5px;
+            }
         }
         
         .nav-tabs .nav-link.active {
@@ -1235,6 +1625,134 @@
         .nav-tabs .nav-link:hover {
             color: var(--secondary-color);
             background: rgba(201, 169, 110, 0.1);
+        }
+        
+        /* Breadcrumb Styles */
+        .breadcrumb {
+            background: transparent;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+        
+        .breadcrumb-item a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+        
+        .breadcrumb-item.active {
+            color: var(--gray-color);
+        }
+        
+        /* Document List Styles */
+        .document-list .list-group-item {
+            border: 1px solid var(--light-gray);
+            margin-bottom: 10px;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+        
+        .document-list .list-group-item:hover {
+            background: rgba(10, 42, 74, 0.05);
+            border-color: var(--secondary-color);
+        }
+        
+        /* Specs List Styles */
+        .specs-list .border-bottom {
+            border-bottom: 1px solid var(--light-gray) !important;
+        }
+        
+        /* Text Truncation */
+        .text-truncate-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        /* Modal Responsive */
+        @media (max-width: 768px) {
+            .modal-dialog {
+                margin: 10px;
+            }
+        }
+        
+        /* Hero Section Mobile Fixes */
+        @media (max-width: 768px) {
+            .property-hero-section .d-flex {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            
+            .property-hero-section .badge {
+                font-size: 0.8rem;
+                padding: 8px 16px;
+            }
+        }
+        
+        /* Video Modal Mobile */
+        @media (max-width: 576px) {
+            .modal-header h5 {
+                font-size: 1.2rem;
+            }
+        }
+        
+        /* Ensure images don't overflow */
+        .img-fluid {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* Better touch targets */
+        @media (max-width: 768px) {
+            .btn, 
+            .form-control,
+            .form-select,
+            .nav-link,
+            .share-btn,
+            .mobile-nav-item {
+                min-height: 44px;
+            }
+            
+            .form-check-input {
+                min-width: 20px;
+                min-height: 20px;
+            }
+        }
+        
+        /* Fix for sticky elements on mobile */
+        @media (max-width: 768px) {
+            .fixed-top {
+                position: fixed;
+            }
+            
+            body {
+                padding-top: 76px; /* Adjust based on navbar height */
+            }
+        }
+        
+        /* Swiper mobile gallery */
+        .mobile-gallery {
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .desktop-gallery {
+                display: none;
+            }
+            
+            .mobile-gallery {
+                display: block;
+            }
+            
+            .swiper {
+                height: 400px;
+            }
+            
+            .swiper-slide img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
         }
     </style>
 </head>
@@ -1249,7 +1767,7 @@
 
     <!-- Loading Overlay -->
     <div class="loading-overlay">
-        <div class="spinner-border" style="color: var(--secondary-color);" role="status">
+        <div class="spinner-border" style="width: 3rem; height: 3rem; color: var(--secondary-color);" role="status">
             <span class="visually-hidden">Loading...</span>
         </div>
     </div>
@@ -1275,7 +1793,7 @@
                 <span>Naroda <span class="gold-text">Group</span></span>
             </a>
             
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             
@@ -1288,10 +1806,10 @@
                         <a class="nav-link" href="about.html">About</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Projects
                         </a>
-                        <div class="dropdown-menu">
+                        <div class="dropdown-menu" aria-labelledby="projectsDropdown">
                             <a class="dropdown-item" href="projects-landmark.html">Naroda Landmark</a>
                             <a class="dropdown-item" href="projects-irish.html">Naroda Irish</a>
                             <div class="dropdown-divider"></div>
@@ -1299,24 +1817,24 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="propertiesDropdown" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="propertiesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Properties
                         </a>
-                        <div class="dropdown-menu">
+                        <div class="dropdown-menu" aria-labelledby="propertiesDropdown">
                             <a class="dropdown-item" href="properties.html">Buy</a>
                             <a class="dropdown-item" href="properties-rent.html">Rent</a>
                             <div class="dropdown-divider"></div>
-                            <a class="nav-link active" href="property-detail.html">Property Details</a>
+                            <a class="dropdown-item active" href="property-detail.html">Property Details</a>
                         </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="gallery.html">Gallery</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             More
                         </a>
-                        <div class="dropdown-menu">
+                        <div class="dropdown-menu" aria-labelledby="moreDropdown">
                             <a class="dropdown-item" href="blog.html">Blog</a>
                             <a class="dropdown-item" href="news.html">News</a>
                             <a class="dropdown-item" href="careers.html">Careers</a>
@@ -1330,10 +1848,10 @@
                 
                 <div class="d-flex align-items-center ms-lg-3 mt-3 mt-lg-0">
                     <div class="dropdown">
-                        <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown">
+                        <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fas fa-globe me-1"></i> EN
                         </button>
-                        <div class="dropdown-menu">
+                        <div class="dropdown-menu" aria-labelledby="languageDropdown">
                             <a class="dropdown-item" href="#">English</a>
                             <a class="dropdown-item" href="#">Hindi</a>
                             <a class="dropdown-item" href="#">Gujarati</a>
@@ -1392,18 +1910,18 @@
                             <h1 class="property-title">Premium 3 BHK Luxury Apartment</h1>
                             <div class="property-location">
                                 <i class="fas fa-map-marker-alt"></i>
-                                <span>Naroda Irish, Ahmedabad, Gujarat</span>
+                                <span class="text-truncate-2">Naroda Irish, Ahmedabad, Gujarat</span>
                             </div>
                             
-                            <div class="d-flex flex-wrap align-items-center gap-4">
+                            <div class="d-flex flex-wrap align-items-center gap-3">
                                 <div class="property-price">
                                     ₹ 85,00,000
                                     <span class="price-unit">(85 Lakhs)</span>
                                 </div>
-                                <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill">
+                                <span class="badge bg-gradient-secondary text-white px-3 py-2 rounded-pill">
                                     <i class="fas fa-tag me-2"></i> For Sale
                                 </span>
-                                <span class="badge bg-success text-white px-4 py-2 rounded-pill">
+                                <span class="badge bg-success text-white px-3 py-2 rounded-pill">
                                     <i class="fas fa-check-circle me-2"></i> RERA Approved
                                 </span>
                             </div>
@@ -1412,26 +1930,26 @@
                     
                     <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="200">
                         <div class="action-buttons">
-                            <button class="btn btn-gold">
+                            <button class="btn btn-gold" id="scheduleVisitBtn">
                                 <i class="fas fa-calendar-alt me-2"></i> Schedule Visit
                             </button>
-                            <button class="btn btn-outline-primary">
-                                <i class="fas fa-heart me-2"></i> Save
+                            <button class="btn btn-outline-primary" id="savePropertyBtn">
+                                <i class="far fa-heart me-2"></i> Save
                             </button>
-                            <button class="btn btn-outline-primary">
+                            <button class="btn btn-outline-primary" id="printPropertyBtn">
                                 <i class="fas fa-print me-2"></i> Print
                             </button>
                         </div>
                         
                         <div class="share-buttons">
-                            <span class="me-3">Share:</span>
-                            <a href="#" class="share-btn facebook">
+                            <span class="me-2 fw-500">Share:</span>
+                            <a href="#" class="share-btn facebook" aria-label="Share on Facebook">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
-                            <a href="#" class="share-btn twitter">
+                            <a href="#" class="share-btn twitter" aria-label="Share on Twitter">
                                 <i class="fab fa-twitter"></i>
                             </a>
-                            <a href="#" class="share-btn whatsapp">
+                            <a href="https://wa.me/?text=Check%20out%20this%20property" class="share-btn whatsapp" aria-label="Share on WhatsApp">
                                 <i class="fab fa-whatsapp"></i>
                             </a>
                         </div>
@@ -1445,56 +1963,92 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8" data-aos="fade-up">
-                        <!-- Main Image -->
-                        <div class="main-image">
-                            <div class="property-badge">
-                                <i class="fas fa-crown me-2"></i> Premium
+                        <!-- Desktop Gallery -->
+                        <div class="desktop-gallery">
+                            <!-- Main Image -->
+                            <div class="main-image">
+                                <div class="property-badge">
+                                    <i class="fas fa-crown me-2"></i> Premium
+                                </div>
+                                <div class="video-tour">
+                                    <button class="btn btn-gold btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal">
+                                        <i class="fas fa-video me-2"></i> Video Tour
+                                    </button>
+                                </div>
+                                <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                                     alt="Living Room" id="mainImage">
                             </div>
-                            <div class="video-tour">
+                            
+                            <!-- Thumbnails -->
+                            <div class="thumbnails">
+                                <div class="thumbnail active" onclick="changeImage(this)">
+                                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                                         alt="Living Room">
+                                </div>
+                                <div class="thumbnail" onclick="changeImage(this)">
+                                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2058&q=80" 
+                                         alt="Bedroom">
+                                </div>
+                                <div class="thumbnail" onclick="changeImage(this)">
+                                    <img src="https://images.unsplash.com/photo-1558036117-15e82a2c9a9a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                                         alt="Kitchen">
+                                </div>
+                                <div class="thumbnail" onclick="changeImage(this)">
+                                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2058&q=80" 
+                                         alt="Bathroom">
+                                </div>
+                                <div class="thumbnail" onclick="changeImage(this)">
+                                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2058&q=80" 
+                                         alt="Balcony">
+                                </div>
+                                <div class="thumbnail" onclick="changeImage(this)">
+                                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2058&q=80" 
+                                         alt="View">
+                                </div>
+                                <div class="thumbnail" onclick="changeImage(this)">
+                                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2058&q=80" 
+                                         alt="Amenities">
+                                </div>
+                                <div class="thumbnail" onclick="changeImage(this)">
+                                    <span class="position-absolute top-50 start-50 translate-middle text-white text-center">
+                                        <i class="fas fa-images fa-2x d-block mb-2"></i>
+                                        <span class="small">+5 More</span>
+                                    </span>
+                                    <div class="w-100 h-100 bg-dark opacity-50"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Mobile Gallery (Swiper) -->
+                        <div class="mobile-gallery">
+                            <div class="swiper propertySwiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                                             alt="Living Room">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2058&q=80" 
+                                             alt="Bedroom">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="https://images.unsplash.com/photo-1558036117-15e82a2c9a9a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                                             alt="Kitchen">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2058&q=80" 
+                                             alt="Bathroom">
+                                    </div>
+                                </div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                            
+                            <div class="text-center mt-3">
                                 <button class="btn btn-gold btn-sm" data-bs-toggle="modal" data-bs-target="#videoModal">
                                     <i class="fas fa-video me-2"></i> Video Tour
                                 </button>
-                            </div>
-                            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-                                 alt="Living Room" id="mainImage">
-                        </div>
-                        
-                        <!-- Thumbnails -->
-                        <div class="thumbnails">
-                            <div class="thumbnail active" onclick="changeImage(this)">
-                                <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-                                     alt="Living Room">
-                            </div>
-                            <div class="thumbnail" onclick="changeImage(this)">
-                                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2058&q=80" 
-                                     alt="Bedroom">
-                            </div>
-                            <div class="thumbnail" onclick="changeImage(this)">
-                                <img src="https://images.unsplash.com/photo-1558036117-15e82a2c9a9a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-                                     alt="Kitchen">
-                            </div>
-                            <div class="thumbnail" onclick="changeImage(this)">
-                                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2058&q=80" 
-                                     alt="Bathroom">
-                            </div>
-                            <div class="thumbnail" onclick="changeImage(this)">
-                                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2058&q=80" 
-                                     alt="Balcony">
-                            </div>
-                            <div class="thumbnail" onclick="changeImage(this)">
-                                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2058&q=80" 
-                                     alt="View">
-                            </div>
-                            <div class="thumbnail" onclick="changeImage(this)">
-                                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2058&q=80" 
-                                     alt="Amenities">
-                            </div>
-                            <div class="thumbnail" onclick="changeImage(this)">
-                                <span class="position-absolute top-50 start-50 translate-middle text-white">
-                                    <i class="fas fa-images fa-2x"></i>
-                                    <div class="mt-2">+5 More</div>
-                                </span>
-                                <div class="w-100 h-100 bg-dark opacity-50"></div>
                             </div>
                         </div>
                     </div>
@@ -1566,8 +2120,8 @@
                             </div>
                             
                             <div class="highlight-box">
-                                <h5 class="mb-3"><i class="fas fa-info-circle me-2"></i> Property ID: NG-PR-2025-001</h5>
-                                <p class="mb-0">Listed on: January 15, 2025 | Last updated: 2 days ago</p>
+                                <h5 class="mb-2"><i class="fas fa-info-circle me-2"></i> Property ID: NG-PR-2025-001</h5>
+                                <p class="mb-0 small">Listed on: January 15, 2025 | Last updated: 2 days ago</p>
                             </div>
                             
                             <button class="btn btn-primary w-100 mt-3">
@@ -1583,31 +2137,31 @@
         <section class="details-section">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-12">
                         <!-- Tabs Navigation -->
                         <ul class="nav nav-tabs" id="propertyTab" role="tablist">
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link active" id="overview-tab" data-bs-toggle="tab" data-bs-target="#overview" type="button">
+                                <button class="nav-link active" id="overview-tab" data-bs-toggle="tab" data-bs-target="#overview" type="button" role="tab">
                                     <i class="fas fa-info-circle me-2"></i> Overview
                                 </button>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="amenities-tab" data-bs-toggle="tab" data-bs-target="#amenities" type="button">
+                                <button class="nav-link" id="amenities-tab" data-bs-toggle="tab" data-bs-target="#amenities" type="button" role="tab">
                                     <i class="fas fa-concierge-bell me-2"></i> Amenities
                                 </button>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="floorplan-tab" data-bs-toggle="tab" data-bs-target="#floorplan" type="button">
+                                <button class="nav-link" id="floorplan-tab" data-bs-toggle="tab" data-bs-target="#floorplan" type="button" role="tab">
                                     <i class="fas fa-drafting-compass me-2"></i> Floor Plans
                                 </button>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="location-tab" data-bs-toggle="tab" data-bs-target="#location" type="button">
+                                <button class="nav-link" id="location-tab" data-bs-toggle="tab" data-bs-target="#location" type="button" role="tab">
                                     <i class="fas fa-map-marked-alt me-2"></i> Location
                                 </button>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="documents-tab" data-bs-toggle="tab" data-bs-target="#documents" type="button">
+                                <button class="nav-link" id="documents-tab" data-bs-toggle="tab" data-bs-target="#documents" type="button" role="tab">
                                     <i class="fas fa-file-contract me-2"></i> Documents
                                 </button>
                             </li>
@@ -1616,7 +2170,7 @@
                         <!-- Tabs Content -->
                         <div class="tab-content" id="propertyTabContent">
                             <!-- Overview Tab -->
-                            <div class="tab-pane fade show active" id="overview" role="tabpanel">
+                            <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
                                 <div class="row">
                                     <div class="col-lg-8">
                                         <div class="details-card">
@@ -1673,7 +2227,7 @@
                                         </div>
                                     </div>
                                     
-                                    <div class="col-lg-4">
+                                    <div class="col-lg-4 mt-4 mt-lg-0">
                                         <div class="details-card">
                                             <h3 class="mb-4">Property Specifications</h3>
                                             
@@ -1721,7 +2275,7 @@
                             </div>
                             
                             <!-- Amenities Tab -->
-                            <div class="tab-pane fade" id="amenities" role="tabpanel">
+                            <div class="tab-pane fade" id="amenities" role="tabpanel" aria-labelledby="amenities-tab">
                                 <div class="details-card">
                                     <h3 class="mb-4">Project Amenities</h3>
                                     <p class="mb-5">
@@ -1822,7 +2376,7 @@
                             </div>
                             
                             <!-- Floor Plans Tab -->
-                            <div class="tab-pane fade" id="floorplan" role="tabpanel">
+                            <div class="tab-pane fade" id="floorplan" role="tabpanel" aria-labelledby="floorplan-tab">
                                 <div class="details-card">
                                     <h3 class="mb-4">Floor Plans & Dimensions</h3>
                                     
@@ -1831,7 +2385,7 @@
                                             <div class="floorplan-card">
                                                 <div class="floorplan-image">
                                                     <img src="https://images.unsplash.com/photo-1567767292278-a4f21aa2d36e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-                                                         alt="3 BHK Floor Plan">
+                                                         alt="3 BHK Floor Plan" class="img-fluid">
                                                 </div>
                                                 <h4>3 BHK Type A</h4>
                                                 <p>1500 sq.ft. | 5th Floor | North Facing</p>
@@ -1861,7 +2415,7 @@
                                             <div class="floorplan-card">
                                                 <div class="floorplan-image">
                                                     <img src="https://images.unsplash.com/photo-1591955506264-3f5a6834570a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80" 
-                                                         alt="Layout Plan">
+                                                         alt="Layout Plan" class="img-fluid">
                                                 </div>
                                                 <h4>Site Layout Plan</h4>
                                                 <p>Project Master Plan | Total 5 Acres</p>
@@ -1892,16 +2446,22 @@
                                         <h5><i class="fas fa-ruler-combined me-2"></i> Room Dimensions</h5>
                                         <div class="row mt-3">
                                             <div class="col-md-4">
-                                                <p><strong>Living + Dining:</strong> 15' x 18' (270 sq.ft.)</p>
-                                                <p><strong>Master Bedroom:</strong> 12' x 14' (168 sq.ft.)</p>
+                                                <p class="mb-2"><strong>Living + Dining:</strong></p>
+                                                <p class="text-muted mb-3">15' x 18' (270 sq.ft.)</p>
+                                                <p class="mb-2"><strong>Master Bedroom:</strong></p>
+                                                <p class="text-muted">12' x 14' (168 sq.ft.)</p>
                                             </div>
                                             <div class="col-md-4">
-                                                <p><strong>Bedroom 2:</strong> 10' x 12' (120 sq.ft.)</p>
-                                                <p><strong>Bedroom 3:</strong> 10' x 11' (110 sq.ft.)</p>
+                                                <p class="mb-2"><strong>Bedroom 2:</strong></p>
+                                                <p class="text-muted mb-3">10' x 12' (120 sq.ft.)</p>
+                                                <p class="mb-2"><strong>Bedroom 3:</strong></p>
+                                                <p class="text-muted">10' x 11' (110 sq.ft.)</p>
                                             </div>
                                             <div class="col-md-4">
-                                                <p><strong>Kitchen:</strong> 8' x 10' (80 sq.ft.)</p>
-                                                <p><strong>Balcony:</strong> 6' x 10' (60 sq.ft.)</p>
+                                                <p class="mb-2"><strong>Kitchen:</strong></p>
+                                                <p class="text-muted mb-3">8' x 10' (80 sq.ft.)</p>
+                                                <p class="mb-2"><strong>Balcony:</strong></p>
+                                                <p class="text-muted">6' x 10' (60 sq.ft.)</p>
                                             </div>
                                         </div>
                                     </div>
@@ -1909,7 +2469,7 @@
                             </div>
                             
                             <!-- Location Tab -->
-                            <div class="tab-pane fade" id="location" role="tabpanel">
+                            <div class="tab-pane fade" id="location" role="tabpanel" aria-labelledby="location-tab">
                                 <div class="details-card">
                                     <h3 class="mb-4">Location & Connectivity</h3>
                                     
@@ -1959,7 +2519,7 @@
                                             </div>
                                         </div>
                                         
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-6 mt-4 mt-lg-0">
                                             <h5 class="mb-4">Nearby Facilities</h5>
                                             <div class="location-features">
                                                 <div class="location-item">
@@ -1998,7 +2558,7 @@
                             </div>
                             
                             <!-- Documents Tab -->
-                            <div class="tab-pane fade" id="documents" role="tabpanel">
+                            <div class="tab-pane fade" id="documents" role="tabpanel" aria-labelledby="documents-tab">
                                 <div class="details-card">
                                     <h3 class="mb-4">Legal Documents & Approvals</h3>
                                     <p class="mb-5">
@@ -2219,7 +2779,7 @@
                         <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
                             Similar Properties
                         </span>
-                        <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
+                        <h2 class="section-title text-center" data-aos="fade-up" data-aos-delay="100">
                             You Might Also <span class="gold-text">Like</span>
                         </h2>
                         <p class="text-muted" data-aos="fade-up" data-aos-delay="200">
@@ -2233,11 +2793,11 @@
                         <div class="property-card">
                             <div class="property-card-image">
                                 <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-                                     alt="2 BHK Apartment">
+                                     alt="2 BHK Apartment" class="img-fluid">
                                 <div class="property-card-badge">For Sale</div>
                             </div>
                             <div class="property-card-content">
-                                <h4 class="mb-2">2 BHK Apartment</h4>
+                                <h4 class="mb-2 text-truncate-2">2 BHK Apartment</h4>
                                 <p class="text-muted mb-3"><i class="fas fa-map-marker-alt text-secondary me-2"></i> Naroda Irish, Ahmedabad</p>
                                 <div class="property-card-features">
                                     <div class="property-card-feature">
@@ -2269,11 +2829,11 @@
                         <div class="property-card">
                             <div class="property-card-image">
                                 <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-                                     alt="Commercial Office">
+                                     alt="Commercial Office" class="img-fluid">
                                 <div class="property-card-badge">For Sale</div>
                             </div>
                             <div class="property-card-content">
-                                <h4 class="mb-2">Commercial Office Space</h4>
+                                <h4 class="mb-2 text-truncate-2">Commercial Office Space</h4>
                                 <p class="text-muted mb-3"><i class="fas fa-map-marker-alt text-secondary me-2"></i> Naroda Landmark, Ahmedabad</p>
                                 <div class="property-card-features">
                                     <div class="property-card-feature">
@@ -2305,11 +2865,11 @@
                         <div class="property-card">
                             <div class="property-card-image">
                                 <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&auto=format&fit=crop&w=2096&q=80" 
-                                     alt="4 BHK Villa">
+                                     alt="4 BHK Villa" class="img-fluid">
                                 <div class="property-card-badge">For Rent</div>
                             </div>
                             <div class="property-card-content">
-                                <h4 class="mb-2">4 BHK Luxury Villa</h4>
+                                <h4 class="mb-2 text-truncate-2">4 BHK Luxury Villa</h4>
                                 <p class="text-muted mb-3"><i class="fas fa-map-marker-alt text-secondary me-2"></i> Naroda Irish, Ahmedabad</p>
                                 <div class="property-card-features">
                                     <div class="property-card-feature">
@@ -2457,12 +3017,12 @@
     </footer>
 
     <!-- Video Tour Modal -->
-    <div class="modal fade" id="videoModal" tabindex="-1">
+    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="modal-header border-0">
-                    <h5 class="modal-title">Virtual Property Tour</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    <h5 class="modal-title" id="videoModalLabel">Virtual Property Tour</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body p-0">
                     <div class="ratio ratio-16x9">
@@ -2488,9 +3048,12 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Initialize AOS
             AOS.init({
-                duration: 1000,
-                once: false,
-                offset: 100
+                duration: 800,
+                once: true,
+                offset: 100,
+                disable: function() {
+                    return window.innerWidth < 768;
+                }
             });
             
             // Remove preloader
@@ -2500,7 +3063,7 @@
                 setTimeout(() => {
                     preloader.style.display = 'none';
                 }, 500);
-            }, 1000);
+            }, 800);
             
             // Initialize back to top button
             function initBackToTop() {
@@ -2540,8 +3103,8 @@
                     toast.className = `toast toast-${type}`;
                     toast.innerHTML = `
                         <div class="d-flex align-items-center">
-                            <i class="fas ${type === 'success' ? 'fa-check-circle text-success' : 'fa-exclamation-circle text-danger'} me-3"></i>
-                            <div>
+                            <i class="fas ${type === 'success' ? 'fa-check-circle text-success' : 'fa-exclamation-circle text-danger'} me-3 fs-5"></i>
+                            <div class="flex-grow-1">
                                 <p class="mb-0 fw-500">${message}</p>
                             </div>
                             <button type="button" class="btn-close ms-auto" onclick="this.parentElement.parentElement.remove()"></button>
@@ -2591,6 +3154,7 @@
                     const imgSrc = element.querySelector('img')?.src;
                     if (imgSrc) {
                         mainImage.src = imgSrc;
+                        mainImage.alt = element.querySelector('img').alt;
                     }
                 }
                 
@@ -2601,7 +3165,7 @@
             // Initialize Swiper for mobile gallery
             function initSwiperGallery() {
                 if (window.innerWidth < 768) {
-                    const swiper = new Swiper('.swiper', {
+                    const swiper = new Swiper('.propertySwiper', {
                         loop: true,
                         pagination: {
                             el: '.swiper-pagination',
@@ -2610,6 +3174,10 @@
                         navigation: {
                             nextEl: '.swiper-button-next',
                             prevEl: '.swiper-button-prev',
+                        },
+                        autoplay: {
+                            delay: 3000,
+                            disableOnInteraction: false,
                         },
                     });
                 }
@@ -2645,52 +3213,52 @@
             
             // Save Property Functionality
             function initSaveProperty() {
-                const saveButtons = document.querySelectorAll('.btn-outline-primary');
+                const saveBtn = document.getElementById('savePropertyBtn');
                 
-                saveButtons.forEach(button => {
-                    if (button.textContent.includes('Save')) {
-                        button.addEventListener('click', function() {
-                            if (this.innerHTML.includes('fa-heart')) {
-                                this.innerHTML = '<i class="fas fa-heart text-danger me-2"></i> Saved';
-                                this.classList.remove('btn-outline-primary');
-                                this.classList.add('btn-danger');
-                                showToast('Property saved to favorites', 'success');
-                            } else {
-                                this.innerHTML = '<i class="fas fa-heart me-2"></i> Save';
-                                this.classList.remove('btn-danger');
-                                this.classList.add('btn-outline-primary');
-                                showToast('Property removed from favorites', 'info');
-                            }
-                        });
-                    }
-                });
+                if (saveBtn) {
+                    saveBtn.addEventListener('click', function() {
+                        const icon = this.querySelector('i');
+                        
+                        if (icon.classList.contains('far')) {
+                            icon.classList.remove('far');
+                            icon.classList.add('fas');
+                            this.innerHTML = '<i class="fas fa-heart me-2"></i> Saved';
+                            showToast('Property saved to favorites', 'success');
+                        } else {
+                            icon.classList.remove('fas');
+                            icon.classList.add('far');
+                            this.innerHTML = '<i class="far fa-heart me-2"></i> Save';
+                            showToast('Property removed from favorites', 'info');
+                        }
+                    });
+                }
             }
             
             // Print Property Details
             function initPrintFunctionality() {
-                const printButtons = document.querySelectorAll('.btn-outline-primary');
+                const printBtn = document.getElementById('printPropertyBtn');
                 
-                printButtons.forEach(button => {
-                    if (button.textContent.includes('Print')) {
-                        button.addEventListener('click', function() {
-                            window.print();
-                            showToast('Printing property details...', 'info');
-                        });
-                    }
-                });
+                if (printBtn) {
+                    printBtn.addEventListener('click', function() {
+                        window.print();
+                        showToast('Printing property details...', 'info');
+                    });
+                }
             }
             
             // Schedule Visit Button
             function initScheduleVisit() {
-                const scheduleBtn = document.querySelector('.btn-gold');
-                if (scheduleBtn && scheduleBtn.textContent.includes('Schedule Visit')) {
+                const scheduleBtn = document.getElementById('scheduleVisitBtn');
+                if (scheduleBtn) {
                     scheduleBtn.addEventListener('click', function() {
-                        document.getElementById('inquiryType').value = 'site-visit';
-                        document.getElementById('inquiryTab').click();
+                        const inquiryType = document.getElementById('inquiryType');
+                        if (inquiryType) {
+                            inquiryType.value = 'site-visit';
+                        }
                         
-                        // Smooth scroll to inquiry form
+                        // Scroll to inquiry form
                         setTimeout(() => {
-                            document.getElementById('agent').scrollIntoView({ 
+                            document.querySelector('.agent-section').scrollIntoView({ 
                                 behavior: 'smooth',
                                 block: 'center'
                             });
@@ -2721,6 +3289,25 @@
                 });
             }
             
+            // Handle tab clicks on mobile
+            function initMobileTabs() {
+                const tabs = document.querySelectorAll('.nav-tabs .nav-link');
+                
+                tabs.forEach(tab => {
+                    tab.addEventListener('click', function() {
+                        if (window.innerWidth < 768) {
+                            // Scroll to tab content on mobile
+                            setTimeout(() => {
+                                document.querySelector('.tab-content').scrollIntoView({
+                                    behavior: 'smooth',
+                                    block: 'start'
+                                });
+                            }, 300);
+                        }
+                    });
+                });
+            }
+            
             // Initialize all functions
             initBackToTop();
             initNavbarScroll();
@@ -2733,11 +3320,21 @@
             initPrintFunctionality();
             initScheduleVisit();
             initSmoothScroll();
+            initMobileTabs();
             
             // Show welcome message
             setTimeout(() => {
                 showToast('Explore this premium property in detail!', 'success');
             }, 1500);
+            
+            // Fix mobile viewport height
+            function setViewportHeight() {
+                let vh = window.innerHeight * 0.01;
+                document.documentElement.style.setProperty('--vh', `${vh}px`);
+            }
+            
+            setViewportHeight();
+            window.addEventListener('resize', setViewportHeight);
         });
         
         // Loading overlay functions
