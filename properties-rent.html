@@ -10,6 +10,17 @@
     <meta name="keywords" content="properties for rent, rental apartments, commercial rent, ahmedabad rentals, luxury apartments rent">
     <meta name="author" content="Naroda Group">
     
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Properties for Rent | Naroda Group">
+    <meta property="og:description" content="Premium residential and commercial properties for rent in Ahmedabad. Luxury apartments, office spaces, retail shops available.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80">
+    <meta property="og:url" content="https://narodagroup.com/properties-rent.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Naroda Group">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://narodagroup.com/properties-rent.html">
+    
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- AOS Animation -->
@@ -18,6 +29,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts for Hindi and Gujarati -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600;700&family=Noto+Sans+Gujarati:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Select2 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     
@@ -59,7 +72,7 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', 'Noto Sans Devanagari', 'Noto Sans Gujarati', sans-serif;
             color: var(--dark-color);
             overflow-x: hidden;
             line-height: 1.7;
@@ -67,8 +80,23 @@
             background-color: #ffffff;
         }
 
+        /* Language-specific font families */
+        body[data-lang="en"] {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        body[data-lang="hi"] {
+            font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+            direction: ltr;
+        }
+        
+        body[data-lang="gu"] {
+            font-family: 'Noto Sans Gujarati', 'Inter', sans-serif;
+            direction: ltr;
+        }
+
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Playfair Display', 'Noto Sans Devanagari', 'Noto Sans Gujarati', serif;
             font-weight: 700;
             line-height: 1.3;
             margin-bottom: 1rem;
@@ -87,6 +115,7 @@
         img {
             max-width: 100%;
             height: auto;
+            display: block;
         }
 
         .container {
@@ -109,6 +138,14 @@
         .gold-text {
             color: var(--secondary-color);
         }
+        
+        .text-gold {
+            color: var(--secondary-color) !important;
+        }
+        
+        .text-emerald {
+            color: var(--accent-color) !important;
+        }
 
         .emerald-text {
             color: var(--accent-color);
@@ -125,7 +162,7 @@
             position: absolute;
             width: 80px;
             height: 4px;
-            background: var(--gradient-secondary);
+            background: var(--gradient-accent);
             bottom: -15px;
             left: 50%;
             transform: translateX(-50%);
@@ -142,8 +179,8 @@
             letter-spacing: 0.5px;
         }
 
-        .bg-gradient-secondary {
-            background: var(--gradient-secondary) !important;
+        .bg-gradient-accent {
+            background: var(--gradient-accent) !important;
         }
 
         /* ===== Preloader ===== */
@@ -172,9 +209,9 @@
         .loader-inner {
             width: 100%;
             height: 100%;
-            border: 4px solid rgba(201, 169, 110, 0.2);
+            border: 4px solid rgba(46, 139, 87, 0.2);
             border-radius: 50%;
-            border-top-color: var(--secondary-color);
+            border-top-color: var(--accent-color);
             animation: spin 1.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
         }
 
@@ -223,13 +260,13 @@
         .logo-icon {
             width: 50px;
             height: 50px;
-            background: var(--gradient-secondary);
+            background: var(--gradient-accent);
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-right: 12px;
-            color: var(--primary-color);
+            color: white;
             font-weight: 900;
             font-size: 1.5rem;
         }
@@ -248,7 +285,7 @@
             position: absolute;
             width: 0;
             height: 100%;
-            background: rgba(201, 169, 110, 0.1);
+            background: rgba(46, 139, 87, 0.1);
             border-radius: 30px;
             top: 0;
             left: 0;
@@ -263,7 +300,7 @@
 
         .nav-link:hover,
         .nav-link.active {
-            color: var(--secondary-color) !important;
+            color: var(--accent-color) !important;
         }
 
         .dropdown-menu {
@@ -280,8 +317,50 @@
         }
 
         .dropdown-item:hover {
-            background: rgba(201, 169, 110, 0.1);
-            color: var(--secondary-color);
+            background: rgba(46, 139, 87, 0.1);
+            color: var(--accent-color);
+        }
+
+        /* ===== Language Switcher Styles ===== */
+        .language-switcher {
+            position: relative;
+        }
+        
+        .language-flag {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 8px;
+        }
+        
+        .language-flag img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .dropdown-item-language {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            transition: var(--transition);
+        }
+        
+        .dropdown-item-language:hover {
+            background: rgba(46, 139, 87, 0.1);
+        }
+        
+        .dropdown-item-language.active {
+            background: rgba(46, 139, 87, 0.15);
+            color: var(--accent-color);
+            font-weight: 500;
+        }
+        
+        .language-code {
+            margin-left: auto;
+            font-size: 0.85rem;
+            opacity: 0.7;
         }
 
         /* ===== Buttons ===== */
@@ -317,15 +396,15 @@
         }
 
         .btn-gold {
-            background: var(--gradient-secondary);
-            color: var(--primary-color);
-            box-shadow: 0 10px 25px rgba(201, 169, 110, 0.3);
+            background: var(--gradient-accent);
+            color: white;
+            box-shadow: 0 10px 25px rgba(46, 139, 87, 0.3);
         }
 
         .btn-gold:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(201, 169, 110, 0.4);
-            color: var(--primary-color);
+            box-shadow: 0 15px 35px rgba(46, 139, 87, 0.4);
+            color: white;
         }
 
         .btn-outline-light {
@@ -336,7 +415,7 @@
 
         .btn-outline-light:hover {
             background: white;
-            color: var(--primary-color);
+            color: var(--accent-color);
             border-color: white;
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
@@ -367,17 +446,17 @@
         }
 
         .btn-outline-primary {
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
             background: transparent;
         }
 
         .btn-outline-primary:hover {
-            background: var(--gradient-primary);
+            background: var(--gradient-accent);
             color: white;
             border-color: transparent;
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(10, 42, 74, 0.2);
+            box-shadow: 0 10px 25px rgba(46, 139, 87, 0.2);
         }
 
         .btn-sm {
@@ -740,6 +819,11 @@
             color: white;
         }
 
+        .property-badge.commercial {
+            background: var(--primary-color);
+            color: white;
+        }
+
         .property-actions {
             position: absolute;
             top: 20px;
@@ -1041,7 +1125,7 @@
             left: 0;
             width: 40px;
             height: 3px;
-            background: var(--gradient-secondary);
+            background: var(--gradient-accent);
             border-radius: 2px;
         }
 
@@ -1236,11 +1320,13 @@
             align-items: center;
             justify-content: center;
             transition: var(--transition);
+            color: white;
         }
         
         .social-link:hover {
             background: var(--gradient-accent);
             transform: translateY(-3px);
+            color: white;
         }
         
         .footer-links {
@@ -1632,9 +1718,124 @@
                 padding: 12px 16px !important;
             }
         }
+
+        /* ===== Image Loading Placeholders ===== */
+        .img-placeholder {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+        
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        
+        /* ===== Print Styles ===== */
+        @media print {
+            .navbar,
+            .mobile-bottom-nav,
+            .back-to-top,
+            .whatsapp-float,
+            .loading-overlay,
+            .toast-container,
+            .property-action-btn,
+            .search-section,
+            .mobile-filter-btn,
+            .view-options,
+            .sort-select,
+            .filter-card {
+                display: none !important;
+            }
+            
+            body {
+                font-size: 12pt;
+                color: black !important;
+            }
+            
+            .hero-section {
+                background: white !important;
+                color: black !important;
+                min-height: auto;
+                padding: 30px 0;
+            }
+            
+            .hero-title {
+                color: black !important;
+                font-size: 24pt !important;
+            }
+            
+            section {
+                padding: 30px 0;
+                page-break-inside: avoid;
+            }
+            
+            .property-card {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+                margin-bottom: 20px;
+            }
+            
+            .property-card:hover {
+                transform: none;
+            }
+            
+            .property-image {
+                height: 150px;
+            }
+            
+            .property-actions {
+                display: none;
+            }
+            
+            .footer {
+                background: white !important;
+                color: black !important;
+                padding-top: 30px;
+            }
+            
+            .footer .text-white {
+                color: black !important;
+            }
+            
+            .social-links {
+                display: none;
+            }
+            
+            .whatsapp-float {
+                display: none !important;
+            }
+            
+            .back-to-top {
+                display: none !important;
+            }
+            
+            .btn {
+                display: none !important;
+            }
+        }
+        
+        /* ===== Accessibility Improvements ===== */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        
+        .focus-visible {
+            outline: 2px solid var(--accent-color);
+            outline-offset: 2px;
+        }
     </style>
 </head>
-<body>
+<body data-lang="en">
     <!-- Preloader -->
     <div id="preloader">
         <div class="loader">
@@ -1651,12 +1852,12 @@
     </div>
 
     <!-- Back to Top Button -->
-    <div class="back-to-top">
+    <div class="back-to-top" aria-label="Back to top">
         <i class="fas fa-chevron-up"></i>
     </div>
 
     <!-- WhatsApp Float -->
-    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+    <a href="https://wa.me/917405133695" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -1667,76 +1868,107 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <div class="logo-icon">NG</div>
+                <div class="logo-icon" aria-hidden="true">NG</div>
                 <span>Naroda <span class="gold-text">Group</span></span>
             </a>
             
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="index.html" data-translate="nav.home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
+                        <a class="nav-link" href="about.html" data-translate="nav.about">About</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" role="button" 
+                           data-bs-toggle="dropdown" aria-expanded="false" data-translate="nav.projects">
                             Projects
                         </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="projects-landmark.html">Naroda Landmark</a>
-                            <a class="dropdown-item" href="projects-irish.html">Naroda Irish</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="projects.html">All Projects</a>
-                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="projectsDropdown">
+                            <li><a class="dropdown-item" href="projects-landmark.html" data-translate="nav.landmark">Naroda Landmark</a></li>
+                            <li><a class="dropdown-item" href="projects-irish.html" data-translate="nav.irish">Naroda Irish</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="projects.html" data-translate="nav.all_projects">All Projects</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" id="propertiesDropdown" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="propertiesDropdown" role="button" 
+                           data-bs-toggle="dropdown" aria-expanded="false" data-translate="nav.properties">
                             Properties
                         </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="properties.html">Buy</a>
-                            <a class="dropdown-item active" href="properties-rent.html">Rent</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="property-detail.html">Property Details</a>
-                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="propertiesDropdown">
+                            <li><a class="dropdown-item" href="properties.html" data-translate="nav.buy">Buy</a></li>
+                            <li><a class="dropdown-item active" href="properties-rent.html" data-translate="nav.rent">Rent</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="property-detail.html" data-translate="nav.property_details">Property Details</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="gallery.html">Gallery</a>
+                        <a class="nav-link" href="gallery.html" data-translate="nav.gallery">Gallery</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" role="button" 
+                           data-bs-toggle="dropdown" aria-expanded="false" data-translate="nav.more">
                             More
                         </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="blog.html">Blog</a>
-                            <a class="dropdown-item" href="news.html">News</a>
-                            <a class="dropdown-item" href="careers.html">Careers</a>
-                            <a class="dropdown-item" href="team.html">Our Team</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="faq.html">FAQ</a>
-                            <a class="dropdown-item" href="contact.html">Contact</a>
-                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="moreDropdown">
+                            <li><a class="dropdown-item" href="blog.html" data-translate="nav.blog">Blog</a></li>
+                            <li><a class="dropdown-item" href="news.html" data-translate="nav.news">News</a></li>
+                            <li><a class="dropdown-item" href="careers.html" data-translate="nav.careers">Careers</a></li>
+                            <li><a class="dropdown-item" href="team.html" data-translate="nav.team">Our Team</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="faq.html" data-translate="nav.faq">FAQ</a></li>
+                            <li><a class="dropdown-item" href="contact.html" data-translate="nav.contact">Contact</a></li>
+                        </ul>
                     </li>
                 </ul>
                 
                 <div class="d-flex align-items-center ms-lg-3 mt-3 mt-lg-0">
-                    <div class="dropdown">
-                        <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown">
-                            <i class="fas fa-globe me-1"></i> EN
+                    <div class="dropdown language-switcher">
+                        <button class="btn btn-outline-light btn-sm dropdown-toggle d-flex align-items-center" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <div class="language-flag">
+                                <img id="currentLanguageFlag" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyNCAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTAgMEgyNFYxNkgwVjBaIiBmaWxsPSIjRjJCMkIyIi8+CjxwYXRoIGQ9Ik0wIDBIMTBWMTZIMFYwWiIgZmlsbD0iIzAwMjY3RiIvPgo8cGF0aCBkPSJNMTQgMEgyNFYxNkgxNFYwWiIgZmlsbD0iI0M4MDMwMyIvPgo8L3N2Zz4K" alt="English Flag">
+                            </div>
+                            <span id="currentLanguageText">EN</span>
                         </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">English</a>
-                            <a class="dropdown-item" href="#">Hindi</a>
-                            <a class="dropdown-item" href="#">Gujarati</a>
-                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                            <li>
+                                <a class="dropdown-item dropdown-item-language language-option" href="#" data-lang="en">
+                                    <div class="language-flag">
+                                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyNCAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTAgMEgyNFYxNkgwVjBaIiBmaWxsPSIjRjJCMkIyIi8+CjxwYXRoIGQ9Ik0wIDBIMTBWMTZIMFYwWiIgZmlsbD0iIzAwMjY3RiIvPgo8cGF0aCBkPSJNMTQgMEgyNFYxNkgxNFYwWiIgZmlsbD0iI0M4MDMwMyIvPgo8L3N2Zz4K" alt="English Flag">
+                                    </div>
+                                    <span>English</span>
+                                    <span class="language-code">EN</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item dropdown-item-language language-option" href="#" data-lang="hi">
+                                    <div class="language-flag">
+                                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyNCAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE2IiBmaWxsPSIjRkZGMjVFIi8+CjxwYXRoIGQ9Ik0wIDBIMjRWNUgwVjBaIiBmaWxsPSIjRjUyNzI0Ii8+CjxwYXRoIGQ9Ik0wIDExSDI0VjE2SDBWMTFaIiBmaWxsPSIjMTM4ODA4Ii8+CjxjaXJjbGUgY3g9IjEyIiBjeT0iOCIgcj0iMi41IiBmaWxsPSIjRkZGMjVFIi8+CjxjaXJjbGUgY3g9IjEyIiBjeT0iOCIgcj0iMSIgZmlsbD0iIzEzODgwOCIvPgo8L3N2Zz4K" alt="Hindi Flag">
+                                    </div>
+                                    <span>हिंदी</span>
+                                    <span class="language-code">HI</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item dropdown-item-language language-option" href="#" data-lang="gu">
+                                    <div class="language-flag">
+                                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyNCAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE2IiBmaWxsPSIjRkZGMjVFIi8+CjxwYXRoIGQ9Ik0wIDBIMjRWNUgwVjBaIiBmaWxsPSIjRjUyNzI0Ii8+CjxwYXRoIGQ9Ik0wIDExSDI0VjE2SDBWMTFaIiBmaWxsPSIjMTM4ODA4Ii8+CjxjaXJjbGUgY3g9IjEyIiBjeT0iOCIgcj0iMi41IiBmaWxsPSIjRkZGMjVFIi8+Cjwvc3ZnPgo=" alt="Gujarati Flag">
+                                    </div>
+                                    <span>ગુજરાતી</span>
+                                    <span class="language-code">GU</span>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                     <a href="login.html" class="btn btn-outline-light ms-3">
-                        <i class="fas fa-user me-2"></i> Login
+                        <i class="fas fa-user me-2" aria-hidden="true"></i> <span data-translate="nav.login">Login</span>
                     </a>
                 </div>
             </div>
@@ -1746,24 +1978,24 @@
     <!-- Mobile Bottom Navigation -->
     <div class="mobile-bottom-nav">
         <a href="index.html" class="mobile-nav-item">
-            <i class="fas fa-home"></i>
-            <span>Home</span>
+            <i class="fas fa-home" aria-hidden="true"></i>
+            <span data-translate="nav.home">Home</span>
         </a>
         <a href="projects.html" class="mobile-nav-item">
-            <i class="fas fa-building"></i>
-            <span>Projects</span>
+            <i class="fas fa-building" aria-hidden="true"></i>
+            <span data-translate="nav.projects">Projects</span>
         </a>
         <a href="properties-rent.html" class="mobile-nav-item active">
-            <i class="fas fa-search"></i>
-            <span>Rent</span>
+            <i class="fas fa-search" aria-hidden="true"></i>
+            <span data-translate="nav.rent">Rent</span>
         </a>
         <a href="contact.html" class="mobile-nav-item">
-            <i class="fas fa-phone"></i>
-            <span>Contact</span>
+            <i class="fas fa-phone" aria-hidden="true"></i>
+            <span data-translate="nav.contact">Contact</span>
         </a>
         <a href="login.html" class="mobile-nav-item">
-            <i class="fas fa-user"></i>
-            <span>Account</span>
+            <i class="fas fa-user" aria-hidden="true"></i>
+            <span data-translate="nav.account">Account</span>
         </a>
     </div>
 
@@ -1774,19 +2006,19 @@
             <div class="container">
                 <div class="row min-vh-60 align-items-center">
                     <div class="col-lg-8 mx-auto text-center">
-                        <h1 class="hero-title" data-aos="fade-up">
+                        <h1 class="hero-title" data-aos="fade-up" data-translate="rental.hero.title">
                             Find Your <span class="gold-text">Perfect Rental</span>
                         </h1>
-                        <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
+                        <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100" data-translate="rental.hero.subtitle">
                             Discover premium residential and commercial properties for rent. 
                             From luxury apartments to office spaces, find the ideal rental property.
                         </p>
                         <div class="d-flex flex-column flex-sm-row justify-content-center gap-4 mt-4" data-aos="fade-up" data-aos-delay="200">
                             <a href="#search" class="btn btn-gold btn-lg">
-                                <i class="fas fa-search me-2"></i> Search Rentals
+                                <i class="fas fa-search me-2" aria-hidden="true"></i> <span data-translate="rental.hero.btn1">Search Rentals</span>
                             </a>
                             <a href="contact.html" class="btn btn-outline-light btn-lg">
-                                <i class="fas fa-headset me-2"></i> Talk to Agent
+                                <i class="fas fa-headset me-2" aria-hidden="true"></i> <span data-translate="rental.hero.btn2">Talk to Agent</span>
                             </a>
                         </div>
                     </div>
@@ -1798,115 +2030,115 @@
         <section class="search-section" id="search">
             <div class="container">
                 <button class="btn btn-primary mobile-filter-btn" id="mobileFilterToggle">
-                    <i class="fas fa-filter me-2"></i> Show Rental Filters
+                    <i class="fas fa-filter me-2" aria-hidden="true"></i> <span data-translate="rental.filter.btn">Show Rental Filters</span>
                 </button>
                 
                 <div class="filter-card" id="filterCard">
-                    <button class="btn btn-close close-filter" id="closeFilter"></button>
+                    <button class="btn btn-close close-filter" id="closeFilter" aria-label="Close filters"></button>
                     
                     <div class="filter-tabs">
-                        <button class="filter-tab active" data-type="all">All Rentals</button>
-                        <button class="filter-tab" data-type="residential">Residential</button>
-                        <button class="filter-tab" data-type="commercial">Commercial</button>
-                        <button class="filter-tab" data-type="short-term">Short Term</button>
+                        <button class="filter-tab active" data-type="all" data-translate="rental.filter.tab1">All Rentals</button>
+                        <button class="filter-tab" data-type="residential" data-translate="rental.filter.tab2">Residential</button>
+                        <button class="filter-tab" data-type="commercial" data-translate="rental.filter.tab3">Commercial</button>
+                        <button class="filter-tab" data-type="short-term" data-translate="rental.filter.tab4">Short Term</button>
                     </div>
                     
                     <form id="rentalSearchForm">
                         <div class="filter-row">
                             <div class="filter-group">
-                                <label class="filter-label">Location</label>
+                                <label class="filter-label" data-translate="rental.filter.location">Location</label>
                                 <select class="form-select" id="location">
-                                    <option value="">All Locations</option>
-                                    <option value="naroda-irish">Naroda Irish</option>
-                                    <option value="naroda-landmark">Naroda Landmark</option>
-                                    <option value="east-ahmedabad">East Ahmedabad</option>
-                                    <option value="west-ahmedabad">West Ahmedabad</option>
-                                    <option value="south-ahmedabad">South Ahmedabad</option>
+                                    <option value="" data-translate="rental.filter.all_locations">All Locations</option>
+                                    <option value="naroda-irish" data-translate="rental.filter.naroda_irish">Naroda Irish</option>
+                                    <option value="naroda-landmark" data-translate="rental.filter.naroda_landmark">Naroda Landmark</option>
+                                    <option value="east-ahmedabad" data-translate="rental.filter.east_ahmedabad">East Ahmedabad</option>
+                                    <option value="west-ahmedabad" data-translate="rental.filter.west_ahmedabad">West Ahmedabad</option>
+                                    <option value="south-ahmedabad" data-translate="rental.filter.south_ahmedabad">South Ahmedabad</option>
                                 </select>
                             </div>
                             
                             <div class="filter-group">
-                                <label class="filter-label">Property Type</label>
+                                <label class="filter-label" data-translate="rental.filter.property_type">Property Type</label>
                                 <select class="form-select" id="propertyType">
-                                    <option value="">All Types</option>
-                                    <option value="apartment">Apartment</option>
-                                    <option value="villa">Villa/Bungalow</option>
-                                    <option value="office">Office Space</option>
-                                    <option value="shop">Shop/Retail</option>
-                                    <option value="studio">Studio</option>
+                                    <option value="" data-translate="rental.filter.all_types">All Types</option>
+                                    <option value="apartment" data-translate="rental.filter.apartment">Apartment</option>
+                                    <option value="villa" data-translate="rental.filter.villa">Villa/Bungalow</option>
+                                    <option value="office" data-translate="rental.filter.office">Office Space</option>
+                                    <option value="shop" data-translate="rental.filter.shop">Shop/Retail</option>
+                                    <option value="studio" data-translate="rental.filter.studio">Studio</option>
                                 </select>
                             </div>
                             
                             <div class="filter-group">
-                                <label class="filter-label">Bedrooms</label>
+                                <label class="filter-label" data-translate="rental.filter.bedrooms">Bedrooms</label>
                                 <select class="form-select" id="bedrooms">
-                                    <option value="">Any</option>
-                                    <option value="1">1 BHK</option>
-                                    <option value="2">2 BHK</option>
-                                    <option value="3">3 BHK</option>
-                                    <option value="4">4 BHK</option>
-                                    <option value="4+">4+ BHK</option>
+                                    <option value="" data-translate="rental.filter.any">Any</option>
+                                    <option value="1" data-translate="rental.filter.bhk1">1 BHK</option>
+                                    <option value="2" data-translate="rental.filter.bhk2">2 BHK</option>
+                                    <option value="3" data-translate="rental.filter.bhk3">3 BHK</option>
+                                    <option value="4" data-translate="rental.filter.bhk4">4 BHK</option>
+                                    <option value="4+" data-translate="rental.filter.bhk4plus">4+ BHK</option>
                                 </select>
                             </div>
                             
                             <div class="filter-group">
-                                <label class="filter-label">Monthly Rent</label>
+                                <label class="filter-label" data-translate="rental.filter.monthly_rent">Monthly Rent</label>
                                 <div class="price-range">
-                                    <input type="number" class="form-control price-input" id="minPrice" placeholder="Min Rent">
-                                    <span>to</span>
-                                    <input type="number" class="form-control price-input" id="maxPrice" placeholder="Max Rent">
+                                    <input type="number" class="form-control price-input" id="minPrice" placeholder="Min Rent" data-translate="rental.filter.min_rent" data-translate-attrs="placeholder">
+                                    <span data-translate="rental.filter.to">to</span>
+                                    <input type="number" class="form-control price-input" id="maxPrice" placeholder="Max Rent" data-translate="rental.filter.max_rent" data-translate-attrs="placeholder">
                                 </div>
                             </div>
                         </div>
                         
                         <div class="advanced-filters">
                             <div class="advanced-toggle" id="advancedToggle">
-                                <i class="fas fa-sliders-h"></i>
-                                <span>Advanced Rental Filters</span>
-                                <i class="fas fa-chevron-down ms-auto"></i>
+                                <i class="fas fa-sliders-h" aria-hidden="true"></i>
+                                <span data-translate="rental.filter.advanced">Advanced Rental Filters</span>
+                                <i class="fas fa-chevron-down ms-auto" aria-hidden="true"></i>
                             </div>
                             
                             <div class="advanced-content" id="advancedContent">
                                 <div class="filter-row">
                                     <div class="filter-group">
-                                        <label class="filter-label">Area (Sq. Ft.)</label>
+                                        <label class="filter-label" data-translate="rental.filter.area">Area (Sq. Ft.)</label>
                                         <div class="price-range">
-                                            <input type="number" class="form-control price-input" id="minArea" placeholder="Min">
-                                            <span>to</span>
-                                            <input type="number" class="form-control price-input" id="maxArea" placeholder="Max">
+                                            <input type="number" class="form-control price-input" id="minArea" placeholder="Min" data-translate="rental.filter.min" data-translate-attrs="placeholder">
+                                            <span data-translate="rental.filter.to">to</span>
+                                            <input type="number" class="form-control price-input" id="maxArea" placeholder="Max" data-translate="rental.filter.max" data-translate-attrs="placeholder">
                                         </div>
                                     </div>
                                     
                                     <div class="filter-group">
-                                        <label class="filter-label">Furnishing</label>
+                                        <label class="filter-label" data-translate="rental.filter.furnishing">Furnishing</label>
                                         <select class="form-select" id="furnishing">
-                                            <option value="">Any</option>
-                                            <option value="fully-furnished">Fully Furnished</option>
-                                            <option value="semi-furnished">Semi Furnished</option>
-                                            <option value="unfurnished">Unfurnished</option>
+                                            <option value="" data-translate="rental.filter.any">Any</option>
+                                            <option value="fully-furnished" data-translate="rental.filter.fully_furnished">Fully Furnished</option>
+                                            <option value="semi-furnished" data-translate="rental.filter.semi_furnished">Semi Furnished</option>
+                                            <option value="unfurnished" data-translate="rental.filter.unfurnished">Unfurnished</option>
                                         </select>
                                     </div>
                                     
                                     <div class="filter-group">
-                                        <label class="filter-label">Lease Term</label>
+                                        <label class="filter-label" data-translate="rental.filter.lease_term">Lease Term</label>
                                         <select class="form-select" id="leaseTerm">
-                                            <option value="">Any</option>
-                                            <option value="monthly">Monthly</option>
-                                            <option value="3-months">3 Months</option>
-                                            <option value="6-months">6 Months</option>
-                                            <option value="1-year">1 Year</option>
-                                            <option value="2-years">2+ Years</option>
+                                            <option value="" data-translate="rental.filter.any">Any</option>
+                                            <option value="monthly" data-translate="rental.filter.monthly">Monthly</option>
+                                            <option value="3-months" data-translate="rental.filter.3_months">3 Months</option>
+                                            <option value="6-months" data-translate="rental.filter.6_months">6 Months</option>
+                                            <option value="1-year" data-translate="rental.filter.1_year">1 Year</option>
+                                            <option value="2-years" data-translate="rental.filter.2_years">2+ Years</option>
                                         </select>
                                     </div>
                                     
                                     <div class="filter-group">
-                                        <label class="filter-label">Availability</label>
+                                        <label class="filter-label" data-translate="rental.filter.availability">Availability</label>
                                         <select class="form-select" id="availability">
-                                            <option value="">Any</option>
-                                            <option value="immediate">Immediate</option>
-                                            <option value="15-days">Within 15 Days</option>
-                                            <option value="30-days">Within 30 Days</option>
-                                            <option value="60-days">Within 60 Days</option>
+                                            <option value="" data-translate="rental.filter.any">Any</option>
+                                            <option value="immediate" data-translate="rental.filter.immediate">Immediate</option>
+                                            <option value="15-days" data-translate="rental.filter.15_days">Within 15 Days</option>
+                                            <option value="30-days" data-translate="rental.filter.30_days">Within 30 Days</option>
+                                            <option value="60-days" data-translate="rental.filter.60_days">Within 60 Days</option>
                                         </select>
                                     </div>
                                 </div>
@@ -1914,35 +2146,35 @@
                                 <div class="checkbox-group">
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" id="maintenance">
-                                        <label class="form-check-label" for="maintenance">Maintenance Included</label>
+                                        <label class="form-check-label" for="maintenance" data-translate="rental.filter.maintenance">Maintenance Included</label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" id="pets">
-                                        <label class="form-check-label" for="pets">Pets Allowed</label>
+                                        <label class="form-check-label" for="pets" data-translate="rental.filter.pets">Pets Allowed</label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" id="parking">
-                                        <label class="form-check-label" for="parking">Parking Included</label>
+                                        <label class="form-check-label" for="parking" data-translate="rental.filter.parking">Parking Included</label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" id="security">
-                                        <label class="form-check-label" for="security">24/7 Security</label>
+                                        <label class="form-check-label" for="security" data-translate="rental.filter.security">24/7 Security</label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" id="gym">
-                                        <label class="form-check-label" for="gym">Gym Access</label>
+                                        <label class="form-check-label" for="gym" data-translate="rental.filter.gym">Gym Access</label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" id="pool">
-                                        <label class="form-check-label" for="pool">Swimming Pool</label>
+                                        <label class="form-check-label" for="pool" data-translate="rental.filter.pool">Swimming Pool</label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" id="housekeeping">
-                                        <label class="form-check-label" for="housekeeping">Housekeeping</label>
+                                        <label class="form-check-label" for="housekeeping" data-translate="rental.filter.housekeeping">Housekeeping</label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" id="internet">
-                                        <label class="form-check-label" for="internet">Internet Included</label>
+                                        <label class="form-check-label" for="internet" data-translate="rental.filter.internet">Internet Included</label>
                                     </div>
                                 </div>
                             </div>
@@ -1950,13 +2182,13 @@
                         
                         <div class="search-actions">
                             <button type="submit" class="btn btn-gold">
-                                <i class="fas fa-search me-2"></i> Search Rentals
+                                <i class="fas fa-search me-2" aria-hidden="true"></i> <span data-translate="rental.filter.search">Search Rentals</span>
                             </button>
                             <button type="reset" class="btn btn-outline-primary" id="resetFilters">
-                                <i class="fas fa-redo me-2"></i> Reset Filters
+                                <i class="fas fa-redo me-2" aria-hidden="true"></i> <span data-translate="rental.filter.reset">Reset Filters</span>
                             </button>
                             <button type="button" class="btn btn-outline-primary" id="saveSearch">
-                                <i class="fas fa-bell me-2"></i> Save Search
+                                <i class="fas fa-bell me-2" aria-hidden="true"></i> <span data-translate="rental.filter.save">Save Search</span>
                             </button>
                         </div>
                     </form>
@@ -1968,32 +2200,32 @@
         <section class="search-section">
             <div class="container">
                 <div class="rental-guide" data-aos="fade-up">
-                    <h3 class="mb-4">Rental Guide & Tips</h3>
+                    <h3 class="mb-4" data-translate="rental.guide.title">Rental Guide & Tips</h3>
                     <div class="guide-step">
                         <div class="step-number">1</div>
                         <div>
-                            <h5>Budget Planning</h5>
-                            <p class="text-muted mb-0">Consider all costs: security deposit (usually 2-3 months rent), monthly rent, maintenance charges, and utilities. Plan for 25-30% of your monthly income for rent.</p>
+                            <h5 data-translate="rental.guide.step1.title">Budget Planning</h5>
+                            <p class="text-muted mb-0" data-translate="rental.guide.step1.text">Consider all costs: security deposit (usually 2-3 months rent), monthly rent, maintenance charges, and utilities. Plan for 25-30% of your monthly income for rent.</p>
                         </div>
                     </div>
                     <div class="guide-step">
                         <div class="step-number">2</div>
                         <div>
-                            <h5>Documentation</h5>
-                            <p class="text-muted mb-0">Prepare necessary documents: ID proof, address proof, employment proof, and photographs. Read the rental agreement carefully before signing.</p>
+                            <h5 data-translate="rental.guide.step2.title">Documentation</h5>
+                            <p class="text-muted mb-0" data-translate="rental.guide.step2.text">Prepare necessary documents: ID proof, address proof, employment proof, and photographs. Read the rental agreement carefully before signing.</p>
                         </div>
                     </div>
                     <div class="guide-step">
                         <div class="step-number">3</div>
                         <div>
-                            <h5>Property Inspection</h5>
-                            <p class="text-muted mb-0">Check all amenities, water supply, electrical fittings, and plumbing. Take photos/videos before moving in for reference during security deposit return.</p>
+                            <h5 data-translate="rental.guide.step3.title">Property Inspection</h5>
+                            <p class="text-muted mb-0" data-translate="rental.guide.step3.text">Check all amenities, water supply, electrical fittings, and plumbing. Take photos/videos before moving in for reference during security deposit return.</p>
                         </div>
                     </div>
                     
                     <div class="rental-highlight">
-                        <h5 class="emerald-text mb-3"><i class="fas fa-lightbulb me-2"></i> Quick Tip</h5>
-                        <p class="mb-0">Always negotiate the rent and security deposit. Most landlords are open to reasonable negotiations, especially for longer lease terms.</p>
+                        <h5 class="emerald-text mb-3"><i class="fas fa-lightbulb me-2" aria-hidden="true"></i> <span data-translate="rental.guide.tip">Quick Tip</span></h5>
+                        <p class="mb-0" data-translate="rental.guide.tip_text">Always negotiate the rent and security deposit. Most landlords are open to reasonable negotiations, especially for longer lease terms.</p>
                     </div>
                 </div>
             </div>
@@ -2004,26 +2236,26 @@
             <div class="container">
                 <div class="properties-header">
                     <div>
-                        <h2 class="section-title left">Featured <span class="emerald-text">Rental Properties</span></h2>
-                        <p class="text-muted">Showing <span id="propertyCount">6</span> rental properties</p>
+                        <h2 class="section-title left" data-translate="rental.properties.title">Featured <span class="emerald-text">Rental Properties</span></h2>
+                        <p class="text-muted" data-translate="rental.properties.count">Showing <span id="propertyCount">6</span> rental properties</p>
                     </div>
                     
                     <div class="sort-options">
-                        <span class="fw-500">Sort by:</span>
+                        <span class="fw-500" data-translate="rental.properties.sort">Sort by:</span>
                         <select class="form-select sort-select" id="sortBy">
-                            <option value="newest">Newest First</option>
-                            <option value="price-low">Rent: Low to High</option>
-                            <option value="price-high">Rent: High to Low</option>
-                            <option value="area">Area: Large to Small</option>
-                            <option value="featured">Featured First</option>
+                            <option value="newest" data-translate="rental.properties.newest">Newest First</option>
+                            <option value="price-low" data-translate="rental.properties.price_low">Rent: Low to High</option>
+                            <option value="price-high" data-translate="rental.properties.price_high">Rent: High to Low</option>
+                            <option value="area" data-translate="rental.properties.area">Area: Large to Small</option>
+                            <option value="featured" data-translate="rental.properties.featured">Featured First</option>
                         </select>
                         
                         <div class="view-options">
-                            <button class="view-btn active" data-view="grid">
-                                <i class="fas fa-th-large"></i>
+                            <button class="view-btn active" data-view="grid" aria-label="Grid view">
+                                <i class="fas fa-th-large" aria-hidden="true"></i>
                             </button>
-                            <button class="view-btn" data-view="list">
-                                <i class="fas fa-list"></i>
+                            <button class="view-btn" data-view="list" aria-label="List view">
+                                <i class="fas fa-list" aria-hidden="true"></i>
                             </button>
                         </div>
                     </div>
@@ -2031,50 +2263,50 @@
                 
                 <!-- Grid View -->
                 <div class="properties-grid" id="gridView">
-                    <!-- Rental Property 1 -->
-                    <div class="property-card" data-aos="fade-up">
+                    <!-- Rental Property 1 - Naroda Irish 4BHK -->
+                    <div class="property-card" data-aos="fade-up" data-property-type="residential" data-location="naroda-irish" data-price="45000">
                         <div class="property-image">
                             <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-                                 alt="4 BHK Luxury Villa">
-                            <div class="property-badge furnished">Fully Furnished</div>
+                                 alt="4 BHK Luxury Villa" class="img-placeholder" loading="lazy" width="350" height="250">
+                            <div class="property-badge furnished" data-translate="rental.property.furnished">Fully Furnished</div>
                             <div class="property-actions">
-                                <button class="property-action-btn save-property" data-property="1">
-                                    <i class="far fa-heart"></i>
+                                <button class="property-action-btn save-property" data-property="1" aria-label="Save property">
+                                    <i class="far fa-heart" aria-hidden="true"></i>
                                 </button>
-                                <button class="property-action-btn">
-                                    <i class="fas fa-share-alt"></i>
+                                <button class="property-action-btn" aria-label="Share property">
+                                    <i class="fas fa-share-alt" aria-hidden="true"></i>
                                 </button>
                             </div>
                         </div>
                         <div class="property-content">
-                            <h3 class="property-title text-truncate-2">4 BHK Luxury Villa</h3>
+                            <h3 class="property-title text-truncate-2" data-translate="rental.property1.title">4 BHK Luxury Villa</h3>
                             <div class="property-location">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span class="text-truncate-2">Naroda Irish, Ahmedabad</span>
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                <span class="text-truncate-2" data-translate="rental.property1.location">Naroda Irish, Ahmedabad</span>
                             </div>
                             
                             <div class="property-status">
-                                <span class="status-badge ready">Immediate Possession</span>
-                                <span class="status-badge pets">Pets Allowed</span>
+                                <span class="status-badge ready" data-translate="rental.property1.status1">Immediate Possession</span>
+                                <span class="status-badge pets" data-translate="rental.property1.status2">Pets Allowed</span>
                             </div>
                             
                             <div class="rental-features">
-                                <span class="rental-tag furnished">Fully Furnished</span>
-                                <span class="rental-tag">Maintenance Included</span>
-                                <span class="rental-tag">Parking: 2 Cars</span>
+                                <span class="rental-tag furnished" data-translate="rental.property1.feature1">Fully Furnished</span>
+                                <span class="rental-tag" data-translate="rental.property1.feature2">Maintenance Included</span>
+                                <span class="rental-tag" data-translate="rental.property1.feature3">Parking: 2 Cars</span>
                             </div>
                             
                             <div class="property-features">
                                 <div class="property-feature">
-                                    <i class="fas fa-bed"></i>
+                                    <i class="fas fa-bed" aria-hidden="true"></i>
                                     <span>4 Beds</span>
                                 </div>
                                 <div class="property-feature">
-                                    <i class="fas fa-bath"></i>
+                                    <i class="fas fa-bath" aria-hidden="true"></i>
                                     <span>4 Baths</span>
                                 </div>
                                 <div class="property-feature">
-                                    <i class="fas fa-vector-square"></i>
+                                    <i class="fas fa-vector-square" aria-hidden="true"></i>
                                     <span>2800 sqft</span>
                                 </div>
                             </div>
@@ -2082,65 +2314,65 @@
                             <div class="property-price">
                                 <div>
                                     <div class="price-amount">₹ 45,000</div>
-                                    <div class="price-unit">Per Month</div>
-                                    <div class="rent-terms">Security: ₹ 1,35,000 | 1 Year Lease</div>
+                                    <div class="price-unit" data-translate="rental.property.price_unit">Per Month</div>
+                                    <div class="rent-terms" data-translate="rental.property1.terms">Security: ₹ 1,35,000 | 1 Year Lease</div>
                                 </div>
-                                <a href="property-detail.html" class="btn btn-gold btn-sm">
+                                <a href="property-detail.html" class="btn btn-gold btn-sm" data-translate="rental.property.view_details">
                                     View Details
                                 </a>
                             </div>
                             
                             <div class="property-meta">
                                 <span class="property-id">ID: NG-RT-001</span>
-                                <span class="property-date">2 days ago</span>
+                                <span class="property-date" data-translate="rental.property1.date">2 days ago</span>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Rental Property 2 -->
-                    <div class="property-card" data-aos="fade-up" data-aos-delay="100">
+                    <!-- Rental Property 2 - Naroda Irish 1BHK -->
+                    <div class="property-card" data-aos="fade-up" data-aos-delay="100" data-property-type="residential" data-location="naroda-irish" data-price="18000">
                         <div class="property-image">
                             <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-                                 alt="1 BHK Studio Apartment">
-                            <div class="property-badge">For Rent</div>
+                                 alt="1 BHK Studio Apartment" class="img-placeholder" loading="lazy" width="350" height="250">
+                            <div class="property-badge" data-translate="rental.property.for_rent">For Rent</div>
                             <div class="property-actions">
-                                <button class="property-action-btn save-property" data-property="2">
-                                    <i class="far fa-heart"></i>
+                                <button class="property-action-btn save-property" data-property="2" aria-label="Save property">
+                                    <i class="far fa-heart" aria-hidden="true"></i>
                                 </button>
-                                <button class="property-action-btn">
-                                    <i class="fas fa-share-alt"></i>
+                                <button class="property-action-btn" aria-label="Share property">
+                                    <i class="fas fa-share-alt" aria-hidden="true"></i>
                                 </button>
                             </div>
                         </div>
                         <div class="property-content">
-                            <h3 class="property-title text-truncate-2">1 BHK Studio Apartment</h3>
+                            <h3 class="property-title text-truncate-2" data-translate="rental.property2.title">1 BHK Studio Apartment</h3>
                             <div class="property-location">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span class="text-truncate-2">Naroda Irish, Ahmedabad</span>
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                <span class="text-truncate-2" data-translate="rental.property2.location">Naroda Irish, Ahmedabad</span>
                             </div>
                             
                             <div class="property-status">
-                                <span class="status-badge ready">Ready to Move</span>
-                                <span class="status-badge security">24/7 Security</span>
+                                <span class="status-badge ready" data-translate="rental.property2.status1">Ready to Move</span>
+                                <span class="status-badge security" data-translate="rental.property2.status2">24/7 Security</span>
                             </div>
                             
                             <div class="rental-features">
-                                <span class="rental-tag">Semi Furnished</span>
-                                <span class="rental-tag">Power Backup</span>
-                                <span class="rental-tag">Gym Access</span>
+                                <span class="rental-tag" data-translate="rental.property2.feature1">Semi Furnished</span>
+                                <span class="rental-tag" data-translate="rental.property2.feature2">Power Backup</span>
+                                <span class="rental-tag" data-translate="rental.property2.feature3">Gym Access</span>
                             </div>
                             
                             <div class="property-features">
                                 <div class="property-feature">
-                                    <i class="fas fa-bed"></i>
+                                    <i class="fas fa-bed" aria-hidden="true"></i>
                                     <span>1 Bed</span>
                                 </div>
                                 <div class="property-feature">
-                                    <i class="fas fa-bath"></i>
+                                    <i class="fas fa-bath" aria-hidden="true"></i>
                                     <span>1 Bath</span>
                                 </div>
                                 <div class="property-feature">
-                                    <i class="fas fa-vector-square"></i>
+                                    <i class="fas fa-vector-square" aria-hidden="true"></i>
                                     <span>800 sqft</span>
                                 </div>
                             </div>
@@ -2148,65 +2380,65 @@
                             <div class="property-price">
                                 <div>
                                     <div class="price-amount">₹ 18,000</div>
-                                    <div class="price-unit">Per Month</div>
-                                    <div class="rent-terms">Security: ₹ 36,000 | 11 Month Lease</div>
+                                    <div class="price-unit" data-translate="rental.property.price_unit">Per Month</div>
+                                    <div class="rent-terms" data-translate="rental.property2.terms">Security: ₹ 36,000 | 11 Month Lease</div>
                                 </div>
-                                <a href="property-detail.html" class="btn btn-gold btn-sm">
+                                <a href="property-detail.html" class="btn btn-gold btn-sm" data-translate="rental.property.view_details">
                                     View Details
                                 </a>
                             </div>
                             
                             <div class="property-meta">
                                 <span class="property-id">ID: NG-RT-002</span>
-                                <span class="property-date">5 days ago</span>
+                                <span class="property-date" data-translate="rental.property2.date">5 days ago</span>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Rental Property 3 -->
-                    <div class="property-card" data-aos="fade-up" data-aos-delay="200">
+                    <!-- Rental Property 3 - Naroda Irish 3BHK -->
+                    <div class="property-card" data-aos="fade-up" data-aos-delay="200" data-property-type="residential" data-location="naroda-irish" data-price="35000">
                         <div class="property-image">
                             <img src="https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-4.0.3&auto=format&fit=crop&w=2068&q=80" 
-                                 alt="3 BHK Luxury Apartment">
-                            <div class="property-badge furnished">Fully Furnished</div>
+                                 alt="3 BHK Luxury Apartment" class="img-placeholder" loading="lazy" width="350" height="250">
+                            <div class="property-badge furnished" data-translate="rental.property.furnished">Fully Furnished</div>
                             <div class="property-actions">
-                                <button class="property-action-btn save-property" data-property="3">
-                                    <i class="far fa-heart"></i>
+                                <button class="property-action-btn save-property" data-property="3" aria-label="Save property">
+                                    <i class="far fa-heart" aria-hidden="true"></i>
                                 </button>
-                                <button class="property-action-btn">
-                                    <i class="fas fa-share-alt"></i>
+                                <button class="property-action-btn" aria-label="Share property">
+                                    <i class="fas fa-share-alt" aria-hidden="true"></i>
                                 </button>
                             </div>
                         </div>
                         <div class="property-content">
-                            <h3 class="property-title text-truncate-2">3 BHK Luxury Apartment</h3>
+                            <h3 class="property-title text-truncate-2" data-translate="rental.property3.title">3 BHK Luxury Apartment</h3>
                             <div class="property-location">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span class="text-truncate-2">Naroda Irish, Ahmedabad</span>
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                <span class="text-truncate-2" data-translate="rental.property3.location">Naroda Irish, Ahmedabad</span>
                             </div>
                             
                             <div class="property-status">
-                                <span class="status-badge ready">Immediate Possession</span>
-                                <span class="status-badge pets">Pets Allowed</span>
+                                <span class="status-badge ready" data-translate="rental.property3.status1">Immediate Possession</span>
+                                <span class="status-badge pets" data-translate="rental.property3.status2">Pets Allowed</span>
                             </div>
                             
                             <div class="rental-features">
-                                <span class="rental-tag furnished">Fully Furnished</span>
-                                <span class="rental-tag">All Utilities Included</span>
-                                <span class="rental-tag">Housekeeping</span>
+                                <span class="rental-tag furnished" data-translate="rental.property3.feature1">Fully Furnished</span>
+                                <span class="rental-tag" data-translate="rental.property3.feature2">All Utilities Included</span>
+                                <span class="rental-tag" data-translate="rental.property3.feature3">Housekeeping</span>
                             </div>
                             
                             <div class="property-features">
                                 <div class="property-feature">
-                                    <i class="fas fa-bed"></i>
+                                    <i class="fas fa-bed" aria-hidden="true"></i>
                                     <span>3 Beds</span>
                                 </div>
                                 <div class="property-feature">
-                                    <i class="fas fa-bath"></i>
+                                    <i class="fas fa-bath" aria-hidden="true"></i>
                                     <span>2 Baths</span>
                                 </div>
                                 <div class="property-feature">
-                                    <i class="fas fa-vector-square"></i>
+                                    <i class="fas fa-vector-square" aria-hidden="true"></i>
                                     <span>1500 sqft</span>
                                 </div>
                             </div>
@@ -2214,65 +2446,65 @@
                             <div class="property-price">
                                 <div>
                                     <div class="price-amount">₹ 35,000</div>
-                                    <div class="price-unit">Per Month</div>
-                                    <div class="rent-terms">Security: ₹ 70,000 | Flexible Lease</div>
+                                    <div class="price-unit" data-translate="rental.property.price_unit">Per Month</div>
+                                    <div class="rent-terms" data-translate="rental.property3.terms">Security: ₹ 70,000 | Flexible Lease</div>
                                 </div>
-                                <a href="property-detail.html" class="btn btn-gold btn-sm">
+                                <a href="property-detail.html" class="btn btn-gold btn-sm" data-translate="rental.property.view_details">
                                     View Details
                                 </a>
                             </div>
                             
                             <div class="property-meta">
                                 <span class="property-id">ID: NG-RT-003</span>
-                                <span class="property-date">1 week ago</span>
+                                <span class="property-date" data-translate="rental.property3.date">1 week ago</span>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Rental Property 4 -->
-                    <div class="property-card" data-aos="fade-up">
+                    <!-- Rental Property 4 - Naroda Landmark Commercial Office -->
+                    <div class="property-card" data-aos="fade-up" data-property-type="commercial" data-location="naroda-landmark" data-price="75000">
                         <div class="property-image">
                             <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-                                 alt="Commercial Office Space">
-                            <div class="property-badge monthly">Monthly Lease</div>
+                                 alt="Commercial Office Space" class="img-placeholder" loading="lazy" width="350" height="250">
+                            <div class="property-badge commercial" data-translate="rental.property4.badge">Commercial Space</div>
                             <div class="property-actions">
-                                <button class="property-action-btn save-property" data-property="4">
-                                    <i class="far fa-heart"></i>
+                                <button class="property-action-btn save-property" data-property="4" aria-label="Save property">
+                                    <i class="far fa-heart" aria-hidden="true"></i>
                                 </button>
-                                <button class="property-action-btn">
-                                    <i class="fas fa-share-alt"></i>
+                                <button class="property-action-btn" aria-label="Share property">
+                                    <i class="fas fa-share-alt" aria-hidden="true"></i>
                                 </button>
                             </div>
                         </div>
                         <div class="property-content">
-                            <h3 class="property-title text-truncate-2">Commercial Office Space</h3>
+                            <h3 class="property-title text-truncate-2" data-translate="rental.property4.title">Commercial Office Space</h3>
                             <div class="property-location">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span class="text-truncate-2">Naroda Landmark, Ahmedabad</span>
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                <span class="text-truncate-2" data-translate="rental.property4.location">Naroda Landmark, Ahmedabad</span>
                             </div>
                             
                             <div class="property-status">
-                                <span class="status-badge ready">Ready to Move</span>
-                                <span class="status-badge security">24/7 Access</span>
+                                <span class="status-badge ready" data-translate="rental.property4.status1">Ready to Move</span>
+                                <span class="status-badge security" data-translate="rental.property4.status2">24/7 Access</span>
                             </div>
                             
                             <div class="rental-features">
-                                <span class="rental-tag">Fully Serviced</span>
-                                <span class="rental-tag">Meeting Rooms</span>
-                                <span class="rental-tag">High Speed Internet</span>
+                                <span class="rental-tag" data-translate="rental.property4.feature1">Fully Serviced</span>
+                                <span class="rental-tag" data-translate="rental.property4.feature2">Meeting Rooms</span>
+                                <span class="rental-tag" data-translate="rental.property4.feature3">High Speed Internet</span>
                             </div>
                             
                             <div class="property-features">
                                 <div class="property-feature">
-                                    <i class="fas fa-building"></i>
-                                    <span>Office</span>
+                                    <i class="fas fa-building" aria-hidden="true"></i>
+                                    <span data-translate="rental.property4.feature4">Office</span>
                                 </div>
                                 <div class="property-feature">
-                                    <i class="fas fa-vector-square"></i>
+                                    <i class="fas fa-vector-square" aria-hidden="true"></i>
                                     <span>1200 sqft</span>
                                 </div>
                                 <div class="property-feature">
-                                    <i class="fas fa-users"></i>
+                                    <i class="fas fa-users" aria-hidden="true"></i>
                                     <span>15 Person</span>
                                 </div>
                             </div>
@@ -2280,65 +2512,131 @@
                             <div class="property-price">
                                 <div>
                                     <div class="price-amount">₹ 75,000</div>
-                                    <div class="price-unit">Per Month</div>
-                                    <div class="rent-terms">Security: ₹ 1,50,000 | 6 Month Min</div>
+                                    <div class="price-unit" data-translate="rental.property.price_unit">Per Month</div>
+                                    <div class="rent-terms" data-translate="rental.property4.terms">Security: ₹ 1,50,000 | 6 Month Min</div>
                                 </div>
-                                <a href="property-detail.html" class="btn btn-gold btn-sm">
+                                <a href="property-detail.html" class="btn btn-gold btn-sm" data-translate="rental.property.view_details">
                                     View Details
                                 </a>
                             </div>
                             
                             <div class="property-meta">
                                 <span class="property-id">ID: NG-RT-004</span>
-                                <span class="property-date">3 days ago</span>
+                                <span class="property-date" data-translate="rental.property4.date">3 days ago</span>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Rental Property 5 -->
-                    <div class="property-card" data-aos="fade-up" data-aos-delay="100">
+                    <!-- Rental Property 5 - Naroda Landmark Retail Shop -->
+                    <div class="property-card" data-aos="fade-up" data-aos-delay="100" data-property-type="commercial" data-location="naroda-landmark" data-price="40000">
                         <div class="property-image">
-                            <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-                                 alt="2 BHK Premium Apartment">
-                            <div class="property-badge">For Rent</div>
+                            <img src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80" 
+                                 alt="Retail Shop Space" class="img-placeholder" loading="lazy" width="350" height="250">
+                            <div class="property-badge commercial" data-translate="rental.property5.badge">Retail Space</div>
                             <div class="property-actions">
-                                <button class="property-action-btn save-property" data-property="5">
-                                    <i class="far fa-heart"></i>
+                                <button class="property-action-btn save-property" data-property="5" aria-label="Save property">
+                                    <i class="far fa-heart" aria-hidden="true"></i>
                                 </button>
-                                <button class="property-action-btn">
-                                    <i class="fas fa-share-alt"></i>
+                                <button class="property-action-btn" aria-label="Share property">
+                                    <i class="fas fa-share-alt" aria-hidden="true"></i>
                                 </button>
                             </div>
                         </div>
                         <div class="property-content">
-                            <h3 class="property-title text-truncate-2">2 BHK Premium Apartment</h3>
+                            <h3 class="property-title text-truncate-2" data-translate="rental.property5.title">Retail Shop Space</h3>
                             <div class="property-location">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span class="text-truncate-2">Naroda Irish, Ahmedabad</span>
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                <span class="text-truncate-2" data-translate="rental.property5.location">Naroda Landmark, Ahmedabad</span>
                             </div>
                             
                             <div class="property-status">
-                                <span class="status-badge ready">Ready to Move</span>
-                                <span class="status-badge pets">Pets Allowed</span>
+                                <span class="status-badge ready" data-translate="rental.property5.status1">Ready to Move</span>
+                                <span class="status-badge security" data-translate="rental.property5.status2">24/7 Security</span>
                             </div>
                             
                             <div class="rental-features">
-                                <span class="rental-tag">Semi Furnished</span>
-                                <span class="rental-tag">Swimming Pool</span>
-                                <span class="rental-tag">Children's Play Area</span>
+                                <span class="rental-tag" data-translate="rental.property5.feature1">Main Road Frontage</span>
+                                <span class="rental-tag" data-translate="rental.property5.feature2">Parking Available</span>
+                                <span class="rental-tag" data-translate="rental.property5.feature3">High Footfall Area</span>
                             </div>
                             
                             <div class="property-features">
                                 <div class="property-feature">
-                                    <i class="fas fa-bed"></i>
+                                    <i class="fas fa-store" aria-hidden="true"></i>
+                                    <span data-translate="rental.property5.feature4">Retail</span>
+                                </div>
+                                <div class="property-feature">
+                                    <i class="fas fa-vector-square" aria-hidden="true"></i>
+                                    <span>800 sqft</span>
+                                </div>
+                                <div class="property-feature">
+                                    <i class="fas fa-door-open" aria-hidden="true"></i>
+                                    <span data-translate="rental.property5.feature5">Front Open</span>
+                                </div>
+                            </div>
+                            
+                            <div class="property-price">
+                                <div>
+                                    <div class="price-amount">₹ 40,000</div>
+                                    <div class="price-unit" data-translate="rental.property.price_unit">Per Month</div>
+                                    <div class="rent-terms" data-translate="rental.property5.terms">Security: ₹ 80,000 | 2 Year Lease</div>
+                                </div>
+                                <a href="property-detail.html" class="btn btn-gold btn-sm" data-translate="rental.property.view_details">
+                                    View Details
+                                </a>
+                            </div>
+                            
+                            <div class="property-meta">
+                                <span class="property-id">ID: NG-RT-005</span>
+                                <span class="property-date" data-translate="rental.property5.date">2 weeks ago</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Rental Property 6 - Naroda Irish 2BHK -->
+                    <div class="property-card" data-aos="fade-up" data-aos-delay="200" data-property-type="residential" data-location="naroda-irish" data-price="25000">
+                        <div class="property-image">
+                            <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                                 alt="2 BHK Premium Apartment" class="img-placeholder" loading="lazy" width="350" height="250">
+                            <div class="property-badge" data-translate="rental.property.for_rent">For Rent</div>
+                            <div class="property-actions">
+                                <button class="property-action-btn save-property" data-property="6" aria-label="Save property">
+                                    <i class="far fa-heart" aria-hidden="true"></i>
+                                </button>
+                                <button class="property-action-btn" aria-label="Share property">
+                                    <i class="fas fa-share-alt" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="property-content">
+                            <h3 class="property-title text-truncate-2" data-translate="rental.property6.title">2 BHK Premium Apartment</h3>
+                            <div class="property-location">
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                <span class="text-truncate-2" data-translate="rental.property6.location">Naroda Irish, Ahmedabad</span>
+                            </div>
+                            
+                            <div class="property-status">
+                                <span class="status-badge ready" data-translate="rental.property6.status1">Ready to Move</span>
+                                <span class="status-badge pets" data-translate="rental.property6.status2">Pets Allowed</span>
+                            </div>
+                            
+                            <div class="rental-features">
+                                <span class="rental-tag" data-translate="rental.property6.feature1">Semi Furnished</span>
+                                <span class="rental-tag" data-translate="rental.property6.feature2">Swimming Pool</span>
+                                <span class="rental-tag" data-translate="rental.property6.feature3">Children's Play Area</span>
+                            </div>
+                            
+                            <div class="property-features">
+                                <div class="property-feature">
+                                    <i class="fas fa-bed" aria-hidden="true"></i>
                                     <span>2 Beds</span>
                                 </div>
                                 <div class="property-feature">
-                                    <i class="fas fa-bath"></i>
+                                    <i class="fas fa-bath" aria-hidden="true"></i>
                                     <span>2 Baths</span>
                                 </div>
                                 <div class="property-feature">
-                                    <i class="fas fa-vector-square"></i>
+                                    <i class="fas fa-vector-square" aria-hidden="true"></i>
                                     <span>1100 sqft</span>
                                 </div>
                             </div>
@@ -2346,83 +2644,17 @@
                             <div class="property-price">
                                 <div>
                                     <div class="price-amount">₹ 25,000</div>
-                                    <div class="price-unit">Per Month</div>
-                                    <div class="rent-terms">Security: ₹ 50,000 | 1 Year Lease</div>
+                                    <div class="price-unit" data-translate="rental.property.price_unit">Per Month</div>
+                                    <div class="rent-terms" data-translate="rental.property6.terms">Security: ₹ 50,000 | 1 Year Lease</div>
                                 </div>
-                                <a href="property-detail.html" class="btn btn-gold btn-sm">
-                                    View Details
-                                </a>
-                            </div>
-                            
-                            <div class="property-meta">
-                                <span class="property-id">ID: NG-RT-005</span>
-                                <span class="property-date">1 week ago</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Rental Property 6 -->
-                    <div class="property-card" data-aos="fade-up" data-aos-delay="200">
-                        <div class="property-image">
-                            <img src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80" 
-                                 alt="Retail Shop Space">
-                            <div class="property-badge">For Rent</div>
-                            <div class="property-actions">
-                                <button class="property-action-btn save-property" data-property="6">
-                                    <i class="far fa-heart"></i>
-                                </button>
-                                <button class="property-action-btn">
-                                    <i class="fas fa-share-alt"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="property-content">
-                            <h3 class="property-title text-truncate-2">Retail Shop Space</h3>
-                            <div class="property-location">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span class="text-truncate-2">Naroda Landmark, Ahmedabad</span>
-                            </div>
-                            
-                            <div class="property-status">
-                                <span class="status-badge ready">Ready to Move</span>
-                                <span class="status-badge security">24/7 Security</span>
-                            </div>
-                            
-                            <div class="rental-features">
-                                <span class="rental-tag">Main Road Frontage</span>
-                                <span class="rental-tag">Parking Available</span>
-                                <span class="rental-tag">High Footfall Area</span>
-                            </div>
-                            
-                            <div class="property-features">
-                                <div class="property-feature">
-                                    <i class="fas fa-store"></i>
-                                    <span>Retail</span>
-                                </div>
-                                <div class="property-feature">
-                                    <i class="fas fa-vector-square"></i>
-                                    <span>800 sqft</span>
-                                </div>
-                                <div class="property-feature">
-                                    <i class="fas fa-door-open"></i>
-                                    <span>Front Open</span>
-                                </div>
-                            </div>
-                            
-                            <div class="property-price">
-                                <div>
-                                    <div class="price-amount">₹ 40,000</div>
-                                    <div class="price-unit">Per Month</div>
-                                    <div class="rent-terms">Security: ₹ 80,000 | 2 Year Lease</div>
-                                </div>
-                                <a href="property-detail.html" class="btn btn-gold btn-sm">
+                                <a href="property-detail.html" class="btn btn-gold btn-sm" data-translate="rental.property.view_details">
                                     View Details
                                 </a>
                             </div>
                             
                             <div class="property-meta">
                                 <span class="property-id">ID: NG-RT-006</span>
-                                <span class="property-date">2 weeks ago</span>
+                                <span class="property-date" data-translate="rental.property6.date">1 week ago</span>
                             </div>
                         </div>
                     </div>
@@ -2434,205 +2666,67 @@
                     <div class="property-list-item" data-aos="fade-up">
                         <div class="list-image">
                             <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-                                 alt="4 BHK Luxury Villa">
-                            <div class="property-badge furnished">Fully Furnished</div>
+                                 alt="4 BHK Luxury Villa" class="img-placeholder" loading="lazy" width="300" height="200">
+                            <div class="property-badge furnished" data-translate="rental.property.furnished">Fully Furnished</div>
                         </div>
                         <div class="list-content">
-                            <h3 class="property-title">4 BHK Luxury Villa</h3>
+                            <h3 class="property-title" data-translate="rental.property1.title">4 BHK Luxury Villa</h3>
                             <div class="property-location">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Naroda Irish, Ahmedabad</span>
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                                <span data-translate="rental.property1.location">Naroda Irish, Ahmedabad</span>
                             </div>
                             
                             <div class="property-status">
-                                <span class="status-badge ready">Immediate Possession</span>
-                                <span class="status-badge pets">Pets Allowed</span>
+                                <span class="status-badge ready" data-translate="rental.property1.status1">Immediate Possession</span>
+                                <span class="status-badge pets" data-translate="rental.property1.status2">Pets Allowed</span>
                             </div>
                             
                             <div class="list-features">
                                 <div class="property-feature">
-                                    <i class="fas fa-bed"></i>
+                                    <i class="fas fa-bed" aria-hidden="true"></i>
                                     <span>4 Beds</span>
                                 </div>
                                 <div class="property-feature">
-                                    <i class="fas fa-bath"></i>
+                                    <i class="fas fa-bath" aria-hidden="true"></i>
                                     <span>4 Baths</span>
                                 </div>
                                 <div class="property-feature">
-                                    <i class="fas fa-vector-square"></i>
+                                    <i class="fas fa-vector-square" aria-hidden="true"></i>
                                     <span>2800 sqft</span>
                                 </div>
                                 <div class="property-feature">
-                                    <i class="fas fa-car"></i>
+                                    <i class="fas fa-car" aria-hidden="true"></i>
                                     <span>2 Parking</span>
                                 </div>
                             </div>
                             
                             <div class="rental-features">
-                                <span class="rental-tag furnished">Fully Furnished</span>
-                                <span class="rental-tag">Maintenance Included</span>
-                                <span class="rental-tag">Swimming Pool Access</span>
-                                <span class="rental-tag">Gym Access</span>
+                                <span class="rental-tag furnished" data-translate="rental.property1.feature1">Fully Furnished</span>
+                                <span class="rental-tag" data-translate="rental.property1.feature2">Maintenance Included</span>
+                                <span class="rental-tag" data-translate="rental.property1.feature4">Swimming Pool Access</span>
+                                <span class="rental-tag" data-translate="rental.property1.feature5">Gym Access</span>
                             </div>
                             
-                            <p class="text-muted text-truncate-2">
+                            <p class="text-muted text-truncate-2" data-translate="rental.property1.description">
                                 Luxury villa with premium furnishings, modular kitchen, attached gardens, 
                                 and all modern amenities. Perfect for executive living.
                             </p>
                         </div>
                         <div class="list-price">
                             <div class="price-amount">₹ 45,000</div>
-                            <div class="price-unit mb-1">Per Month</div>
-                            <div class="rent-terms mb-3">Security: ₹ 1,35,000</div>
+                            <div class="price-unit mb-1" data-translate="rental.property.price_unit">Per Month</div>
+                            <div class="rent-terms mb-3" data-translate="rental.property1.terms_list">Security: ₹ 1,35,000</div>
                             <div class="d-flex gap-2">
-                                <button class="property-action-btn save-property" data-property="1">
-                                    <i class="far fa-heart"></i>
+                                <button class="property-action-btn save-property" data-property="1" aria-label="Save property">
+                                    <i class="far fa-heart" aria-hidden="true"></i>
                                 </button>
-                                <a href="property-detail.html" class="btn btn-gold btn-sm">
+                                <a href="property-detail.html" class="btn btn-gold btn-sm" data-translate="rental.property.view_details">
                                     View Details
                                 </a>
                             </div>
                             <div class="property-meta mt-3">
                                 <div class="property-id">ID: NG-RT-001</div>
-                                <div class="property-date">2 days ago</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- List Item 2 -->
-                    <div class="property-list-item" data-aos="fade-up" data-aos-delay="100">
-                        <div class="list-image">
-                            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-                                 alt="1 BHK Studio Apartment">
-                            <div class="property-badge">For Rent</div>
-                        </div>
-                        <div class="list-content">
-                            <h3 class="property-title">1 BHK Studio Apartment</h3>
-                            <div class="property-location">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Naroda Irish, Ahmedabad</span>
-                            </div>
-                            
-                            <div class="property-status">
-                                <span class="status-badge ready">Ready to Move</span>
-                                <span class="status-badge security">24/7 Security</span>
-                            </div>
-                            
-                            <div class="list-features">
-                                <div class="property-feature">
-                                    <i class="fas fa-bed"></i>
-                                    <span>1 Bed</span>
-                                </div>
-                                <div class="property-feature">
-                                    <i class="fas fa-bath"></i>
-                                    <span>1 Bath</span>
-                                </div>
-                                <div class="property-feature">
-                                    <i class="fas fa-vector-square"></i>
-                                    <span>800 sqft</span>
-                                </div>
-                                <div class="property-feature">
-                                    <i class="fas fa-wifi"></i>
-                                    <span>WiFi Included</span>
-                                </div>
-                            </div>
-                            
-                            <div class="rental-features">
-                                <span class="rental-tag">Semi Furnished</span>
-                                <span class="rental-tag">Power Backup</span>
-                                <span class="rental-tag">Gym Access</span>
-                                <span class="rental-tag">Monthly Lease Available</span>
-                            </div>
-                            
-                            <p class="text-muted text-truncate-2">
-                                Perfect for students or young professionals. Compact studio apartment with 
-                                all necessary amenities and excellent security features.
-                            </p>
-                        </div>
-                        <div class="list-price">
-                            <div class="price-amount">₹ 18,000</div>
-                            <div class="price-unit mb-1">Per Month</div>
-                            <div class="rent-terms mb-3">Security: ₹ 36,000</div>
-                            <div class="d-flex gap-2">
-                                <button class="property-action-btn save-property" data-property="2">
-                                    <i class="far fa-heart"></i>
-                                </button>
-                                <a href="property-detail.html" class="btn btn-gold btn-sm">
-                                    View Details
-                                </a>
-                            </div>
-                            <div class="property-meta mt-3">
-                                <div class="property-id">ID: NG-RT-002</div>
-                                <div class="property-date">5 days ago</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- List Item 3 -->
-                    <div class="property-list-item" data-aos="fade-up" data-aos-delay="200">
-                        <div class="list-image">
-                            <img src="https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-4.0.3&auto=format&fit=crop&w=2068&q=80" 
-                                 alt="3 BHK Luxury Apartment">
-                            <div class="property-badge furnished">Fully Furnished</div>
-                        </div>
-                        <div class="list-content">
-                            <h3 class="property-title">3 BHK Luxury Apartment</h3>
-                            <div class="property-location">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Naroda Irish, Ahmedabad</span>
-                            </div>
-                            
-                            <div class="property-status">
-                                <span class="status-badge ready">Immediate Possession</span>
-                                <span class="status-badge pets">Pets Allowed</span>
-                            </div>
-                            
-                            <div class="list-features">
-                                <div class="property-feature">
-                                    <i class="fas fa-bed"></i>
-                                    <span>3 Beds</span>
-                                </div>
-                                <div class="property-feature">
-                                    <i class="fas fa-bath"></i>
-                                    <span>2 Baths</span>
-                                </div>
-                                <div class="property-feature">
-                                    <i class="fas fa-vector-square"></i>
-                                    <span>1500 sqft</span>
-                                </div>
-                                <div class="property-feature">
-                                    <i class="fas fa-washing-machine"></i>
-                                    <span>Laundry</span>
-                                </div>
-                            </div>
-                            
-                            <div class="rental-features">
-                                <span class="rental-tag furnished">Fully Furnished</span>
-                                <span class="rental-tag">All Utilities Included</span>
-                                <span class="rental-tag">Housekeeping</span>
-                                <span class="rental-tag">Gym Access</span>
-                            </div>
-                            
-                            <p class="text-muted text-truncate-2">
-                                Modern luxury apartment with premium furnishings, panoramic views, and 
-                                all amenities included. Perfect for corporate executives.
-                            </p>
-                        </div>
-                        <div class="list-price">
-                            <div class="price-amount">₹ 35,000</div>
-                            <div class="price-unit mb-1">Per Month</div>
-                            <div class="rent-terms mb-3">Security: ₹ 70,000</div>
-                            <div class="d-flex gap-2">
-                                <button class="property-action-btn save-property" data-property="3">
-                                    <i class="far fa-heart"></i>
-                                </button>
-                                <a href="property-detail.html" class="btn btn-gold btn-sm">
-                                    View Details
-                                </a>
-                            </div>
-                            <div class="property-meta mt-3">
-                                <div class="property-id">ID: NG-RT-003</div>
-                                <div class="property-date">1 week ago</div>
+                                <div class="property-date" data-translate="rental.property1.date">2 days ago</div>
                             </div>
                         </div>
                     </div>
@@ -2641,12 +2735,12 @@
                 <!-- No Results Message -->
                 <div class="no-results" id="noResults" style="display: none;">
                     <div class="no-results-icon">
-                        <i class="fas fa-search"></i>
+                        <i class="fas fa-search" aria-hidden="true"></i>
                     </div>
-                    <h3 class="mb-3">No Rental Properties Found</h3>
-                    <p class="text-muted mb-4">We couldn't find any rental properties matching your criteria. Try adjusting your filters.</p>
+                    <h3 class="mb-3" data-translate="rental.no_results.title">No Rental Properties Found</h3>
+                    <p class="text-muted mb-4" data-translate="rental.no_results.text">We couldn't find any rental properties matching your criteria. Try adjusting your filters.</p>
                     <button class="btn btn-gold" id="resetFilters2">
-                        <i class="fas fa-redo me-2"></i> Reset Filters
+                        <i class="fas fa-redo me-2" aria-hidden="true"></i> <span data-translate="rental.filter.reset">Reset Filters</span>
                     </button>
                 </div>
             </div>
@@ -2656,49 +2750,49 @@
         <section class="search-section">
             <div class="container">
                 <div class="rental-guide" data-aos="fade-up">
-                    <h3 class="mb-4">Why Rent With Naroda Group?</h3>
+                    <h3 class="mb-4" data-translate="rental.why_us.title">Why Rent With Naroda Group?</h3>
                     <div class="row g-4">
                         <div class="col-md-6">
                             <div class="d-flex align-items-start mb-4">
                                 <div class="me-3">
-                                    <i class="fas fa-shield-alt fs-3 emerald-text"></i>
+                                    <i class="fas fa-shield-alt fs-3 emerald-text" aria-hidden="true"></i>
                                 </div>
                                 <div>
-                                    <h5>Verified Properties</h5>
-                                    <p class="text-muted mb-0">All properties undergo thorough verification. No hidden charges or false listings.</p>
+                                    <h5 data-translate="rental.why_us.reason1.title">Verified Properties</h5>
+                                    <p class="text-muted mb-0" data-translate="rental.why_us.reason1.text">All properties undergo thorough verification. No hidden charges or false listings.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="d-flex align-items-start mb-4">
                                 <div class="me-3">
-                                    <i class="fas fa-file-contract fs-3 emerald-text"></i>
+                                    <i class="fas fa-file-contract fs-3 emerald-text" aria-hidden="true"></i>
                                 </div>
                                 <div>
-                                    <h5>Transparent Agreements</h5>
-                                    <p class="text-muted mb-0">Clear rental agreements with no hidden clauses. We explain every detail.</p>
+                                    <h5 data-translate="rental.why_us.reason2.title">Transparent Agreements</h5>
+                                    <p class="text-muted mb-0" data-translate="rental.why_us.reason2.text">Clear rental agreements with no hidden clauses. We explain every detail.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="d-flex align-items-start mb-4">
                                 <div class="me-3">
-                                    <i class="fas fa-tools fs-3 emerald-text"></i>
+                                    <i class="fas fa-tools fs-3 emerald-text" aria-hidden="true"></i>
                                 </div>
                                 <div>
-                                    <h5>Maintenance Support</h5>
-                                    <p class="text-muted mb-0">Quick maintenance support for all our rental properties. 24/7 assistance available.</p>
+                                    <h5 data-translate="rental.why_us.reason3.title">Maintenance Support</h5>
+                                    <p class="text-muted mb-0" data-translate="rental.why_us.reason3.text">Quick maintenance support for all our rental properties. 24/7 assistance available.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="d-flex align-items-start mb-4">
                                 <div class="me-3">
-                                    <i class="fas fa-handshake fs-3 emerald-text"></i>
+                                    <i class="fas fa-handshake fs-3 emerald-text" aria-hidden="true"></i>
                                 </div>
                                 <div>
-                                    <h5>Security Deposit Protection</h5>
-                                    <p class="text-muted mb-0">Fair handling of security deposits with proper documentation and timely returns.</p>
+                                    <h5 data-translate="rental.why_us.reason4.title">Security Deposit Protection</h5>
+                                    <p class="text-muted mb-0" data-translate="rental.why_us.reason4.text">Fair handling of security deposits with proper documentation and timely returns.</p>
                                 </div>
                             </div>
                         </div>
@@ -2735,23 +2829,23 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 mx-auto text-center">
-                        <h2 class="text-white mb-4" data-aos="fade-up">
+                        <h2 class="text-white mb-4" data-aos="fade-up" data-translate="rental.cta.title">
                             Ready to Find Your <span class="gold-text">Perfect Rental?</span>
                         </h2>
-                        <p class="text-white-50 mb-5" data-aos="fade-up" data-aos-delay="100">
+                        <p class="text-white-50 mb-5" data-aos="fade-up" data-aos-delay="100" data-translate="rental.cta.subtitle">
                             Our rental experts can help you find the ideal property that matches 
                             your requirements, budget, and lifestyle.
                         </p>
                         
                         <div class="d-flex flex-column flex-sm-row justify-content-center gap-4" data-aos="fade-up" data-aos-delay="200">
                             <a href="contact.html" class="btn btn-gold btn-lg">
-                                <i class="fas fa-headset me-2"></i> Talk to Rental Agent
+                                <i class="fas fa-headset me-2" aria-hidden="true"></i> <span data-translate="rental.cta.btn1">Talk to Rental Agent</span>
                             </a>
-                            <a href="tel:+919876543210" class="btn btn-outline-light btn-lg">
-                                <i class="fas fa-phone me-2"></i> Call Now
+                            <a href="tel:+917405133695" class="btn btn-outline-light btn-lg">
+                                <i class="fas fa-phone me-2" aria-hidden="true"></i> +91 74051 33695
                             </a>
                             <a href="contact.html" class="btn btn-emerald btn-lg">
-                                <i class="fas fa-calendar-alt me-2"></i> Schedule Viewing
+                                <i class="fas fa-calendar-alt me-2" aria-hidden="true"></i> <span data-translate="rental.cta.btn3">Schedule Viewing</span>
                             </a>
                         </div>
                     </div>
@@ -2771,84 +2865,84 @@
                             Naroda <span class="gold-text">Group</span>
                         </a>
                     </div>
-                    <p class="mb-4">
+                    <p class="mb-4" data-translate="footer.description">
                         Creating landmark properties that redefine excellence. From premium commercial spaces 
                         to luxury residential living, we build dreams with quality and commitment.
                     </p>
                     
                     <div class="social-links">
-                        <a href="#" class="social-link" aria-label="Facebook">
-                            <i class="fab fa-facebook-f"></i>
+                        <a href="#" class="social-link" aria-label="Facebook page">
+                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
                         </a>
-                        <a href="#" class="social-link" aria-label="Twitter">
-                            <i class="fab fa-twitter"></i>
+                        <a href="#" class="social-link" aria-label="Twitter profile">
+                            <i class="fab fa-twitter" aria-hidden="true"></i>
                         </a>
-                        <a href="#" class="social-link" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
+                        <a href="#" class="social-link" aria-label="Instagram profile">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
                         </a>
-                        <a href="#" class="social-link" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
+                        <a href="#" class="social-link" aria-label="LinkedIn company page">
+                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
                         </a>
-                        <a href="#" class="social-link" aria-label="YouTube">
-                            <i class="fab fa-youtube"></i>
+                        <a href="#" class="social-link" aria-label="YouTube channel">
+                            <i class="fab fa-youtube" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
                 
                 <div class="col-lg-2 col-md-6">
-                    <h3 class="footer-title">Quick Links</h3>
+                    <h3 class="footer-title" data-translate="footer.quick_links">Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
-                        <li><a href="projects.html"><i class="fas fa-chevron-right"></i> Projects</a></li>
-                        <li><a href="properties.html"><i class="fas fa-chevron-right"></i> Properties</a></li>
-                        <li><a href="properties-rent.html"><i class="fas fa-chevron-right"></i> Rentals</a></li>
-                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        <li><a href="index.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> <span data-translate="nav.home">Home</span></a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> <span data-translate="nav.about">About Us</span></a></li>
+                        <li><a href="projects.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> <span data-translate="nav.projects">Projects</span></a></li>
+                        <li><a href="properties.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> <span data-translate="nav.properties">Properties</span></a></li>
+                        <li><a href="properties-rent.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> <span data-translate="nav.rent">Rentals</span></a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> <span data-translate="nav.contact">Contact</span></a></li>
                     </ul>
                 </div>
                 
                 <div class="col-lg-3 col-md-6">
-                    <h3 class="footer-title">Our Projects</h3>
+                    <h3 class="footer-title" data-translate="footer.our_projects">Our Projects</h3>
                     <a href="projects-landmark.html" class="project-mini-card">
-                        <h6 class="text-white mb-1">Naroda Landmark</h6>
-                        <p class="small text-muted mb-0">Premium Commercial Spaces</p>
+                        <h6 class="text-white mb-1" data-translate="nav.landmark">Naroda Landmark</h6>
+                        <p class="small text-muted mb-0" data-translate="footer.landmark_desc">Premium Commercial Spaces</p>
                     </a>
                     <a href="projects-irish.html" class="project-mini-card">
-                        <h6 class="text-white mb-1">Naroda Irish</h6>
-                        <p class="small text-muted mb-0">Luxury Residential Living</p>
+                        <h6 class="text-white mb-1" data-translate="nav.irish">Naroda Irish</h6>
+                        <p class="small text-muted mb-0" data-translate="footer.irish_desc">Luxury Residential Living</p>
                     </a>
                     <a href="projects.html" class="project-mini-card">
-                        <h6 class="text-white mb-1">View All Projects</h6>
-                        <p class="small text-muted mb-0">Explore our portfolio</p>
+                        <h6 class="text-white mb-1" data-translate="footer.view_all_projects">View All Projects</h6>
+                        <p class="small text-muted mb-0" data-translate="footer.explore_portfolio">Explore our portfolio</p>
                     </a>
                 </div>
                 
                 <div class="col-lg-3 col-md-6">
-                    <h3 class="footer-title">Contact Info</h3>
+                    <h3 class="footer-title" data-translate="footer.contact_info">Contact Info</h3>
                     <div class="contact-info">
-                        <i class="fas fa-phone"></i>
+                        <i class="fas fa-phone" aria-hidden="true"></i>
                         <div>
-                            <h6 class="text-white mb-1">Phone Number</h6>
-                            <p class="mb-0">+91 98765 43210</p>
-                            <small class="text-muted">Mon - Sat: 10 AM - 7 PM</small>
+                            <h6 class="text-white mb-1" data-translate="footer.phone">Phone Number</h6>
+                            <p class="mb-0">+91 74051 33695</p>
+                            <small class="text-muted" data-translate="footer.phone_hours">Mon - Sat: 10 AM - 7 PM</small>
                         </div>
                     </div>
                     
                     <div class="contact-info">
-                        <i class="fas fa-envelope"></i>
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
                         <div>
-                            <h6 class="text-white mb-1">Email Address</h6>
+                            <h6 class="text-white mb-1" data-translate="footer.email">Email Address</h6>
                             <p class="mb-0">rentals@narodagroup.com</p>
-                            <small class="text-muted">We reply within 24 hours</small>
+                            <small class="text-muted" data-translate="footer.email_response">We reply within 24 hours</small>
                         </div>
                     </div>
                     
                     <div class="contact-info">
-                        <i class="fas fa-map-marker-alt"></i>
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                         <div>
-                            <h6 class="text-white mb-1">Office Address</h6>
-                            <p class="mb-0">Naroda - Bhat Road</p>
-                            <small class="text-muted">Ahmedabad, Gujarat 382330</small>
+                            <h6 class="text-white mb-1" data-translate="footer.address">Office Address</h6>
+                            <p class="mb-0" data-translate="footer.address_line1">Naroda - Bhat Road</p>
+                            <small class="text-muted" data-translate="footer.address_line2">Ahmedabad, Gujarat 382330</small>
                         </div>
                     </div>
                 </div>
@@ -2857,12 +2951,12 @@
             <div class="copyright">
                 <div class="row align-items-center">
                     <div class="col-md-6">
-                        <p class="mb-0">&copy; 2025 Naroda Group. All rights reserved.</p>
+                        <p class="mb-0">&copy; 2025 Naroda Group. <span data-translate="footer.rights">All rights reserved.</span></p>
                     </div>
                     <div class="col-md-6 text-md-end">
-                        <a href="privacy.html" class="text-muted me-3">Privacy Policy</a>
-                        <a href="terms.html" class="text-muted me-3">Terms of Service</a>
-                        <a href="rera.html" class="text-muted">RERA Registration</a>
+                        <a href="privacy.html" class="text-muted me-3" data-translate="footer.privacy">Privacy Policy</a>
+                        <a href="terms.html" class="text-muted me-3" data-translate="footer.terms">Terms of Service</a>
+                        <a href="rera.html" class="text-muted" data-translate="footer.rera">RERA Registration</a>
                     </div>
                 </div>
             </div>
@@ -2877,6 +2971,326 @@
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
     <script>
+        // Language Translation Data
+        const translations = {
+            en: {
+                // Navigation
+                "nav.home": "Home",
+                "nav.about": "About",
+                "nav.projects": "Projects",
+                "nav.landmark": "Naroda Landmark",
+                "nav.irish": "Naroda Irish",
+                "nav.all_projects": "All Projects",
+                "nav.properties": "Properties",
+                "nav.buy": "Buy",
+                "nav.rent": "Rent",
+                "nav.property_details": "Property Details",
+                "nav.gallery": "Gallery",
+                "nav.more": "More",
+                "nav.blog": "Blog",
+                "nav.news": "News",
+                "nav.careers": "Careers",
+                "nav.team": "Our Team",
+                "nav.faq": "FAQ",
+                "nav.contact": "Contact",
+                "nav.login": "Login",
+                "nav.account": "Account",
+                
+                // Hero Section
+                "rental.hero.title": "Find Your <span class='gold-text'>Perfect Rental</span>",
+                "rental.hero.subtitle": "Discover premium residential and commercial properties for rent. From luxury apartments to office spaces, find the ideal rental property.",
+                "rental.hero.btn1": "Search Rentals",
+                "rental.hero.btn2": "Talk to Agent",
+                
+                // Filter Section
+                "rental.filter.btn": "Show Rental Filters",
+                "rental.filter.tab1": "All Rentals",
+                "rental.filter.tab2": "Residential",
+                "rental.filter.tab3": "Commercial",
+                "rental.filter.tab4": "Short Term",
+                "rental.filter.location": "Location",
+                "rental.filter.all_locations": "All Locations",
+                "rental.filter.naroda_irish": "Naroda Irish",
+                "rental.filter.naroda_landmark": "Naroda Landmark",
+                "rental.filter.east_ahmedabad": "East Ahmedabad",
+                "rental.filter.west_ahmedabad": "West Ahmedabad",
+                "rental.filter.south_ahmedabad": "South Ahmedabad",
+                "rental.filter.property_type": "Property Type",
+                "rental.filter.all_types": "All Types",
+                "rental.filter.apartment": "Apartment",
+                "rental.filter.villa": "Villa/Bungalow",
+                "rental.filter.office": "Office Space",
+                "rental.filter.shop": "Shop/Retail",
+                "rental.filter.studio": "Studio",
+                "rental.filter.bedrooms": "Bedrooms",
+                "rental.filter.any": "Any",
+                "rental.filter.bhk1": "1 BHK",
+                "rental.filter.bhk2": "2 BHK",
+                "rental.filter.bhk3": "3 BHK",
+                "rental.filter.bhk4": "4 BHK",
+                "rental.filter.bhk4plus": "4+ BHK",
+                "rental.filter.monthly_rent": "Monthly Rent",
+                "rental.filter.min_rent": "Min Rent",
+                "rental.filter.max_rent": "Max Rent",
+                "rental.filter.to": "to",
+                "rental.filter.advanced": "Advanced Rental Filters",
+                "rental.filter.area": "Area (Sq. Ft.)",
+                "rental.filter.min": "Min",
+                "rental.filter.max": "Max",
+                "rental.filter.furnishing": "Furnishing",
+                "rental.filter.fully_furnished": "Fully Furnished",
+                "rental.filter.semi_furnished": "Semi Furnished",
+                "rental.filter.unfurnished": "Unfurnished",
+                "rental.filter.lease_term": "Lease Term",
+                "rental.filter.monthly": "Monthly",
+                "rental.filter.3_months": "3 Months",
+                "rental.filter.6_months": "6 Months",
+                "rental.filter.1_year": "1 Year",
+                "rental.filter.2_years": "2+ Years",
+                "rental.filter.availability": "Availability",
+                "rental.filter.immediate": "Immediate",
+                "rental.filter.15_days": "Within 15 Days",
+                "rental.filter.30_days": "Within 30 Days",
+                "rental.filter.60_days": "Within 60 Days",
+                "rental.filter.maintenance": "Maintenance Included",
+                "rental.filter.pets": "Pets Allowed",
+                "rental.filter.parking": "Parking Included",
+                "rental.filter.security": "24/7 Security",
+                "rental.filter.gym": "Gym Access",
+                "rental.filter.pool": "Swimming Pool",
+                "rental.filter.housekeeping": "Housekeeping",
+                "rental.filter.internet": "Internet Included",
+                "rental.filter.search": "Search Rentals",
+                "rental.filter.reset": "Reset Filters",
+                "rental.filter.save": "Save Search",
+                
+                // Rental Guide
+                "rental.guide.title": "Rental Guide & Tips",
+                "rental.guide.step1.title": "Budget Planning",
+                "rental.guide.step1.text": "Consider all costs: security deposit (usually 2-3 months rent), monthly rent, maintenance charges, and utilities. Plan for 25-30% of your monthly income for rent.",
+                "rental.guide.step2.title": "Documentation",
+                "rental.guide.step2.text": "Prepare necessary documents: ID proof, address proof, employment proof, and photographs. Read the rental agreement carefully before signing.",
+                "rental.guide.step3.title": "Property Inspection",
+                "rental.guide.step3.text": "Check all amenities, water supply, electrical fittings, and plumbing. Take photos/videos before moving in for reference during security deposit return.",
+                "rental.guide.tip": "Quick Tip",
+                "rental.guide.tip_text": "Always negotiate the rent and security deposit. Most landlords are open to reasonable negotiations, especially for longer lease terms.",
+                
+                // Properties Section
+                "rental.properties.title": "Featured <span class='emerald-text'>Rental Properties</span>",
+                "rental.properties.count": "Showing <span id='propertyCount'>6</span> rental properties",
+                "rental.properties.sort": "Sort by:",
+                "rental.properties.newest": "Newest First",
+                "rental.properties.price_low": "Rent: Low to High",
+                "rental.properties.price_high": "Rent: High to Low",
+                "rental.properties.area": "Area: Large to Small",
+                "rental.properties.featured": "Featured First",
+                
+                // Property Details
+                "rental.property.furnished": "Fully Furnished",
+                "rental.property.for_rent": "For Rent",
+                "rental.property.view_details": "View Details",
+                "rental.property.price_unit": "Per Month",
+                
+                // Property 1 - Naroda Irish 4BHK
+                "rental.property1.title": "4 BHK Luxury Villa",
+                "rental.property1.location": "Naroda Irish, Ahmedabad",
+                "rental.property1.status1": "Immediate Possession",
+                "rental.property1.status2": "Pets Allowed",
+                "rental.property1.feature1": "Fully Furnished",
+                "rental.property1.feature2": "Maintenance Included",
+                "rental.property1.feature3": "Parking: 2 Cars",
+                "rental.property1.feature4": "Swimming Pool Access",
+                "rental.property1.feature5": "Gym Access",
+                "rental.property1.terms": "Security: ₹ 1,35,000 | 1 Year Lease",
+                "rental.property1.terms_list": "Security: ₹ 1,35,000",
+                "rental.property1.date": "2 days ago",
+                "rental.property1.description": "Luxury villa with premium furnishings, modular kitchen, attached gardens, and all modern amenities. Perfect for executive living.",
+                
+                // Property 2 - Naroda Irish 1BHK
+                "rental.property2.title": "1 BHK Studio Apartment",
+                "rental.property2.location": "Naroda Irish, Ahmedabad",
+                "rental.property2.status1": "Ready to Move",
+                "rental.property2.status2": "24/7 Security",
+                "rental.property2.feature1": "Semi Furnished",
+                "rental.property2.feature2": "Power Backup",
+                "rental.property2.feature3": "Gym Access",
+                "rental.property2.terms": "Security: ₹ 36,000 | 11 Month Lease",
+                "rental.property2.date": "5 days ago",
+                
+                // Property 3 - Naroda Irish 3BHK
+                "rental.property3.title": "3 BHK Luxury Apartment",
+                "rental.property3.location": "Naroda Irish, Ahmedabad",
+                "rental.property3.status1": "Immediate Possession",
+                "rental.property3.status2": "Pets Allowed",
+                "rental.property3.feature1": "Fully Furnished",
+                "rental.property3.feature2": "All Utilities Included",
+                "rental.property3.feature3": "Housekeeping",
+                "rental.property3.terms": "Security: ₹ 70,000 | Flexible Lease",
+                "rental.property3.date": "1 week ago",
+                
+                // Property 4 - Naroda Landmark Commercial
+                "rental.property4.title": "Commercial Office Space",
+                "rental.property4.location": "Naroda Landmark, Ahmedabad",
+                "rental.property4.badge": "Commercial Space",
+                "rental.property4.status1": "Ready to Move",
+                "rental.property4.status2": "24/7 Access",
+                "rental.property4.feature1": "Fully Serviced",
+                "rental.property4.feature2": "Meeting Rooms",
+                "rental.property4.feature3": "High Speed Internet",
+                "rental.property4.feature4": "Office",
+                "rental.property4.terms": "Security: ₹ 1,50,000 | 6 Month Min",
+                "rental.property4.date": "3 days ago",
+                
+                // Property 5 - Naroda Landmark Retail
+                "rental.property5.title": "Retail Shop Space",
+                "rental.property5.location": "Naroda Landmark, Ahmedabad",
+                "rental.property5.badge": "Retail Space",
+                "rental.property5.status1": "Ready to Move",
+                "rental.property5.status2": "24/7 Security",
+                "rental.property5.feature1": "Main Road Frontage",
+                "rental.property5.feature2": "Parking Available",
+                "rental.property5.feature3": "High Footfall Area",
+                "rental.property5.feature4": "Retail",
+                "rental.property5.feature5": "Front Open",
+                "rental.property5.terms": "Security: ₹ 80,000 | 2 Year Lease",
+                "rental.property5.date": "2 weeks ago",
+                
+                // Property 6 - Naroda Irish 2BHK
+                "rental.property6.title": "2 BHK Premium Apartment",
+                "rental.property6.location": "Naroda Irish, Ahmedabad",
+                "rental.property6.status1": "Ready to Move",
+                "rental.property6.status2": "Pets Allowed",
+                "rental.property6.feature1": "Semi Furnished",
+                "rental.property6.feature2": "Swimming Pool",
+                "rental.property6.feature3": "Children's Play Area",
+                "rental.property6.terms": "Security: ₹ 50,000 | 1 Year Lease",
+                "rental.property6.date": "1 week ago",
+                
+                // No Results
+                "rental.no_results.title": "No Rental Properties Found",
+                "rental.no_results.text": "We couldn't find any rental properties matching your criteria. Try adjusting your filters.",
+                
+                // Why Rent With Us
+                "rental.why_us.title": "Why Rent With Naroda Group?",
+                "rental.why_us.reason1.title": "Verified Properties",
+                "rental.why_us.reason1.text": "All properties undergo thorough verification. No hidden charges or false listings.",
+                "rental.why_us.reason2.title": "Transparent Agreements",
+                "rental.why_us.reason2.text": "Clear rental agreements with no hidden clauses. We explain every detail.",
+                "rental.why_us.reason3.title": "Maintenance Support",
+                "rental.why_us.reason3.text": "Quick maintenance support for all our rental properties. 24/7 assistance available.",
+                "rental.why_us.reason4.title": "Security Deposit Protection",
+                "rental.why_us.reason4.text": "Fair handling of security deposits with proper documentation and timely returns.",
+                
+                // CTA Section
+                "rental.cta.title": "Ready to Find Your <span class='gold-text'>Perfect Rental?</span>",
+                "rental.cta.subtitle": "Our rental experts can help you find the ideal property that matches your requirements, budget, and lifestyle.",
+                "rental.cta.btn1": "Talk to Rental Agent",
+                "rental.cta.btn3": "Schedule Viewing",
+                
+                // Footer
+                "footer.description": "Creating landmark properties that redefine excellence. From premium commercial spaces to luxury residential living, we build dreams with quality and commitment.",
+                "footer.quick_links": "Quick Links",
+                "footer.our_projects": "Our Projects",
+                "footer.landmark_desc": "Premium Commercial Spaces",
+                "footer.irish_desc": "Luxury Residential Living",
+                "footer.view_all_projects": "View All Projects",
+                "footer.explore_portfolio": "Explore our portfolio",
+                "footer.contact_info": "Contact Info",
+                "footer.phone": "Phone Number",
+                "footer.phone_hours": "Mon - Sat: 10 AM - 7 PM",
+                "footer.email": "Email Address",
+                "footer.email_response": "We reply within 24 hours",
+                "footer.address": "Office Address",
+                "footer.address_line1": "Naroda - Bhat Road",
+                "footer.address_line2": "Ahmedabad, Gujarat 382330",
+                "footer.rights": "All rights reserved.",
+                "footer.privacy": "Privacy Policy",
+                "footer.terms": "Terms of Service",
+                "footer.rera": "RERA Registration"
+            },
+            hi: {
+                // Hindi translations
+                "nav.home": "होम",
+                "nav.about": "हमारे बारे में",
+                "nav.projects": "प्रोजेक्ट्स",
+                "nav.landmark": "नरोड़ा लैंडमार्क",
+                "nav.irish": "नरोड़ा आयरिश",
+                "nav.all_projects": "सभी प्रोजेक्ट्स",
+                "nav.properties": "प्रॉपर्टीज",
+                "nav.buy": "खरीदें",
+                "nav.rent": "किराए पर",
+                "nav.property_details": "प्रॉपर्टी विवरण",
+                "nav.gallery": "गैलरी",
+                "nav.more": "अधिक",
+                "nav.blog": "ब्लॉग",
+                "nav.news": "समाचार",
+                "nav.careers": "करियर",
+                "nav.team": "हमारी टीम",
+                "nav.faq": "सवाल-जवाब",
+                "nav.contact": "संपर्क करें",
+                "nav.login": "लॉगिन",
+                "nav.account": "अकाउंट",
+                
+                "rental.hero.title": "अपना <span class='gold-text'>आदर्श किराया</span> ढूंढें",
+                "rental.hero.subtitle": "प्रीमियम आवासीय और व्यावसायिक संपत्तियों को किराए पर खोजें। लक्जरी अपार्टमेंट से लेकर ऑफिस स्पेस तक, आदर्श किराया संपत्ति खोजें।",
+                "rental.hero.btn1": "किराया खोजें",
+                "rental.hero.btn2": "एजेंट से बात करें",
+                
+                // Add more Hindi translations as needed...
+            },
+            gu: {
+                // Gujarati translations
+                "nav.home": "હોમ",
+                "nav.about": "અમારા વિશે",
+                "nav.projects": "પ્રોજેક્ટ્સ",
+                "nav.landmark": "નરોડા લેન્ડમાર્ક",
+                "nav.irish": "નરોડા આયરિશ",
+                "nav.all_projects": "બધા પ્રોજેક્ટ્સ",
+                "nav.properties": "પ્રોપર્ટીઝ",
+                "nav.buy": "ખરીદો",
+                "nav.rent": "ભાડે",
+                "nav.property_details": "પ્રોપર્ટી વિગતો",
+                "nav.gallery": "ગેલેરી",
+                "nav.more": "વધુ",
+                "nav.blog": "બ્લોગ",
+                "nav.news": "સમાચાર",
+                "nav.careers": "કેરિયર",
+                "nav.team": "અમારી ટીમ",
+                "nav.faq": "પ્રશ્નો-જવાબો",
+                "nav.contact": "સંપર્ક કરો",
+                "nav.login": "લોગિન",
+                "nav.account": "એકાઉન્ટ",
+                
+                "rental.hero.title": "તમારું <span class='gold-text'>આદર્શ ભાડું</span> શોધો",
+                "rental.hero.subtitle": "પ્રીમિયમ રેસિડેન્શિયલ અને કોમર્શિયલ પ્રોપર્ટીઝ ભાડે શોધો. લગ્ઝરી એપાર્ટમેન્ટથી લઈને ઓફિસ સ્પેસ સુધી, આદર્શ ભાડાની મિલકત શોધો.",
+                "rental.hero.btn1": "ભાડું શોધો",
+                "rental.hero.btn2": "એજન્ટ સાથે વાત કરો",
+                
+                // Add more Gujarati translations as needed...
+            }
+        };
+
+        // Flag images data
+        const flagImages = {
+            'en': 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyNCAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTAgMEgyNFYxNkgwVjBaIiBmaWxsPSIjRjJCMkIyIi8+CjxwYXRoIGQ9Ik0wIDBIMTBWMTZIMFYwWiIgZmlsbD0iIzAwMjY3RiIvPgo8cGF0aCBkPSJNMTQgMEgyNFYxNkgxNFYwWiIgZmlsbD0iI0M4MDMwMyIvPgo8L3N2Zz4K',
+            'hi': 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyNCAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE2IiBmaWxsPSIjRkZGMjVFIi8+CjxwYXRoIGQ9Ik0wIDBIMjRWNUgwVjBaIiBmaWxsPSIjRjUyNzI0Ii8+CjxwYXRoIGQ9Ik0wIDExSDI0VjE2SDBWMTFaIiBmaWxsPSIjMTM4ODA4Ii8+CjxjaXJjbGUgY3g9IjEyIiBjeT0iOCIgcj0iMi41IiBmaWxsPSIjRkZGMjVFIi8+CjxjaXJjbGUgY3g9IjEyIiBjeT0iOCIgcj0iMSIgZmlsbD0iIzEzODgwOCIvPgo8L3N2Zz4K',
+            'gu': 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyNCAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE2IiBmaWxsPSIjRkZGMjVFIi8+CjxwYXRoIGQ9Ik0wIDBIMjRWNUgwVjBaIiBmaWxsPSIjRjUyNzI0Ii8+CjxwYXRoIGQ9Ik0wIDExSDI0VjE2SDBWMTFaIiBmaWxsPSIjMTM4ODA4Ii8+CjxjaXJjbGUgY3g9IjEyIiBjeT0iOCIgcj0iMi41IiBmaWxsPSIjRkZGMjVFIi8+Cjwvc3ZnPgo='
+        };
+
+        // Language names for display
+        const languageNames = {
+            'en': 'English',
+            'hi': 'हिंदी',
+            'gu': 'ગુજરાતી'
+        };
+
+        // Language codes for display
+        const languageCodes = {
+            'en': 'EN',
+            'hi': 'HI',
+            'gu': 'GU'
+        };
+
         // Wait for page to load
         document.addEventListener('DOMContentLoaded', function() {
             // Initialize AOS
@@ -2897,6 +3311,9 @@
                     preloader.style.display = 'none';
                 }, 500);
             }, 800);
+            
+            // Initialize language switcher
+            initLanguageSwitcher();
             
             // Initialize Select2
             $('select').select2({
@@ -2947,7 +3364,7 @@
                             <div class="flex-grow-1">
                                 <p class="mb-0 fw-500">${message}</p>
                             </div>
-                            <button type="button" class="btn-close ms-auto" onclick="this.parentElement.parentElement.remove()"></button>
+                            <button type="button" class="btn-close ms-auto" onclick="this.parentElement.parentElement.remove()" aria-label="Close"></button>
                         </div>
                     `;
                     
@@ -2972,6 +3389,93 @@
                         item.classList.add('active');
                     } else {
                         item.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Language Switcher
+            function initLanguageSwitcher() {
+                // Set current language from localStorage or default to English
+                const currentLang = localStorage.getItem('preferred-language') || 'en';
+                setLanguage(currentLang);
+                
+                // Add event listeners to language options
+                document.querySelectorAll('.language-option').forEach(option => {
+                    option.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const lang = this.getAttribute('data-lang');
+                        setLanguage(lang);
+                        showToast(`Language changed to ${languageNames[lang]}`, 'success');
+                    });
+                });
+            }
+
+            // Set language function
+            function setLanguage(lang) {
+                // Save preference to localStorage
+                localStorage.setItem('preferred-language', lang);
+                
+                // Update body attribute
+                document.body.setAttribute('data-lang', lang);
+                
+                // Update language switcher UI
+                updateLanguageSwitcherUI(lang);
+                
+                // Translate all translatable elements
+                translatePage(lang);
+            }
+
+            // Update language switcher UI
+            function updateLanguageSwitcherUI(lang) {
+                const currentLanguageFlag = document.getElementById('currentLanguageFlag');
+                const currentLanguageText = document.getElementById('currentLanguageText');
+                const languageOptions = document.querySelectorAll('.language-option');
+                
+                // Update current language display
+                currentLanguageFlag.src = flagImages[lang];
+                currentLanguageText.textContent = languageCodes[lang];
+                
+                // Update active state of language options
+                languageOptions.forEach(option => {
+                    if (option.getAttribute('data-lang') === lang) {
+                        option.classList.add('active');
+                    } else {
+                        option.classList.remove('active');
+                    }
+                });
+            }
+
+            // Translate page content
+            function translatePage(lang) {
+                const translation = translations[lang];
+                
+                // Translate all elements with data-translate attribute
+                document.querySelectorAll('[data-translate]').forEach(element => {
+                    const key = element.getAttribute('data-translate');
+                    if (translation[key]) {
+                        // Check if element contains HTML
+                        if (element.innerHTML.includes('<')) {
+                            // Preserve HTML structure
+                            const tempDiv = document.createElement('div');
+                            tempDiv.innerHTML = translation[key];
+                            element.innerHTML = tempDiv.innerHTML;
+                        } else {
+                            element.textContent = translation[key];
+                        }
+                    }
+                });
+                
+                // Translate placeholder attributes
+                document.querySelectorAll('[data-translate-attrs]').forEach(element => {
+                    const key = element.getAttribute('data-translate');
+                    const attrs = element.getAttribute('data-translate-attrs').split(' ');
+                    
+                    if (translation[key]) {
+                        attrs.forEach(attr => {
+                            if (attr === 'placeholder') {
+                                element.setAttribute('placeholder', translation[key]);
+                            }
+                        });
                     }
                 });
             }
@@ -3080,7 +3584,19 @@
                                 let shouldShow = true;
                                 
                                 // Apply basic filters
-                                if (location && !card.querySelector('.property-location span').textContent.toLowerCase().includes(location.toLowerCase())) {
+                                if (location && card.getAttribute('data-location') !== location) {
+                                    shouldShow = false;
+                                }
+                                
+                                if (propertyType && card.getAttribute('data-property-type') !== propertyType) {
+                                    shouldShow = false;
+                                }
+                                
+                                if (minPrice && parseInt(card.getAttribute('data-price')) < parseInt(minPrice)) {
+                                    shouldShow = false;
+                                }
+                                
+                                if (maxPrice && parseInt(card.getAttribute('data-price')) > parseInt(maxPrice)) {
                                     shouldShow = false;
                                 }
                                 
@@ -3127,7 +3643,7 @@
                                 card.style.display = 'flex';
                             });
                             noResults.style.display = 'none';
-                            document.getElementById('propertyCount').textContent = propertyCards.length;
+                            document.getElementById('propertyCount').textContent = '6';
                             
                             showToast('Rental filters reset successfully', 'info');
                         }
@@ -3189,7 +3705,13 @@
             
             // Show welcome message
             setTimeout(() => {
-                showToast('Browse our premium rental properties! Filter by your requirements.', 'success');
+                const currentLang = document.body.getAttribute('data-lang');
+                const welcomeMsg = currentLang === 'en' 
+                    ? 'Browse our premium rental properties! Filter by your requirements.' 
+                    : currentLang === 'hi'
+                    ? 'हमारी प्रीमियम किराया संपत्तियों को ब्राउज़ करें! अपनी आवश्यकताओं के अनुसार फ़िल्टर करें।'
+                    : 'અમારી પ્રીમિયમ ભાડાની મિલકતો બ્રાઉઝ કરો! તમારી જરૂરિયાતો મુજબ ફિલ્ટર કરો।';
+                showToast(welcomeMsg, 'success');
             }, 1500);
         });
         

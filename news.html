@@ -9,6 +9,23 @@
     <meta name="description" content="Latest news, announcements, and updates from Naroda Group. Stay informed about new projects, awards, and industry developments.">
     <meta name="keywords" content="naroda group news, real estate updates, property announcements, industry news, project launches">
     <meta name="author" content="Naroda Group">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="News | Naroda Group">
+    <meta property="og:description" content="Latest news and updates from Naroda Group - Ahmedabad's premier real estate developer">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2073&q=80">
+    <meta property="og:url" content="https://narodagroup.com/news.html">
+    <meta property="og:type" content="website">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://narodagroup.com/news.html">
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -53,7 +70,7 @@
 
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 100px;
+            scroll-padding-top: 80px;
         }
 
         body {
@@ -95,19 +112,23 @@
         }
 
         section {
-            padding: 80px 0;
+            padding: 100px 0;
             position: relative;
         }
 
         @media (max-width: 992px) {
             section {
-                padding: 60px 0;
+                padding: 80px 0;
             }
         }
 
         @media (max-width: 768px) {
             section {
-                padding: 40px 0;
+                padding: 60px 0;
+            }
+            
+            body {
+                padding-top: 70px;
             }
         }
 
@@ -138,14 +159,10 @@
             border-radius: 2px;
         }
 
-        .section-title.left:after {
-            left: 0;
-            transform: none;
-        }
-
         .badge {
             font-weight: 500;
             letter-spacing: 0.5px;
+            font-size: 0.85rem;
         }
 
         .bg-gradient-secondary {
@@ -1439,16 +1456,6 @@
             color: var(--primary-color);
         }
 
-        /* ===== Custom Spinner ===== */
-        .custom-spinner {
-            width: 40px;
-            height: 40px;
-            border: 3px solid rgba(201, 169, 110, 0.2);
-            border-top-color: var(--secondary-color);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
         /* ===== Accessibility Improvements ===== */
         .sr-only {
             position: absolute;
@@ -1489,6 +1496,15 @@
         .skip-to-content:focus {
             top: 10px;
         }
+
+        /* ===== Language Specific ===== */
+        body.hindi, body.gujarati {
+            font-family: 'Noto Sans', 'Inter', sans-serif;
+        }
+        
+        .language-content {
+            transition: opacity 0.3s ease;
+        }
     </style>
 </head>
 <body>
@@ -1505,7 +1521,9 @@
 
     <!-- Loading Overlay -->
     <div class="loading-overlay">
-        <div class="custom-spinner"></div>
+        <div class="spinner-border text-gold" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
     </div>
 
     <!-- Back to Top Button -->
@@ -1514,7 +1532,7 @@
     </button>
 
     <!-- WhatsApp Float -->
-    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+    <a href="https://wa.me/917405133695" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -1525,81 +1543,76 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <div class="logo-icon">NG</div>
+                <div class="logo-icon" aria-hidden="true">NG</div>
                 <span>Naroda <span class="gold-text">Group</span></span>
             </a>
             
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="index.html" data-i18n="nav.home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
+                        <a class="nav-link" href="about.html" data-i18n="nav.about">About</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" 
-                           data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-i18n="nav.projects">
                             Projects
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="projectsDropdown">
-                            <a class="dropdown-item" href="projects-landmark.html">Naroda Landmark</a>
-                            <a class="dropdown-item" href="projects-irish.html">Naroda Irish</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="projects.html">All Projects</a>
-                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="projectsDropdown">
+                            <li><a class="dropdown-item" href="projects-landmark.html" data-i18n="nav.landmark">Naroda Landmark</a></li>
+                            <li><a class="dropdown-item" href="projects-irish.html" data-i18n="nav.irish">Naroda Irish</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="projects.html" data-i18n="nav.all_projects">All Projects</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="propertiesDropdown" 
-                           data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="propertiesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-i18n="nav.properties">
                             Properties
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="propertiesDropdown">
-                            <a class="dropdown-item" href="properties.html">Buy</a>
-                            <a class="dropdown-item" href="properties-rent.html">Rent</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="property-detail.html">Property Details</a>
-                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="propertiesDropdown">
+                            <li><a class="dropdown-item" href="properties.html" data-i18n="nav.buy">Buy</a></li>
+                            <li><a class="dropdown-item" href="properties-rent.html" data-i18n="nav.rent">Rent</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="property-detail.html" data-i18n="nav.property_details">Property Details</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="gallery.html">Gallery</a>
+                        <a class="nav-link" href="gallery.html" data-i18n="nav.gallery">Gallery</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" id="moreDropdown" 
-                           data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle active" href="#" id="moreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-i18n="nav.more">
                             More
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="moreDropdown">
-                            <a class="dropdown-item" href="blog.html">Blog</a>
-                            <a class="dropdown-item active" href="news.html">News</a>
-                            <a class="dropdown-item" href="careers.html">Careers</a>
-                            <a class="dropdown-item" href="team.html">Our Team</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="faq.html">FAQ</a>
-                            <a class="dropdown-item" href="contact.html">Contact</a>
-                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="moreDropdown">
+                            <li><a class="dropdown-item" href="blog.html" data-i18n="nav.blog">Blog</a></li>
+                            <li><a class="dropdown-item active" href="news.html" data-i18n="nav.news">News</a></li>
+                            <li><a class="dropdown-item" href="careers.html" data-i18n="nav.careers">Careers</a></li>
+                            <li><a class="dropdown-item" href="team.html" data-i18n="nav.team">Our Team</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="faq.html" data-i18n="nav.faq">FAQ</a></li>
+                            <li><a class="dropdown-item" href="contact.html" data-i18n="nav.contact">Contact</a></li>
+                        </ul>
                     </li>
                 </ul>
                 
                 <div class="d-flex align-items-center ms-lg-3 mt-3 mt-lg-0">
                     <div class="dropdown">
-                        <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" 
-                                id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fas fa-globe me-1"></i> EN
+                        <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-globe me-1" aria-hidden="true"></i> <span id="currentLanguage">EN</span>
                         </button>
-                        <div class="dropdown-menu" aria-labelledby="languageDropdown">
-                            <a class="dropdown-item" href="#">English</a>
-                            <a class="dropdown-item" href="#">Hindi</a>
-                            <a class="dropdown-item" href="#">Gujarati</a>
-                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                            <li><a class="dropdown-item language-selector" href="#" data-lang="en">English</a></li>
+                            <li><a class="dropdown-item language-selector" href="#" data-lang="hi">हिंदी (Hindi)</a></li>
+                            <li><a class="dropdown-item language-selector" href="#" data-lang="gu">ગુજરાતી (Gujarati)</a></li>
+                        </ul>
                     </div>
-                    <a href="login.html" class="btn btn-outline-light ms-3">
-                        <i class="fas fa-user me-2"></i> Login
+                    <a href="contact.html" class="btn btn-outline-light ms-3">
+                        <i class="fas fa-phone me-2" aria-hidden="true"></i> <span data-i18n="nav.contact_us">Contact Us</span>
                     </a>
                 </div>
             </div>
@@ -1607,40 +1620,40 @@
     </nav>
 
     <!-- Mobile Bottom Navigation -->
-    <div class="mobile-bottom-nav">
+    <div class="mobile-bottom-nav no-print">
         <a href="index.html" class="mobile-nav-item">
             <i class="fas fa-home"></i>
-            <span>Home</span>
+            <span data-i18n="nav.home">Home</span>
         </a>
         <a href="projects.html" class="mobile-nav-item">
             <i class="fas fa-building"></i>
-            <span>Projects</span>
+            <span data-i18n="nav.projects">Projects</span>
         </a>
         <a href="properties.html" class="mobile-nav-item">
             <i class="fas fa-search"></i>
-            <span>Search</span>
+            <span data-i18n="nav.search">Search</span>
+        </a>
+        <a href="news.html" class="mobile-nav-item active">
+            <i class="fas fa-newspaper"></i>
+            <span data-i18n="nav.news">News</span>
         </a>
         <a href="contact.html" class="mobile-nav-item">
             <i class="fas fa-phone"></i>
-            <span>Contact</span>
-        </a>
-        <a href="login.html" class="mobile-nav-item">
-            <i class="fas fa-user"></i>
-            <span>Account</span>
+            <span data-i18n="nav.contact">Contact</span>
         </a>
     </div>
 
     <!-- Main Content -->
-    <main id="main-content">
+    <main class="language-content" id="main-content">
         <!-- Hero Section -->
         <section class="hero-section">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-8 mx-auto text-center">
                         <h1 class="hero-title" data-aos="fade-up">
-                            Latest <span class="gold-text">News</span>
+                            <span data-i18n="news.hero.title">Latest</span> <span class="gold-text" data-i18n="news.hero.highlight">News</span>
                         </h1>
-                        <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
+                        <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100" data-i18n="news.hero.subtitle">
                             Stay updated with our latest announcements, achievements, and industry developments
                         </p>
                     </div>
@@ -1654,10 +1667,10 @@
                 <div class="breaking-news" data-aos="fade-up">
                     <div class="d-flex align-items-center">
                         <div class="breaking-label">
-                            <i class="fas fa-bolt me-2"></i> BREAKING
+                            <i class="fas fa-bolt me-2" aria-hidden="true"></i> <span data-i18n="news.breaking">BREAKING</span>
                         </div>
                         <div class="breaking-content">
-                            <div class="breaking-text">
+                            <div class="breaking-text" data-i18n="news.breaking_text">
                                 Naroda Group launches new luxury project "Naroda Elite" with pre-launch offers starting from ₹ 75 Lakhs. Book your dream home today!
                             </div>
                         </div>
@@ -1670,12 +1683,12 @@
         <section class="news-section">
             <div class="container">
                 <div class="news-filter" data-aos="fade-up">
-                    <button class="filter-btn active" data-filter="all">All News</button>
-                    <button class="filter-btn" data-filter="announcements">Announcements</button>
-                    <button class="filter-btn" data-filter="awards">Awards</button>
-                    <button class="filter-btn" data-filter="projects">Projects</button>
-                    <button class="filter-btn" data-filter="events">Events</button>
-                    <button class="filter-btn" data-filter="media">Media Coverage</button>
+                    <button class="filter-btn active" data-filter="all" data-i18n="news.filter.all">All News</button>
+                    <button class="filter-btn" data-filter="announcements" data-i18n="news.filter.announcements">Announcements</button>
+                    <button class="filter-btn" data-filter="awards" data-i18n="news.filter.awards">Awards</button>
+                    <button class="filter-btn" data-filter="projects" data-i18n="news.filter.projects">Projects</button>
+                    <button class="filter-btn" data-filter="events" data-i18n="news.filter.events">Events</button>
+                    <button class="filter-btn" data-filter="media" data-i18n="news.filter.media">Media Coverage</button>
                 </div>
                 
                 <div class="news-container">
@@ -1686,23 +1699,23 @@
                             <article class="news-card featured" data-aos="fade-up">
                                 <div class="news-image">
                                     <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2073&q=80" 
-                                         alt="Naroda Group Wins Best Developer Award">
-                                    <span class="news-tag">Award</span>
+                                         alt="Naroda Group Wins Best Developer Award" loading="lazy">
+                                    <span class="news-tag" data-i18n="news.category.award">Award</span>
                                 </div>
                                 <div class="news-content">
                                     <div class="news-meta">
                                         <div class="news-meta-item">
-                                            <i class="far fa-calendar"></i> Jan 20, 2025
+                                            <i class="far fa-calendar" aria-hidden="true"></i> <span data-i18n="news.date.jan20">Jan 20, 2025</span>
                                         </div>
                                         <div class="news-meta-item">
-                                            <i class="far fa-clock"></i> 2 min read
+                                            <i class="far fa-clock" aria-hidden="true"></i> <span data-i18n="news.read_time.2min">2 min read</span>
                                         </div>
                                         <div class="news-meta-item">
-                                            <i class="fas fa-map-marker-alt"></i> Ahmedabad
+                                            <i class="fas fa-map-marker-alt" aria-hidden="true"></i> <span data-i18n="news.location.ahmedabad">Ahmedabad</span>
                                         </div>
                                     </div>
-                                    <h2 class="h3 mb-3">Naroda Group Wins "Best Real Estate Developer" Award 2024</h2>
-                                    <p class="text-muted mb-4">
+                                    <h2 class="h3 mb-3" data-i18n="news.featured.title">Naroda Group Wins "Best Real Estate Developer" Award 2024</h2>
+                                    <p class="text-muted mb-4" data-i18n="news.featured.excerpt">
                                         Naroda Group has been honored with the prestigious "Best Real Estate Developer" award 
                                         at the National Real Estate Excellence Awards 2024. The award recognizes our commitment 
                                         to quality, innovation, and customer satisfaction.
@@ -1723,7 +1736,7 @@
                                             </button>
                                         </div>
                                         <a href="news-detail.html" class="btn btn-gold">
-                                            Read Full Story <i class="fas fa-arrow-right ms-2"></i>
+                                            <span data-i18n="news.read_full">Read Full Story</span> <i class="fas fa-arrow-right ms-2" aria-hidden="true"></i>
                                         </a>
                                     </div>
                                 </div>
@@ -1740,8 +1753,8 @@
                             <div class="no-results-icon">
                                 <i class="fas fa-newspaper"></i>
                             </div>
-                            <h3 class="mb-3">No News Found</h3>
-                            <p class="text-muted mb-4">Try selecting a different category</p>
+                            <h3 class="mb-3" data-i18n="news.no_results.title">No News Found</h3>
+                            <p class="text-muted mb-4" data-i18n="news.no_results.message">Try selecting a different category</p>
                         </div>
                         
                         <!-- Pagination -->
@@ -1756,7 +1769,7 @@
                     <aside class="sidebar">
                         <!-- Categories Widget -->
                         <div class="sidebar-widget" data-aos="fade-left" data-aos-delay="100">
-                            <h2 class="h4 widget-title">News Categories</h2>
+                            <h2 class="h4 widget-title" data-i18n="news.sidebar.categories">News Categories</h2>
                             <ul class="news-categories" id="newsCategories">
                                 <!-- Categories will be loaded dynamically -->
                             </ul>
@@ -1764,44 +1777,27 @@
                         
                         <!-- Latest Updates Widget -->
                         <div class="sidebar-widget" data-aos="fade-left" data-aos-delay="200">
-                            <h2 class="h4 widget-title">Latest Updates</h2>
+                            <h2 class="h4 widget-title" data-i18n="news.sidebar.updates">Latest Updates</h2>
                             <ul class="updates-list" id="updatesList">
                                 <!-- Updates will be loaded dynamically -->
                             </ul>
                         </div>
                         
-                        <!-- Media Player Widget -->
-                        <div class="sidebar-widget" data-aos="fade-left" data-aos-delay="300">
-                            <h2 class="h4 widget-title">Media Coverage</h2>
-                            <div class="media-player">
-                                <h3 class="h6 mb-3">CEO Interview on Real Estate Trends</h3>
-                                <div class="player-controls">
-                                    <button class="play-btn" aria-label="Play/pause audio">
-                                        <i class="fas fa-play"></i>
-                                    </button>
-                                    <div class="progress-bar">
-                                        <div class="progress-fill"></div>
-                                    </div>
-                                    <span class="text-muted">2:45 / 15:30</span>
-                                </div>
-                            </div>
-                        </div>
-                        
                         <!-- Social Stats Widget -->
-                        <div class="sidebar-widget social-widget" data-aos="fade-left" data-aos-delay="400">
-                            <h2 class="h4 widget-title">Follow Us</h2>
+                        <div class="sidebar-widget social-widget" data-aos="fade-left" data-aos-delay="300">
+                            <h2 class="h4 widget-title" data-i18n="news.sidebar.follow">Follow Us</h2>
                             <div class="social-counts">
                                 <div class="social-count">
                                     <div class="social-number">25K</div>
-                                    <div class="social-label">Facebook</div>
+                                    <div class="social-label" data-i18n="news.sidebar.facebook">Facebook</div>
                                 </div>
                                 <div class="social-count">
                                     <div class="social-number">12K</div>
-                                    <div class="social-label">Twitter</div>
+                                    <div class="social-label" data-i18n="news.sidebar.twitter">Twitter</div>
                                 </div>
                                 <div class="social-count">
                                     <div class="social-number">18K</div>
-                                    <div class="social-label">LinkedIn</div>
+                                    <div class="social-label" data-i18n="news.sidebar.linkedin">LinkedIn</div>
                                 </div>
                             </div>
                             <div class="social-links justify-content-center">
@@ -1824,13 +1820,13 @@
                         </div>
                         
                         <!-- Subscribe Widget -->
-                        <div class="sidebar-widget subscribe-widget" data-aos="fade-left" data-aos-delay="500">
-                            <h2 class="h4 widget-title">News Alerts</h2>
-                            <p class="mb-3">Get instant notifications for important announcements</p>
+                        <div class="sidebar-widget subscribe-widget" data-aos="fade-left" data-aos-delay="400">
+                            <h2 class="h4 widget-title" data-i18n="news.sidebar.alerts">News Alerts</h2>
+                            <p class="mb-3" data-i18n="news.sidebar.subscribe_text">Get instant notifications for important announcements</p>
                             <form class="newsletter-form" id="newsletterForm">
-                                <input type="email" placeholder="Your email address" required>
+                                <input type="email" placeholder="Your email address" required data-i18n-placeholder="news.sidebar.email_placeholder">
                                 <button type="submit" class="btn btn-gold w-100">
-                                    <i class="fas fa-bell me-2"></i> Subscribe
+                                    <i class="fas fa-bell me-2" aria-hidden="true"></i> <span data-i18n="news.sidebar.subscribe">Subscribe</span>
                                 </button>
                             </form>
                         </div>
@@ -1845,12 +1841,12 @@
                 <div class="row mb-5">
                     <div class="col-lg-8 mx-auto text-center">
                         <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
-                            Press Releases
+                            <span data-i18n="news.press.badge">Press Releases</span>
                         </span>
                         <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
-                            Official <span class="gold-text">Announcements</span>
+                            <span data-i18n="news.press.title">Official</span> <span class="gold-text" data-i18n="news.press.highlight">Announcements</span>
                         </h2>
-                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200">
+                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200" data-i18n="news.press.subtitle">
                             Important announcements and official statements from Naroda Group
                         </p>
                     </div>
@@ -1862,12 +1858,12 @@
                             <div class="press-icon">
                                 <i class="fas fa-chart-line"></i>
                             </div>
-                            <h3 class="h4 mb-3">Financial Results Q4 2024</h3>
-                            <p class="text-muted mb-4">
+                            <h3 class="h4 mb-3" data-i18n="news.press.card1.title">Financial Results Q4 2024</h3>
+                            <p class="text-muted mb-4" data-i18n="news.press.card1.text">
                                 Naroda Group announces strong financial results for Q4 2024 with 25% revenue growth and expansion plans.
                             </p>
                             <a href="#" class="btn btn-outline-primary">
-                                <i class="fas fa-download me-2"></i> Download PDF
+                                <i class="fas fa-download me-2" aria-hidden="true"></i> <span data-i18n="news.press.download">Download PDF</span>
                             </a>
                         </article>
                     </div>
@@ -1877,12 +1873,12 @@
                             <div class="press-icon">
                                 <i class="fas fa-users"></i>
                             </div>
-                            <h3 class="h4 mb-3">CSR Initiative Launch</h3>
-                            <p class="text-muted mb-4">
+                            <h3 class="h4 mb-3" data-i18n="news.press.card2.title">CSR Initiative Launch</h3>
+                            <p class="text-muted mb-4" data-i18n="news.press.card2.text">
                                 Naroda Group launches "Green Homes" initiative to promote sustainable living and community development.
                             </p>
                             <a href="#" class="btn btn-outline-primary">
-                                <i class="fas fa-download me-2"></i> Download PDF
+                                <i class="fas fa-download me-2" aria-hidden="true"></i> <span data-i18n="news.press.download">Download PDF</span>
                             </a>
                         </article>
                     </div>
@@ -1892,12 +1888,12 @@
                             <div class="press-icon">
                                 <i class="fas fa-handshake"></i>
                             </div>
-                            <h3 class="h4 mb-3">Strategic Partnership</h3>
-                            <p class="text-muted mb-4">
+                            <h3 class="h4 mb-3" data-i18n="news.press.card3.title">Strategic Partnership</h3>
+                            <p class="text-muted mb-4" data-i18n="news.press.card3.text">
                                 Naroda Group announces strategic partnership with leading international architecture firm for upcoming projects.
                             </p>
                             <a href="#" class="btn btn-outline-primary">
-                                <i class="fas fa-download me-2"></i> Download PDF
+                                <i class="fas fa-download me-2" aria-hidden="true"></i> <span data-i18n="news.press.download">Download PDF</span>
                             </a>
                         </article>
                     </div>
@@ -1911,12 +1907,12 @@
                 <div class="row mb-5">
                     <div class="col-lg-8 mx-auto text-center">
                         <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
-                            In The Media
+                            <span data-i18n="news.media.badge">In The Media</span>
                         </span>
                         <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
-                            Featured In <span class="gold-text">Media</span>
+                            <span data-i18n="news.media.title">Featured In</span> <span class="gold-text" data-i18n="news.media.highlight">Media</span>
                         </h2>
-                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200">
+                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200" data-i18n="news.media.subtitle">
                             Our work and achievements featured in leading publications
                         </p>
                     </div>
@@ -1943,12 +1939,12 @@
                 <div class="row mb-5">
                     <div class="col-lg-8 mx-auto text-center">
                         <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
-                            Events Calendar
+                            <span data-i18n="news.calendar.badge">Events Calendar</span>
                         </span>
                         <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
-                            Upcoming <span class="gold-text">Events</span>
+                            <span data-i18n="news.calendar.title">Upcoming</span> <span class="gold-text" data-i18n="news.calendar.highlight">Events</span>
                         </h2>
-                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200">
+                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200" data-i18n="news.calendar.subtitle">
                             Mark your calendar for important events and activities
                         </p>
                     </div>
@@ -1958,17 +1954,17 @@
                     <div class="col-lg-6" data-aos="fade-right">
                         <div class="calendar-card">
                             <div class="calendar-header">
-                                <div class="calendar-month">January 2025</div>
-                                <div class="calendar-year">Upcoming Events</div>
+                                <div class="calendar-month" data-i18n="news.calendar.january">January 2025</div>
+                                <div class="calendar-year" data-i18n="news.calendar.upcoming">Upcoming Events</div>
                             </div>
                             <div class="calendar-grid">
-                                <div class="calendar-day weekday">Mon</div>
-                                <div class="calendar-day weekday">Tue</div>
-                                <div class="calendar-day weekday">Wed</div>
-                                <div class="calendar-day weekday">Thu</div>
-                                <div class="calendar-day weekday">Fri</div>
-                                <div class="calendar-day weekday">Sat</div>
-                                <div class="calendar-day weekday">Sun</div>
+                                <div class="calendar-day weekday" data-i18n="news.calendar.mon">Mon</div>
+                                <div class="calendar-day weekday" data-i18n="news.calendar.tue">Tue</div>
+                                <div class="calendar-day weekday" data-i18n="news.calendar.wed">Wed</div>
+                                <div class="calendar-day weekday" data-i18n="news.calendar.thu">Thu</div>
+                                <div class="calendar-day weekday" data-i18n="news.calendar.fri">Fri</div>
+                                <div class="calendar-day weekday" data-i18n="news.calendar.sat">Sat</div>
+                                <div class="calendar-day weekday" data-i18n="news.calendar.sun">Sun</div>
                                 
                                 <!-- Calendar days -->
                                 <div class="calendar-day">1</div>
@@ -1981,7 +1977,7 @@
                                 <div class="calendar-day">8</div>
                                 <div class="calendar-day">9</div>
                                 <div class="calendar-day">10</div>
-                                <button class="calendar-day event" title="Project Launch" aria-label="January 11 - Project Launch">11</button>
+                                <button class="calendar-day event" title="Naroda Elite Project Launch" aria-label="January 11 - Project Launch">11</button>
                                 <div class="calendar-day">12</div>
                                 <div class="calendar-day">13</div>
                                 <button class="calendar-day event" title="Investor Meet" aria-label="January 14 - Investor Meet">14</button>
@@ -2008,18 +2004,18 @@
                     
                     <div class="col-lg-6" data-aos="fade-left">
                         <div class="upcoming-events">
-                            <h3 class="mb-4">Upcoming Events</h3>
+                            <h3 class="mb-4" data-i18n="news.calendar.upcoming_events">Upcoming Events</h3>
                             
                             <div class="update-item">
                                 <div class="update-icon">
                                     <i class="fas fa-rocket"></i>
                                 </div>
                                 <div class="update-content">
-                                    <h4 class="h6">Naroda Elite Project Launch</h4>
-                                    <p class="text-muted mb-2">Grand launch of our new luxury residential project</p>
+                                    <h4 class="h6" data-i18n="news.events.event1.title">Naroda Elite Project Launch</h4>
+                                    <p class="text-muted mb-2" data-i18n="news.events.event1.desc">Grand launch of our new luxury residential project</p>
                                     <div class="update-date">
-                                        <i class="far fa-calendar me-1"></i> Jan 11, 2025 | 
-                                        <i class="fas fa-map-marker-alt ms-2 me-1"></i> Naroda, Ahmedabad
+                                        <i class="far fa-calendar me-1" aria-hidden="true"></i> <span data-i18n="news.events.event1.date">Jan 11, 2025</span> | 
+                                        <i class="fas fa-map-marker-alt ms-2 me-1" aria-hidden="true"></i> <span data-i18n="news.events.event1.location">Naroda, Ahmedabad</span>
                                     </div>
                                 </div>
                             </div>
@@ -2029,11 +2025,11 @@
                                     <i class="fas fa-users"></i>
                                 </div>
                                 <div class="update-content">
-                                    <h4 class="h6">Quarterly Investor Meet</h4>
-                                    <p class="text-muted mb-2">Discussion on financial performance and future plans</p>
+                                    <h4 class="h6" data-i18n="news.events.event2.title">Quarterly Investor Meet</h4>
+                                    <p class="text-muted mb-2" data-i18n="news.events.event2.desc">Discussion on financial performance and future plans</p>
                                     <div class="update-date">
-                                        <i class="far fa-calendar me-1"></i> Jan 14, 2025 | 
-                                        <i class="fas fa-map-marker-alt ms-2 me-1"></i> Corporate Office
+                                        <i class="far fa-calendar me-1" aria-hidden="true"></i> <span data-i18n="news.events.event2.date">Jan 14, 2025</span> | 
+                                        <i class="fas fa-map-marker-alt ms-2 me-1" aria-hidden="true"></i> <span data-i18n="news.events.event2.location">Corporate Office</span>
                                     </div>
                                 </div>
                             </div>
@@ -2043,18 +2039,18 @@
                                     <i class="fas fa-trophy"></i>
                                 </div>
                                 <div class="update-content">
-                                    <h4 class="h6">Real Estate Excellence Awards</h4>
-                                    <p class="text-muted mb-2">Award ceremony recognizing industry leaders</p>
+                                    <h4 class="h6" data-i18n="news.events.event3.title">Real Estate Excellence Awards</h4>
+                                    <p class="text-muted mb-2" data-i18n="news.events.event3.desc">Award ceremony recognizing industry leaders</p>
                                     <div class="update-date">
-                                        <i class="far fa-calendar me-1"></i> Jan 24, 2025 | 
-                                        <i class="fas fa-map-marker-alt ms-2 me-1"></i> Mumbai
+                                        <i class="far fa-calendar me-1" aria-hidden="true"></i> <span data-i18n="news.events.event3.date">Jan 24, 2025</span> | 
+                                        <i class="fas fa-map-marker-alt ms-2 me-1" aria-hidden="true"></i> <span data-i18n="news.events.event3.location">Mumbai</span>
                                     </div>
                                 </div>
                             </div>
                             
                             <div class="text-center mt-4">
                                 <a href="#" class="btn btn-gold">
-                                    <i class="fas fa-calendar-alt me-2"></i> View All Events
+                                    <i class="fas fa-calendar-alt me-2" aria-hidden="true"></i> <span data-i18n="news.calendar.view_all">View All Events</span>
                                 </a>
                             </div>
                         </div>
@@ -2067,7 +2063,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="row g-4">
+            <div class="row g-5">
                 <div class="col-lg-4">
                     <div class="mb-4">
                         <a class="navbar-brand text-white" href="index.html">
@@ -2075,7 +2071,7 @@
                             Naroda <span class="gold-text">Group</span>
                         </a>
                     </div>
-                    <p class="mb-4">
+                    <p class="mb-4" data-i18n="footer.description">
                         Creating landmark properties that redefine excellence. From premium commercial spaces 
                         to luxury residential living, we build dreams with quality and commitment.
                     </p>
@@ -2100,59 +2096,59 @@
                 </div>
                 
                 <div class="col-lg-2 col-md-6">
-                    <h3 class="footer-title">Quick Links</h3>
+                    <h3 class="footer-title" data-i18n="footer.quick_links">Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
-                        <li><a href="projects.html"><i class="fas fa-chevron-right"></i> Projects</a></li>
-                        <li><a href="properties.html"><i class="fas fa-chevron-right"></i> Properties</a></li>
-                        <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
-                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.home">Home</span></a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.about">About Us</span></a></li>
+                        <li><a href="projects.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.projects">Projects</span></a></li>
+                        <li><a href="properties.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.properties">Properties</span></a></li>
+                        <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.gallery">Gallery</span></a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.contact">Contact</span></a></li>
                     </ul>
                 </div>
                 
                 <div class="col-lg-3 col-md-6">
-                    <h3 class="footer-title">Our Projects</h3>
+                    <h3 class="footer-title" data-i18n="footer.our_projects">Our Projects</h3>
                     <a href="projects-landmark.html" class="project-mini-card">
-                        <h4 class="h6 text-white mb-1">Naroda Landmark</h4>
-                        <p class="small text-muted mb-0">Premium Commercial Spaces</p>
+                        <h6 class="text-white mb-1" data-i18n="nav.landmark">Naroda Landmark</h6>
+                        <p class="small text-muted mb-0" data-i18n="footer.landmark_desc">Premium Commercial Spaces</p>
                     </a>
                     <a href="projects-irish.html" class="project-mini-card">
-                        <h4 class="h6 text-white mb-1">Naroda Irish</h4>
-                        <p class="small text-muted mb-0">Luxury Residential Living</p>
+                        <h6 class="text-white mb-1" data-i18n="nav.irish">Naroda Irish</h6>
+                        <p class="small text-muted mb-0" data-i18n="footer.irish_desc">Luxury Residential Living</p>
                     </a>
                     <a href="projects.html" class="project-mini-card">
-                        <h4 class="h6 text-white mb-1">View All Projects</h4>
-                        <p class="small text-muted mb-0">Explore our portfolio</p>
+                        <h6 class="text-white mb-1" data-i18n="footer.view_all_projects">View All Projects</h6>
+                        <p class="small text-muted mb-0" data-i18n="footer.explore_portfolio">Explore our portfolio</p>
                     </a>
                 </div>
                 
                 <div class="col-lg-3 col-md-6">
-                    <h3 class="footer-title">Contact Info</h3>
+                    <h3 class="footer-title" data-i18n="footer.contact_info">Contact Info</h3>
                     <div class="contact-info">
                         <i class="fas fa-phone"></i>
                         <div>
-                            <h4 class="h6 text-white mb-1">Phone Number</h4>
-                            <p class="mb-0">+91 98765 43210</p>
-                            <small class="text-muted">Mon - Sat: 10 AM - 7 PM</small>
+                            <h6 class="text-white mb-1" data-i18n="footer.phone">Phone Number</h6>
+                            <p class="mb-0">+91 74051 33695</p>
+                            <small class="text-muted" data-i18n="footer.phone_hours">Mon - Sat: 10 AM - 7 PM</small>
                         </div>
                     </div>
                     
                     <div class="contact-info">
                         <i class="fas fa-envelope"></i>
                         <div>
-                            <h4 class="h6 text-white mb-1">Email Address</h4>
+                            <h6 class="text-white mb-1" data-i18n="footer.email">Email Address</h6>
                             <p class="mb-0">info@narodagroup.com</p>
-                            <small class="text-muted">We reply within 24 hours</small>
+                            <small class="text-muted" data-i18n="footer.email_response">We reply within 24 hours</small>
                         </div>
                     </div>
                     
                     <div class="contact-info">
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
-                            <h4 class="h6 text-white mb-1">Office Address</h4>
-                            <p class="mb-0">Naroda - Bhat Road</p>
-                            <small class="text-muted">Ahmedabad, Gujarat 382330</small>
+                            <h6 class="text-white mb-1" data-i18n="footer.address">Office Address</h6>
+                            <p class="mb-0" data-i18n="footer.address_line1">Opp. Naroda Business Hub, Near Shivam Arcade</p>
+                            <small class="text-muted" data-i18n="footer.address_line2">Naroda Dahegam road, Hanspura, Naroda, Ahmedabad</small>
                         </div>
                     </div>
                 </div>
@@ -2161,12 +2157,12 @@
             <div class="copyright">
                 <div class="row align-items-center">
                     <div class="col-md-6">
-                        <p class="mb-0">&copy; 2025 Naroda Group. All rights reserved.</p>
+                        <p class="mb-0">&copy; 2025 Naroda Group. <span data-i18n="footer.rights">All rights reserved.</span></p>
                     </div>
                     <div class="col-md-6 text-md-end">
-                        <a href="privacy.html" class="text-muted me-3">Privacy Policy</a>
-                        <a href="terms.html" class="text-muted me-3">Terms of Service</a>
-                        <a href="rera.html" class="text-muted">RERA Registration</a>
+                        <a href="privacy.html" class="text-muted me-3" data-i18n="footer.privacy">Privacy Policy</a>
+                        <a href="terms.html" class="text-muted me-3" data-i18n="footer.terms">Terms of Service</a>
+                        <a href="https://gujrera.gujarat.gov.in" class="text-muted" target="_blank" rel="noopener noreferrer" data-i18n="footer.rera">RERA Registration</a>
                     </div>
                 </div>
             </div>
@@ -2178,96 +2174,720 @@
     <!-- AOS Animation Library -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
+    <!-- Language Translation Data -->
     <script>
-        // News Data
+        const translations = {
+            en: {
+                // Navigation
+                "nav.home": "Home",
+                "nav.about": "About",
+                "nav.projects": "Projects",
+                "nav.landmark": "Naroda Landmark",
+                "nav.irish": "Naroda Irish",
+                "nav.all_projects": "All Projects",
+                "nav.properties": "Properties",
+                "nav.buy": "Buy",
+                "nav.rent": "Rent",
+                "nav.property_details": "Property Details",
+                "nav.gallery": "Gallery",
+                "nav.more": "More",
+                "nav.blog": "Blog",
+                "nav.news": "News",
+                "nav.careers": "Careers",
+                "nav.team": "Our Team",
+                "nav.faq": "FAQ",
+                "nav.contact": "Contact",
+                "nav.contact_us": "Contact Us",
+                "nav.search": "Search",
+                
+                // News Page
+                "news.hero.title": "Latest",
+                "news.hero.highlight": "News",
+                "news.hero.subtitle": "Stay updated with our latest announcements, achievements, and industry developments",
+                "news.breaking": "BREAKING",
+                "news.breaking_text": "Naroda Group launches new luxury project 'Naroda Elite' with pre-launch offers starting from ₹ 75 Lakhs. Book your dream home today!",
+                
+                // News Filter
+                "news.filter.all": "All News",
+                "news.filter.announcements": "Announcements",
+                "news.filter.awards": "Awards",
+                "news.filter.projects": "Projects",
+                "news.filter.events": "Events",
+                "news.filter.media": "Media Coverage",
+                
+                // News Categories
+                "news.category.award": "Award",
+                "news.category.announcement": "Announcement",
+                "news.category.project": "Project",
+                "news.category.event": "Event",
+                "news.category.media": "Media",
+                
+                // News Meta
+                "news.date.jan20": "Jan 20, 2025",
+                "news.read_time.2min": "2 min read",
+                "news.location.ahmedabad": "Ahmedabad",
+                "news.read_full": "Read Full Story",
+                
+                // Featured News
+                "news.featured.title": "Naroda Group Wins 'Best Real Estate Developer' Award 2024",
+                "news.featured.excerpt": "Naroda Group has been honored with the prestigious 'Best Real Estate Developer' award at the National Real Estate Excellence Awards 2024. The award recognizes our commitment to quality, innovation, and customer satisfaction.",
+                
+                // No Results
+                "news.no_results.title": "No News Found",
+                "news.no_results.message": "Try selecting a different category",
+                
+                // Sidebar
+                "news.sidebar.categories": "News Categories",
+                "news.sidebar.updates": "Latest Updates",
+                "news.sidebar.follow": "Follow Us",
+                "news.sidebar.facebook": "Facebook",
+                "news.sidebar.twitter": "Twitter",
+                "news.sidebar.linkedin": "LinkedIn",
+                "news.sidebar.alerts": "News Alerts",
+                "news.sidebar.subscribe_text": "Get instant notifications for important announcements",
+                "news.sidebar.email_placeholder": "Your email address",
+                "news.sidebar.subscribe": "Subscribe",
+                
+                // Press Releases
+                "news.press.badge": "Press Releases",
+                "news.press.title": "Official",
+                "news.press.highlight": "Announcements",
+                "news.press.subtitle": "Important announcements and official statements from Naroda Group",
+                "news.press.card1.title": "Financial Results Q4 2024",
+                "news.press.card1.text": "Naroda Group announces strong financial results for Q4 2024 with 25% revenue growth and expansion plans.",
+                "news.press.card2.title": "CSR Initiative Launch",
+                "news.press.card2.text": "Naroda Group launches 'Green Homes' initiative to promote sustainable living and community development.",
+                "news.press.card3.title": "Strategic Partnership",
+                "news.press.card3.text": "Naroda Group announces strategic partnership with leading international architecture firm for upcoming projects.",
+                "news.press.download": "Download PDF",
+                
+                // Media Coverage
+                "news.media.badge": "In The Media",
+                "news.media.title": "Featured In",
+                "news.media.highlight": "Media",
+                "news.media.subtitle": "Our work and achievements featured in leading publications",
+                
+                // Calendar & Events
+                "news.calendar.badge": "Events Calendar",
+                "news.calendar.title": "Upcoming",
+                "news.calendar.highlight": "Events",
+                "news.calendar.subtitle": "Mark your calendar for important events and activities",
+                "news.calendar.january": "January 2025",
+                "news.calendar.upcoming": "Upcoming Events",
+                "news.calendar.mon": "Mon",
+                "news.calendar.tue": "Tue",
+                "news.calendar.wed": "Wed",
+                "news.calendar.thu": "Thu",
+                "news.calendar.fri": "Fri",
+                "news.calendar.sat": "Sat",
+                "news.calendar.sun": "Sun",
+                "news.calendar.upcoming_events": "Upcoming Events",
+                "news.calendar.view_all": "View All Events",
+                
+                "news.events.event1.title": "Naroda Elite Project Launch",
+                "news.events.event1.desc": "Grand launch of our new luxury residential project",
+                "news.events.event1.date": "Jan 11, 2025",
+                "news.events.event1.location": "Naroda, Ahmedabad",
+                
+                "news.events.event2.title": "Quarterly Investor Meet",
+                "news.events.event2.desc": "Discussion on financial performance and future plans",
+                "news.events.event2.date": "Jan 14, 2025",
+                "news.events.event2.location": "Corporate Office",
+                
+                "news.events.event3.title": "Real Estate Excellence Awards",
+                "news.events.event3.desc": "Award ceremony recognizing industry leaders",
+                "news.events.event3.date": "Jan 24, 2025",
+                "news.events.event3.location": "Mumbai",
+                
+                // Footer (same as homepage)
+                "footer.description": "Creating landmark properties that redefine excellence. From premium commercial spaces to luxury residential living, we build dreams with quality and commitment.",
+                "footer.quick_links": "Quick Links",
+                "footer.our_projects": "Our Projects",
+                "footer.landmark_desc": "Premium Commercial Spaces",
+                "footer.irish_desc": "Luxury Residential Living",
+                "footer.view_all_projects": "View All Projects",
+                "footer.explore_portfolio": "Explore our portfolio",
+                "footer.contact_info": "Contact Info",
+                "footer.phone": "Phone Number",
+                "footer.phone_hours": "Mon - Sat: 10 AM - 7 PM",
+                "footer.email": "Email Address",
+                "footer.email_response": "We reply within 24 hours",
+                "footer.address": "Office Address",
+                "footer.address_line1": "Opp. Naroda Business Hub, Near Shivam Arcade",
+                "footer.address_line2": "Naroda Dahegam road, Hanspura, Naroda, Ahmedabad",
+                "footer.rights": "All rights reserved.",
+                "footer.privacy": "Privacy Policy",
+                "footer.terms": "Terms of Service",
+                "footer.rera": "RERA Registration"
+            },
+            hi: {
+                // Navigation
+                "nav.home": "होम",
+                "nav.about": "हमारे बारे में",
+                "nav.projects": "प्रोजेक्ट्स",
+                "nav.landmark": "नरोड़ा लैंडमार्क",
+                "nav.irish": "नरोड़ा आयरिश",
+                "nav.all_projects": "सभी प्रोजेक्ट्स",
+                "nav.properties": "संपत्तियाँ",
+                "nav.buy": "खरीदें",
+                "nav.rent": "किराए पर लें",
+                "nav.property_details": "संपत्ति विवरण",
+                "nav.gallery": "गैलरी",
+                "nav.more": "अधिक",
+                "nav.blog": "ब्लॉग",
+                "nav.news": "समाचार",
+                "nav.careers": "करियर",
+                "nav.team": "हमारी टीम",
+                "nav.faq": "सामान्य प्रश्न",
+                "nav.contact": "संपर्क करें",
+                "nav.contact_us": "संपर्क करें",
+                "nav.search": "खोजें",
+                
+                // News Page
+                "news.hero.title": "ताज़ा",
+                "news.hero.highlight": "समाचार",
+                "news.hero.subtitle": "हमारी नवीनतम घोषणाओं, उपलब्धियों और उद्योग विकासों से अद्यतन रहें",
+                "news.breaking": "ताज़ा खबर",
+                "news.breaking_text": "नरोड़ा ग्रुप ने नया लग्ज़री प्रोजेक्ट 'नरोड़ा एलाइट' लॉन्च किया, प्री-लॉन्च ऑफर्स ₹ 75 लाख से शुरू। आज ही अपना सपनों का घर बुक करें!",
+                
+                // News Filter
+                "news.filter.all": "सभी समाचार",
+                "news.filter.announcements": "घोषणाएँ",
+                "news.filter.awards": "पुरस्कार",
+                "news.filter.projects": "प्रोजेक्ट्स",
+                "news.filter.events": "इवेंट्स",
+                "news.filter.media": "मीडिया कवरेज",
+                
+                // News Categories
+                "news.category.award": "पुरस्कार",
+                "news.category.announcement": "घोषणा",
+                "news.category.project": "प्रोजेक्ट",
+                "news.category.event": "इवेंट",
+                "news.category.media": "मीडिया",
+                
+                // News Meta
+                "news.date.jan20": "20 जनवरी, 2025",
+                "news.read_time.2min": "2 मिनट पढ़ें",
+                "news.location.ahmedabad": "अहमदाबाद",
+                "news.read_full": "पूरी कहानी पढ़ें",
+                
+                // Featured News
+                "news.featured.title": "नरोड़ा ग्रुप ने जीता 'बेस्ट रियल एस्टेट डेवलपर' अवार्ड 2024",
+                "news.featured.excerpt": "नरोड़ा ग्रुप को नेशनल रियल एस्टेट एक्सीलेंस अवार्ड्स 2024 में प्रतिष्ठित 'बेस्ट रियल एस्टेट डेवलपर' अवार्ड से सम्मानित किया गया है। यह पुरस्कार गुणवत्ता, नवाचार और ग्राहक संतुष्टि के प्रति हमारी प्रतिबद्धता को मान्यता देता है।",
+                
+                // No Results
+                "news.no_results.title": "कोई समाचार नहीं मिला",
+                "news.no_results.message": "एक अलग श्रेणी का चयन करने का प्रयास करें",
+                
+                // Sidebar
+                "news.sidebar.categories": "समाचार श्रेणियाँ",
+                "news.sidebar.updates": "नवीनतम अपडेट",
+                "news.sidebar.follow": "हमें फॉलो करें",
+                "news.sidebar.facebook": "फेसबुक",
+                "news.sidebar.twitter": "ट्विटर",
+                "news.sidebar.linkedin": "लिंक्डइन",
+                "news.sidebar.alerts": "समाचार अलर्ट",
+                "news.sidebar.subscribe_text": "महत्वपूर्ण घोषणाओं के लिए तत्काल सूचनाएं प्राप्त करें",
+                "news.sidebar.email_placeholder": "आपका ईमेल पता",
+                "news.sidebar.subscribe": "सदस्यता लें",
+                
+                // Press Releases
+                "news.press.badge": "प्रेस विज्ञप्ति",
+                "news.press.title": "आधिकारिक",
+                "news.press.highlight": "घोषणाएँ",
+                "news.press.subtitle": "नरोड़ा ग्रुप की महत्वपूर्ण घोषणाएँ और आधिकारिक बयान",
+                "news.press.card1.title": "आर्थिक परिणाम Q4 2024",
+                "news.press.card1.text": "नरोड़ा ग्रुप ने Q4 2024 के लिए मजबूत वित्तीय परिणाम घोषित किए, जिसमें 25% राजस्व वृद्धि और विस्तार योजनाएं शामिल हैं।",
+                "news.press.card2.title": "सीएसआर पहल लॉन्च",
+                "news.press.card2.text": "नरोड़ा ग्रुप ने सतत जीवन और सामुदायिक विकास को बढ़ावा देने के लिए 'ग्रीन होम्स' पहल शुरू की।",
+                "news.press.card3.title": "रणनीतिक साझेदारी",
+                "news.press.card3.text": "नरोड़ा ग्रुप ने आगामी परियोजनाओं के लिए अग्रणी अंतरराष्ट्रीय वास्तुकला फर्म के साथ रणनीतिक साझेदारी की घोषणा की।",
+                "news.press.download": "PDF डाउनलोड करें",
+                
+                // Media Coverage
+                "news.media.badge": "मीडिया में",
+                "news.media.title": "प्रदर्शित",
+                "news.media.highlight": "मीडिया",
+                "news.media.subtitle": "अग्रणी प्रकाशनों में हमारा काम और उपलब्धियाँ",
+                
+                // Calendar & Events
+                "news.calendar.badge": "इवेंट्स कैलेंडर",
+                "news.calendar.title": "आगामी",
+                "news.calendar.highlight": "इवेंट्स",
+                "news.calendar.subtitle": "महत्वपूर्ण घटनाओं और गतिविधियों के लिए अपना कैलेंडर चिह्नित करें",
+                "news.calendar.january": "जनवरी 2025",
+                "news.calendar.upcoming": "आगामी इवेंट्स",
+                "news.calendar.mon": "सोम",
+                "news.calendar.tue": "मंगल",
+                "news.calendar.wed": "बुध",
+                "news.calendar.thu": "गुरु",
+                "news.calendar.fri": "शुक्र",
+                "news.calendar.sat": "शनि",
+                "news.calendar.sun": "रवि",
+                "news.calendar.upcoming_events": "आगामी इवेंट्स",
+                "news.calendar.view_all": "सभी इवेंट्स देखें",
+                
+                "news.events.event1.title": "नरोड़ा एलाइट प्रोजेक्ट लॉन्च",
+                "news.events.event1.desc": "हमारे नए लग्ज़री आवासीय परियोजना का भव्य लॉन्च",
+                "news.events.event1.date": "11 जनवरी, 2025",
+                "news.events.event1.location": "नरोड़ा, अहमदाबाद",
+                
+                "news.events.event2.title": "त्रैमासिक निवेशक बैठक",
+                "news.events.event2.desc": "वित्तीय प्रदर्शन और भविष्य की योजनाओं पर चर्चा",
+                "news.events.event2.date": "14 जनवरी, 2025",
+                "news.events.event2.location": "कॉर्पोरेट ऑफिस",
+                
+                "news.events.event3.title": "रियल एस्टेट एक्सीलेंस अवार्ड्स",
+                "news.events.event3.desc": "उद्योग के नेताओं को मान्यता देने वाला पुरस्कार समारोह",
+                "news.events.event3.date": "24 जनवरी, 2025",
+                "news.events.event3.location": "मुंबई",
+                
+                // Footer
+                "footer.description": "लैंडमार्क संपत्तियाँ बनाना जो उत्कृष्टता को फिर से परिभाषित करती हैं। प्रीमियम कमर्शियल स्पेस से लेकर लग्ज़री रेजिडेंशियल लिविंग तक, हम गुणवत्ता और प्रतिबद्धता के साथ सपने बनाते हैं।",
+                "footer.quick_links": "त्वरित लिंक",
+                "footer.our_projects": "हमारे प्रोजेक्ट्स",
+                "footer.landmark_desc": "प्रीमियम कमर्शियल स्पेस",
+                "footer.irish_desc": "लग्ज़री रेजिडेंशियल लिविंग",
+                "footer.view_all_projects": "सभी प्रोजेक्ट्स देखें",
+                "footer.explore_portfolio": "हमारे पोर्टफोलियो का अन्वेषण करें",
+                "footer.contact_info": "संपर्क जानकारी",
+                "footer.phone": "फोन नंबर",
+                "footer.phone_hours": "सोम - शनि: सुबह 10 - शाम 7 बजे",
+                "footer.email": "ईमेल पता",
+                "footer.email_response": "हम 24 घंटे के भीतर जवाब देते हैं",
+                "footer.address": "कार्यालय पता",
+                "footer.address_line1": "नरोड़ा बिजनेस हब के सामने, शिवम आर्केड के पास",
+                "footer.address_line2": "नरोड़ा दहेगाम रोड, हंसपुरा, नरोड़ा, अहमदाबाद",
+                "footer.rights": "सर्वाधिकार सुरक्षित।",
+                "footer.privacy": "गोपनीयता नीति",
+                "footer.terms": "सेवा की शर्तें",
+                "footer.rera": "RERA पंजीकरण"
+            },
+            gu: {
+                // Navigation
+                "nav.home": "હોમ",
+                "nav.about": "અમારા વિશે",
+                "nav.projects": "પ્રોજેક્ટ્સ",
+                "nav.landmark": "નરોડા લેન્ડમાર્ક",
+                "nav.irish": "નરોડા આયરિશ",
+                "nav.all_projects": "બધા પ્રોજેક્ટ્સ",
+                "nav.properties": "પ્રોપર્ટીઝ",
+                "nav.buy": "ખરીદો",
+                "nav.rent": "ભાડે લો",
+                "nav.property_details": "પ્રોપર્ટી વિગતો",
+                "nav.gallery": "ગેલેરી",
+                "nav.more": "વધુ",
+                "nav.blog": "બ્લોગ",
+                "nav.news": "સમાચાર",
+                "nav.careers": "કરિયર",
+                "nav.team": "અમારી ટીમ",
+                "nav.faq": "સામાન્ય પ્રશ્નો",
+                "nav.contact": "સંપર્ક કરો",
+                "nav.contact_us": "સંપર્ક કરો",
+                "nav.search": "શોધો",
+                
+                // News Page
+                "news.hero.title": "તાજા",
+                "news.hero.highlight": "સમાચાર",
+                "news.hero.subtitle": "અમારી નવીનતમ જાહેરાતો, સિદ્ધિઓ અને ઉદ્યોગ વિકાસથી અપડેટ રહો",
+                "news.breaking": "તાજી ખબર",
+                "news.breaking_text": "નરોડા ગ્રુપે નવું લગ્ઝરી પ્રોજેક્ટ 'નરોડા એલાઇટ' લોંચ કર્યું, પ્રી-લોંચ ઓફર્સ ₹ 75 લાખથી શરૂ. આજે જ તમારું સપનાનું ઘર બુક કરો!",
+                
+                // News Filter
+                "news.filter.all": "બધા સમાચાર",
+                "news.filter.announcements": "જાહેરાતો",
+                "news.filter.awards": "પુરસ્કારો",
+                "news.filter.projects": "પ્રોજેક્ટ્સ",
+                "news.filter.events": "ઇવેન્ટ્સ",
+                "news.filter.media": "મીડિયા કવરેજ",
+                
+                // News Categories
+                "news.category.award": "પુરસ્કાર",
+                "news.category.announcement": "જાહેરાત",
+                "news.category.project": "પ્રોજેક્ટ",
+                "news.category.event": "ઇવેન્ટ",
+                "news.category.media": "મીડિયા",
+                
+                // News Meta
+                "news.date.jan20": "20 જાન્યુઆરી, 2025",
+                "news.read_time.2min": "2 મિનિટ વાંચો",
+                "news.location.ahmedabad": "અમદાવાદ",
+                "news.read_full": "સંપૂર્ણ કહાણી વાંચો",
+                
+                // Featured News
+                "news.featured.title": "નરોડા ગ્રુપે જીત્યો 'બેસ્ટ રિઅલ એસ્ટેટ ડેવલપર' એવોર્ડ 2024",
+                "news.featured.excerpt": "નરોડા ગ્રુપને નેશનલ રિઅલ એસ્ટેટ એક્સલન્સ એવોર્ડ્સ 2024માં પ્રતિષ્ઠિત 'બેસ્ટ રિઅલ એસ્ટેટ ડેવલપર' એવોર્ડથી સન્માનિત કરવામાં આવ્યું છે. આ એવોર્ડ ગુણવત્તા, નવીનતા અને ગ્રાહક સંતુષ્ટિ માટેની અમારી પ્રતિબદ્ધતાને માન્યતા આપે છે.",
+                
+                // No Results
+                "news.no_results.title": "કોઈ સમાચાર મળ્યા નથી",
+                "news.no_results.message": "એક અલગ શ્રેણી પસંદ કરવાનો પ્રયાસ કરો",
+                
+                // Sidebar
+                "news.sidebar.categories": "સમાચાર શ્રેણીઓ",
+                "news.sidebar.updates": "નવીનતમ અપડેટ્સ",
+                "news.sidebar.follow": "અમને ફોલો કરો",
+                "news.sidebar.facebook": "ફેસબુક",
+                "news.sidebar.twitter": "ટ્વિટર",
+                "news.sidebar.linkedin": "લિંક્ડઇન",
+                "news.sidebar.alerts": "સમાચાર એલર્ટ્સ",
+                "news.sidebar.subscribe_text": "મહત્વપૂર્ણ જાહેરાતો માટે તાત્કાલિક સૂચનાઓ મેળવો",
+                "news.sidebar.email_placeholder": "તમારું ઈમેલ એડ્રેસ",
+                "news.sidebar.subscribe": "સબ્સ્ક્રાઇબ કરો",
+                
+                // Press Releases
+                "news.press.badge": "પ્રેસ વિજ્ઞપ્તિ",
+                "news.press.title": "અધિકૃત",
+                "news.press.highlight": "જાહેરાતો",
+                "news.press.subtitle": "નરોડા ગ્રુપની મહત્વપૂર્ણ જાહેરાતો અને અધિકૃત નિવેદનો",
+                "news.press.card1.title": "આર્થિક પરિણામો Q4 2024",
+                "news.press.card1.text": "નરોડા ગ્રુપે Q4 2024 માટે મજબૂત આર્થિક પરિણામો જાહેર કર્યા, જેમાં 25% આવક વૃદ્ધિ અને વિસ્તરણ યોજનાઓ શામેલ છે.",
+                "news.press.card2.title": "CSR પહેલ લોંચ",
+                "news.press.card2.text": "નરોડા ગ્રુપે ટકાઉ જીવન અને સમુદાય વિકાસને પ્રોત્સાહન આપવા માટે 'ગ્રીન હોમ્સ' પહેલ શરૂ કરી.",
+                "news.press.card3.title": "વ્યૂહાત્મક ભાગીદારી",
+                "news.press.card3.text": "નરોડા ગ્રુપે આગામી પ્રોજેક્ટ્સ માટે અગ્રણી આંતરરાષ્ટ્રીય આર્કિટેક્ચર ફર્મ સાથે વ્યૂહાત્મક ભાગીદારીની જાહેરાત કરી.",
+                "news.press.download": "PDF ડાઉનલોડ કરો",
+                
+                // Media Coverage
+                "news.media.badge": "મીડિયામાં",
+                "news.media.title": "ફીચર્ડ ઇન",
+                "news.media.highlight": "મીડિયા",
+                "news.media.subtitle": "અગ્રણી પ્રકાશનોમાં અમારું કામ અને સિદ્ધિઓ",
+                
+                // Calendar & Events
+                "news.calendar.badge": "ઇવેન્ટ્સ કેલેન્ડર",
+                "news.calendar.title": "આગામી",
+                "news.calendar.highlight": "ઇવેન્ટ્સ",
+                "news.calendar.subtitle": "મહત્વપૂર્ણ ઘટનાઓ અને પ્રવૃત્તિઓ માટે તમારું કેલેન્ડર ચિહ્નિત કરો",
+                "news.calendar.january": "જાન્યુઆરી 2025",
+                "news.calendar.upcoming": "આગામી ઇવેન્ટ્સ",
+                "news.calendar.mon": "સોમ",
+                "news.calendar.tue": "મંગળ",
+                "news.calendar.wed": "બુધ",
+                "news.calendar.thu": "ગુરુ",
+                "news.calendar.fri": "શુક્ર",
+                "news.calendar.sat": "શનિ",
+                "news.calendar.sun": "રવિ",
+                "news.calendar.upcoming_events": "આગામી ઇવેન્ટ્સ",
+                "news.calendar.view_all": "બધા ઇવેન્ટ્સ જુઓ",
+                
+                "news.events.event1.title": "નરોડા એલાઇટ પ્રોજેક્ટ લોંચ",
+                "news.events.event1.desc": "અમારી નવી લગ્ઝરી રેસિડેન્શિયલ પ્રોજેક્ટનું ભવ્ય લોંચ",
+                "news.events.event1.date": "11 જાન્યુઆરી, 2025",
+                "news.events.event1.location": "નરોડા, અમદાવાદ",
+                
+                "news.events.event2.title": "ત્રિમાસિક ઇન્વેસ્ટર મીટ",
+                "news.events.event2.desc": "આર્થિક પ્રદર્શન અને ભવિષ્યની યોજનાઓ પર ચર્ચા",
+                "news.events.event2.date": "14 જાન્યુઆરી, 2025",
+                "news.events.event2.location": "કોર્પોરેટ ઓફિસ",
+                
+                "news.events.event3.title": "રિઅલ એસ્ટેટ એક્સલન્સ એવોર્ડ્સ",
+                "news.events.event3.desc": "ઉદ્યોગના નેતાઓને માન્યતા આપતો એવોર્ડ સમારોહ",
+                "news.events.event3.date": "24 જાન્યુઆરી, 2025",
+                "news.events.event3.location": "મુંબઈ",
+                
+                // Footer
+                "footer.description": "લેન્ડમાર્ક પ્રોપર્ટીઝ બનાવવી જે એક્સલન્સને પુનઃવ્યાખ્યાયિત કરે છે. પ્રીમિયમ કોમર્શિયલ સ્પેસથી લગ્ઝરી રેસિડેન્શિયલ લિવિંગ સુધી, અમે ગુણવત્તા અને પ્રતિબદ્ધતા સાથે સપના બનાવીએ છીએ.",
+                "footer.quick_links": "ઝડપી લિંક્સ",
+                "footer.our_projects": "અમારા પ્રોજેક્ટ્સ",
+                "footer.landmark_desc": "પ્રીમિયમ કોમર્શિયલ સ્પેસ",
+                "footer.irish_desc": "લગ્ઝરી રેસિડેન્શિયલ લિવિંગ",
+                "footer.view_all_projects": "બધા પ્રોજેક્ટ્સ જુઓ",
+                "footer.explore_portfolio": "અમારા પોર્ટફોલિયોનું અન્વેષણ કરો",
+                "footer.contact_info": "સંપર્ક માહિતી",
+                "footer.phone": "ફોન નંબર",
+                "footer.phone_hours": "સોમ - શનિ: સવારે 10 - સાંજે 7 વાગ્યા",
+                "footer.email": "ઈમેલ એડ્રેસ",
+                "footer.email_response": "અમે 24 કલાકમાં જવાબ આપીએ છીએ",
+                "footer.address": "ઓફિસ એડ્રેસ",
+                "footer.address_line1": "નરોડા બિઝનેસ હબ સામે, શિવમ આર્કેડ નજીક",
+                "footer.address_line2": "નરોડા દહેગામ રોડ, હંસપુરા, નરોડા, અમદાવાદ",
+                "footer.rights": "બધા હક્કો સુરક્ષિત.",
+                "footer.privacy": "ગોપનીયતા નીતિ",
+                "footer.terms": "સેવાની શરતો",
+                "footer.rera": "RERA રજિસ્ટ્રેશન"
+            }
+        };
+    </script>
+
+    <script>
+        // Wait for page to load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize AOS
+            AOS.init({
+                duration: 800,
+                once: true,
+                offset: 100,
+                disable: window.innerWidth < 768
+            });
+            
+            // Remove preloader
+            const preloader = document.getElementById('preloader');
+            setTimeout(() => {
+                preloader.style.opacity = '0';
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 500);
+            }, 800);
+            
+            // Language switching functionality
+            const languageSelectors = document.querySelectorAll('.language-selector');
+            const currentLanguageElement = document.getElementById('currentLanguage');
+            
+            // Load saved language from localStorage or default to English
+            let currentLang = localStorage.getItem('preferredLanguage') || 'en';
+            
+            // Apply language on page load
+            applyLanguage(currentLang);
+            
+            // Set up language selector event listeners
+            languageSelectors.forEach(selector => {
+                selector.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const lang = this.getAttribute('data-lang');
+                    setLanguage(lang);
+                });
+            });
+            
+            function setLanguage(lang) {
+                currentLang = lang;
+                localStorage.setItem('preferredLanguage', lang);
+                applyLanguage(lang);
+                showToast(`${getLanguageName(lang)} ${getTranslation('news.toast.language_changed', lang)}`, 'success');
+            }
+            
+            function applyLanguage(lang) {
+                // Update body class for language-specific styling
+                document.body.classList.remove('hindi', 'gujarati');
+                if (lang === 'hi') document.body.classList.add('hindi');
+                if (lang === 'gu') document.body.classList.add('gujarati');
+                
+                // Update current language display
+                currentLanguageElement.textContent = getLanguageCode(lang);
+                
+                // Fade out content
+                document.querySelector('.language-content').style.opacity = '0.5';
+                
+                // Apply translations after a short delay for smoother transition
+                setTimeout(() => {
+                    const elements = document.querySelectorAll('[data-i18n]');
+                    elements.forEach(element => {
+                        const key = element.getAttribute('data-i18n');
+                        if (translations[lang] && translations[lang][key]) {
+                            element.textContent = translations[lang][key];
+                        }
+                    });
+                    
+                    // Apply placeholder translations
+                    const placeholders = document.querySelectorAll('[data-i18n-placeholder]');
+                    placeholders.forEach(element => {
+                        const key = element.getAttribute('data-i18n-placeholder');
+                        if (translations[lang] && translations[lang][key]) {
+                            element.setAttribute('placeholder', translations[lang][key]);
+                        }
+                    });
+                    
+                    // Fade content back in
+                    document.querySelector('.language-content').style.opacity = '1';
+                }, 300);
+            }
+            
+            function getLanguageName(code) {
+                const names = {
+                    'en': 'English',
+                    'hi': 'Hindi',
+                    'gu': 'Gujarati'
+                };
+                return names[code] || 'English';
+            }
+            
+            function getLanguageCode(code) {
+                const codes = {
+                    'en': 'EN',
+                    'hi': 'HI',
+                    'gu': 'GU'
+                };
+                return codes[code] || 'EN';
+            }
+            
+            function getTranslation(key, lang = currentLang) {
+                return translations[lang] && translations[lang][key] ? translations[lang][key] : key;
+            }
+            
+            // Initialize news functionality
+            initNews();
+            
+            // Initialize back to top
+            initBackToTop();
+            
+            // Initialize navbar scroll effect
+            initNavbarScroll();
+            
+            // Initialize toast notifications
+            initToastSystem();
+            
+            // Initialize mobile navigation
+            initMobileNav();
+            
+            // Initialize newsletter subscription
+            initNewsletter();
+            
+            // Initialize breaking news animation
+            initBreakingNews();
+            
+            // Show welcome message
+            setTimeout(() => {
+                showToast(getTranslation('news.toast.welcome'), 'info');
+            }, 1500);
+            
+            // Add touch event handlers for mobile
+            initTouchEvents();
+        });
+        
+        // News Data - Based on PDF content
         const newsData = [
             {
                 id: 1,
                 title: 'Naroda Irish Phase 2 Completion Ahead of Schedule',
                 category: 'projects',
                 image: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?ixlib=rb-4.0.3&auto=format&fit=crop&w=2065&q=80',
-                excerpt: 'Phase 2 of Naroda Irish residential project completed 3 months ahead of schedule. Possession to begin next month.',
+                excerpt: 'Phase 2 of Naroda Irish residential project completed 3 months ahead of schedule. All 354 luxury units now ready for possession with world-class amenities.',
                 date: 'Jan 18, 2025',
                 readTime: '3 min',
                 location: 'Ahmedabad',
-                featured: false
+                featured: false,
+                tags: ['luxury', 'residential', 'completion']
             },
             {
                 id: 2,
-                title: 'New CSR Initiative: "Green Schools Project" Launch',
+                title: 'Naroda Business Landmark Achieves 95% Occupancy',
                 category: 'announcements',
-                image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-                excerpt: 'Naroda Group launches Green Schools Project to promote environmental education in partnership with local schools.',
+                image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+                excerpt: 'Naroda Business Landmark commercial complex achieves 95% occupancy within 6 months of launch, becoming Ahmedabad\'s preferred business address.',
                 date: 'Jan 15, 2025',
                 readTime: '4 min',
-                location: 'Multiple Cities',
-                featured: false
+                location: 'Naroda, Ahmedabad',
+                featured: false,
+                tags: ['commercial', 'success', 'business']
             },
             {
                 id: 3,
                 title: 'Record Sales in Q4 2024: 25% Growth Achieved',
                 category: 'announcements',
                 image: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80',
-                excerpt: 'Company achieves record sales with 25% growth in Q4 2024, exceeding market expectations.',
+                excerpt: 'Naroda Group achieves record sales with 25% growth in Q4 2024, exceeding market expectations and setting new industry benchmarks.',
                 date: 'Jan 12, 2025',
                 readTime: '5 min',
                 location: 'Corporate Office',
-                featured: false
+                featured: false,
+                tags: ['financial', 'growth', 'record']
             },
             {
                 id: 4,
-                title: 'Featured in Economic Times Real Estate Special',
-                category: 'media',
-                image: 'https://images.unsplash.com/photo-1588681664899-f142ff2dc9b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-                excerpt: 'Naroda Group featured in Economic Times special edition on innovative real estate practices.',
+                title: 'Earthquake Resistant RCC Structure Certified',
+                category: 'projects',
+                image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+                excerpt: 'All Naroda Group projects now feature certified earthquake resistant RCC structures, ensuring maximum safety for residents and businesses.',
                 date: 'Jan 10, 2025',
                 readTime: '3 min',
-                location: 'National',
-                featured: false
+                location: 'All Projects',
+                featured: false,
+                tags: ['safety', 'certification', 'construction']
             },
             {
                 id: 5,
                 title: 'Sustainability Award for Green Building Practices',
                 category: 'awards',
                 image: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80',
-                excerpt: 'Recognized with Sustainability Excellence Award for innovative green building practices and energy efficiency.',
+                excerpt: 'Recognized with Sustainability Excellence Award for innovative green building practices, energy efficiency, and eco-friendly construction methods.',
                 date: 'Jan 8, 2025',
                 readTime: '4 min',
                 location: 'New Delhi',
-                featured: false
+                featured: false,
+                tags: ['sustainability', 'award', 'green']
             },
             {
                 id: 6,
                 title: 'Annual Customer Meet & Site Visit Event',
                 category: 'events',
                 image: 'https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-4.0.3&auto=format&fit=crop&w=2080&q=80',
-                excerpt: 'Successful annual customer meet organized with site visits and interactive sessions.',
+                excerpt: 'Successful annual customer meet organized with site visits and interactive sessions at Naroda Irish and Naroda Landmark projects.',
                 date: 'Jan 5, 2025',
                 readTime: '3 min',
                 location: 'Naroda Site',
-                featured: false
+                featured: false,
+                tags: ['customer', 'event', 'engagement']
             },
             {
                 id: 7,
-                title: 'New Appointment: VP of Business Development',
-                category: 'announcements',
+                title: '14-Storey Tower Completion at Naroda Irish',
+                category: 'projects',
                 image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2067&q=80',
-                excerpt: 'Mr. Sanjay Mehta appointed as Vice President of Business Development to lead expansion plans.',
+                excerpt: 'The magnificent 14-storey tower at Naroda Irish completed with luxury specifications including 6 magnificent towers and 2 basement parking.',
                 date: 'Jan 3, 2025',
                 readTime: '2 min',
-                location: 'Corporate Office',
-                featured: false
+                location: 'Naroda Irish',
+                featured: false,
+                tags: ['tower', 'completion', 'luxury']
             },
             {
                 id: 8,
-                title: 'Partnership with Leading Home Automation Company',
+                title: 'Partnership with Smart Home Technology Company',
                 category: 'projects',
                 image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80',
-                excerpt: 'Strategic partnership announced with SmartHome Tech for integrated home automation in upcoming projects.',
+                excerpt: 'Strategic partnership announced with SmartHome Tech for integrated home automation systems in all upcoming residential projects.',
                 date: 'Dec 28, 2024',
                 readTime: '4 min',
                 location: 'Ahmedabad',
-                featured: false
+                featured: false,
+                tags: ['technology', 'partnership', 'innovation']
+            },
+            {
+                id: 9,
+                title: 'Featured in Economic Times Real Estate Special',
+                category: 'media',
+                image: 'https://images.unsplash.com/photo-1588681664899-f142ff2dc9b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+                excerpt: 'Naroda Group featured in Economic Times special edition for innovative real estate practices and customer-centric approach.',
+                date: 'Dec 25, 2024',
+                readTime: '3 min',
+                location: 'National',
+                featured: false,
+                tags: ['media', 'featured', 'recognition']
+            },
+            {
+                id: 10,
+                title: 'New Commercial Spaces Launch at Naroda Landmark',
+                category: 'announcements',
+                image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80',
+                excerpt: 'New premium commercial spaces launched at Naroda Landmark with flexible office configurations from 200 sq.ft to 2500 sq.ft.',
+                date: 'Dec 20, 2024',
+                readTime: '3 min',
+                location: 'Naroda Landmark',
+                featured: false,
+                tags: ['commercial', 'launch', 'spaces']
+            },
+            {
+                id: 11,
+                title: 'Best Developer Award 2024',
+                category: 'awards',
+                image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2073&q=80',
+                excerpt: 'Naroda Group wins "Best Real Estate Developer" award at National Real Estate Excellence Awards 2024 for outstanding contribution.',
+                date: 'Dec 18, 2024',
+                readTime: '4 min',
+                location: 'Mumbai',
+                featured: false,
+                tags: ['award', 'excellence', 'recognition']
+            },
+            {
+                id: 12,
+                title: 'Smart Retail Spaces Inauguration',
+                category: 'projects',
+                image: 'https://images.unsplash.com/photo-1558036117-15e82a2c9a9a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+                excerpt: 'Smartly planned retail spaces inaugurated at Naroda Business Landmark with dedicated restaurant area and premium shop spaces.',
+                date: 'Dec 15, 2024',
+                readTime: '3 min',
+                location: 'Naroda Business Landmark',
+                featured: false,
+                tags: ['retail', 'inauguration', 'business']
             }
         ];
 
@@ -2308,58 +2928,7 @@
             }
         ];
 
-        // Wait for page to load
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize AOS
-            AOS.init({
-                duration: 800,
-                once: true,
-                offset: 100,
-                disable: window.innerWidth < 768
-            });
-            
-            // Remove preloader
-            const preloader = document.getElementById('preloader');
-            setTimeout(() => {
-                preloader.style.opacity = '0';
-                setTimeout(() => {
-                    preloader.style.display = 'none';
-                }, 500);
-            }, 800);
-            
-            // Initialize news
-            initNews();
-            
-            // Initialize back to top
-            initBackToTop();
-            
-            // Initialize navbar scroll effect
-            initNavbarScroll();
-            
-            // Initialize toast notifications
-            initToastSystem();
-            
-            // Initialize mobile navigation
-            initMobileNav();
-            
-            // Initialize media player
-            initMediaPlayer();
-            
-            // Initialize newsletter subscription
-            initNewsletter();
-            
-            // Initialize breaking news animation
-            initBreakingNews();
-            
-            // Show welcome message
-            setTimeout(() => {
-                showToast('Stay updated with our latest news and announcements!', 'info');
-            }, 1500);
-            
-            // Add touch event handlers for mobile
-            initTouchEvents();
-        });
-        
+        // News functionality
         function initNews() {
             const newsGrid = document.getElementById('newsGrid');
             const newsCategories = document.getElementById('newsCategories');
@@ -2458,6 +3027,7 @@
                 
                 // Format category name
                 const categoryName = categoriesData.find(c => c.slug === item.category)?.name || item.category;
+                const categoryTranslationKey = `news.category.${item.category}`;
                 
                 card.innerHTML = `
                     <div class="news-image">
@@ -2642,39 +3212,6 @@
             });
         }
         
-        function initMediaPlayer() {
-            const playBtn = document.querySelector('.play-btn');
-            const progressFill = document.querySelector('.progress-fill');
-            
-            let isPlaying = false;
-            
-            playBtn.addEventListener('click', function() {
-                isPlaying = !isPlaying;
-                
-                if (isPlaying) {
-                    this.innerHTML = '<i class="fas fa-pause"></i>';
-                    this.setAttribute('aria-label', 'Pause audio');
-                    // Simulate progress
-                    let width = 30;
-                    const interval = setInterval(() => {
-                        if (width >= 100) {
-                            clearInterval(interval);
-                            isPlaying = false;
-                            this.innerHTML = '<i class="fas fa-play"></i>';
-                            this.setAttribute('aria-label', 'Play audio');
-                            progressFill.style.width = '30%';
-                        } else {
-                            width += 0.5;
-                            progressFill.style.width = width + '%';
-                        }
-                    }, 100);
-                } else {
-                    this.innerHTML = '<i class="fas fa-play"></i>';
-                    this.setAttribute('aria-label', 'Play audio');
-                }
-            });
-        }
-        
         function initNewsletter() {
             const newsletterForm = document.getElementById('newsletterForm');
             
@@ -2810,6 +3347,16 @@
                     setTimeout(() => toast.remove(), 300);
                 }, 5000);
             };
+            
+            // Add translation for toast messages
+            translations.en['news.toast.welcome'] = 'Stay updated with our latest news and announcements!';
+            translations.en['news.toast.language_changed'] = 'language selected';
+            
+            translations.hi['news.toast.welcome'] = 'हमारे नवीनतम समाचार और घोषणाओं से अद्यतन रहें!';
+            translations.hi['news.toast.language_changed'] = 'भाषा चुनी गई';
+            
+            translations.gu['news.toast.welcome'] = 'અમારા નવીનતમ સમાચાર અને જાહેરાતો સાથે અપડેટ રહો!';
+            translations.gu['news.toast.language_changed'] = 'ભાષા પસંદ કરી';
         }
         
         function initMobileNav() {
@@ -2899,6 +3446,26 @@
                 }
             });
         });
+        
+        // Lazy load images
+        function lazyLoadImages() {
+            const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+            
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src || img.src;
+                        observer.unobserve(img);
+                    }
+                });
+            });
+            
+            lazyImages.forEach(img => imageObserver.observe(img));
+        }
+        
+        // Initialize lazy loading
+        lazyLoadImages();
     </script>
 </body>
 </html>

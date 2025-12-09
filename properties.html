@@ -1542,6 +1542,11 @@
                 border-top: 1px solid rgba(255, 255, 255, 0.1);
             }
         }
+        
+        /* Language switch styles */
+        .language-selector {
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -1588,48 +1593,48 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="index.html" data-i18n="nav.home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
+                        <a class="nav-link" href="about.html" data-i18n="nav.about">About</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Projects
+                            <span data-i18n="nav.projects">Projects</span>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="projectsDropdown">
-                            <li><a class="dropdown-item" href="projects-landmark.html">Naroda Landmark</a></li>
-                            <li><a class="dropdown-item" href="projects-irish.html">Naroda Irish</a></li>
+                            <li><a class="dropdown-item" href="projects-landmark.html" data-i18n="nav.landmark">Naroda Landmark</a></li>
+                            <li><a class="dropdown-item" href="projects-irish.html" data-i18n="nav.irish">Naroda Irish</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="projects.html">All Projects</a></li>
+                            <li><a class="dropdown-item" href="projects.html" data-i18n="nav.all_projects">All Projects</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle active" href="#" id="propertiesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Properties
+                            <span data-i18n="nav.properties">Properties</span>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="propertiesDropdown">
-                            <li><a class="dropdown-item active" href="properties.html">Buy</a></li>
-                            <li><a class="dropdown-item" href="properties-rent.html">Rent</a></li>
+                            <li><a class="dropdown-item active" href="properties.html" data-i18n="nav.buy">Buy</a></li>
+                            <li><a class="dropdown-item" href="properties-rent.html" data-i18n="nav.rent">Rent</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="property-detail.html">Property Details</a></li>
+                            <li><a class="dropdown-item" href="property-detail.html" data-i18n="nav.property_details">Property Details</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="gallery.html">Gallery</a>
+                        <a class="nav-link" href="gallery.html" data-i18n="nav.gallery">Gallery</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            More
+                            <span data-i18n="nav.more">More</span>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="moreDropdown">
-                            <li><a class="dropdown-item" href="blog.html">Blog</a></li>
-                            <li><a class="dropdown-item" href="news.html">News</a></li>
-                            <li><a class="dropdown-item" href="careers.html">Careers</a></li>
-                            <li><a class="dropdown-item" href="team.html">Our Team</a></li>
+                            <li><a class="dropdown-item" href="blog.html" data-i18n="nav.blog">Blog</a></li>
+                            <li><a class="dropdown-item" href="news.html" data-i18n="nav.news">News</a></li>
+                            <li><a class="dropdown-item" href="careers.html" data-i18n="nav.careers">Careers</a></li>
+                            <li><a class="dropdown-item" href="team.html" data-i18n="nav.team">Our Team</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
-                            <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+                            <li><a class="dropdown-item" href="faq.html" data-i18n="nav.faq">FAQ</a></li>
+                            <li><a class="dropdown-item" href="contact.html" data-i18n="nav.contact">Contact</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -1637,16 +1642,16 @@
                 <div class="d-flex align-items-center ms-lg-3 mt-3 mt-lg-0">
                     <div class="dropdown">
                         <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fas fa-globe me-1"></i> EN
+                            <i class="fas fa-globe me-1"></i> <span id="currentLanguage">EN</span>
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="languageDropdown">
-                            <li><a class="dropdown-item" href="#">English</a></li>
-                            <li><a class="dropdown-item" href="#">Hindi</a></li>
-                            <li><a class="dropdown-item" href="#">Gujarati</a></li>
+                            <li><a class="dropdown-item language-selector" href="#" data-lang="en">English</a></li>
+                            <li><a class="dropdown-item language-selector" href="#" data-lang="hi">हिंदी (Hindi)</a></li>
+                            <li><a class="dropdown-item language-selector" href="#" data-lang="gu">ગુજરાતી (Gujarati)</a></li>
                         </ul>
                     </div>
                     <a href="login.html" class="btn btn-outline-light ms-3">
-                        <i class="fas fa-user me-2"></i> Login
+                        <i class="fas fa-user me-2"></i> <span data-i18n="nav.login">Login</span>
                     </a>
                 </div>
             </div>
@@ -1657,23 +1662,23 @@
     <div class="mobile-bottom-nav">
         <a href="index.html" class="mobile-nav-item">
             <i class="fas fa-home"></i>
-            <span>Home</span>
+            <span data-i18n="nav.home">Home</span>
         </a>
         <a href="projects.html" class="mobile-nav-item">
             <i class="fas fa-building"></i>
-            <span>Projects</span>
+            <span data-i18n="nav.projects">Projects</span>
         </a>
         <a href="properties.html" class="mobile-nav-item active">
             <i class="fas fa-search"></i>
-            <span>Search</span>
+            <span data-i18n="nav.search">Search</span>
         </a>
         <a href="contact.html" class="mobile-nav-item">
             <i class="fas fa-phone"></i>
-            <span>Contact</span>
+            <span data-i18n="nav.contact">Contact</span>
         </a>
         <a href="login.html" class="mobile-nav-item">
             <i class="fas fa-user"></i>
-            <span>Account</span>
+            <span data-i18n="nav.account">Account</span>
         </a>
     </div>
 
@@ -1685,18 +1690,18 @@
                 <div class="row min-vh-60 align-items-center">
                     <div class="col-lg-8 mx-auto text-center">
                         <h1 class="hero-title" data-aos="fade-up">
-                            Find Your <span class="gold-text">Dream Property</span>
+                            <span data-i18n="hero.title.part1">Find Your</span> <span class="gold-text" data-i18n="hero.title.part2">Dream Property</span>
                         </h1>
-                        <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
+                        <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100" data-i18n="hero.subtitle">
                             Browse our premium selection of residential and commercial properties. 
                             Find the perfect space that matches your lifestyle and aspirations.
                         </p>
                         <div class="d-flex flex-column flex-sm-row justify-content-center gap-4 mt-4" data-aos="fade-up" data-aos-delay="200">
                             <a href="#search" class="btn btn-gold btn-lg">
-                                <i class="fas fa-search me-2"></i> Search Properties
+                                <i class="fas fa-search me-2"></i> <span data-i18n="hero.btn1">Search Properties</span>
                             </a>
                             <a href="contact.html" class="btn btn-outline-light btn-lg">
-                                <i class="fas fa-headset me-2"></i> Talk to Expert
+                                <i class="fas fa-headset me-2"></i> <span data-i18n="hero.btn2">Talk to Expert</span>
                             </a>
                         </div>
                     </div>
@@ -1708,48 +1713,48 @@
         <section class="search-section" id="search">
             <div class="container">
                 <button class="btn btn-primary mobile-filter-btn" id="mobileFilterToggle">
-                    <i class="fas fa-filter me-2"></i> Show Filters
+                    <i class="fas fa-filter me-2"></i> <span data-i18n="filter.show_filters">Show Filters</span>
                 </button>
                 
                 <div class="filter-card" id="filterCard">
                     <button class="btn-close close-filter" id="closeFilter"></button>
                     
                     <div class="filter-tabs">
-                        <button type="button" class="filter-tab active" data-type="buy">Buy Properties</button>
-                        <button type="button" class="filter-tab" data-type="rent">Rent Properties</button>
-                        <button type="button" class="filter-tab" data-type="commercial">Commercial</button>
+                        <button type="button" class="filter-tab active" data-type="buy"><span data-i18n="filter.tab1">Buy Properties</span></button>
+                        <button type="button" class="filter-tab" data-type="rent"><span data-i18n="filter.tab2">Rent Properties</span></button>
+                        <button type="button" class="filter-tab" data-type="commercial"><span data-i18n="filter.tab3">Commercial</span></button>
                     </div>
                     
                     <form id="propertySearchForm">
                         <div class="filter-row">
                             <div class="filter-group">
-                                <label class="filter-label" for="location">Location</label>
+                                <label class="filter-label" for="location" data-i18n="filter.location">Location</label>
                                 <select class="form-select" id="location">
-                                    <option value="">All Locations</option>
-                                    <option value="naroda-irish">Naroda Irish</option>
-                                    <option value="naroda-landmark">Naroda Landmark</option>
-                                    <option value="east-ahmedabad">East Ahmedabad</option>
-                                    <option value="west-ahmedabad">West Ahmedabad</option>
-                                    <option value="south-ahmedabad">South Ahmedabad</option>
+                                    <option value="" data-i18n="filter.all_locations">All Locations</option>
+                                    <option value="naroda-irish" data-i18n="filter.naroda_irish">Naroda Irish</option>
+                                    <option value="naroda-landmark" data-i18n="filter.naroda_landmark">Naroda Landmark</option>
+                                    <option value="east-ahmedabad" data-i18n="filter.east_ahmedabad">East Ahmedabad</option>
+                                    <option value="west-ahmedabad" data-i18n="filter.west_ahmedabad">West Ahmedabad</option>
+                                    <option value="south-ahmedabad" data-i18n="filter.south_ahmedabad">South Ahmedabad</option>
                                 </select>
                             </div>
                             
                             <div class="filter-group">
-                                <label class="filter-label" for="propertyType">Property Type</label>
+                                <label class="filter-label" for="propertyType" data-i18n="filter.property_type">Property Type</label>
                                 <select class="form-select" id="propertyType">
-                                    <option value="">All Types</option>
-                                    <option value="apartment">Apartment</option>
-                                    <option value="villa">Villa</option>
-                                    <option value="office">Office Space</option>
-                                    <option value="shop">Shop/Retail</option>
-                                    <option value="plot">Plot/Land</option>
+                                    <option value="" data-i18n="filter.all_types">All Types</option>
+                                    <option value="apartment" data-i18n="filter.apartment">Apartment</option>
+                                    <option value="villa" data-i18n="filter.villa">Villa</option>
+                                    <option value="office" data-i18n="filter.office">Office Space</option>
+                                    <option value="shop" data-i18n="filter.shop">Shop/Retail</option>
+                                    <option value="plot" data-i18n="filter.plot">Plot/Land</option>
                                 </select>
                             </div>
                             
                             <div class="filter-group">
-                                <label class="filter-label" for="bedrooms">Bedrooms</label>
+                                <label class="filter-label" for="bedrooms" data-i18n="filter.bedrooms">Bedrooms</label>
                                 <select class="form-select" id="bedrooms">
-                                    <option value="">Any</option>
+                                    <option value="" data-i18n="filter.any">Any</option>
                                     <option value="1">1 BHK</option>
                                     <option value="2">2 BHK</option>
                                     <option value="3">3 BHK</option>
@@ -1759,11 +1764,11 @@
                             </div>
                             
                             <div class="filter-group">
-                                <label class="filter-label">Budget (₹)</label>
+                                <label class="filter-label" data-i18n="filter.budget">Budget (₹)</label>
                                 <div class="price-range">
-                                    <input type="number" class="form-control price-input" id="minPrice" placeholder="Min Price">
-                                    <span>to</span>
-                                    <input type="number" class="form-control price-input" id="maxPrice" placeholder="Max Price">
+                                    <input type="number" class="form-control price-input" id="minPrice" placeholder="Min Price" data-i18n-placeholder="filter.min_price">
+                                    <span data-i18n="filter.to">to</span>
+                                    <input type="number" class="form-control price-input" id="maxPrice" placeholder="Max Price" data-i18n-placeholder="filter.max_price">
                                 </div>
                             </div>
                         </div>
@@ -1771,38 +1776,38 @@
                         <div class="advanced-filters">
                             <div class="advanced-toggle" id="advancedToggle">
                                 <i class="fas fa-sliders-h"></i>
-                                <span>Advanced Filters</span>
+                                <span data-i18n="filter.advanced_filters">Advanced Filters</span>
                                 <i class="fas fa-chevron-down ms-auto"></i>
                             </div>
                             
                             <div class="advanced-content" id="advancedContent">
                                 <div class="filter-row">
                                     <div class="filter-group">
-                                        <label class="filter-label">Area (Sq. Ft.)</label>
+                                        <label class="filter-label" data-i18n="filter.area">Area (Sq. Ft.)</label>
                                         <div class="price-range">
-                                            <input type="number" class="form-control price-input" id="minArea" placeholder="Min">
-                                            <span>to</span>
-                                            <input type="number" class="form-control price-input" id="maxArea" placeholder="Max">
+                                            <input type="number" class="form-control price-input" id="minArea" placeholder="Min" data-i18n-placeholder="filter.min">
+                                            <span data-i18n="filter.to">to</span>
+                                            <input type="number" class="form-control price-input" id="maxArea" placeholder="Max" data-i18n-placeholder="filter.max">
                                         </div>
                                     </div>
                                     
                                     <div class="filter-group">
-                                        <label class="filter-label" for="furnishing">Furnishing</label>
+                                        <label class="filter-label" for="furnishing" data-i18n="filter.furnishing">Furnishing</label>
                                         <select class="form-select" id="furnishing">
-                                            <option value="">Any</option>
-                                            <option value="fully-furnished">Fully Furnished</option>
-                                            <option value="semi-furnished">Semi Furnished</option>
-                                            <option value="unfurnished">Unfurnished</option>
+                                            <option value="" data-i18n="filter.any">Any</option>
+                                            <option value="fully-furnished" data-i18n="filter.fully_furnished">Fully Furnished</option>
+                                            <option value="semi-furnished" data-i18n="filter.semi_furnished">Semi Furnished</option>
+                                            <option value="unfurnished" data-i18n="filter.unfurnished">Unfurnished</option>
                                         </select>
                                     </div>
                                     
                                     <div class="filter-group">
-                                        <label class="filter-label" for="possession">Possession Status</label>
+                                        <label class="filter-label" for="possession" data-i18n="filter.possession">Possession Status</label>
                                         <select class="form-select" id="possession">
-                                            <option value="">Any</option>
-                                            <option value="ready-to-move">Ready to Move</option>
-                                            <option value="under-construction">Under Construction</option>
-                                            <option value="new-launch">New Launch</option>
+                                            <option value="" data-i18n="filter.any">Any</option>
+                                            <option value="ready-to-move" data-i18n="filter.ready_to_move">Ready to Move</option>
+                                            <option value="under-construction" data-i18n="filter.under_construction">Under Construction</option>
+                                            <option value="new-launch" data-i18n="filter.new_launch">New Launch</option>
                                         </select>
                                     </div>
                                 </div>
@@ -1810,35 +1815,35 @@
                                 <div class="checkbox-group">
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" id="swimmingPool">
-                                        <label class="form-check-label" for="swimmingPool">Swimming Pool</label>
+                                        <label class="form-check-label" for="swimmingPool" data-i18n="filter.swimming_pool">Swimming Pool</label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" id="gym">
-                                        <label class="form-check-label" for="gym">Gymnasium</label>
+                                        <label class="form-check-label" for="gym" data-i18n="filter.gym">Gymnasium</label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" id="parking">
-                                        <label class="form-check-label" for="parking">Parking</label>
+                                        <label class="form-check-label" for="parking" data-i18n="filter.parking">Parking</label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" id="security">
-                                        <label class="form-check-label" for="security">24/7 Security</label>
+                                        <label class="form-check-label" for="security" data-i18n="filter.security">24/7 Security</label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" id="garden">
-                                        <label class="form-check-label" for="garden">Garden/Park</label>
+                                        <label class="form-check-label" for="garden" data-i18n="filter.garden">Garden/Park</label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" id="powerBackup">
-                                        <label class="form-check-label" for="powerBackup">Power Backup</label>
+                                        <label class="form-check-label" for="powerBackup" data-i18n="filter.power_backup">Power Backup</label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" id="rera">
-                                        <label class="form-check-label" for="rera">RERA Approved</label>
+                                        <label class="form-check-label" for="rera" data-i18n="filter.rera">RERA Approved</label>
                                     </div>
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" id="loan">
-                                        <label class="form-check-label" for="loan">Loan Available</label>
+                                        <label class="form-check-label" for="loan" data-i18n="filter.loan">Loan Available</label>
                                     </div>
                                 </div>
                             </div>
@@ -1846,13 +1851,13 @@
                         
                         <div class="search-actions">
                             <button type="submit" class="btn btn-gold">
-                                <i class="fas fa-search me-2"></i> Search Properties
+                                <i class="fas fa-search me-2"></i> <span data-i18n="filter.search_properties">Search Properties</span>
                             </button>
                             <button type="reset" class="btn btn-outline-primary" id="resetFilters">
-                                <i class="fas fa-redo me-2"></i> Reset Filters
+                                <i class="fas fa-redo me-2"></i> <span data-i18n="filter.reset_filters">Reset Filters</span>
                             </button>
                             <button type="button" class="btn btn-outline-primary" id="saveSearch">
-                                <i class="fas fa-bell me-2"></i> Save Search
+                                <i class="fas fa-bell me-2"></i> <span data-i18n="filter.save_search">Save Search</span>
                             </button>
                         </div>
                     </form>
@@ -1865,18 +1870,18 @@
             <div class="container">
                 <div class="properties-header">
                     <div>
-                        <h2 class="section-title left">Featured <span class="gold-text">Properties</span></h2>
-                        <p class="text-muted">Showing <span id="propertyCount">12</span> properties</p>
+                        <h2 class="section-title left"><span data-i18n="properties.featured">Featured</span> <span class="gold-text" data-i18n="properties.properties">Properties</span></h2>
+                        <p class="text-muted" data-i18n="properties.showing">Showing <span id="propertyCount">12</span> properties</p>
                     </div>
                     
                     <div class="sort-options">
-                        <span>Sort by:</span>
+                        <span data-i18n="properties.sort_by">Sort by:</span>
                         <select class="form-select sort-select" id="sortBy">
-                            <option value="newest">Newest First</option>
-                            <option value="price-low">Price: Low to High</option>
-                            <option value="price-high">Price: High to Low</option>
-                            <option value="area">Area: Large to Small</option>
-                            <option value="featured">Featured First</option>
+                            <option value="newest" data-i18n="properties.newest">Newest First</option>
+                            <option value="price-low" data-i18n="properties.price_low">Price: Low to High</option>
+                            <option value="price-high" data-i18n="properties.price_high">Price: High to Low</option>
+                            <option value="area" data-i18n="properties.area">Area: Large to Small</option>
+                            <option value="featured" data-i18n="properties.featured_first">Featured First</option>
                         </select>
                         
                         <div class="view-options">
@@ -1892,12 +1897,12 @@
                 
                 <!-- Grid View -->
                 <div class="properties-grid" id="gridView">
-                    <!-- Property 1 -->
+                    <!-- Property 1 - Naroda Irish Apartment -->
                     <div class="property-card" data-aos="fade-up">
                         <div class="property-image">
                             <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
                                  alt="3 BHK Luxury Apartment" loading="lazy">
-                            <div class="property-badge">For Sale</div>
+                            <div class="property-badge" data-i18n="properties.for_sale">For Sale</div>
                             <div class="property-actions">
                                 <button class="property-action-btn save-property" data-property="1" aria-label="Save property">
                                     <i class="far fa-heart"></i>
@@ -1908,15 +1913,15 @@
                             </div>
                         </div>
                         <div class="property-content">
-                            <h3 class="property-title">Premium 3 BHK Luxury Apartment</h3>
+                            <h3 class="property-title" data-i18n="properties.irish_3bhk">Premium 3 BHK Luxury Apartment</h3>
                             <div class="property-location">
                                 <i class="fas fa-map-marker-alt"></i>
-                                <span>Naroda Irish, Ahmedabad</span>
+                                <span data-i18n="properties.irish_location">Naroda Irish, Ahmedabad</span>
                             </div>
                             
                             <div class="property-status">
-                                <span class="status-badge ready">Ready to Move</span>
-                                <span class="status-badge rera">RERA Approved</span>
+                                <span class="status-badge ready" data-i18n="properties.ready_to_move">Ready to Move</span>
+                                <span class="status-badge rera" data-i18n="properties.rera_approved">RERA Approved</span>
                             </div>
                             
                             <div class="property-features">
@@ -1940,23 +1945,82 @@
                                     <div class="price-unit">85 Lakhs</div>
                                 </div>
                                 <a href="property-detail.html" class="btn btn-gold btn-sm">
-                                    View Details
+                                    <span data-i18n="properties.view_details">View Details</span>
                                 </a>
                             </div>
                             
                             <div class="property-meta">
                                 <span class="property-id">ID: NG-PR-001</span>
-                                <span class="property-date">2 days ago</span>
+                                <span class="property-date" data-i18n="properties.days_ago">2 days ago</span>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Property 2 -->
+                    <!-- Property 2 - Naroda Landmark Commercial -->
                     <div class="property-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="property-image">
+                            <img src="https://images.unsplash.com/photo-1558036117-15e82a2c9a9a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                                 alt="Commercial Office" loading="lazy">
+                            <div class="property-badge" data-i18n="properties.for_sale">For Sale</div>
+                            <div class="property-actions">
+                                <button class="property-action-btn save-property" data-property="3" aria-label="Save property">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <button class="property-action-btn" aria-label="Compare property">
+                                    <i class="fas fa-exchange-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="property-content">
+                            <h3 class="property-title" data-i18n="properties.landmark_commercial">Commercial Office Space</h3>
+                            <div class="property-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span data-i18n="properties.landmark_location">Naroda Landmark, Ahmedabad</span>
+                            </div>
+                            
+                            <div class="property-status">
+                                <span class="status-badge ready" data-i18n="properties.ready_to_move">Ready to Move</span>
+                                <span class="status-badge rera" data-i18n="properties.rera_approved">RERA Approved</span>
+                            </div>
+                            
+                            <div class="property-features">
+                                <div class="property-feature">
+                                    <i class="fas fa-building"></i>
+                                    <span data-i18n="properties.office">Office</span>
+                                </div>
+                                <div class="property-feature">
+                                    <i class="fas fa-vector-square"></i>
+                                    <span>2000 sqft</span>
+                                </div>
+                                <div class="property-feature">
+                                    <i class="fas fa-parking"></i>
+                                    <span>4 Parking</span>
+                                </div>
+                            </div>
+                            
+                            <div class="property-price">
+                                <div>
+                                    <div class="price-amount">₹ 2.5 Cr</div>
+                                    <div class="price-unit">2.5 Crores</div>
+                                </div>
+                                <a href="property-detail.html" class="btn btn-gold btn-sm">
+                                    <span data-i18n="properties.view_details">View Details</span>
+                                </a>
+                            </div>
+                            
+                            <div class="property-meta">
+                                <span class="property-id">ID: NG-PR-003</span>
+                                <span class="property-date" data-i18n="properties.week_ago">1 week ago</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Property 3 - Naroda Irish 2 BHK -->
+                    <div class="property-card" data-aos="fade-up" data-aos-delay="200">
                         <div class="property-image">
                             <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
                                  alt="2 BHK Apartment" loading="lazy">
-                            <div class="property-badge">For Sale</div>
+                            <div class="property-badge" data-i18n="properties.for_sale">For Sale</div>
                             <div class="property-actions">
                                 <button class="property-action-btn save-property" data-property="2" aria-label="Save property">
                                     <i class="far fa-heart"></i>
@@ -1967,15 +2031,15 @@
                             </div>
                         </div>
                         <div class="property-content">
-                            <h3 class="property-title">2 BHK Modern Apartment</h3>
+                            <h3 class="property-title" data-i18n="properties.irish_2bhk">2 BHK Modern Apartment</h3>
                             <div class="property-location">
                                 <i class="fas fa-map-marker-alt"></i>
-                                <span>Naroda Irish, Ahmedabad</span>
+                                <span data-i18n="properties.irish_location">Naroda Irish, Ahmedabad</span>
                             </div>
                             
                             <div class="property-status">
-                                <span class="status-badge ready">Ready to Move</span>
-                                <span class="status-badge rera">RERA Approved</span>
+                                <span class="status-badge ready" data-i18n="properties.ready_to_move">Ready to Move</span>
+                                <span class="status-badge rera" data-i18n="properties.rera_approved">RERA Approved</span>
                             </div>
                             
                             <div class="property-features">
@@ -1999,82 +2063,23 @@
                                     <div class="price-unit">65 Lakhs</div>
                                 </div>
                                 <a href="property-detail.html" class="btn btn-gold btn-sm">
-                                    View Details
+                                    <span data-i18n="properties.view_details">View Details</span>
                                 </a>
                             </div>
                             
                             <div class="property-meta">
                                 <span class="property-id">ID: NG-PR-002</span>
-                                <span class="property-date">5 days ago</span>
+                                <span class="property-date" data-i18n="properties.days_ago">5 days ago</span>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Property 3 -->
-                    <div class="property-card" data-aos="fade-up" data-aos-delay="200">
-                        <div class="property-image">
-                            <img src="https://images.unsplash.com/photo-1558036117-15e82a2c9a9a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-                                 alt="Commercial Office" loading="lazy">
-                            <div class="property-badge">For Sale</div>
-                            <div class="property-actions">
-                                <button class="property-action-btn save-property" data-property="3" aria-label="Save property">
-                                    <i class="far fa-heart"></i>
-                                </button>
-                                <button class="property-action-btn" aria-label="Compare property">
-                                    <i class="fas fa-exchange-alt"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="property-content">
-                            <h3 class="property-title">Commercial Office Space</h3>
-                            <div class="property-location">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Naroda Landmark, Ahmedabad</span>
-                            </div>
-                            
-                            <div class="property-status">
-                                <span class="status-badge ready">Ready to Move</span>
-                                <span class="status-badge rera">RERA Approved</span>
-                            </div>
-                            
-                            <div class="property-features">
-                                <div class="property-feature">
-                                    <i class="fas fa-building"></i>
-                                    <span>Office</span>
-                                </div>
-                                <div class="property-feature">
-                                    <i class="fas fa-vector-square"></i>
-                                    <span>2000 sqft</span>
-                                </div>
-                                <div class="property-feature">
-                                    <i class="fas fa-parking"></i>
-                                    <span>4 Parking</span>
-                                </div>
-                            </div>
-                            
-                            <div class="property-price">
-                                <div>
-                                    <div class="price-amount">₹ 2.5 Cr</div>
-                                    <div class="price-unit">2.5 Crores</div>
-                                </div>
-                                <a href="property-detail.html" class="btn btn-gold btn-sm">
-                                    View Details
-                                </a>
-                            </div>
-                            
-                            <div class="property-meta">
-                                <span class="property-id">ID: NG-PR-003</span>
-                                <span class="property-date">1 week ago</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Property 4 -->
+                    <!-- Property 4 - Naroda Irish Villa -->
                     <div class="property-card" data-aos="fade-up" data-aos-delay="300">
                         <div class="property-image">
                             <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&auto=format&fit=crop&w=2096&q=80" 
                                  alt="4 BHK Villa" loading="lazy">
-                            <div class="property-badge rent">For Rent</div>
+                            <div class="property-badge rent" data-i18n="properties.for_rent">For Rent</div>
                             <div class="property-actions">
                                 <button class="property-action-btn save-property" data-property="4" aria-label="Save property">
                                     <i class="far fa-heart"></i>
@@ -2085,15 +2090,15 @@
                             </div>
                         </div>
                         <div class="property-content">
-                            <h3 class="property-title">4 BHK Luxury Villa</h3>
+                            <h3 class="property-title" data-i18n="properties.irish_villa">4 BHK Luxury Villa</h3>
                             <div class="property-location">
                                 <i class="fas fa-map-marker-alt"></i>
-                                <span>Naroda Irish, Ahmedabad</span>
+                                <span data-i18n="properties.irish_location">Naroda Irish, Ahmedabad</span>
                             </div>
                             
                             <div class="property-status">
-                                <span class="status-badge ready">Ready to Move</span>
-                                <span class="status-badge rera">RERA Approved</span>
+                                <span class="status-badge ready" data-i18n="properties.ready_to_move">Ready to Move</span>
+                                <span class="status-badge rera" data-i18n="properties.rera_approved">RERA Approved</span>
                             </div>
                             
                             <div class="property-features">
@@ -2114,26 +2119,26 @@
                             <div class="property-price">
                                 <div>
                                     <div class="price-amount">₹ 45,000</div>
-                                    <div class="price-unit">Per Month</div>
+                                    <div class="price-unit" data-i18n="properties.per_month">Per Month</div>
                                 </div>
                                 <a href="property-detail.html" class="btn btn-gold btn-sm">
-                                    View Details
+                                    <span data-i18n="properties.view_details">View Details</span>
                                 </a>
                             </div>
                             
                             <div class="property-meta">
                                 <span class="property-id">ID: NG-PR-004</span>
-                                <span class="property-date">3 days ago</span>
+                                <span class="property-date" data-i18n="properties.days_ago">3 days ago</span>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Property 5 -->
+                    <!-- Property 5 - Naroda Irish Penthouse -->
                     <div class="property-card" data-aos="fade-up" data-aos-delay="400">
                         <div class="property-image">
                             <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
                                  alt="Penthouse" loading="lazy">
-                            <div class="property-badge new">New Launch</div>
+                            <div class="property-badge new" data-i18n="properties.new_launch">New Launch</div>
                             <div class="property-actions">
                                 <button class="property-action-btn save-property" data-property="5" aria-label="Save property">
                                     <i class="far fa-heart"></i>
@@ -2144,15 +2149,15 @@
                             </div>
                         </div>
                         <div class="property-content">
-                            <h3 class="property-title">Premium Penthouse</h3>
+                            <h3 class="property-title" data-i18n="properties.irish_penthouse">Premium Penthouse</h3>
                             <div class="property-location">
                                 <i class="fas fa-map-marker-alt"></i>
-                                <span>Naroda Irish, Ahmedabad</span>
+                                <span data-i18n="properties.irish_location">Naroda Irish, Ahmedabad</span>
                             </div>
                             
                             <div class="property-status">
-                                <span class="status-badge construction">Under Construction</span>
-                                <span class="status-badge rera">RERA Approved</span>
+                                <span class="status-badge construction" data-i18n="properties.under_construction">Under Construction</span>
+                                <span class="status-badge rera" data-i18n="properties.rera_approved">RERA Approved</span>
                             </div>
                             
                             <div class="property-features">
@@ -2176,23 +2181,23 @@
                                     <div class="price-unit">1.8 Crores</div>
                                 </div>
                                 <a href="property-detail.html" class="btn btn-gold btn-sm">
-                                    View Details
+                                    <span data-i18n="properties.view_details">View Details</span>
                                 </a>
                             </div>
                             
                             <div class="property-meta">
                                 <span class="property-id">ID: NG-PR-005</span>
-                                <span class="property-date">Just Launched</span>
+                                <span class="property-date" data-i18n="properties.just_launched">Just Launched</span>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Property 6 -->
+                    <!-- Property 6 - Naroda Landmark Retail -->
                     <div class="property-card" data-aos="fade-up" data-aos-delay="500">
                         <div class="property-image">
                             <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80" 
-                                 alt="1 BHK Apartment" loading="lazy">
-                            <div class="property-badge rent">For Rent</div>
+                                 alt="Retail Shop" loading="lazy">
+                            <div class="property-badge" data-i18n="properties.for_sale">For Sale</div>
                             <div class="property-actions">
                                 <button class="property-action-btn save-property" data-property="6" aria-label="Save property">
                                     <i class="far fa-heart"></i>
@@ -2203,45 +2208,45 @@
                             </div>
                         </div>
                         <div class="property-content">
-                            <h3 class="property-title">1 BHK Studio Apartment</h3>
+                            <h3 class="property-title" data-i18n="properties.landmark_retail">Retail Shop Space</h3>
                             <div class="property-location">
                                 <i class="fas fa-map-marker-alt"></i>
-                                <span>Naroda Irish, Ahmedabad</span>
+                                <span data-i18n="properties.landmark_location">Naroda Landmark, Ahmedabad</span>
                             </div>
                             
                             <div class="property-status">
-                                <span class="status-badge ready">Ready to Move</span>
-                                <span class="status-badge rera">RERA Approved</span>
+                                <span class="status-badge ready" data-i18n="properties.ready_to_move">Ready to Move</span>
+                                <span class="status-badge rera" data-i18n="properties.rera_approved">RERA Approved</span>
                             </div>
                             
                             <div class="property-features">
                                 <div class="property-feature">
-                                    <i class="fas fa-bed"></i>
-                                    <span>1 Bed</span>
-                                </div>
-                                <div class="property-feature">
-                                    <i class="fas fa-bath"></i>
-                                    <span>1 Bath</span>
+                                    <i class="fas fa-store"></i>
+                                    <span data-i18n="properties.retail">Retail</span>
                                 </div>
                                 <div class="property-feature">
                                     <i class="fas fa-vector-square"></i>
                                     <span>800 sqft</span>
                                 </div>
+                                <div class="property-feature">
+                                    <i class="fas fa-parking"></i>
+                                    <span>1 Parking</span>
+                                </div>
                             </div>
                             
                             <div class="property-price">
                                 <div>
-                                    <div class="price-amount">₹ 18,000</div>
-                                    <div class="price-unit">Per Month</div>
+                                    <div class="price-amount">₹ 75,00,000</div>
+                                    <div class="price-unit">75 Lakhs</div>
                                 </div>
                                 <a href="property-detail.html" class="btn btn-gold btn-sm">
-                                    View Details
+                                    <span data-i18n="properties.view_details">View Details</span>
                                 </a>
                             </div>
                             
                             <div class="property-meta">
                                 <span class="property-id">ID: NG-PR-006</span>
-                                <span class="property-date">1 week ago</span>
+                                <span class="property-date" data-i18n="properties.week_ago">1 week ago</span>
                             </div>
                         </div>
                     </div>
@@ -2249,23 +2254,23 @@
                 
                 <!-- List View -->
                 <div class="properties-list" id="listView">
-                    <!-- List Item 1 -->
+                    <!-- List Item 1 - Naroda Irish 3BHK -->
                     <div class="property-list-item" data-aos="fade-up">
                         <div class="list-image">
                             <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
                                  alt="3 BHK Luxury Apartment" loading="lazy">
-                            <div class="property-badge">For Sale</div>
+                            <div class="property-badge" data-i18n="properties.for_sale">For Sale</div>
                         </div>
                         <div class="list-content">
-                            <h3 class="property-title">Premium 3 BHK Luxury Apartment</h3>
+                            <h3 class="property-title" data-i18n="properties.irish_3bhk">Premium 3 BHK Luxury Apartment</h3>
                             <div class="property-location">
                                 <i class="fas fa-map-marker-alt"></i>
-                                <span>Naroda Irish, Ahmedabad</span>
+                                <span data-i18n="properties.irish_location">Naroda Irish, Ahmedabad</span>
                             </div>
                             
                             <div class="property-status">
-                                <span class="status-badge ready">Ready to Move</span>
-                                <span class="status-badge rera">RERA Approved</span>
+                                <span class="status-badge ready" data-i18n="properties.ready_to_move">Ready to Move</span>
+                                <span class="status-badge rera" data-i18n="properties.rera_approved">RERA Approved</span>
                             </div>
                             
                             <div class="list-features">
@@ -2287,7 +2292,7 @@
                                 </div>
                             </div>
                             
-                            <p class="text-muted">
+                            <p class="text-muted" data-i18n="properties.irish_3bhk_desc">
                                 Spacious 3 BHK apartment with modern amenities, premium fittings, and 
                                 excellent connectivity. Perfect for family living.
                             </p>
@@ -2300,73 +2305,73 @@
                                     <i class="far fa-heart"></i>
                                 </button>
                                 <a href="property-detail.html" class="btn btn-gold btn-sm">
-                                    View Details
+                                    <span data-i18n="properties.view_details">View Details</span>
                                 </a>
                             </div>
                             <div class="property-meta mt-3">
                                 <div class="property-id">ID: NG-PR-001</div>
-                                <div class="property-date">2 days ago</div>
+                                <div class="property-date" data-i18n="properties.days_ago">2 days ago</div>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- List Item 2 -->
+                    <!-- List Item 2 - Naroda Landmark Commercial -->
                     <div class="property-list-item" data-aos="fade-up" data-aos-delay="100">
                         <div class="list-image">
-                            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-                                 alt="2 BHK Apartment" loading="lazy">
-                            <div class="property-badge">For Sale</div>
+                            <img src="https://images.unsplash.com/photo-1558036117-15e82a2c9a9a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                                 alt="Commercial Office Space" loading="lazy">
+                            <div class="property-badge" data-i18n="properties.for_sale">For Sale</div>
                         </div>
                         <div class="list-content">
-                            <h3 class="property-title">2 BHK Modern Apartment</h3>
+                            <h3 class="property-title" data-i18n="properties.landmark_commercial">Commercial Office Space</h3>
                             <div class="property-location">
                                 <i class="fas fa-map-marker-alt"></i>
-                                <span>Naroda Irish, Ahmedabad</span>
+                                <span data-i18n="properties.landmark_location">Naroda Landmark, Ahmedabad</span>
                             </div>
                             
                             <div class="property-status">
-                                <span class="status-badge ready">Ready to Move</span>
-                                <span class="status-badge rera">RERA Approved</span>
+                                <span class="status-badge ready" data-i18n="properties.ready_to_move">Ready to Move</span>
+                                <span class="status-badge rera" data-i18n="properties.rera_approved">RERA Approved</span>
                             </div>
                             
                             <div class="list-features">
                                 <div class="property-feature">
-                                    <i class="fas fa-bed"></i>
-                                    <span>2 Beds</span>
-                                </div>
-                                <div class="property-feature">
-                                    <i class="fas fa-bath"></i>
-                                    <span>2 Baths</span>
+                                    <i class="fas fa-building"></i>
+                                    <span data-i18n="properties.office">Office</span>
                                 </div>
                                 <div class="property-feature">
                                     <i class="fas fa-vector-square"></i>
-                                    <span>1200 sqft</span>
+                                    <span>2000 sqft</span>
                                 </div>
                                 <div class="property-feature">
-                                    <i class="fas fa-car"></i>
-                                    <span>1 Parking</span>
+                                    <i class="fas fa-parking"></i>
+                                    <span>4 Parking</span>
+                                </div>
+                                <div class="property-feature">
+                                    <i class="fas fa-elevator"></i>
+                                    <span data-i18n="properties.elevator">Elevator</span>
                                 </div>
                             </div>
                             
-                            <p class="text-muted">
-                                Modern 2 BHK apartment with premium amenities, spacious rooms, and 
-                                excellent natural lighting. Ideal for young professionals.
+                            <p class="text-muted" data-i18n="properties.landmark_commercial_desc">
+                                Premium office space with modern amenities, excellent connectivity, and 
+                                professional environment for businesses.
                             </p>
                         </div>
                         <div class="list-price">
-                            <div class="price-amount">₹ 65,00,000</div>
-                            <div class="price-unit mb-3">65 Lakhs</div>
+                            <div class="price-amount">₹ 2.5 Cr</div>
+                            <div class="price-unit mb-3">2.5 Crores</div>
                             <div class="d-flex gap-2">
-                                <button class="property-action-btn save-property" data-property="2" aria-label="Save property">
+                                <button class="property-action-btn save-property" data-property="3" aria-label="Save property">
                                     <i class="far fa-heart"></i>
                                 </button>
                                 <a href="property-detail.html" class="btn btn-gold btn-sm">
-                                    View Details
+                                    <span data-i18n="properties.view_details">View Details</span>
                                 </a>
                             </div>
                             <div class="property-meta mt-3">
-                                <div class="property-id">ID: NG-PR-002</div>
-                                <div class="property-date">5 days ago</div>
+                                <div class="property-id">ID: NG-PR-003</div>
+                                <div class="property-date" data-i18n="properties.week_ago">1 week ago</div>
                             </div>
                         </div>
                     </div>
@@ -2377,10 +2382,10 @@
                     <div class="no-results-icon">
                         <i class="fas fa-search"></i>
                     </div>
-                    <h3 class="mb-3">No Properties Found</h3>
-                    <p class="text-muted mb-4">We couldn't find any properties matching your criteria. Try adjusting your filters.</p>
+                    <h3 class="mb-3" data-i18n="properties.no_results_title">No Properties Found</h3>
+                    <p class="text-muted mb-4" data-i18n="properties.no_results_desc">We couldn't find any properties matching your criteria. Try adjusting your filters.</p>
                     <button class="btn btn-gold" id="resetFilters2">
-                        <i class="fas fa-redo me-2"></i> Reset Filters
+                        <i class="fas fa-redo me-2"></i> <span data-i18n="filter.reset_filters">Reset Filters</span>
                     </button>
                 </div>
             </div>
@@ -2417,22 +2422,22 @@
                 <div class="row">
                     <div class="col-lg-8 mx-auto text-center">
                         <h2 class="text-white mb-4" data-aos="fade-up">
-                            Can't Find Your <span class="gold-text">Dream Property?</span>
+                            <span data-i18n="cta.title.part1">Can't Find Your</span> <span class="gold-text" data-i18n="cta.title.part2">Dream Property?</span>
                         </h2>
-                        <p class="text-white-50 mb-5" data-aos="fade-up" data-aos-delay="100">
+                        <p class="text-white-50 mb-5" data-aos="fade-up" data-aos-delay="100" data-i18n="cta.subtitle">
                             Let our experts help you find the perfect property. We'll match your requirements 
                             with our available listings and upcoming projects.
                         </p>
                         
                         <div class="d-flex flex-column flex-sm-row justify-content-center gap-4" data-aos="fade-up" data-aos-delay="200">
                             <a href="contact.html" class="btn btn-gold btn-lg">
-                                <i class="fas fa-headset me-2"></i> Talk to Expert
+                                <i class="fas fa-headset me-2"></i> <span data-i18n="cta.btn1">Talk to Expert</span>
                             </a>
                             <a href="contact.html" class="btn btn-outline-light btn-lg">
-                                <i class="fas fa-bell me-2"></i> Get Notifications
+                                <i class="fas fa-bell me-2"></i> <span data-i18n="cta.btn2">Get Notifications</span>
                             </a>
                             <a href="tel:+919876543210" class="btn btn-emerald btn-lg">
-                                <i class="fas fa-phone me-2"></i> Call Now
+                                <i class="fas fa-phone me-2"></i> <span data-i18n="cta.btn3">Call Now</span>
                             </a>
                         </div>
                     </div>
@@ -2452,7 +2457,7 @@
                             Naroda <span class="gold-text">Group</span>
                         </a>
                     </div>
-                    <p class="mb-4">
+                    <p class="mb-4" data-i18n="footer.description">
                         Creating landmark properties that redefine excellence. From premium commercial spaces 
                         to luxury residential living, we build dreams with quality and commitment.
                     </p>
@@ -2477,59 +2482,59 @@
                 </div>
                 
                 <div class="col-lg-2 col-md-6">
-                    <h3 class="footer-title">Quick Links</h3>
+                    <h3 class="footer-title" data-i18n="footer.quick_links">Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
-                        <li><a href="projects.html"><i class="fas fa-chevron-right"></i> Projects</a></li>
-                        <li><a href="properties.html"><i class="fas fa-chevron-right"></i> Properties</a></li>
-                        <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
-                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.home">Home</span></a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.about">About Us</span></a></li>
+                        <li><a href="projects.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.projects">Projects</span></a></li>
+                        <li><a href="properties.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.properties">Properties</span></a></li>
+                        <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.gallery">Gallery</span></a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.contact">Contact</span></a></li>
                     </ul>
                 </div>
                 
                 <div class="col-lg-3 col-md-6">
-                    <h3 class="footer-title">Our Projects</h3>
+                    <h3 class="footer-title" data-i18n="footer.our_projects">Our Projects</h3>
                     <a href="projects-landmark.html" class="project-mini-card">
-                        <h6 class="text-white mb-1">Naroda Landmark</h6>
-                        <p class="small text-muted mb-0">Premium Commercial Spaces</p>
+                        <h6 class="text-white mb-1" data-i18n="nav.landmark">Naroda Landmark</h6>
+                        <p class="small text-muted mb-0" data-i18n="footer.landmark_desc">Premium Commercial Spaces</p>
                     </a>
                     <a href="projects-irish.html" class="project-mini-card">
-                        <h6 class="text-white mb-1">Naroda Irish</h6>
-                        <p class="small text-muted mb-0">Luxury Residential Living</p>
+                        <h6 class="text-white mb-1" data-i18n="nav.irish">Naroda Irish</h6>
+                        <p class="small text-muted mb-0" data-i18n="footer.irish_desc">Luxury Residential Living</p>
                     </a>
                     <a href="projects.html" class="project-mini-card">
-                        <h6 class="text-white mb-1">View All Projects</h6>
-                        <p class="small text-muted mb-0">Explore our portfolio</p>
+                        <h6 class="text-white mb-1" data-i18n="footer.view_all_projects">View All Projects</h6>
+                        <p class="small text-muted mb-0" data-i18n="footer.explore_portfolio">Explore our portfolio</p>
                     </a>
                 </div>
                 
                 <div class="col-lg-3 col-md-6">
-                    <h3 class="footer-title">Contact Info</h3>
+                    <h3 class="footer-title" data-i18n="footer.contact_info">Contact Info</h3>
                     <div class="contact-info">
                         <i class="fas fa-phone"></i>
                         <div>
-                            <h6 class="text-white mb-1">Phone Number</h6>
+                            <h6 class="text-white mb-1" data-i18n="footer.phone">Phone Number</h6>
                             <p class="mb-0">+91 98765 43210</p>
-                            <small class="text-muted">Mon - Sat: 10 AM - 7 PM</small>
+                            <small class="text-muted" data-i18n="footer.phone_hours">Mon - Sat: 10 AM - 7 PM</small>
                         </div>
                     </div>
                     
                     <div class="contact-info">
                         <i class="fas fa-envelope"></i>
                         <div>
-                            <h6 class="text-white mb-1">Email Address</h6>
+                            <h6 class="text-white mb-1" data-i18n="footer.email">Email Address</h6>
                             <p class="mb-0">info@narodagroup.com</p>
-                            <small class="text-muted">We reply within 24 hours</small>
+                            <small class="text-muted" data-i18n="footer.email_response">We reply within 24 hours</small>
                         </div>
                     </div>
                     
                     <div class="contact-info">
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
-                            <h6 class="text-white mb-1">Office Address</h6>
-                            <p class="mb-0">Naroda - Bhat Road</p>
-                            <small class="text-muted">Ahmedabad, Gujarat 382330</small>
+                            <h6 class="text-white mb-1" data-i18n="footer.address">Office Address</h6>
+                            <p class="mb-0" data-i18n="footer.address_line1">Naroda - Bhat Road</p>
+                            <small class="text-muted" data-i18n="footer.address_line2">Ahmedabad, Gujarat 382330</small>
                         </div>
                     </div>
                 </div>
@@ -2538,12 +2543,12 @@
             <div class="copyright">
                 <div class="row align-items-center">
                     <div class="col-md-6">
-                        <p class="mb-0">&copy; 2025 Naroda Group. All rights reserved.</p>
+                        <p class="mb-0">&copy; 2025 Naroda Group. <span data-i18n="footer.rights">All rights reserved.</span></p>
                     </div>
                     <div class="col-md-6 text-md-end">
-                        <a href="privacy.html" class="text-muted me-3">Privacy Policy</a>
-                        <a href="terms.html" class="text-muted me-3">Terms of Service</a>
-                        <a href="rera.html" class="text-muted">RERA Registration</a>
+                        <a href="privacy.html" class="text-muted me-3" data-i18n="footer.privacy">Privacy Policy</a>
+                        <a href="terms.html" class="text-muted me-3" data-i18n="footer.terms">Terms of Service</a>
+                        <a href="rera.html" class="text-muted" data-i18n="footer.rera">RERA Registration</a>
                     </div>
                 </div>
             </div>
@@ -2558,6 +2563,450 @@
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <!-- NoUiSlider JS -->
     <script src="https://cdn.jsdelivr.net/npm/nouislider@15.6.0/dist/nouislider.min.js"></script>
+
+    <!-- Translation Data -->
+    <script>
+        const translations = {
+            en: {
+                // Navigation
+                "nav.home": "Home",
+                "nav.about": "About",
+                "nav.projects": "Projects",
+                "nav.landmark": "Naroda Landmark",
+                "nav.irish": "Naroda Irish",
+                "nav.all_projects": "All Projects",
+                "nav.properties": "Properties",
+                "nav.buy": "Buy",
+                "nav.rent": "Rent",
+                "nav.property_details": "Property Details",
+                "nav.gallery": "Gallery",
+                "nav.more": "More",
+                "nav.blog": "Blog",
+                "nav.news": "News",
+                "nav.careers": "Careers",
+                "nav.team": "Our Team",
+                "nav.faq": "FAQ",
+                "nav.contact": "Contact",
+                "nav.login": "Login",
+                "nav.search": "Search",
+                "nav.account": "Account",
+                
+                // Hero Section
+                "hero.title.part1": "Find Your",
+                "hero.title.part2": "Dream Property",
+                "hero.subtitle": "Browse our premium selection of residential and commercial properties. Find the perfect space that matches your lifestyle and aspirations.",
+                "hero.btn1": "Search Properties",
+                "hero.btn2": "Talk to Expert",
+                
+                // Filter Section
+                "filter.show_filters": "Show Filters",
+                "filter.tab1": "Buy Properties",
+                "filter.tab2": "Rent Properties",
+                "filter.tab3": "Commercial",
+                "filter.location": "Location",
+                "filter.all_locations": "All Locations",
+                "filter.naroda_irish": "Naroda Irish",
+                "filter.naroda_landmark": "Naroda Landmark",
+                "filter.east_ahmedabad": "East Ahmedabad",
+                "filter.west_ahmedabad": "West Ahmedabad",
+                "filter.south_ahmedabad": "South Ahmedabad",
+                "filter.property_type": "Property Type",
+                "filter.all_types": "All Types",
+                "filter.apartment": "Apartment",
+                "filter.villa": "Villa",
+                "filter.office": "Office Space",
+                "filter.shop": "Shop/Retail",
+                "filter.plot": "Plot/Land",
+                "filter.bedrooms": "Bedrooms",
+                "filter.any": "Any",
+                "filter.budget": "Budget (₹)",
+                "filter.min_price": "Min Price",
+                "filter.max_price": "Max Price",
+                "filter.to": "to",
+                "filter.advanced_filters": "Advanced Filters",
+                "filter.area": "Area (Sq. Ft.)",
+                "filter.min": "Min",
+                "filter.max": "Max",
+                "filter.furnishing": "Furnishing",
+                "filter.fully_furnished": "Fully Furnished",
+                "filter.semi_furnished": "Semi Furnished",
+                "filter.unfurnished": "Unfurnished",
+                "filter.possession": "Possession Status",
+                "filter.ready_to_move": "Ready to Move",
+                "filter.under_construction": "Under Construction",
+                "filter.new_launch": "New Launch",
+                "filter.swimming_pool": "Swimming Pool",
+                "filter.gym": "Gymnasium",
+                "filter.parking": "Parking",
+                "filter.security": "24/7 Security",
+                "filter.garden": "Garden/Park",
+                "filter.power_backup": "Power Backup",
+                "filter.rera": "RERA Approved",
+                "filter.loan": "Loan Available",
+                "filter.search_properties": "Search Properties",
+                "filter.reset_filters": "Reset Filters",
+                "filter.save_search": "Save Search",
+                
+                // Properties Section
+                "properties.featured": "Featured",
+                "properties.properties": "Properties",
+                "properties.showing": "Showing",
+                "properties.sort_by": "Sort by:",
+                "properties.newest": "Newest First",
+                "properties.price_low": "Price: Low to High",
+                "properties.price_high": "Price: High to Low",
+                "properties.area": "Area: Large to Small",
+                "properties.featured_first": "Featured First",
+                "properties.for_sale": "For Sale",
+                "properties.for_rent": "For Rent",
+                "properties.new_launch": "New Launch",
+                "properties.ready_to_move": "Ready to Move",
+                "properties.under_construction": "Under Construction",
+                "properties.rera_approved": "RERA Approved",
+                "properties.view_details": "View Details",
+                "properties.days_ago": "days ago",
+                "properties.week_ago": "week ago",
+                "properties.just_launched": "Just Launched",
+                "properties.per_month": "Per Month",
+                "properties.irish_3bhk": "Premium 3 BHK Luxury Apartment",
+                "properties.irish_location": "Naroda Irish, Ahmedabad",
+                "properties.landmark_commercial": "Commercial Office Space",
+                "properties.landmark_location": "Naroda Landmark, Ahmedabad",
+                "properties.irish_2bhk": "2 BHK Modern Apartment",
+                "properties.irish_villa": "4 BHK Luxury Villa",
+                "properties.irish_penthouse": "Premium Penthouse",
+                "properties.landmark_retail": "Retail Shop Space",
+                "properties.office": "Office",
+                "properties.retail": "Retail",
+                "properties.elevator": "Elevator",
+                "properties.irish_3bhk_desc": "Spacious 3 BHK apartment with modern amenities, premium fittings, and excellent connectivity. Perfect for family living.",
+                "properties.landmark_commercial_desc": "Premium office space with modern amenities, excellent connectivity, and professional environment for businesses.",
+                "properties.no_results_title": "No Properties Found",
+                "properties.no_results_desc": "We couldn't find any properties matching your criteria. Try adjusting your filters.",
+                
+                // CTA Section
+                "cta.title.part1": "Can't Find Your",
+                "cta.title.part2": "Dream Property?",
+                "cta.subtitle": "Let our experts help you find the perfect property. We'll match your requirements with our available listings and upcoming projects.",
+                "cta.btn1": "Talk to Expert",
+                "cta.btn2": "Get Notifications",
+                "cta.btn3": "Call Now",
+                
+                // Footer
+                "footer.description": "Creating landmark properties that redefine excellence. From premium commercial spaces to luxury residential living, we build dreams with quality and commitment.",
+                "footer.quick_links": "Quick Links",
+                "footer.our_projects": "Our Projects",
+                "footer.landmark_desc": "Premium Commercial Spaces",
+                "footer.irish_desc": "Luxury Residential Living",
+                "footer.view_all_projects": "View All Projects",
+                "footer.explore_portfolio": "Explore our portfolio",
+                "footer.contact_info": "Contact Info",
+                "footer.phone": "Phone Number",
+                "footer.phone_hours": "Mon - Sat: 10 AM - 7 PM",
+                "footer.email": "Email Address",
+                "footer.email_response": "We reply within 24 hours",
+                "footer.address": "Office Address",
+                "footer.address_line1": "Naroda - Bhat Road",
+                "footer.address_line2": "Ahmedabad, Gujarat 382330",
+                "footer.rights": "All rights reserved.",
+                "footer.privacy": "Privacy Policy",
+                "footer.terms": "Terms of Service",
+                "footer.rera": "RERA Registration"
+            },
+            hi: {
+                // Navigation
+                "nav.home": "होम",
+                "nav.about": "हमारे बारे में",
+                "nav.projects": "प्रोजेक्ट्स",
+                "nav.landmark": "नरोड़ा लैंडमार्क",
+                "nav.irish": "नरोड़ा आयरिश",
+                "nav.all_projects": "सभी प्रोजेक्ट्स",
+                "nav.properties": "संपत्तियाँ",
+                "nav.buy": "खरीदें",
+                "nav.rent": "किराए पर लें",
+                "nav.property_details": "संपत्ति विवरण",
+                "nav.gallery": "गैलरी",
+                "nav.more": "अधिक",
+                "nav.blog": "ब्लॉग",
+                "nav.news": "समाचार",
+                "nav.careers": "करियर",
+                "nav.team": "हमारी टीम",
+                "nav.faq": "सामान्य प्रश्न",
+                "nav.contact": "संपर्क करें",
+                "nav.login": "लॉगिन",
+                "nav.search": "खोजें",
+                "nav.account": "खाता",
+                
+                // Hero Section
+                "hero.title.part1": "अपना",
+                "hero.title.part2": "ड्रीम प्रॉपर्टी खोजें",
+                "hero.subtitle": "हमारे प्रीमियम रेजिडेंशियल और कमर्शियल प्रॉपर्टीज के संग्रह को ब्राउज़ करें। वह सही स्पेस खोजें जो आपकी लाइफस्टाइल और आकांक्षाओं से मेल खाता हो।",
+                "hero.btn1": "प्रॉपर्टीज खोजें",
+                "hero.btn2": "विशेषज्ञ से बात करें",
+                
+                // Filter Section
+                "filter.show_filters": "फिल्टर दिखाएं",
+                "filter.tab1": "प्रॉपर्टीज खरीदें",
+                "filter.tab2": "प्रॉपर्टीज किराए पर लें",
+                "filter.tab3": "कमर्शियल",
+                "filter.location": "लोकेशन",
+                "filter.all_locations": "सभी लोकेशन",
+                "filter.naroda_irish": "नरोड़ा आयरिश",
+                "filter.naroda_landmark": "नरोड़ा लैंडमार्क",
+                "filter.east_ahmedabad": "पूर्व अहमदाबाद",
+                "filter.west_ahmedabad": "पश्चिम अहमदाबाद",
+                "filter.south_ahmedabad": "दक्षिण अहमदाबाद",
+                "filter.property_type": "प्रॉपर्टी प्रकार",
+                "filter.all_types": "सभी प्रकार",
+                "filter.apartment": "अपार्टमेंट",
+                "filter.villa": "विला",
+                "filter.office": "ऑफिस स्पेस",
+                "filter.shop": "शॉप/रेटेल",
+                "filter.plot": "प्लॉट/जमीन",
+                "filter.bedrooms": "बेडरूम",
+                "filter.any": "कोई भी",
+                "filter.budget": "बजट (₹)",
+                "filter.min_price": "न्यूनतम मूल्य",
+                "filter.max_price": "अधिकतम मूल्य",
+                "filter.to": "से",
+                "filter.advanced_filters": "एडवांस्ड फिल्टर",
+                "filter.area": "क्षेत्रफल (वर्ग फुट)",
+                "filter.min": "न्यूनतम",
+                "filter.max": "अधिकतम",
+                "filter.furnishing": "फर्निशिंग",
+                "filter.fully_furnished": "पूरी तरह से फर्निश्ड",
+                "filter.semi_furnished": "आंशिक रूप से फर्निश्ड",
+                "filter.unfurnished": "अनफर्निश्ड",
+                "filter.possession": "कब्जा स्थिति",
+                "filter.ready_to_move": "तुरंत रहने के लिए तैयार",
+                "filter.under_construction": "निर्माणाधीन",
+                "filter.new_launch": "नया लॉन्च",
+                "filter.swimming_pool": "स्विमिंग पूल",
+                "filter.gym": "जिम",
+                "filter.parking": "पार्किंग",
+                "filter.security": "24/7 सुरक्षा",
+                "filter.garden": "गार्डन/पार्क",
+                "filter.power_backup": "पावर बैकअप",
+                "filter.rera": "RERA अनुमोदित",
+                "filter.loan": "लोन उपलब्ध",
+                "filter.search_properties": "प्रॉपर्टीज खोजें",
+                "filter.reset_filters": "फिल्टर रीसेट करें",
+                "filter.save_search": "खोज सहेजें",
+                
+                // Properties Section
+                "properties.featured": "फीचर्ड",
+                "properties.properties": "प्रॉपर्टीज",
+                "properties.showing": "दिखा रहा है",
+                "properties.sort_by": "क्रमबद्ध करें:",
+                "properties.newest": "नवीनतम पहले",
+                "properties.price_low": "मूल्य: कम से ज्यादा",
+                "properties.price_high": "मूल्य: ज्यादा से कम",
+                "properties.area": "क्षेत्रफल: बड़ा से छोटा",
+                "properties.featured_first": "फीचर्ड पहले",
+                "properties.for_sale": "बिक्री के लिए",
+                "properties.for_rent": "किराए के लिए",
+                "properties.new_launch": "नया लॉन्च",
+                "properties.ready_to_move": "तुरंत रहने के लिए तैयार",
+                "properties.under_construction": "निर्माणाधीन",
+                "properties.rera_approved": "RERA अनुमोदित",
+                "properties.view_details": "विवरण देखें",
+                "properties.days_ago": "दिन पहले",
+                "properties.week_ago": "सप्ताह पहले",
+                "properties.just_launched": "अभी लॉन्च हुआ",
+                "properties.per_month": "प्रति माह",
+                "properties.irish_3bhk": "प्रीमियम 3 बीएचके लग्ज़री अपार्टमेंट",
+                "properties.irish_location": "नरोड़ा आयरिश, अहमदाबाद",
+                "properties.landmark_commercial": "कमर्शियल ऑफिस स्पेस",
+                "properties.landmark_location": "नरोड़ा लैंडमार्क, अहमदाबाद",
+                "properties.irish_2bhk": "2 बीएचके मॉडर्न अपार्टमेंट",
+                "properties.irish_villa": "4 बीएचके लग्ज़री विला",
+                "properties.irish_penthouse": "प्रीमियम पेंटहाउस",
+                "properties.landmark_retail": "रेटेल शॉप स्पेस",
+                "properties.office": "ऑफिस",
+                "properties.retail": "रेटेल",
+                "properties.elevator": "लिफ्ट",
+                "properties.irish_3bhk_desc": "आधुनिक सुविधाओं, प्रीमियम फिटिंग्स और उत्कृष्ट कनेक्टिविटी के साथ विशाल 3 बीएचके अपार्टमेंट। परिवार के रहने के लिए आदर्श।",
+                "properties.landmark_commercial_desc": "आधुनिक सुविधाओं, उत्कृष्ट कनेक्टिविटी और व्यवसायों के लिए पेशेवर वातावरण के साथ प्रीमियम ऑफिस स्पेस।",
+                "properties.no_results_title": "कोई प्रॉपर्टी नहीं मिली",
+                "properties.no_results_desc": "हमें आपकी कसौटी पर खरी उतरने वाली कोई प्रॉपर्टी नहीं मिली। अपने फिल्टर समायोजित करने का प्रयास करें।",
+                
+                // CTA Section
+                "cta.title.part1": "अपनी",
+                "cta.title.part2": "ड्रीम प्रॉपर्टी नहीं मिल रही?",
+                "cta.subtitle": "हमारे विशेषज्ञ आपको सही प्रॉपर्टी खोजने में मदद करेंगे। हम आपकी आवश्यकताओं को हमारी उपलब्ध लिस्टिंग्स और आगामी प्रोजेक्ट्स से मिलाएंगे।",
+                "cta.btn1": "विशेषज्ञ से बात करें",
+                "cta.btn2": "सूचनाएं प्राप्त करें",
+                "cta.btn3": "अभी कॉल करें",
+                
+                // Footer
+                "footer.description": "लैंडमार्क प्रॉपर्टीज बनाना जो उत्कृष्टता को पुनर्परिभाषित करती हैं। प्रीमियम कमर्शियल स्पेस से लेकर लग्ज़री रेजिडेंशियल लिविंग तक, हम गुणवत्ता और प्रतिबद्धता के साथ सपने बनाते हैं।",
+                "footer.quick_links": "त्वरित लिंक",
+                "footer.our_projects": "हमारे प्रोजेक्ट्स",
+                "footer.landmark_desc": "प्रीमियम कमर्शियल स्पेस",
+                "footer.irish_desc": "लग्ज़री रेजिडेंशियल लिविंग",
+                "footer.view_all_projects": "सभी प्रोजेक्ट्स देखें",
+                "footer.explore_portfolio": "हमारे पोर्टफोलियो का अन्वेषण करें",
+                "footer.contact_info": "संपर्क जानकारी",
+                "footer.phone": "फोन नंबर",
+                "footer.phone_hours": "सोम - शनि: सुबह 10 - शाम 7 बजे",
+                "footer.email": "ईमेल पता",
+                "footer.email_response": "हम 24 घंटे के भीतर जवाब देते हैं",
+                "footer.address": "कार्यालय पता",
+                "footer.address_line1": "नरोड़ा - भाट रोड",
+                "footer.address_line2": "अहमदाबाद, गुजरात 382330",
+                "footer.rights": "सर्वाधिकार सुरक्षित।",
+                "footer.privacy": "गोपनीयता नीति",
+                "footer.terms": "सेवा की शर्तें",
+                "footer.rera": "RERA पंजीकरण"
+            },
+            gu: {
+                // Navigation
+                "nav.home": "હોમ",
+                "nav.about": "અમારા વિશે",
+                "nav.projects": "પ્રોજેક્ટ્સ",
+                "nav.landmark": "નરોડા લેન્ડમાર્ક",
+                "nav.irish": "નરોડા આયરિશ",
+                "nav.all_projects": "બધા પ્રોજેક્ટ્સ",
+                "nav.properties": "પ્રોપર્ટીઝ",
+                "nav.buy": "ખરીદો",
+                "nav.rent": "ભાડે લો",
+                "nav.property_details": "પ્રોપર્ટી વિગતો",
+                "nav.gallery": "ગેલેરી",
+                "nav.more": "વધુ",
+                "nav.blog": "બ્લોગ",
+                "nav.news": "સમાચાર",
+                "nav.careers": "કરિયર",
+                "nav.team": "અમારી ટીમ",
+                "nav.faq": "સામાન્ય પ્રશ્નો",
+                "nav.contact": "સંપર્ક કરો",
+                "nav.login": "લોગિન",
+                "nav.search": "શોધો",
+                "nav.account": "એકાઉન્ટ",
+                
+                // Hero Section
+                "hero.title.part1": "તમારી",
+                "hero.title.part2": "ડ્રીમ પ્રોપર્ટી શોધો",
+                "hero.subtitle": "અમારી પ્રીમિયમ રેસિડેન્શિયલ અને કોમર્શિયલ પ્રોપર્ટીઝના સંગ્રહને બ્રાઉઝ કરો. તે સંપૂર્ણ સ્પેસ શોધો જે તમારી લાઇફસ્ટાઇલ અને આકાંક્ષાઓ સાથે મેળ ખાતી હોય.",
+                "hero.btn1": "પ્રોપર્ટીઝ શોધો",
+                "hero.btn2": "નિષ્ણાત સાથે વાત કરો",
+                
+                // Filter Section
+                "filter.show_filters": "ફિલ્ટર્સ બતાવો",
+                "filter.tab1": "પ્રોપર્ટીઝ ખરીદો",
+                "filter.tab2": "પ્રોપર્ટીઝ ભાડે લો",
+                "filter.tab3": "કોમર્શિયલ",
+                "filter.location": "સ્થાન",
+                "filter.all_locations": "બધા સ્થાનો",
+                "filter.naroda_irish": "નરોડા આયરિશ",
+                "filter.naroda_landmark": "નરોડા લેન્ડમાર્ક",
+                "filter.east_ahmedabad": "પૂર્વ અમદાવાદ",
+                "filter.west_ahmedabad": "પશ્ચિમ અમદાવાદ",
+                "filter.south_ahmedabad": "દક્ષિણ અમદાવાદ",
+                "filter.property_type": "પ્રોપર્ટી પ્રકાર",
+                "filter.all_types": "બધા પ્રકાર",
+                "filter.apartment": "એપાર્ટમેન્ટ",
+                "filter.villa": "વિલા",
+                "filter.office": "ઓફિસ સ્પેસ",
+                "filter.shop": "શોપ/રીટેલ",
+                "filter.plot": "પ્લોટ/જમીન",
+                "filter.bedrooms": "બેડરૂમ",
+                "filter.any": "કોઈપણ",
+                "filter.budget": "બજેટ (₹)",
+                "filter.min_price": "ન્યૂનતમ કિંમત",
+                "filter.max_price": "વધુમાં વધુ કિંમત",
+                "filter.to": "થી",
+                "filter.advanced_filters": "એડવાન્સ ફિલ્ટર્સ",
+                "filter.area": "વિસ્તાર (ચોરસ ફૂટ)",
+                "filter.min": "ન્યૂનતમ",
+                "filter.max": "વધુમાં વધુ",
+                "filter.furnishing": "ફર્નિશિંગ",
+                "filter.fully_furnished": "સંપૂર્ણ ફર્નિશ્ડ",
+                "filter.semi_furnished": "અર્ધ-ફર્નિશ્ડ",
+                "filter.unfurnished": "અનફર્નિશ્ડ",
+                "filter.possession": "કબ્જાની સ્થિતિ",
+                "filter.ready_to_move": "રહેવા માટે તૈયાર",
+                "filter.under_construction": "બાંધકામ ચાલુ",
+                "filter.new_launch": "નવું લોન્ચ",
+                "filter.swimming_pool": "સ્વિમિંગ પુલ",
+                "filter.gym": "જિમ",
+                "filter.parking": "પાર્કિંગ",
+                "filter.security": "24/7 સુરક્ષા",
+                "filter.garden": "ગાર્ડન/પાર્ક",
+                "filter.power_backup": "પાવર બેકઅપ",
+                "filter.rera": "RERA મંજૂર",
+                "filter.loan": "લોન ઉપલબ્ધ",
+                "filter.search_properties": "પ્રોપર્ટીઝ શોધો",
+                "filter.reset_filters": "ફિલ્ટર રીસેટ કરો",
+                "filter.save_search": "શોધ સાચવો",
+                
+                // Properties Section
+                "properties.featured": "ફીચર્ડ",
+                "properties.properties": "પ્રોપર્ટીઝ",
+                "properties.showing": "બતાવે છે",
+                "properties.sort_by": "સૉર્ટ કરો:",
+                "properties.newest": "નવીનતમ પ્રથમ",
+                "properties.price_low": "કિંમત: ઓછી થી વધુ",
+                "properties.price_high": "કિંમત: વધુ થી ઓછી",
+                "properties.area": "વિસ્તાર: મોટું થી નાનું",
+                "properties.featured_first": "ફીચર્ડ પ્રથમ",
+                "properties.for_sale": "વેચાણ માટે",
+                "properties.for_rent": "ભાડા માટે",
+                "properties.new_launch": "નવું લોન્ચ",
+                "properties.ready_to_move": "રહેવા માટે તૈયાર",
+                "properties.under_construction": "બાંધકામ ચાલુ",
+                "properties.rera_approved": "RERA મંજૂર",
+                "properties.view_details": "વિગતો જુઓ",
+                "properties.days_ago": "દિવસ પહેલા",
+                "properties.week_ago": "અઠવાડિયા પહેલા",
+                "properties.just_launched": "હમણાં જ લોન્ચ થયું",
+                "properties.per_month": "મહિનાના",
+                "properties.irish_3bhk": "પ્રીમિયમ 3 બીએચકે લગ્ઝરી એપાર્ટમેન્ટ",
+                "properties.irish_location": "નરોડા આયરિશ, અમદાવાદ",
+                "properties.landmark_commercial": "કોમર્શિયલ ઓફિસ સ્પેસ",
+                "properties.landmark_location": "નરોડા લેન્ડમાર્ક, અમદાવાદ",
+                "properties.irish_2bhk": "2 બીએચકે મોડર્ન એપાર્ટમેન્ટ",
+                "properties.irish_villa": "4 બીએચકે લગ્ઝરી વિલા",
+                "properties.irish_penthouse": "પ્રીમિયમ પેન્ટહાઉસ",
+                "properties.landmark_retail": "રીટેલ શોપ સ્પેસ",
+                "properties.office": "ઓફિસ",
+                "properties.retail": "રીટેલ",
+                "properties.elevator": "લિફ્ટ",
+                "properties.irish_3bhk_desc": "આધુનિક સુવિધાઓ, પ્રીમિયમ ફિટિંગ્સ અને ઉત્તમ કનેક્ટિવિટી સાથે વિશાળ 3 બીએચકે એપાર્ટમેન્ટ. પરિવારની રહેણીક માટે આદર્શ.",
+                "properties.landmark_commercial_desc": "આધુનિક સુવિધાઓ, ઉત્તમ કનેક્ટિવિટી અને વ્યવસાયો માટે પ્રોફેશનલ વાતાવરણ સાથે પ્રીમિયમ ઓફિસ સ્પેસ.",
+                "properties.no_results_title": "કોઈ પ્રોપર્ટી મળી નથી",
+                "properties.no_results_desc": "અમને તમારા માપદંડ સાથે મેળ ખાતી કોઈ પ્રોપર્ટી મળી નથી. તમારા ફિલ્ટર સમાયોજિત કરવાનો પ્રયાસ કરો.",
+                
+                // CTA Section
+                "cta.title.part1": "તમારી",
+                "cta.title.part2": "ડ્રીમ પ્રોપર્ટી શોધી શકતા નથી?",
+                "cta.subtitle": "અમારા નિષ્ણાતો તમને સંપૂર્ણ પ્રોપર્ટી શોધવામાં મદદ કરશે. અમે તમારી જરૂરિયાતો અમારી ઉપલબ્ધ લિસ્ટિંગ્સ અને આગામી પ્રોજેક્ટ્સ સાથે મેળ ખાઇશું.",
+                "cta.btn1": "નિષ્ણાત સાથે વાત કરો",
+                "cta.btn2": "સૂચનાઓ મેળવો",
+                "cta.btn3": "હમણાં જ કૉલ કરો",
+                
+                // Footer
+                "footer.description": "લેન્ડમાર્ક પ્રોપર્ટીઝ બનાવવી જે શ્રેષ્ઠતાને ફરીથી વ્યાખ્યાયિત કરે છે. પ્રીમિયમ કોમર્શિયલ સ્પેસથી લગ્ઝરી રેસિડેન્શિયલ લિવિંગ સુધી, અમે ગુણવત્તા અને પ્રતિબદ્ધતા સાથે સપના બનાવીએ છીએ.",
+                "footer.quick_links": "ઝડપી લિંક્સ",
+                "footer.our_projects": "અમારા પ્રોજેક્ટ્સ",
+                "footer.landmark_desc": "પ્રીમિયમ કોમર્શિયલ સ્પેસ",
+                "footer.irish_desc": "લગ્ઝરી રેસિડેન્શિયલ લિવિંગ",
+                "footer.view_all_projects": "બધા પ્રોજેક્ટ્સ જુઓ",
+                "footer.explore_portfolio": "અમારા પોર્ટફોલિયોનું અન્વેષણ કરો",
+                "footer.contact_info": "સંપર્ક માહિતી",
+                "footer.phone": "ફોન નંબર",
+                "footer.phone_hours": "સોમ - શનિ: સવારે 10 - સાંજે 7 વાગ્યા",
+                "footer.email": "ઇમેઇલ એડ્રેસ",
+                "footer.email_response": "અમે 24 કલાકમાં જવાબ આપીએ છીએ",
+                "footer.address": "ઓફિસ સરનામું",
+                "footer.address_line1": "નરોડા - ભાટ રોડ",
+                "footer.address_line2": "અમદાવાદ, ગુજરાત 382330",
+                "footer.rights": "બધા હક્કો આરક્ષિત.",
+                "footer.privacy": "ગોપનીયતા નીતિ",
+                "footer.terms": "સેવાની શરતો",
+                "footer.rera": "RERA રજિસ્ટ્રેશન"
+            }
+        };
+    </script>
 
     <script>
         // Wait for page to load
@@ -2578,6 +3027,73 @@
                     preloader.style.display = 'none';
                 }, 500);
             }, 1000);
+            
+            // Language switching functionality
+            const languageSelectors = document.querySelectorAll('.language-selector');
+            const currentLanguageElement = document.getElementById('currentLanguage');
+            
+            // Load saved language from localStorage or default to English
+            let currentLang = localStorage.getItem('preferredLanguage') || 'en';
+            
+            // Apply language on page load
+            applyLanguage(currentLang);
+            
+            // Set up language selector event listeners
+            languageSelectors.forEach(selector => {
+                selector.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const lang = this.getAttribute('data-lang');
+                    setLanguage(lang);
+                });
+            });
+            
+            function setLanguage(lang) {
+                currentLang = lang;
+                localStorage.setItem('preferredLanguage', lang);
+                applyLanguage(lang);
+                showToast(getLanguageChangedMessage(lang), 'success');
+            }
+            
+            function getLanguageChangedMessage(lang) {
+                const messages = {
+                    'en': 'Language changed to English',
+                    'hi': 'भाषा हिंदी में बदल गई',
+                    'gu': 'ભાષા ગુજરાતીમાં બદલાઈ ગઈ'
+                };
+                return messages[lang] || 'Language changed';
+            }
+            
+            function applyLanguage(lang) {
+                // Update current language display
+                currentLanguageElement.textContent = getLanguageCode(lang);
+                
+                // Apply translations
+                const elements = document.querySelectorAll('[data-i18n]');
+                elements.forEach(element => {
+                    const key = element.getAttribute('data-i18n');
+                    if (translations[lang] && translations[lang][key]) {
+                        element.textContent = translations[lang][key];
+                    }
+                });
+                
+                // Update placeholders
+                const placeholders = document.querySelectorAll('[data-i18n-placeholder]');
+                placeholders.forEach(element => {
+                    const key = element.getAttribute('data-i18n-placeholder');
+                    if (translations[lang] && translations[lang][key]) {
+                        element.setAttribute('placeholder', translations[lang][key]);
+                    }
+                });
+            }
+            
+            function getLanguageCode(code) {
+                const codes = {
+                    'en': 'EN',
+                    'hi': 'HI',
+                    'gu': 'GU'
+                };
+                return codes[code] || 'EN';
+            }
             
             // Initialize Select2
             $('#location, #propertyType, #bedrooms, #furnishing, #possession, #sortBy').select2({
@@ -2717,15 +3233,33 @@
                             icon.classList.remove('far');
                             icon.classList.add('fas');
                             this.classList.add('saved');
-                            showToast('Property added to favorites', 'success');
+                            showToast(getPropertySavedMessage(currentLang), 'success');
                         } else {
                             icon.classList.remove('fas');
                             icon.classList.add('far');
                             this.classList.remove('saved');
-                            showToast('Property removed from favorites', 'info');
+                            showToast(getPropertyRemovedMessage(currentLang), 'info');
                         }
                     });
                 });
+                
+                function getPropertySavedMessage(lang) {
+                    const messages = {
+                        'en': 'Property added to favorites',
+                        'hi': 'संपत्ति पसंदीदा में जोड़ दी गई',
+                        'gu': 'પ્રોપર્ટી પસંદગીઓમાં ઉમેરી'
+                    };
+                    return messages[lang] || 'Property added to favorites';
+                }
+                
+                function getPropertyRemovedMessage(lang) {
+                    const messages = {
+                        'en': 'Property removed from favorites',
+                        'hi': 'संपत्ति पसंदीदा से हटा दी गई',
+                        'gu': 'પ્રોપર્ટી પસંદગીઓમાંથી હટાવી'
+                    };
+                    return messages[lang] || 'Property removed from favorites';
+                }
                 
                 // Search form submission
                 const searchForm = document.getElementById('propertySearchForm');
@@ -2774,7 +3308,7 @@
                         }
                         
                         hideLoading();
-                        showToast('Search results updated', 'success');
+                        showToast(getSearchUpdatedMessage(currentLang), 'success');
                         
                         // Close mobile filter if open
                         if (window.innerWidth <= 768) {
@@ -2783,6 +3317,15 @@
                         }
                     }, 800);
                 });
+                
+                function getSearchUpdatedMessage(lang) {
+                    const messages = {
+                        'en': 'Search results updated',
+                        'hi': 'खोज परिणाम अपडेट किए गए',
+                        'gu': 'શોધ પરિણામો અપડેટ કર્યા'
+                    };
+                    return messages[lang] || 'Search results updated';
+                }
                 
                 // Reset filters
                 const resetButtons = document.querySelectorAll('#resetFilters, #resetFilters2');
@@ -2801,15 +3344,33 @@
                         noResults.style.display = 'none';
                         document.getElementById('propertyCount').textContent = propertyCards.length;
                         
-                        showToast('Filters reset successfully', 'info');
+                        showToast(getFiltersResetMessage(currentLang), 'info');
                     });
                 });
+                
+                function getFiltersResetMessage(lang) {
+                    const messages = {
+                        'en': 'Filters reset successfully',
+                        'hi': 'फ़िल्टर सफलतापूर्वक रीसेट किए गए',
+                        'gu': 'ફિલ્ટર સફળતાપૂર્વક રીસેટ કર્યા'
+                    };
+                    return messages[lang] || 'Filters reset successfully';
+                }
                 
                 // Save search functionality
                 const saveSearchBtn = document.getElementById('saveSearch');
                 saveSearchBtn.addEventListener('click', function() {
-                    showToast('Search saved! You will get notifications for new properties', 'success');
+                    showToast(getSearchSavedMessage(currentLang), 'success');
                 });
+                
+                function getSearchSavedMessage(lang) {
+                    const messages = {
+                        'en': 'Search saved! You will get notifications for new properties',
+                        'hi': 'खोज सहेजी गई! आपको नई संपत्तियों के लिए सूचनाएं मिलेंगी',
+                        'gu': 'શોધ સાચવી! તમને નવી પ્રોપર્ટીઝ માટે સૂચનાઓ મળશે'
+                    };
+                    return messages[lang] || 'Search saved!';
+                }
                 
                 // Mobile filter toggle
                 const mobileFilterToggle = document.getElementById('mobileFilterToggle');
@@ -2841,8 +3402,26 @@
                 // Sort functionality
                 const sortSelect = document.getElementById('sortBy');
                 sortSelect.addEventListener('change', function() {
-                    showToast(`Sorted by: ${this.options[this.selectedIndex].text}`, 'info');
+                    showToast(getSortMessage(currentLang, this.value), 'info');
                 });
+                
+                function getSortMessage(lang, sortValue) {
+                    const sortOptions = {
+                        'newest': {en: 'Newest First', hi: 'नवीनतम पहले', gu: 'નવીનતમ પ્રથમ'},
+                        'price-low': {en: 'Price: Low to High', hi: 'मूल्य: कम से ज्यादा', gu: 'કિંમત: ઓછી થી વધુ'},
+                        'price-high': {en: 'Price: High to Low', hi: 'मूल्य: ज्यादा से कम', gu: 'કિંમત: વધુ થી ઓછી'},
+                        'area': {en: 'Area: Large to Small', hi: 'क्षेत्रफल: बड़ा से छोटा', gu: 'વિસ્તાર: મોટું થી નાનું'},
+                        'featured': {en: 'Featured First', hi: 'फीचर्ड पहले', gu: 'ફીચર્ડ પ્રથમ'}
+                    };
+                    
+                    const option = sortOptions[sortValue] || sortOptions['newest'];
+                    const messages = {
+                        'en': `Sorted by: ${option.en}`,
+                        'hi': `इसके अनुसार क्रमबद्ध: ${option.hi}`,
+                        'gu': `આના અનુસાર ક્રમબદ્ધ: ${option.gu}`
+                    };
+                    return messages[lang] || `Sorted by: ${option.en}`;
+                }
             }
             
             // Initialize all functions
@@ -2854,7 +3433,12 @@
             
             // Show welcome message
             setTimeout(() => {
-                showToast('Browse our premium properties! Use filters to find your perfect match.', 'success');
+                const welcomeMessages = {
+                    'en': 'Browse our premium properties! Use filters to find your perfect match.',
+                    'hi': 'हमारी प्रीमियम संपत्तियों को ब्राउज़ करें! अपना सही मिलान खोजने के लिए फिल्टर का उपयोग करें।',
+                    'gu': 'અમારી પ્રીમિયમ પ્રોપર્ટીઝ બ્રાઉઝ કરો! તમારો સંપૂર્ણ મેળ શોધવા માટે ફિલ્ટર્સનો ઉપયોગ કરો.'
+                };
+                showToast(welcomeMessages[currentLang] || 'Browse our premium properties!', 'success');
             }, 1500);
             
             // Handle window resize

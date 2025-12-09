@@ -10,6 +10,32 @@
     <meta name="keywords" content="about naroda group, real estate developer history, company profile, leadership team, vision mission">
     <meta name="author" content="Naroda Group">
     
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="About Naroda Group | Premium Real Estate Developer">
+    <meta property="og:description" content="Learn about Naroda Group's journey, values, and mission. 15+ years of excellence in real estate development in Ahmedabad.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80">
+    <meta property="og:url" content="https://narodagroup.com/about.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Naroda Group">
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About Naroda Group | Premium Real Estate Developer">
+    <meta name="twitter:description" content="Learn about Naroda Group's journey, values, and mission. 15+ years of excellence in real estate development in Ahmedabad.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://narodagroup.com/about.html">
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0a2a4a">
+    <meta name="msapplication-TileColor" content="#0a2a4a">
+    <meta name="theme-color" content="#0a2a4a">
+    
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- AOS Animation -->
@@ -370,7 +396,7 @@
         /* ===== Hero Section ===== */
         .hero-section {
             min-height: 60vh;
-            background: linear-gradient(rgba(10, 42, 74, 0.95), rgba(10, 42, 74, 0.85)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background: linear-gradient(rgba(10, 42, 74, 0.95), rgba(10, 42, 74, 0.85)), url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
             background-size: cover;
             background-position: center;
             color: white;
@@ -718,6 +744,46 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+        }
+
+        /* ===== Projects Showcase ===== */
+        .projects-showcase-section {
+            padding: 100px 0;
+            background: #f9fafb;
+        }
+
+        .project-showcase-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            height: 100%;
+        }
+
+        .project-showcase-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .project-showcase-image {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .project-showcase-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .project-showcase-card:hover .project-showcase-image img {
+            transform: scale(1.1);
+        }
+
+        .project-showcase-content {
+            padding: 30px;
         }
 
         /* ===== Footer ===== */
@@ -1164,6 +1230,15 @@
                 display: none;
             }
         }
+        
+        /* ===== Language Specific Styles ===== */
+        body.hindi, body.gujarati {
+            font-family: 'Noto Sans', 'Inter', sans-serif;
+        }
+        
+        .language-content {
+            transition: opacity 0.3s ease;
+        }
     </style>
 </head>
 <body>
@@ -1211,51 +1286,51 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="index.html" data-i18n="nav.home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="about.html" aria-current="page">About</a>
+                        <a class="nav-link active" href="about.html" aria-current="page" data-i18n="nav.about">About</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" role="button" 
-                           data-bs-toggle="dropdown" aria-expanded="false">
+                           data-bs-toggle="dropdown" aria-expanded="false" data-i18n="nav.projects">
                             Projects
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="projectsDropdown">
-                            <li><a class="dropdown-item" href="projects-landmark.html">Naroda Landmark</a></li>
-                            <li><a class="dropdown-item" href="projects-irish.html">Naroda Irish</a></li>
+                            <li><a class="dropdown-item" href="projects-landmark.html" data-i18n="nav.landmark">Naroda Landmark</a></li>
+                            <li><a class="dropdown-item" href="projects-irish.html" data-i18n="nav.irish">Naroda Irish</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="projects.html">All Projects</a></li>
+                            <li><a class="dropdown-item" href="projects.html" data-i18n="nav.all_projects">All Projects</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="propertiesDropdown" role="button" 
-                           data-bs-toggle="dropdown" aria-expanded="false">
+                           data-bs-toggle="dropdown" aria-expanded="false" data-i18n="nav.properties">
                             Properties
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="propertiesDropdown">
-                            <li><a class="dropdown-item" href="properties.html">Buy</a></li>
-                            <li><a class="dropdown-item" href="properties-rent.html">Rent</a></li>
+                            <li><a class="dropdown-item" href="properties.html" data-i18n="nav.buy">Buy</a></li>
+                            <li><a class="dropdown-item" href="properties-rent.html" data-i18n="nav.rent">Rent</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="property-detail.html">Property Details</a></li>
+                            <li><a class="dropdown-item" href="property-detail.html" data-i18n="nav.property_details">Property Details</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="gallery.html">Gallery</a>
+                        <a class="nav-link" href="gallery.html" data-i18n="nav.gallery">Gallery</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" role="button" 
-                           data-bs-toggle="dropdown" aria-expanded="false">
+                           data-bs-toggle="dropdown" aria-expanded="false" data-i18n="nav.more">
                             More
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="moreDropdown">
-                            <li><a class="dropdown-item" href="blog.html">Blog</a></li>
-                            <li><a class="dropdown-item" href="news.html">News</a></li>
-                            <li><a class="dropdown-item" href="careers.html">Careers</a></li>
-                            <li><a class="dropdown-item" href="team.html">Our Team</a></li>
+                            <li><a class="dropdown-item" href="blog.html" data-i18n="nav.blog">Blog</a></li>
+                            <li><a class="dropdown-item" href="news.html" data-i18n="nav.news">News</a></li>
+                            <li><a class="dropdown-item" href="careers.html" data-i18n="nav.careers">Careers</a></li>
+                            <li><a class="dropdown-item" href="team.html" data-i18n="nav.team">Our Team</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
-                            <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+                            <li><a class="dropdown-item" href="faq.html" data-i18n="nav.faq">FAQ</a></li>
+                            <li><a class="dropdown-item" href="contact.html" data-i18n="nav.contact">Contact</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -1264,16 +1339,16 @@
                     <div class="dropdown">
                         <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" 
                                 id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fas fa-globe me-1" aria-hidden="true"></i> EN
+                            <i class="fas fa-globe me-1" aria-hidden="true"></i> <span id="currentLanguage">EN</span>
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="languageDropdown">
-                            <li><a class="dropdown-item" href="#" lang="en">English</a></li>
-                            <li><a class="dropdown-item" href="#" lang="hi">Hindi</a></li>
-                            <li><a class="dropdown-item" href="#" lang="gu">Gujarati</a></li>
+                            <li><a class="dropdown-item language-selector" href="#" data-lang="en">English</a></li>
+                            <li><a class="dropdown-item language-selector" href="#" data-lang="hi">हिंदी (Hindi)</a></li>
+                            <li><a class="dropdown-item language-selector" href="#" data-lang="gu">ગુજરાતી (Gujarati)</a></li>
                         </ul>
                     </div>
                     <a href="login.html" class="btn btn-outline-light ms-3">
-                        <i class="fas fa-user me-2" aria-hidden="true"></i> Login
+                        <i class="fas fa-user me-2" aria-hidden="true"></i> <span data-i18n="nav.login">Login</span>
                     </a>
                 </div>
             </div>
@@ -1284,37 +1359,37 @@
     <div class="mobile-bottom-nav">
         <a href="index.html" class="mobile-nav-item">
             <i class="fas fa-home" aria-hidden="true"></i>
-            <span>Home</span>
+            <span data-i18n="nav.home">Home</span>
         </a>
         <a href="projects.html" class="mobile-nav-item">
             <i class="fas fa-building" aria-hidden="true"></i>
-            <span>Projects</span>
+            <span data-i18n="nav.projects">Projects</span>
         </a>
         <a href="properties.html" class="mobile-nav-item">
             <i class="fas fa-search" aria-hidden="true"></i>
-            <span>Search</span>
+            <span data-i18n="nav.search">Search</span>
         </a>
         <a href="contact.html" class="mobile-nav-item">
             <i class="fas fa-phone" aria-hidden="true"></i>
-            <span>Contact</span>
+            <span data-i18n="nav.contact">Contact</span>
         </a>
         <a href="login.html" class="mobile-nav-item">
             <i class="fas fa-user" aria-hidden="true"></i>
-            <span>Account</span>
+            <span data-i18n="nav.account">Account</span>
         </a>
     </div>
 
     <!-- Main Content -->
-    <main>
+    <main class="language-content">
         <!-- Hero Section -->
         <section class="hero-section">
             <div class="container">
                 <div class="row min-vh-60 align-items-center">
                     <div class="col-lg-8 mx-auto text-center">
                         <h1 class="hero-title" data-aos="fade-up">
-                            About <span class="gold-text">Naroda Group</span>
+                            <span data-i18n="hero.title.part1">About</span> <span class="gold-text" data-i18n="hero.title.part2">Naroda Group</span>
                         </h1>
-                        <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
+                        <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100" data-i18n="hero.subtitle">
                             Building dreams and creating landmarks since 2008
                         </p>
                     </div>
@@ -1333,26 +1408,26 @@
                                  loading="lazy" width="800" height="600">
                             <div class="experience-badge" data-aos="fade-up" data-aos-delay="200">
                                 <div class="experience-years">15+</div>
-                                <div class="experience-text">Years Experience</div>
+                                <div class="experience-text" data-i18n="about.experience">Years Experience</div>
                             </div>
                         </div>
                     </div>
                     
                     <div class="col-lg-6" data-aos="fade-left">
-                        <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3">
+                        <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-i18n="about.story_badge">
                             Our Story
                         </span>
-                        <h2 class="mb-4">Building Dreams, <span class="gold-text">Creating Landmarks</span></h2>
+                        <h2 class="mb-4" data-i18n="about.title">Building Dreams, <span class="gold-text" data-i18n="about.title_gold">Creating Landmarks</span></h2>
                         
-                        <p class="text-muted mb-4">
+                        <p class="text-muted mb-4" data-i18n="about.story1">
                             Founded in 2008, Naroda Group has been at the forefront of Ahmedabad's real estate landscape. 
                             What began as a small family business has grown into one of the city's most trusted real estate 
                             developers, with a portfolio spanning commercial, residential, and mixed-use developments.
                         </p>
                         
-                        <p class="text-muted mb-4">
-                            Our journey is built on three core principles: <strong>Quality</strong>, <strong>Transparency</strong>, 
-                            and <strong>Customer Satisfaction</strong>. These values have guided us through 50+ successful 
+                        <p class="text-muted mb-4" data-i18n="about.story2">
+                            Our journey is built on three core principles: <strong data-i18n="about.principle1">Quality</strong>, <strong data-i18n="about.principle2">Transparency</strong>, 
+                            and <strong data-i18n="about.principle3">Customer Satisfaction</strong>. These values have guided us through 50+ successful 
                             projects and have helped us create homes and workspaces for thousands of families and businesses.
                         </p>
                         
@@ -1361,8 +1436,8 @@
                                 <div class="d-flex align-items-center mb-3">
                                     <i class="fas fa-check-circle text-gold me-3 fs-4" aria-hidden="true"></i>
                                     <div>
-                                        <h5 class="mb-1">Vision</h5>
-                                        <p class="text-muted mb-0">To redefine urban living through innovative design</p>
+                                        <h5 class="mb-1" data-i18n="about.vision_title">Vision</h5>
+                                        <p class="text-muted mb-0" data-i18n="about.vision_text">To redefine urban living through innovative design</p>
                                     </div>
                                 </div>
                             </div>
@@ -1370,8 +1445,8 @@
                                 <div class="d-flex align-items-center mb-3">
                                     <i class="fas fa-check-circle text-gold me-3 fs-4" aria-hidden="true"></i>
                                     <div>
-                                        <h5 class="mb-1">Mission</h5>
-                                        <p class="text-muted mb-0">Create sustainable communities with exceptional value</p>
+                                        <h5 class="mb-1" data-i18n="about.mission_title">Mission</h5>
+                                        <p class="text-muted mb-0" data-i18n="about.mission_text">Create sustainable communities with exceptional value</p>
                                     </div>
                                 </div>
                             </div>
@@ -1386,8 +1461,8 @@
                             <div class="mission-vision-icon">
                                 <i class="fas fa-eye" aria-hidden="true"></i>
                             </div>
-                            <h3 class="mb-3">Our Vision</h3>
-                            <p class="text-muted mb-0">
+                            <h3 class="mb-3" data-i18n="about.vision_card_title">Our Vision</h3>
+                            <p class="text-muted mb-0" data-i18n="about.vision_card_text">
                                 To become the most trusted and innovative real estate developer in India, 
                                 known for creating sustainable communities that enhance quality of life and 
                                 deliver exceptional value to all stakeholders.
@@ -1400,8 +1475,8 @@
                             <div class="mission-vision-icon">
                                 <i class="fas fa-bullseye" aria-hidden="true"></i>
                             </div>
-                            <h3 class="mb-3">Our Mission</h3>
-                            <p class="text-muted mb-0">
+                            <h3 class="mb-3" data-i18n="about.mission_card_title">Our Mission</h3>
+                            <p class="text-muted mb-0" data-i18n="about.mission_card_text">
                                 To deliver superior quality real estate solutions through innovation, 
                                 transparency, and customer-centric approach, while maintaining the highest 
                                 standards of ethics and corporate governance.
@@ -1417,13 +1492,13 @@
             <div class="container">
                 <div class="row mb-5">
                     <div class="col-lg-8 mx-auto text-center">
-                        <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
+                        <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up" data-i18n="values.badge">
                             Our Values
                         </span>
                         <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
-                            Core <span class="gold-text">Principles</span>
+                            <span data-i18n="values.title.part1">Core</span> <span class="gold-text" data-i18n="values.title.part2">Principles</span>
                         </h2>
-                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200">
+                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200" data-i18n="values.subtitle">
                             The foundation of everything we do
                         </p>
                     </div>
@@ -1435,8 +1510,8 @@
                             <div class="value-icon">
                                 <i class="fas fa-shield-alt" aria-hidden="true"></i>
                             </div>
-                            <h4 class="mb-3">Integrity</h4>
-                            <p class="text-muted mb-0">
+                            <h4 class="mb-3" data-i18n="values.card1.title">Integrity</h4>
+                            <p class="text-muted mb-0" data-i18n="values.card1.text">
                                 We believe in complete transparency and ethical business practices in all our dealings.
                             </p>
                         </div>
@@ -1447,8 +1522,8 @@
                             <div class="value-icon">
                                 <i class="fas fa-users" aria-hidden="true"></i>
                             </div>
-                            <h4 class="mb-3">Customer First</h4>
-                            <p class="text-muted mb-0">
+                            <h4 class="mb-3" data-i18n="values.card2.title">Customer First</h4>
+                            <p class="text-muted mb-0" data-i18n="values.card2.text">
                                 Our customers are at the heart of everything we do. Their satisfaction is our success.
                             </p>
                         </div>
@@ -1459,8 +1534,8 @@
                             <div class="value-icon">
                                 <i class="fas fa-star" aria-hidden="true"></i>
                             </div>
-                            <h4 class="mb-3">Excellence</h4>
-                            <p class="text-muted mb-0">
+                            <h4 class="mb-3" data-i18n="values.card3.title">Excellence</h4>
+                            <p class="text-muted mb-0" data-i18n="values.card3.text">
                                 We strive for excellence in design, construction, and service delivery in every project.
                             </p>
                         </div>
@@ -1471,8 +1546,8 @@
                             <div class="value-icon">
                                 <i class="fas fa-leaf" aria-hidden="true"></i>
                             </div>
-                            <h4 class="mb-3">Sustainability</h4>
-                            <p class="text-muted mb-0">
+                            <h4 class="mb-3" data-i18n="values.card4.title">Sustainability</h4>
+                            <p class="text-muted mb-0" data-i18n="values.card4.text">
                                 We are committed to environmentally responsible development and sustainable practices.
                             </p>
                         </div>
@@ -1483,8 +1558,8 @@
                             <div class="value-icon">
                                 <i class="fas fa-lightbulb" aria-hidden="true"></i>
                             </div>
-                            <h4 class="mb-3">Innovation</h4>
-                            <p class="text-muted mb-0">
+                            <h4 class="mb-3" data-i18n="values.card5.title">Innovation</h4>
+                            <p class="text-muted mb-0" data-i18n="values.card5.text">
                                 We embrace new technologies and innovative approaches to create better living spaces.
                             </p>
                         </div>
@@ -1495,8 +1570,8 @@
                             <div class="value-icon">
                                 <i class="fas fa-handshake" aria-hidden="true"></i>
                             </div>
-                            <h4 class="mb-3">Commitment</h4>
-                            <p class="text-muted mb-0">
+                            <h4 class="mb-3" data-i18n="values.card6.title">Commitment</h4>
+                            <p class="text-muted mb-0" data-i18n="values.card6.text">
                                 We are dedicated to fulfilling our promises and delivering on time, every time.
                             </p>
                         </div>
@@ -1510,13 +1585,13 @@
             <div class="container">
                 <div class="row mb-5">
                     <div class="col-lg-8 mx-auto text-center">
-                        <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
+                        <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up" data-i18n="team.badge">
                             Leadership Team
                         </span>
                         <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
-                            Meet Our <span class="gold-text">Leaders</span>
+                            <span data-i18n="team.title.part1">Meet Our</span> <span class="gold-text" data-i18n="team.title.part2">Leaders</span>
                         </h2>
-                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200">
+                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200" data-i18n="team.subtitle">
                             Experienced professionals guiding our vision
                         </p>
                     </div>
@@ -1529,9 +1604,9 @@
                                 <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Rajesh Mehta - Founder & CEO" 
                                      loading="lazy" width="200" height="200">
                             </div>
-                            <h4 class="mb-2">Rajesh Mehta</h4>
-                            <p class="text-gold mb-2">Founder & CEO</p>
-                            <p class="text-muted mb-3">20+ years in real estate development</p>
+                            <h4 class="mb-2" data-i18n="team.member1.name">Rajesh Mehta</h4>
+                            <p class="text-gold mb-2" data-i18n="team.member1.role">Founder & CEO</p>
+                            <p class="text-muted mb-3" data-i18n="team.member1.experience">20+ years in real estate development</p>
                             <div class="team-social-links">
                                 <a href="#" class="team-social-link" aria-label="LinkedIn profile of Rajesh Mehta">
                                     <i class="fab fa-linkedin-in" aria-hidden="true"></i>
@@ -1549,9 +1624,9 @@
                                 <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Priya Shah - Director of Projects" 
                                      loading="lazy" width="200" height="200">
                             </div>
-                            <h4 class="mb-2">Priya Shah</h4>
-                            <p class="text-gold mb-2">Director - Projects</p>
-                            <p class="text-muted mb-3">Architect with 15 years experience</p>
+                            <h4 class="mb-2" data-i18n="team.member2.name">Priya Shah</h4>
+                            <p class="text-gold mb-2" data-i18n="team.member2.role">Director - Projects</p>
+                            <p class="text-muted mb-3" data-i18n="team.member2.experience">Architect with 15 years experience</p>
                             <div class="team-social-links">
                                 <a href="#" class="team-social-link" aria-label="LinkedIn profile of Priya Shah">
                                     <i class="fab fa-linkedin-in" aria-hidden="true"></i>
@@ -1569,9 +1644,9 @@
                                 <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Amit Patel - Chief Financial Officer" 
                                      loading="lazy" width="200" height="200">
                             </div>
-                            <h4 class="mb-2">Amit Patel</h4>
-                            <p class="text-gold mb-2">Chief Financial Officer</p>
-                            <p class="text-muted mb-3">Finance professional with 18 years experience</p>
+                            <h4 class="mb-2" data-i18n="team.member3.name">Amit Patel</h4>
+                            <p class="text-gold mb-2" data-i18n="team.member3.role">Chief Financial Officer</p>
+                            <p class="text-muted mb-3" data-i18n="team.member3.experience">Finance professional with 18 years experience</p>
                             <div class="team-social-links">
                                 <a href="#" class="team-social-link" aria-label="LinkedIn profile of Amit Patel">
                                     <i class="fab fa-linkedin-in" aria-hidden="true"></i>
@@ -1589,9 +1664,9 @@
                                 <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Neha Gupta - Head of Sales & Marketing" 
                                      loading="lazy" width="200" height="200">
                             </div>
-                            <h4 class="mb-2">Neha Gupta</h4>
-                            <p class="text-gold mb-2">Head of Sales & Marketing</p>
-                            <p class="text-muted mb-3">Sales professional with 12 years experience</p>
+                            <h4 class="mb-2" data-i18n="team.member4.name">Neha Gupta</h4>
+                            <p class="text-gold mb-2" data-i18n="team.member4.role">Head of Sales & Marketing</p>
+                            <p class="text-muted mb-3" data-i18n="team.member4.experience">Sales professional with 12 years experience</p>
                             <div class="team-social-links">
                                 <a href="#" class="team-social-link" aria-label="LinkedIn profile of Neha Gupta">
                                     <i class="fab fa-linkedin-in" aria-hidden="true"></i>
@@ -1611,13 +1686,13 @@
             <div class="container">
                 <div class="row mb-5">
                     <div class="col-lg-8 mx-auto text-center">
-                        <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
+                        <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up" data-i18n="timeline.badge">
                             Our Journey
                         </span>
                         <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
-                            Milestone <span class="gold-text">Timeline</span>
+                            <span data-i18n="timeline.title.part1">Milestone</span> <span class="gold-text" data-i18n="timeline.title.part2">Timeline</span>
                         </h2>
-                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200">
+                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200" data-i18n="timeline.subtitle">
                             Key moments in our journey of excellence
                         </p>
                     </div>
@@ -1627,8 +1702,8 @@
                     <div class="timeline-item" data-aos="fade-up">
                         <div class="timeline-year">2008</div>
                         <div class="timeline-content">
-                            <h4 class="mb-2">Founding Year</h4>
-                            <p class="text-muted mb-0">
+                            <h4 class="mb-2" data-i18n="timeline.event1.title">Founding Year</h4>
+                            <p class="text-muted mb-0" data-i18n="timeline.event1.text">
                                 Naroda Group founded with first residential project in Ahmedabad. Started with a team of 5 people.
                             </p>
                         </div>
@@ -1637,8 +1712,8 @@
                     <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
                         <div class="timeline-year">2012</div>
                         <div class="timeline-content">
-                            <h4 class="mb-2">Commercial Expansion</h4>
-                            <p class="text-muted mb-0">
+                            <h4 class="mb-2" data-i18n="timeline.event2.title">Commercial Expansion</h4>
+                            <p class="text-muted mb-0" data-i18n="timeline.event2.text">
                                 Expanded to commercial real estate with first office complex. Completed 10+ residential projects.
                             </p>
                         </div>
@@ -1647,8 +1722,8 @@
                     <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
                         <div class="timeline-year">2015</div>
                         <div class="timeline-content">
-                            <h4 class="mb-2">Naroda Landmark Launch</h4>
-                            <p class="text-muted mb-0">
+                            <h4 class="mb-2" data-i18n="timeline.event3.title">Naroda Landmark Launch</h4>
+                            <p class="text-muted mb-0" data-i18n="timeline.event3.text">
                                 Launched Naroda Landmark - premium commercial development. Crossed 1000+ happy customers milestone.
                             </p>
                         </div>
@@ -1657,8 +1732,8 @@
                     <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
                         <div class="timeline-year">2018</div>
                         <div class="timeline-content">
-                            <h4 class="mb-2">Naroda Irish Introduction</h4>
-                            <p class="text-muted mb-0">
+                            <h4 class="mb-2" data-i18n="timeline.event4.title">Naroda Irish Introduction</h4>
+                            <p class="text-muted mb-0" data-i18n="timeline.event4.text">
                                 Introduced Naroda Irish - luxury residential project. Expanded team to 50+ professionals.
                             </p>
                         </div>
@@ -1667,8 +1742,8 @@
                     <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
                         <div class="timeline-year">2020</div>
                         <div class="timeline-content">
-                            <h4 class="mb-2">RERA Compliance</h4>
-                            <p class="text-muted mb-0">
+                            <h4 class="mb-2" data-i18n="timeline.event5.title">RERA Compliance</h4>
+                            <p class="text-muted mb-0" data-i18n="timeline.event5.text">
                                 All projects RERA registered. Implemented digital transformation across operations.
                             </p>
                         </div>
@@ -1677,8 +1752,8 @@
                     <div class="timeline-item" data-aos="fade-up" data-aos-delay="500">
                         <div class="timeline-year">2023</div>
                         <div class="timeline-content">
-                            <h4 class="mb-2">50 Projects Milestone</h4>
-                            <p class="text-muted mb-0">
+                            <h4 class="mb-2" data-i18n="timeline.event6.title">50 Projects Milestone</h4>
+                            <p class="text-muted mb-0" data-i18n="timeline.event6.text">
                                 Crossed 50 projects milestone with 2500+ happy customers. 5 million sq. ft. developed.
                             </p>
                         </div>
@@ -1692,13 +1767,13 @@
             <div class="container">
                 <div class="row mb-5">
                     <div class="col-lg-8 mx-auto text-center">
-                        <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
+                        <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up" data-i18n="achievements.badge">
                             Our Achievements
                         </span>
                         <h2 class="text-white" data-aos="fade-up" data-aos-delay="100">
-                            Numbers That <span class="gold-text">Speak</span>
+                            <span data-i18n="achievements.title.part1">Numbers That</span> <span class="gold-text" data-i18n="achievements.title.part2">Speak</span>
                         </h2>
-                        <p class="text-white-50" data-aos="fade-up" data-aos-delay="200">
+                        <p class="text-white-50" data-aos="fade-up" data-aos-delay="200" data-i18n="achievements.subtitle">
                             Our journey in numbers
                         </p>
                     </div>
@@ -1711,7 +1786,7 @@
                                 <i class="fas fa-calendar-alt" aria-hidden="true"></i>
                             </div>
                             <div class="achievement-number">15+</div>
-                            <p class="mb-0">Years of Excellence</p>
+                            <p class="mb-0" data-i18n="achievements.stat1">Years of Excellence</p>
                         </div>
                     </div>
                     
@@ -1721,7 +1796,7 @@
                                 <i class="fas fa-users" aria-hidden="true"></i>
                             </div>
                             <div class="achievement-number">2500+</div>
-                            <p class="mb-0">Happy Families</p>
+                            <p class="mb-0" data-i18n="achievements.stat2">Happy Families</p>
                         </div>
                     </div>
                     
@@ -1731,7 +1806,7 @@
                                 <i class="fas fa-building" aria-hidden="true"></i>
                             </div>
                             <div class="achievement-number">50+</div>
-                            <p class="mb-0">Projects Delivered</p>
+                            <p class="mb-0" data-i18n="achievements.stat3">Projects Delivered</p>
                         </div>
                     </div>
                     
@@ -1741,7 +1816,78 @@
                                 <i class="fas fa-expand-arrows-alt" aria-hidden="true"></i>
                             </div>
                             <div class="achievement-number">5M+</div>
-                            <p class="mb-0">Sq. Ft. Developed</p>
+                            <p class="mb-0" data-i18n="achievements.stat4">Sq. Ft. Developed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Showcase -->
+        <section class="projects-showcase-section">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up" data-i18n="showcase.badge">
+                            Our Signature Projects
+                        </span>
+                        <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
+                            <span data-i18n="showcase.title.part1">Creating</span> <span class="gold-text" data-i18n="showcase.title.part2">Landmarks</span>
+                        </h2>
+                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200" data-i18n="showcase.subtitle">
+                            Discover our premium developments that redefine excellence
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-md-6" data-aos="fade-right">
+                        <div class="project-showcase-card">
+                            <div class="project-showcase-image">
+                                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                     alt="Naroda Landmark" loading="lazy">
+                            </div>
+                            <div class="project-showcase-content">
+                                <h3 class="mb-3" data-i18n="showcase.project1.title">Naroda Landmark</h3>
+                                <p class="text-muted mb-3" data-i18n="showcase.project1.description">
+                                    Premium commercial spaces designed for modern businesses. Features earthquake-resistant RCC structure, 
+                                    24-hour water & electric supply, CCTV security, and smartly planned retail spaces.
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h5 class="text-primary mb-1" data-i18n="showcase.project1.type">Commercial Complex</h5>
+                                        <p class="text-muted mb-0" data-i18n="showcase.project1.location">Naroda, Ahmedabad</p>
+                                    </div>
+                                    <a href="projects-landmark.html" class="btn btn-gold btn-sm" data-i18n="showcase.view_project">
+                                        View Project
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6" data-aos="fade-left">
+                        <div class="project-showcase-card">
+                            <div class="project-showcase-image">
+                                <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                                     alt="Naroda Irish" loading="lazy">
+                            </div>
+                            <div class="project-showcase-content">
+                                <h3 class="mb-3" data-i18n="showcase.project2.title">Naroda Irish</h3>
+                                <p class="text-muted mb-3" data-i18n="showcase.project2.description">
+                                    Luxurious 2 & 3 BHK apartments with retail shops. Featuring 14-storey magnificent towers, 
+                                    basement parking, premium amenities, and earthquake-resistant construction.
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h5 class="text-primary mb-1" data-i18n="showcase.project2.type">Residential Apartments</h5>
+                                        <p class="text-muted mb-0" data-i18n="showcase.project2.location">Naroda, Ahmedabad</p>
+                                    </div>
+                                    <a href="projects-irish.html" class="btn btn-gold btn-sm" data-i18n="showcase.view_project">
+                                        View Project
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1754,21 +1900,21 @@
                 <div class="row">
                     <div class="col-lg-8 mx-auto text-center">
                         <h2 class="mb-4" data-aos="fade-up">
-                            Join Our <span class="gold-text">Success Story</span>
+                            <span data-i18n="cta.title.part1">Join Our</span> <span class="gold-text" data-i18n="cta.title.part2">Success Story</span>
                         </h2>
-                        <p class="text-muted mb-5" data-aos="fade-up" data-aos-delay="100">
+                        <p class="text-muted mb-5" data-aos="fade-up" data-aos-delay="100" data-i18n="cta.subtitle">
                             Be a part of our journey. Invest in quality, transparency, and excellence.
                         </p>
                         
                         <div class="d-flex flex-column flex-sm-row justify-content-center gap-4" data-aos="fade-up" data-aos-delay="200">
                             <a href="contact.html" class="btn btn-gold btn-lg">
-                                <i class="fas fa-phone me-2" aria-hidden="true"></i> Contact Us
+                                <i class="fas fa-phone me-2" aria-hidden="true"></i> <span data-i18n="cta.btn1">Contact Us</span>
                             </a>
                             <a href="projects.html" class="btn btn-outline-primary btn-lg">
-                                <i class="fas fa-building me-2" aria-hidden="true"></i> View Projects
+                                <i class="fas fa-building me-2" aria-hidden="true"></i> <span data-i18n="cta.btn2">View Projects</span>
                             </a>
                             <a href="careers.html" class="btn btn-emerald btn-lg">
-                                <i class="fas fa-briefcase me-2" aria-hidden="true"></i> Join Our Team
+                                <i class="fas fa-briefcase me-2" aria-hidden="true"></i> <span data-i18n="cta.btn3">Join Our Team</span>
                             </a>
                         </div>
                     </div>
@@ -1788,7 +1934,7 @@
                             Naroda <span class="gold-text">Group</span>
                         </a>
                     </div>
-                    <p class="mb-4">
+                    <p class="mb-4" data-i18n="footer.description">
                         Creating landmark properties that redefine excellence. From premium commercial spaces 
                         to luxury residential living, we build dreams with quality and commitment.
                     </p>
@@ -1813,59 +1959,59 @@
                 </div>
                 
                 <div class="col-lg-2 col-md-6">
-                    <h3 class="footer-title">Quick Links</h3>
+                    <h3 class="footer-title" data-i18n="footer.quick_links">Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="index.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Home</a></li>
-                        <li><a href="about.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> About Us</a></li>
-                        <li><a href="projects.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Projects</a></li>
-                        <li><a href="properties.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Properties</a></li>
-                        <li><a href="gallery.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Gallery</a></li>
-                        <li><a href="contact.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Contact</a></li>
+                        <li><a href="index.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> <span data-i18n="nav.home">Home</span></a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> <span data-i18n="nav.about">About Us</span></a></li>
+                        <li><a href="projects.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> <span data-i18n="nav.projects">Projects</span></a></li>
+                        <li><a href="properties.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> <span data-i18n="nav.properties">Properties</span></a></li>
+                        <li><a href="gallery.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> <span data-i18n="nav.gallery">Gallery</span></a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> <span data-i18n="nav.contact">Contact</span></a></li>
                     </ul>
                 </div>
                 
                 <div class="col-lg-3 col-md-6">
-                    <h3 class="footer-title">Our Projects</h3>
+                    <h3 class="footer-title" data-i18n="footer.our_projects">Our Projects</h3>
                     <a href="projects-landmark.html" class="project-mini-card">
-                        <h6 class="text-white mb-1">Naroda Landmark</h6>
-                        <p class="small text-muted mb-0">Premium Commercial Spaces</p>
+                        <h6 class="text-white mb-1" data-i18n="nav.landmark">Naroda Landmark</h6>
+                        <p class="small text-muted mb-0" data-i18n="footer.landmark_desc">Premium Commercial Spaces</p>
                     </a>
                     <a href="projects-irish.html" class="project-mini-card">
-                        <h6 class="text-white mb-1">Naroda Irish</h6>
-                        <p class="small text-muted mb-0">Luxury Residential Living</p>
+                        <h6 class="text-white mb-1" data-i18n="nav.irish">Naroda Irish</h6>
+                        <p class="small text-muted mb-0" data-i18n="footer.irish_desc">Luxury Residential Living</p>
                     </a>
                     <a href="projects.html" class="project-mini-card">
-                        <h6 class="text-white mb-1">View All Projects</h6>
-                        <p class="small text-muted mb-0">Explore our portfolio</p>
+                        <h6 class="text-white mb-1" data-i18n="footer.view_all_projects">View All Projects</h6>
+                        <p class="small text-muted mb-0" data-i18n="footer.explore_portfolio">Explore our portfolio</p>
                     </a>
                 </div>
                 
                 <div class="col-lg-3 col-md-6">
-                    <h3 class="footer-title">Contact Info</h3>
+                    <h3 class="footer-title" data-i18n="footer.contact_info">Contact Info</h3>
                     <div class="contact-info">
                         <i class="fas fa-phone" aria-hidden="true"></i>
                         <div>
-                            <h6 class="text-white mb-1">Phone Number</h6>
+                            <h6 class="text-white mb-1" data-i18n="footer.phone">Phone Number</h6>
                             <p class="mb-0">+91 98765 43210</p>
-                            <small class="text-muted">Mon - Sat: 10 AM - 7 PM</small>
+                            <small class="text-muted" data-i18n="footer.phone_hours">Mon - Sat: 10 AM - 7 PM</small>
                         </div>
                     </div>
                     
                     <div class="contact-info">
                         <i class="fas fa-envelope" aria-hidden="true"></i>
                         <div>
-                            <h6 class="text-white mb-1">Email Address</h6>
+                            <h6 class="text-white mb-1" data-i18n="footer.email">Email Address</h6>
                             <p class="mb-0">info@narodagroup.com</p>
-                            <small class="text-muted">We reply within 24 hours</small>
+                            <small class="text-muted" data-i18n="footer.email_response">We reply within 24 hours</small>
                         </div>
                     </div>
                     
                     <div class="contact-info">
                         <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                         <div>
-                            <h6 class="text-white mb-1">Office Address</h6>
-                            <p class="mb-0">Naroda - Bhat Road</p>
-                            <small class="text-muted">Ahmedabad, Gujarat 382330</small>
+                            <h6 class="text-white mb-1" data-i18n="footer.address">Office Address</h6>
+                            <p class="mb-0" data-i18n="footer.address_line1">Naroda - Bhat Road</p>
+                            <small class="text-muted" data-i18n="footer.address_line2">Ahmedabad, Gujarat 382330</small>
                         </div>
                     </div>
                 </div>
@@ -1874,12 +2020,12 @@
             <div class="copyright">
                 <div class="row align-items-center">
                     <div class="col-md-6">
-                        <p class="mb-0">&copy; 2025 Naroda Group. All rights reserved.</p>
+                        <p class="mb-0">&copy; 2025 Naroda Group. <span data-i18n="footer.rights">All rights reserved.</span></p>
                     </div>
                     <div class="col-md-6 text-md-end">
-                        <a href="privacy.html" class="text-muted me-3">Privacy Policy</a>
-                        <a href="terms.html" class="text-muted me-3">Terms of Service</a>
-                        <a href="rera.html" class="text-muted">RERA Registration</a>
+                        <a href="privacy.html" class="text-muted me-3" data-i18n="footer.privacy">Privacy Policy</a>
+                        <a href="terms.html" class="text-muted me-3" data-i18n="footer.terms">Terms of Service</a>
+                        <a href="rera.html" class="text-muted" data-i18n="footer.rera">RERA Registration</a>
                     </div>
                 </div>
             </div>
@@ -1890,6 +2036,474 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- AOS Animation Library -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Language Translation Data -->
+    <script>
+        const translations = {
+            en: {
+                // Navigation
+                "nav.home": "Home",
+                "nav.about": "About",
+                "nav.projects": "Projects",
+                "nav.landmark": "Naroda Landmark",
+                "nav.irish": "Naroda Irish",
+                "nav.all_projects": "All Projects",
+                "nav.properties": "Properties",
+                "nav.buy": "Buy",
+                "nav.rent": "Rent",
+                "nav.property_details": "Property Details",
+                "nav.gallery": "Gallery",
+                "nav.more": "More",
+                "nav.blog": "Blog",
+                "nav.news": "News",
+                "nav.careers": "Careers",
+                "nav.team": "Our Team",
+                "nav.faq": "FAQ",
+                "nav.contact": "Contact",
+                "nav.login": "Login",
+                "nav.search": "Search",
+                "nav.account": "Account",
+                
+                // Hero Section
+                "hero.title.part1": "About",
+                "hero.title.part2": "Naroda Group",
+                "hero.subtitle": "Building dreams and creating landmarks since 2008",
+                
+                // About Section
+                "about.experience": "Years Experience",
+                "about.story_badge": "Our Story",
+                "about.title": "Building Dreams,",
+                "about.title_gold": "Creating Landmarks",
+                "about.story1": "Founded in 2008, Naroda Group has been at the forefront of Ahmedabad's real estate landscape. What began as a small family business has grown into one of the city's most trusted real estate developers, with a portfolio spanning commercial, residential, and mixed-use developments.",
+                "about.story2": "Our journey is built on three core principles: Quality, Transparency, and Customer Satisfaction. These values have guided us through 50+ successful projects and have helped us create homes and workspaces for thousands of families and businesses.",
+                "about.principle1": "Quality",
+                "about.principle2": "Transparency",
+                "about.principle3": "Customer Satisfaction",
+                "about.vision_title": "Vision",
+                "about.vision_text": "To redefine urban living through innovative design",
+                "about.mission_title": "Mission",
+                "about.mission_text": "Create sustainable communities with exceptional value",
+                "about.vision_card_title": "Our Vision",
+                "about.vision_card_text": "To become the most trusted and innovative real estate developer in India, known for creating sustainable communities that enhance quality of life and deliver exceptional value to all stakeholders.",
+                "about.mission_card_title": "Our Mission",
+                "about.mission_card_text": "To deliver superior quality real estate solutions through innovation, transparency, and customer-centric approach, while maintaining the highest standards of ethics and corporate governance.",
+                
+                // Values Section
+                "values.badge": "Our Values",
+                "values.title.part1": "Core",
+                "values.title.part2": "Principles",
+                "values.subtitle": "The foundation of everything we do",
+                "values.card1.title": "Integrity",
+                "values.card1.text": "We believe in complete transparency and ethical business practices in all our dealings.",
+                "values.card2.title": "Customer First",
+                "values.card2.text": "Our customers are at the heart of everything we do. Their satisfaction is our success.",
+                "values.card3.title": "Excellence",
+                "values.card3.text": "We strive for excellence in design, construction, and service delivery in every project.",
+                "values.card4.title": "Sustainability",
+                "values.card4.text": "We are committed to environmentally responsible development and sustainable practices.",
+                "values.card5.title": "Innovation",
+                "values.card5.text": "We embrace new technologies and innovative approaches to create better living spaces.",
+                "values.card6.title": "Commitment",
+                "values.card6.text": "We are dedicated to fulfilling our promises and delivering on time, every time.",
+                
+                // Team Section
+                "team.badge": "Leadership Team",
+                "team.title.part1": "Meet Our",
+                "team.title.part2": "Leaders",
+                "team.subtitle": "Experienced professionals guiding our vision",
+                "team.member1.name": "Rajesh Mehta",
+                "team.member1.role": "Founder & CEO",
+                "team.member1.experience": "20+ years in real estate development",
+                "team.member2.name": "Priya Shah",
+                "team.member2.role": "Director - Projects",
+                "team.member2.experience": "Architect with 15 years experience",
+                "team.member3.name": "Amit Patel",
+                "team.member3.role": "Chief Financial Officer",
+                "team.member3.experience": "Finance professional with 18 years experience",
+                "team.member4.name": "Neha Gupta",
+                "team.member4.role": "Head of Sales & Marketing",
+                "team.member4.experience": "Sales professional with 12 years experience",
+                
+                // Timeline Section
+                "timeline.badge": "Our Journey",
+                "timeline.title.part1": "Milestone",
+                "timeline.title.part2": "Timeline",
+                "timeline.subtitle": "Key moments in our journey of excellence",
+                "timeline.event1.title": "Founding Year",
+                "timeline.event1.text": "Naroda Group founded with first residential project in Ahmedabad. Started with a team of 5 people.",
+                "timeline.event2.title": "Commercial Expansion",
+                "timeline.event2.text": "Expanded to commercial real estate with first office complex. Completed 10+ residential projects.",
+                "timeline.event3.title": "Naroda Landmark Launch",
+                "timeline.event3.text": "Launched Naroda Landmark - premium commercial development. Crossed 1000+ happy customers milestone.",
+                "timeline.event4.title": "Naroda Irish Introduction",
+                "timeline.event4.text": "Introduces Naroda Irish - luxury residential project. Expanded team to 50+ professionals.",
+                "timeline.event5.title": "RERA Compliance",
+                "timeline.event5.text": "All projects RERA registered. Implemented digital transformation across operations.",
+                "timeline.event6.title": "50 Projects Milestone",
+                "timeline.event6.text": "Crossed 50 projects milestone with 2500+ happy customers. 5 million sq. ft. developed.",
+                
+                // Achievements Section
+                "achievements.badge": "Our Achievements",
+                "achievements.title.part1": "Numbers That",
+                "achievements.title.part2": "Speak",
+                "achievements.subtitle": "Our journey in numbers",
+                "achievements.stat1": "Years of Excellence",
+                "achievements.stat2": "Happy Families",
+                "achievements.stat3": "Projects Delivered",
+                "achievements.stat4": "Sq. Ft. Developed",
+                
+                // Projects Showcase
+                "showcase.badge": "Our Signature Projects",
+                "showcase.title.part1": "Creating",
+                "showcase.title.part2": "Landmarks",
+                "showcase.subtitle": "Discover our premium developments that redefine excellence",
+                "showcase.project1.title": "Naroda Landmark",
+                "showcase.project1.description": "Premium commercial spaces designed for modern businesses. Features earthquake-resistant RCC structure, 24-hour water & electric supply, CCTV security, and smartly planned retail spaces.",
+                "showcase.project1.type": "Commercial Complex",
+                "showcase.project1.location": "Naroda, Ahmedabad",
+                "showcase.project2.title": "Naroda Irish",
+                "showcase.project2.description": "Luxurious 2 & 3 BHK apartments with retail shops. Featuring 14-storey magnificent towers, basement parking, premium amenities, and earthquake-resistant construction.",
+                "showcase.project2.type": "Residential Apartments",
+                "showcase.project2.location": "Naroda, Ahmedabad",
+                "showcase.view_project": "View Project",
+                
+                // CTA Section
+                "cta.title.part1": "Join Our",
+                "cta.title.part2": "Success Story",
+                "cta.subtitle": "Be a part of our journey. Invest in quality, transparency, and excellence.",
+                "cta.btn1": "Contact Us",
+                "cta.btn2": "View Projects",
+                "cta.btn3": "Join Our Team",
+                
+                // Footer
+                "footer.description": "Creating landmark properties that redefine excellence. From premium commercial spaces to luxury residential living, we build dreams with quality and commitment.",
+                "footer.quick_links": "Quick Links",
+                "footer.our_projects": "Our Projects",
+                "footer.landmark_desc": "Premium Commercial Spaces",
+                "footer.irish_desc": "Luxury Residential Living",
+                "footer.view_all_projects": "View All Projects",
+                "footer.explore_portfolio": "Explore our portfolio",
+                "footer.contact_info": "Contact Info",
+                "footer.phone": "Phone Number",
+                "footer.phone_hours": "Mon - Sat: 10 AM - 7 PM",
+                "footer.email": "Email Address",
+                "footer.email_response": "We reply within 24 hours",
+                "footer.address": "Office Address",
+                "footer.address_line1": "Naroda - Bhat Road",
+                "footer.address_line2": "Ahmedabad, Gujarat 382330",
+                "footer.rights": "All rights reserved.",
+                "footer.privacy": "Privacy Policy",
+                "footer.terms": "Terms of Service",
+                "footer.rera": "RERA Registration"
+            },
+            hi: {
+                // Navigation
+                "nav.home": "होम",
+                "nav.about": "हमारे बारे में",
+                "nav.projects": "प्रोजेक्ट्स",
+                "nav.landmark": "नरोड़ा लैंडमार्क",
+                "nav.irish": "नरोड़ा आयरिश",
+                "nav.all_projects": "सभी प्रोजेक्ट्स",
+                "nav.properties": "संपत्तियाँ",
+                "nav.buy": "खरीदें",
+                "nav.rent": "किराए पर लें",
+                "nav.property_details": "संपत्ति विवरण",
+                "nav.gallery": "गैलरी",
+                "nav.more": "अधिक",
+                "nav.blog": "ब्लॉग",
+                "nav.news": "समाचार",
+                "nav.careers": "करियर",
+                "nav.team": "हमारी टीम",
+                "nav.faq": "सामान्य प्रश्न",
+                "nav.contact": "संपर्क करें",
+                "nav.login": "लॉगिन",
+                "nav.search": "खोजें",
+                "nav.account": "खाता",
+                
+                // Hero Section
+                "hero.title.part1": "के बारे में",
+                "hero.title.part2": "नरोड़ा ग्रुप",
+                "hero.subtitle": "2008 से सपने बनाना और लैंडमार्क बनाना",
+                
+                // About Section
+                "about.experience": "वर्षों का अनुभव",
+                "about.story_badge": "हमारी कहानी",
+                "about.title": "सपने बनाना,",
+                "about.title_gold": "लैंडमार्क बनाना",
+                "about.story1": "2008 में स्थापित, नरोड़ा ग्रुप अहमदाबाद के रियल एस्टेट लैंडस्केप में अग्रणी रहा है। एक छोटे पारिवारिक व्यवसाय के रूप में शुरू हुआ यह शहर के सबसे भरोसेमंद रियल एस्टेट डेवलपर्स में से एक बन गया है, जिसका पोर्टफोलियो कमर्शियल, रेजिडेंशियल और मिक्स्ड-यूज डेवलपमेंट तक फैला हुआ है।",
+                "about.story2": "हमारी यात्रा तीन मूल सिद्धांतों पर बनी है: गुणवत्ता, पारदर्शिता और ग्राहक संतुष्टि। इन मूल्यों ने हमें 50+ सफल परियोजनाओं के माध्यम से मार्गदर्शन किया है और हजारों परिवारों और व्यवसायों के लिए घर और कार्यस्थल बनाने में मदद की है।",
+                "about.vision_title": "विजन",
+                "about.vision_text": "नवीन डिजाइन के माध्यम से शहरी जीवन को फिर से परिभाषित करना",
+                "about.mission_title": "मिशन",
+                "about.mission_text": "असाधारण मूल्य के साथ स्थायी समुदाय बनाना",
+                "about.vision_card_title": "हमारी दृष्टि",
+                "about.vision_card_text": "भारत में सबसे विश्वसनीय और नवीन रियल एस्टेट डेवलपर बनना, जो स्थायी समुदाय बनाने के लिए जाना जाता है जो जीवन की गुणवत्ता को बढ़ाता है और सभी हितधारकों को असाधारण मूल्य प्रदान करता है।",
+                "about.mission_card_title": "हमारा मिशन",
+                "about.mission_card_text": "नवाचार, पारदर्शिता और ग्राहक-केंद्रित दृष्टिकोण के माध्यम से श्रेष्ठ गुणवत्ता वाले रियल एस्टेट समाधान प्रदान करना, जबकि नैतिकता और कॉर्पोरेट गवर्नेंस के उच्चतम मानकों को बनाए रखना।",
+                
+                // Values Section
+                "values.badge": "हमारे मूल्य",
+                "values.title.part1": "मूल",
+                "values.title.part2": "सिद्धांत",
+                "values.subtitle": "हमारे हर काम की नींव",
+                "values.card1.title": "ईमानदारी",
+                "values.card1.text": "हम अपने सभी लेनदेन में पूरी पारदर्शिता और नैतिक व्यापार प्रथाओं में विश्वास करते हैं।",
+                "values.card2.title": "ग्राहक प्रथम",
+                "values.card2.text": "हमारे ग्राहक हमारे हर काम के केंद्र में हैं। उनकी संतुष्टि ही हमारी सफलता है।",
+                "values.card3.title": "उत्कृष्टता",
+                "values.card3.text": "हम हर प्रोजेक्ट में डिजाइन, निर्माण और सेवा वितरण में उत्कृष्टता के लिए प्रयास करते हैं।",
+                "values.card4.title": "सस्टेनेबिलिटी",
+                "values.card4.text": "हम पर्यावरण के प्रति जिम्मेदार विकास और टिकाऊ प्रथाओं के लिए प्रतिबद्ध हैं।",
+                "values.card5.title": "नवाचार",
+                "values.card5.text": "हम बेहतर लिविंग स्पेस बनाने के लिए नई तकनीकों और नवीन दृष्टिकोणों को अपनाते हैं।",
+                "values.card6.title": "प्रतिबद्धता",
+                "values.card6.text": "हम अपने वादों को पूरा करने और हर बार समय पर डिलीवर करने के लिए समर्पित हैं।",
+                
+                // Team Section
+                "team.badge": "लीडरशिप टीम",
+                "team.title.part1": "मिलिए हमारे",
+                "team.title.part2": "नेताओं से",
+                "team.subtitle": "अनुभवी पेशेवर हमारी दृष्टि का मार्गदर्शन करते हैं",
+                "team.member1.name": "राजेश मेहता",
+                "team.member1.role": "संस्थापक और सीईओ",
+                "team.member1.experience": "रियल एस्टेट विकास में 20+ वर्षों का अनुभव",
+                "team.member2.name": "प्रिया शाह",
+                "team.member2.role": "निदेशक - परियोजनाएं",
+                "team.member2.experience": "15 वर्षों के अनुभव के साथ आर्किटेक्ट",
+                "team.member3.name": "अमित पटेल",
+                "team.member3.role": "मुख्य वित्तीय अधिकारी",
+                "team.member3.experience": "18 वर्षों के अनुभव के साथ वित्त पेशेवर",
+                "team.member4.name": "नेहा गुप्ता",
+                "team.member4.role": "विक्रय और विपणन प्रमुख",
+                "team.member4.experience": "12 वर्षों के अनुभव के साथ सेल्स पेशेवर",
+                
+                // Timeline Section
+                "timeline.badge": "हमारी यात्रा",
+                "timeline.title.part1": "मील के पत्थर",
+                "timeline.title.part2": "समयरेखा",
+                "timeline.subtitle": "उत्कृष्टता की हमारी यात्रा के प्रमुख क्षण",
+                "timeline.event1.title": "स्थापना वर्ष",
+                "timeline.event1.text": "अहमदाबाद में पहली आवासीय परियोजना के साथ नरोड़ा ग्रुप की स्थापना। 5 लोगों की टीम के साथ शुरुआत।",
+                "timeline.event2.title": "वाणिज्यिक विस्तार",
+                "timeline.event2.text": "पहले कार्यालय परिसर के साथ वाणिज्यिक अचल संपत्ति में विस्तार। 10+ आवासीय परियोजनाएं पूरी कीं।",
+                "timeline.event3.title": "नरोड़ा लैंडमार्क लॉन्च",
+                "timeline.event3.text": "नरोड़ा लैंडमार्क - प्रीमियम कमर्शियल डेवलपमेंट लॉन्च किया। 1000+ खुश ग्राहकों का मील का पत्थर पार किया।",
+                "timeline.event4.title": "नरोड़ा आयरिश परिचय",
+                "timeline.event4.text": "नरोड़ा आयरिश - लग्ज़री रेजिडेंशियल प्रोजेक्ट पेश किया। टीम को 50+ पेशेवरों तक विस्तारित किया।",
+                "timeline.event5.title": "RERA अनुपालन",
+                "timeline.event5.text": "सभी परियोजनाएं RERA पंजीकृत। संचालन में डिजिटल परिवर्तन लागू किया।",
+                "timeline.event6.title": "50 परियोजनाएं मील का पत्थर",
+                "timeline.event6.text": "2500+ खुश ग्राहकों के साथ 50 परियोजनाओं का मील का पत्थर पार किया। 5 मिलियन वर्ग फुट विकसित।",
+                
+                // Achievements Section
+                "achievements.badge": "हमारी उपलब्धियां",
+                "achievements.title.part1": "वे संख्याएँ जो",
+                "achievements.title.part2": "बोलती हैं",
+                "achievements.subtitle": "संख्या में हमारी यात्रा",
+                "achievements.stat1": "उत्कृष्टता के वर्ष",
+                "achievements.stat2": "खुश परिवार",
+                "achievements.stat3": "प्रोजेक्ट्स डिलीवर किए",
+                "achievements.stat4": "विकसित वर्ग फुट",
+                
+                // Projects Showcase
+                "showcase.badge": "हमारी सिग्नेचर परियोजनाएं",
+                "showcase.title.part1": "लैंडमार्क",
+                "showcase.title.part2": "बनाना",
+                "showcase.subtitle": "हमारे प्रीमियम डेवलपमेंट की खोज करें जो उत्कृष्टता को फिर से परिभाषित करते हैं",
+                "showcase.project1.title": "नरोड़ा लैंडमार्क",
+                "showcase.project1.description": "आधुनिक व्यवसायों के लिए डिज़ाइन किए गए प्रीमियम कमर्शियल स्पेस। भूकंप प्रतिरोधी आरसीसी संरचना, 24 घंटे पानी और बिजली आपूर्ति, सीसीटीवी सुरक्षा और स्मार्टली प्लान किए गए रिटेल स्पेस की सुविधाएँ।",
+                "showcase.project1.type": "कमर्शियल कॉम्प्लेक्स",
+                "showcase.project1.location": "नरोड़ा, अहमदाबाद",
+                "showcase.project2.title": "नरोड़ा आयरिश",
+                "showcase.project2.description": "रिटेल शॉप्स के साथ लग्ज़री 2 और 3 बीएचके अपार्टमेंट। 14-मंजिला शानदार टावर, बेसमेंट पार्किंग, प्रीमियम सुविधाएं और भूकंप प्रतिरोधी निर्माण की विशेषताएं।",
+                "showcase.project2.type": "आवासीय अपार्टमेंट",
+                "showcase.project2.location": "नरोड़ा, अहमदाबाद",
+                "showcase.view_project": "प्रोजेक्ट देखें",
+                
+                // CTA Section
+                "cta.title.part1": "हमारी",
+                "cta.title.part2": "सफलता की कहानी में शामिल हों",
+                "cta.subtitle": "हमारी यात्रा का हिस्सा बनें। गुणवत्ता, पारदर्शिता और उत्कृष्टता में निवेश करें।",
+                "cta.btn1": "संपर्क करें",
+                "cta.btn2": "प्रोजेक्ट्स देखें",
+                "cta.btn3": "हमारी टीम में शामिल हों",
+                
+                // Footer
+                "footer.description": "लैंडमार्क संपत्तियाँ बनाना जो उत्कृष्टता को फिर से परिभाषित करती हैं। प्रीमियम कमर्शियल स्पेस से लेकर लग्ज़री रेजिडेंशियल लिविंग तक, हम गुणवत्ता और प्रतिबद्धता के साथ सपने बनाते हैं।",
+                "footer.quick_links": "त्वरित लिंक",
+                "footer.our_projects": "हमारे प्रोजेक्ट्स",
+                "footer.landmark_desc": "प्रीमियम कमर्शियल स्पेस",
+                "footer.irish_desc": "लग्ज़री रेजिडेंशियल लिविंग",
+                "footer.view_all_projects": "सभी प्रोजेक्ट्स देखें",
+                "footer.explore_portfolio": "हमारे पोर्टफोलियो का अन्वेषण करें",
+                "footer.contact_info": "संपर्क जानकारी",
+                "footer.phone": "फोन नंबर",
+                "footer.phone_hours": "सोम - शनि: सुबह 10 - शाम 7 बजे",
+                "footer.email": "ईमेल पता",
+                "footer.email_response": "हम 24 घंटे के भीतर जवाब देते हैं",
+                "footer.address": "कार्यालय पता",
+                "footer.address_line1": "नरोड़ा - भाट रोड",
+                "footer.address_line2": "अहमदाबाद, गुजरात 382330",
+                "footer.rights": "सर्वाधिकार सुरक्षित।",
+                "footer.privacy": "गोपनीयता नीति",
+                "footer.terms": "सेवा की शर्तें",
+                "footer.rera": "RERA पंजीकरण"
+            },
+            gu: {
+                // Navigation
+                "nav.home": "હોમ",
+                "nav.about": "અમારા વિશે",
+                "nav.projects": "પ્રોજેક્ટ્સ",
+                "nav.landmark": "નરોડા લેન્ડમાર્ક",
+                "nav.irish": "નરોડા આયરિશ",
+                "nav.all_projects": "બધા પ્રોજેક્ટ્સ",
+                "nav.properties": "પ્રોપર્ટીઝ",
+                "nav.buy": "ખરીદો",
+                "nav.rent": "ભાડે લો",
+                "nav.property_details": "પ્રોપર્ટી વિગતો",
+                "nav.gallery": "ગેલેરી",
+                "nav.more": "વધુ",
+                "nav.blog": "બ્લોગ",
+                "nav.news": "સમાચાર",
+                "nav.careers": "કરિયર",
+                "nav.team": "અમારી ટીમ",
+                "nav.faq": "સામાન્ય પ્રશ્નો",
+                "nav.contact": "સંપર્ક કરો",
+                "nav.login": "લોગિન",
+                "nav.search": "શોધો",
+                "nav.account": "એકાઉન્ટ",
+                
+                // Hero Section
+                "hero.title.part1": "વિશે",
+                "hero.title.part2": "નરોડા ગ્રુપ",
+                "hero.subtitle": "2008 થી સપના બનાવવા અને લેન્ડમાર્ક બનાવવા",
+                
+                // About Section
+                "about.experience": "વર્ષોનો અનુભવ",
+                "about.story_badge": "અમારી વાર્તા",
+                "about.title": "સપના બનાવવા,",
+                "about.title_gold": "લેન્ડમાર્ક બનાવવા",
+                "about.story1": "2008માં સ્થાપિત, નરોડા ગ્રુપ અમદાવાદના રિઅલ એસ્ટેટ લેન્ડસ્કેપમાં અગ્રણી રહ્યો છે. નાના પારિવારિક વ્યવસાય તરીકે શરૂ થયેલું આ શહેરના સૌથી વિશ્વસનીય રિઅલ એસ્ટેટ ડેવલપર્સમાંથી એક બની ગયું છે, જેનું પોર્ટફોલિયો કોમર્શિયલ, રેસિડેન્શિયલ અને મિક્સ્ડ-યુઝ ડેવલપમેન્ટ સુધી ફેલાયેલું છે.",
+                "about.story2": "અમારી યાત્રા ત્રણ મૂળ સિદ્ધાંતો પર બનેલી છે: ગુણવત્તા, પારદર્શિતા અને ગ્રાહક સંતુષ્ટિ. આ મૂલ્યોએ અમને 50+ સફળ પ્રોજેક્ટ્સ દ્વારા માર્ગદર્શન આપ્યું છે અને હજારો પરિવારો અને વ્યવસાયો માટે ઘરો અને કાર્યસ્થાન બનાવવામાં મદદ કરી છે.",
+                "about.vision_title": "વિઝન",
+                "about.vision_text": "નવીન ડિઝાઇન દ્વારા શહેરી જીવનને ફરીથી વ્યાખ્યાયિત કરવું",
+                "about.mission_title": "મિશન",
+                "about.mission_text": "અસાધારણ મૂલ્ય સાથે ટકાઉ સમુદાયો બનાવવા",
+                "about.vision_card_title": "અમારી દ્રષ્ટિ",
+                "about.vision_card_text": "ભારતમાં સૌથી વિશ્વસનીય અને નવીન રિઅલ એસ્ટેટ ડેવલપર બનવું, જે ટકાઉ સમુદાયો બનાવવા માટે જાણીતું છે જે જીવનની ગુણવત્તામાં વધારો કરે છે અને બધા હિતધારકોને અસાધારણ મૂલ્ય પ્રદાન કરે છે.",
+                "about.mission_card_title": "અમારું મિશન",
+                "about.mission_card_text": "નવીનતા, પારદર્શિતા અને ગ્રાહક-કેન્દ્રિત અભિગમ દ્વારા શ્રેષ્ઠ ગુણવત્તા રિઅલ એસ્ટેટ સોલ્યુશન્સ પ્રદાન કરવા, જ્યારે નૈતિકતા અને કોર્પોરેટ ગવર્નન્સના ઉચ્ચતમ ધોરણો જાળવી રાખવા.",
+                
+                // Values Section
+                "values.badge": "અમારા મૂલ્યો",
+                "values.title.part1": "મૂળ",
+                "values.title.part2": "સિદ્ધાંતો",
+                "values.subtitle": "અમારા દરેક કામનો પાયો",
+                "values.card1.title": "ઈમાનદારી",
+                "values.card1.text": "અમે અમારા બધા લેવદેવમાં સંપૂર્ણ પારદર્શિતા અને નૈતિક વ્યવસાય પ્રથાઓમાં વિશ્વાસ કરીએ છીએ.",
+                "values.card2.title": "ગ્રાહક પ્રથમ",
+                "values.card2.text": "અમારા ગ્રાહકો અમારા દરેક કામના કેન્દ્રમાં છે. તેમની સંતુષ્ટિ જ અમારી સફળતા છે.",
+                "values.card3.title": "એક્સલન્સ",
+                "values.card3.text": "અમે દરેક પ્રોજેક્ટમાં ડિઝાઇન, નિર્માણ અને સેવા વિતરણમાં શ્રેષ્ઠતા માટે પ્રયત્ન કરીએ છીએ.",
+                "values.card4.title": "સસ્ટેઇનેબિલિટી",
+                "values.card4.text": "અમે પર્યાવરણીય રીતે જવાબદાર વિકાસ અને ટકાઉ પ્રથાઓ માટે પ્રતિબદ્ધ છીએ.",
+                "values.card5.title": "નવીનતા",
+                "values.card5.text": "અમે સારી લિવિંગ સ્પેસ બનાવવા માટે નવી ટેક્નોલોજી અને નવીન અભિગમોને સ્વીકારીએ છીએ.",
+                "values.card6.title": "પ્રતિબદ્ધતા",
+                "values.card6.text": "અમે અમારા વચનો પૂરા કરવા અને દર વખતે સમયસર ડિલિવર કરવા માટે સમર્પિત છીએ.",
+                
+                // Team Section
+                "team.badge": "લીડરશિપ ટીમ",
+                "team.title.part1": "અમારા",
+                "team.title.part2": "નેતાઓને મળો",
+                "team.subtitle": "અનુભવી પ્રોફેશનલ્સ અમારી દ્રષ્ટિનું માર્ગદર્શન કરે છે",
+                "team.member1.name": "રાજેશ મેહતા",
+                "team.member1.role": "સ્થાપક અને સીઈઓ",
+                "team.member1.experience": "રિઅલ એસ્ટેટ વિકાસમાં 20+ વર્ષનો અનુભવ",
+                "team.member2.name": "પ્રિયા શાહ",
+                "team.member2.role": "ડિરેક્ટર - પ્રોજેક્ટ્સ",
+                "team.member2.experience": "15 વર્ષના અનુભવ સાથે આર્કિટેક્ટ",
+                "team.member3.name": "અમિત પટેલ",
+                "team.member3.role": "મુખ્ય નાણાં અધિકારી",
+                "team.member3.experience": "18 વર્ષના અનુભવ સાથે નાણાં પેશાવર",
+                "team.member4.name": "નેહા ગુપ્તા",
+                "team.member4.role": "વેચાણ અને માર્કેટિંગ વડા",
+                "team.member4.experience": "12 વર્ષના અનુભવ સાથે વેચાણ પેશાવર",
+                
+                // Timeline Section
+                "timeline.badge": "અમારી યાત્રા",
+                "timeline.title.part1": "માઇલસ્ટોન",
+                "timeline.title.part2": "ટાઇમલાઇન",
+                "timeline.subtitle": "એક્સલન્સની અમારી યાત્રાના મુખ્ય ક્ષણો",
+                "timeline.event1.title": "સ્થાપના વર્ષ",
+                "timeline.event1.text": "અમદાવાદમાં પ્રથમ રેસિડેન્શિયલ પ્રોજેક્ટ સાથે નરોડા ગ્રુપની સ્થાપના. 5 લોકોની ટીમ સાથે શરૂઆત.",
+                "timeline.event2.title": "કોમર્શિયલ વિસ્તરણ",
+                "timeline.event2.text": "પ્રથમ ઓફિસ કોમ્પ્લેક્સ સાથે કોમર્શિયલ રિઅલ એસ્ટેટમાં વિસ્તરણ. 10+ રેસિડેન્શિયલ પ્રોજેક્ટ્સ પૂર્ણ કર્યા.",
+                "timeline.event3.title": "નરોડા લેન્ડમાર્ક લોન્ચ",
+                "timeline.event3.text": "નરોડા લેન્ડમાર્ક - પ્રીમિયમ કોમર્શિયલ ડેવલપમેન્ટ લોન્ચ કર્યું. 1000+ ખુશ ગ્રાહકોનો માઇલસ્ટોન પસાર કર્યો.",
+                "timeline.event4.title": "નરોડા આયરિશ પરિચય",
+                "timeline.event4.text": "નરોડા આયરિશ - લગ્ઝરી રેસિડેન્શિયલ પ્રોજેક્ટ પરિચય આપ્યો. ટીમને 50+ પ્રોફેશનલ્સ સુધી વિસ્તૃત કરી.",
+                "timeline.event5.title": "RERA અનુકૂલન",
+                "timeline.event5.text": "બધા પ્રોજેક્ટ્સ RERA રજિસ્ટર્ડ. ઓપરેશન્સમાં ડિજિટલ પરિવર્તન લાગુ કર્યું.",
+                "timeline.event6.title": "50 પ્રોજેક્ટ્સ માઇલસ્ટોન",
+                "timeline.event6.text": "2500+ ખુશ ગ્રાહકો સાથે 50 પ્રોજેક્ટ્સનો માઇલસ્ટોન પસાર કર્યો. 5 મિલિયન ચોરસ ફૂટ વિકસિત.",
+                
+                // Achievements Section
+                "achievements.badge": "અમારી સિદ્ધિઓ",
+                "achievements.title.part1": "તે સંખ્યાઓ જે",
+                "achievements.title.part2": "બોલે છે",
+                "achievements.subtitle": "સંખ્યામાં અમારી યાત્રા",
+                "achievements.stat1": "એક્સલન્સના વર્ષો",
+                "achievements.stat2": "સુખી પરિવારો",
+                "achievements.stat3": "પ્રોજેક્ટ્સ ડિલિવર કર્યા",
+                "achievements.stat4": "વિકસિત ચોરસ ફૂટ",
+                
+                // Projects Showcase
+                "showcase.badge": "અમારી સિગ્નેચર પ્રોજેક્ટ્સ",
+                "showcase.title.part1": "લેન્ડમાર્ક",
+                "showcase.title.part2": "બનાવવા",
+                "showcase.subtitle": "અમારા પ્રીમિયમ ડેવલપમેન્ટ્સનું અન્વેષણ કરો જે એક્સલન્સને ફરીથી વ્યાખ્યાયિત કરે છે",
+                "showcase.project1.title": "નરોડા લેન્ડમાર્ક",
+                "showcase.project1.description": "આધુનિક વ્યવસાયો માટે ડિઝાઇન કરેલા પ્રીમિયમ કોમર્શિયલ સ્પેસ. ધરતીકંપ પ્રતિરોધક આરસીસી માળખું, 24 કલાક પાણી અને વીજળી પુરવઠો, સીસીટીવી સુરક્ષા અને સ્માર્ટલી પ્લાન કરેલા રિટેલ સ્પેસની સુવિધાઓ.",
+                "showcase.project1.type": "કોમર્શિયલ કોમ્પ્લેક્સ",
+                "showcase.project1.location": "નરોડા, અમદાવાદ",
+                "showcase.project2.title": "નરોડા આયરિશ",
+                "showcase.project2.description": "રિટેલ શોપ્સ સાથે લગ્ઝરી 2 અને 3 બીએચકે એપાર્ટમેન્ટ્સ. 14-માળના શાનદાર ટાવર, બેસમેન્ટ પાર્કિંગ, પ્રીમિયમ સુવિધાઓ અને ધરતીકંપ પ્રતિરોધક નિર્માણની લાક્ષણિકતાઓ.",
+                "showcase.project2.type": "રેસિડેન્શિયલ એપાર્ટમેન્ટ્સ",
+                "showcase.project2.location": "નરોડા, અમદાવાદ",
+                "showcase.view_project": "પ્રોજેક્ટ જુઓ",
+                
+                // CTA Section
+                "cta.title.part1": "અમારી",
+                "cta.title.part2": "સફળતાની વાર્તામાં જોડાઓ",
+                "cta.subtitle": "અમારી યાત્રાનો ભાગ બનો. ગુણવત્તા, પારદર્શિતા અને એક્સલન્સમાં રોકાણ કરો.",
+                "cta.btn1": "સંપર્ક કરો",
+                "cta.btn2": "પ્રોજેક્ટ્સ જુઓ",
+                "cta.btn3": "અમારી ટીમમાં જોડાઓ",
+                
+                // Footer
+                "footer.description": "લેન્ડમાર્ક પ્રોપર્ટીઝ બનાવવી જે એક્સલન્સને ફરીથી વ્યાખ્યાયિત કરે છે. પ્રીમિયમ કોમર્શિયલ સ્પેસથી લગ્ઝરી રેસિડેન્શિયલ લિવિંગ સુધી, અમે ગુણવત્તા અને પ્રતિબદ્ધતા સાથે સપના બનાવીએ છીએ.",
+                "footer.quick_links": "ઝડપી લિંક્સ",
+                "footer.our_projects": "અમારા પ્રોજેક્ટ્સ",
+                "footer.landmark_desc": "પ્રીમિયમ કોમર્શિયલ સ્પેસ",
+                "footer.irish_desc": "લગ્ઝરી રેસિડેન્શિયલ લિવિંગ",
+                "footer.view_all_projects": "બધા પ્રોજેક્ટ્સ જુઓ",
+                "footer.explore_portfolio": "અમારા પોર્ટફોલિયોનું અન્વેષણ કરો",
+                "footer.contact_info": "સંપર્ક માહિતી",
+                "footer.phone": "ફોન નંબર",
+                "footer.phone_hours": "સોમ - શનિ: સવારે 10 - સાંજે 7 વાગ્યા",
+                "footer.email": "ઈમેલ એડ્રેસ",
+                "footer.email_response": "અમે 24 કલાકમાં જવાબ આપીએ છીએ",
+                "footer.address": "ઓફિસ એડ્રેસ",
+                "footer.address_line1": "નરોડા - ભાટ રોડ",
+                "footer.address_line2": "અમદાવાદ, ગુજરાત 382330",
+                "footer.rights": "બધા હક્કો સુરક્ષિત.",
+                "footer.privacy": "ગોપનીયતા નીતિ",
+                "footer.terms": "સેવાની શરતો",
+                "footer.rera": "RERA રજિસ્ટ્રેશન"
+            }
+        };
+    </script>
 
     <script>
         // Wait for page to load
@@ -1910,6 +2524,77 @@
                     preloader.style.display = 'none';
                 }, 500);
             }, 1000);
+            
+            // Language switching functionality
+            const languageSelectors = document.querySelectorAll('.language-selector');
+            const currentLanguageElement = document.getElementById('currentLanguage');
+            
+            // Load saved language from localStorage or default to English
+            let currentLang = localStorage.getItem('preferredLanguage') || 'en';
+            
+            // Apply language on page load
+            applyLanguage(currentLang);
+            
+            // Set up language selector event listeners
+            languageSelectors.forEach(selector => {
+                selector.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const lang = this.getAttribute('data-lang');
+                    setLanguage(lang);
+                });
+            });
+            
+            function setLanguage(lang) {
+                currentLang = lang;
+                localStorage.setItem('preferredLanguage', lang);
+                applyLanguage(lang);
+                showToast(`Language changed to ${getLanguageName(lang)}`, 'success');
+            }
+            
+            function applyLanguage(lang) {
+                // Update body class for language-specific styling
+                document.body.classList.remove('hindi', 'gujarati');
+                if (lang === 'hi') document.body.classList.add('hindi');
+                if (lang === 'gu') document.body.classList.add('gujarati');
+                
+                // Update current language display
+                currentLanguageElement.textContent = getLanguageCode(lang);
+                
+                // Fade out content
+                document.querySelector('.language-content').style.opacity = '0.5';
+                
+                // Apply translations after a short delay for smoother transition
+                setTimeout(() => {
+                    const elements = document.querySelectorAll('[data-i18n]');
+                    elements.forEach(element => {
+                        const key = element.getAttribute('data-i18n');
+                        if (translations[lang] && translations[lang][key]) {
+                            element.textContent = translations[lang][key];
+                        }
+                    });
+                    
+                    // Fade content back in
+                    document.querySelector('.language-content').style.opacity = '1';
+                }, 300);
+            }
+            
+            function getLanguageName(code) {
+                const names = {
+                    'en': 'English',
+                    'hi': 'Hindi',
+                    'gu': 'Gujarati'
+                };
+                return names[code] || 'English';
+            }
+            
+            function getLanguageCode(code) {
+                const codes = {
+                    'en': 'EN',
+                    'hi': 'HI',
+                    'gu': 'GU'
+                };
+                return codes[code] || 'EN';
+            }
             
             // Initialize back to top button
             function initBackToTop() {
@@ -2028,9 +2713,12 @@
             
             // Show welcome message
             setTimeout(() => {
-                if (window.showToast) {
-                    showToast('Welcome to Naroda Group!', 'success');
-                }
+                const welcomeMessages = {
+                    'en': 'Welcome to Naroda Group!',
+                    'hi': 'नरोड़ा ग्रुप में आपका स्वागत है!',
+                    'gu': 'નરોડા ગ્રુપમાં આપનું સ્વાગત છે!'
+                };
+                showToast(welcomeMessages[currentLang] || 'Welcome to Naroda Group!', 'success');
             }, 1500);
             
             // Add keyboard navigation support

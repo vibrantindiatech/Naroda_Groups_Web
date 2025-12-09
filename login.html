@@ -104,6 +104,15 @@
             color: var(--accent-color);
         }
 
+        /* Language Specific Styles */
+        body.hindi, body.gujarati {
+            font-family: 'Noto Sans', 'Inter', sans-serif;
+        }
+        
+        .language-content {
+            transition: opacity 0.3s ease;
+        }
+
         /* ===== Preloader ===== */
         #preloader {
             position: fixed;
@@ -1453,48 +1462,48 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="index.html" data-i18n="nav.home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
+                        <a class="nav-link" href="about.html" data-i18n="nav.about">About</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" data-bs-toggle="dropdown" aria-expanded="false" data-i18n="nav.projects">
                             Projects
                         </a>
                         <div class="dropdown-menu" aria-labelledby="projectsDropdown">
-                            <a class="dropdown-item" href="projects-landmark.html">Naroda Landmark</a>
-                            <a class="dropdown-item" href="projects-irish.html">Naroda Irish</a>
+                            <a class="dropdown-item" href="projects-landmark.html" data-i18n="nav.landmark">Naroda Landmark</a>
+                            <a class="dropdown-item" href="projects-irish.html" data-i18n="nav.irish">Naroda Irish</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="projects.html">All Projects</a>
+                            <a class="dropdown-item" href="projects.html" data-i18n="nav.all_projects">All Projects</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="propertiesDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="propertiesDropdown" data-bs-toggle="dropdown" aria-expanded="false" data-i18n="nav.properties">
                             Properties
                         </a>
                         <div class="dropdown-menu" aria-labelledby="propertiesDropdown">
-                            <a class="dropdown-item" href="properties.html">Buy</a>
-                            <a class="dropdown-item" href="properties-rent.html">Rent</a>
+                            <a class="dropdown-item" href="properties.html" data-i18n="nav.buy">Buy</a>
+                            <a class="dropdown-item" href="properties-rent.html" data-i18n="nav.rent">Rent</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="property-detail.html">Property Details</a>
+                            <a class="dropdown-item" href="property-detail.html" data-i18n="nav.property_details">Property Details</a>
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="gallery.html">Gallery</a>
+                        <a class="nav-link" href="gallery.html" data-i18n="nav.gallery">Gallery</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" data-bs-toggle="dropdown" aria-expanded="false" data-i18n="nav.more">
                             More
                         </a>
                         <div class="dropdown-menu" aria-labelledby="moreDropdown">
-                            <a class="dropdown-item" href="blog.html">Blog</a>
-                            <a class="dropdown-item" href="news.html">News</a>
-                            <a class="dropdown-item" href="careers.html">Careers</a>
-                            <a class="dropdown-item" href="team.html">Our Team</a>
+                            <a class="dropdown-item" href="blog.html" data-i18n="nav.blog">Blog</a>
+                            <a class="dropdown-item" href="news.html" data-i18n="nav.news">News</a>
+                            <a class="dropdown-item" href="careers.html" data-i18n="nav.careers">Careers</a>
+                            <a class="dropdown-item" href="team.html" data-i18n="nav.team">Our Team</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="faq.html">FAQ</a>
-                            <a class="dropdown-item" href="contact.html">Contact</a>
+                            <a class="dropdown-item" href="faq.html" data-i18n="nav.faq">FAQ</a>
+                            <a class="dropdown-item" href="contact.html" data-i18n="nav.contact">Contact</a>
                         </div>
                     </li>
                 </ul>
@@ -1502,16 +1511,16 @@
                 <div class="d-flex align-items-center ms-lg-3 mt-3 mt-lg-0">
                     <div class="dropdown">
                         <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fas fa-globe me-1"></i> EN
+                            <i class="fas fa-globe me-1"></i> <span id="currentLanguage">EN</span>
                         </button>
                         <div class="dropdown-menu" aria-labelledby="languageDropdown">
-                            <a class="dropdown-item" href="#">English</a>
-                            <a class="dropdown-item" href="#">Hindi</a>
-                            <a class="dropdown-item" href="#">Gujarati</a>
+                            <a class="dropdown-item language-selector" href="#" data-lang="en">English</a>
+                            <a class="dropdown-item language-selector" href="#" data-lang="hi">हिंदी (Hindi)</a>
+                            <a class="dropdown-item language-selector" href="#" data-lang="gu">ગુજરાતી (Gujarati)</a>
                         </div>
                     </div>
                     <a href="login.html" class="btn btn-outline-light ms-3 active">
-                        <i class="fas fa-user me-2"></i> Login
+                        <i class="fas fa-user me-2"></i> <span data-i18n="nav.login">Login</span>
                     </a>
                 </div>
             </div>
@@ -1519,7 +1528,7 @@
     </nav>
 
     <!-- Main Content -->
-    <main>
+    <main class="language-content">
         <!-- Auth Section -->
         <section class="auth-section">
             <div class="container">
@@ -1529,11 +1538,11 @@
                         <div class="auth-left">
                             <div class="auth-brand">
                                 <div class="logo-icon">NG</div>
-                                <h1>Naroda <span class="gold-text">Group</span></h1>
+                                <h1 data-i18n="auth.brand_title.part1">Naroda <span class="gold-text" data-i18n="auth.brand_title.part2">Group</span></h1>
                             </div>
                             
-                            <h2 class="mb-4">Welcome to Naroda Group</h2>
-                            <p class="mb-4">
+                            <h2 class="mb-4" data-i18n="auth.welcome_title">Welcome to Naroda Group</h2>
+                            <p class="mb-4" data-i18n="auth.welcome_text">
                                 Join thousands of satisfied customers who trust us with their real estate dreams.
                                 Manage properties, track investments, and discover exclusive opportunities.
                             </p>
@@ -1542,32 +1551,32 @@
                                 <div class="auth-feature">
                                     <i class="fas fa-home"></i>
                                     <div class="auth-feature-content">
-                                        <h4>Property Management</h4>
-                                        <p>View and manage all your properties in one dashboard</p>
+                                        <h4 data-i18n="auth.feature1_title">Property Management</h4>
+                                        <p data-i18n="auth.feature1_text">View and manage all your properties in one dashboard</p>
                                     </div>
                                 </div>
                                 
                                 <div class="auth-feature">
                                     <i class="fas fa-chart-line"></i>
                                     <div class="auth-feature-content">
-                                        <h4>Investment Tracking</h4>
-                                        <p>Monitor ROI and property performance with detailed analytics</p>
+                                        <h4 data-i18n="auth.feature2_title">Investment Tracking</h4>
+                                        <p data-i18n="auth.feature2_text">Monitor ROI and property performance with detailed analytics</p>
                                     </div>
                                 </div>
                                 
                                 <div class="auth-feature">
                                     <i class="fas fa-bell"></i>
                                     <div class="auth-feature-content">
-                                        <h4>Exclusive Updates</h4>
-                                        <p>Be the first to know about new projects and special offers</p>
+                                        <h4 data-i18n="auth.feature3_title">Exclusive Updates</h4>
+                                        <p data-i18n="auth.feature3_text">Be the first to know about new projects and special offers</p>
                                     </div>
                                 </div>
                             </div>
                             
                             <div class="auth-support">
-                                <p class="mb-2">Need assistance with your account?</p>
+                                <p class="mb-2" data-i18n="auth.support_text">Need assistance with your account?</p>
                                 <a href="contact.html" class="btn btn-outline-light">
-                                    <i class="fas fa-headset me-2"></i> Contact Support
+                                    <i class="fas fa-headset me-2"></i> <span data-i18n="auth.contact_support">Contact Support</span>
                                 </a>
                             </div>
                         </div>
@@ -1577,62 +1586,62 @@
                             <!-- Login Form -->
                             <div class="auth-form" id="loginForm">
                                 <div class="auth-header">
-                                    <h2>Welcome <span class="gold-text">Back</span></h2>
-                                    <p>Sign in to your account</p>
+                                    <h2 data-i18n="login.title.part1">Welcome <span class="gold-text" data-i18n="login.title.part2">Back</span></h2>
+                                    <p data-i18n="login.subtitle">Sign in to your account</p>
                                 </div>
                                 
                                 <form id="loginFormActual">
                                     <div class="form-group">
                                         <label for="loginEmail" class="form-label">
-                                            <i class="fas fa-envelope"></i> Email Address
+                                            <i class="fas fa-envelope"></i> <span data-i18n="login.email_label">Email Address</span>
                                         </label>
                                         <div class="position-relative">
-                                            <input type="email" id="loginEmail" class="form-control with-icon" placeholder="Enter your email" required>
+                                            <input type="email" id="loginEmail" class="form-control with-icon" placeholder="Enter your email" required data-i18n-placeholder="login.email_placeholder">
                                             <i class="fas fa-envelope input-icon"></i>
                                         </div>
-                                        <div class="invalid-feedback">Please enter a valid email address</div>
+                                        <div class="invalid-feedback" data-i18n="login.email_error">Please enter a valid email address</div>
                                     </div>
                                     
                                     <div class="form-group">
                                         <label for="loginPassword" class="form-label">
-                                            <i class="fas fa-lock"></i> Password
+                                            <i class="fas fa-lock"></i> <span data-i18n="login.password_label">Password</span>
                                         </label>
                                         <div class="position-relative">
-                                            <input type="password" id="loginPassword" class="form-control with-icon" placeholder="Enter your password" required minlength="8">
+                                            <input type="password" id="loginPassword" class="form-control with-icon" placeholder="Enter your password" required minlength="8" data-i18n-placeholder="login.password_placeholder">
                                             <i class="fas fa-lock input-icon"></i>
                                             <button type="button" class="password-toggle" data-target="loginPassword" aria-label="Toggle password visibility">
                                                 <i class="fas fa-eye"></i>
                                             </button>
                                         </div>
-                                        <div class="invalid-feedback">Password must be at least 8 characters</div>
+                                        <div class="invalid-feedback" data-i18n="login.password_error">Password must be at least 8 characters</div>
                                     </div>
                                     
                                     <div class="form-options">
                                         <div class="form-check">
                                             <input class="form-check-input" type="checkbox" id="rememberLogin">
-                                            <label class="form-check-label" for="rememberLogin">
+                                            <label class="form-check-label" for="rememberLogin" data-i18n="login.remember">
                                                 Remember me
                                             </label>
                                         </div>
                                         <button type="button" class="btn-link" id="showForgot">
-                                            Forgot Password?
+                                            <span data-i18n="login.forgot">Forgot Password?</span>
                                         </button>
                                     </div>
                                     
                                     <button type="submit" class="btn btn-gold auth-btn">
-                                        <i class="fas fa-sign-in-alt me-2"></i> Sign In
+                                        <i class="fas fa-sign-in-alt me-2"></i> <span data-i18n="login.signin_button">Sign In</span>
                                     </button>
                                     
                                     <div class="form-check mb-3">
                                         <input class="form-check-input" type="checkbox" id="enable2FA">
-                                        <label class="form-check-label" for="enable2FA">
+                                        <label class="form-check-label" for="enable2FA" data-i18n="login.enable_2fa">
                                             Enable Two-Factor Authentication
                                         </label>
                                     </div>
                                 </form>
                                 
                                 <div class="auth-divider">
-                                    <span>Or continue with</span>
+                                    <span data-i18n="login.or_continue">Or continue with</span>
                                 </div>
                                 
                                 <div class="social-auth">
@@ -1651,9 +1660,9 @@
                                 </div>
                                 
                                 <div class="auth-footer">
-                                    <p>Don't have an account? 
+                                    <p data-i18n="login.no_account">Don't have an account? 
                                         <button type="button" class="btn-link" id="showRegister">
-                                            <i class="fas fa-user-plus me-1"></i> Sign up here
+                                            <i class="fas fa-user-plus me-1"></i> <span data-i18n="login.signup_link">Sign up here</span>
                                         </button>
                                     </p>
                                 </div>
@@ -1662,12 +1671,12 @@
                             <!-- Two-Factor Authentication Form -->
                             <div class="auth-form" id="twoFactorForm" style="display: none;">
                                 <div class="auth-header">
-                                    <h2>Two-Factor <span class="gold-text">Authentication</span></h2>
-                                    <p>Enter the verification code</p>
+                                    <h2 data-i18n="2fa.title.part1">Two-Factor <span class="gold-text" data-i18n="2fa.title.part2">Authentication</span></h2>
+                                    <p data-i18n="2fa.subtitle">Enter the verification code</p>
                                 </div>
                                 
                                 <div class="two-factor-container">
-                                    <p class="mb-4">Enter the 6-digit code from your authenticator app</p>
+                                    <p class="mb-4" data-i18n="2fa.instruction">Enter the 6-digit code from your authenticator app</p>
                                     
                                     <div class="otp-container">
                                         <input type="text" class="otp-input" maxlength="1" data-index="0" autofocus>
@@ -1680,16 +1689,16 @@
                                     
                                     <div class="d-flex justify-content-center gap-3 mt-4">
                                         <button type="button" class="btn btn-outline-gold" id="resendOTP">
-                                            Resend Code
+                                            <span data-i18n="2fa.resend">Resend Code</span>
                                         </button>
                                         <button type="button" class="btn btn-gold" id="verifyOTP">
-                                            Verify
+                                            <span data-i18n="2fa.verify">Verify</span>
                                         </button>
                                     </div>
                                     
                                     <div class="mt-4">
                                         <button type="button" class="btn-link" id="backToLoginFrom2FA">
-                                            <i class="fas fa-arrow-left me-2"></i> Back to Login
+                                            <i class="fas fa-arrow-left me-2"></i> <span data-i18n="2fa.back">Back to Login</span>
                                         </button>
                                     </div>
                                 </div>
@@ -1698,23 +1707,23 @@
                             <!-- Registration Form -->
                             <div class="auth-form" id="registerForm" style="display: none;">
                                 <div class="auth-header">
-                                    <h2>Create <span class="gold-text">Account</span></h2>
-                                    <p>Join Naroda Group today</p>
+                                    <h2 data-i18n="register.title.part1">Create <span class="gold-text" data-i18n="register.title.part2">Account</span></h2>
+                                    <p data-i18n="register.subtitle">Join Naroda Group today</p>
                                 </div>
                                 
                                 <!-- Progress Steps -->
                                 <div class="progress-steps">
                                     <div class="progress-step active" data-step="1">
                                         <div class="step-number">1</div>
-                                        <div class="step-label">Personal</div>
+                                        <div class="step-label" data-i18n="register.step1">Personal</div>
                                     </div>
                                     <div class="progress-step" data-step="2">
                                         <div class="step-number">2</div>
-                                        <div class="step-label">Account</div>
+                                        <div class="step-label" data-i18n="register.step2">Account</div>
                                     </div>
                                     <div class="progress-step" data-step="3">
                                         <div class="step-number">3</div>
-                                        <div class="step-label">Complete</div>
+                                        <div class="step-label" data-i18n="register.step3">Complete</div>
                                     </div>
                                 </div>
                                 
@@ -1725,42 +1734,42 @@
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="firstName" class="form-label">
-                                                        <i class="fas fa-user"></i> First Name
+                                                        <i class="fas fa-user"></i> <span data-i18n="register.first_name">First Name</span>
                                                     </label>
-                                                    <input type="text" id="firstName" class="form-control" placeholder="Enter first name" required>
-                                                    <div class="invalid-feedback">Please enter your first name</div>
+                                                    <input type="text" id="firstName" class="form-control" placeholder="Enter first name" required data-i18n-placeholder="register.first_name_placeholder">
+                                                    <div class="invalid-feedback" data-i18n="register.first_name_error">Please enter your first name</div>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="lastName" class="form-label">
-                                                        <i class="fas fa-user"></i> Last Name
+                                                        <i class="fas fa-user"></i> <span data-i18n="register.last_name">Last Name</span>
                                                     </label>
-                                                    <input type="text" id="lastName" class="form-control" placeholder="Enter last name" required>
-                                                    <div class="invalid-feedback">Please enter your last name</div>
+                                                    <input type="text" id="lastName" class="form-control" placeholder="Enter last name" required data-i18n-placeholder="register.last_name_placeholder">
+                                                    <div class="invalid-feedback" data-i18n="register.last_name_error">Please enter your last name</div>
                                                 </div>
                                             </div>
                                         </div>
                                         
                                         <div class="form-group">
                                             <label for="phone" class="form-label">
-                                                <i class="fas fa-phone"></i> Phone Number
+                                                <i class="fas fa-phone"></i> <span data-i18n="register.phone">Phone Number</span>
                                             </label>
-                                            <input type="tel" id="phone" class="form-control" placeholder="Enter phone number" pattern="[0-9]{10}" required>
-                                            <div class="invalid-feedback">Please enter a valid 10-digit phone number</div>
+                                            <input type="tel" id="phone" class="form-control" placeholder="Enter phone number" pattern="[0-9]{10}" required data-i18n-placeholder="register.phone_placeholder">
+                                            <div class="invalid-feedback" data-i18n="register.phone_error">Please enter a valid 10-digit phone number</div>
                                         </div>
                                         
                                         <div class="form-group">
                                             <label for="registerEmail" class="form-label">
-                                                <i class="fas fa-envelope"></i> Email Address
+                                                <i class="fas fa-envelope"></i> <span data-i18n="register.email">Email Address</span>
                                             </label>
-                                            <input type="email" id="registerEmail" class="form-control" placeholder="Enter email address" required>
-                                            <div class="invalid-feedback">Please enter a valid email address</div>
+                                            <input type="email" id="registerEmail" class="form-control" placeholder="Enter email address" required data-i18n-placeholder="register.email_placeholder">
+                                            <div class="invalid-feedback" data-i18n="register.email_error">Please enter a valid email address</div>
                                         </div>
                                         
                                         <div class="step-navigation">
                                             <button type="button" class="btn btn-outline-gold" id="nextStep1">
-                                                Next Step <i class="fas fa-arrow-right ms-2"></i>
+                                                <span data-i18n="register.next">Next Step</span> <i class="fas fa-arrow-right ms-2"></i>
                                             </button>
                                         </div>
                                     </form>
@@ -1771,10 +1780,10 @@
                                     <form id="step2Form">
                                         <div class="form-group">
                                             <label for="registerPassword" class="form-label">
-                                                <i class="fas fa-lock"></i> Create Password
+                                                <i class="fas fa-lock"></i> <span data-i18n="register.password">Create Password</span>
                                             </label>
                                             <div class="position-relative">
-                                                <input type="password" id="registerPassword" class="form-control with-icon" placeholder="Create a password" required minlength="8">
+                                                <input type="password" id="registerPassword" class="form-control with-icon" placeholder="Create a password" required minlength="8" data-i18n-placeholder="register.password_placeholder">
                                                 <i class="fas fa-lock input-icon"></i>
                                                 <button type="button" class="password-toggle" data-target="registerPassword" aria-label="Toggle password visibility">
                                                     <i class="fas fa-eye"></i>
@@ -1784,17 +1793,17 @@
                                                 <div class="strength-meter">
                                                     <div class="strength-fill" id="passwordStrength"></div>
                                                 </div>
-                                                <div class="strength-text" id="passwordStrengthText">Password strength</div>
+                                                <div class="strength-text" id="passwordStrengthText" data-i18n="register.password_strength">Password strength</div>
                                             </div>
-                                            <div class="invalid-feedback">Password must be at least 8 characters with uppercase, lowercase, number, and special character</div>
+                                            <div class="invalid-feedback" data-i18n="register.password_error">Password must be at least 8 characters with uppercase, lowercase, number, and special character</div>
                                         </div>
                                         
                                         <div class="form-group">
                                             <label for="confirmPassword" class="form-label">
-                                                <i class="fas fa-lock"></i> Confirm Password
+                                                <i class="fas fa-lock"></i> <span data-i18n="register.confirm_password">Confirm Password</span>
                                             </label>
                                             <div class="position-relative">
-                                                <input type="password" id="confirmPassword" class="form-control with-icon" placeholder="Confirm password" required>
+                                                <input type="password" id="confirmPassword" class="form-control with-icon" placeholder="Confirm password" required data-i18n-placeholder="register.confirm_password_placeholder">
                                                 <i class="fas fa-lock input-icon"></i>
                                                 <button type="button" class="password-toggle" data-target="confirmPassword" aria-label="Toggle password visibility">
                                                     <i class="fas fa-eye"></i>
@@ -1805,33 +1814,33 @@
                                         
                                         <div class="form-group">
                                             <label for="userType" class="form-label">
-                                                <i class="fas fa-user-tag"></i> I am a
+                                                <i class="fas fa-user-tag"></i> <span data-i18n="register.user_type">I am a</span>
                                             </label>
                                             <select id="userType" class="form-control" required>
-                                                <option value="">Select your role</option>
-                                                <option value="buyer">Property Buyer</option>
-                                                <option value="investor">Investor</option>
-                                                <option value="tenant">Tenant</option>
-                                                <option value="agent">Real Estate Agent</option>
-                                                <option value="other">Other</option>
+                                                <option value="" data-i18n="register.user_type_default">Select your role</option>
+                                                <option value="buyer" data-i18n="register.user_type1">Property Buyer</option>
+                                                <option value="investor" data-i18n="register.user_type2">Investor</option>
+                                                <option value="tenant" data-i18n="register.user_type3">Tenant</option>
+                                                <option value="agent" data-i18n="register.user_type4">Real Estate Agent</option>
+                                                <option value="other" data-i18n="register.user_type5">Other</option>
                                             </select>
-                                            <div class="invalid-feedback">Please select your role</div>
+                                            <div class="invalid-feedback" data-i18n="register.user_type_error">Please select your role</div>
                                         </div>
                                         
                                         <div class="terms-checkbox">
                                             <input class="form-check-input" type="checkbox" id="agreeTerms" required>
                                             <label class="form-check-label" for="agreeTerms">
-                                                I agree to the <a href="terms.html" target="_blank">Terms of Service</a> and <a href="privacy.html" target="_blank">Privacy Policy</a>
+                                                <span data-i18n="register.agree_terms">I agree to the</span> <a href="terms.html" target="_blank" data-i18n="register.terms_link">Terms of Service</a> <span data-i18n="register.and">and</span> <a href="privacy.html" target="_blank" data-i18n="register.privacy_link">Privacy Policy</a>
                                             </label>
-                                            <div class="invalid-feedback">You must agree to the terms and conditions</div>
+                                            <div class="invalid-feedback" data-i18n="register.terms_error">You must agree to the terms and conditions</div>
                                         </div>
                                         
                                         <div class="step-navigation">
                                             <button type="button" class="btn btn-outline-gold" id="prevStep2">
-                                                <i class="fas fa-arrow-left me-2"></i> Back
+                                                <i class="fas fa-arrow-left me-2"></i> <span data-i18n="register.back">Back</span>
                                             </button>
                                             <button type="button" class="btn btn-gold" id="completeRegistration">
-                                                Create Account
+                                                <span data-i18n="register.create_account">Create Account</span>
                                             </button>
                                         </div>
                                     </form>
@@ -1843,34 +1852,34 @@
                                         <div class="success-icon">
                                             <i class="fas fa-check"></i>
                                         </div>
-                                        <h3 class="mb-3">Account Created!</h3>
-                                        <p class="text-muted mb-4">
+                                        <h3 class="mb-3" data-i18n="register.success_title">Account Created!</h3>
+                                        <p class="text-muted mb-4" data-i18n="register.success_text">
                                             Welcome to Naroda Group! Your account has been created successfully.
                                             A verification email has been sent to your inbox.
                                         </p>
                                         <div class="dashboard-preview">
-                                            <h5>Dashboard Preview</h5>
+                                            <h5 data-i18n="register.dashboard_preview">Dashboard Preview</h5>
                                             <div class="row mt-3">
                                                 <div class="col-6">
                                                     <div class="preview-card">
                                                         <i class="fas fa-home fa-2x gold-text mb-2"></i>
-                                                        <h6>Properties</h6>
+                                                        <h6 data-i18n="register.properties">Properties</h6>
                                                     </div>
                                                 </div>
                                                 <div class="col-6">
                                                     <div class="preview-card">
                                                         <i class="fas fa-chart-line fa-2x gold-text mb-2"></i>
-                                                        <h6>Analytics</h6>
+                                                        <h6 data-i18n="register.analytics">Analytics</h6>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="d-flex flex-column flex-sm-row gap-3 mt-4">
                                             <button type="button" class="btn btn-gold" id="backToLogin">
-                                                <i class="fas fa-sign-in-alt me-2"></i> Sign In Now
+                                                <i class="fas fa-sign-in-alt me-2"></i> <span data-i18n="register.signin_now">Sign In Now</span>
                                             </button>
                                             <a href="index.html" class="btn btn-outline-gold">
-                                                <i class="fas fa-home me-2"></i> Go to Homepage
+                                                <i class="fas fa-home me-2"></i> <span data-i18n="register.go_homepage">Go to Homepage</span>
                                             </a>
                                         </div>
                                     </div>
@@ -1880,33 +1889,33 @@
                             <!-- Forgot Password Form -->
                             <div class="auth-form" id="forgotForm" style="display: none;">
                                 <div class="auth-header">
-                                    <h2>Reset <span class="gold-text">Password</span></h2>
-                                    <p>Enter your email to reset your password</p>
+                                    <h2 data-i18n="forgot.title.part1">Reset <span class="gold-text" data-i18n="forgot.title.part2">Password</span></h2>
+                                    <p data-i18n="forgot.subtitle">Enter your email to reset your password</p>
                                 </div>
                                 
                                 <form id="forgotPasswordForm">
                                     <div class="form-group">
                                         <label for="forgotEmail" class="form-label">
-                                            <i class="fas fa-envelope"></i> Email Address
+                                            <i class="fas fa-envelope"></i> <span data-i18n="forgot.email_label">Email Address</span>
                                         </label>
                                         <div class="position-relative">
-                                            <input type="email" id="forgotEmail" class="form-control with-icon" placeholder="Enter your email" required>
+                                            <input type="email" id="forgotEmail" class="form-control with-icon" placeholder="Enter your email" required data-i18n-placeholder="forgot.email_placeholder">
                                             <i class="fas fa-envelope input-icon"></i>
                                         </div>
-                                        <div class="invalid-feedback">Please enter a valid email address</div>
+                                        <div class="invalid-feedback" data-i18n="forgot.email_error">Please enter a valid email address</div>
                                     </div>
                                     
                                     <button type="submit" class="btn btn-gold auth-btn">
-                                        <i class="fas fa-paper-plane me-2"></i> Send Reset Link
+                                        <i class="fas fa-paper-plane me-2"></i> <span data-i18n="forgot.send_link">Send Reset Link</span>
                                     </button>
                                     
                                     <div class="auth-divider">
-                                        <span>Remember your password?</span>
+                                        <span data-i18n="forgot.remember_password">Remember your password?</span>
                                     </div>
                                     
                                     <div class="auth-footer">
                                         <button type="button" class="btn-link" id="backToLoginFromForgot">
-                                            <i class="fas fa-sign-in-alt me-2"></i> Back to Sign In
+                                            <i class="fas fa-sign-in-alt me-2"></i> <span data-i18n="forgot.back_signin">Back to Sign In</span>
                                         </button>
                                     </div>
                                 </form>
@@ -1915,17 +1924,17 @@
                             <!-- Reset Password Form -->
                             <div class="auth-form" id="resetForm" style="display: none;">
                                 <div class="auth-header">
-                                    <h2>New <span class="gold-text">Password</span></h2>
-                                    <p>Create your new password</p>
+                                    <h2 data-i18n="reset.title.part1">New <span class="gold-text" data-i18n="reset.title.part2">Password</span></h2>
+                                    <p data-i18n="reset.subtitle">Create your new password</p>
                                 </div>
                                 
                                 <form id="resetPasswordForm">
                                     <div class="form-group">
                                         <label for="resetPassword" class="form-label">
-                                            <i class="fas fa-lock"></i> New Password
+                                            <i class="fas fa-lock"></i> <span data-i18n="reset.new_password">New Password</span>
                                         </label>
                                         <div class="position-relative">
-                                            <input type="password" id="resetPassword" class="form-control with-icon" placeholder="Enter new password" required minlength="8">
+                                            <input type="password" id="resetPassword" class="form-control with-icon" placeholder="Enter new password" required minlength="8" data-i18n-placeholder="reset.new_password_placeholder">
                                             <i class="fas fa-lock input-icon"></i>
                                             <button type="button" class="password-toggle" data-target="resetPassword" aria-label="Toggle password visibility">
                                                 <i class="fas fa-eye"></i>
@@ -1935,17 +1944,17 @@
                                             <div class="strength-meter">
                                                 <div class="strength-fill" id="resetPasswordStrength"></div>
                                             </div>
-                                            <div class="strength-text" id="resetPasswordStrengthText">Password strength</div>
+                                            <div class="strength-text" id="resetPasswordStrengthText" data-i18n="reset.password_strength">Password strength</div>
                                         </div>
-                                        <div class="invalid-feedback">Password must be at least 8 characters with uppercase, lowercase, number, and special character</div>
+                                        <div class="invalid-feedback" data-i18n="reset.password_error">Password must be at least 8 characters with uppercase, lowercase, number, and special character</div>
                                     </div>
                                     
                                     <div class="form-group">
                                         <label for="confirmResetPassword" class="form-label">
-                                            <i class="fas fa-lock"></i> Confirm Password
+                                            <i class="fas fa-lock"></i> <span data-i18n="reset.confirm_password">Confirm Password</span>
                                         </label>
                                         <div class="position-relative">
-                                            <input type="password" id="confirmResetPassword" class="form-control with-icon" placeholder="Confirm new password" required>
+                                            <input type="password" id="confirmResetPassword" class="form-control with-icon" placeholder="Confirm new password" required data-i18n-placeholder="reset.confirm_password_placeholder">
                                             <i class="fas fa-lock input-icon"></i>
                                             <button type="button" class="password-toggle" data-target="confirmResetPassword" aria-label="Toggle password visibility">
                                                 <i class="fas fa-eye"></i>
@@ -1955,12 +1964,12 @@
                                     </div>
                                     
                                     <button type="submit" class="btn btn-gold auth-btn">
-                                        <i class="fas fa-save me-2"></i> Reset Password
+                                        <i class="fas fa-save me-2"></i> <span data-i18n="reset.reset_button">Reset Password</span>
                                     </button>
                                     
                                     <div class="auth-footer">
                                         <button type="button" class="btn-link" id="backToLoginFromReset">
-                                            <i class="fas fa-sign-in-alt me-2"></i> Back to Sign In
+                                            <i class="fas fa-sign-in-alt me-2"></i> <span data-i18n="reset.back_signin">Back to Sign In</span>
                                         </button>
                                     </div>
                                 </form>
@@ -1972,12 +1981,12 @@
                                     <div class="success-icon">
                                         <i class="fas fa-check-circle"></i>
                                     </div>
-                                    <h3 class="mb-3">Password Reset!</h3>
-                                    <p class="text-muted mb-4">
+                                    <h3 class="mb-3" data-i18n="reset.success_title">Password Reset!</h3>
+                                    <p class="text-muted mb-4" data-i18n="reset.success_text">
                                         Your password has been reset successfully. You can now sign in with your new password.
                                     </p>
                                     <button type="button" class="btn btn-gold" id="backToLoginFromSuccess">
-                                        <i class="fas fa-sign-in-alt me-2"></i> Sign In Now
+                                        <i class="fas fa-sign-in-alt me-2"></i> <span data-i18n="reset.signin_now">Sign In Now</span>
                                     </button>
                                 </div>
                             </div>
@@ -1985,40 +1994,40 @@
                             <!-- Session Management -->
                             <div class="auth-form" id="sessionsForm" style="display: none;">
                                 <div class="auth-header">
-                                    <h2>Active <span class="gold-text">Sessions</span></h2>
-                                    <p>Manage your logged-in devices</p>
+                                    <h2 data-i18n="sessions.title.part1">Active <span class="gold-text" data-i18n="sessions.title.part2">Sessions</span></h2>
+                                    <p data-i18n="sessions.subtitle">Manage your logged-in devices</p>
                                 </div>
                                 
                                 <div class="session-list">
                                     <div class="session-item">
                                         <div class="session-info">
-                                            <h6>Current Session</h6>
-                                            <small>Chrome • Windows • Now</small>
+                                            <h6 data-i18n="sessions.current_session">Current Session</h6>
+                                            <small data-i18n="sessions.current_details">Chrome • Windows • Now</small>
                                         </div>
                                         <div class="session-actions">
-                                            <button class="btn btn-sm btn-outline-gold disabled">Current</button>
+                                            <button class="btn btn-sm btn-outline-gold disabled" data-i18n="sessions.current">Current</button>
                                         </div>
                                     </div>
                                     <div class="session-item">
                                         <div class="session-info">
-                                            <h6>Mobile Device</h6>
-                                            <small>Safari • iPhone • 2 hours ago</small>
+                                            <h6 data-i18n="sessions.mobile_device">Mobile Device</h6>
+                                            <small data-i18n="sessions.mobile_details">Safari • iPhone • 2 hours ago</small>
                                         </div>
                                         <div class="session-actions">
-                                            <button class="btn btn-sm btn-outline-danger">Logout</button>
+                                            <button class="btn btn-sm btn-outline-danger" data-i18n="sessions.logout">Logout</button>
                                         </div>
                                     </div>
                                 </div>
                                 
                                 <div class="mt-4">
                                     <button type="button" class="btn btn-outline-danger w-100" id="logoutAll">
-                                        <i class="fas fa-sign-out-alt me-2"></i> Logout All Other Sessions
+                                        <i class="fas fa-sign-out-alt me-2"></i> <span data-i18n="sessions.logout_all">Logout All Other Sessions</span>
                                     </button>
                                 </div>
                                 
                                 <div class="auth-footer mt-4">
                                     <button type="button" class="btn-link" id="backToLoginFromSessions">
-                                        <i class="fas fa-arrow-left me-2"></i> Back to Dashboard
+                                        <i class="fas fa-arrow-left me-2"></i> <span data-i18n="sessions.back_dashboard">Back to Dashboard</span>
                                     </button>
                                 </div>
                             </div>
@@ -2040,7 +2049,7 @@
                             Naroda <span class="gold-text">Group</span>
                         </a>
                     </div>
-                    <p class="mb-4">
+                    <p class="mb-4" data-i18n="footer.description">
                         Creating landmark properties that redefine excellence. From premium commercial spaces 
                         to luxury residential living, we build dreams with quality and commitment.
                     </p>
@@ -2065,59 +2074,59 @@
                 </div>
                 
                 <div class="col-lg-2 col-md-6">
-                    <h3 class="footer-title">Quick Links</h3>
+                    <h3 class="footer-title" data-i18n="footer.quick_links">Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
-                        <li><a href="projects.html"><i class="fas fa-chevron-right"></i> Projects</a></li>
-                        <li><a href="properties.html"><i class="fas fa-chevron-right"></i> Properties</a></li>
-                        <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
-                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.home">Home</span></a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.about">About Us</span></a></li>
+                        <li><a href="projects.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.projects">Projects</span></a></li>
+                        <li><a href="properties.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.properties">Properties</span></a></li>
+                        <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.gallery">Gallery</span></a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.contact">Contact</span></a></li>
                     </ul>
                 </div>
                 
                 <div class="col-lg-3 col-md-6">
-                    <h3 class="footer-title">Our Projects</h3>
+                    <h3 class="footer-title" data-i18n="footer.our_projects">Our Projects</h3>
                     <a href="projects-landmark.html" class="project-mini-card">
-                        <h6 class="text-white mb-1">Naroda Landmark</h6>
-                        <p class="small text-muted mb-0">Premium Commercial Spaces</p>
+                        <h6 class="text-white mb-1" data-i18n="nav.landmark">Naroda Landmark</h6>
+                        <p class="small text-muted mb-0" data-i18n="footer.landmark_desc">Premium Commercial Spaces</p>
                     </a>
                     <a href="projects-irish.html" class="project-mini-card">
-                        <h6 class="text-white mb-1">Naroda Irish</h6>
-                        <p class="small text-muted mb-0">Luxury Residential Living</p>
+                        <h6 class="text-white mb-1" data-i18n="nav.irish">Naroda Irish</h6>
+                        <p class="small text-muted mb-0" data-i18n="footer.irish_desc">Luxury Residential Living</p>
                     </a>
                     <a href="projects.html" class="project-mini-card">
-                        <h6 class="text-white mb-1">View All Projects</h6>
-                        <p class="small text-muted mb-0">Explore our portfolio</p>
+                        <h6 class="text-white mb-1" data-i18n="footer.view_all_projects">View All Projects</h6>
+                        <p class="small text-muted mb-0" data-i18n="footer.explore_portfolio">Explore our portfolio</p>
                     </a>
                 </div>
                 
                 <div class="col-lg-3 col-md-6">
-                    <h3 class="footer-title">Contact Info</h3>
+                    <h3 class="footer-title" data-i18n="footer.contact_info">Contact Info</h3>
                     <div class="contact-info">
                         <i class="fas fa-phone"></i>
                         <div>
-                            <h6 class="text-white mb-1">Phone Number</h6>
+                            <h6 class="text-white mb-1" data-i18n="footer.phone">Phone Number</h6>
                             <p class="mb-0">+91 98765 43210</p>
-                            <small class="text-muted">Mon - Sat: 10 AM - 7 PM</small>
+                            <small class="text-muted" data-i18n="footer.phone_hours">Mon - Sat: 10 AM - 7 PM</small>
                         </div>
                     </div>
                     
                     <div class="contact-info">
                         <i class="fas fa-envelope"></i>
                         <div>
-                            <h6 class="text-white mb-1">Email Address</h6>
+                            <h6 class="text-white mb-1" data-i18n="footer.email">Email Address</h6>
                             <p class="mb-0">info@narodagroup.com</p>
-                            <small class="text-muted">We reply within 24 hours</small>
+                            <small class="text-muted" data-i18n="footer.email_response">We reply within 24 hours</small>
                         </div>
                     </div>
                     
                     <div class="contact-info">
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
-                            <h6 class="text-white mb-1">Office Address</h6>
-                            <p class="mb-0">Naroda - Bhat Road</p>
-                            <small class="text-muted">Ahmedabad, Gujarat 382330</small>
+                            <h6 class="text-white mb-1" data-i18n="footer.address">Office Address</h6>
+                            <p class="mb-0" data-i18n="footer.address_line1">Naroda - Bhat Road</p>
+                            <small class="text-muted" data-i18n="footer.address_line2">Ahmedabad, Gujarat 382330</small>
                         </div>
                     </div>
                 </div>
@@ -2126,12 +2135,12 @@
             <div class="copyright">
                 <div class="row align-items-center">
                     <div class="col-md-6">
-                        <p class="mb-0">&copy; 2025 Naroda Group. All rights reserved.</p>
+                        <p class="mb-0">&copy; 2025 Naroda Group. <span data-i18n="footer.rights">All rights reserved.</span></p>
                     </div>
                     <div class="col-md-6 text-md-end">
-                        <a href="privacy.html" class="text-muted me-3">Privacy Policy</a>
-                        <a href="terms.html" class="text-muted me-3">Terms of Service</a>
-                        <a href="rera.html" class="text-muted">RERA Registration</a>
+                        <a href="privacy.html" class="text-muted me-3" data-i18n="footer.privacy">Privacy Policy</a>
+                        <a href="terms.html" class="text-muted me-3" data-i18n="footer.terms">Terms of Service</a>
+                        <a href="rera.html" class="text-muted" data-i18n="footer.rera">RERA Registration</a>
                     </div>
                 </div>
             </div>
@@ -2143,10 +2152,542 @@
     <!-- AOS Animation Library -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
+    <!-- Language Translations Data -->
     <script>
-        // Enhanced Authentication System
+        const translations = {
+            en: {
+                // Navigation
+                "nav.home": "Home",
+                "nav.about": "About",
+                "nav.projects": "Projects",
+                "nav.landmark": "Naroda Landmark",
+                "nav.irish": "Naroda Irish",
+                "nav.all_projects": "All Projects",
+                "nav.properties": "Properties",
+                "nav.buy": "Buy",
+                "nav.rent": "Rent",
+                "nav.property_details": "Property Details",
+                "nav.gallery": "Gallery",
+                "nav.more": "More",
+                "nav.blog": "Blog",
+                "nav.news": "News",
+                "nav.careers": "Careers",
+                "nav.team": "Our Team",
+                "nav.faq": "FAQ",
+                "nav.contact": "Contact",
+                "nav.login": "Login",
+                "nav.search": "Search",
+                "nav.account": "Account",
+                
+                // Auth Section - Left Side
+                "auth.brand_title.part1": "Naroda",
+                "auth.brand_title.part2": "Group",
+                "auth.welcome_title": "Welcome to Naroda Group",
+                "auth.welcome_text": "Join thousands of satisfied customers who trust us with their real estate dreams. Manage properties, track investments, and discover exclusive opportunities.",
+                "auth.feature1_title": "Property Management",
+                "auth.feature1_text": "View and manage all your properties in one dashboard",
+                "auth.feature2_title": "Investment Tracking",
+                "auth.feature2_text": "Monitor ROI and property performance with detailed analytics",
+                "auth.feature3_title": "Exclusive Updates",
+                "auth.feature3_text": "Be the first to know about new projects and special offers",
+                "auth.support_text": "Need assistance with your account?",
+                "auth.contact_support": "Contact Support",
+                
+                // Login Form
+                "login.title.part1": "Welcome",
+                "login.title.part2": "Back",
+                "login.subtitle": "Sign in to your account",
+                "login.email_label": "Email Address",
+                "login.email_placeholder": "Enter your email",
+                "login.email_error": "Please enter a valid email address",
+                "login.password_label": "Password",
+                "login.password_placeholder": "Enter your password",
+                "login.password_error": "Password must be at least 8 characters",
+                "login.remember": "Remember me",
+                "login.forgot": "Forgot Password?",
+                "login.signin_button": "Sign In",
+                "login.enable_2fa": "Enable Two-Factor Authentication",
+                "login.or_continue": "Or continue with",
+                "login.no_account": "Don't have an account?",
+                "login.signup_link": "Sign up here",
+                
+                // Two-Factor Authentication
+                "2fa.title.part1": "Two-Factor",
+                "2fa.title.part2": "Authentication",
+                "2fa.subtitle": "Enter the verification code",
+                "2fa.instruction": "Enter the 6-digit code from your authenticator app",
+                "2fa.resend": "Resend Code",
+                "2fa.verify": "Verify",
+                "2fa.back": "Back to Login",
+                
+                // Registration
+                "register.title.part1": "Create",
+                "register.title.part2": "Account",
+                "register.subtitle": "Join Naroda Group today",
+                "register.step1": "Personal",
+                "register.step2": "Account",
+                "register.step3": "Complete",
+                "register.first_name": "First Name",
+                "register.first_name_placeholder": "Enter first name",
+                "register.first_name_error": "Please enter your first name",
+                "register.last_name": "Last Name",
+                "register.last_name_placeholder": "Enter last name",
+                "register.last_name_error": "Please enter your last name",
+                "register.phone": "Phone Number",
+                "register.phone_placeholder": "Enter phone number",
+                "register.phone_error": "Please enter a valid 10-digit phone number",
+                "register.email": "Email Address",
+                "register.email_placeholder": "Enter email address",
+                "register.email_error": "Please enter a valid email address",
+                "register.next": "Next Step",
+                "register.password": "Create Password",
+                "register.password_placeholder": "Create a password",
+                "register.password_strength": "Password strength",
+                "register.password_error": "Password must be at least 8 characters with uppercase, lowercase, number, and special character",
+                "register.confirm_password": "Confirm Password",
+                "register.confirm_password_placeholder": "Confirm password",
+                "register.user_type": "I am a",
+                "register.user_type_default": "Select your role",
+                "register.user_type1": "Property Buyer",
+                "register.user_type2": "Investor",
+                "register.user_type3": "Tenant",
+                "register.user_type4": "Real Estate Agent",
+                "register.user_type5": "Other",
+                "register.user_type_error": "Please select your role",
+                "register.agree_terms": "I agree to the",
+                "register.terms_link": "Terms of Service",
+                "register.and": "and",
+                "register.privacy_link": "Privacy Policy",
+                "register.terms_error": "You must agree to the terms and conditions",
+                "register.back": "Back",
+                "register.create_account": "Create Account",
+                "register.success_title": "Account Created!",
+                "register.success_text": "Welcome to Naroda Group! Your account has been created successfully. A verification email has been sent to your inbox.",
+                "register.dashboard_preview": "Dashboard Preview",
+                "register.properties": "Properties",
+                "register.analytics": "Analytics",
+                "register.signin_now": "Sign In Now",
+                "register.go_homepage": "Go to Homepage",
+                
+                // Forgot Password
+                "forgot.title.part1": "Reset",
+                "forgot.title.part2": "Password",
+                "forgot.subtitle": "Enter your email to reset your password",
+                "forgot.email_label": "Email Address",
+                "forgot.email_placeholder": "Enter your email",
+                "forgot.email_error": "Please enter a valid email address",
+                "forgot.send_link": "Send Reset Link",
+                "forgot.remember_password": "Remember your password?",
+                "forgot.back_signin": "Back to Sign In",
+                
+                // Reset Password
+                "reset.title.part1": "New",
+                "reset.title.part2": "Password",
+                "reset.subtitle": "Create your new password",
+                "reset.new_password": "New Password",
+                "reset.new_password_placeholder": "Enter new password",
+                "reset.password_strength": "Password strength",
+                "reset.password_error": "Password must be at least 8 characters with uppercase, lowercase, number, and special character",
+                "reset.confirm_password": "Confirm Password",
+                "reset.confirm_password_placeholder": "Confirm new password",
+                "reset.reset_button": "Reset Password",
+                "reset.back_signin": "Back to Sign In",
+                "reset.success_title": "Password Reset!",
+                "reset.success_text": "Your password has been reset successfully. You can now sign in with your new password.",
+                "reset.signin_now": "Sign In Now",
+                
+                // Sessions Management
+                "sessions.title.part1": "Active",
+                "sessions.title.part2": "Sessions",
+                "sessions.subtitle": "Manage your logged-in devices",
+                "sessions.current_session": "Current Session",
+                "sessions.current_details": "Chrome • Windows • Now",
+                "sessions.current": "Current",
+                "sessions.mobile_device": "Mobile Device",
+                "sessions.mobile_details": "Safari • iPhone • 2 hours ago",
+                "sessions.logout": "Logout",
+                "sessions.logout_all": "Logout All Other Sessions",
+                "sessions.back_dashboard": "Back to Dashboard",
+                
+                // Footer
+                "footer.description": "Creating landmark properties that redefine excellence. From premium commercial spaces to luxury residential living, we build dreams with quality and commitment.",
+                "footer.quick_links": "Quick Links",
+                "footer.our_projects": "Our Projects",
+                "footer.landmark_desc": "Premium Commercial Spaces",
+                "footer.irish_desc": "Luxury Residential Living",
+                "footer.view_all_projects": "View All Projects",
+                "footer.explore_portfolio": "Explore our portfolio",
+                "footer.contact_info": "Contact Info",
+                "footer.phone": "Phone Number",
+                "footer.phone_hours": "Mon - Sat: 10 AM - 7 PM",
+                "footer.email": "Email Address",
+                "footer.email_response": "We reply within 24 hours",
+                "footer.address": "Office Address",
+                "footer.address_line1": "Naroda - Bhat Road",
+                "footer.address_line2": "Ahmedabad, Gujarat 382330",
+                "footer.rights": "All rights reserved.",
+                "footer.privacy": "Privacy Policy",
+                "footer.terms": "Terms of Service",
+                "footer.rera": "RERA Registration"
+            },
+            hi: {
+                // Navigation
+                "nav.home": "होम",
+                "nav.about": "हमारे बारे में",
+                "nav.projects": "प्रोजेक्ट्स",
+                "nav.landmark": "नरोड़ा लैंडमार्क",
+                "nav.irish": "नरोड़ा आयरिश",
+                "nav.all_projects": "सभी प्रोजेक्ट्स",
+                "nav.properties": "संपत्तियाँ",
+                "nav.buy": "खरीदें",
+                "nav.rent": "किराए पर लें",
+                "nav.property_details": "संपत्ति विवरण",
+                "nav.gallery": "गैलरी",
+                "nav.more": "अधिक",
+                "nav.blog": "ब्लॉग",
+                "nav.news": "समाचार",
+                "nav.careers": "करियर",
+                "nav.team": "हमारी टीम",
+                "nav.faq": "सामान्य प्रश्न",
+                "nav.contact": "संपर्क करें",
+                "nav.login": "लॉगिन",
+                "nav.search": "खोजें",
+                "nav.account": "खाता",
+                
+                // Auth Section - Left Side
+                "auth.brand_title.part1": "नरोड़ा",
+                "auth.brand_title.part2": "ग्रुप",
+                "auth.welcome_title": "नरोड़ा ग्रुप में आपका स्वागत है",
+                "auth.welcome_text": "हजारों संतुष्ट ग्राहकों में शामिल हों जो हम पर अपने रियल एस्टेट के सपनों का भरोसा करते हैं। संपत्तियों का प्रबंधन करें, निवेशों को ट्रैक करें और विशेष अवसरों की खोज करें।",
+                "auth.feature1_title": "प्रॉपर्टी मैनेजमेंट",
+                "auth.feature1_text": "एक डैशबोर्ड में अपनी सभी संपत्तियों को देखें और प्रबंधित करें",
+                "auth.feature2_title": "निवेश ट्रैकिंग",
+                "auth.feature2_text": "विस्तृत एनालिटिक्स के साथ आरओआई और संपत्ति प्रदर्शन की निगरानी करें",
+                "auth.feature3_title": "विशेष अपडेट",
+                "auth.feature3_text": "नए प्रोजेक्ट्स और विशेष ऑफर के बारे में सबसे पहले जानें",
+                "auth.support_text": "क्या आपको अपने खाते में सहायता चाहिए?",
+                "auth.contact_support": "सहायता से संपर्क करें",
+                
+                // Login Form
+                "login.title.part1": "स्वागत है",
+                "login.title.part2": "आपका",
+                "login.subtitle": "अपने खाते में साइन इन करें",
+                "login.email_label": "ईमेल पता",
+                "login.email_placeholder": "अपना ईमेल दर्ज करें",
+                "login.email_error": "कृपया एक वैध ईमेल पता दर्ज करें",
+                "login.password_label": "पासवर्ड",
+                "login.password_placeholder": "अपना पासवर्ड दर्ज करें",
+                "login.password_error": "पासवर्ड कम से कम 8 अक्षरों का होना चाहिए",
+                "login.remember": "मुझे याद रखें",
+                "login.forgot": "पासवर्ड भूल गए?",
+                "login.signin_button": "साइन इन करें",
+                "login.enable_2fa": "दो-कारक प्रमाणीकरण सक्षम करें",
+                "login.or_continue": "या इनके साथ जारी रखें",
+                "login.no_account": "क्या आपके पास खाता नहीं है?",
+                "login.signup_link": "यहां साइन अप करें",
+                
+                // Two-Factor Authentication
+                "2fa.title.part1": "दो-कारक",
+                "2fa.title.part2": "प्रमाणीकरण",
+                "2fa.subtitle": "सत्यापन कोड दर्ज करें",
+                "2fa.instruction": "अपने ऑथेंटिकेटर ऐप से 6-अंकीय कोड दर्ज करें",
+                "2fa.resend": "कोड पुनः भेजें",
+                "2fa.verify": "सत्यापित करें",
+                "2fa.back": "लॉगिन पर वापस जाएं",
+                
+                // Registration
+                "register.title.part1": "बनाएं",
+                "register.title.part2": "खाता",
+                "register.subtitle": "आज ही नरोड़ा ग्रुप में शामिल हों",
+                "register.step1": "व्यक्तिगत",
+                "register.step2": "खाता",
+                "register.step3": "पूर्ण",
+                "register.first_name": "पहला नाम",
+                "register.first_name_placeholder": "पहला नाम दर्ज करें",
+                "register.first_name_error": "कृपया अपना पहला नाम दर्ज करें",
+                "register.last_name": "अंतिम नाम",
+                "register.last_name_placeholder": "अंतिम नाम दर्ज करें",
+                "register.last_name_error": "कृपया अपना अंतिम नाम दर्ज करें",
+                "register.phone": "फोन नंबर",
+                "register.phone_placeholder": "फोन नंबर दर्ज करें",
+                "register.phone_error": "कृपया एक वैध 10-अंकीय फोन नंबर दर्ज करें",
+                "register.email": "ईमेल पता",
+                "register.email_placeholder": "ईमेल पता दर्ज करें",
+                "register.email_error": "कृपया एक वैध ईमेल पता दर्ज करें",
+                "register.next": "अगला चरण",
+                "register.password": "पासवर्ड बनाएं",
+                "register.password_placeholder": "एक पासवर्ड बनाएं",
+                "register.password_strength": "पासवर्ड की ताकत",
+                "register.password_error": "पासवर्ड कम से कम 8 अक्षरों का होना चाहिए जिसमें अपरकेस, लोअरकेस, नंबर और विशेष वर्ण हों",
+                "register.confirm_password": "पासवर्ड की पुष्टि करें",
+                "register.confirm_password_placeholder": "पासवर्ड की पुष्टि करें",
+                "register.user_type": "मैं हूं",
+                "register.user_type_default": "अपनी भूमिका चुनें",
+                "register.user_type1": "संपत्ति खरीदार",
+                "register.user_type2": "निवेशक",
+                "register.user_type3": "किरायेदार",
+                "register.user_type4": "रियल एस्टेट एजेंट",
+                "register.user_type5": "अन्य",
+                "register.user_type_error": "कृपया अपनी भूमिका चुनें",
+                "register.agree_terms": "मैं सहमत हूं",
+                "register.terms_link": "सेवा की शर्तें",
+                "register.and": "और",
+                "register.privacy_link": "गोपनीयता नीति",
+                "register.terms_error": "आपको नियमों और शर्तों से सहमत होना चाहिए",
+                "register.back": "वापस",
+                "register.create_account": "खाता बनाएं",
+                "register.success_title": "खाता बन गया!",
+                "register.success_text": "नरोड़ा ग्रुप में आपका स्वागत है! आपका खाता सफलतापूर्वक बन गया है। सत्यापन ईमेल आपके इनबॉक्स में भेज दिया गया है।",
+                "register.dashboard_preview": "डैशबोर्ड पूर्वावलोकन",
+                "register.properties": "संपत्तियाँ",
+                "register.analytics": "एनालिटिक्स",
+                "register.signin_now": "अभी साइन इन करें",
+                "register.go_homepage": "होमपेज पर जाएं",
+                
+                // Forgot Password
+                "forgot.title.part1": "रीसेट",
+                "forgot.title.part2": "पासवर्ड",
+                "forgot.subtitle": "अपना पासवर्ड रीसेट करने के लिए अपना ईमेल दर्ज करें",
+                "forgot.email_label": "ईमेल पता",
+                "forgot.email_placeholder": "अपना ईमेल दर्ज करें",
+                "forgot.email_error": "कृपया एक वैध ईमेल पता दर्ज करें",
+                "forgot.send_link": "रीसेट लिंक भेजें",
+                "forgot.remember_password": "क्या आपको अपना पासवर्ड याद है?",
+                "forgot.back_signin": "साइन इन पर वापस जाएं",
+                
+                // Reset Password
+                "reset.title.part1": "नया",
+                "reset.title.part2": "पासवर्ड",
+                "reset.subtitle": "अपना नया पासवर्ड बनाएं",
+                "reset.new_password": "नया पासवर्ड",
+                "reset.new_password_placeholder": "नया पासवर्ड दर्ज करें",
+                "reset.password_strength": "पासवर्ड की ताकत",
+                "reset.password_error": "पासवर्ड कम से कम 8 अक्षरों का होना चाहिए जिसमें अपरकेस, लोअरकेस, नंबर और विशेष वर्ण हों",
+                "reset.confirm_password": "पासवर्ड की पुष्टि करें",
+                "reset.confirm_password_placeholder": "नए पासवर्ड की पुष्टि करें",
+                "reset.reset_button": "पासवर्ड रीसेट करें",
+                "reset.back_signin": "साइन इन पर वापस जाएं",
+                "reset.success_title": "पासवर्ड रीसेट!",
+                "reset.success_text": "आपका पासवर्ड सफलतापूर्वक रीसेट कर दिया गया है। अब आप अपने नए पासवर्ड के साथ साइन इन कर सकते हैं।",
+                "reset.signin_now": "अभी साइन इन करें",
+                
+                // Sessions Management
+                "sessions.title.part1": "सक्रिय",
+                "sessions.title.part2": "सत्र",
+                "sessions.subtitle": "अपने लॉग इन उपकरणों का प्रबंधन करें",
+                "sessions.current_session": "वर्तमान सत्र",
+                "sessions.current_details": "क्रोम • विंडोज • अभी",
+                "sessions.current": "वर्तमान",
+                "sessions.mobile_device": "मोबाइल डिवाइस",
+                "sessions.mobile_details": "सफारी • आईफोन • 2 घंटे पहले",
+                "sessions.logout": "लॉगआउट",
+                "sessions.logout_all": "अन्य सभी सत्रों से लॉगआउट करें",
+                "sessions.back_dashboard": "डैशबोर्ड पर वापस जाएं",
+                
+                // Footer
+                "footer.description": "लैंडमार्क संपत्तियाँ बनाना जो उत्कृष्टता को फिर से परिभाषित करती हैं। प्रीमियम कमर्शियल स्पेस से लेकर लग्ज़री रेजिडेंशियल लिविंग तक, हम गुणवत्ता और प्रतिबद्धता के साथ सपने बनाते हैं।",
+                "footer.quick_links": "त्वरित लिंक",
+                "footer.our_projects": "हमारे प्रोजेक्ट्स",
+                "footer.landmark_desc": "प्रीमियम कमर्शियल स्पेस",
+                "footer.irish_desc": "लग्ज़री रेजिडेंशियल लिविंग",
+                "footer.view_all_projects": "सभी प्रोजेक्ट्स देखें",
+                "footer.explore_portfolio": "हमारे पोर्टफोलियो का अन्वेषण करें",
+                "footer.contact_info": "संपर्क जानकारी",
+                "footer.phone": "फोन नंबर",
+                "footer.phone_hours": "सोम - शनि: सुबह 10 - शाम 7 बजे",
+                "footer.email": "ईमेल पता",
+                "footer.email_response": "हम 24 घंटे के भीतर जवाब देते हैं",
+                "footer.address": "कार्यालय पता",
+                "footer.address_line1": "नरोड़ा - भाट रोड",
+                "footer.address_line2": "अहमदाबाद, गुजरात 382330",
+                "footer.rights": "सर्वाधिकार सुरक्षित।",
+                "footer.privacy": "गोपनीयता नीति",
+                "footer.terms": "सेवा की शर्तें",
+                "footer.rera": "RERA पंजीकरण"
+            },
+            gu: {
+                // Navigation
+                "nav.home": "હોમ",
+                "nav.about": "અમારા વિશે",
+                "nav.projects": "પ્રોજેક્ટ્સ",
+                "nav.landmark": "નરોડા લેન્ડમાર્ક",
+                "nav.irish": "નરોડા આયરિશ",
+                "nav.all_projects": "બધા પ્રોજેક્ટ્સ",
+                "nav.properties": "પ્રોપર્ટીઝ",
+                "nav.buy": "ખરીદો",
+                "nav.rent": "ભાડે લો",
+                "nav.property_details": "પ્રોપર્ટી વિગતો",
+                "nav.gallery": "ગેલેરી",
+                "nav.more": "વધુ",
+                "nav.blog": "બ્લોગ",
+                "nav.news": "સમાચાર",
+                "nav.careers": "કરિયર",
+                "nav.team": "અમારી ટીમ",
+                "nav.faq": "સામાન્ય પ્રશ્નો",
+                "nav.contact": "સંપર્ક કરો",
+                "nav.login": "લોગિન",
+                "nav.search": "શોધો",
+                "nav.account": "એકાઉન્ટ",
+                
+                // Auth Section - Left Side
+                "auth.brand_title.part1": "નરોડા",
+                "auth.brand_title.part2": "ગ્રુપ",
+                "auth.welcome_title": "નરોડા ગ્રુપમાં આપનું સ્વાગત છે",
+                "auth.welcome_text": "હજારો સંતુષ્ટ ગ્રાહકોમાં જોડાઓ જે આપણ પર તેમના રિઅલ એસ્ટેટના સપના મૂકે છે. પ્રોપર્ટીઝ મેનેજ કરો, ઇન્વેસ્ટમેન્ટ ટ્રૅક કરો અને ખાસ તકો શોધો.",
+                "auth.feature1_title": "પ્રોપર્ટી મેનેજમેન્ટ",
+                "auth.feature1_text": "એક ડૅશબોર્ડમાં તમારી બધી પ્રોપર્ટીઝ જુઓ અને મેનેજ કરો",
+                "auth.feature2_title": "ઇન્વેસ્ટમેન્ટ ટ્રૅકિંગ",
+                "auth.feature2_text": "વિગતવાર એનાલિટિક્સ સાથે આરઓઆઈ અને પ્રોપર્ટી પરફોર્મન્સ મોનિટર કરો",
+                "auth.feature3_title": "ખાસ અપડેટ્સ",
+                "auth.feature3_text": "નવા પ્રોજેક્ટ્સ અને ખાસ ઓફર્સ વિશે પ્રથમ જાણો",
+                "auth.support_text": "શું તમને તમારા એકાઉન્ટમાં સહાયતાની જરૂર છે?",
+                "auth.contact_support": "સપોર્ટ સંપર્ક કરો",
+                
+                // Login Form
+                "login.title.part1": "સ્વાગત છે",
+                "login.title.part2": "તમારું",
+                "login.subtitle": "તમારા એકાઉન્ટમાં સાઇન ઇન કરો",
+                "login.email_label": "ઈમેલ એડ્રેસ",
+                "login.email_placeholder": "તમારો ઈમેલ દાખલ કરો",
+                "login.email_error": "કૃપા કરીને માન્ય ઈમેલ એડ્રેસ દાખલ કરો",
+                "login.password_label": "પાસવર્ડ",
+                "login.password_placeholder": "તમારો પાસવર્ડ દાખલ કરો",
+                "login.password_error": "પાસવર્ડ ઓછામાં ઓછા 8 અક્ષરનો હોવો જોઈએ",
+                "login.remember": "મને યાદ રાખો",
+                "login.forgot": "પાસવર્ડ ભૂલી ગયા છો?",
+                "login.signin_button": "સાઇન ઇન કરો",
+                "login.enable_2fa": "બે-ફેક્ટર ઓથેન્ટિકેશન સક્ષમ કરો",
+                "login.or_continue": "અથવા આગળ ચાલુ રાખો",
+                "login.no_account": "શું તમારી પાસે એકાઉન્ટ નથી?",
+                "login.signup_link": "અહીં સાઇન અપ કરો",
+                
+                // Two-Factor Authentication
+                "2fa.title.part1": "બે-ફેક્ટર",
+                "2fa.title.part2": "ઓથેન્ટિકેશન",
+                "2fa.subtitle": "વેરિફિકેશન કોડ દાખલ કરો",
+                "2fa.instruction": "તમારા ઓથેન્ટિકેટર એપ્લિકેશનમાંથી 6-અંકનો કોડ દાખલ કરો",
+                "2fa.resend": "કોડ ફરીથી મોકલો",
+                "2fa.verify": "ચકાસો",
+                "2fa.back": "લોગિન પર પાછા જાઓ",
+                
+                // Registration
+                "register.title.part1": "બનાવો",
+                "register.title.part2": "એકાઉન્ટ",
+                "register.subtitle": "આજે જ નરોડા ગ્રુપમાં જોડાઓ",
+                "register.step1": "વ્યક્તિગત",
+                "register.step2": "એકાઉન્ટ",
+                "register.step3": "પૂર્ણ",
+                "register.first_name": "પ્રથમ નામ",
+                "register.first_name_placeholder": "પ્રથમ નામ દાખલ કરો",
+                "register.first_name_error": "કૃપા કરીને તમારું પ્રથમ નામ દાખલ કરો",
+                "register.last_name": "છેલ્લું નામ",
+                "register.last_name_placeholder": "છેલ્લું નામ દાખલ કરો",
+                "register.last_name_error": "કૃપા કરીને તમારું છેલ્લું નામ દાખલ કરો",
+                "register.phone": "ફોન નંબર",
+                "register.phone_placeholder": "ફોન નંબર દાખલ કરો",
+                "register.phone_error": "કૃપા કરીને માન્ય 10-અંકનો ફોન નંબર દાખલ કરો",
+                "register.email": "ઈમેલ એડ્રેસ",
+                "register.email_placeholder": "ઈમેલ એડ્રેસ દાખલ કરો",
+                "register.email_error": "કૃપા કરીને માન્ય ઈમેલ એડ્રેસ દાખલ કરો",
+                "register.next": "આગળનો પગલું",
+                "register.password": "પાસવર્ડ બનાવો",
+                "register.password_placeholder": "પાસવર્ડ બનાવો",
+                "register.password_strength": "પાસવર્ડની સ્ટ્રેન્થ",
+                "register.password_error": "પાસવર્ડ ઓછામાં ઓછા 8 અક્ષરનો હોવો જોઈએ જેમાં અપરકેસ, લોવરકેસ, નંબર અને સ્પેશિયલ કેરેક્ટર હોય",
+                "register.confirm_password": "પાસવર્ડ કન્ફર્મ કરો",
+                "register.confirm_password_placeholder": "પાસવર્ડ કન્ફર્મ કરો",
+                "register.user_type": "હું છું",
+                "register.user_type_default": "તમારી ભૂમિકા પસંદ કરો",
+                "register.user_type1": "પ્રોપર્ટી ખરીદનાર",
+                "register.user_type2": "ઇન્વેસ્ટર",
+                "register.user_type3": "ભાડૂત",
+                "register.user_type4": "રિઅલ એસ્ટેટ એજન્ટ",
+                "register.user_type5": "અન્ય",
+                "register.user_type_error": "કૃપા કરીને તમારી ભૂમિકા પસંદ કરો",
+                "register.agree_terms": "હું સંમત છું",
+                "register.terms_link": "સેવાની શરતો",
+                "register.and": "અને",
+                "register.privacy_link": "ગોપનીયતા નીતિ",
+                "register.terms_error": "તમારે શરતો અને નિયમો સાથે સંમત થવું આવશ્યક છે",
+                "register.back": "પાછા",
+                "register.create_account": "એકાઉન્ટ બનાવો",
+                "register.success_title": "એકાઉન્ટ બન્યું!",
+                "register.success_text": "નરોડા ગ્રુપમાં આપનું સ્વાગત છે! તમારું એકાઉન્ટ સફળતાપૂર્વક બનાવવામાં આવ્યું છે. ચકાસણી ઈમેલ તમારા ઇનબોક્સમાં મોકલવામાં આવી છે.",
+                "register.dashboard_preview": "ડૅશબોર્ડ પૂર્વાવલોકન",
+                "register.properties": "પ્રોપર્ટીઝ",
+                "register.analytics": "એનાલિટિક્સ",
+                "register.signin_now": "હમણાં સાઇન ઇન કરો",
+                "register.go_homepage": "હોમપેજ પર જાઓ",
+                
+                // Forgot Password
+                "forgot.title.part1": "રીસેટ",
+                "forgot.title.part2": "પાસવર્ડ",
+                "forgot.subtitle": "તમારો પાસવર્ડ રીસેટ કરવા માટે તમારો ઈમેલ દાખલ કરો",
+                "forgot.email_label": "ઈમેલ એડ્રેસ",
+                "forgot.email_placeholder": "તમારો ઈમેલ દાખલ કરો",
+                "forgot.email_error": "કૃપા કરીને માન્ય ઈમેલ એડ્રેસ દાખલ કરો",
+                "forgot.send_link": "રીસેટ લિંક મોકલો",
+                "forgot.remember_password": "શું તમને તમારો પાસવર્ડ યાદ છે?",
+                "forgot.back_signin": "સાઇન ઇન પર પાછા જાઓ",
+                
+                // Reset Password
+                "reset.title.part1": "નવો",
+                "reset.title.part2": "પાસવર્ડ",
+                "reset.subtitle": "તમારો નવો પાસવર્ડ બનાવો",
+                "reset.new_password": "નવો પાસવર્ડ",
+                "reset.new_password_placeholder": "નવો પાસવર્ડ દાખલ કરો",
+                "reset.password_strength": "પાસવર્ડની સ્ટ્રેન્થ",
+                "reset.password_error": "પાસવર્ડ ઓછામાં ઓછા 8 અક્ષરનો હોવો જોઈએ જેમાં અપરકેસ, લોવરકેસ, નંબર અને સ્પેશિયલ કેરેક્ટર હોય",
+                "reset.confirm_password": "પાસવર્ડ કન્ફર્મ કરો",
+                "reset.confirm_password_placeholder": "નવો પાસવર્ડ કન્ફર્મ કરો",
+                "reset.reset_button": "પાસવર્ડ રીસેટ કરો",
+                "reset.back_signin": "સાઇન ઇન પર પાછા જાઓ",
+                "reset.success_title": "પાસવર્ડ રીસેટ!",
+                "reset.success_text": "તમારો પાસવર્ડ સફળતાપૂર્વક રીસેટ કરવામાં આવ્યો છે. હવે તમે તમારા નવા પાસવર્ડ સાથે સાઇન ઇન કરી શકો છો.",
+                "reset.signin_now": "હમણાં સાઇન ઇન કરો",
+                
+                // Sessions Management
+                "sessions.title.part1": "સક્રિય",
+                "sessions.title.part2": "સેશન્સ",
+                "sessions.subtitle": "તમારા લૉગ્ડ ઇન ડિવાઇસ મેનેજ કરો",
+                "sessions.current_session": "વર્તમાન સેશન",
+                "sessions.current_details": "ક્રોમ • વિન્ડોઝ • હમણાં",
+                "sessions.current": "વર્તમાન",
+                "sessions.mobile_device": "મોબાઇલ ડિવાઇસ",
+                "sessions.mobile_details": "સફારી • આઇફોન • 2 કલાક પહેલા",
+                "sessions.logout": "લૉગઆઉટ",
+                "sessions.logout_all": "બાકીના બધા સેશન્સમાંથી લૉગઆઉટ કરો",
+                "sessions.back_dashboard": "ડૅશબોર્ડ પર પાછા જાઓ",
+                
+                // Footer
+                "footer.description": "લેન્ડમાર્ક પ્રોપર્ટીઝ બનાવવી જે એક્સલન્સને પુનઃવ્યાખ્યાયિત કરે છે. પ્રીમિયમ કોમર્શિયલ સ્પેસથી લગ્ઝરી રેસિડેન્શિયલ લિવિંગ સુધી, અમે ગુણવત્તા અને પ્રતિબદ્ધતા સાથે સપના બનાવીએ છીએ.",
+                "footer.quick_links": "ઝડપી લિંક્સ",
+                "footer.our_projects": "અમારા પ્રોજેક્ટ્સ",
+                "footer.landmark_desc": "પ્રીમિયમ કોમર્શિયલ સ્પેસ",
+                "footer.irish_desc": "લગ્ઝરી રેસિડેન્શિયલ લિવિંગ",
+                "footer.view_all_projects": "બધા પ્રોજેક્ટ્સ જુઓ",
+                "footer.explore_portfolio": "અમારા પોર્ટફોલિયોનું અન્વેષણ કરો",
+                "footer.contact_info": "સંપર્ક માહિતી",
+                "footer.phone": "ફોન નંબર",
+                "footer.phone_hours": "સોમ - શનિ: સવારે 10 - સાંજે 7 વાગ્યા",
+                "footer.email": "ઈમેલ એડ્રેસ",
+                "footer.email_response": "અમે 24 કલાકમાં જવાબ આપીએ છીએ",
+                "footer.address": "ઓફિસ એડ્રેસ",
+                "footer.address_line1": "નરોડા - ભાટ રોડ",
+                "footer.address_line2": "અમદાવાદ, ગુજરાત 382330",
+                "footer.rights": "બધા હક્કો સુરક્ષિત.",
+                "footer.privacy": "ગોપનીયતા નીતિ",
+                "footer.terms": "સેવાની શરતો",
+                "footer.rera": "RERA રજિસ્ટ્રેશન"
+            }
+        };
+    </script>
+
+    <script>
+        // Enhanced Authentication System with Language Support
         class AuthenticationSystem {
             constructor() {
+                this.currentLang = 'en';
                 this.init();
             }
             
@@ -2160,6 +2701,9 @@
                 
                 // Remove preloader
                 this.removePreloader();
+                
+                // Initialize language
+                this.initLanguageSystem();
                 
                 // Initialize all components
                 this.initFormNavigation();
@@ -2180,8 +2724,91 @@
                 
                 // Show welcome message
                 setTimeout(() => {
-                    this.showToast('Welcome to Naroda Group Authentication', 'success');
+                    const welcomeMessages = {
+                        'en': 'Welcome to Naroda Group Authentication',
+                        'hi': 'नरोड़ा ग्रुप प्रमाणीकरण में आपका स्वागत है',
+                        'gu': 'નરોડા ગ્રુપ ઓથેન્ટિકેશનમાં આપનું સ્વાગત છે'
+                    };
+                    this.showToast(welcomeMessages[this.currentLang], 'success');
                 }, 1500);
+            }
+            
+            initLanguageSystem() {
+                // Load saved language from localStorage or default to English
+                this.currentLang = localStorage.getItem('preferredLanguage') || 'en';
+                
+                // Apply language on page load
+                this.applyLanguage(this.currentLang);
+                
+                // Set up language selector event listeners
+                document.querySelectorAll('.language-selector').forEach(selector => {
+                    selector.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const lang = selector.getAttribute('data-lang');
+                        this.setLanguage(lang);
+                    });
+                });
+            }
+            
+            setLanguage(lang) {
+                this.currentLang = lang;
+                localStorage.setItem('preferredLanguage', lang);
+                this.applyLanguage(lang);
+                
+                const languageNames = {
+                    'en': 'English',
+                    'hi': 'Hindi',
+                    'gu': 'Gujarati'
+                };
+                this.showToast(`Language changed to ${languageNames[lang]}`, 'success');
+            }
+            
+            applyLanguage(lang) {
+                // Update body class for language-specific styling
+                document.body.classList.remove('hindi', 'gujarati');
+                if (lang === 'hi') document.body.classList.add('hindi');
+                if (lang === 'gu') document.body.classList.add('gujarati');
+                
+                // Update current language display
+                document.getElementById('currentLanguage').textContent = lang.toUpperCase();
+                
+                // Fade out content
+                document.querySelector('.language-content').style.opacity = '0.5';
+                
+                // Apply translations after a short delay for smoother transition
+                setTimeout(() => {
+                    // Translate regular text elements
+                    const elements = document.querySelectorAll('[data-i18n]');
+                    elements.forEach(element => {
+                        const key = element.getAttribute('data-i18n');
+                        if (translations[lang] && translations[lang][key]) {
+                            element.textContent = translations[lang][key];
+                        }
+                    });
+                    
+                    // Translate placeholder attributes
+                    const placeholderElements = document.querySelectorAll('[data-i18n-placeholder]');
+                    placeholderElements.forEach(element => {
+                        const key = element.getAttribute('data-i18n-placeholder');
+                        if (translations[lang] && translations[lang][key]) {
+                            element.setAttribute('placeholder', translations[lang][key]);
+                        }
+                    });
+                    
+                    // Translate select options
+                    const selectElements = document.querySelectorAll('select option');
+                    selectElements.forEach(option => {
+                        const key = option.getAttribute('data-i18n');
+                        if (key && translations[lang] && translations[lang][key]) {
+                            option.textContent = translations[lang][key];
+                        }
+                    });
+                    
+                    // Fade content back in
+                    setTimeout(() => {
+                        document.querySelector('.language-content').style.opacity = '1';
+                    }, 300);
+                }, 300);
             }
             
             removePreloader() {
@@ -2197,7 +2824,7 @@
             
             initFormNavigation() {
                 // Form navigation elements
-                const forms = {
+                this.forms = {
                     login: document.getElementById('loginForm'),
                     register: document.getElementById('registerForm'),
                     forgot: document.getElementById('forgotForm'),
@@ -2208,23 +2835,20 @@
                 };
                 
                 // Navigation buttons
-                document.getElementById('showRegister')?.addEventListener('click', () => this.showForm(forms.register));
-                document.getElementById('showForgot')?.addEventListener('click', () => this.showForm(forms.forgot));
+                document.getElementById('showRegister')?.addEventListener('click', () => this.showForm(this.forms.register));
+                document.getElementById('showForgot')?.addEventListener('click', () => this.showForm(this.forms.forgot));
                 
                 // Back to login buttons
                 document.querySelectorAll('#backToLogin, #backToLoginFromForgot, #backToLoginFromReset, #backToLoginFromSuccess, #backToLoginFrom2FA, #backToLoginFromSessions').forEach(btn => {
-                    btn.addEventListener('click', () => this.showForm(forms.login));
+                    btn.addEventListener('click', () => this.showForm(this.forms.login));
                 });
                 
                 // Two-factor toggle
                 document.getElementById('enable2FA')?.addEventListener('change', (e) => {
                     if (e.target.checked) {
-                        this.showForm(forms.twoFactor);
+                        this.showForm(this.forms.twoFactor);
                     }
                 });
-                
-                // Store forms reference
-                this.forms = forms;
             }
             
             showForm(form) {
@@ -2266,7 +2890,7 @@
                     if (!password) {
                         strengthFill.style.width = '0%';
                         strengthFill.className = 'strength-fill';
-                        strengthText.textContent = 'Password strength';
+                        strengthText.textContent = translations[this.currentLang]?.register?.password_strength || 'Password strength';
                         return 0;
                     }
                     
@@ -2288,13 +2912,13 @@
                     // Set strength class and text
                     if (score <= 1) {
                         strengthFill.className = 'strength-fill weak';
-                        strengthText.textContent = 'Weak password';
+                        strengthText.textContent = translations[this.currentLang]?.register?.weak_password || 'Weak password';
                     } else if (score <= 3) {
                         strengthFill.className = 'strength-fill fair';
-                        strengthText.textContent = 'Fair password';
+                        strengthText.textContent = translations[this.currentLang]?.register?.fair_password || 'Fair password';
                     } else {
                         strengthFill.className = 'strength-fill good';
-                        strengthText.textContent = 'Strong password';
+                        strengthText.textContent = translations[this.currentLang]?.register?.strong_password || 'Strong password';
                     }
                     
                     return score;
@@ -2319,8 +2943,8 @@
                             confirmPassword.classList.toggle('is-invalid', !match);
                             confirmPassword.classList.toggle('is-valid', match);
                             document.getElementById('passwordMatch').innerHTML = match 
-                                ? '<span style="color: #28a745;"><i class="fas fa-check-circle"></i> Passwords match</span>'
-                                : '<span style="color: #dc3545;"><i class="fas fa-times-circle"></i> Passwords do not match</span>';
+                                ? '<span style="color: #28a745;"><i class="fas fa-check-circle"></i> ' + (translations[this.currentLang]?.register?.passwords_match || 'Passwords match') + '</span>'
+                                : '<span style="color: #dc3545;"><i class="fas fa-times-circle"></i> ' + (translations[this.currentLang]?.register?.passwords_no_match || 'Passwords do not match') + '</span>';
                         }
                     });
                 }
@@ -2332,8 +2956,8 @@
                             confirmPassword.classList.toggle('is-invalid', !match);
                             confirmPassword.classList.toggle('is-valid', match);
                             document.getElementById('passwordMatch').innerHTML = match 
-                                ? '<span style="color: #28a745;"><i class="fas fa-check-circle"></i> Passwords match</span>'
-                                : '<span style="color: #dc3545;"><i class="fas fa-times-circle"></i> Passwords do not match</span>';
+                                ? '<span style="color: #28a745;"><i class="fas fa-check-circle"></i> ' + (translations[this.currentLang]?.register?.passwords_match || 'Passwords match') + '</span>'
+                                : '<span style="color: #dc3545;"><i class="fas fa-times-circle"></i> ' + (translations[this.currentLang]?.register?.passwords_no_match || 'Passwords do not match') + '</span>';
                         }
                     });
                 }
@@ -2355,8 +2979,8 @@
                             confirmResetPassword.classList.toggle('is-invalid', !match);
                             confirmResetPassword.classList.toggle('is-valid', match);
                             document.getElementById('resetPasswordMatch').innerHTML = match 
-                                ? '<span style="color: #28a745;"><i class="fas fa-check-circle"></i> Passwords match</span>'
-                                : '<span style="color: #dc3545;"><i class="fas fa-times-circle"></i> Passwords do not match</span>';
+                                ? '<span style="color: #28a745;"><i class="fas fa-check-circle"></i> ' + (translations[this.currentLang]?.register?.passwords_match || 'Passwords match') + '</span>'
+                                : '<span style="color: #dc3545;"><i class="fas fa-times-circle"></i> ' + (translations[this.currentLang]?.register?.passwords_no_match || 'Passwords do not match') + '</span>';
                         }
                     });
                 }
@@ -2409,7 +3033,7 @@
                         setTimeout(() => {
                             this.hideLoading();
                             this.goToStep(3);
-                            this.showToast('Account created successfully! Check your email for verification.', 'success');
+                            this.showToast(translations[this.currentLang]?.register?.success_toast || 'Account created successfully! Check your email for verification.', 'success');
                         }, 2000);
                     }
                 });
@@ -2499,9 +3123,9 @@
                             
                             if (enable2FA) {
                                 this.showForm(this.forms.twoFactor);
-                                this.showToast('Two-factor authentication required', 'info');
+                                this.showToast(translations[this.currentLang]?.login?.enable_2fa || 'Two-factor authentication required', 'info');
                             } else {
-                                this.showToast('Login successful! Redirecting...', 'success');
+                                this.showToast(translations[this.currentLang]?.login?.success || 'Login successful! Redirecting...', 'success');
                                 setTimeout(() => {
                                     window.location.href = 'dashboard.html';
                                 }, 1500);
@@ -2522,7 +3146,7 @@
                         setTimeout(() => {
                             this.hideLoading();
                             this.showForm(this.forms.reset);
-                            this.showToast('Password reset link sent to your email', 'success');
+                            this.showToast(translations[this.currentLang]?.forgot?.success || 'Password reset link sent to your email', 'success');
                         }, 1500);
                     }
                 });
@@ -2545,7 +3169,7 @@
                         setTimeout(() => {
                             this.hideLoading();
                             this.showForm(this.forms.verification);
-                            this.showToast('Password reset successful!', 'success');
+                            this.showToast(translations[this.currentLang]?.reset?.success || 'Password reset successful!', 'success');
                         }, 1500);
                     }
                 });
@@ -2560,7 +3184,12 @@
                         // Simulate social login
                         setTimeout(() => {
                             this.hideLoading();
-                            this.showToast(`${provider.charAt(0).toUpperCase() + provider.slice(1)} login would be configured here`, 'info');
+                            const messages = {
+                                'en': `${provider.charAt(0).toUpperCase() + provider.slice(1)} login would be configured here`,
+                                'hi': `${provider.charAt(0).toUpperCase() + provider.slice(1)} लॉगिन यहां कॉन्फ़िगर किया जाएगा`,
+                                'gu': `${provider.charAt(0).toUpperCase() + provider.slice(1)} લૉગિન અહીં કૉન્ફિગર કરવામાં આવશે`
+                            };
+                            this.showToast(messages[this.currentLang], 'info');
                         }, 1000);
                     });
                 });
@@ -2600,31 +3229,31 @@
                         
                         setTimeout(() => {
                             this.hideLoading();
-                            this.showToast('Two-factor authentication successful!', 'success');
+                            this.showToast(translations[this.currentLang]?.login?.verify_success || 'Two-factor authentication successful!', 'success');
                             setTimeout(() => {
                                 window.location.href = 'dashboard.html';
                             }, 1000);
                         }, 1500);
                     } else {
-                        this.showToast('Please enter the complete 6-digit code', 'error');
+                        this.showToast(translations[this.currentLang]?.login?.verify_error || 'Please enter the complete 6-digit code', 'error');
                     }
                 });
                 
                 // Resend OTP
                 document.getElementById('resendOTP')?.addEventListener('click', () => {
-                    this.showToast('New verification code sent', 'info');
+                    this.showToast(translations[this.currentLang]?.login?.resend_otp || 'New verification code sent', 'info');
                 });
             }
             
             initSessionManagement() {
                 // Logout all sessions
                 document.getElementById('logoutAll')?.addEventListener('click', () => {
-                    if (confirm('Are you sure you want to logout from all other devices?')) {
+                    if (confirm(translations[this.currentLang]?.sessions?.confirm_logout || 'Are you sure you want to logout from all other devices?')) {
                         this.showLoading();
                         
                         setTimeout(() => {
                             this.hideLoading();
-                            this.showToast('All other sessions have been logged out', 'success');
+                            this.showToast(translations[this.currentLang]?.sessions?.logout_success || 'All other sessions have been logged out', 'success');
                         }, 1500);
                     }
                 });

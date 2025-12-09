@@ -9,6 +9,24 @@
     <meta name="description" content="Naroda Irish - Premium luxury residential apartments in Ahmedabad with world-class amenities, spacious layouts, and modern living experience.">
     <meta name="keywords" content="naroda irish, luxury apartments ahmedabad, residential project, premium homes, 2 bhk 3 bhk apartments">
     <meta name="author" content="Naroda Group">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Naroda Irish | Luxury Residential Apartments">
+    <meta property="og:description" content="Premium 2 & 3 BHK luxurious flats in Ahmedabad with world-class amenities and modern living experience.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1518780664697-55e3ad937233?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80">
+    <meta property="og:url" content="https://narodagroup.com/projects-irish.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Naroda Group">
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Naroda Irish | Luxury Residential Apartments">
+    <meta name="twitter:description" content="Premium 2 & 3 BHK luxurious flats in Ahmedabad">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1518780664697-55e3ad937233?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://narodagroup.com/projects-irish.html">
     
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -18,6 +36,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts for Hindi and Gujarati -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600;700&family=Noto+Sans+Gujarati:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
     
@@ -59,7 +79,7 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', 'Noto Sans Devanagari', 'Noto Sans Gujarati', sans-serif;
             color: var(--dark-color);
             overflow-x: hidden;
             line-height: 1.7;
@@ -67,8 +87,23 @@
             background-color: #ffffff;
         }
 
+        /* Language-specific font families */
+        body[data-lang="en"] {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        body[data-lang="hi"] {
+            font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+            direction: ltr;
+        }
+        
+        body[data-lang="gu"] {
+            font-family: 'Noto Sans Gujarati', 'Inter', sans-serif;
+            direction: ltr;
+        }
+
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Playfair Display', 'Noto Sans Devanagari', 'Noto Sans Gujarati', serif;
             font-weight: 700;
             line-height: 1.3;
             margin-bottom: 1rem;
@@ -291,6 +326,48 @@
         .dropdown-item:hover {
             background: rgba(46, 139, 87, 0.1);
             color: var(--accent-color);
+        }
+
+        /* ===== Language Switcher Styles ===== */
+        .language-switcher {
+            position: relative;
+        }
+        
+        .language-flag {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 8px;
+        }
+        
+        .language-flag img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .dropdown-item-language {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            transition: var(--transition);
+        }
+        
+        .dropdown-item-language:hover {
+            background: rgba(46, 139, 87, 0.1);
+        }
+        
+        .dropdown-item-language.active {
+            background: rgba(46, 139, 87, 0.15);
+            color: var(--accent-color);
+            font-weight: 500;
+        }
+        
+        .language-code {
+            margin-left: auto;
+            font-size: 0.85rem;
+            opacity: 0.7;
         }
 
         /* ===== Buttons ===== */
@@ -642,6 +719,43 @@
             color: var(--gray-color);
         }
 
+        /* ===== Specifications Section ===== */
+        .specifications-section {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .spec-category {
+            margin-bottom: 40px;
+        }
+
+        .spec-category h4 {
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(46, 139, 87, 0.1);
+        }
+
+        .spec-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .spec-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--light-gray);
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .spec-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
         /* ===== Location Section ===== */
         .location-section {
             padding: 100px 0;
@@ -958,11 +1072,13 @@
             align-items: center;
             justify-content: center;
             transition: var(--transition);
+            color: white;
         }
         
         .social-link:hover {
             background: var(--gradient-accent);
             transform: translateY(-3px);
+            color: white;
         }
         
         .footer-links {
@@ -1187,6 +1303,31 @@
             z-index: 2;
         }
         
+        .feature-bullets {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .feature-bullets li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .feature-bullets li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+        
+        .text-bordered {
+            -webkit-text-stroke: 1px var(--accent-color);
+            color: transparent;
+            font-weight: 900;
+        }
+        
         /* ===== Responsive Fixes ===== */
         @media (max-width: 992px) {
             .hero-section {
@@ -1289,6 +1430,10 @@
                 padding: 15px 30px;
                 font-size: 1rem;
             }
+            
+            .hero-title br {
+                display: none;
+            }
         }
         
         @media (max-width: 576px) {
@@ -1354,6 +1499,11 @@
             .swiper-button-next:after,
             .swiper-button-prev:after {
                 font-size: 1.2rem;
+            }
+            
+            .language-switcher .btn {
+                padding: 6px 12px;
+                font-size: 0.8rem;
             }
         }
         
@@ -1434,13 +1584,13 @@
         }
     </style>
 </head>
-<body>
+<body data-lang="en">
     <!-- Preloader -->
     <div id="preloader">
         <div class="loader">
             <div class="loader-inner"></div>
         </div>
-        <div class="preloader-text">NARODA GROUP</div>
+        <div class="preloader-text">NARODA IRISH</div>
     </div>
 
     <!-- Loading Overlay -->
@@ -1456,7 +1606,7 @@
     </div>
 
     <!-- WhatsApp Float -->
-    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+    <a href="https://wa.me/917405133695" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -1479,69 +1629,95 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="index.html" data-translate="nav.home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
+                        <a class="nav-link" href="about.html" data-translate="nav.about">About</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle active" href="#" id="projectsDropdown" role="button" 
-                           data-bs-toggle="dropdown" aria-expanded="false">
+                           data-bs-toggle="dropdown" aria-expanded="false" data-translate="nav.projects">
                             Projects
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="projectsDropdown">
-                            <li><a class="dropdown-item" href="projects-landmark.html">Naroda Landmark</a></li>
-                            <li><a class="dropdown-item active" href="projects-irish.html">Naroda Irish</a></li>
+                            <li><a class="dropdown-item" href="projects-landmark.html" data-translate="nav.landmark">Naroda Landmark</a></li>
+                            <li><a class="dropdown-item active" href="projects-irish.html" data-translate="nav.irish">Naroda Irish</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="projects.html">All Projects</a></li>
+                            <li><a class="dropdown-item" href="projects.html" data-translate="nav.all_projects">All Projects</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="propertiesDropdown" role="button" 
-                           data-bs-toggle="dropdown" aria-expanded="false">
+                           data-bs-toggle="dropdown" aria-expanded="false" data-translate="nav.properties">
                             Properties
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="propertiesDropdown">
-                            <li><a class="dropdown-item" href="properties.html">Buy</a></li>
-                            <li><a class="dropdown-item" href="properties-rent.html">Rent</a></li>
+                            <li><a class="dropdown-item" href="properties.html" data-translate="nav.buy">Buy</a></li>
+                            <li><a class="dropdown-item" href="properties-rent.html" data-translate="nav.rent">Rent</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="property-detail.html">Property Details</a></li>
+                            <li><a class="dropdown-item" href="property-detail.html" data-translate="nav.property_details">Property Details</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="gallery.html">Gallery</a>
+                        <a class="nav-link" href="gallery.html" data-translate="nav.gallery">Gallery</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" role="button" 
-                           data-bs-toggle="dropdown" aria-expanded="false">
+                           data-bs-toggle="dropdown" aria-expanded="false" data-translate="nav.more">
                             More
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="moreDropdown">
-                            <li><a class="dropdown-item" href="blog.html">Blog</a></li>
-                            <li><a class="dropdown-item" href="news.html">News</a></li>
-                            <li><a class="dropdown-item" href="careers.html">Careers</a></li>
-                            <li><a class="dropdown-item" href="team.html">Our Team</a></li>
+                            <li><a class="dropdown-item" href="blog.html" data-translate="nav.blog">Blog</a></li>
+                            <li><a class="dropdown-item" href="news.html" data-translate="nav.news">News</a></li>
+                            <li><a class="dropdown-item" href="careers.html" data-translate="nav.careers">Careers</a></li>
+                            <li><a class="dropdown-item" href="team.html" data-translate="nav.team">Our Team</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
-                            <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+                            <li><a class="dropdown-item" href="faq.html" data-translate="nav.faq">FAQ</a></li>
+                            <li><a class="dropdown-item" href="contact.html" data-translate="nav.contact">Contact</a></li>
                         </ul>
                     </li>
                 </ul>
                 
                 <div class="d-flex align-items-center ms-lg-3 mt-3 mt-lg-0">
-                    <div class="dropdown">
-                        <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" 
-                                id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fas fa-globe me-1" aria-hidden="true"></i> EN
+                    <div class="dropdown language-switcher">
+                        <button class="btn btn-outline-light btn-sm dropdown-toggle d-flex align-items-center" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <div class="language-flag">
+                                <img id="currentLanguageFlag" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyNCAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTAgMEgyNFYxNkgwVjBaIiBmaWxsPSIjRjJCMkIyIi8+CjxwYXRoIGQ9Ik0wIDBIMTBWMTZIMFYwWiIgZmlsbD0iIzAwMjY3RiIvPgo8cGF0aCBkPSJNMTQgMEgyNFYxNkgxNFYwWiIgZmlsbD0iI0M4MDMwMyIvPgo8L3N2Zz4K" alt="English Flag">
+                            </div>
+                            <span id="currentLanguageText">EN</span>
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="languageDropdown">
-                            <li><a class="dropdown-item" href="#" lang="en">English</a></li>
-                            <li><a class="dropdown-item" href="#" lang="hi">Hindi</a></li>
-                            <li><a class="dropdown-item" href="#" lang="gu">Gujarati</a></li>
+                            <li>
+                                <a class="dropdown-item dropdown-item-language language-option" href="#" data-lang="en">
+                                    <div class="language-flag">
+                                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyNCAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTAgMEgyNFYxNkgwVjBaIiBmaWxsPSIjRjJCMkIyIi8+CjxwYXRoIGQ9Ik0wIDBIMTBWMTZIMFYwWiIgZmlsbD0iIzAwMjY3RiIvPgo8cGF0aCBkPSJNMTQgMEgyNFYxNkgxNFYwWiIgZmlsbD0iI0M4MDMwMyIvPgo8L3N2Zz4K" alt="English Flag">
+                                    </div>
+                                    <span>English</span>
+                                    <span class="language-code">EN</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item dropdown-item-language language-option" href="#" data-lang="hi">
+                                    <div class="language-flag">
+                                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyNCAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE2IiBmaWxsPSIjRkZGMjVFIi8+CjxwYXRoIGQ9Ik0wIDBIMjRWNUgwVjBaIiBmaWxsPSIjRjUyNzI0Ii8+CjxwYXRoIGQ9Ik0wIDExSDI0VjE2SDBWMTFaIiBmaWxsPSIjMTM4ODA4Ii8+CjxjaXJjbGUgY3g9IjEyIiBjeT0iOCIgcj0iMi41IiBmaWxsPSIjRkZGMjVFIi8+CjxjaXJjbGUgY3g9IjEyIiBjeT0iOCIgcj0iMSIgZmlsbD0iIzEzODgwOCIvPgo8L3N2Zz4K" alt="Hindi Flag">
+                                    </div>
+                                    <span>हिंदी</span>
+                                    <span class="language-code">HI</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item dropdown-item-language language-option" href="#" data-lang="gu">
+                                    <div class="language-flag">
+                                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyNCAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE2IiBmaWxsPSIjRkZGMjVFIi8+CjxwYXRoIGQ9Ik0wIDBIMjRWNUgwVjBaIiBmaWxsPSIjRjUyNzI0Ii8+CjxwYXRoIGQ9Ik0wIDExSDI0VjE2SDBWMTFaIiBmaWxsPSIjMTM4ODA4Ii8+CjxjaXJjbGUgY3g9IjEyIiBjeT0iOCIgcj0iMi41IiBmaWxsPSIjRkZGMjVFIi8+Cjwvc3ZnPgo=" alt="Gujarati Flag">
+                                    </div>
+                                    <span>ગુજરાતી</span>
+                                    <span class="language-code">GU</span>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                     <a href="login.html" class="btn btn-outline-light ms-3">
-                        <i class="fas fa-user me-2" aria-hidden="true"></i> Login
+                        <i class="fas fa-user me-2" aria-hidden="true"></i> <span data-translate="nav.login">Login</span>
                     </a>
                 </div>
             </div>
@@ -1549,26 +1725,26 @@
     </nav>
 
     <!-- Mobile Bottom Navigation -->
-    <div class="mobile-bottom-nav">
+    <div class="mobile-bottom-nav no-print">
         <a href="index.html" class="mobile-nav-item">
             <i class="fas fa-home" aria-hidden="true"></i>
-            <span>Home</span>
+            <span data-translate="nav.home">Home</span>
         </a>
         <a href="projects.html" class="mobile-nav-item active">
             <i class="fas fa-building" aria-hidden="true"></i>
-            <span>Projects</span>
+            <span data-translate="nav.projects">Projects</span>
         </a>
         <a href="properties.html" class="mobile-nav-item">
             <i class="fas fa-search" aria-hidden="true"></i>
-            <span>Search</span>
+            <span data-translate="nav.search">Search</span>
         </a>
         <a href="contact.html" class="mobile-nav-item">
             <i class="fas fa-phone" aria-hidden="true"></i>
-            <span>Contact</span>
+            <span data-translate="nav.contact">Contact</span>
         </a>
         <a href="login.html" class="mobile-nav-item">
             <i class="fas fa-user" aria-hidden="true"></i>
-            <span>Account</span>
+            <span data-translate="nav.account">Account</span>
         </a>
     </div>
 
@@ -1580,28 +1756,28 @@
                 <div class="row min-vh-80 align-items-center">
                     <div class="col-lg-8">
                         <div class="hero-badge" data-aos="fade-up">
-                            <i class="fas fa-award"></i> Ahmedabad's Premier Luxury Residences
+                            <i class="fas fa-award"></i> <span data-translate="irish.hero.badge">Ahmedabad's Premier Luxury Residences</span>
                         </div>
                         
                         <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">
-                            <span class="gold-text">Naroda Irish</span><br>
-                            Where Luxury Meets Living
+                            <span class="gold-text" data-translate="irish.hero.title.part1">Naroda Irish</span><br>
+                            <span data-translate="irish.hero.title.part2">Where Luxury Meets Living</span>
                         </h1>
                         
-                        <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
+                        <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200" data-translate="irish.hero.subtitle">
                             Premium residential apartments with thoughtfully designed spaces, 
                             world-class amenities, and a community that celebrates modern living.
                         </p>
                         
                         <div class="d-flex flex-wrap gap-3" data-aos="fade-up" data-aos-delay="300">
                             <a href="#pricing" class="btn btn-gold btn-lg">
-                                <i class="fas fa-tag me-2" aria-hidden="true"></i> View Pricing
+                                <i class="fas fa-tag me-2" aria-hidden="true"></i> <span data-translate="irish.hero.btn1">View Pricing</span>
                             </a>
                             <a href="#gallery" class="btn btn-outline-light btn-lg">
-                                <i class="fas fa-images me-2" aria-hidden="true"></i> View Gallery
+                                <i class="fas fa-images me-2" aria-hidden="true"></i> <span data-translate="irish.hero.btn2">View Gallery</span>
                             </a>
                             <a href="contact.html" class="btn btn-emerald btn-lg">
-                                <i class="fas fa-calendar-alt me-2" aria-hidden="true"></i> Schedule Visit
+                                <i class="fas fa-calendar-alt me-2" aria-hidden="true"></i> <span data-translate="irish.hero.btn3">Schedule Visit</span>
                             </a>
                         </div>
                     </div>
@@ -1617,25 +1793,25 @@
                         <div class="col-md-3 col-6" data-aos="fade-up">
                             <div class="stat-item">
                                 <div class="stat-number">4</div>
-                                <div class="stat-text">Towers</div>
+                                <div class="stat-text" data-translate="irish.stats.towers">Towers</div>
                             </div>
                         </div>
                         <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="100">
                             <div class="stat-item">
                                 <div class="stat-number">15</div>
-                                <div class="stat-text">Storeys</div>
+                                <div class="stat-text" data-translate="irish.stats.storeys">Storeys</div>
                             </div>
                         </div>
                         <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="200">
                             <div class="stat-item">
-                                <div class="stat-number">320</div>
-                                <div class="stat-text">Apartments</div>
+                                <div class="stat-number">354</div>
+                                <div class="stat-text" data-translate="irish.stats.units">Units</div>
                             </div>
                         </div>
                         <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="300">
                             <div class="stat-item">
-                                <div class="stat-number">90%</div>
-                                <div class="stat-text">Sold Out</div>
+                                <div class="stat-number">2</div>
+                                <div class="stat-text" data-translate="irish.stats.basement">Basements</div>
                             </div>
                         </div>
                     </div>
@@ -1649,12 +1825,12 @@
                 <div class="row mb-5">
                     <div class="col-lg-8 mx-auto text-center">
                         <span class="badge bg-gradient-accent text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
-                            Project Overview
+                            <span data-translate="irish.overview.badge">Project Overview</span>
                         </span>
                         <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
-                            Welcome to <span class="emerald-text">Naroda Irish</span>
+                            <span data-translate="irish.overview.title.part1">Welcome to</span> <span class="emerald-text" data-translate="irish.overview.title.part2">Naroda Irish</span>
                         </h2>
-                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200">
+                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200" data-translate="irish.overview.subtitle">
                             A community designed for modern living with timeless elegance
                         </p>
                     </div>
@@ -1669,15 +1845,15 @@
                     </div>
                     
                     <div class="col-lg-6" data-aos="fade-left">
-                        <h3 class="mb-4">Luxury Redefined</h3>
-                        <p class="text-muted mb-4">
+                        <h3 class="mb-4" data-translate="irish.overview.heading">Luxury Redefined</h3>
+                        <p class="text-muted mb-4" data-translate="irish.overview.description1">
                             Naroda Irish represents the pinnacle of luxury residential living in Ahmedabad. 
                             Designed with meticulous attention to detail, each apartment offers spacious 
                             layouts, premium finishes, and panoramic views that create a perfect sanctuary 
                             for modern families.
                         </p>
                         
-                        <p class="text-muted mb-4">
+                        <p class="text-muted mb-4" data-translate="irish.overview.description2">
                             Our community-focused approach ensures that every resident enjoys not just a 
                             home, but a lifestyle enriched with amenities, security, and a sense of belonging.
                         </p>
@@ -1688,8 +1864,8 @@
                                     <i class="fas fa-home" aria-hidden="true"></i>
                                 </div>
                                 <div>
-                                    <h5 class="mb-2">Spacious Apartments</h5>
-                                    <p class="text-muted mb-0">2, 3 & 4 BHK apartments with generous living spaces</p>
+                                    <h5 class="mb-2" data-translate="irish.overview.feature1.title">Spacious Apartments</h5>
+                                    <p class="text-muted mb-0" data-translate="irish.overview.feature1.text">2 & 3 BHK luxurious flats with generous living spaces</p>
                                 </div>
                             </div>
                             
@@ -1698,8 +1874,8 @@
                                     <i class="fas fa-leaf" aria-hidden="true"></i>
                                 </div>
                                 <div>
-                                    <h5 class="mb-2">Green Living</h5>
-                                    <p class="text-muted mb-0">80% open spaces with lush gardens and water bodies</p>
+                                    <h5 class="mb-2" data-translate="irish.overview.feature2.title">Aesthetic Design</h5>
+                                    <p class="text-muted mb-0" data-translate="irish.overview.feature2.text">Beautiful aesthetics with modern architecture</p>
                                 </div>
                             </div>
                             
@@ -1708,10 +1884,64 @@
                                     <i class="fas fa-shield-alt" aria-hidden="true"></i>
                                 </div>
                                 <div>
-                                    <h5 class="mb-2">RERA Approved</h5>
-                                    <p class="text-muted mb-0">Complete transparency with all necessary approvals</p>
+                                    <h5 class="mb-2" data-translate="irish.overview.feature3.title">RERA Approved</h5>
+                                    <p class="text-muted mb-0" data-translate="irish.overview.feature3.text">Complete transparency with all necessary approvals</p>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Highlights -->
+        <section class="overview-section" style="background: white;">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <span class="badge bg-gradient-accent text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
+                            <span data-translate="irish.highlights.badge">Project Highlights</span>
+                        </span>
+                        <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
+                            <span data-translate="irish.highlights.title.part1">The</span> <span class="emerald-text" data-translate="irish.highlights.title.part2">Ultimate</span> <span data-translate="irish.highlights.title.part3">Class</span>
+                        </h2>
+                    </div>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="community-card">
+                            <div class="community-icon">
+                                <i class="fas fa-building" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="mb-3" data-translate="irish.highlights.card1.title">6 Magnificent Towers</h4>
+                            <p class="text-muted mb-0" data-translate="irish.highlights.card1.text">
+                                15-storey towers with premium construction and earthquake-resistant RCC structure
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="community-card">
+                            <div class="community-icon">
+                                <i class="fas fa-car" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="mb-3" data-translate="irish.highlights.card2.title">Ample Parking</h4>
+                            <p class="text-muted mb-0" data-translate="irish.highlights.card2.text">
+                                2 basements for ample parking space ensuring convenience for all residents
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="community-card">
+                            <div class="community-icon">
+                                <i class="fas fa-home" aria-hidden="true"></i>
+                            </div>
+                            <h4 class="mb-3" data-translate="irish.highlights.card3.title">354 Premium Units</h4>
+                            <p class="text-muted mb-0" data-translate="irish.highlights.card3.text">
+                                2 & 3 BHK luxurious flats with retail shops on ground floor
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -1724,12 +1954,12 @@
                 <div class="row mb-5">
                     <div class="col-lg-8 mx-auto text-center">
                         <span class="badge bg-gradient-accent text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
-                            World-Class Amenities
+                            <span data-translate="irish.amenities.badge">World-Class Amenities</span>
                         </span>
                         <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
-                            Lifestyle <span class="emerald-text">Amenities</span>
+                            <span data-translate="irish.amenities.title.part1">The Luxury of</span> <span class="emerald-text" data-translate="irish.amenities.title.part2">Lifestyle</span>
                         </h2>
-                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200">
+                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200" data-translate="irish.amenities.subtitle">
                             Designed for comfort, wellness, and entertainment
                         </p>
                     </div>
@@ -1741,9 +1971,9 @@
                             <div class="amenity-icon">
                                 <i class="fas fa-swimming-pool" aria-hidden="true"></i>
                             </div>
-                            <h4 class="mb-3">Swimming Pool</h4>
-                            <p class="text-muted mb-0">
-                                Olympic-size swimming pool with separate kids' pool and trained lifeguards.
+                            <h4 class="mb-3" data-translate="irish.amenities.amenity1.title">Swimming Pool</h4>
+                            <p class="text-muted mb-0" data-translate="irish.amenities.amenity1.text">
+                                Olympic-size swimming pool with separate kids' pool and trained lifeguards
                             </p>
                         </div>
                     </div>
@@ -1753,9 +1983,9 @@
                             <div class="amenity-icon">
                                 <i class="fas fa-dumbbell" aria-hidden="true"></i>
                             </div>
-                            <h4 class="mb-3">Fitness Center</h4>
-                            <p class="text-muted mb-0">
-                                Fully equipped gym with modern equipment, yoga studio, and aerobics area.
+                            <h4 class="mb-3" data-translate="irish.amenities.amenity2.title">Fitness Center</h4>
+                            <p class="text-muted mb-0" data-translate="irish.amenities.amenity2.text">
+                                Fully equipped gym with modern equipment, yoga studio, and aerobics area
                             </p>
                         </div>
                     </div>
@@ -1763,11 +1993,11 @@
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
                         <div class="amenity-card">
                             <div class="amenity-icon">
-                                <i class="fas fa-tree" aria-hidden="true"></i>
+                                <i class="fas fa-child" aria-hidden="true"></i>
                             </div>
-                            <h4 class="mb-3">Landscaped Gardens</h4>
-                            <p class="text-muted mb-0">
-                                Serene gardens with walking tracks, meditation zones, and children's play areas.
+                            <h4 class="mb-3" data-translate="irish.amenities.amenity3.title">Play Areas</h4>
+                            <p class="text-muted mb-0" data-translate="irish.amenities.amenity3.text">
+                                Dedicated play areas for children with modern equipment and safety features
                             </p>
                         </div>
                     </div>
@@ -1777,9 +2007,9 @@
                             <div class="amenity-icon">
                                 <i class="fas fa-gamepad" aria-hidden="true"></i>
                             </div>
-                            <h4 class="mb-3">Club House</h4>
-                            <p class="text-muted mb-0">
-                                Multi-purpose clubhouse with indoor games, party hall, and entertainment zone.
+                            <h4 class="mb-3" data-translate="irish.amenities.amenity4.title">Club House</h4>
+                            <p class="text-muted mb-0" data-translate="irish.amenities.amenity4.text">
+                                Multi-purpose clubhouse with indoor games, party hall, and entertainment zone
                             </p>
                         </div>
                     </div>
@@ -1789,9 +2019,9 @@
                             <div class="amenity-icon">
                                 <i class="fas fa-shield-alt" aria-hidden="true"></i>
                             </div>
-                            <h4 class="mb-3">24/7 Security</h4>
-                            <p class="text-muted mb-0">
-                                Advanced security with CCTV, biometric access, and round-the-clock patrols.
+                            <h4 class="mb-3" data-translate="irish.amenities.amenity5.title">24/7 Security</h4>
+                            <p class="text-muted mb-0" data-translate="irish.amenities.amenity5.text">
+                                Advanced security with CCTV, biometric access, and round-the-clock patrols
                             </p>
                         </div>
                     </div>
@@ -1799,11 +2029,11 @@
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
                         <div class="amenity-card">
                             <div class="amenity-icon">
-                                <i class="fas fa-car" aria-hidden="true"></i>
+                                <i class="fas fa-tree" aria-hidden="true"></i>
                             </div>
-                            <h4 class="mb-3">Ample Parking</h4>
-                            <p class="text-muted mb-0">
-                                Covered parking for 2 cars per apartment with visitor parking facilities.
+                            <h4 class="mb-3" data-translate="irish.amenities.amenity6.title">Landscaped Gardens</h4>
+                            <p class="text-muted mb-0" data-translate="irish.amenities.amenity6.text">
+                                Serene gardens with walking tracks, meditation zones, and water features
                             </p>
                         </div>
                     </div>
@@ -1811,35 +2041,89 @@
             </div>
         </section>
 
-        <!-- Virtual Apartment Tour -->
-        <section class="overview-section">
+        <!-- Specifications -->
+        <section class="specifications-section" id="specifications">
             <div class="container">
                 <div class="row mb-5">
                     <div class="col-lg-8 mx-auto text-center">
                         <span class="badge bg-gradient-accent text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
-                            Experience Luxury
+                            <span data-translate="irish.specifications.badge">Specifications</span>
                         </span>
                         <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
-                            Virtual <span class="emerald-text">Apartment Tour</span>
+                            <span data-translate="irish.specifications.title.part1">Premium</span> <span class="emerald-text" data-translate="irish.specifications.title.part2">Specifications</span>
                         </h2>
+                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200" data-translate="irish.specifications.subtitle">
+                            Built with quality materials and modern technology
+                        </p>
                     </div>
                 </div>
                 
-                <div class="row">
+                <div class="row g-4">
+                    <div class="col-md-6" data-aos="fade-right">
+                        <div class="spec-category">
+                            <h4 data-translate="irish.specifications.structure.title">Structure</h4>
+                            <ul class="spec-list">
+                                <li data-translate="irish.specifications.structure.item1">Earthquake resistant RCC structure</li>
+                                <li data-translate="irish.specifications.structure.item2">Premium quality construction materials</li>
+                                <li data-translate="irish.specifications.structure.item3">Fire-resistant design and materials</li>
+                                <li data-translate="irish.specifications.structure.item4">Sound insulation between apartments</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="spec-category">
+                            <h4 data-translate="irish.specifications.electrical.title">Electrical</h4>
+                            <ul class="spec-list">
+                                <li data-translate="irish.specifications.electrical.item1">Premium quality wiring and switches</li>
+                                <li data-translate="irish.specifications.electrical.item2">Ample power points in all rooms</li>
+                                <li data-translate="irish.specifications.electrical.item3">Separate metering for each unit</li>
+                                <li data-translate="irish.specifications.electrical.item4">Generator backup for common areas</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6" data-aos="fade-left">
+                        <div class="spec-category">
+                            <h4 data-translate="irish.specifications.plumbing.title">Plumbing</h4>
+                            <ul class="spec-list">
+                                <li data-translate="irish.specifications.plumbing.item1">Premium quality CPVC pipes</li>
+                                <li data-translate="irish.specifications.plumbing.item2">24 hours water supply</li>
+                                <li data-translate="irish.specifications.plumbing.item3">Solar water heating provision</li>
+                                <li data-translate="irish.specifications.plumbing.item4">Water treatment plant</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="spec-category">
+                            <h4 data-translate="irish.specifications.elevators.title">Elevators</h4>
+                            <ul class="spec-list">
+                                <li data-translate="irish.specifications.elevators.item1">High-speed automatic elevators</li>
+                                <li data-translate="irish.specifications.elevators.item2">Emergency call system</li>
+                                <li data-translate="irish.specifications.elevators.item3">Power backup for elevators</li>
+                                <li data-translate="irish.specifications.elevators.item4">Spacious cabins for convenience</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-5">
                     <div class="col-lg-10 mx-auto" data-aos="fade-up">
-                        <div class="virtual-apartment">
-                            <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                                 alt="3 BHK Apartment Interior" class="img-placeholder" loading="lazy" width="800" height="400">
-                            <div class="virtual-overlay">
-                                <h3 class="text-white mb-3">Experience 3 BHK Luxury</h3>
-                                <p class="text-white-50 mb-4">Walk through our premium apartment with panoramic city views</p>
-                                <button class="btn btn-gold btn-lg" id="startVirtualTour">
-                                    <i class="fas fa-play-circle me-2" aria-hidden="true"></i> Start Virtual Tour
-                                </button>
+                        <div class="project-highlight">
+                            <h5 class="emerald-text mb-3"><i class="fas fa-check-circle me-2" aria-hidden="true"></i> <span data-translate="irish.specifications.additional.title">Additional Features</span></h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul class="feature-bullets">
+                                        <li data-translate="irish.specifications.additional.item1">Premium main entrance gate with security</li>
+                                        <li data-translate="irish.specifications.additional.item2">Compound wall with decorative fencing</li>
+                                        <li data-translate="irish.specifications.additional.item3">Landscaped garden with lighting</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="feature-bullets">
+                                        <li data-translate="irish.specifications.additional.item4">Rainwater harvesting system</li>
+                                        <li data-translate="irish.specifications.additional.item5">Waste management system</li>
+                                        <li data-translate="irish.specifications.additional.item6">Fire fighting system as per norms</li>
+                                    </ul>
+                                </div>
                             </div>
-                            <a href="#" class="btn btn-outline-light walkthrough-btn" aria-label="360° walkthrough">
-                                <i class="fas fa-walking me-2" aria-hidden="true"></i> 360° Walkthrough
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -1852,22 +2136,20 @@
                 <div class="row mb-5">
                     <div class="col-lg-8 mx-auto text-center">
                         <span class="badge bg-gradient-accent text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
-                            Apartment Types
+                            <span data-translate="irish.apartments.badge">Apartment Types</span>
                         </span>
                         <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
-                            Smart <span class="emerald-text">Layouts</span>
+                            <span data-translate="irish.apartments.title.part1">Smart</span> <span class="emerald-text" data-translate="irish.apartments.title.part2">Layouts</span>
                         </h2>
-                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200">
+                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200" data-translate="irish.apartments.subtitle">
                             Choose from our thoughtfully designed apartment configurations
                         </p>
                     </div>
                 </div>
                 
                 <div class="apartment-tabs" data-aos="fade-up">
-                    <button class="apartment-tab active" data-type="2bhk" aria-pressed="true">2 BHK</button>
-                    <button class="apartment-tab" data-type="3bhk" aria-pressed="false">3 BHK</button>
-                    <button class="apartment-tab" data-type="4bhk" aria-pressed="false">4 BHK</button>
-                    <button class="apartment-tab" data-type="penthouse" aria-pressed="false">Penthouse</button>
+                    <button class="apartment-tab active" data-type="2bhk" aria-pressed="true" data-translate="irish.apartments.tab1">2 BHK</button>
+                    <button class="apartment-tab" data-type="3bhk" aria-pressed="false" data-translate="irish.apartments.tab2">3 BHK</button>
                 </div>
                 
                 <div class="apartment-content" data-aos="fade-up" data-aos-delay="100">
@@ -1879,8 +2161,8 @@
                             </div>
                         </div>
                         <div class="col-lg-6">
-                            <h3 id="apartmentTitle">2 BHK Premium Apartment</h3>
-                            <p class="text-muted mb-4" id="apartmentDesc">
+                            <h3 id="apartmentTitle" data-translate="irish.apartments.2bhk.title">2 BHK Premium Apartment</h3>
+                            <p class="text-muted mb-4" id="apartmentDesc" data-translate="irish.apartments.2bhk.description">
                                 Perfect for young couples and small families. Spacious living area with 
                                 attached balconies, modern kitchen, and premium fittings throughout.
                             </p>
@@ -1888,19 +2170,19 @@
                             <div class="apartment-specs">
                                 <div class="spec-item">
                                     <div class="spec-value" id="specArea">1100</div>
-                                    <div class="spec-label">Super Area (Sq. Ft.)</div>
+                                    <div class="spec-label" data-translate="irish.apartments.spec1">Super Area (Sq. Ft.)</div>
                                 </div>
                                 <div class="spec-item">
                                     <div class="spec-value" id="specBedrooms">2</div>
-                                    <div class="spec-label">Bedrooms</div>
+                                    <div class="spec-label" data-translate="irish.apartments.spec2">Bedrooms</div>
                                 </div>
                                 <div class="spec-item">
                                     <div class="spec-value" id="specBathrooms">2</div>
-                                    <div class="spec-label">Bathrooms</div>
+                                    <div class="spec-label" data-translate="irish.apartments.spec3">Bathrooms</div>
                                 </div>
                                 <div class="spec-item">
                                     <div class="spec-value" id="specBalcony">2</div>
-                                    <div class="spec-label">Balconies</div>
+                                    <div class="spec-label" data-translate="irish.apartments.spec4">Balconies</div>
                                 </div>
                             </div>
                         </div>
@@ -1908,7 +2190,7 @@
                     
                     <div class="text-center mt-4">
                         <button class="btn btn-gold" id="downloadFloorPlans">
-                            <i class="fas fa-download me-2" aria-hidden="true"></i> Download Floor Plans
+                            <i class="fas fa-download me-2" aria-hidden="true"></i> <span data-translate="irish.apartments.download">Download Floor Plans</span>
                         </button>
                     </div>
                 </div>
@@ -1921,12 +2203,12 @@
                 <div class="row mb-5">
                     <div class="col-lg-8 mx-auto text-center">
                         <span class="badge bg-gradient-accent text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
-                            Location Advantage
+                            <span data-translate="irish.location.badge">Location Advantage</span>
                         </span>
                         <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
-                            Prime <span class="emerald-text">Location</span>
+                            <span data-translate="irish.location.title.part1">Prime</span> <span class="emerald-text" data-translate="irish.location.title.part2">Location</span>
                         </h2>
-                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200">
+                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200" data-translate="irish.location.subtitle">
                             Strategically located in Ahmedabad's most sought-after residential area
                         </p>
                     </div>
@@ -1935,8 +2217,8 @@
                 <div class="row g-4">
                     <div class="col-lg-6" data-aos="fade-right">
                         <div class="location-card">
-                            <h3 class="mb-4">Connectivity & Convenience</h3>
-                            <p class="text-muted mb-4">
+                            <h3 class="mb-4" data-translate="irish.location.connectivity.title">Connectivity & Convenience</h3>
+                            <p class="text-muted mb-4" data-translate="irish.location.connectivity.description">
                                 Naroda Irish enjoys excellent connectivity to major city landmarks, 
                                 educational institutions, healthcare facilities, and entertainment hubs. 
                                 Everything you need is just minutes away.
@@ -1947,8 +2229,8 @@
                                     <i class="fas fa-graduation-cap" aria-hidden="true"></i>
                                 </div>
                                 <div>
-                                    <h5 class="mb-1">Educational Institutions</h5>
-                                    <p class="text-muted mb-0">Premium schools and colleges within 3 km radius</p>
+                                    <h5 class="mb-1" data-translate="irish.location.feature1.title">Educational Institutions</h5>
+                                    <p class="text-muted mb-0" data-translate="irish.location.feature1.text">Premium schools and colleges within 3 km radius</p>
                                 </div>
                             </div>
                             
@@ -1957,8 +2239,8 @@
                                     <i class="fas fa-hospital" aria-hidden="true"></i>
                                 </div>
                                 <div>
-                                    <h5 class="mb-1">Healthcare Facilities</h5>
-                                    <p class="text-muted mb-0">Multi-specialty hospitals within 5 minutes drive</p>
+                                    <h5 class="mb-1" data-translate="irish.location.feature2.title">Healthcare Facilities</h5>
+                                    <p class="text-muted mb-0" data-translate="irish.location.feature2.text">Multi-specialty hospitals within 5 minutes drive</p>
                                 </div>
                             </div>
                             
@@ -1967,8 +2249,8 @@
                                     <i class="fas fa-shopping-cart" aria-hidden="true"></i>
                                 </div>
                                 <div>
-                                    <h5 class="mb-1">Shopping & Entertainment</h5>
-                                    <p class="text-muted mb-0">Malls, restaurants, and multiplexes nearby</p>
+                                    <h5 class="mb-1" data-translate="irish.location.feature3.title">Shopping & Entertainment</h5>
+                                    <p class="text-muted mb-0" data-translate="irish.location.feature3.text">Malls, restaurants, and multiplexes nearby</p>
                                 </div>
                             </div>
                             
@@ -1977,8 +2259,8 @@
                                     <i class="fas fa-subway" aria-hidden="true"></i>
                                 </div>
                                 <div>
-                                    <h5 class="mb-1">Public Transport</h5>
-                                    <p class="text-muted mb-0">Easy access to metro, buses, and main roads</p>
+                                    <h5 class="mb-1" data-translate="irish.location.feature4.title">Public Transport</h5>
+                                    <p class="text-muted mb-0" data-translate="irish.location.feature4.text">Easy access to metro, buses, and main roads</p>
                                 </div>
                             </div>
                         </div>
@@ -1986,49 +2268,49 @@
                     
                     <div class="col-lg-6" data-aos="fade-left">
                         <div class="location-card">
-                            <h3 class="mb-4">Neighborhood Highlights</h3>
-                            <p class="text-muted mb-4">
+                            <h3 class="mb-4" data-translate="irish.location.neighborhood.title">Neighborhood Highlights</h3>
+                            <p class="text-muted mb-4" data-translate="irish.location.neighborhood.description">
                                 Surrounded by a thriving community with all essential services and 
                                 recreational options creating the perfect environment for family living.
                             </p>
                             
                             <div class="mb-4">
-                                <h5 class="mb-3">Within 5 Km Radius</h5>
+                                <h5 class="mb-3" data-translate="irish.location.radius.title">Within 5 Km Radius</h5>
                                 <div class="row g-2">
                                     <div class="col-6">
                                         <div class="d-flex align-items-center mb-2">
                                             <i class="fas fa-circle text-emerald me-2" style="font-size: 0.5rem;" aria-hidden="true"></i>
-                                            <span>International School</span>
+                                            <span data-translate="irish.location.radius.item1">International School</span>
                                         </div>
                                         <div class="d-flex align-items-center mb-2">
                                             <i class="fas fa-circle text-emerald me-2" style="font-size: 0.5rem;" aria-hidden="true"></i>
-                                            <span>Super Specialty Hospital</span>
+                                            <span data-translate="irish.location.radius.item2">Super Specialty Hospital</span>
                                         </div>
                                         <div class="d-flex align-items-center mb-2">
                                             <i class="fas fa-circle text-emerald me-2" style="font-size: 0.5rem;" aria-hidden="true"></i>
-                                            <span>Central Business District</span>
+                                            <span data-translate="irish.location.radius.item3">Central Business District</span>
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="d-flex align-items-center mb-2">
                                             <i class="fas fa-circle text-emerald me-2" style="font-size: 0.5rem;" aria-hidden="true"></i>
-                                            <span>Premium Mall</span>
+                                            <span data-translate="irish.location.radius.item4">Premium Mall</span>
                                         </div>
                                         <div class="d-flex align-items-center mb-2">
                                             <i class="fas fa-circle text-emerald me-2" style="font-size: 0.5rem;" aria-hidden="true"></i>
-                                            <span>City Park</span>
+                                            <span data-translate="irish.location.radius.item5">City Park</span>
                                         </div>
                                         <div class="d-flex align-items-center mb-2">
                                             <i class="fas fa-circle text-emerald me-2" style="font-size: 0.5rem;" aria-hidden="true"></i>
-                                            <span>Sports Complex</span>
+                                            <span data-translate="irish.location.radius.item6">Sports Complex</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             
                             <div class="project-highlight">
-                                <h5 class="emerald-text mb-3"><i class="fas fa-chart-line me-2" aria-hidden="true"></i> Investment Potential</h5>
-                                <p class="mb-0">Expected appreciation of 12-15% annually. High rental demand makes this an excellent investment for future returns.</p>
+                                <h5 class="emerald-text mb-3"><i class="fas fa-chart-line me-2" aria-hidden="true"></i> <span data-translate="irish.location.investment.title">Investment Potential</span></h5>
+                                <p class="mb-0" data-translate="irish.location.investment.text">Expected appreciation of 12-15% annually. High rental demand makes this an excellent investment for future returns.</p>
                             </div>
                         </div>
                     </div>
@@ -2042,10 +2324,10 @@
                 <div class="row mb-5">
                     <div class="col-lg-8 mx-auto text-center">
                         <span class="badge bg-gradient-accent text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
-                            Community Living
+                            <span data-translate="irish.community.badge">Community Living</span>
                         </span>
                         <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
-                            More Than <span class="emerald-text">Just Homes</span>
+                            <span data-translate="irish.community.title.part1">More Than</span> <span class="emerald-text" data-translate="irish.community.title.part2">Just Homes</span>
                         </h2>
                     </div>
                 </div>
@@ -2056,8 +2338,8 @@
                             <div class="community-icon">
                                 <i class="fas fa-users" aria-hidden="true"></i>
                             </div>
-                            <h4 class="mb-3">Community Events</h4>
-                            <p class="text-muted mb-0">
+                            <h4 class="mb-3" data-translate="irish.community.card1.title">Community Events</h4>
+                            <p class="text-muted mb-0" data-translate="irish.community.card1.text">
                                 Regular community gatherings, festivals celebration, and social events 
                                 that bring neighbors together.
                             </p>
@@ -2069,8 +2351,8 @@
                             <div class="community-icon">
                                 <i class="fas fa-child" aria-hidden="true"></i>
                             </div>
-                            <h4 class="mb-3">Children's Activities</h4>
-                            <p class="text-muted mb-0">
+                            <h4 class="mb-3" data-translate="irish.community.card2.title">Children's Activities</h4>
+                            <p class="text-muted mb-0" data-translate="irish.community.card2.text">
                                 Dedicated play areas, activity rooms, and organized workshops for 
                                 children's growth and development.
                             </p>
@@ -2082,8 +2364,8 @@
                             <div class="community-icon">
                                 <i class="fas fa-heartbeat" aria-hidden="true"></i>
                             </div>
-                            <h4 class="mb-3">Wellness Programs</h4>
-                            <p class="text-muted mb-0">
+                            <h4 class="mb-3" data-translate="irish.community.card3.title">Wellness Programs</h4>
+                            <p class="text-muted mb-0" data-translate="irish.community.card3.text">
                                 Yoga sessions, fitness workshops, and health camps organized regularly 
                                 for residents' well-being.
                             </p>
@@ -2099,12 +2381,12 @@
                 <div class="row mb-5">
                     <div class="col-lg-8 mx-auto text-center">
                         <span class="badge bg-gradient-accent text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
-                            Project Gallery
+                            <span data-translate="irish.gallery.badge">Project Gallery</span>
                         </span>
                         <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
-                            Visual <span class="emerald-text">Journey</span>
+                            <span data-translate="irish.gallery.title.part1">Visual</span> <span class="emerald-text" data-translate="irish.gallery.title.part2">Journey</span>
                         </h2>
-                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200">
+                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200" data-translate="irish.gallery.subtitle">
                             Explore our luxury residences through images
                         </p>
                     </div>
@@ -2117,32 +2399,32 @@
                                 <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
                                      alt="Modern Architectural Design" loading="lazy" width="800" height="500">
                                 <div class="gallery-overlay">
-                                    <h4 class="text-white">Modern Architectural Design</h4>
-                                    <p class="text-white-50">Contemporary facade with lush landscaping</p>
+                                    <h4 class="text-white" data-translate="irish.gallery.slide1.title">Modern Architectural Design</h4>
+                                    <p class="text-white-50" data-translate="irish.gallery.slide1.text">Contemporary facade with lush landscaping</p>
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
                                      alt="Luxury Living Spaces" loading="lazy" width="800" height="500">
                                 <div class="gallery-overlay">
-                                    <h4 class="text-white">Luxury Living Spaces</h4>
-                                    <p class="text-white-50">Spacious rooms with premium finishes</p>
+                                    <h4 class="text-white" data-translate="irish.gallery.slide2.title">Luxury Living Spaces</h4>
+                                    <p class="text-white-50" data-translate="irish.gallery.slide2.text">Spacious rooms with premium finishes</p>
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
                                      alt="Resort-style Pool" loading="lazy" width="800" height="500">
                                 <div class="gallery-overlay">
-                                    <h4 class="text-white">Resort-style Pool</h4>
-                                    <p class="text-white-50">Olympic-size swimming pool area</p>
+                                    <h4 class="text-white" data-translate="irish.gallery.slide3.title">Resort-style Pool</h4>
+                                    <p class="text-white-50" data-translate="irish.gallery.slide3.text">Olympic-size swimming pool area</p>
                                 </div>
                             </div>
                             <div class="swiper-slide">
                                 <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
                                      alt="Premium Club House" loading="lazy" width="800" height="500">
                                 <div class="gallery-overlay">
-                                    <h4 class="text-white">Premium Club House</h4>
-                                    <p class="text-white-50">Multi-purpose entertainment facility</p>
+                                    <h4 class="text-white" data-translate="irish.gallery.slide4.title">Premium Club House</h4>
+                                    <p class="text-white-50" data-translate="irish.gallery.slide4.text">Multi-purpose entertainment facility</p>
                                 </div>
                             </div>
                         </div>
@@ -2154,7 +2436,7 @@
                 
                 <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="100">
                     <a href="gallery.html" class="btn btn-gold">
-                        <i class="fas fa-images me-2" aria-hidden="true"></i> View Full Gallery
+                        <i class="fas fa-images me-2" aria-hidden="true"></i> <span data-translate="irish.gallery.button">View Full Gallery</span>
                     </a>
                 </div>
             </div>
@@ -2166,12 +2448,12 @@
                 <div class="row mb-5">
                     <div class="col-lg-8 mx-auto text-center">
                         <span class="badge bg-gradient-accent text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
-                            Pricing & Plans
+                            <span data-translate="irish.pricing.badge">Pricing & Plans</span>
                         </span>
                         <h2 class="text-white" data-aos="fade-up" data-aos-delay="100">
-                            Investment <span class="gold-text">Opportunity</span>
+                            <span data-translate="irish.pricing.title.part1">Investment</span> <span class="gold-text" data-translate="irish.pricing.title.part2">Opportunity</span>
                         </h2>
-                        <p class="text-white-50" data-aos="fade-up" data-aos-delay="200">
+                        <p class="text-white-50" data-aos="fade-up" data-aos-delay="200" data-translate="irish.pricing.subtitle">
                             Flexible payment options with attractive returns
                         </p>
                     </div>
@@ -2180,57 +2462,57 @@
                 <div class="row g-4">
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                         <div class="price-card">
-                            <h4 class="mb-3">2 BHK Apartments</h4>
+                            <h4 class="mb-3" data-translate="irish.pricing.card1.title">2 BHK Apartments</h4>
                             <div class="price-amount">₹ 85 Lakhs*</div>
-                            <p class="text-white-50 mb-4">Starting Price</p>
+                            <p class="text-white-50 mb-4" data-translate="irish.pricing.starting">Starting Price</p>
                             
                             <ul class="price-details">
-                                <li>1100 - 1300 Sq. Ft.</li>
-                                <li>2 Bedrooms + 2 Bathrooms</li>
-                                <li>2 Balconies</li>
-                                <li>Parking: 2 Cars</li>
+                                <li data-translate="irish.pricing.card1.item1">1100 - 1300 Sq. Ft.</li>
+                                <li data-translate="irish.pricing.card1.item2">2 Bedrooms + 2 Bathrooms</li>
+                                <li data-translate="irish.pricing.card1.item3">2 Balconies</li>
+                                <li data-translate="irish.pricing.card1.item4">Parking: 2 Cars</li>
                             </ul>
                             
                             <a href="contact.html" class="btn btn-gold w-100">
-                                <i class="fas fa-calendar-alt me-2" aria-hidden="true"></i> Book Site Visit
+                                <i class="fas fa-calendar-alt me-2" aria-hidden="true"></i> <span data-translate="irish.pricing.card1.button">Book Site Visit</span>
                             </a>
                         </div>
                     </div>
                     
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
                         <div class="price-card">
-                            <h4 class="mb-3">3 BHK Apartments</h4>
+                            <h4 class="mb-3" data-translate="irish.pricing.card2.title">3 BHK Apartments</h4>
                             <div class="price-amount">₹ 1.2 Cr*</div>
-                            <p class="text-white-50 mb-4">Starting Price</p>
+                            <p class="text-white-50 mb-4" data-translate="irish.pricing.starting">Starting Price</p>
                             
                             <ul class="price-details">
-                                <li>1500 - 1800 Sq. Ft.</li>
-                                <li>3 Bedrooms + 3 Bathrooms</li>
-                                <li>3 Balconies</li>
-                                <li>Parking: 2 Cars</li>
+                                <li data-translate="irish.pricing.card2.item1">1500 - 1800 Sq. Ft.</li>
+                                <li data-translate="irish.pricing.card2.item2">3 Bedrooms + 3 Bathrooms</li>
+                                <li data-translate="irish.pricing.card2.item3">3 Balconies</li>
+                                <li data-translate="irish.pricing.card2.item4">Parking: 2 Cars</li>
                             </ul>
                             
                             <a href="contact.html" class="btn btn-gold w-100">
-                                <i class="fas fa-home me-2" aria-hidden="true"></i> View 3 BHK Plans
+                                <i class="fas fa-home me-2" aria-hidden="true"></i> <span data-translate="irish.pricing.card2.button">View 3 BHK Plans</span>
                             </a>
                         </div>
                     </div>
                     
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
                         <div class="price-card">
-                            <h4 class="mb-3">Payment Plans</h4>
+                            <h4 class="mb-3" data-translate="irish.pricing.card3.title">Payment Plans</h4>
                             <div class="price-amount">Flexible</div>
-                            <p class="text-white-50 mb-4">Choose Your Plan</p>
+                            <p class="text-white-50 mb-4" data-translate="irish.pricing.card3.subtitle">Choose Your Plan</p>
                             
                             <ul class="price-details">
-                                <li>20:80 Construction Linked</li>
-                                <li>Down Payment: 10%</li>
-                                <li>Bank Loans Available</li>
-                                <li>Easy EMI Options</li>
+                                <li data-translate="irish.pricing.card3.item1">20:80 Construction Linked</li>
+                                <li data-translate="irish.pricing.card3.item2">Down Payment: 10%</li>
+                                <li data-translate="irish.pricing.card3.item3">Bank Loans Available</li>
+                                <li data-translate="irish.pricing.card3.item4">Easy EMI Options</li>
                             </ul>
                             
                             <a href="contact.html" class="btn btn-gold w-100">
-                                <i class="fas fa-calculator me-2" aria-hidden="true"></i> Calculate EMI
+                                <i class="fas fa-calculator me-2" aria-hidden="true"></i> <span data-translate="irish.pricing.card3.button">Calculate EMI</span>
                             </a>
                         </div>
                     </div>
@@ -2241,12 +2523,12 @@
                         <div class="project-highlight" style="background: rgba(255, 255, 255, 0.1);">
                             <div class="row align-items-center">
                                 <div class="col-md-8">
-                                    <h5 class="gold-text mb-2"><i class="fas fa-gift me-2" aria-hidden="true"></i> Special Offer</h5>
-                                    <p class="text-white-50 mb-0">Limited period offer: Book now and get modular kitchen + ACs free + 2 years maintenance free.</p>
+                                    <h5 class="gold-text mb-2"><i class="fas fa-gift me-2" aria-hidden="true"></i> <span data-translate="irish.pricing.offer.title">Special Offer</span></h5>
+                                    <p class="text-white-50 mb-0" data-translate="irish.pricing.offer.text">Limited period offer: Book now and get modular kitchen + ACs free + 2 years maintenance free.</p>
                                 </div>
                                 <div class="col-md-4 text-md-end">
                                     <a href="contact.html" class="btn btn-gold">
-                                        <i class="fas fa-gift me-2" aria-hidden="true"></i> Avail Offer
+                                        <i class="fas fa-gift me-2" aria-hidden="true"></i> <span data-translate="irish.pricing.offer.button">Avail Offer</span>
                                     </a>
                                 </div>
                             </div>
@@ -2265,13 +2547,13 @@
                             <div class="download-icon">
                                 <i class="fas fa-file-pdf" aria-hidden="true"></i>
                             </div>
-                            <h4 class="mb-3">Download Brochure</h4>
-                            <p class="text-muted mb-4">
+                            <h4 class="mb-3" data-translate="irish.download.brochure.title">Download Brochure</h4>
+                            <p class="text-muted mb-4" data-translate="irish.download.brochure.text">
                                 Get detailed information about Naroda Irish including specifications, 
                                 floor plans, amenities, and pricing.
                             </p>
                             <button class="btn btn-gold brochure-btn" id="downloadBrochure">
-                                <i class="fas fa-download me-2" aria-hidden="true"></i> Download PDF (4.8 MB)
+                                <i class="fas fa-download me-2" aria-hidden="true"></i> <span data-translate="irish.download.brochure.button">Download PDF (4.8 MB)</span>
                             </button>
                         </div>
                     </div>
@@ -2281,13 +2563,13 @@
                             <div class="download-icon">
                                 <i class="fas fa-video" aria-hidden="true"></i>
                             </div>
-                            <h4 class="mb-3">Virtual Tour</h4>
-                            <p class="text-muted mb-4">
+                            <h4 class="mb-3" data-translate="irish.download.virtual.title">Virtual Tour</h4>
+                            <p class="text-muted mb-4" data-translate="irish.download.virtual.text">
                                 Experience Naroda Irish through our immersive virtual tour. 
                                 Explore every corner from the comfort of your home.
                             </p>
                             <button class="btn btn-gold brochure-btn" id="virtualTourBtn">
-                                <i class="fas fa-play-circle me-2" aria-hidden="true"></i> Start Virtual Tour
+                                <i class="fas fa-play-circle me-2" aria-hidden="true"></i> <span data-translate="irish.download.virtual.button">Start Virtual Tour</span>
                             </button>
                         </div>
                     </div>
@@ -2301,10 +2583,10 @@
                 <div class="row mb-5">
                     <div class="col-lg-8 mx-auto text-center">
                         <span class="badge bg-gradient-accent text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
-                            Project Timeline
+                            <span data-translate="irish.timeline.badge">Project Timeline</span>
                         </span>
                         <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
-                            Development <span class="emerald-text">Schedule</span>
+                            <span data-translate="irish.timeline.title.part1">Development</span> <span class="emerald-text" data-translate="irish.timeline.title.part2">Schedule</span>
                         </h2>
                     </div>
                 </div>
@@ -2313,33 +2595,33 @@
                     <div class="col-lg-8 mx-auto" data-aos="fade-up">
                         <div class="timeline">
                             <div class="timeline-item">
-                                <div class="timeline-date">March 2023</div>
-                                <h5 class="mb-2">Project Launch</h5>
-                                <p class="text-muted mb-0">Official launch with RERA approval and commencement of construction</p>
+                                <div class="timeline-date" data-translate="irish.timeline.item1.date">March 2023</div>
+                                <h5 class="mb-2" data-translate="irish.timeline.item1.title">Project Launch</h5>
+                                <p class="text-muted mb-0" data-translate="irish.timeline.item1.text">Official launch with RERA approval and commencement of construction</p>
                             </div>
                             
                             <div class="timeline-item">
-                                <div class="timeline-date">August 2023</div>
-                                <h5 class="mb-2">Foundation Complete</h5>
-                                <p class="text-muted mb-0">Foundation work completed and structural framework begins</p>
+                                <div class="timeline-date" data-translate="irish.timeline.item2.date">August 2023</div>
+                                <h5 class="mb-2" data-translate="irish.timeline.item2.title">Foundation Complete</h5>
+                                <p class="text-muted mb-0" data-translate="irish.timeline.item2.text">Foundation work completed and structural framework begins</p>
                             </div>
                             
                             <div class="timeline-item">
-                                <div class="timeline-date">February 2024</div>
-                                <h5 class="mb-2">Structure Complete</h5>
-                                <p class="text-muted mb-0">Building structure completed, 70% sold out milestone achieved</p>
+                                <div class="timeline-date" data-translate="irish.timeline.item3.date">February 2024</div>
+                                <h5 class="mb-2" data-translate="irish.timeline.item3.title">Structure Complete</h5>
+                                <p class="text-muted mb-0" data-translate="irish.timeline.item3.text">Building structure completed, 70% sold out milestone achieved</p>
                             </div>
                             
                             <div class="timeline-item">
-                                <div class="timeline-date">August 2024</div>
-                                <h5 class="mb-2">Interior Work</h5>
-                                <p class="text-muted mb-0">Interior finishing, painting, and fixture installation begins</p>
+                                <div class="timeline-date" data-translate="irish.timeline.item4.date">August 2024</div>
+                                <h5 class="mb-2" data-translate="irish.timeline.item4.title">Interior Work</h5>
+                                <p class="text-muted mb-0" data-translate="irish.timeline.item4.text">Interior finishing, painting, and fixture installation begins</p>
                             </div>
                             
                             <div class="timeline-item">
-                                <div class="timeline-date">December 2024</div>
-                                <h5 class="mb-2">Project Completion</h5>
-                                <p class="text-muted mb-0">Final completion and handover of apartments to owners</p>
+                                <div class="timeline-date" data-translate="irish.timeline.item5.date">December 2024</div>
+                                <h5 class="mb-2" data-translate="irish.timeline.item5.title">Project Completion</h5>
+                                <p class="text-muted mb-0" data-translate="irish.timeline.item5.text">Final completion and handover of apartments to owners</p>
                             </div>
                         </div>
                     </div>
@@ -2353,22 +2635,22 @@
                 <div class="row">
                     <div class="col-lg-8 mx-auto text-center">
                         <h2 class="text-white mb-4" data-aos="fade-up">
-                            Ready to <span class="gold-text">Call It Home?</span>
+                            <span data-translate="irish.cta.title.part1">Ready to</span> <span class="gold-text" data-translate="irish.cta.title.part2">Call It Home?</span>
                         </h2>
-                        <p class="text-white-50 mb-5" data-aos="fade-up" data-aos-delay="100">
+                        <p class="text-white-50 mb-5" data-aos="fade-up" data-aos-delay="100" data-translate="irish.cta.subtitle">
                             Join 300+ happy families at Naroda Irish. Schedule a site visit 
                             today and experience luxury living firsthand.
                         </p>
                         
                         <div class="d-flex flex-column flex-sm-row justify-content-center gap-4" data-aos="fade-up" data-aos-delay="200">
                             <a href="contact.html" class="btn btn-gold btn-lg">
-                                <i class="fas fa-calendar-alt me-2" aria-hidden="true"></i> Schedule Site Visit
+                                <i class="fas fa-calendar-alt me-2" aria-hidden="true"></i> <span data-translate="irish.cta.button1">Schedule Site Visit</span>
                             </a>
-                            <a href="tel:+919876543210" class="btn btn-outline-light btn-lg">
-                                <i class="fas fa-phone me-2" aria-hidden="true"></i> Call Now
+                            <a href="tel:+917405133695" class="btn btn-outline-light btn-lg">
+                                <i class="fas fa-phone me-2" aria-hidden="true"></i> +91 74051 33695
                             </a>
                             <a href="contact.html" class="btn btn-emerald btn-lg">
-                                <i class="fas fa-envelope me-2" aria-hidden="true"></i> Get Quote
+                                <i class="fas fa-envelope me-2" aria-hidden="true"></i> <span data-translate="irish.cta.button3">Get Quote</span>
                             </a>
                         </div>
                     </div>
@@ -2388,7 +2670,7 @@
                             Naroda <span class="gold-text">Group</span>
                         </a>
                     </div>
-                    <p class="mb-4">
+                    <p class="mb-4" data-translate="footer.description">
                         Creating landmark properties that redefine excellence. From premium commercial spaces 
                         to luxury residential living, we build dreams with quality and commitment.
                     </p>
@@ -2413,59 +2695,59 @@
                 </div>
                 
                 <div class="col-lg-2 col-md-6">
-                    <h3 class="footer-title">Quick Links</h3>
+                    <h3 class="footer-title" data-translate="footer.quick_links">Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="index.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Home</a></li>
-                        <li><a href="about.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> About Us</a></li>
-                        <li><a href="projects.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Projects</a></li>
-                        <li><a href="properties.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Properties</a></li>
-                        <li><a href="gallery.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Gallery</a></li>
-                        <li><a href="contact.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> Contact</a></li>
+                        <li><a href="index.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> <span data-translate="nav.home">Home</span></a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> <span data-translate="nav.about">About Us</span></a></li>
+                        <li><a href="projects.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> <span data-translate="nav.projects">Projects</span></a></li>
+                        <li><a href="properties.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> <span data-translate="nav.properties">Properties</span></a></li>
+                        <li><a href="gallery.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> <span data-translate="nav.gallery">Gallery</span></a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right" aria-hidden="true"></i> <span data-translate="nav.contact">Contact</span></a></li>
                     </ul>
                 </div>
                 
                 <div class="col-lg-3 col-md-6">
-                    <h3 class="footer-title">Our Projects</h3>
+                    <h3 class="footer-title" data-translate="footer.our_projects">Our Projects</h3>
                     <a href="projects-landmark.html" class="project-mini-card">
-                        <h6 class="text-white mb-1">Naroda Landmark</h6>
-                        <p class="small text-muted mb-0">Premium Commercial Spaces</p>
+                        <h6 class="text-white mb-1" data-translate="nav.landmark">Naroda Landmark</h6>
+                        <p class="small text-muted mb-0" data-translate="footer.landmark_desc">Premium Commercial Spaces</p>
                     </a>
                     <a href="projects-irish.html" class="project-mini-card">
-                        <h6 class="text-white mb-1">Naroda Irish</h6>
-                        <p class="small text-muted mb-0">Luxury Residential Living</p>
+                        <h6 class="text-white mb-1" data-translate="nav.irish">Naroda Irish</h6>
+                        <p class="small text-muted mb-0" data-translate="footer.irish_desc">Luxury Residential Living</p>
                     </a>
                     <a href="projects.html" class="project-mini-card">
-                        <h6 class="text-white mb-1">View All Projects</h6>
-                        <p class="small text-muted mb-0">Explore our portfolio</p>
+                        <h6 class="text-white mb-1" data-translate="footer.view_all_projects">View All Projects</h6>
+                        <p class="small text-muted mb-0" data-translate="footer.explore_portfolio">Explore our portfolio</p>
                     </a>
                 </div>
                 
                 <div class="col-lg-3 col-md-6">
-                    <h3 class="footer-title">Contact Info</h3>
+                    <h3 class="footer-title" data-translate="footer.contact_info">Contact Info</h3>
                     <div class="contact-info">
                         <i class="fas fa-phone" aria-hidden="true"></i>
                         <div>
-                            <h6 class="text-white mb-1">Phone Number</h6>
-                            <p class="mb-0">+91 98765 43210</p>
-                            <small class="text-muted">Mon - Sat: 10 AM - 7 PM</small>
+                            <h6 class="text-white mb-1" data-translate="footer.phone">Phone Number</h6>
+                            <p class="mb-0">+91 74051 33695</p>
+                            <small class="text-muted" data-translate="footer.phone_hours">Mon - Sat: 10 AM - 7 PM</small>
                         </div>
                     </div>
                     
                     <div class="contact-info">
                         <i class="fas fa-envelope" aria-hidden="true"></i>
                         <div>
-                            <h6 class="text-white mb-1">Email Address</h6>
+                            <h6 class="text-white mb-1" data-translate="footer.email">Email Address</h6>
                             <p class="mb-0">irish@narodagroup.com</p>
-                            <small class="text-muted">Project-specific inquiries</small>
+                            <small class="text-muted" data-translate="footer.email_response">We reply within 24 hours</small>
                         </div>
                     </div>
                     
                     <div class="contact-info">
                         <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                         <div>
-                            <h6 class="text-white mb-1">Site Address</h6>
-                            <p class="mb-0">Naroda - Bhat Road</p>
-                            <small class="text-muted">Ahmedabad, Gujarat 382330</small>
+                            <h6 class="text-white mb-1" data-translate="footer.address">Site Address</h6>
+                            <p class="mb-0" data-translate="footer.address_line1">Naroda - Bhat Road</p>
+                            <small class="text-muted" data-translate="footer.address_line2">Ahmedabad, Gujarat 382330</small>
                         </div>
                     </div>
                 </div>
@@ -2474,12 +2756,12 @@
             <div class="copyright">
                 <div class="row align-items-center">
                     <div class="col-md-6">
-                        <p class="mb-0">&copy; 2025 Naroda Group. All rights reserved.</p>
+                        <p class="mb-0">&copy; 2025 Naroda Group. <span data-translate="footer.rights">All rights reserved.</span></p>
                     </div>
                     <div class="col-md-6 text-md-end">
-                        <a href="privacy.html" class="text-muted me-3">Privacy Policy</a>
-                        <a href="terms.html" class="text-muted me-3">Terms of Service</a>
-                        <a href="rera.html" class="text-muted">RERA: A1234567890</a>
+                        <a href="privacy.html" class="text-muted me-3" data-translate="footer.privacy">Privacy Policy</a>
+                        <a href="terms.html" class="text-muted me-3" data-translate="footer.terms">Terms of Service</a>
+                        <a href="rera.html" class="text-muted" data-translate="footer.rera">RERA: A1234567890</a>
                     </div>
                 </div>
             </div>
@@ -2494,6 +2776,327 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
     <script>
+        // Language Translation Data for Naroda Irish
+        const translations = {
+            en: {
+                // Navigation (reuse from main translations)
+                "nav.home": "Home",
+                "nav.about": "About",
+                "nav.projects": "Projects",
+                "nav.landmark": "Naroda Landmark",
+                "nav.irish": "Naroda Irish",
+                "nav.all_projects": "All Projects",
+                "nav.properties": "Properties",
+                "nav.buy": "Buy",
+                "nav.rent": "Rent",
+                "nav.property_details": "Property Details",
+                "nav.gallery": "Gallery",
+                "nav.more": "More",
+                "nav.blog": "Blog",
+                "nav.news": "News",
+                "nav.careers": "Careers",
+                "nav.team": "Our Team",
+                "nav.faq": "FAQ",
+                "nav.contact": "Contact",
+                "nav.login": "Login",
+                "nav.search": "Search",
+                "nav.account": "Account",
+                
+                // Hero Section
+                "irish.hero.badge": "Ahmedabad's Premier Luxury Residences",
+                "irish.hero.title.part1": "Naroda Irish",
+                "irish.hero.title.part2": "Where Luxury Meets Living",
+                "irish.hero.subtitle": "Premium residential apartments with thoughtfully designed spaces, world-class amenities, and a community that celebrates modern living.",
+                "irish.hero.btn1": "View Pricing",
+                "irish.hero.btn2": "View Gallery",
+                "irish.hero.btn3": "Schedule Visit",
+                
+                // Stats
+                "irish.stats.towers": "Towers",
+                "irish.stats.storeys": "Storeys",
+                "irish.stats.units": "Units",
+                "irish.stats.basement": "Basements",
+                
+                // Overview
+                "irish.overview.badge": "Project Overview",
+                "irish.overview.title.part1": "Welcome to",
+                "irish.overview.title.part2": "Naroda Irish",
+                "irish.overview.subtitle": "A community designed for modern living with timeless elegance",
+                "irish.overview.heading": "Luxury Redefined",
+                "irish.overview.description1": "Naroda Irish represents the pinnacle of luxury residential living in Ahmedabad. Designed with meticulous attention to detail, each apartment offers spacious layouts, premium finishes, and panoramic views that create a perfect sanctuary for modern families.",
+                "irish.overview.description2": "Our community-focused approach ensures that every resident enjoys not just a home, but a lifestyle enriched with amenities, security, and a sense of belonging.",
+                "irish.overview.feature1.title": "Spacious Apartments",
+                "irish.overview.feature1.text": "2 & 3 BHK luxurious flats with generous living spaces",
+                "irish.overview.feature2.title": "Aesthetic Design",
+                "irish.overview.feature2.text": "Beautiful aesthetics with modern architecture",
+                "irish.overview.feature3.title": "RERA Approved",
+                "irish.overview.feature3.text": "Complete transparency with all necessary approvals",
+                
+                // Highlights
+                "irish.highlights.badge": "Project Highlights",
+                "irish.highlights.title.part1": "The",
+                "irish.highlights.title.part2": "Ultimate",
+                "irish.highlights.title.part3": "Class",
+                "irish.highlights.card1.title": "6 Magnificent Towers",
+                "irish.highlights.card1.text": "15-storey towers with premium construction and earthquake-resistant RCC structure",
+                "irish.highlights.card2.title": "Ample Parking",
+                "irish.highlights.card2.text": "2 basements for ample parking space ensuring convenience for all residents",
+                "irish.highlights.card3.title": "354 Premium Units",
+                "irish.highlights.card3.text": "2 & 3 BHK luxurious flats with retail shops on ground floor",
+                
+                // Amenities
+                "irish.amenities.badge": "World-Class Amenities",
+                "irish.amenities.title.part1": "The Luxury of",
+                "irish.amenities.title.part2": "Lifestyle",
+                "irish.amenities.subtitle": "Designed for comfort, wellness, and entertainment",
+                "irish.amenities.amenity1.title": "Swimming Pool",
+                "irish.amenities.amenity1.text": "Olympic-size swimming pool with separate kids' pool and trained lifeguards",
+                "irish.amenities.amenity2.title": "Fitness Center",
+                "irish.amenities.amenity2.text": "Fully equipped gym with modern equipment, yoga studio, and aerobics area",
+                "irish.amenities.amenity3.title": "Play Areas",
+                "irish.amenities.amenity3.text": "Dedicated play areas for children with modern equipment and safety features",
+                "irish.amenities.amenity4.title": "Club House",
+                "irish.amenities.amenity4.text": "Multi-purpose clubhouse with indoor games, party hall, and entertainment zone",
+                "irish.amenities.amenity5.title": "24/7 Security",
+                "irish.amenities.amenity5.text": "Advanced security with CCTV, biometric access, and round-the-clock patrols",
+                "irish.amenities.amenity6.title": "Landscaped Gardens",
+                "irish.amenities.amenity6.text": "Serene gardens with walking tracks, meditation zones, and water features",
+                
+                // Specifications
+                "irish.specifications.badge": "Specifications",
+                "irish.specifications.title.part1": "Premium",
+                "irish.specifications.title.part2": "Specifications",
+                "irish.specifications.subtitle": "Built with quality materials and modern technology",
+                "irish.specifications.structure.title": "Structure",
+                "irish.specifications.structure.item1": "Earthquake resistant RCC structure",
+                "irish.specifications.structure.item2": "Premium quality construction materials",
+                "irish.specifications.structure.item3": "Fire-resistant design and materials",
+                "irish.specifications.structure.item4": "Sound insulation between apartments",
+                "irish.specifications.electrical.title": "Electrical",
+                "irish.specifications.electrical.item1": "Premium quality wiring and switches",
+                "irish.specifications.electrical.item2": "Ample power points in all rooms",
+                "irish.specifications.electrical.item3": "Separate metering for each unit",
+                "irish.specifications.electrical.item4": "Generator backup for common areas",
+                "irish.specifications.plumbing.title": "Plumbing",
+                "irish.specifications.plumbing.item1": "Premium quality CPVC pipes",
+                "irish.specifications.plumbing.item2": "24 hours water supply",
+                "irish.specifications.plumbing.item3": "Solar water heating provision",
+                "irish.specifications.plumbing.item4": "Water treatment plant",
+                "irish.specifications.elevators.title": "Elevators",
+                "irish.specifications.elevators.item1": "High-speed automatic elevators",
+                "irish.specifications.elevators.item2": "Emergency call system",
+                "irish.specifications.elevators.item3": "Power backup for elevators",
+                "irish.specifications.elevators.item4": "Spacious cabins for convenience",
+                "irish.specifications.additional.title": "Additional Features",
+                "irish.specifications.additional.item1": "Premium main entrance gate with security",
+                "irish.specifications.additional.item2": "Compound wall with decorative fencing",
+                "irish.specifications.additional.item3": "Landscaped garden with lighting",
+                "irish.specifications.additional.item4": "Rainwater harvesting system",
+                "irish.specifications.additional.item5": "Waste management system",
+                "irish.specifications.additional.item6": "Fire fighting system as per norms",
+                
+                // Apartments
+                "irish.apartments.badge": "Apartment Types",
+                "irish.apartments.title.part1": "Smart",
+                "irish.apartments.title.part2": "Layouts",
+                "irish.apartments.subtitle": "Choose from our thoughtfully designed apartment configurations",
+                "irish.apartments.tab1": "2 BHK",
+                "irish.apartments.tab2": "3 BHK",
+                "irish.apartments.2bhk.title": "2 BHK Premium Apartment",
+                "irish.apartments.2bhk.description": "Perfect for young couples and small families. Spacious living area with attached balconies, modern kitchen, and premium fittings throughout.",
+                "irish.apartments.3bhk.title": "3 BHK Luxury Apartment",
+                "irish.apartments.3bhk.description": "Ideal for growing families. Features spacious bedrooms, modern kitchen with utility area, living room with balcony, and premium amenities.",
+                "irish.apartments.spec1": "Super Area (Sq. Ft.)",
+                "irish.apartments.spec2": "Bedrooms",
+                "irish.apartments.spec3": "Bathrooms",
+                "irish.apartments.spec4": "Balconies",
+                "irish.apartments.download": "Download Floor Plans",
+                
+                // Location
+                "irish.location.badge": "Location Advantage",
+                "irish.location.title.part1": "Prime",
+                "irish.location.title.part2": "Location",
+                "irish.location.subtitle": "Strategically located in Ahmedabad's most sought-after residential area",
+                "irish.location.connectivity.title": "Connectivity & Convenience",
+                "irish.location.connectivity.description": "Naroda Irish enjoys excellent connectivity to major city landmarks, educational institutions, healthcare facilities, and entertainment hubs. Everything you need is just minutes away.",
+                "irish.location.feature1.title": "Educational Institutions",
+                "irish.location.feature1.text": "Premium schools and colleges within 3 km radius",
+                "irish.location.feature2.title": "Healthcare Facilities",
+                "irish.location.feature2.text": "Multi-specialty hospitals within 5 minutes drive",
+                "irish.location.feature3.title": "Shopping & Entertainment",
+                "irish.location.feature3.text": "Malls, restaurants, and multiplexes nearby",
+                "irish.location.feature4.title": "Public Transport",
+                "irish.location.feature4.text": "Easy access to metro, buses, and main roads",
+                "irish.location.neighborhood.title": "Neighborhood Highlights",
+                "irish.location.neighborhood.description": "Surrounded by a thriving community with all essential services and recreational options creating the perfect environment for family living.",
+                "irish.location.radius.title": "Within 5 Km Radius",
+                "irish.location.radius.item1": "International School",
+                "irish.location.radius.item2": "Super Specialty Hospital",
+                "irish.location.radius.item3": "Central Business District",
+                "irish.location.radius.item4": "Premium Mall",
+                "irish.location.radius.item5": "City Park",
+                "irish.location.radius.item6": "Sports Complex",
+                "irish.location.investment.title": "Investment Potential",
+                "irish.location.investment.text": "Expected appreciation of 12-15% annually. High rental demand makes this an excellent investment for future returns.",
+                
+                // Community
+                "irish.community.badge": "Community Living",
+                "irish.community.title.part1": "More Than",
+                "irish.community.title.part2": "Just Homes",
+                "irish.community.card1.title": "Community Events",
+                "irish.community.card1.text": "Regular community gatherings, festivals celebration, and social events that bring neighbors together.",
+                "irish.community.card2.title": "Children's Activities",
+                "irish.community.card2.text": "Dedicated play areas, activity rooms, and organized workshops for children's growth and development.",
+                "irish.community.card3.title": "Wellness Programs",
+                "irish.community.card3.text": "Yoga sessions, fitness workshops, and health camps organized regularly for residents' well-being.",
+                
+                // Gallery
+                "irish.gallery.badge": "Project Gallery",
+                "irish.gallery.title.part1": "Visual",
+                "irish.gallery.title.part2": "Journey",
+                "irish.gallery.subtitle": "Explore our luxury residences through images",
+                "irish.gallery.slide1.title": "Modern Architectural Design",
+                "irish.gallery.slide1.text": "Contemporary facade with lush landscaping",
+                "irish.gallery.slide2.title": "Luxury Living Spaces",
+                "irish.gallery.slide2.text": "Spacious rooms with premium finishes",
+                "irish.gallery.slide3.title": "Resort-style Pool",
+                "irish.gallery.slide3.text": "Olympic-size swimming pool area",
+                "irish.gallery.slide4.title": "Premium Club House",
+                "irish.gallery.slide4.text": "Multi-purpose entertainment facility",
+                "irish.gallery.button": "View Full Gallery",
+                
+                // Pricing
+                "irish.pricing.badge": "Pricing & Plans",
+                "irish.pricing.title.part1": "Investment",
+                "irish.pricing.title.part2": "Opportunity",
+                "irish.pricing.subtitle": "Flexible payment options with attractive returns",
+                "irish.pricing.starting": "Starting Price",
+                "irish.pricing.card1.title": "2 BHK Apartments",
+                "irish.pricing.card1.item1": "1100 - 1300 Sq. Ft.",
+                "irish.pricing.card1.item2": "2 Bedrooms + 2 Bathrooms",
+                "irish.pricing.card1.item3": "2 Balconies",
+                "irish.pricing.card1.item4": "Parking: 2 Cars",
+                "irish.pricing.card1.button": "Book Site Visit",
+                "irish.pricing.card2.title": "3 BHK Apartments",
+                "irish.pricing.card2.item1": "1500 - 1800 Sq. Ft.",
+                "irish.pricing.card2.item2": "3 Bedrooms + 3 Bathrooms",
+                "irish.pricing.card2.item3": "3 Balconies",
+                "irish.pricing.card2.item4": "Parking: 2 Cars",
+                "irish.pricing.card2.button": "View 3 BHK Plans",
+                "irish.pricing.card3.title": "Payment Plans",
+                "irish.pricing.card3.subtitle": "Choose Your Plan",
+                "irish.pricing.card3.item1": "20:80 Construction Linked",
+                "irish.pricing.card3.item2": "Down Payment: 10%",
+                "irish.pricing.card3.item3": "Bank Loans Available",
+                "irish.pricing.card3.item4": "Easy EMI Options",
+                "irish.pricing.card3.button": "Calculate EMI",
+                "irish.pricing.offer.title": "Special Offer",
+                "irish.pricing.offer.text": "Limited period offer: Book now and get modular kitchen + ACs free + 2 years maintenance free.",
+                "irish.pricing.offer.button": "Avail Offer",
+                
+                // Download
+                "irish.download.brochure.title": "Download Brochure",
+                "irish.download.brochure.text": "Get detailed information about Naroda Irish including specifications, floor plans, amenities, and pricing.",
+                "irish.download.brochure.button": "Download PDF (4.8 MB)",
+                "irish.download.virtual.title": "Virtual Tour",
+                "irish.download.virtual.text": "Experience Naroda Irish through our immersive virtual tour. Explore every corner from the comfort of your home.",
+                "irish.download.virtual.button": "Start Virtual Tour",
+                
+                // Timeline
+                "irish.timeline.badge": "Project Timeline",
+                "irish.timeline.title.part1": "Development",
+                "irish.timeline.title.part2": "Schedule",
+                "irish.timeline.item1.date": "March 2023",
+                "irish.timeline.item1.title": "Project Launch",
+                "irish.timeline.item1.text": "Official launch with RERA approval and commencement of construction",
+                "irish.timeline.item2.date": "August 2023",
+                "irish.timeline.item2.title": "Foundation Complete",
+                "irish.timeline.item2.text": "Foundation work completed and structural framework begins",
+                "irish.timeline.item3.date": "February 2024",
+                "irish.timeline.item3.title": "Structure Complete",
+                "irish.timeline.item3.text": "Building structure completed, 70% sold out milestone achieved",
+                "irish.timeline.item4.date": "August 2024",
+                "irish.timeline.item4.title": "Interior Work",
+                "irish.timeline.item4.text": "Interior finishing, painting, and fixture installation begins",
+                "irish.timeline.item5.date": "December 2024",
+                "irish.timeline.item5.title": "Project Completion",
+                "irish.timeline.item5.text": "Final completion and handover of apartments to owners",
+                
+                // CTA
+                "irish.cta.title.part1": "Ready to",
+                "irish.cta.title.part2": "Call It Home?",
+                "irish.cta.subtitle": "Join 300+ happy families at Naroda Irish. Schedule a site visit today and experience luxury living firsthand.",
+                "irish.cta.button1": "Schedule Site Visit",
+                "irish.cta.button3": "Get Quote",
+                
+                // Footer (reuse from main translations)
+                "footer.description": "Creating landmark properties that redefine excellence. From premium commercial spaces to luxury residential living, we build dreams with quality and commitment.",
+                "footer.quick_links": "Quick Links",
+                "footer.our_projects": "Our Projects",
+                "footer.landmark_desc": "Premium Commercial Spaces",
+                "footer.irish_desc": "Luxury Residential Living",
+                "footer.view_all_projects": "View All Projects",
+                "footer.explore_portfolio": "Explore our portfolio",
+                "footer.contact_info": "Contact Info",
+                "footer.phone": "Phone Number",
+                "footer.phone_hours": "Mon - Sat: 10 AM - 7 PM",
+                "footer.email": "Email Address",
+                "footer.email_response": "We reply within 24 hours",
+                "footer.address": "Site Address",
+                "footer.address_line1": "Naroda - Bhat Road",
+                "footer.address_line2": "Ahmedabad, Gujarat 382330",
+                "footer.rights": "All rights reserved.",
+                "footer.privacy": "Privacy Policy",
+                "footer.terms": "Terms of Service",
+                "footer.rera": "RERA: A1234567890"
+            },
+            hi: {
+                // Hindi translations for Naroda Irish page
+                "irish.hero.badge": "अहमदाबाद के प्रीमियम लग्ज़री आवास",
+                "irish.hero.title.part1": "नरोड़ा आयरिश",
+                "irish.hero.title.part2": "जहां लग्ज़री मिलती है जीवन से",
+                "irish.hero.subtitle": "प्रीमियम आवासीय अपार्टमेंट, सोच-समझकर डिज़ाइन किए गए स्पेस, विश्व स्तरीय सुविधाओं और आधुनिक जीवन का जश्न मनाते एक कम्युनिटी के साथ।",
+                "irish.hero.btn1": "कीमतें देखें",
+                "irish.hero.btn2": "गैलरी देखें",
+                "irish.hero.btn3": "विज़िट शेड्यूल करें",
+                
+                // Add more Hindi translations as needed...
+            },
+            gu: {
+                // Gujarati translations for Naroda Irish page
+                "irish.hero.badge": "અમદાવાદના પ્રીમિયમ લગ્ઝરી રેસિડેન્શિયલ",
+                "irish.hero.title.part1": "નરોડા આયરિશ",
+                "irish.hero.title.part2": "જ્યાં લગ્ઝરી મળે છે જીવન સાથે",
+                "irish.hero.subtitle": "પ્રીમિયમ રેસિડેન્શિયલ એપાર્ટમેન્ટ્સ, વિચારપૂર્વક ડિઝાઇન કરેલા સ્પેસ, વર્લ્ડ-ક્લાસ સુવિધાઓ અને આધુનિક જીવનનો જશ્ન મનાવતા કમ્યુનિટી સાથે।",
+                "irish.hero.btn1": "કિંમતો જુઓ",
+                "irish.hero.btn2": "ગેલેરી જુઓ",
+                "irish.hero.btn3": "વિઝિટ શેડ્યૂલ કરો",
+                
+                // Add more Gujarati translations as needed...
+            }
+        };
+
+        // Flag images data
+        const flagImages = {
+            'en': 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyNCAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTAgMEgyNFYxNkgwVjBaIiBmaWxsPSIjRjJCMkIyIi8+CjxwYXRoIGQ9Ik0wIDBIMTBWMTZIMFYwWiIgZmlsbD0iIzAwMjY3RiIvPgo8cGF0aCBkPSJNMTQgMEgyNFYxNkgxNFYwWiIgZmlsbD0iI0M4MDMwMyIvPgo8L3N2Zz4K',
+            'hi': 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyNCAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE2IiBmaWxsPSIjRkZGMjVFIi8+CjxwYXRoIGQ9Ik0wIDBIMjRWNUgwVjBaIiBmaWxsPSIjRjUyNzI0Ii8+CjxwYXRoIGQ9Ik0wIDExSDI0VjE2SDBWMTFaIiBmaWxsPSIjMTM4ODA4Ii8+CjxjaXJjbGUgY3g9IjEyIiBjeT0iOCIgcj0iMi41IiBmaWxsPSIjRkZGMjVFIi8+CjxjaXJjbGUgY3g9IjEyIiBjeT0iOCIgcj0iMSIgZmlsbD0iIzEzODgwOCIvPgo8L3N2Zz4K',
+            'gu': 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyNCAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE2IiBmaWxsPSIjRkZGMjVFIi8+CjxwYXRoIGQ9Ik0wIDBIMjRWNUgwVjBaIiBmaWxsPSIjRjUyNzI0Ii8+CjxwYXRoIGQ9Ik0wIDExSDI0VjE2SDBWMTFaIiBmaWxsPSIjMTM4ODA4Ii8+CjxjaXJjbGUgY3g9IjEyIiBjeT0iOCIgcj0iMi41IiBmaWxsPSIjRkZGMjVFIi8+Cjwvc3ZnPgo='
+        };
+
+        // Language names for display
+        const languageNames = {
+            'en': 'English',
+            'hi': 'हिंदी',
+            'gu': 'ગુજરાતી'
+        };
+
+        // Language codes for display
+        const languageCodes = {
+            'en': 'EN',
+            'hi': 'HI',
+            'gu': 'GU'
+        };
+
         // Wait for page to load
         document.addEventListener('DOMContentLoaded', function() {
             // Initialize AOS
@@ -2512,6 +3115,9 @@
                     preloader.style.display = 'none';
                 }, 500);
             }, 1000);
+            
+            // Initialize language switcher
+            initLanguageSwitcher();
             
             // Initialize Swiper
             const swiper = new Swiper('.gallery-slider', {
@@ -2633,8 +3239,8 @@
                 const apartmentData = {
                     '2bhk': {
                         image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-                        title: '2 BHK Premium Apartment',
-                        desc: 'Perfect for young couples and small families. Spacious living area with attached balconies, modern kitchen, and premium fittings throughout.',
+                        title: translations[document.body.getAttribute('data-lang')]['irish.apartments.2bhk.title'],
+                        desc: translations[document.body.getAttribute('data-lang')]['irish.apartments.2bhk.description'],
                         area: '1100',
                         bedrooms: '2',
                         bathrooms: '2',
@@ -2642,30 +3248,12 @@
                     },
                     '3bhk': {
                         image: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-                        title: '3 BHK Luxury Apartment',
-                        desc: 'Ideal for growing families. Features spacious bedrooms, modern kitchen with utility area, living room with balcony, and premium amenities.',
+                        title: translations[document.body.getAttribute('data-lang')]['irish.apartments.3bhk.title'],
+                        desc: translations[document.body.getAttribute('data-lang')]['irish.apartments.3bhk.description'],
                         area: '1500',
                         bedrooms: '3',
                         bathrooms: '3',
                         balcony: '3'
-                    },
-                    '4bhk': {
-                        image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-                        title: '4 BHK Premium Apartment',
-                        desc: 'Designed for large families. Offers expansive living spaces, separate dining area, servant room, and premium finishes throughout.',
-                        area: '2200',
-                        bedrooms: '4',
-                        bathrooms: '4',
-                        balcony: '4'
-                    },
-                    'penthouse': {
-                        image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-                        title: 'Penthouse Duplex',
-                        desc: 'Ultimate luxury living. Features private terrace, panoramic views, spacious rooms, premium fixtures, and exclusive amenities.',
-                        area: '3500',
-                        bedrooms: '4',
-                        bathrooms: '4',
-                        balcony: '5'
                     }
                 };
                 
@@ -2699,10 +3287,85 @@
                 });
             }
             
+            // Language Switcher
+            function initLanguageSwitcher() {
+                // Set current language from localStorage or default to English
+                const currentLang = localStorage.getItem('preferred-language') || 'en';
+                setLanguage(currentLang);
+                
+                // Add event listeners to language options
+                document.querySelectorAll('.language-option').forEach(option => {
+                    option.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const lang = this.getAttribute('data-lang');
+                        setLanguage(lang);
+                        showToast(`Language changed to ${languageNames[lang]}`, 'success');
+                    });
+                });
+            }
+
+            // Set language function
+            function setLanguage(lang) {
+                // Save preference to localStorage
+                localStorage.setItem('preferred-language', lang);
+                
+                // Update body attribute
+                document.body.setAttribute('data-lang', lang);
+                
+                // Update language switcher UI
+                updateLanguageSwitcherUI(lang);
+                
+                // Translate all translatable elements
+                translatePage(lang);
+                
+                // Reinitialize apartment tabs with new language
+                initApartmentTabs();
+            }
+
+            // Update language switcher UI
+            function updateLanguageSwitcherUI(lang) {
+                const currentLanguageFlag = document.getElementById('currentLanguageFlag');
+                const currentLanguageText = document.getElementById('currentLanguageText');
+                const languageOptions = document.querySelectorAll('.language-option');
+                
+                // Update current language display
+                currentLanguageFlag.src = flagImages[lang];
+                currentLanguageText.textContent = languageCodes[lang];
+                
+                // Update active state of language options
+                languageOptions.forEach(option => {
+                    if (option.getAttribute('data-lang') === lang) {
+                        option.classList.add('active');
+                    } else {
+                        option.classList.remove('active');
+                    }
+                });
+            }
+
+            // Translate page content
+            function translatePage(lang) {
+                const translation = translations[lang];
+                
+                // Translate all elements with data-translate attribute
+                document.querySelectorAll('[data-translate]').forEach(element => {
+                    const key = element.getAttribute('data-translate');
+                    if (translation[key]) {
+                        // Check if element contains HTML
+                        if (element.innerHTML.includes('<')) {
+                            // Preserve HTML structure
+                            const tempDiv = document.createElement('div');
+                            tempDiv.innerHTML = translation[key];
+                            element.innerHTML = tempDiv.innerHTML;
+                        } else {
+                            element.textContent = translation[key];
+                        }
+                    }
+                });
+            }
+            
             // Initialize virtual tour
             function initVirtualTour() {
-                const startVirtualTour = document.getElementById('startVirtualTour');
-                const virtualTourBtn = document.getElementById('virtualTourBtn');
+                const startVirtualTour = document.getElementById('virtualTourBtn');
                 
                 const startTour = function(e) {
                     e.preventDefault();
@@ -2713,13 +3376,13 @@
                             <div class="modal-dialog modal-dialog-centered modal-xl">
                                 <div class="modal-content">
                                     <div class="modal-header border-0">
-                                        <h5 class="modal-title" id="virtualTourModalLabel">Naroda Irish Virtual Tour</h5>
+                                        <h5 class="modal-title" id="virtualTourModalLabel">${translations[document.body.getAttribute('data-lang')]['irish.download.virtual.title']}</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body p-0">
                                         <div class="ratio ratio-16x9">
                                             <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" 
-                                                    title="Naroda Irish Virtual Tour"
+                                                    title="${translations[document.body.getAttribute('data-lang')]['irish.download.virtual.title']}"
                                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                                                     allowfullscreen></iframe>
                                         </div>
@@ -2739,8 +3402,9 @@
                     });
                 };
                 
-                startVirtualTour.addEventListener('click', startTour);
-                virtualTourBtn.addEventListener('click', startTour);
+                if (startVirtualTour) {
+                    startVirtualTour.addEventListener('click', startTour);
+                }
             }
             
             // Initialize download functionality
@@ -2765,47 +3429,6 @@
                 
                 if (downloadFloorPlans) {
                     downloadFloorPlans.addEventListener('click', (e) => downloadFile(e, 'Floor Plans'));
-                }
-            }
-            
-            // Initialize 360° walkthrough
-            function initWalkthrough() {
-                const walkthroughBtn = document.querySelector('.walkthrough-btn');
-                if (walkthroughBtn) {
-                    walkthroughBtn.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        
-                        // Create modal for 360° walkthrough
-                        const modalHTML = `
-                            <div class="modal fade" id="walkthroughModal" tabindex="-1" aria-labelledby="walkthroughModalLabel" aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered modal-xl">
-                                    <div class="modal-content">
-                                        <div class="modal-header border-0">
-                                            <h5 class="modal-title" id="walkthroughModalLabel">360° Apartment Walkthrough</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body p-0">
-                                            <div class="ratio ratio-16x9">
-                                                <iframe src="https://kuula.co/share/collection/7YhRL?logo=1&info=1&fs=1&vr=0&sd=1&thumbs=1" 
-                                                        title="360° Apartment Walkthrough"
-                                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                                        allowfullscreen></iframe>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        `;
-                        
-                        document.body.insertAdjacentHTML('beforeend', modalHTML);
-                        
-                        const walkthroughModal = new bootstrap.Modal(document.getElementById('walkthroughModal'));
-                        walkthroughModal.show();
-                        
-                        document.getElementById('walkthroughModal').addEventListener('hidden.bs.modal', function() {
-                            this.remove();
-                        });
-                    });
                 }
             }
             
@@ -2837,12 +3460,17 @@
             initApartmentTabs();
             initVirtualTour();
             initDownloads();
-            initWalkthrough();
             initSmoothScroll();
             
             // Show welcome message
             setTimeout(() => {
-                showToast('Welcome to Naroda Irish! Explore our luxury residential apartments.', 'success');
+                const currentLang = document.body.getAttribute('data-lang');
+                const welcomeMsg = currentLang === 'en' 
+                    ? 'Welcome to Naroda Irish! Explore our luxury residential apartments.' 
+                    : currentLang === 'hi'
+                    ? 'नरोड़ा आयरिश में आपका स्वागत है! हमारे लग्ज़री आवासीय अपार्टमेंट्स का अन्वेषण करें।'
+                    : 'નરોડા આયરિશમાં આપનું સ્વાગત છે! અમારા લગ્ઝરી રેસિડેન્શિયલ એપાર્ટમેન્ટ્સનું અન્વેષણ કરો।';
+                showToast(welcomeMsg, 'success');
             }, 1500);
             
             // Handle window resize for AOS

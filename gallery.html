@@ -10,6 +10,27 @@
     <meta name="keywords" content="naroda group gallery, project visuals, construction photos, interior design, amenities, real estate gallery">
     <meta name="author" content="Naroda Group">
     
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Project Gallery | Naroda Group">
+    <meta property="og:description" content="Explore our premium project gallery showcasing Naroda Landmark, Naroda Irish, and construction visuals.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80">
+    <meta property="og:url" content="https://narodagroup.com/gallery.html">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Project Gallery | Naroda Group">
+    <meta name="twitter:description" content="Explore our premium project gallery showcasing real estate developments.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://narodagroup.com/gallery.html">
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- AOS Animation -->
@@ -142,6 +163,23 @@
 
         .bg-gradient-secondary {
             background: var(--gradient-secondary) !important;
+        }
+
+        /* Language Specific Styles */
+        body.hindi, body.gujarati {
+            font-family: 'Noto Sans', 'Inter', sans-serif;
+        }
+        
+        .language-content {
+            transition: opacity 0.3s ease;
+        }
+
+        .text-gold {
+            color: var(--secondary-color);
+        }
+
+        .text-primary {
+            color: var(--primary-color) !important;
         }
 
         /* ===== Preloader ===== */
@@ -1232,6 +1270,88 @@
                 padding: 10px 15px !important;
             }
         }
+        
+        /* PDF Specific Styles */
+        .pdf-download-section {
+            padding: 100px 0;
+            background: #f9fafb;
+        }
+        
+        .pdf-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            height: 100%;
+            text-align: center;
+        }
+        
+        .pdf-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .pdf-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: var(--primary-color);
+            font-size: 2rem;
+        }
+        
+        .pdf-preview {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        
+        .pdf-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        a:focus,
+        button:focus,
+        .btn:focus {
+            outline: 2px solid var(--secondary-color);
+            outline-offset: 2px;
+        }
+
+        /* Lazy load */
+        .lazy-load {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .lazy-loaded {
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
@@ -1246,7 +1366,7 @@
     <!-- Loading Overlay -->
     <div class="loading-overlay">
         <div class="spinner-border" style="width: 3rem; height: 3rem; color: var(--secondary-color);" role="status">
-            <span class="visually-hidden">Loading...</span>
+            <span class="sr-only">Loading...</span>
         </div>
     </div>
 
@@ -1267,7 +1387,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <div class="logo-icon">NG</div>
+                <div class="logo-icon" aria-hidden="true">NG</div>
                 <span>Naroda <span class="gold-text">Group</span></span>
             </a>
             
@@ -1278,48 +1398,48 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="index.html" data-i18n="nav.home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
+                        <a class="nav-link" href="about.html" data-i18n="nav.about">About</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-i18n="nav.projects">
                             Projects
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="projectsDropdown">
-                            <li><a class="dropdown-item" href="projects-landmark.html">Naroda Landmark</a></li>
-                            <li><a class="dropdown-item" href="projects-irish.html">Naroda Irish</a></li>
+                            <li><a class="dropdown-item" href="projects-landmark.html" data-i18n="nav.landmark">Naroda Landmark</a></li>
+                            <li><a class="dropdown-item" href="projects-irish.html" data-i18n="nav.irish">Naroda Irish</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="projects.html">All Projects</a></li>
+                            <li><a class="dropdown-item" href="projects.html" data-i18n="nav.all_projects">All Projects</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="propertiesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="propertiesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-i18n="nav.properties">
                             Properties
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="propertiesDropdown">
-                            <li><a class="dropdown-item" href="properties.html">Buy</a></li>
-                            <li><a class="dropdown-item" href="properties-rent.html">Rent</a></li>
+                            <li><a class="dropdown-item" href="properties.html" data-i18n="nav.buy">Buy</a></li>
+                            <li><a class="dropdown-item" href="properties-rent.html" data-i18n="nav.rent">Rent</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="property-detail.html">Property Details</a></li>
+                            <li><a class="dropdown-item" href="property-detail.html" data-i18n="nav.property_details">Property Details</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="gallery.html">Gallery</a>
+                        <a class="nav-link active" href="gallery.html" data-i18n="nav.gallery">Gallery</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-i18n="nav.more">
                             More
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="moreDropdown">
-                            <li><a class="dropdown-item" href="blog.html">Blog</a></li>
-                            <li><a class="dropdown-item" href="news.html">News</a></li>
-                            <li><a class="dropdown-item" href="careers.html">Careers</a></li>
-                            <li><a class="dropdown-item" href="team.html">Our Team</a></li>
+                            <li><a class="dropdown-item" href="blog.html" data-i18n="nav.blog">Blog</a></li>
+                            <li><a class="dropdown-item" href="news.html" data-i18n="nav.news">News</a></li>
+                            <li><a class="dropdown-item" href="careers.html" data-i18n="nav.careers">Careers</a></li>
+                            <li><a class="dropdown-item" href="team.html" data-i18n="nav.team">Our Team</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
-                            <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+                            <li><a class="dropdown-item" href="faq.html" data-i18n="nav.faq">FAQ</a></li>
+                            <li><a class="dropdown-item" href="contact.html" data-i18n="nav.contact">Contact</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -1327,16 +1447,16 @@
                 <div class="d-flex align-items-center ms-lg-3 mt-3 mt-lg-0">
                     <div class="dropdown">
                         <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fas fa-globe me-1"></i> EN
+                            <i class="fas fa-globe me-1" aria-hidden="true"></i> <span id="currentLanguage">EN</span>
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="languageDropdown">
-                            <li><a class="dropdown-item" href="#">English</a></li>
-                            <li><a class="dropdown-item" href="#">Hindi</a></li>
-                            <li><a class="dropdown-item" href="#">Gujarati</a></li>
+                            <li><a class="dropdown-item language-selector" href="#" data-lang="en">English</a></li>
+                            <li><a class="dropdown-item language-selector" href="#" data-lang="hi">हिंदी (Hindi)</a></li>
+                            <li><a class="dropdown-item language-selector" href="#" data-lang="gu">ગુજરાતી (Gujarati)</a></li>
                         </ul>
                     </div>
                     <a href="login.html" class="btn btn-outline-light ms-3">
-                        <i class="fas fa-user me-2"></i> Login
+                        <i class="fas fa-user me-2" aria-hidden="true"></i> <span data-i18n="nav.login">Login</span>
                     </a>
                 </div>
             </div>
@@ -1347,37 +1467,37 @@
     <div class="mobile-bottom-nav">
         <a href="index.html" class="mobile-nav-item">
             <i class="fas fa-home"></i>
-            <span>Home</span>
+            <span data-i18n="nav.home">Home</span>
         </a>
         <a href="projects.html" class="mobile-nav-item">
             <i class="fas fa-building"></i>
-            <span>Projects</span>
+            <span data-i18n="nav.projects">Projects</span>
         </a>
         <a href="properties.html" class="mobile-nav-item">
             <i class="fas fa-search"></i>
-            <span>Search</span>
+            <span data-i18n="nav.search">Search</span>
         </a>
         <a href="contact.html" class="mobile-nav-item">
             <i class="fas fa-phone"></i>
-            <span>Contact</span>
+            <span data-i18n="nav.contact">Contact</span>
         </a>
         <a href="login.html" class="mobile-nav-item">
             <i class="fas fa-user"></i>
-            <span>Account</span>
+            <span data-i18n="nav.account">Account</span>
         </a>
     </div>
 
     <!-- Main Content -->
-    <main>
+    <main class="language-content">
         <!-- Hero Section -->
         <section class="hero-section">
             <div class="container">
                 <div class="row min-vh-60 align-items-center">
                     <div class="col-lg-8 mx-auto text-center">
                         <h1 class="hero-title" data-aos="fade-up">
-                            Project <span class="gold-text">Gallery</span>
+                            <span data-i18n="gallery.hero.title.part1">Project</span> <span class="gold-text"><span data-i18n="gallery.hero.title.part2">Gallery</span></span>
                         </h1>
-                        <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
+                        <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100" data-i18n="gallery.hero.subtitle">
                             Visual journey through our premium developments and architectural excellence
                         </p>
                     </div>
@@ -1390,7 +1510,7 @@
             <div class="container">
                 <div class="row mb-4">
                     <div class="col-lg-8 mx-auto text-center">
-                        <h3 class="mb-4" data-aos="fade-up">Browse by Category</h3>
+                        <h3 class="mb-4" data-aos="fade-up" data-i18n="gallery.filter.title">Browse by Category</h3>
                         
                         <!-- View Toggle -->
                         <div class="view-toggle" data-aos="fade-up" data-aos-delay="100">
@@ -1407,14 +1527,15 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="filter-buttons" data-aos="fade-up" data-aos-delay="200">
-                            <button class="filter-btn active" data-filter="all">All Photos</button>
-                            <button class="filter-btn" data-filter="landmark">Naroda Landmark</button>
-                            <button class="filter-btn" data-filter="irish">Naroda Irish</button>
-                            <button class="filter-btn" data-filter="construction">Construction</button>
-                            <button class="filter-btn" data-filter="interior">Interiors</button>
-                            <button class="filter-btn" data-filter="amenities">Amenities</button>
-                            <button class="filter-btn" data-filter="masterplan">Masterplan</button>
-                            <button class="filter-btn" data-filter="progress">Progress</button>
+                            <button class="filter-btn active" data-filter="all" data-i18n="gallery.filter.all">All Photos</button>
+                            <button class="filter-btn" data-filter="landmark" data-i18n="gallery.filter.landmark">Naroda Landmark</button>
+                            <button class="filter-btn" data-filter="irish" data-i18n="gallery.filter.irish">Naroda Irish</button>
+                            <button class="filter-btn" data-filter="construction" data-i18n="gallery.filter.construction">Construction</button>
+                            <button class="filter-btn" data-filter="interior" data-i18n="gallery.filter.interior">Interiors</button>
+                            <button class="filter-btn" data-filter="amenities" data-i18n="gallery.filter.amenities">Amenities</button>
+                            <button class="filter-btn" data-filter="masterplan" data-i18n="gallery.filter.masterplan">Masterplan</button>
+                            <button class="filter-btn" data-filter="progress" data-i18n="gallery.filter.progress">Progress</button>
+                            <button class="filter-btn" data-filter="specifications" data-i18n="gallery.filter.specifications">Specifications</button>
                         </div>
                     </div>
                 </div>
@@ -1423,15 +1544,15 @@
                 <div class="gallery-stats" data-aos="fade-up" data-aos-delay="300">
                     <div class="stat-item">
                         <div class="stat-number" id="totalPhotos">0</div>
-                        <div class="stat-label">Total Photos</div>
+                        <div class="stat-label" data-i18n="gallery.stats.total">Total Photos</div>
                     </div>
                     <div class="stat-item">
                         <div class="stat-number" id="activeCategory">All</div>
-                        <div class="stat-label">Active Category</div>
+                        <div class="stat-label" data-i18n="gallery.stats.category">Active Category</div>
                     </div>
                     <div class="stat-item">
                         <div class="stat-number" id="viewedCount">0</div>
-                        <div class="stat-label">Viewed Today</div>
+                        <div class="stat-label" data-i18n="gallery.stats.viewed">Viewed Today</div>
                     </div>
                 </div>
             </div>
@@ -1454,8 +1575,97 @@
                 <div class="text-center mt-5" data-aos="fade-up">
                     <button class="btn btn-gold btn-lg" id="loadMore">
                         <i class="fas fa-spinner fa-spin me-2 d-none" id="loadSpinner"></i>
-                        Load More Photos
+                        <span data-i18n="gallery.load_more">Load More Photos</span>
                     </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- PDF Downloads Section -->
+        <section class="pdf-download-section">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
+                            <span data-i18n="gallery.pdf.badge">Project Brochures</span>
+                        </span>
+                        <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
+                            <span data-i18n="gallery.pdf.title.part1">Download</span> <span class="gold-text"><span data-i18n="gallery.pdf.title.part2">Project Details</span></span>
+                        </h2>
+                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200" data-i18n="gallery.pdf.subtitle">
+                            Access detailed project brochures and specifications
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-6" data-aos="fade-right">
+                        <div class="pdf-card">
+                            <div class="pdf-preview">
+                                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Naroda Landmark Brochure" class="lazy-load" loading="lazy">
+                            </div>
+                            <div class="pdf-icon">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <h3 class="mb-3" data-i18n="gallery.pdf.landmark.title">Naroda Landmark Brochure</h3>
+                            <p class="text-muted mb-4" data-i18n="gallery.pdf.landmark.description">
+                                Complete details about Naroda Business Landmark - premium commercial spaces with modern amenities.
+                            </p>
+                            <div class="project-specs mb-4">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <small><i class="fas fa-building me-1"></i> <span data-i18n="gallery.pdf.landmark.commercial">Commercial Spaces</span></small>
+                                    </div>
+                                    <div class="col-6">
+                                        <small><i class="fas fa-layer-group me-1"></i> <span data-i18n="gallery.pdf.landmark.floors">9 Floors</span></small>
+                                    </div>
+                                    <div class="col-6">
+                                        <small><i class="fas fa-expand me-1"></i> <span data-i18n="gallery.pdf.landmark.offices">Scalable Offices</span></small>
+                                    </div>
+                                    <div class="col-6">
+                                        <small><i class="fas fa-parking me-1"></i> <span data-i18n="gallery.pdf.landmark.parking">Basement Parking</span></small>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="NARODA LANDMARK_BROCHURE (1).pdf" class="btn btn-gold" download>
+                                <i class="fas fa-download me-2"></i> <span data-i18n="gallery.pdf.download">Download PDF (2.5 MB)</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6" data-aos="fade-left">
+                        <div class="pdf-card">
+                            <div class="pdf-preview">
+                                <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?ixlib=rb-4.0.3&auto=format&fit=crop&w=2065&q=80" alt="Naroda Irish Brochure" class="lazy-load" loading="lazy">
+                            </div>
+                            <div class="pdf-icon">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <h3 class="mb-3" data-i18n="gallery.pdf.irish.title">Naroda Irish Brochure</h3>
+                            <p class="text-muted mb-4" data-i18n="gallery.pdf.irish.description">
+                                Luxury residential project with premium specifications and world-class amenities.
+                            </p>
+                            <div class="project-specs mb-4">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <small><i class="fas fa-home me-1"></i> <span data-i18n="gallery.pdf.irish.units">354 Units</span></small>
+                                    </div>
+                                    <div class="col-6">
+                                        <small><i class="fas fa-layer-group me-1"></i> <span data-i18n="gallery.pdf.irish.floors">14 Floors</span></small>
+                                    </div>
+                                    <div class="col-6">
+                                        <small><i class="fas fa-bed me-1"></i> <span data-i18n="gallery.pdf.irish.flats">2-3 BHK Flats</span></small>
+                                    </div>
+                                    <div class="col-6">
+                                        <small><i class="fas fa-parking me-1"></i> <span data-i18n="gallery.pdf.irish.parking">Ample Parking</span></small>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="NARODA IRISH_BROCHURE.pdf" class="btn btn-gold" download>
+                                <i class="fas fa-download me-2"></i> <span data-i18n="gallery.pdf.download2">Download PDF (3.1 MB)</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1466,12 +1676,12 @@
                 <div class="row mb-5">
                     <div class="col-lg-8 mx-auto text-center">
                         <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
-                            Video Tours
+                            <span data-i18n="gallery.video.badge">Video Tours</span>
                         </span>
                         <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
-                            Experience Our <span class="gold-text">Projects</span>
+                            <span data-i18n="gallery.video.title.part1">Experience Our</span> <span class="gold-text"><span data-i18n="gallery.video.title.part2">Projects</span></span>
                         </h2>
-                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200">
+                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200" data-i18n="gallery.video.subtitle">
                             Watch walkthrough videos and project documentaries
                         </p>
                     </div>
@@ -1481,14 +1691,14 @@
                     <div class="col-md-6" data-aos="fade-right">
                         <div class="video-card" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ" role="button" aria-label="Play Naroda Landmark video tour">
                             <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-                                 alt="Naroda Landmark Video Tour" loading="lazy">
+                                 alt="Naroda Landmark Video Tour" class="lazy-load" loading="lazy">
                             <div class="video-play-btn">
                                 <i class="fas fa-play"></i>
                             </div>
                             <div class="gallery-overlay">
-                                <div class="gallery-category">Video Tour</div>
-                                <h3 class="gallery-title">Naroda Landmark Walkthrough</h3>
-                                <p class="gallery-location">Premium Commercial Spaces</p>
+                                <div class="gallery-category" data-i18n="gallery.video.tour">Video Tour</div>
+                                <h3 class="gallery-title" data-i18n="gallery.video.landmark.title">Naroda Landmark Walkthrough</h3>
+                                <p class="gallery-location" data-i18n="gallery.video.landmark.subtitle">Premium Commercial Spaces</p>
                             </div>
                         </div>
                     </div>
@@ -1496,14 +1706,14 @@
                     <div class="col-md-6" data-aos="fade-left">
                         <div class="video-card" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ" role="button" aria-label="Play Naroda Irish video tour">
                             <img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?ixlib=rb-4.0.3&auto=format&fit=crop&w=2065&q=80" 
-                                 alt="Naroda Irish Video Tour" loading="lazy">
+                                 alt="Naroda Irish Video Tour" class="lazy-load" loading="lazy">
                             <div class="video-play-btn">
                                 <i class="fas fa-play"></i>
                             </div>
                             <div class="gallery-overlay">
-                                <div class="gallery-category">Video Tour</div>
-                                <h3 class="gallery-title">Naroda Irish Apartment Tour</h3>
-                                <p class="gallery-location">Luxury Residential Living</p>
+                                <div class="gallery-category" data-i18n="gallery.video.tour">Video Tour</div>
+                                <h3 class="gallery-title" data-i18n="gallery.video.irish.title">Naroda Irish Apartment Tour</h3>
+                                <p class="gallery-location" data-i18n="gallery.video.irish.subtitle">Luxury Residential Living</p>
                             </div>
                         </div>
                     </div>
@@ -1517,12 +1727,12 @@
                 <div class="row mb-5">
                     <div class="col-lg-8 mx-auto text-center">
                         <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
-                            360° Experience
+                            <span data-i18n="gallery.virtual.badge">360° Experience</span>
                         </span>
                         <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
-                            Virtual <span class="gold-text">Reality Tours</span>
+                            <span data-i18n="gallery.virtual.title.part1">Virtual</span> <span class="gold-text"><span data-i18n="gallery.virtual.title.part2">Reality Tours</span></span>
                         </h2>
-                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200">
+                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200" data-i18n="gallery.virtual.subtitle">
                             Explore our projects in immersive 360° virtual reality
                         </p>
                     </div>
@@ -1533,19 +1743,19 @@
                         <div class="tour-card">
                             <div class="position-relative">
                                 <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-                                     alt="Virtual Tour of Naroda Landmark" class="img-fluid" loading="lazy">
+                                     alt="Virtual Tour of Naroda Landmark" class="img-fluid lazy-load" loading="lazy">
                                 <div class="tour-badge">
-                                    <i class="fas fa-vr-cardboard"></i> VR Ready
+                                    <i class="fas fa-vr-cardboard"></i> <span data-i18n="gallery.virtual.vr_ready">VR Ready</span>
                                 </div>
                             </div>
                             <div class="tour-content">
-                                <h3 class="mb-3">3D Virtual Tour - Naroda Landmark</h3>
-                                <p class="text-muted mb-4">
+                                <h3 class="mb-3" data-i18n="gallery.virtual.landmark.title">3D Virtual Tour - Naroda Landmark</h3>
+                                <p class="text-muted mb-4" data-i18n="gallery.virtual.landmark.description">
                                     Experience our premium commercial spaces with interactive 360° virtual tour.
                                     Explore every corner from the comfort of your home.
                                 </p>
                                 <a href="#" class="btn btn-gold">
-                                    <i class="fas fa-play-circle me-2"></i> Start Virtual Tour
+                                    <i class="fas fa-play-circle me-2"></i> <span data-i18n="gallery.virtual.start_tour">Start Virtual Tour</span>
                                 </a>
                             </div>
                         </div>
@@ -1555,19 +1765,19 @@
                         <div class="tour-card">
                             <div class="position-relative">
                                 <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&auto=format&fit=crop&w=2096&q=80" 
-                                     alt="Interactive Walkthrough of Naroda Irish" class="img-fluid" loading="lazy">
+                                     alt="Interactive Walkthrough of Naroda Irish" class="img-fluid lazy-load" loading="lazy">
                                 <div class="tour-badge">
-                                    <i class="fas fa-mobile-alt"></i> Mobile Friendly
+                                    <i class="fas fa-mobile-alt"></i> <span data-i18n="gallery.virtual.mobile_friendly">Mobile Friendly</span>
                                 </div>
                             </div>
                             <div class="tour-content">
-                                <h3 class="mb-3">Interactive Walkthrough - Naroda Irish</h3>
-                                <p class="text-muted mb-4">
+                                <h3 class="mb-3" data-i18n="gallery.virtual.irish.title">Interactive Walkthrough - Naroda Irish</h3>
+                                <p class="text-muted mb-4" data-i18n="gallery.virtual.irish.description">
                                     Take a virtual stroll through our luxury apartments with interactive
                                     hotspots and detailed information about each space.
                                 </p>
                                 <a href="#" class="btn btn-gold">
-                                    <i class="fas fa-walking me-2"></i> Start Walkthrough
+                                    <i class="fas fa-walking me-2"></i> <span data-i18n="gallery.virtual.start_walkthrough">Start Walkthrough</span>
                                 </a>
                             </div>
                         </div>
@@ -1582,12 +1792,12 @@
                 <div class="row mb-5">
                     <div class="col-lg-8 mx-auto text-center">
                         <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
-                            Featured Photos
+                            <span data-i18n="gallery.carousel.badge">Featured Photos</span>
                         </span>
                         <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
-                            Project <span class="gold-text">Highlights</span>
+                            <span data-i18n="gallery.carousel.title.part1">Project</span> <span class="gold-text"><span data-i18n="gallery.carousel.title.part2">Highlights</span></span>
                         </h2>
-                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200">
+                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200" data-i18n="gallery.carousel.subtitle">
                             Curated selection of our finest project visuals
                         </p>
                     </div>
@@ -1610,17 +1820,17 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-8" data-aos="fade-right">
-                        <h2 class="text-white mb-4">Download Project Brochures</h2>
-                        <p class="text-white-50 mb-4">
+                        <h2 class="text-white mb-4" data-i18n="gallery.download.title">Download Project Brochures</h2>
+                        <p class="text-white-50 mb-4" data-i18n="gallery.download.description">
                             Get high-resolution images, project brochures, and detailed specifications
                             for all our developments. Perfect for architects, investors, and homebuyers.
                         </p>
                         <div class="d-flex flex-wrap gap-3">
                             <a href="#" class="btn btn-gold">
-                                <i class="fas fa-download me-2"></i> Download All Photos
+                                <i class="fas fa-download me-2"></i> <span data-i18n="gallery.download.photos">Download All Photos</span>
                             </a>
                             <a href="#" class="btn btn-outline-light">
-                                <i class="fas fa-file-pdf me-2"></i> Project Brochures
+                                <i class="fas fa-file-pdf me-2"></i> <span data-i18n="gallery.download.brochures">Project Brochures</span>
                             </a>
                         </div>
                     </div>
@@ -1629,8 +1839,8 @@
                             <div class="download-icon">
                                 <i class="fas fa-cloud-download-alt"></i>
                             </div>
-                            <h4 class="text-white mb-3">High-Resolution Files</h4>
-                            <p class="text-white-50 mb-0">
+                            <h4 class="text-white mb-3" data-i18n="gallery.download.highres">High-Resolution Files</h4>
+                            <p class="text-white-50 mb-0" data-i18n="gallery.download.highres_desc">
                                 Download 4K resolution images for professional use
                             </p>
                         </div>
@@ -1651,7 +1861,7 @@
                             Naroda <span class="gold-text">Group</span>
                         </a>
                     </div>
-                    <p class="mb-4">
+                    <p class="mb-4" data-i18n="footer.description">
                         Creating landmark properties that redefine excellence. From premium commercial spaces 
                         to luxury residential living, we build dreams with quality and commitment.
                     </p>
@@ -1676,59 +1886,59 @@
                 </div>
                 
                 <div class="col-lg-2 col-md-6">
-                    <h3 class="footer-title">Quick Links</h3>
+                    <h3 class="footer-title" data-i18n="footer.quick_links">Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
-                        <li><a href="projects.html"><i class="fas fa-chevron-right"></i> Projects</a></li>
-                        <li><a href="properties.html"><i class="fas fa-chevron-right"></i> Properties</a></li>
-                        <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
-                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.home">Home</span></a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.about">About Us</span></a></li>
+                        <li><a href="projects.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.projects">Projects</span></a></li>
+                        <li><a href="properties.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.properties">Properties</span></a></li>
+                        <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.gallery">Gallery</span></a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.contact">Contact</span></a></li>
                     </ul>
                 </div>
                 
                 <div class="col-lg-3 col-md-6">
-                    <h3 class="footer-title">Our Projects</h3>
+                    <h3 class="footer-title" data-i18n="footer.our_projects">Our Projects</h3>
                     <a href="projects-landmark.html" class="project-mini-card">
-                        <h6 class="text-white mb-1">Naroda Landmark</h6>
-                        <p class="small text-muted mb-0">Premium Commercial Spaces</p>
+                        <h6 class="text-white mb-1" data-i18n="nav.landmark">Naroda Landmark</h6>
+                        <p class="small text-muted mb-0" data-i18n="footer.landmark_desc">Premium Commercial Spaces</p>
                     </a>
                     <a href="projects-irish.html" class="project-mini-card">
-                        <h6 class="text-white mb-1">Naroda Irish</h6>
-                        <p class="small text-muted mb-0">Luxury Residential Living</p>
+                        <h6 class="text-white mb-1" data-i18n="nav.irish">Naroda Irish</h6>
+                        <p class="small text-muted mb-0" data-i18n="footer.irish_desc">Luxury Residential Living</p>
                     </a>
                     <a href="projects.html" class="project-mini-card">
-                        <h6 class="text-white mb-1">View All Projects</h6>
-                        <p class="small text-muted mb-0">Explore our portfolio</p>
+                        <h6 class="text-white mb-1" data-i18n="footer.view_all_projects">View All Projects</h6>
+                        <p class="small text-muted mb-0" data-i18n="footer.explore_portfolio">Explore our portfolio</p>
                     </a>
                 </div>
                 
                 <div class="col-lg-3 col-md-6">
-                    <h3 class="footer-title">Contact Info</h3>
+                    <h3 class="footer-title" data-i18n="footer.contact_info">Contact Info</h3>
                     <div class="contact-info">
                         <i class="fas fa-phone"></i>
                         <div>
-                            <h6 class="text-white mb-1">Phone Number</h6>
+                            <h6 class="text-white mb-1" data-i18n="footer.phone">Phone Number</h6>
                             <p class="mb-0">+91 98765 43210</p>
-                            <small class="text-muted">Mon - Sat: 10 AM - 7 PM</small>
+                            <small class="text-muted" data-i18n="footer.phone_hours">Mon - Sat: 10 AM - 7 PM</small>
                         </div>
                     </div>
                     
                     <div class="contact-info">
                         <i class="fas fa-envelope"></i>
                         <div>
-                            <h6 class="text-white mb-1">Email Address</h6>
+                            <h6 class="text-white mb-1" data-i18n="footer.email">Email Address</h6>
                             <p class="mb-0">info@narodagroup.com</p>
-                            <small class="text-muted">We reply within 24 hours</small>
+                            <small class="text-muted" data-i18n="footer.email_response">We reply within 24 hours</small>
                         </div>
                     </div>
                     
                     <div class="contact-info">
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
-                            <h6 class="text-white mb-1">Office Address</h6>
-                            <p class="mb-0">Naroda - Bhat Road</p>
-                            <small class="text-muted">Ahmedabad, Gujarat 382330</small>
+                            <h6 class="text-white mb-1" data-i18n="footer.address">Office Address</h6>
+                            <p class="mb-0" data-i18n="footer.address_line1">Naroda - Bhat Road</p>
+                            <small class="text-muted" data-i18n="footer.address_line2">Ahmedabad, Gujarat 382330</small>
                         </div>
                     </div>
                 </div>
@@ -1737,12 +1947,12 @@
             <div class="copyright">
                 <div class="row align-items-center">
                     <div class="col-md-6">
-                        <p class="mb-0">&copy; 2025 Naroda Group. All rights reserved.</p>
+                        <p class="mb-0">&copy; 2025 Naroda Group. <span data-i18n="footer.rights">All rights reserved.</span></p>
                     </div>
                     <div class="col-md-6 text-md-end">
-                        <a href="privacy.html" class="text-muted me-3">Privacy Policy</a>
-                        <a href="terms.html" class="text-muted me-3">Terms of Service</a>
-                        <a href="rera.html" class="text-muted">RERA Registration</a>
+                        <a href="privacy.html" class="text-muted me-3" data-i18n="footer.privacy">Privacy Policy</a>
+                        <a href="terms.html" class="text-muted me-3" data-i18n="footer.terms">Terms of Service</a>
+                        <a href="rera.html" class="text-muted" data-i18n="footer.rera">RERA Registration</a>
                     </div>
                 </div>
             </div>
@@ -1758,92 +1968,564 @@
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
+    <!-- Language Translation Data -->
     <script>
-        // Gallery Data
+        const translations = {
+            en: {
+                // Navigation (shared with main page)
+                "nav.home": "Home",
+                "nav.about": "About",
+                "nav.projects": "Projects",
+                "nav.landmark": "Naroda Landmark",
+                "nav.irish": "Naroda Irish",
+                "nav.all_projects": "All Projects",
+                "nav.properties": "Properties",
+                "nav.buy": "Buy",
+                "nav.rent": "Rent",
+                "nav.property_details": "Property Details",
+                "nav.gallery": "Gallery",
+                "nav.more": "More",
+                "nav.blog": "Blog",
+                "nav.news": "News",
+                "nav.careers": "Careers",
+                "nav.team": "Our Team",
+                "nav.faq": "FAQ",
+                "nav.contact": "Contact",
+                "nav.login": "Login",
+                "nav.search": "Search",
+                "nav.account": "Account",
+                
+                // Gallery Hero Section
+                "gallery.hero.title.part1": "Project",
+                "gallery.hero.title.part2": "Gallery",
+                "gallery.hero.subtitle": "Visual journey through our premium developments and architectural excellence",
+                
+                // Gallery Filter
+                "gallery.filter.title": "Browse by Category",
+                "gallery.filter.all": "All Photos",
+                "gallery.filter.landmark": "Naroda Landmark",
+                "gallery.filter.irish": "Naroda Irish",
+                "gallery.filter.construction": "Construction",
+                "gallery.filter.interior": "Interiors",
+                "gallery.filter.amenities": "Amenities",
+                "gallery.filter.masterplan": "Masterplan",
+                "gallery.filter.progress": "Progress",
+                "gallery.filter.specifications": "Specifications",
+                
+                // Gallery Stats
+                "gallery.stats.total": "Total Photos",
+                "gallery.stats.category": "Active Category",
+                "gallery.stats.viewed": "Viewed Today",
+                "gallery.load_more": "Load More Photos",
+                
+                // PDF Downloads
+                "gallery.pdf.badge": "Project Brochures",
+                "gallery.pdf.title.part1": "Download",
+                "gallery.pdf.title.part2": "Project Details",
+                "gallery.pdf.subtitle": "Access detailed project brochures and specifications",
+                "gallery.pdf.landmark.title": "Naroda Landmark Brochure",
+                "gallery.pdf.landmark.description": "Complete details about Naroda Business Landmark - premium commercial spaces with modern amenities.",
+                "gallery.pdf.landmark.commercial": "Commercial Spaces",
+                "gallery.pdf.landmark.floors": "9 Floors",
+                "gallery.pdf.landmark.offices": "Scalable Offices",
+                "gallery.pdf.landmark.parking": "Basement Parking",
+                "gallery.pdf.irish.title": "Naroda Irish Brochure",
+                "gallery.pdf.irish.description": "Luxury residential project with premium specifications and world-class amenities.",
+                "gallery.pdf.irish.units": "354 Units",
+                "gallery.pdf.irish.floors": "14 Floors",
+                "gallery.pdf.irish.flats": "2-3 BHK Flats",
+                "gallery.pdf.irish.parking": "Ample Parking",
+                "gallery.pdf.download": "Download PDF (2.5 MB)",
+                "gallery.pdf.download2": "Download PDF (3.1 MB)",
+                
+                // Video Gallery
+                "gallery.video.badge": "Video Tours",
+                "gallery.video.title.part1": "Experience Our",
+                "gallery.video.title.part2": "Projects",
+                "gallery.video.subtitle": "Watch walkthrough videos and project documentaries",
+                "gallery.video.tour": "Video Tour",
+                "gallery.video.landmark.title": "Naroda Landmark Walkthrough",
+                "gallery.video.landmark.subtitle": "Premium Commercial Spaces",
+                "gallery.video.irish.title": "Naroda Irish Apartment Tour",
+                "gallery.video.irish.subtitle": "Luxury Residential Living",
+                
+                // Virtual Tour
+                "gallery.virtual.badge": "360° Experience",
+                "gallery.virtual.title.part1": "Virtual",
+                "gallery.virtual.title.part2": "Reality Tours",
+                "gallery.virtual.subtitle": "Explore our projects in immersive 360° virtual reality",
+                "gallery.virtual.vr_ready": "VR Ready",
+                "gallery.virtual.mobile_friendly": "Mobile Friendly",
+                "gallery.virtual.landmark.title": "3D Virtual Tour - Naroda Landmark",
+                "gallery.virtual.landmark.description": "Experience our premium commercial spaces with interactive 360° virtual tour. Explore every corner from the comfort of your home.",
+                "gallery.virtual.irish.title": "Interactive Walkthrough - Naroda Irish",
+                "gallery.virtual.irish.description": "Take a virtual stroll through our luxury apartments with interactive hotspots and detailed information about each space.",
+                "gallery.virtual.start_tour": "Start Virtual Tour",
+                "gallery.virtual.start_walkthrough": "Start Walkthrough",
+                
+                // Gallery Carousel
+                "gallery.carousel.badge": "Featured Photos",
+                "gallery.carousel.title.part1": "Project",
+                "gallery.carousel.title.part2": "Highlights",
+                "gallery.carousel.subtitle": "Curated selection of our finest project visuals",
+                
+                // Download Section
+                "gallery.download.title": "Download Project Brochures",
+                "gallery.download.description": "Get high-resolution images, project brochures, and detailed specifications for all our developments. Perfect for architects, investors, and homebuyers.",
+                "gallery.download.photos": "Download All Photos",
+                "gallery.download.brochures": "Project Brochures",
+                "gallery.download.highres": "High-Resolution Files",
+                "gallery.download.highres_desc": "Download 4K resolution images for professional use",
+                
+                // Footer (shared with main page)
+                "footer.description": "Creating landmark properties that redefine excellence. From premium commercial spaces to luxury residential living, we build dreams with quality and commitment.",
+                "footer.quick_links": "Quick Links",
+                "footer.our_projects": "Our Projects",
+                "footer.landmark_desc": "Premium Commercial Spaces",
+                "footer.irish_desc": "Luxury Residential Living",
+                "footer.view_all_projects": "View All Projects",
+                "footer.explore_portfolio": "Explore our portfolio",
+                "footer.contact_info": "Contact Info",
+                "footer.phone": "Phone Number",
+                "footer.phone_hours": "Mon - Sat: 10 AM - 7 PM",
+                "footer.email": "Email Address",
+                "footer.email_response": "We reply within 24 hours",
+                "footer.address": "Office Address",
+                "footer.address_line1": "Naroda - Bhat Road",
+                "footer.address_line2": "Ahmedabad, Gujarat 382330",
+                "footer.rights": "All rights reserved.",
+                "footer.privacy": "Privacy Policy",
+                "footer.terms": "Terms of Service",
+                "footer.rera": "RERA Registration"
+            },
+            hi: {
+                // Navigation (shared with main page)
+                "nav.home": "होम",
+                "nav.about": "हमारे बारे में",
+                "nav.projects": "प्रोजेक्ट्स",
+                "nav.landmark": "नरोड़ा लैंडमार्क",
+                "nav.irish": "नरोड़ा आयरिश",
+                "nav.all_projects": "सभी प्रोजेक्ट्स",
+                "nav.properties": "संपत्तियाँ",
+                "nav.buy": "खरीदें",
+                "nav.rent": "किराए पर लें",
+                "nav.property_details": "संपत्ति विवरण",
+                "nav.gallery": "गैलरी",
+                "nav.more": "अधिक",
+                "nav.blog": "ब्लॉग",
+                "nav.news": "समाचार",
+                "nav.careers": "करियर",
+                "nav.team": "हमारी टीम",
+                "nav.faq": "सामान्य प्रश्न",
+                "nav.contact": "संपर्क करें",
+                "nav.login": "लॉगिन",
+                "nav.search": "खोजें",
+                "nav.account": "खाता",
+                
+                // Gallery Hero Section
+                "gallery.hero.title.part1": "प्रोजेक्ट",
+                "gallery.hero.title.part2": "गैलरी",
+                "gallery.hero.subtitle": "हमारे प्रीमियम विकासों और स्थापत्य उत्कृष्टता की दृश्य यात्रा",
+                
+                // Gallery Filter
+                "gallery.filter.title": "श्रेणी के अनुसार ब्राउज़ करें",
+                "gallery.filter.all": "सभी तस्वीरें",
+                "gallery.filter.landmark": "नरोड़ा लैंडमार्क",
+                "gallery.filter.irish": "नरोड़ा आयरिश",
+                "gallery.filter.construction": "निर्माण",
+                "gallery.filter.interior": "इंटीरियर",
+                "gallery.filter.amenities": "सुविधाएं",
+                "gallery.filter.masterplan": "मास्टर प्लान",
+                "gallery.filter.progress": "प्रगति",
+                "gallery.filter.specifications": "विशिष्टताएं",
+                
+                // Gallery Stats
+                "gallery.stats.total": "कुल तस्वीरें",
+                "gallery.stats.category": "सक्रिय श्रेणी",
+                "gallery.stats.viewed": "आज देखी गई",
+                "gallery.load_more": "अधिक तस्वीरें लोड करें",
+                
+                // PDF Downloads
+                "gallery.pdf.badge": "प्रोजेक्ट ब्रोशर",
+                "gallery.pdf.title.part1": "डाउनलोड करें",
+                "gallery.pdf.title.part2": "प्रोजेक्ट विवरण",
+                "gallery.pdf.subtitle": "विस्तृत प्रोजेक्ट ब्रोशर और विशिष्टताएं प्राप्त करें",
+                "gallery.pdf.landmark.title": "नरोड़ा लैंडमार्क ब्रोशर",
+                "gallery.pdf.landmark.description": "नरोड़ा बिजनेस लैंडमार्क के बारे में पूर्ण विवरण - आधुनिक सुविधाओं के साथ प्रीमियम कमर्शियल स्पेस।",
+                "gallery.pdf.landmark.commercial": "कमर्शियल स्पेस",
+                "gallery.pdf.landmark.floors": "9 मंजिल",
+                "gallery.pdf.landmark.offices": "स्केलेबल ऑफिस",
+                "gallery.pdf.landmark.parking": "बेसमेंट पार्किंग",
+                "gallery.pdf.irish.title": "नरोड़ा आयरिश ब्रोशर",
+                "gallery.pdf.irish.description": "प्रीमियम स्पेसिफिकेशन और विश्व स्तरीय सुविधाओं के साथ लग्ज़री रेजिडेंशियल प्रोजेक्ट।",
+                "gallery.pdf.irish.units": "354 यूनिट",
+                "gallery.pdf.irish.floors": "14 मंजिल",
+                "gallery.pdf.irish.flats": "2-3 बीएचके फ्लैट",
+                "gallery.pdf.irish.parking": "पर्याप्त पार्किंग",
+                "gallery.pdf.download": "PDF डाउनलोड करें (2.5 MB)",
+                "gallery.pdf.download2": "PDF डाउनलोड करें (3.1 MB)",
+                
+                // Video Gallery
+                "gallery.video.badge": "वीडियो टूर",
+                "gallery.video.title.part1": "हमारे",
+                "gallery.video.title.part2": "प्रोजेक्ट्स का अनुभव करें",
+                "gallery.video.subtitle": "वॉकथ्रू वीडियो और प्रोजेक्ट डॉक्यूमेंट्री देखें",
+                "gallery.video.tour": "वीडियो टूर",
+                "gallery.video.landmark.title": "नरोड़ा लैंडमार्क वॉकथ्रू",
+                "gallery.video.landmark.subtitle": "प्रीमियम कमर्शियल स्पेस",
+                "gallery.video.irish.title": "नरोड़ा आयरिश अपार्टमेंट टूर",
+                "gallery.video.irish.subtitle": "लग्ज़री रेजिडेंशियल लिविंग",
+                
+                // Virtual Tour
+                "gallery.virtual.badge": "360° अनुभव",
+                "gallery.virtual.title.part1": "वर्चुअल",
+                "gallery.virtual.title.part2": "रियलिटी टूर",
+                "gallery.virtual.subtitle": "इमर्सिव 360° वर्चुअल रियलिटी में हमारे प्रोजेक्ट्स का अन्वेषण करें",
+                "gallery.virtual.vr_ready": "VR रेडी",
+                "gallery.virtual.mobile_friendly": "मोबाइल फ्रेंडली",
+                "gallery.virtual.landmark.title": "3D वर्चुअल टूर - नरोड़ा लैंडमार्क",
+                "gallery.virtual.landmark.description": "इंटरैक्टिव 360° वर्चुअल टूर के साथ हमारे प्रीमियम कमर्शियल स्पेस का अनुभव करें। अपने घर के आराम से हर कोने का अन्वेषण करें।",
+                "gallery.virtual.irish.title": "इंटरैक्टिव वॉकथ्रू - नरोड़ा आयरिश",
+                "gallery.virtual.irish.description": "इंटरैक्टिव हॉटस्पॉट्स और प्रत्येक स्पेस के बारे में विस्तृत जानकारी के साथ हमारे लग्ज़री अपार्टमेंट्स में वर्चुअल सैर करें।",
+                "gallery.virtual.start_tour": "वर्चुअल टूर शुरू करें",
+                "gallery.virtual.start_walkthrough": "वॉकथ्रू शुरू करें",
+                
+                // Gallery Carousel
+                "gallery.carousel.badge": "फीचर्ड फोटो",
+                "gallery.carousel.title.part1": "प्रोजेक्ट",
+                "gallery.carousel.title.part2": "हाइलाइट्स",
+                "gallery.carousel.subtitle": "हमारी बेहतरीन प्रोजेक्ट विज़ुअल्स का चयनित संग्रह",
+                
+                // Download Section
+                "gallery.download.title": "प्रोजेक्ट ब्रोशर डाउनलोड करें",
+                "gallery.download.description": "हमारे सभी विकासों के लिए हाई-रिज़ॉल्यूशन इमेज, प्रोजेक्ट ब्रोशर और विस्तृत स्पेसिफिकेशन प्राप्त करें। आर्किटेक्ट, निवेशक और होमबायर्स के लिए आदर्श।",
+                "gallery.download.photos": "सभी तस्वीरें डाउनलोड करें",
+                "gallery.download.brochures": "प्रोजेक्ट ब्रोशर",
+                "gallery.download.highres": "हाई-रिज़ॉल्यूशन फाइलें",
+                "gallery.download.highres_desc": "पेशेवर उपयोग के लिए 4K रिज़ॉल्यूशन इमेज डाउनलोड करें",
+                
+                // Footer (shared with main page)
+                "footer.description": "लैंडमार्क संपत्तियाँ बनाना जो उत्कृष्टता को फिर से परिभाषित करती हैं। प्रीमियम कमर्शियल स्पेस से लेकर लग्ज़री रेजिडेंशियल लिविंग तक, हम गुणवत्ता और प्रतिबद्धता के साथ सपने बनाते हैं।",
+                "footer.quick_links": "त्वरित लिंक",
+                "footer.our_projects": "हमारे प्रोजेक्ट्स",
+                "footer.landmark_desc": "प्रीमियम कमर्शियल स्पेस",
+                "footer.irish_desc": "लग्ज़री रेजिडेंशियल लिविंग",
+                "footer.view_all_projects": "सभी प्रोजेक्ट्स देखें",
+                "footer.explore_portfolio": "हमारे पोर्टफोलियो का अन्वेषण करें",
+                "footer.contact_info": "संपर्क जानकारी",
+                "footer.phone": "फोन नंबर",
+                "footer.phone_hours": "सोम - शनि: सुबह 10 - शाम 7 बजे",
+                "footer.email": "ईमेल पता",
+                "footer.email_response": "हम 24 घंटे के भीतर जवाब देते हैं",
+                "footer.address": "कार्यालय पता",
+                "footer.address_line1": "नरोड़ा - भाट रोड",
+                "footer.address_line2": "अहमदाबाद, गुजरात 382330",
+                "footer.rights": "सर्वाधिकार सुरक्षित।",
+                "footer.privacy": "गोपनीयता नीति",
+                "footer.terms": "सेवा की शर्तें",
+                "footer.rera": "RERA पंजीकरण"
+            },
+            gu: {
+                // Navigation (shared with main page)
+                "nav.home": "હોમ",
+                "nav.about": "અમારા વિશે",
+                "nav.projects": "પ્રોજેક્ટ્સ",
+                "nav.landmark": "નરોડા લેન્ડમાર્ક",
+                "nav.irish": "નરોડા આયરિશ",
+                "nav.all_projects": "બધા પ્રોજેક્ટ્સ",
+                "nav.properties": "પ્રોપર્ટીઝ",
+                "nav.buy": "ખરીદો",
+                "nav.rent": "ભાડે લો",
+                "nav.property_details": "પ્રોપર્ટી વિગતો",
+                "nav.gallery": "ગેલેરી",
+                "nav.more": "વધુ",
+                "nav.blog": "બ્લોગ",
+                "nav.news": "સમાચાર",
+                "nav.careers": "કરિયર",
+                "nav.team": "અમારી ટીમ",
+                "nav.faq": "સામાન્ય પ્રશ્નો",
+                "nav.contact": "સંપર્ક કરો",
+                "nav.login": "લોગિન",
+                "nav.search": "શોધો",
+                "nav.account": "એકાઉન્ટ",
+                
+                // Gallery Hero Section
+                "gallery.hero.title.part1": "પ્રોજેક્ટ",
+                "gallery.hero.title.part2": "ગેલેરી",
+                "gallery.hero.subtitle": "અમારા પ્રીમિયમ વિકાસો અને આર્કિટેક્ચરલ એક્સલન્સની દ્રશ્ય યાત્રા",
+                
+                // Gallery Filter
+                "gallery.filter.title": "કેટેગરી અનુસાર બ્રાઉઝ કરો",
+                "gallery.filter.all": "બધી ફોટો",
+                "gallery.filter.landmark": "નરોડા લેન્ડમાર્ક",
+                "gallery.filter.irish": "નરોડા આયરિશ",
+                "gallery.filter.construction": "કન્સ્ટ્રક્શન",
+                "gallery.filter.interior": "ઇન્ટિરિયર",
+                "gallery.filter.amenities": "સુવિધાઓ",
+                "gallery.filter.masterplan": "માસ્ટર પ્લાન",
+                "gallery.filter.progress": "પ્રોગ્રેસ",
+                "gallery.filter.specifications": "સ્પેસિફિકેશન્સ",
+                
+                // Gallery Stats
+                "gallery.stats.total": "કુલ ફોટો",
+                "gallery.stats.category": "સક્રિય કેટેગરી",
+                "gallery.stats.viewed": "આજે જોવાયેલ",
+                "gallery.load_more": "વધુ ફોટો લોડ કરો",
+                
+                // PDF Downloads
+                "gallery.pdf.badge": "પ્રોજેક્ટ બ્રોશર",
+                "gallery.pdf.title.part1": "ડાઉનલોડ કરો",
+                "gallery.pdf.title.part2": "પ્રોજેક્ટ વિગતો",
+                "gallery.pdf.subtitle": "વિસ્તૃત પ્રોજેક્ટ બ્રોશર અને સ્પેસિફિકેશન્સ ઍક્સેસ કરો",
+                "gallery.pdf.landmark.title": "નરોડા લેન્ડમાર્ક બ્રોશર",
+                "gallery.pdf.landmark.description": "નરોડા બિઝનેસ લેન્ડમાર્ક વિશે સંપૂર્ણ વિગતો - આધુનિક સુવિધાઓ સાથે પ્રીમિયમ કોમર્શિયલ સ્પેસ.",
+                "gallery.pdf.landmark.commercial": "કોમર્શિયલ સ્પેસ",
+                "gallery.pdf.landmark.floors": "9 માળ",
+                "gallery.pdf.landmark.offices": "સ્કેલેબલ ઓફિસ",
+                "gallery.pdf.landmark.parking": "બેસમેન્ટ પાર્કિંગ",
+                "gallery.pdf.irish.title": "નરોડા આયરિશ બ્રોશર",
+                "gallery.pdf.irish.description": "પ્રીમિયમ સ્પેસિફિકેશન્સ અને વર્લ્ડ-ક્લાસ સુવિધાઓ સાથે લગ્ઝરી રેસિડેન્શિયલ પ્રોજેક્ટ.",
+                "gallery.pdf.irish.units": "354 યુનિટ",
+                "gallery.pdf.irish.floors": "14 માળ",
+                "gallery.pdf.irish.flats": "2-3 બીએચકે ફ્લેટ",
+                "gallery.pdf.irish.parking": "પૂરતી પાર્કિંગ",
+                "gallery.pdf.download": "PDF ડાઉનલોડ કરો (2.5 MB)",
+                "gallery.pdf.download2": "PDF ડાઉનલોડ કરો (3.1 MB)",
+                
+                // Video Gallery
+                "gallery.video.badge": "વિડિઓ ટૂર",
+                "gallery.video.title.part1": "અમારા",
+                "gallery.video.title.part2": "પ્રોજેક્ટ્સનો અનુભવ કરો",
+                "gallery.video.subtitle": "વૉકથ્રુ વિડિઓ અને પ્રોજેક્ટ ડોક્યુમેન્ટરી જુઓ",
+                "gallery.video.tour": "વિડિઓ ટૂર",
+                "gallery.video.landmark.title": "નરોડા લેન્ડમાર્ક વૉકથ્રુ",
+                "gallery.video.landmark.subtitle": "પ્રીમિયમ કોમર્શિયલ સ્પેસ",
+                "gallery.video.irish.title": "નરોડા આયરિશ એપાર્ટમેન્ટ ટૂર",
+                "gallery.video.irish.subtitle": "લગ્ઝરી રેસિડેન્શિયલ લિવિંગ",
+                
+                // Virtual Tour
+                "gallery.virtual.badge": "360° અનુભવ",
+                "gallery.virtual.title.part1": "વર્ચુઅલ",
+                "gallery.virtual.title.part2": "રિયાલિટી ટૂર",
+                "gallery.virtual.subtitle": "ઇમર્સિવ 360° વર્ચુઅલ રિયાલિટીમાં અમારા પ્રોજેક્ટ્સનું અન્વેષણ કરો",
+                "gallery.virtual.vr_ready": "VR રેડી",
+                "gallery.virtual.mobile_friendly": "મોબાઇલ ફ્રેન્ડલી",
+                "gallery.virtual.landmark.title": "3D વર્ચુઅલ ટૂર - નરોડા લેન્ડમાર્ક",
+                "gallery.virtual.landmark.description": "ઇન્ટરઍક્ટિવ 360° વર્ચુઅલ ટૂર સાથે અમારા પ્રીમિયમ કોમર્શિયલ સ્પેસનો અનુભવ કરો. તમારા ઘરના આરામથી દરેક ખૂણાનું અન્વેષણ કરો.",
+                "gallery.virtual.irish.title": "ઇન્ટરઍક્ટિવ વૉકથ્રુ - નરોડા આયરિશ",
+                "gallery.virtual.irish.description": "ઇન્ટરઍક્ટિવ હોટસ્પોટ્સ અને દરેક સ્પેસ વિશે વિસ્તૃત માહિતી સાથે અમારા લગ્ઝરી એપાર્ટમેન્ટ્સમાં વર્ચુઅલ સૈર કરો.",
+                "gallery.virtual.start_tour": "વર્ચુઅલ ટૂર શરૂ કરો",
+                "gallery.virtual.start_walkthrough": "વૉકથ્રુ શરૂ કરો",
+                
+                // Gallery Carousel
+                "gallery.carousel.badge": "ફીચર્ડ ફોટો",
+                "gallery.carousel.title.part1": "પ્રોજેક્ટ",
+                "gallery.carousel.title.part2": "હાઇલાઇટ્સ",
+                "gallery.carousel.subtitle": "અમારી ફાઇનેસ્ટ પ્રોજેક્ટ વિઝ્યુલ્સનું ક્યુરેટેડ સિલેક્શન",
+                
+                // Download Section
+                "gallery.download.title": "પ્રોજેક્ટ બ્રોશર ડાઉનલોડ કરો",
+                "gallery.download.description": "અમારા બધા ડેવલપમેન્ટ્સ માટે હાઇ-રિઝોલ્યુશન ઇમેજ, પ્રોજેક્ટ બ્રોશર અને વિસ્તૃત સ્પેસિફિકેશન્સ મેળવો. આર્કિટેક્ટ, નિવેશક અને હોમબાયર્સ માટે આદર્શ.",
+                "gallery.download.photos": "બધી ફોટો ડાઉનલોડ કરો",
+                "gallery.download.brochures": "પ્રોજેક્ટ બ્રોશર",
+                "gallery.download.highres": "હાઇ-રિઝોલ્યુશન ફાઇલ્સ",
+                "gallery.download.highres_desc": "પ્રોફેશનલ ઉપયોગ માટે 4K રિઝોલ્યુશન ઇમેજ ડાઉનલોડ કરો",
+                
+                // Footer (shared with main page)
+                "footer.description": "લેન્ડમાર્ક પ્રોપર્ટીઝ બનાવવી જે એક્સલન્સને પુનઃવ્યાખ્યાયિત કરે છે. પ્રીમિયમ કોમર્શિયલ સ્પેસથી લગ્ઝરી રેસિડેન્શિયલ લિવિંગ સુધી, અમે ગુણવત્તા અને પ્રતિબદ્ધતા સાથે સપના બનાવીએ છીએ.",
+                "footer.quick_links": "ઝડપી લિંક્સ",
+                "footer.our_projects": "અમારા પ્રોજેક્ટ્સ",
+                "footer.landmark_desc": "પ્રીમિયમ કોમર્શિયલ સ્પેસ",
+                "footer.irish_desc": "લગ્ઝરી રેસિડેન્શિયલ લિવિંગ",
+                "footer.view_all_projects": "બધા પ્રોજેક્ટ્સ જુઓ",
+                "footer.explore_portfolio": "અમારા પોર્ટફોલિયોનું અન્વેષણ કરો",
+                "footer.contact_info": "સંપર્ક માહિતી",
+                "footer.phone": "ફોન નંબર",
+                "footer.phone_hours": "સોમ - શનિ: સવારે 10 - સાંજે 7 વાગ્યા",
+                "footer.email": "ઈમેલ એડ્રેસ",
+                "footer.email_response": "અમે 24 કલાકમાં જવાબ આપીએ છીએ",
+                "footer.address": "ઓફિસ એડ્રેસ",
+                "footer.address_line1": "નરોડા - ભાટ રોડ",
+                "footer.address_line2": "અમદાવાદ, ગુજરાત 382330",
+                "footer.rights": "બધા હક્કો સુરક્ષિત.",
+                "footer.privacy": "ગોપનીયતા નીતિ",
+                "footer.terms": "સેવાની શરતો",
+                "footer.rera": "RERA રજિસ્ટ્રેશન"
+            }
+        };
+    </script>
+
+    <script>
+        // Enhanced Gallery Data from PDFs
         const galleryData = [
+            // Naroda Landmark Images
             {
                 id: 1,
                 category: 'landmark',
                 image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
                 title: 'Naroda Landmark Exterior',
-                location: 'Commercial Complex'
+                location: 'Premium Commercial Complex'
             },
             {
                 id: 2,
-                category: 'irish',
-                image: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?ixlib=rb-4.0.3&auto=format&fit=crop&w=2065&q=80',
-                title: 'Naroda Irish Building',
-                location: 'Residential Tower'
+                category: 'landmark',
+                image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80',
+                title: 'Business Lobby',
+                location: 'Naroda Landmark'
             },
             {
                 id: 3,
-                category: 'construction',
-                image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-                title: 'Construction Progress',
-                location: 'Site Development'
+                category: 'landmark',
+                image: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+                title: 'Office Spaces',
+                location: 'Scalable Business Offices'
             },
+            
+            // Naroda Irish Images
             {
                 id: 4,
-                category: 'interior',
-                image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-                title: 'Luxury Living Room',
-                location: '3 BHK Apartment'
+                category: 'irish',
+                image: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?ixlib=rb-4.0.3&auto=format&fit=crop&w=2065&q=80',
+                title: 'Naroda Irish Building',
+                location: 'Luxury Residential Tower'
             },
             {
                 id: 5,
+                category: 'irish',
+                image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2053&q=80',
+                title: 'Luxury Kitchen',
+                location: '3 BHK Apartment'
+            },
+            {
+                id: 6,
+                category: 'irish',
+                image: 'https://images.unsplash.com/photo-1600607687644-c7171b42498b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+                title: 'Master Bedroom',
+                location: 'Premium Interior'
+            },
+            
+            // Construction Progress
+            {
+                id: 7,
+                category: 'construction',
+                image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+                title: 'Foundation Work',
+                location: 'Site Development'
+            },
+            {
+                id: 8,
+                category: 'construction',
+                image: 'https://images.unsplash.com/photo-1503387769-00a112127ca0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+                title: 'Structural Work',
+                location: 'Construction Site'
+            },
+            {
+                id: 9,
+                category: 'construction',
+                image: 'https://images.unsplash.com/photo-1558036117-15e82a2c9a9a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+                title: 'RCC Structure',
+                location: 'Earthquake Resistant'
+            },
+            
+            // Interiors
+            {
+                id: 10,
+                category: 'interior',
+                image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+                title: 'Modern Living Room',
+                location: '3 BHK Apartment'
+            },
+            {
+                id: 11,
+                category: 'interior',
+                image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2058&q=80',
+                title: 'Luxury Bathroom',
+                location: 'Premium Finishes'
+            },
+            {
+                id: 12,
+                category: 'interior',
+                image: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+                title: 'Modern Kitchen',
+                location: 'Premium Appliances'
+            },
+            
+            // Amenities
+            {
+                id: 13,
                 category: 'amenities',
                 image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2073&q=80',
                 title: 'Swimming Pool',
                 location: 'Club House'
             },
             {
-                id: 6,
+                id: 14,
+                category: 'amenities',
+                image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+                title: 'Gymnasium',
+                location: 'Fitness Center'
+            },
+            {
+                id: 15,
+                category: 'amenities',
+                image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+                title: 'Children Play Area',
+                location: 'Green Spaces'
+            },
+            
+            // Masterplan
+            {
+                id: 16,
                 category: 'masterplan',
                 image: 'https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&auto=format&fit=crop&w=2096&q=80',
                 title: 'Project Masterplan',
                 location: 'Architectural Design'
             },
             {
-                id: 7,
+                id: 17,
+                category: 'masterplan',
+                image: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80',
+                title: 'Site Layout',
+                location: 'Strategic Planning'
+            },
+            
+            // Specifications (from PDFs)
+            {
+                id: 18,
+                category: 'specifications',
+                image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+                title: 'Structural Specifications',
+                location: 'Earthquake Resistant RCC'
+            },
+            {
+                id: 19,
+                category: 'specifications',
+                image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+                title: 'Electrical Systems',
+                location: 'Premium Wiring'
+            },
+            {
+                id: 20,
+                category: 'specifications',
+                image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+                title: 'Lift Specifications',
+                location: 'Automatic Elevators'
+            },
+            
+            // Progress
+            {
+                id: 21,
                 category: 'progress',
-                image: 'https://images.unsplash.com/photo-1558036117-15e82a2c9a9a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-                title: 'Foundation Work',
-                location: 'Construction Site'
+                image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80',
+                title: 'Progress Update - Month 6',
+                location: '50% Complete'
             },
             {
-                id: 8,
-                category: 'interior',
-                image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2053&q=80',
-                title: 'Modern Kitchen',
-                location: 'Premium Interior'
-            },
-            {
-                id: 9,
-                category: 'amenities',
-                image: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-                title: 'Gymnasium',
-                location: 'Fitness Center'
-            },
-            {
-                id: 10,
-                category: 'landmark',
-                image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80',
-                title: 'Lobby Entrance',
-                location: 'Commercial Building'
-            },
-            {
-                id: 11,
-                category: 'irish',
-                image: 'https://images.unsplash.com/photo-1600607687644-c7171b42498b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-                title: 'Bedroom Design',
-                location: 'Master Bedroom'
-            },
-            {
-                id: 12,
-                category: 'construction',
-                image: 'https://images.unsplash.com/photo-1503387769-00a112127ca0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-                title: 'Structural Work',
-                location: 'Site Progress'
+                id: 22,
+                category: 'progress',
+                image: 'https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-4.0.3&auto=format&fit=crop&w=2068&q=80',
+                title: 'Progress Update - Month 12',
+                location: '85% Complete'
             }
         ];
 
@@ -1866,6 +2548,90 @@
                     document.body.style.overflow = 'visible';
                 }, 500);
             }, 1000);
+            
+            // Language switching functionality
+            const languageSelectors = document.querySelectorAll('.language-selector');
+            const currentLanguageElement = document.getElementById('currentLanguage');
+            
+            // Load saved language from localStorage or default to English
+            let currentLang = localStorage.getItem('preferredLanguage') || 'en';
+            
+            // Apply language on page load
+            applyLanguage(currentLang);
+            
+            // Set up language selector event listeners
+            languageSelectors.forEach(selector => {
+                selector.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const lang = this.getAttribute('data-lang');
+                    setLanguage(lang);
+                });
+            });
+            
+            function setLanguage(lang) {
+                currentLang = lang;
+                localStorage.setItem('preferredLanguage', lang);
+                applyLanguage(lang);
+                showToast(`Language changed to ${getLanguageName(lang)}`, 'success');
+            }
+            
+            function applyLanguage(lang) {
+                // Update body class for language-specific styling
+                document.body.classList.remove('hindi', 'gujarati');
+                if (lang === 'hi') document.body.classList.add('hindi');
+                if (lang === 'gu') document.body.classList.add('gujarati');
+                
+                // Update current language display
+                currentLanguageElement.textContent = getLanguageCode(lang);
+                
+                // Fade out content
+                document.querySelector('.language-content').style.opacity = '0.5';
+                
+                // Apply translations after a short delay for smoother transition
+                setTimeout(() => {
+                    const elements = document.querySelectorAll('[data-i18n]');
+                    elements.forEach(element => {
+                        const key = element.getAttribute('data-i18n');
+                        if (translations[lang] && translations[lang][key]) {
+                            // Handle placeholder replacement for text with HTML
+                            if (element.hasAttribute('data-i18n-html')) {
+                                element.innerHTML = translations[lang][key];
+                            } else {
+                                element.textContent = translations[lang][key];
+                            }
+                        }
+                    });
+                    
+                    // Update filter button text
+                    document.querySelectorAll('.filter-btn').forEach(btn => {
+                        const key = btn.getAttribute('data-i18n');
+                        if (key && translations[lang] && translations[lang][key]) {
+                            btn.textContent = translations[lang][key];
+                        }
+                    });
+                    
+                    // Fade content back in
+                    document.querySelector('.language-content').style.opacity = '1';
+                }, 300);
+            }
+            
+            function getLanguageName(code) {
+                const names = {
+                    'en': 'English',
+                    'hi': 'Hindi',
+                    'gu': 'Gujarati'
+                };
+                return names[code] || 'English';
+            }
+            
+            function getLanguageCode(code) {
+                const codes = {
+                    'en': 'EN',
+                    'hi': 'HI',
+                    'gu': 'GU'
+                };
+                return codes[code] || 'EN';
+            }
             
             // Initialize gallery
             initGallery();
@@ -1890,9 +2656,34 @@
             
             // Show welcome message
             setTimeout(() => {
-                showToast('Explore our project gallery! Use filters to browse categories.', 'info');
+                const welcomeMessages = {
+                    'en': 'Explore our project gallery! Use filters to browse categories.',
+                    'hi': 'हमारी प्रोजेक्ट गैलरी का अन्वेषण करें! श्रेणियों को ब्राउज़ करने के लिए फ़िल्टर का उपयोग करें।',
+                    'gu': 'અમારી પ્રોજેક્ટ ગેલેરીનું અન્વેષણ કરો! કેટેગરી બ્રાઉઝ કરવા માટે ફિલ્ટરનો ઉપયોગ કરો।'
+                };
+                showToast(welcomeMessages[currentLang] || 'Explore our project gallery!', 'info');
             }, 1500);
+            
+            // Lazy load images
+            lazyLoadImages();
         });
+        
+        function lazyLoadImages() {
+            const lazyImages = document.querySelectorAll('.lazy-load');
+            
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src || img.src;
+                        img.classList.add('lazy-loaded');
+                        observer.unobserve(img);
+                    }
+                });
+            });
+            
+            lazyImages.forEach(img => imageObserver.observe(img));
+        }
         
         function initGallery() {
             const gridGallery = document.getElementById('gridGallery');
@@ -1927,7 +2718,14 @@
                     
                     // Update filter
                     currentFilter = this.getAttribute('data-filter');
-                    activeCategory.textContent = currentFilter.charAt(0).toUpperCase() + currentFilter.slice(1);
+                    const filterText = this.getAttribute('data-i18n');
+                    const currentLang = localStorage.getItem('preferredLanguage') || 'en';
+                    
+                    if (filterText && translations[currentLang] && translations[currentLang][filterText]) {
+                        activeCategory.textContent = translations[currentLang][filterText];
+                    } else {
+                        activeCategory.textContent = currentFilter.charAt(0).toUpperCase() + currentFilter.slice(1);
+                    }
                     
                     // Reset page
                     currentPage = 1;
@@ -1936,7 +2734,12 @@
                     loadGalleryItems();
                     
                     // Show toast
-                    showToast(`Showing ${currentFilter === 'all' ? 'all' : currentFilter} photos`, 'info');
+                    const messages = {
+                        'en': `Showing ${currentFilter === 'all' ? 'all' : currentFilter} photos`,
+                        'hi': `${currentFilter === 'all' ? 'सभी' : currentFilter} तस्वीरें दिखा रहे हैं`,
+                        'gu': `${currentFilter === 'all' ? 'બધી' : currentFilter} ફોટો બતાવી રહ્યા છીએ`
+                    };
+                    showToast(messages[localStorage.getItem('preferredLanguage') || 'en'] || `Showing ${currentFilter} photos`, 'info');
                 });
             });
             
@@ -2020,6 +2823,9 @@
                 } else {
                     loadMoreBtn.style.display = 'inline-flex';
                 }
+                
+                // Apply lazy loading
+                lazyLoadImages();
             }
             
             function createGalleryItem(item, isMasonry = false) {
@@ -2032,7 +2838,7 @@
                 itemDiv.setAttribute('aria-label', `View ${item.title} image`);
                 
                 itemDiv.innerHTML = `
-                    <img src="${item.image}" alt="${item.title}" loading="lazy">
+                    <img src="${item.image}" alt="${item.title}" class="lazy-load" loading="lazy">
                     <div class="gallery-overlay">
                         <span class="gallery-category">${item.category}</span>
                         <h3 class="gallery-title">${item.title}</h3>
@@ -2229,7 +3035,7 @@
                 slide.innerHTML = `
                     <div class="carousel-card">
                         <div class="carousel-image">
-                            <img src="${photo.image}" alt="${photo.title}" loading="lazy">
+                            <img src="${photo.image}" alt="${photo.title}" class="lazy-load" loading="lazy">
                         </div>
                         <div class="carousel-content">
                             <span class="badge bg-secondary mb-2">${photo.category}</span>
@@ -2243,6 +3049,9 @@
             
             // Update Swiper
             swiper.update();
+            
+            // Apply lazy loading to swiper images
+            lazyLoadImages();
         }
         
         function initBackToTop() {
@@ -2390,6 +3199,30 @@
         
         // Improve touch experience
         document.addEventListener('touchstart', function() {}, {passive: true});
+        
+        // PDF Download tracking
+        document.querySelectorAll('a[download]').forEach(link => {
+            link.addEventListener('click', function() {
+                const fileName = this.getAttribute('href');
+                const messages = {
+                    'en': `Downloading ${fileName}...`,
+                    'hi': `${fileName} डाउनलोड हो रहा है...`,
+                    'gu': `${fileName} ડાઉનલોડ થઈ રહ્યું છે...`
+                };
+                const currentLang = localStorage.getItem('preferredLanguage') || 'en';
+                showToast(messages[currentLang] || `Downloading ${fileName}...`, 'info');
+                // You can add analytics tracking here
+            });
+        });
+        
+        // Handle image loading errors
+        document.addEventListener('error', function(e) {
+            if (e.target.tagName === 'IMG') {
+                console.warn('Image failed to load:', e.target.src);
+                // You can set a placeholder image here if needed
+                // e.target.src = 'path/to/placeholder.jpg';
+            }
+        }, true);
     </script>
 </body>
 </html>

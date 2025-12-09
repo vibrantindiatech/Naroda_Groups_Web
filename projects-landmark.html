@@ -3,12 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naroda Landmark | Premium Commercial Spaces | Naroda Group</title>
+    <title>Naroda Landmark | Premium Commercial Complex | Naroda Group</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Naroda Landmark - Ahmedabad's premium commercial complex with Grade A office spaces, retail shops, and modern amenities. Invest in prime commercial real estate.">
-    <meta name="keywords" content="naroda landmark, commercial spaces ahmedabad, office spaces, retail shops, commercial complex, grade a offices">
+    <meta name="description" content="Naroda Landmark - Ahmedabad's premium commercial complex with Grade A office spaces, retail shops, and modern amenities. Invest in prime commercial real estate at Naroda.">
+    <meta name="keywords" content="naroda landmark, commercial spaces ahmedabad, office spaces naroda, retail shops naroda, commercial complex, grade a offices, naroda group">
     <meta name="author" content="Naroda Group">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Naroda Landmark | Premium Commercial Complex">
+    <meta property="og:description" content="Grade A commercial complex with state-of-the-art amenities, premium office spaces, and retail outlets in Naroda, Ahmedabad.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80">
+    <meta property="og:url" content="https://narodagroup.com/landmark">
+    <meta property="og:type" content="website">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://narodagroup.com/landmark">
     
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -139,11 +150,6 @@
             border-radius: 2px;
         }
 
-        .section-title.left:after {
-            left: 0;
-            transform: none;
-        }
-
         .badge {
             font-weight: 500;
             letter-spacing: 0.5px;
@@ -154,22 +160,22 @@
             background: var(--gradient-secondary) !important;
         }
 
+        .text-gold {
+            color: var(--secondary-color);
+        }
+
         .text-primary {
             color: var(--primary-color) !important;
         }
 
         .btn-outline-primary {
-            border: 2px solid var(--primary-color);
+            border-color: var(--primary-color);
             color: var(--primary-color);
-            background: transparent;
         }
 
         .btn-outline-primary:hover {
-            background: var(--gradient-primary);
-            color: white !important;
-            border-color: transparent;
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(10, 42, 74, 0.2);
+            background-color: var(--primary-color);
+            color: white;
         }
 
         /* ===== Preloader ===== */
@@ -381,18 +387,6 @@
             color: white !important;
         }
 
-        .btn-primary {
-            background: var(--gradient-primary);
-            color: white !important;
-            box-shadow: 0 10px 25px rgba(10, 42, 74, 0.3);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(10, 42, 74, 0.4);
-            color: white !important;
-        }
-
         .btn-lg {
             padding: 18px 40px;
             font-size: 1.1rem;
@@ -409,11 +403,38 @@
             background: linear-gradient(rgba(10, 42, 74, 0.95), rgba(10, 42, 74, 0.85)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
             color: white;
             display: flex;
             align-items: center;
             position: relative;
             overflow: hidden;
+            padding-top: 100px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 750px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(201, 169, 110, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(201, 169, 110, 0.3);
+            padding: 10px 24px;
+            border-radius: 30px;
+            margin-bottom: 2.5rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            font-size: 0.95rem;
+        }
+
+        .hero-badge i {
+            margin-right: 10px;
+            font-size: 1.2rem;
         }
 
         .hero-title {
@@ -438,6 +459,11 @@
             .hero-title {
                 font-size: 2.2rem;
             }
+            
+            .hero-badge {
+                font-size: 0.85rem;
+                padding: 8px 20px;
+            }
         }
 
         @media (max-width: 576px) {
@@ -457,46 +483,6 @@
         @media (max-width: 768px) {
             .hero-subtitle {
                 font-size: 1.1rem;
-            }
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            background: rgba(201, 169, 110, 0.15);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(201, 169, 110, 0.3);
-            padding: 10px 24px;
-            border-radius: 30px;
-            margin-bottom: 2.5rem;
-            font-weight: 500;
-            letter-spacing: 1px;
-            font-size: 0.95rem;
-        }
-
-        @media (max-width: 768px) {
-            .hero-badge {
-                font-size: 0.85rem;
-                padding: 8px 20px;
-            }
-        }
-
-        /* ===== Button Group Responsive ===== */
-        .btn-group-responsive {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-        
-        @media (max-width: 576px) {
-            .btn-group-responsive {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            
-            .btn-group-responsive .btn {
-                width: 100%;
-                justify-content: center;
             }
         }
 
@@ -594,19 +580,6 @@
             font-size: 1.5rem;
         }
 
-        @media (max-width: 768px) {
-            .overview-feature {
-                margin-bottom: 20px;
-            }
-            
-            .feature-icon {
-                width: 50px;
-                height: 50px;
-                font-size: 1.2rem;
-                margin-right: 15px;
-            }
-        }
-
         /* ===== Amenities Section ===== */
         .amenities-section {
             padding: 100px 0;
@@ -642,19 +615,6 @@
             font-size: 2rem;
         }
 
-        @media (max-width: 768px) {
-            .amenity-card {
-                padding: 25px 20px;
-            }
-            
-            .amenity-icon {
-                width: 70px;
-                height: 70px;
-                font-size: 1.8rem;
-                margin-bottom: 20px;
-            }
-        }
-
         /* ===== Floor Plans ===== */
         .floorplans-section {
             padding: 100px 0;
@@ -679,16 +639,9 @@
             transition: var(--transition);
             cursor: pointer;
             font-size: 0.9rem;
-            white-space: nowrap;
         }
 
         .floorplan-tab.active {
-            background: var(--gradient-secondary);
-            color: var(--primary-color) !important;
-            border-color: transparent;
-        }
-
-        .floorplan-tab:hover {
             background: var(--gradient-secondary);
             color: var(--primary-color) !important;
             border-color: transparent;
@@ -734,34 +687,35 @@
             margin-bottom: 5px;
         }
 
-        .spec-label {
-            font-size: 0.9rem;
-            color: var(--gray-color);
+        /* ===== Business Types ===== */
+        .business-section {
+            padding: 100px 0;
+            background: white;
         }
 
-        @media (max-width: 768px) {
-            .floorplan-content {
-                padding: 30px 20px;
-            }
-            
-            .floorplan-specs {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
-            }
-            
-            .spec-item {
-                padding: 15px 10px;
-            }
-            
-            .spec-value {
-                font-size: 1.2rem;
-            }
+        .business-type {
+            text-align: center;
+            padding: 20px;
+            transition: var(--transition);
+        }
+
+        .business-icon {
+            background: rgba(201, 169, 110, 0.1);
+            color: var(--secondary-color);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 1.5rem;
         }
 
         /* ===== Location Section ===== */
         .location-section {
             padding: 100px 0;
-            background: white;
+            background: #f9fafb;
         }
 
         .location-card {
@@ -792,31 +746,10 @@
             color: var(--secondary-color);
         }
 
-        @media (max-width: 768px) {
-            .location-card {
-                padding: 30px 20px;
-            }
-            
-            .location-feature {
-                margin-bottom: 20px;
-            }
-            
-            .location-icon {
-                width: 45px;
-                height: 45px;
-                font-size: 0.9rem;
-                margin-right: 12px;
-            }
-        }
-
         /* ===== Gallery Section ===== */
         .gallery-section {
             padding: 100px 0;
-            background: #f9fafb;
-        }
-
-        .gallery-container {
-            position: relative;
+            background: white;
         }
 
         .gallery-slider {
@@ -834,30 +767,6 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-        }
-
-        .gallery-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(10, 42, 74, 0.9), transparent);
-            color: white;
-            padding: 30px;
-        }
-
-        @media (max-width: 768px) {
-            .swiper-slide {
-                height: 350px;
-            }
-            
-            .gallery-overlay {
-                padding: 20px;
-            }
-            
-            .gallery-overlay h4 {
-                font-size: 1.2rem;
-            }
         }
 
         /* ===== Price Section ===== */
@@ -898,27 +807,12 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .price-details li:last-child {
-            border-bottom: none;
-        }
-
-        @media (max-width: 768px) {
-            .price-card {
-                padding: 30px 20px;
-            }
-            
-            .price-amount {
-                font-size: 2.5rem;
-            }
-        }
-
         /* ===== CTA Section ===== */
         .cta-section {
             padding: 100px 0;
             background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
             color: white;
-            position: relative;
-            overflow: hidden;
+            text-align: center;
         }
 
         /* ===== Footer ===== */
@@ -1027,31 +921,6 @@
             }
         }
 
-        /* ===== Mobile Bottom Nav ===== */
-        .mobile-bottom-nav {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: white;
-            display: flex;
-            justify-content: space-around;
-            padding: 15px 0;
-            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
-            z-index: 999;
-            display: none;
-        }
-
-        @media (max-width: 768px) {
-            .mobile-bottom-nav {
-                display: flex;
-            }
-            
-            .hero-section {
-                padding-top: 80px;
-            }
-        }
-
         /* ===== Toast Notifications ===== */
         .toast-container {
             position: fixed;
@@ -1077,26 +946,30 @@
             opacity: 1;
         }
 
-        /* ===== Loading Overlay ===== */
-        .loading-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            display: none;
+        /* ===== Project Highlight ===== */
+        .project-highlight {
+            background: linear-gradient(135deg, rgba(201, 169, 110, 0.05) 0%, rgba(201, 169, 110, 0.02) 100%);
+            border-left: 4px solid var(--secondary-color);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            margin: 30px 0;
         }
 
-        .loading-overlay.active {
+        /* ===== Contact Info ===== */
+        .contact-info {
             display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
         }
-
-        /* ===== Additional Styles ===== */
+        
+        .contact-info i {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+        
+        /* ===== Social Links ===== */
         .social-links {
             display: flex;
             gap: 15px;
@@ -1120,6 +993,7 @@
             transform: translateY(-3px);
         }
         
+        /* ===== Footer Links ===== */
         .footer-links {
             list-style: none;
             padding: 0;
@@ -1139,32 +1013,7 @@
             padding-left: 5px;
         }
         
-        .mobile-nav-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            color: var(--dark-color);
-            padding: 5px 10px;
-            border-radius: 8px;
-            transition: var(--transition);
-            text-decoration: none;
-        }
-        
-        .mobile-nav-item.active {
-            color: var(--secondary-color);
-            background: rgba(201, 169, 110, 0.1);
-        }
-        
-        .mobile-nav-item i {
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-        }
-        
-        .mobile-nav-item span {
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-        
+        /* ===== Project Mini Card ===== */
         .project-mini-card {
             display: block;
             margin-bottom: 20px;
@@ -1177,139 +1026,36 @@
         .project-mini-card:hover {
             background: rgba(255, 255, 255, 0.1);
         }
+
+        /* ===== Language Specific ===== */
+        body.hindi, body.gujarati {
+            font-family: 'Noto Sans', 'Inter', sans-serif;
+        }
         
-        .contact-info {
+        .language-content {
+            transition: opacity 0.3s ease;
+        }
+        
+        /* ===== Button Group Responsive ===== */
+        .btn-group-responsive {
             display: flex;
-            align-items: flex-start;
-            margin-bottom: 25px;
+            flex-wrap: wrap;
+            gap: 15px;
         }
         
-        .contact-info i {
-            color: var(--secondary-color);
-            font-size: 1.2rem;
-            margin-right: 15px;
-            margin-top: 5px;
-        }
-        
-        .timeline {
-            position: relative;
-            padding-left: 30px;
-            margin-top: 30px;
-        }
-        
-        .timeline:before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: var(--secondary-color);
-        }
-        
-        .timeline-item {
-            position: relative;
-            margin-bottom: 30px;
-            padding-left: 30px;
-        }
-        
-        .timeline-item:before {
-            content: '';
-            position: absolute;
-            left: -36px;
-            top: 5px;
-            width: 12px;
-            height: 12px;
-            background: var(--secondary-color);
-            border-radius: 50%;
-        }
-        
-        .timeline-date {
-            font-weight: 600;
-            color: var(--secondary-color);
-            margin-bottom: 5px;
-        }
-        
-        .project-highlight {
-            background: linear-gradient(135deg, rgba(201, 169, 110, 0.05) 0%, rgba(201, 169, 110, 0.02) 100%);
-            border-left: 4px solid var(--secondary-color);
-            padding: 25px;
-            border-radius: var(--border-radius);
-            margin: 30px 0;
-        }
-        
-        .download-card {
-            background: white;
-            border-radius: var(--border-radius);
-            padding: 30px;
-            box-shadow: var(--shadow);
-            text-align: center;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            transition: var(--transition);
-            height: 100%;
-        }
-        
-        .download-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-hover);
-        }
-        
-        .download-icon {
-            font-size: 3rem;
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-        }
-        
-        .brochure-btn {
-            width: 100%;
-            margin-top: 20px;
-        }
-        
-        .swiper-button-next,
-        .swiper-button-prev {
-            color: white;
-            background: rgba(0, 0, 0, 0.3);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            backdrop-filter: blur(10px);
-        }
-        
-        .swiper-button-next:after,
-        .swiper-button-prev:after {
-            font-size: 1.5rem;
-        }
-        
-        .swiper-pagination-bullet {
-            background: white;
-            opacity: 0.5;
-            width: 12px;
-            height: 12px;
-        }
-        
-        .swiper-pagination-bullet-active {
-            background: var(--secondary-color);
-            opacity: 1;
-        }
-
-        /* ===== Print Styles ===== */
-        @media print {
-            .no-print {
-                display: none !important;
+        @media (max-width: 576px) {
+            .btn-group-responsive {
+                flex-direction: column;
+                align-items: stretch;
             }
             
-            .hero-section {
-                background: none !important;
-                color: black !important;
-                min-height: auto;
-            }
-            
-            .btn, .mobile-bottom-nav, .back-to-top, .whatsapp-float {
-                display: none !important;
+            .btn-group-responsive .btn {
+                width: 100%;
+                justify-content: center;
             }
         }
 
-        /* ===== Accessibility Improvements ===== */
+        /* ===== Accessability ===== */
         .sr-only {
             position: absolute;
             width: 1px;
@@ -1322,63 +1068,11 @@
             border: 0;
         }
         
-        /* ===== Focus Styles for Accessibility ===== */
         a:focus,
         button:focus,
-        .btn:focus,
-        .floorplan-tab:focus {
+        .btn:focus {
             outline: 2px solid var(--secondary-color);
             outline-offset: 2px;
-        }
-
-        /* ===== Sticky Quick Links ===== */
-        .quick-links-sidebar {
-            position: sticky;
-            top: 120px;
-            background: white;
-            border-radius: var(--border-radius);
-            padding: 25px;
-            box-shadow: var(--shadow);
-            z-index: 10;
-        }
-        
-        .quick-links-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--light-gray);
-        }
-        
-        .quick-link {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 12px 15px;
-            margin-bottom: 10px;
-            border-radius: 8px;
-            transition: var(--transition);
-            color: var(--gray-color);
-            text-decoration: none;
-        }
-        
-        .quick-link:hover,
-        .quick-link.active {
-            background: rgba(201, 169, 110, 0.1);
-            color: var(--secondary-color);
-        }
-        
-        .quick-link i {
-            width: 20px;
-            text-align: center;
-        }
-        
-        @media (max-width: 992px) {
-            .quick-links-sidebar {
-                position: static;
-                margin-bottom: 30px;
-            }
         }
     </style>
 </head>
@@ -1388,14 +1082,7 @@
         <div class="loader">
             <div class="loader-inner"></div>
         </div>
-        <div class="preloader-text">NARODA GROUP</div>
-    </div>
-
-    <!-- Loading Overlay -->
-    <div class="loading-overlay">
-        <div class="spinner-border text-gold" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
+        <div class="preloader-text">NARODA LANDMARK</div>
     </div>
 
     <!-- Back to Top Button -->
@@ -1404,7 +1091,7 @@
     </button>
 
     <!-- WhatsApp Float -->
-    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <a href="https://wa.me/917405133695" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -1419,72 +1106,77 @@
                 <span>Naroda <span class="gold-text">Group</span></span>
             </a>
             
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="index.html" data-i18n="nav.home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
+                        <a class="nav-link active" href="about.html" aria-current="page" data-i18n="nav.about">About</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" id="projectsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="projectsDropdown" role="button" 
+                           data-bs-toggle="dropdown" aria-expanded="false" data-i18n="nav.projects">
                             Projects
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="projectsDropdown">
-                            <li><a class="dropdown-item active" href="projects-landmark.html">Naroda Landmark</a></li>
-                            <li><a class="dropdown-item" href="projects-irish.html">Naroda Irish</a></li>
+                            <li><a class="dropdown-item" href="projects-landmark.html" data-i18n="nav.landmark">Naroda Landmark</a></li>
+                            <li><a class="dropdown-item" href="projects-irish.html" data-i18n="nav.irish">Naroda Irish</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="projects.html">All Projects</a></li>
+                            <li><a class="dropdown-item" href="projects.html" data-i18n="nav.all_projects">All Projects</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="propertiesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="propertiesDropdown" role="button" 
+                           data-bs-toggle="dropdown" aria-expanded="false" data-i18n="nav.properties">
                             Properties
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="propertiesDropdown">
-                            <li><a class="dropdown-item" href="properties.html">Buy</a></li>
-                            <li><a class="dropdown-item" href="properties-rent.html">Rent</a></li>
+                            <li><a class="dropdown-item" href="properties.html" data-i18n="nav.buy">Buy</a></li>
+                            <li><a class="dropdown-item" href="properties-rent.html" data-i18n="nav.rent">Rent</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="property-detail.html">Property Details</a></li>
+                            <li><a class="dropdown-item" href="property-detail.html" data-i18n="nav.property_details">Property Details</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="gallery.html">Gallery</a>
+                        <a class="nav-link" href="gallery.html" data-i18n="nav.gallery">Gallery</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" role="button" 
+                           data-bs-toggle="dropdown" aria-expanded="false" data-i18n="nav.more">
                             More
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="moreDropdown">
-                            <li><a class="dropdown-item" href="blog.html">Blog</a></li>
-                            <li><a class="dropdown-item" href="news.html">News</a></li>
-                            <li><a class="dropdown-item" href="careers.html">Careers</a></li>
-                            <li><a class="dropdown-item" href="team.html">Our Team</a></li>
+                            <li><a class="dropdown-item" href="blog.html" data-i18n="nav.blog">Blog</a></li>
+                            <li><a class="dropdown-item" href="news.html" data-i18n="nav.news">News</a></li>
+                            <li><a class="dropdown-item" href="careers.html" data-i18n="nav.careers">Careers</a></li>
+                            <li><a class="dropdown-item" href="team.html" data-i18n="nav.team">Our Team</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
-                            <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+                            <li><a class="dropdown-item" href="faq.html" data-i18n="nav.faq">FAQ</a></li>
+                            <li><a class="dropdown-item" href="contact.html" data-i18n="nav.contact">Contact</a></li>
                         </ul>
                     </li>
                 </ul>
                 
                 <div class="d-flex align-items-center ms-lg-3 mt-3 mt-lg-0">
                     <div class="dropdown">
-                        <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fas fa-globe me-1" aria-hidden="true"></i> EN
+                        <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" 
+                                id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-globe me-1" aria-hidden="true"></i> <span id="currentLanguage">EN</span>
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="languageDropdown">
-                            <li><a class="dropdown-item" href="#" lang="en">English</a></li>
-                            <li><a class="dropdown-item" href="#" lang="hi">Hindi</a></li>
-                            <li><a class="dropdown-item" href="#" lang="gu">Gujarati</a></li>
+                            <li><a class="dropdown-item language-selector" href="#" data-lang="en">English</a></li>
+                            <li><a class="dropdown-item language-selector" href="#" data-lang="hi">हिंदी (Hindi)</a></li>
+                            <li><a class="dropdown-item language-selector" href="#" data-lang="gu">ગુજરાતી (Gujarati)</a></li>
                         </ul>
                     </div>
                     <a href="login.html" class="btn btn-outline-light ms-3">
-                        <i class="fas fa-user me-2" aria-hidden="true"></i> Login
+                        <i class="fas fa-user me-2" aria-hidden="true"></i> <span data-i18n="nav.login">Login</span>
                     </a>
                 </div>
             </div>
@@ -1492,59 +1184,58 @@
     </nav>
 
     <!-- Mobile Bottom Navigation -->
-    <div class="mobile-bottom-nav no-print">
+    <div class="mobile-bottom-nav">
         <a href="index.html" class="mobile-nav-item">
-            <i class="fas fa-home"></i>
-            <span>Home</span>
+            <i class="fas fa-home" aria-hidden="true"></i>
+            <span data-i18n="nav.home">Home</span>
         </a>
-        <a href="projects.html" class="mobile-nav-item active">
-            <i class="fas fa-building"></i>
-            <span>Projects</span>
+        <a href="projects.html" class="mobile-nav-item">
+            <i class="fas fa-building" aria-hidden="true"></i>
+            <span data-i18n="nav.projects">Projects</span>
         </a>
         <a href="properties.html" class="mobile-nav-item">
-            <i class="fas fa-search"></i>
-            <span>Search</span>
+            <i class="fas fa-search" aria-hidden="true"></i>
+            <span data-i18n="nav.search">Search</span>
         </a>
         <a href="contact.html" class="mobile-nav-item">
-            <i class="fas fa-phone"></i>
-            <span>Contact</span>
+            <i class="fas fa-phone" aria-hidden="true"></i>
+            <span data-i18n="nav.contact">Contact</span>
         </a>
         <a href="login.html" class="mobile-nav-item">
-            <i class="fas fa-user"></i>
-            <span>Account</span>
+            <i class="fas fa-user" aria-hidden="true"></i>
+            <span data-i18n="nav.account">Account</span>
         </a>
     </div>
 
     <!-- Main Content -->
-    <main>
+    <main class="language-content">
         <!-- Hero Section -->
         <section class="hero-section">
             <div class="container">
                 <div class="row min-vh-80 align-items-center">
                     <div class="col-lg-8">
                         <div class="hero-badge" data-aos="fade-up">
-                            <i class="fas fa-award" aria-hidden="true"></i> Ahmedabad's Premier Commercial Complex
+                            <i class="fas fa-award" aria-hidden="true"></i> <span data-i18n="hero.badge">Ahmedabad's Premier Commercial Complex</span>
                         </div>
                         
                         <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">
-                            <span class="gold-text">Naroda Landmark</span><br>
-                            Redefining Commercial Excellence
+                            <span class="gold-text" data-i18n="hero.title1">Naroda Business</span><br>
+                            <span data-i18n="hero.title2">Landmark</span>
                         </h1>
                         
-                        <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
-                            Grade A commercial complex with state-of-the-art amenities, premium office spaces, 
-                            and retail outlets. Designed for modern businesses to thrive.
+                        <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200" data-i18n="hero.subtitle">
+                            Presenting Naroda Business Landmark - an address that not only represents your passion but also furnishes a considerable hike to your profession. Thoughtfully adorned and strategically located at Naroda.
                         </p>
                         
                         <div class="btn-group-responsive" data-aos="fade-up" data-aos-delay="300">
                             <a href="#pricing" class="btn btn-gold btn-lg">
-                                <i class="fas fa-tag me-2" aria-hidden="true"></i> View Pricing
+                                <i class="fas fa-tag me-2" aria-hidden="true"></i> <span data-i18n="hero.btn1">View Pricing</span>
                             </a>
-                            <a href="#gallery" class="btn btn-outline-light btn-lg">
-                                <i class="fas fa-images me-2" aria-hidden="true"></i> View Gallery
+                            <a href="#contact" class="btn btn-outline-light btn-lg">
+                                <i class="fas fa-calendar-alt me-2" aria-hidden="true"></i> <span data-i18n="hero.btn2">Schedule Visit</span>
                             </a>
-                            <a href="contact.html" class="btn btn-emerald btn-lg">
-                                <i class="fas fa-calendar-alt me-2" aria-hidden="true"></i> Schedule Visit
+                            <a href="tel:+917405133695" class="btn btn-emerald btn-lg">
+                                <i class="fas fa-phone me-2" aria-hidden="true"></i> <span data-i18n="hero.btn3">Call Now</span>
                             </a>
                         </div>
                     </div>
@@ -1559,26 +1250,26 @@
                     <div class="row g-4">
                         <div class="col-md-3 col-6" data-aos="fade-up">
                             <div class="stat-item">
-                                <div class="stat-number">5</div>
-                                <div class="stat-text">Storeys</div>
+                                <div class="stat-number">9</div>
+                                <div class="stat-text" data-i18n="stats.storeys">Storeys</div>
                             </div>
                         </div>
                         <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="100">
                             <div class="stat-item">
                                 <div class="stat-number">2.5L+</div>
-                                <div class="stat-text">Sq. Ft. Area</div>
+                                <div class="stat-text" data-i18n="stats.area">Sq. Ft. Area</div>
                             </div>
                         </div>
                         <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="200">
                             <div class="stat-item">
                                 <div class="stat-number">200+</div>
-                                <div class="stat-text">Parking Spaces</div>
+                                <div class="stat-text" data-i18n="stats.parking">Parking Spaces</div>
                             </div>
                         </div>
                         <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="300">
                             <div class="stat-item">
                                 <div class="stat-number">85%</div>
-                                <div class="stat-text">Sold Out</div>
+                                <div class="stat-text" data-i18n="stats.sold">Sold Out</div>
                             </div>
                         </div>
                     </div>
@@ -1592,101 +1283,63 @@
                 <div class="row mb-5">
                     <div class="col-lg-8 mx-auto text-center">
                         <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
-                            Project Overview
+                            <span data-i18n="overview.badge">Project Overview</span>
                         </span>
                         <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
-                            About <span class="gold-text">Naroda Landmark</span>
+                            <span data-i18n="overview.title1">About</span> <span class="gold-text" data-i18n="overview.title2">Naroda Landmark</span>
                         </h2>
-                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200">
-                            A landmark commercial development designed for the modern business era
+                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200" data-i18n="overview.subtitle">
+                            An address that elevates the stature of your trade
                         </p>
                     </div>
                 </div>
                 
-                <div class="row">
-                    <!-- Quick Links Sidebar -->
-                    <div class="col-lg-3 d-none d-lg-block">
-                        <div class="quick-links-sidebar" data-aos="fade-right">
-                            <div class="quick-links-title">Quick Navigation</div>
-                            <a href="#overview" class="quick-link active">
-                                <i class="fas fa-info-circle"></i> Overview
-                            </a>
-                            <a href="#amenities" class="quick-link">
-                                <i class="fas fa-star"></i> Amenities
-                            </a>
-                            <a href="#floorplans" class="quick-link">
-                                <i class="fas fa-layer-group"></i> Floor Plans
-                            </a>
-                            <a href="#location" class="quick-link">
-                                <i class="fas fa-map-marker-alt"></i> Location
-                            </a>
-                            <a href="#gallery" class="quick-link">
-                                <i class="fas fa-images"></i> Gallery
-                            </a>
-                            <a href="#pricing" class="quick-link">
-                                <i class="fas fa-tag"></i> Pricing
-                            </a>
-                            <a href="#timeline" class="quick-link">
-                                <i class="fas fa-calendar-alt"></i> Timeline
-                            </a>
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-up">
+                        <div class="overview-image">
+                            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                                 alt="Naroda Landmark Building" loading="lazy">
                         </div>
                     </div>
                     
-                    <div class="col-lg-9">
-                        <div class="row align-items-center">
-                            <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-up">
-                                <div class="overview-image">
-                                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-                                         alt="Naroda Landmark Building" loading="lazy">
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="mb-4" data-i18n="overview.heading">Premier Commercial Destination</h3>
+                        <p class="text-muted mb-4" data-i18n="overview.text1">
+                            The unique structure sets the tone for a grand entrance with a well-studded lobby and a frame of premier commercial assets that allows both former retail commercial teams to launch enterprises.
+                        </p>
+                        
+                        <p class="text-muted mb-4" data-i18n="overview.text2">
+                            With its contemporary architecture, sustainable design, and world-class facilities, Naroda Landmark provides the perfect environment for productivity, collaboration, and business growth.
+                        </p>
+                        
+                        <div class="overview-features">
+                            <div class="overview-feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-ruler-combined" aria-hidden="true"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-2" data-i18n="overview.feature1.title">Scalable Spaces</h5>
+                                    <p class="text-muted mb-0" data-i18n="overview.feature1.text">Office spaces from 520 sq. ft. onwards</p>
                                 </div>
                             </div>
                             
-                            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                                <h3 class="mb-4">Premier Commercial Destination</h3>
-                                <p class="text-muted mb-4">
-                                    Naroda Landmark stands as Ahmedabad's most prestigious commercial address, 
-                                    offering Grade A office spaces, premium retail outlets, and exceptional 
-                                    amenities. Strategically located in the heart of the city's business district, 
-                                    this landmark development is designed to cater to the evolving needs of 
-                                    modern businesses.
-                                </p>
-                                
-                                <p class="text-muted mb-4">
-                                    With its contemporary architecture, sustainable design, and world-class 
-                                    facilities, Naroda Landmark provides the perfect environment for 
-                                    productivity, collaboration, and business growth.
-                                </p>
-                                
-                                <div class="overview-features">
-                                    <div class="overview-feature">
-                                        <div class="feature-icon">
-                                            <i class="fas fa-building" aria-hidden="true"></i>
-                                        </div>
-                                        <div>
-                                            <h5 class="mb-2">Modern Architecture</h5>
-                                            <p class="text-muted mb-0">Contemporary design with glass facade and energy-efficient features</p>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="overview-feature">
-                                        <div class="feature-icon">
-                                            <i class="fas fa-leaf" aria-hidden="true"></i>
-                                        </div>
-                                        <div>
-                                            <h5 class="mb-2">Green Building</h5>
-                                            <p class="text-muted mb-0">IGBC Green Certified with sustainable practices and energy conservation</p>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="overview-feature">
-                                        <div class="feature-icon">
-                                            <i class="fas fa-shield-alt" aria-hidden="true"></i>
-                                        </div>
-                                        <div>
-                                            <h5 class="mb-2">RERA Approved</h5>
-                                            <p class="text-muted mb-0">Fully compliant with RERA regulations ensuring complete transparency</p>
-                                        </div>
-                                    </div>
+                            <div class="overview-feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-building" aria-hidden="true"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-2" data-i18n="overview.feature2.title">Elegant Design</h5>
+                                    <p class="text-muted mb-0" data-i18n="overview.feature2.text">Elegantly designed with long facade architecture</p>
+                                </div>
+                            </div>
+                            
+                            <div class="overview-feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-2" data-i18n="overview.feature3.title">RERA Approved</h5>
+                                    <p class="text-muted mb-0" data-i18n="overview.feature3.text">Fully compliant with RERA regulations</p>
                                 </div>
                             </div>
                         </div>
@@ -1701,12 +1354,12 @@
                 <div class="row mb-5">
                     <div class="col-lg-8 mx-auto text-center">
                         <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
-                            World-Class Amenities
+                            <span data-i18n="amenities.badge">Specifications</span>
                         </span>
                         <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
-                            Premium <span class="gold-text">Facilities</span>
+                            <span data-i18n="amenities.title1">Premium</span> <span class="gold-text" data-i18n="amenities.title2">Facilities</span>
                         </h2>
-                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200">
+                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200" data-i18n="amenities.subtitle">
                             Designed to enhance productivity and business experience
                         </p>
                     </div>
@@ -1716,12 +1369,11 @@
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                         <div class="amenity-card">
                             <div class="amenity-icon">
-                                <i class="fas fa-wifi" aria-hidden="true"></i>
+                                <i class="fas fa-building" aria-hidden="true"></i>
                             </div>
-                            <h4 class="mb-3">High-Speed Connectivity</h4>
-                            <p class="text-muted mb-0">
-                                Fiber optic internet, dedicated leased lines, and seamless connectivity 
-                                for uninterrupted business operations.
+                            <h4 class="mb-3" data-i18n="amenities.card1.title">Earthquake Resistant</h4>
+                            <p class="text-muted mb-0" data-i18n="amenities.card1.text">
+                                RCC structure designed to withstand seismic activity
                             </p>
                         </div>
                     </div>
@@ -1729,12 +1381,11 @@
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
                         <div class="amenity-card">
                             <div class="amenity-icon">
-                                <i class="fas fa-car" aria-hidden="true"></i>
+                                <i class="fas fa-bolt" aria-hidden="true"></i>
                             </div>
-                            <h4 class="mb-3">Ample Parking</h4>
-                            <p class="text-muted mb-0">
-                                Multi-level automated parking for 200+ vehicles with EV charging stations 
-                                and valet services.
+                            <h4 class="mb-3" data-i18n="amenities.card2.title">24/7 Power & Water</h4>
+                            <p class="text-muted mb-0" data-i18n="amenities.card2.text">
+                                24 hours water and electric supply with generator backup
                             </p>
                         </div>
                     </div>
@@ -1744,10 +1395,9 @@
                             <div class="amenity-icon">
                                 <i class="fas fa-shield-alt" aria-hidden="true"></i>
                             </div>
-                            <h4 class="mb-3">24/7 Security</h4>
-                            <p class="text-muted mb-0">
-                                Advanced security systems with CCTV surveillance, biometric access, 
-                                and professional security personnel.
+                            <h4 class="mb-3" data-i18n="amenities.card3.title">Security Systems</h4>
+                            <p class="text-muted mb-0" data-i18n="amenities.card3.text">
+                                CCTV enabled premise ensuring safety & security
                             </p>
                         </div>
                     </div>
@@ -1755,12 +1405,11 @@
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
                         <div class="amenity-card">
                             <div class="amenity-icon">
-                                <i class="fas fa-snowflake" aria-hidden="true"></i>
+                                <i class="fas fa-parking" aria-hidden="true"></i>
                             </div>
-                            <h4 class="mb-3">Central AC</h4>
-                            <p class="text-muted mb-0">
-                                Energy-efficient central air conditioning with individual zone control 
-                                for optimal comfort and cost savings.
+                            <h4 class="mb-3" data-i18n="amenities.card4.title">Ample Parking</h4>
+                            <p class="text-muted mb-0" data-i18n="amenities.card4.text">
+                                Basement stack parking for hassle-free vehicle storage
                             </p>
                         </div>
                     </div>
@@ -1768,12 +1417,11 @@
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
                         <div class="amenity-card">
                             <div class="amenity-icon">
-                                <i class="fas fa-utensils" aria-hidden="true"></i>
+                                <i class="fas fa-elevator" aria-hidden="true"></i>
                             </div>
-                            <h4 class="mb-3">Food Court & Cafeteria</h4>
-                            <p class="text-muted mb-0">
-                                Premium food court with multiple cuisine options, coffee shops, 
-                                and fine dining restaurants.
+                            <h4 class="mb-3" data-i18n="amenities.card5.title">High-End Elevators</h4>
+                            <p class="text-muted mb-0" data-i18n="amenities.card5.text">
+                                1 stretcher & 2 passenger elevators for convenience
                             </p>
                         </div>
                     </div>
@@ -1781,13 +1429,37 @@
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
                         <div class="amenity-card">
                             <div class="amenity-icon">
-                                <i class="fas fa-dumbbell" aria-hidden="true"></i>
+                                <i class="fas fa-fire-extinguisher" aria-hidden="true"></i>
                             </div>
-                            <h4 class="mb-3">Fitness Center</h4>
-                            <p class="text-muted mb-0">
-                                State-of-the-art gym, yoga studio, and wellness center for employee 
-                                health and well-being.
+                            <h4 class="mb-3" data-i18n="amenities.card6.title">Fire Safety</h4>
+                            <p class="text-muted mb-0" data-i18n="amenities.card6.text">
+                                Complete fire fighting system installed
                             </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Additional Specifications -->
+                <div class="row mt-5">
+                    <div class="col-lg-10 mx-auto">
+                        <div class="project-highlight">
+                            <h5 class="gold-text mb-3"><i class="fas fa-list-check me-2" aria-hidden="true"></i> <span data-i18n="amenities.additional.title">Additional Specifications</span></h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul class="text-muted">
+                                        <li data-i18n="amenities.additional.item1">• Premium quality flooring</li>
+                                        <li data-i18n="amenities.additional.item2">• Premium quality rolling shutter with oil paint</li>
+                                        <li data-i18n="amenities.additional.item3">• AC points provided</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="text-muted">
+                                        <li data-i18n="amenities.additional.item4">• Personal toilet for each shop & office</li>
+                                        <li data-i18n="amenities.additional.item5">• Generator backup for common utilities</li>
+                                        <li data-i18n="amenities.additional.item6">• Vitrified tile flooring</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1800,22 +1472,22 @@
                 <div class="row mb-5">
                     <div class="col-lg-8 mx-auto text-center">
                         <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
-                            Floor Plans
+                            <span data-i18n="floorplans.badge">Floor Plans</span>
                         </span>
                         <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
-                            Smart <span class="gold-text">Layouts</span>
+                            <span data-i18n="floorplans.title1">Smart</span> <span class="gold-text" data-i18n="floorplans.title2">Layouts</span>
                         </h2>
-                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200">
-                            Flexible office spaces designed for maximum efficiency
+                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200" data-i18n="floorplans.subtitle">
+                            Flexible office and retail spaces designed for maximum efficiency
                         </p>
                     </div>
                 </div>
                 
                 <div class="floorplan-tabs" data-aos="fade-up">
-                    <div class="floorplan-tab active" data-floor="ground">Ground Floor</div>
-                    <div class="floorplan-tab" data-floor="first">First Floor</div>
-                    <div class="floorplan-tab" data-floor="second">Second Floor</div>
-                    <div class="floorplan-tab" data-floor="penthouse">Penthouse</div>
+                    <div class="floorplan-tab active" data-floor="ground"><span data-i18n="floorplans.tab1">Ground Floor</span></div>
+                    <div class="floorplan-tab" data-floor="first"><span data-i18n="floorplans.tab2">1st to 5th Floor</span></div>
+                    <div class="floorplan-tab" data-floor="sixth"><span data-i18n="floorplans.tab3">6th & 7th Floor</span></div>
+                    <div class="floorplan-tab" data-floor="eighth"><span data-i18n="floorplans.tab4">8th & 9th Floor</span></div>
                 </div>
                 
                 <div class="floorplan-content" data-aos="fade-up" data-aos-delay="100">
@@ -1826,27 +1498,143 @@
                     
                     <div class="floorplan-specs">
                         <div class="spec-item">
-                            <div class="spec-value">500-5000</div>
-                            <div class="spec-label">Office Size (Sq. Ft.)</div>
+                            <div class="spec-value">520+</div>
+                            <div class="spec-label" data-i18n="floorplans.spec1">Office Size (Sq. Ft.)</div>
                         </div>
                         <div class="spec-item">
-                            <div class="spec-value">3.5m</div>
-                            <div class="spec-label">Floor Height</div>
+                            <div class="spec-value">12+</div>
+                            <div class="spec-label" data-i18n="floorplans.spec2">Shops per Floor</div>
                         </div>
                         <div class="spec-item">
-                            <div class="spec-value">80%</div>
-                            <div class="spec-label">Efficiency Ratio</div>
+                            <div class="spec-value">3</div>
+                            <div class="spec-label" data-i18n="floorplans.spec3">Elevators</div>
                         </div>
                         <div class="spec-item">
-                            <div class="spec-value">4</div>
-                            <div class="spec-label">Lifts</div>
+                            <div class="spec-value">9</div>
+                            <div class="spec-label" data-i18n="floorplans.spec4">Total Floors</div>
                         </div>
                     </div>
                     
-                    <div class="text-center mt-4">
-                        <a href="#" class="btn btn-gold" id="downloadFloorplans">
-                            <i class="fas fa-download me-2" aria-hidden="true"></i> Download Floor Plans
-                        </a>
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <div class="project-highlight">
+                                <h6 class="gold-text mb-2" data-i18n="floorplans.feature1.title">Shop Features</h6>
+                                <ul class="text-muted mb-0">
+                                    <li data-i18n="floorplans.feature1.item1">• Rolling shutters fixed on entrance</li>
+                                    <li data-i18n="floorplans.feature1.item2">• Provision for signage on ground floor</li>
+                                    <li data-i18n="floorplans.feature1.item3">• Gas connection for restaurant kitchen</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="project-highlight">
+                                <h6 class="gold-text mb-2" data-i18n="floorplans.feature2.title">Smart Planning</h6>
+                                <p class="text-muted mb-0" data-i18n="floorplans.feature2.text">
+                                    Smartly planned retail spaces include designed area for restaurant that extend to first level and shops on ground level.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Business Types -->
+        <section class="business-section" id="business">
+            <div class="container">
+                <div class="row mb-5">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
+                            <span data-i18n="business.badge">Ideal For</span>
+                        </span>
+                        <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
+                            <span data-i18n="business.title1">A Business Address</span> <span class="gold-text" data-i18n="business.title2">Suited For All</span>
+                        </h2>
+                    </div>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-md-3 col-6" data-aos="fade-up">
+                        <div class="business-type">
+                            <div class="business-icon">
+                                <i class="fas fa-store" aria-hidden="true"></i>
+                            </div>
+                            <h5 data-i18n="business.type1">Showrooms</h5>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="business-type">
+                            <div class="business-icon">
+                                <i class="fas fa-university" aria-hidden="true"></i>
+                            </div>
+                            <h5 data-i18n="business.type2">Bank - ATM</h5>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="business-type">
+                            <div class="business-icon">
+                                <i class="fas fa-utensils" aria-hidden="true"></i>
+                            </div>
+                            <h5 data-i18n="business.type3">Restaurant - Café</h5>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="300">
+                        <div class="business-type">
+                            <div class="business-icon">
+                                <i class="fas fa-hospital" aria-hidden="true"></i>
+                            </div>
+                            <h5 data-i18n="business.type4">Dispensary</h5>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="400">
+                        <div class="business-type">
+                            <div class="business-icon">
+                                <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                            </div>
+                            <h5 data-i18n="business.type5">Education Institute</h5>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="500">
+                        <div class="business-type">
+                            <div class="business-icon">
+                                <i class="fas fa-chart-line" aria-hidden="true"></i>
+                            </div>
+                            <h5 data-i18n="business.type6">Financial Institutions</h5>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="600">
+                        <div class="business-type">
+                            <div class="business-icon">
+                                <i class="fas fa-hotel" aria-hidden="true"></i>
+                            </div>
+                            <h5 data-i18n="business.type7">Hotel</h5>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="700">
+                        <div class="business-type">
+                            <div class="business-icon">
+                                <i class="fas fa-stethoscope" aria-hidden="true"></i>
+                            </div>
+                            <h5 data-i18n="business.type8">Hospital</h5>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-5">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="project-highlight text-center">
+                            <h5 class="gold-text mb-3" data-i18n="business.range.title">Space Availability</h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h4 class="gold-text" data-i18n="business.range.office">Office Spaces</h4>
+                                    <p class="text-muted" data-i18n="business.range.officeText">Start from 520 sq. ft. onwards</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <h4 class="gold-text" data-i18n="business.range.retail">Retail Shops</h4>
+                                    <p class="text-muted" data-i18n="business.range.retailText">Start from 500 sq. ft. onwards</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1858,12 +1646,12 @@
                 <div class="row mb-5">
                     <div class="col-lg-8 mx-auto text-center">
                         <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
-                            Location Advantage
+                            <span data-i18n="location.badge">Location Advantage</span>
                         </span>
                         <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
-                            Prime <span class="gold-text">Location</span>
+                            <span data-i18n="location.title1">Prime</span> <span class="gold-text" data-i18n="location.title2">Location</span>
                         </h2>
-                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200">
+                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200" data-i18n="location.subtitle">
                             Strategically located in Ahmedabad's fastest-growing commercial corridor
                         </p>
                     </div>
@@ -1872,102 +1660,92 @@
                 <div class="row g-4">
                     <div class="col-lg-6" data-aos="fade-right">
                         <div class="location-card">
-                            <h3 class="mb-4">Connectivity & Accessibility</h3>
-                            <p class="text-muted mb-4">
-                                Naroda Landmark enjoys unparalleled connectivity with easy access to 
-                                major business hubs, transportation networks, and essential services. 
-                                Located just 15 minutes from the airport and 20 minutes from the railway 
-                                station.
+                            <h3 class="mb-4" data-i18n="location.connectivity.title">Connectivity & Accessibility</h3>
+                            <p class="text-muted mb-4" data-i18n="location.connectivity.text">
+                                Naroda is emerging as the primary commercial hub with progressive changes seen through high-scale infrastructure projects transforming the entire area.
                             </p>
                             
                             <div class="location-feature">
                                 <div class="location-icon">
-                                    <i class="fas fa-plane" aria-hidden="true"></i>
+                                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                                 </div>
                                 <div>
-                                    <h5 class="mb-1">Ahmedabad Airport</h5>
-                                    <p class="text-muted mb-0">15 minutes drive | 8 km distance</p>
+                                    <h5 class="mb-1" data-i18n="location.address.title">Site Address</h5>
+                                    <p class="text-muted mb-0" data-i18n="location.address.text">Opp. Naroda Business Hub, Near Shivam Arcade, Naroda Dahegam road, Hanspura, Naroda, Ahmedabad.</p>
                                 </div>
                             </div>
                             
                             <div class="location-feature">
                                 <div class="location-icon">
-                                    <i class="fas fa-train" aria-hidden="true"></i>
+                                    <i class="fas fa-building" aria-hidden="true"></i>
                                 </div>
                                 <div>
-                                    <h5 class="mb-1">Ahmedabad Railway Station</h5>
-                                    <p class="text-muted mb-0">20 minutes drive | 12 km distance</p>
+                                    <h5 class="mb-1" data-i18n="location.business.title">Growing Business Hub</h5>
+                                    <p class="text-muted mb-0" data-i18n="location.business.text">With growing infrastructure, Naroda is becoming the preferred destination for FMCG, FMCD, Manufacturers and other businesses.</p>
                                 </div>
                             </div>
                             
-                            <div class="location-feature">
-                                <div class="location-icon">
-                                    <i class="fas fa-subway" aria-hidden="true"></i>
-                                </div>
-                                <div>
-                                    <h5 class="mb-1">Metro Station</h5>
-                                    <p class="text-muted mb-0">5 minutes walk | 300 meters distance</p>
-                                </div>
-                            </div>
-                            
-                            <div class="location-feature">
-                                <div class="location-icon">
-                                    <i class="fas fa-hospital" aria-hidden="true"></i>
-                                </div>
-                                <div>
-                                    <h5 class="mb-1">Hospitals & Medical Facilities</h5>
-                                    <p class="text-muted mb-0">Multiple premium hospitals within 2 km radius</p>
-                                </div>
+                            <div class="project-highlight mt-4">
+                                <h5 class="gold-text mb-3"><i class="fas fa-chart-line me-2"></i> <span data-i18n="location.investment.title">Investment Potential</span></h5>
+                                <p class="mb-0" data-i18n="location.investment.text">High rental yield and appreciation makes this an excellent investment opportunity in Ahmedabad's fastest-growing commercial area.</p>
                             </div>
                         </div>
                     </div>
                     
                     <div class="col-lg-6" data-aos="fade-left">
                         <div class="location-card">
-                            <h3 class="mb-4">Business Ecosystem</h3>
-                            <p class="text-muted mb-4">
-                                Surrounded by a thriving business ecosystem with corporate offices, 
-                                banks, restaurants, and retail establishments creating a dynamic 
-                                commercial environment.
-                            </p>
+                            <h3 class="mb-4" data-i18n="location.development.title">Development Team</h3>
                             
-                            <div class="mb-4">
-                                <h5 class="mb-3">Nearby Business Hubs</h5>
-                                <div class="row g-2">
-                                    <div class="col-6">
-                                        <div class="d-flex align-items-center mb-2">
-                                            <i class="fas fa-circle text-gold me-2" style="font-size: 0.5rem;"></i>
-                                            <span>Corporate Park</span>
-                                        </div>
-                                        <div class="d-flex align-items-center mb-2">
-                                            <i class="fas fa-circle text-gold me-2" style="font-size: 0.5rem;"></i>
-                                            <span>IT Park</span>
-                                        </div>
-                                        <div class="d-flex align-items-center mb-2">
-                                            <i class="fas fa-circle text-gold me-2" style="font-size: 0.5rem;"></i>
-                                            <span>Financial District</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="d-flex align-items-center mb-2">
-                                            <i class="fas fa-circle text-gold me-2" style="font-size: 0.5rem;"></i>
-                                            <span>SEZ Zone</span>
-                                        </div>
-                                        <div class="d-flex align-items-center mb-2">
-                                            <i class="fas fa-circle text-gold me-2" style="font-size: 0.5rem;"></i>
-                                            <span>Retail Mall</span>
-                                        </div>
-                                        <div class="d-flex align-items-center mb-2">
-                                            <i class="fas fa-circle text-gold me-2" style="font-size: 0.5rem;"></i>
-                                            <span>Exhibition Center</span>
-                                        </div>
-                                    </div>
+                            <div class="location-feature">
+                                <div class="location-icon">
+                                    <i class="fas fa-user-hard-hat" aria-hidden="true"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1" data-i18n="location.developer.title">Developer</h5>
+                                    <p class="text-muted mb-0">SATYASANKALP DEVELOPER</p>
                                 </div>
                             </div>
                             
-                            <div class="project-highlight">
-                                <h5 class="gold-text mb-3"><i class="fas fa-chart-line me-2"></i> Investment Potential</h5>
-                                <p class="mb-0">Expected appreciation of 15-20% annually. High rental yield of 8-10% makes this an excellent investment opportunity.</p>
+                            <div class="location-feature">
+                                <div class="location-icon">
+                                    <i class="fas fa-pencil-ruler" aria-hidden="true"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1" data-i18n="location.architect.title">Architect</h5>
+                                    <p class="text-muted mb-0">M. S. ASSOCIATES, AHMEDABAD</p>
+                                </div>
+                            </div>
+                            
+                            <div class="location-feature">
+                                <div class="location-icon">
+                                    <i class="fas fa-calculator" aria-hidden="true"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1" data-i18n="location.structural.title">Structural Engineer</h5>
+                                    <p class="text-muted mb-0">SHIRELI STRUCTURAL, AHMEDABAD</p>
+                                </div>
+                            </div>
+                            
+                            <div class="location-feature">
+                                <div class="location-icon">
+                                    <i class="fas fa-file-certificate" aria-hidden="true"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-1" data-i18n="location.rera.title">RERA Registration</h5>
+                                    <p class="text-muted mb-0">Registered under Gujarat RERA</p>
+                                    <small class="text-muted">www.gujrera.gujarat.gov.in</small>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <h5 class="mb-3" data-i18n="location.contact.title">Contact Information</h5>
+                                <div class="contact-info">
+                                    <i class="fas fa-phone" aria-hidden="true"></i>
+                                    <div>
+                                        <h6 class="text-primary mb-1" data-i18n="location.contact.phone">Phone Number</h6>
+                                        <p class="mb-0">+91 74051 33695</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1981,63 +1759,41 @@
                 <div class="row mb-5">
                     <div class="col-lg-8 mx-auto text-center">
                         <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
-                            Project Gallery
+                            <span data-i18n="gallery.badge">Project Gallery</span>
                         </span>
                         <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
-                            Visual <span class="gold-text">Journey</span>
+                            <span data-i18n="gallery.title1">Visual</span> <span class="gold-text" data-i18n="gallery.title2">Journey</span>
                         </h2>
-                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200">
+                        <p class="text-muted" data-aos="fade-up" data-aos-delay="200" data-i18n="gallery.subtitle">
                             Explore our premium commercial spaces through images
                         </p>
                     </div>
                 </div>
                 
-                <div class="gallery-container" data-aos="fade-up">
-                    <div class="swiper gallery-slider">
+                <div class="gallery-slider" data-aos="fade-up">
+                    <div class="swiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
                                      alt="Building Exterior" loading="lazy">
-                                <div class="gallery-overlay">
-                                    <h4 class="text-white">Modern Architectural Design</h4>
-                                    <p class="text-white-50">Glass facade with sustainable features</p>
-                                </div>
                             </div>
                             <div class="swiper-slide">
                                 <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80" 
                                      alt="Office Interior" loading="lazy">
-                                <div class="gallery-overlay">
-                                    <h4 class="text-white">Premium Office Spaces</h4>
-                                    <p class="text-white-50">Flexible layouts for modern businesses</p>
-                                </div>
                             </div>
                             <div class="swiper-slide">
                                 <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80" 
                                      alt="Lobby Area" loading="lazy">
-                                <div class="gallery-overlay">
-                                    <h4 class="text-white">Grand Entrance Lobby</h4>
-                                    <p class="text-white-50">Spacious reception with premium finishes</p>
-                                </div>
                             </div>
                             <div class="swiper-slide">
                                 <img src="https://images.unsplash.com/photo-1558036117-15e82a2c9a9a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
                                      alt="Meeting Room" loading="lazy">
-                                <div class="gallery-overlay">
-                                    <h4 class="text-white">Conference Facilities</h4>
-                                    <p class="text-white-50">State-of-the-art meeting rooms</p>
-                                </div>
                             </div>
                         </div>
                         <div class="swiper-button-next" aria-label="Next slide"></div>
                         <div class="swiper-button-prev" aria-label="Previous slide"></div>
                         <div class="swiper-pagination"></div>
                     </div>
-                </div>
-                
-                <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="100">
-                    <a href="gallery.html" class="btn btn-gold">
-                        <i class="fas fa-images me-2" aria-hidden="true"></i> View Full Gallery
-                    </a>
                 </div>
             </div>
         </section>
@@ -2048,12 +1804,12 @@
                 <div class="row mb-5">
                     <div class="col-lg-8 mx-auto text-center">
                         <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
-                            Investment Opportunity
+                            <span data-i18n="pricing.badge">Investment Opportunity</span>
                         </span>
                         <h2 class="text-white" data-aos="fade-up" data-aos-delay="100">
-                            Pricing & <span class="gold-text">Payment Plans</span>
+                            <span data-i18n="pricing.title1">Pricing &</span> <span class="gold-text" data-i18n="pricing.title2">Payment Plans</span>
                         </h2>
-                        <p class="text-white-50" data-aos="fade-up" data-aos-delay="200">
+                        <p class="text-white-50" data-aos="fade-up" data-aos-delay="200" data-i18n="pricing.subtitle">
                             Flexible payment options with attractive returns
                         </p>
                     </div>
@@ -2062,167 +1818,58 @@
                 <div class="row g-4">
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                         <div class="price-card">
-                            <h4 class="mb-3">Office Spaces</h4>
-                            <div class="price-amount">₹ 12,500/sq.ft</div>
-                            <p class="text-white-50 mb-4">Starting Price</p>
+                            <h4 class="mb-3" data-i18n="pricing.card1.title">Office Spaces</h4>
+                            <div class="price-amount" data-i18n="pricing.card1.price">₹ 12,500/sq.ft</div>
+                            <p class="text-white-50 mb-4" data-i18n="pricing.card1.subtitle">Starting Price</p>
                             
                             <ul class="price-details">
-                                <li>500 - 5000 Sq. Ft. Available</li>
-                                <li>Flexible Partition Options</li>
-                                <li>Built-to-Suit Available</li>
-                                <li>Leaseback Option</li>
+                                <li data-i18n="pricing.card1.item1">520 - 5000 Sq. Ft. Available</li>
+                                <li data-i18n="pricing.card1.item2">Flexible Partition Options</li>
+                                <li data-i18n="pricing.card1.item3">Built-to-Suit Available</li>
+                                <li data-i18n="pricing.card1.item4">Leaseback Option</li>
                             </ul>
                             
-                            <a href="contact.html" class="btn btn-gold w-100">
-                                <i class="fas fa-calendar-alt me-2" aria-hidden="true"></i> Book Site Visit
+                            <a href="tel:+917405133695" class="btn btn-gold w-100 mt-3">
+                                <i class="fas fa-phone me-2" aria-hidden="true"></i> <span data-i18n="pricing.card1.button">Call for Details</span>
                             </a>
                         </div>
                     </div>
                     
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
                         <div class="price-card">
-                            <h4 class="mb-3">Retail Shops</h4>
-                            <div class="price-amount">₹ 18,000/sq.ft</div>
-                            <p class="text-white-50 mb-4">Starting Price</p>
+                            <h4 class="mb-3" data-i18n="pricing.card2.title">Retail Shops</h4>
+                            <div class="price-amount" data-i18n="pricing.card2.price">₹ 18,000/sq.ft</div>
+                            <p class="text-white-50 mb-4" data-i18n="pricing.card2.subtitle">Starting Price</p>
                             
                             <ul class="price-details">
-                                <li>Ground Floor Locations</li>
-                                <li>High Street Frontage</li>
-                                <li>Custom Storefronts</li>
-                                <li>Maximum Visibility</li>
+                                <li data-i18n="pricing.card2.item1">Ground Floor Locations</li>
+                                <li data-i18n="pricing.card2.item2">High Street Frontage</li>
+                                <li data-i18n="pricing.card2.item3">Custom Storefronts</li>
+                                <li data-i18n="pricing.card2.item4">Maximum Visibility</li>
                             </ul>
                             
-                            <a href="contact.html" class="btn btn-gold w-100">
-                                <i class="fas fa-store me-2" aria-hidden="true"></i> View Retail Spaces
+                            <a href="tel:+917405133695" class="btn btn-gold w-100 mt-3">
+                                <i class="fas fa-store me-2" aria-hidden="true"></i> <span data-i18n="pricing.card2.button">View Retail Spaces</span>
                             </a>
                         </div>
                     </div>
                     
                     <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
                         <div class="price-card">
-                            <h4 class="mb-3">Payment Plans</h4>
-                            <div class="price-amount">Flexible</div>
-                            <p class="text-white-50 mb-4">Choose Your Plan</p>
+                            <h4 class="mb-3" data-i18n="pricing.card3.title">Payment Plans</h4>
+                            <div class="price-amount" data-i18n="pricing.card3.price">Flexible</div>
+                            <p class="text-white-50 mb-4" data-i18n="pricing.card3.subtitle">Choose Your Plan</p>
                             
                             <ul class="price-details">
-                                <li>20:80 Construction Linked</li>
-                                <li>Flexi Payment - 60 Months</li>
-                                <li>Bank Loans Available</li>
-                                <li>Corporate Discounts</li>
+                                <li data-i18n="pricing.card3.item1">20:80 Construction Linked</li>
+                                <li data-i18n="pricing.card3.item2">Flexi Payment - 60 Months</li>
+                                <li data-i18n="pricing.card3.item3">Bank Loans Available</li>
+                                <li data-i18n="pricing.card3.item4">Corporate Discounts</li>
                             </ul>
                             
-                            <a href="contact.html" class="btn btn-gold w-100">
-                                <i class="fas fa-calculator me-2" aria-hidden="true"></i> Calculate EMI
+                            <a href="tel:+917405133695" class="btn btn-gold w-100 mt-3">
+                                <i class="fas fa-calculator me-2" aria-hidden="true"></i> <span data-i18n="pricing.card3.button">Calculate EMI</span>
                             </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="row mt-5">
-                    <div class="col-lg-10 mx-auto">
-                        <div class="project-highlight" style="background: rgba(255, 255, 255, 0.1);">
-                            <div class="row align-items-center">
-                                <div class="col-md-8">
-                                    <h5 class="gold-text mb-2"><i class="fas fa-percentage me-2" aria-hidden="true"></i> Special Offer</h5>
-                                    <p class="text-white-50 mb-0">Limited period offer: Book now and get 2 years maintenance free + guaranteed rental returns for 3 years.</p>
-                                </div>
-                                <div class="col-md-4 text-md-end">
-                                    <a href="contact.html" class="btn btn-gold">
-                                        <i class="fas fa-gift me-2" aria-hidden="true"></i> Avail Offer
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Download Brochure -->
-        <section class="overview-section">
-            <div class="container">
-                <div class="row g-4">
-                    <div class="col-md-6" data-aos="fade-right">
-                        <div class="download-card">
-                            <div class="download-icon">
-                                <i class="fas fa-file-pdf" aria-hidden="true"></i>
-                            </div>
-                            <h4 class="mb-3">Download Brochure</h4>
-                            <p class="text-muted mb-4">
-                                Get detailed information about Naroda Landmark including specifications, 
-                                floor plans, amenities, and pricing.
-                            </p>
-                            <a href="#" class="btn btn-gold brochure-btn" id="downloadBrochure">
-                                <i class="fas fa-download me-2" aria-hidden="true"></i> Download PDF (5.2 MB)
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-6" data-aos="fade-left">
-                        <div class="download-card">
-                            <div class="download-icon">
-                                <i class="fas fa-video" aria-hidden="true"></i>
-                            </div>
-                            <h4 class="mb-3">Virtual Tour</h4>
-                            <p class="text-muted mb-4">
-                                Experience Naroda Landmark through our immersive virtual tour. 
-                                Explore every corner from the comfort of your home or office.
-                            </p>
-                            <a href="#" class="btn btn-gold brochure-btn" id="virtualTourBtn">
-                                <i class="fas fa-play-circle me-2" aria-hidden="true"></i> Start Virtual Tour
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Timeline -->
-        <section class="overview-section" id="timeline">
-            <div class="container">
-                <div class="row mb-5">
-                    <div class="col-lg-8 mx-auto text-center">
-                        <span class="badge bg-gradient-secondary text-white px-4 py-2 rounded-pill mb-3" data-aos="fade-up">
-                            Project Timeline
-                        </span>
-                        <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
-                            Development <span class="gold-text">Schedule</span>
-                        </h2>
-                    </div>
-                </div>
-                
-                <div class="row">
-                    <div class="col-lg-8 mx-auto" data-aos="fade-up">
-                        <div class="timeline">
-                            <div class="timeline-item">
-                                <div class="timeline-date">January 2023</div>
-                                <h5 class="mb-2">Project Launch</h5>
-                                <p class="text-muted mb-0">Official launch with RERA approval and commencement of construction</p>
-                            </div>
-                            
-                            <div class="timeline-item">
-                                <div class="timeline-date">June 2023</div>
-                                <h5 class="mb-2">Foundation Complete</h5>
-                                <p class="text-muted mb-0">Foundation work completed and structural framework begins</p>
-                            </div>
-                            
-                            <div class="timeline-item">
-                                <div class="timeline-date">December 2023</div>
-                                <h5 class="mb-2">Structure Complete</h5>
-                                <p class="text-muted mb-0">Building structure completed, 60% sold out milestone achieved</p>
-                            </div>
-                            
-                            <div class="timeline-item">
-                                <div class="timeline-date">June 2024</div>
-                                <h5 class="mb-2">Interior Work</h5>
-                                <p class="text-muted mb-0">Interior finishing, façade work, and amenity development begins</p>
-                            </div>
-                            
-                            <div class="timeline-item">
-                                <div class="timeline-date">December 2024</div>
-                                <h5 class="mb-2">Project Completion</h5>
-                                <p class="text-muted mb-0">Final completion and handover of commercial spaces</p>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -2230,27 +1877,26 @@
         </section>
 
         <!-- CTA Section -->
-        <section class="cta-section">
+        <section class="cta-section" id="contact">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 mx-auto text-center">
                         <h2 class="text-white mb-4" data-aos="fade-up">
-                            Ready to <span class="gold-text">Elevate Your Business?</span>
+                            <span data-i18n="cta.title1">Ready to</span> <span class="gold-text" data-i18n="cta.title2">Elevate Your Business?</span>
                         </h2>
-                        <p class="text-white-50 mb-5" data-aos="fade-up" data-aos-delay="100">
-                            Join 50+ premium businesses at Naroda Landmark. Schedule a site visit 
-                            today and experience commercial excellence firsthand.
+                        <p class="text-white-50 mb-5" data-aos="fade-up" data-aos-delay="100" data-i18n="cta.subtitle">
+                            Join premium businesses at Naroda Landmark. Schedule a site visit today and experience commercial excellence firsthand.
                         </p>
                         
                         <div class="btn-group-responsive" data-aos="fade-up" data-aos-delay="200">
-                            <a href="contact.html" class="btn btn-gold btn-lg">
-                                <i class="fas fa-calendar-alt me-2" aria-hidden="true"></i> Schedule Site Visit
+                            <a href="tel:+917405133695" class="btn btn-gold btn-lg">
+                                <i class="fas fa-phone me-2" aria-hidden="true"></i> +91 74051 33695
                             </a>
-                            <a href="tel:+919876543210" class="btn btn-outline-light btn-lg">
-                                <i class="fas fa-phone me-2" aria-hidden="true"></i> Call Now
+                            <a href="https://wa.me/917405133695" class="btn btn-outline-light btn-lg" target="_blank">
+                                <i class="fab fa-whatsapp me-2" aria-hidden="true"></i> <span data-i18n="cta.button2">WhatsApp</span>
                             </a>
-                            <a href="contact.html" class="btn btn-emerald btn-lg">
-                                <i class="fas fa-envelope me-2" aria-hidden="true"></i> Get Quote
+                            <a href="#location" class="btn btn-emerald btn-lg">
+                                <i class="fas fa-map-marker-alt me-2" aria-hidden="true"></i> <span data-i18n="cta.button3">Visit Site</span>
                             </a>
                         </div>
                     </div>
@@ -2270,7 +1916,7 @@
                             Naroda <span class="gold-text">Group</span>
                         </a>
                     </div>
-                    <p class="mb-4">
+                    <p class="mb-4" data-i18n="footer.description">
                         Creating landmark properties that redefine excellence. From premium commercial spaces 
                         to luxury residential living, we build dreams with quality and commitment.
                     </p>
@@ -2288,66 +1934,63 @@
                         <a href="#" class="social-link" aria-label="LinkedIn">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a href="#" class="social-link" aria-label="YouTube">
-                            <i class="fab fa-youtube"></i>
+                        <a href="https://wa.me/917405133695" class="social-link" aria-label="WhatsApp" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
                         </a>
                     </div>
                 </div>
                 
                 <div class="col-lg-2 col-md-6">
-                    <h3 class="footer-title">Quick Links</h3>
+                    <h3 class="footer-title" data-i18n="footer.quick_links">Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
-                        <li><a href="projects.html"><i class="fas fa-chevron-right"></i> Projects</a></li>
-                        <li><a href="properties.html"><i class="fas fa-chevron-right"></i> Properties</a></li>
-                        <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
-                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.home">Home</span></a></li>
+                        <li><a href="#overview"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.project">Project</span></a></li>
+                        <li><a href="#amenities"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.amenities">Amenities</span></a></li>
+                        <li><a href="#floorplans"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.floorplans">Floor Plans</span></a></li>
+                        <li><a href="#location"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.location">Location</span></a></li>
+                        <li><a href="#gallery"><i class="fas fa-chevron-right"></i> <span data-i18n="nav.gallery">Gallery</span></a></li>
                     </ul>
                 </div>
                 
                 <div class="col-lg-3 col-md-6">
-                    <h3 class="footer-title">Our Projects</h3>
+                    <h3 class="footer-title" data-i18n="footer.our_projects">Our Projects</h3>
                     <a href="projects-landmark.html" class="project-mini-card">
-                        <h6 class="text-white mb-1">Naroda Landmark</h6>
-                        <p class="small text-muted mb-0">Premium Commercial Spaces</p>
+                        <h6 class="text-white mb-1" data-i18n="nav.landmark">Naroda Landmark</h6>
+                        <p class="small text-muted mb-0" data-i18n="footer.landmark_desc">Premium Commercial Spaces</p>
                     </a>
                     <a href="projects-irish.html" class="project-mini-card">
-                        <h6 class="text-white mb-1">Naroda Irish</h6>
-                        <p class="small text-muted mb-0">Luxury Residential Living</p>
+                        <h6 class="text-white mb-1" data-i18n="nav.irish">Naroda Irish</h6>
+                        <p class="small text-muted mb-0" data-i18n="footer.irish_desc">Luxury Residential Living</p>
                     </a>
                     <a href="projects.html" class="project-mini-card">
-                        <h6 class="text-white mb-1">View All Projects</h6>
-                        <p class="small text-muted mb-0">Explore our portfolio</p>
+                        <h6 class="text-white mb-1" data-i18n="footer.view_all_projects">View All Projects</h6>
+                        <p class="small text-muted mb-0" data-i18n="footer.explore_portfolio">Explore our portfolio</p>
                     </a>
                 </div>
                 
                 <div class="col-lg-3 col-md-6">
-                    <h3 class="footer-title">Contact Info</h3>
+                    <h3 class="footer-title" data-i18n="footer.contact_info">Contact Info</h3>
                     <div class="contact-info">
                         <i class="fas fa-phone"></i>
                         <div>
-                            <h6 class="text-white mb-1">Phone Number</h6>
-                            <p class="mb-0">+91 98765 43210</p>
-                            <small class="text-muted">Mon - Sat: 10 AM - 7 PM</small>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-info">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h6 class="text-white mb-1">Email Address</h6>
-                            <p class="mb-0">landmark@narodagroup.com</p>
-                            <small class="text-muted">Project-specific inquiries</small>
+                            <h6 class="text-white mb-1" data-i18n="footer.phone">Phone Number</h6>
+                            <p class="mb-0">+91 74051 33695</p>
                         </div>
                     </div>
                     
                     <div class="contact-info">
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
-                            <h6 class="text-white mb-1">Site Address</h6>
-                            <p class="mb-0">Naroda - Bhat Road</p>
-                            <small class="text-muted">Ahmedabad, Gujarat 382330</small>
+                            <h6 class="text-white mb-1" data-i18n="footer.address">Site Address</h6>
+                            <p class="mb-0" data-i18n="footer.address_text">Opp. Naroda Business Hub, Near Shivam Arcade, Naroda Dahegam road, Hanspura, Naroda, Ahmedabad.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <i class="fas fa-file-certificate"></i>
+                        <div>
+                            <h6 class="text-white mb-1" data-i18n="footer.rera">RERA Registration</h6>
+                            <p class="mb-0">www.gujrera.gujarat.gov.in</p>
                         </div>
                     </div>
                 </div>
@@ -2356,12 +1999,10 @@
             <div class="copyright">
                 <div class="row align-items-center">
                     <div class="col-md-6">
-                        <p class="mb-0">&copy; 2025 Naroda Group. All rights reserved.</p>
+                        <p class="mb-0">&copy; 2025 Naroda Landmark. <span data-i18n="footer.rights">All rights reserved.</span></p>
                     </div>
                     <div class="col-md-6 text-md-end">
-                        <a href="privacy.html" class="text-muted me-3">Privacy Policy</a>
-                        <a href="terms.html" class="text-muted me-3">Terms of Service</a>
-                        <a href="rera.html" class="text-muted">RERA: A1234567890</a>
+                        <span class="text-muted me-3" data-i18n="footer.developer">Developer: SATYASANKALP</span>
                     </div>
                 </div>
             </div>
@@ -2374,6 +2015,603 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <!-- Language Translation Data -->
+    <script>
+        const translations = {
+            en: {
+               // Navigation
+                "nav.home": "Home",
+                "nav.about": "About",
+                "nav.projects": "Projects",
+                "nav.landmark": "Naroda Landmark",
+                "nav.irish": "Naroda Irish",
+                "nav.all_projects": "All Projects",
+                "nav.properties": "Properties",
+                "nav.buy": "Buy",
+                "nav.rent": "Rent",
+                "nav.property_details": "Property Details",
+                "nav.gallery": "Gallery",
+                "nav.more": "More",
+                "nav.blog": "Blog",
+                "nav.news": "News",
+                "nav.careers": "Careers",
+                "nav.team": "Our Team",
+                "nav.faq": "FAQ",
+                "nav.contact": "Contact",
+                "nav.login": "Login",
+                "nav.search": "Search",
+                "nav.account": "Account",
+                
+                // Hero Section
+                "hero.badge": "Ahmedabad's Premier Commercial Complex",
+                "hero.title1": "Naroda Business",
+                "hero.title2": "Landmark",
+                "hero.subtitle": "Presenting Naroda Business Landmark - an address that not only represents your passion but also furnishes a considerable hike to your profession. Thoughtfully adorned and strategically located at Naroda.",
+                "hero.btn1": "View Pricing",
+                "hero.btn2": "Schedule Visit",
+                "hero.btn3": "Call Now",
+                
+                // Stats
+                "stats.storeys": "Storeys",
+                "stats.area": "Sq. Ft. Area",
+                "stats.parking": "Parking Spaces",
+                "stats.sold": "Sold Out",
+                
+                // Overview
+                "overview.badge": "Project Overview",
+                "overview.title1": "About",
+                "overview.title2": "Naroda Landmark",
+                "overview.subtitle": "An address that elevates the stature of your trade",
+                "overview.heading": "Premier Commercial Destination",
+                "overview.text1": "The unique structure sets the tone for a grand entrance with a well-studded lobby and a frame of premier commercial assets that allows both former retail commercial teams to launch enterprises.",
+                "overview.text2": "With its contemporary architecture, sustainable design, and world-class facilities, Naroda Landmark provides the perfect environment for productivity, collaboration, and business growth.",
+                "overview.feature1.title": "Scalable Spaces",
+                "overview.feature1.text": "Office spaces from 520 sq. ft. onwards",
+                "overview.feature2.title": "Elegant Design",
+                "overview.feature2.text": "Elegantly designed with long facade architecture",
+                "overview.feature3.title": "RERA Approved",
+                "overview.feature3.text": "Fully compliant with RERA regulations",
+                
+                // Amenities
+                "amenities.badge": "Specifications",
+                "amenities.title1": "Premium",
+                "amenities.title2": "Facilities",
+                "amenities.subtitle": "Designed to enhance productivity and business experience",
+                "amenities.card1.title": "Earthquake Resistant",
+                "amenities.card1.text": "RCC structure designed to withstand seismic activity",
+                "amenities.card2.title": "24/7 Power & Water",
+                "amenities.card2.text": "24 hours water and electric supply with generator backup",
+                "amenities.card3.title": "Security Systems",
+                "amenities.card3.text": "CCTV enabled premise ensuring safety & security",
+                "amenities.card4.title": "Ample Parking",
+                "amenities.card4.text": "Basement stack parking for hassle-free vehicle storage",
+                "amenities.card5.title": "High-End Elevators",
+                "amenities.card5.text": "1 stretcher & 2 passenger elevators for convenience",
+                "amenities.card6.title": "Fire Safety",
+                "amenities.card6.text": "Complete fire fighting system installed",
+                "amenities.additional.title": "Additional Specifications",
+                "amenities.additional.item1": "• Premium quality flooring",
+                "amenities.additional.item2": "• Premium quality rolling shutter with oil paint",
+                "amenities.additional.item3": "• AC points provided",
+                "amenities.additional.item4": "• Personal toilet for each shop & office",
+                "amenities.additional.item5": "• Generator backup for common utilities",
+                "amenities.additional.item6": "• Vitrified tile flooring",
+                
+                // Floor Plans
+                "floorplans.badge": "Floor Plans",
+                "floorplans.title1": "Smart",
+                "floorplans.title2": "Layouts",
+                "floorplans.subtitle": "Flexible office and retail spaces designed for maximum efficiency",
+                "floorplans.tab1": "Ground Floor",
+                "floorplans.tab2": "1st to 5th Floor",
+                "floorplans.tab3": "6th & 7th Floor",
+                "floorplans.tab4": "8th & 9th Floor",
+                "floorplans.spec1": "Office Size (Sq. Ft.)",
+                "floorplans.spec2": "Shops per Floor",
+                "floorplans.spec3": "Elevators",
+                "floorplans.spec4": "Total Floors",
+                "floorplans.feature1.title": "Shop Features",
+                "floorplans.feature1.item1": "• Rolling shutters fixed on entrance",
+                "floorplans.feature1.item2": "• Provision for signage on ground floor",
+                "floorplans.feature1.item3": "• Gas connection for restaurant kitchen",
+                "floorplans.feature2.title": "Smart Planning",
+                "floorplans.feature2.text": "Smartly planned retail spaces include designed area for restaurant that extend to first level and shops on ground level.",
+                
+                // Business Types
+                "business.badge": "Ideal For",
+                "business.title1": "A Business Address",
+                "business.title2": "Suited For All",
+                "business.type1": "Showrooms",
+                "business.type2": "Bank - ATM",
+                "business.type3": "Restaurant - Café",
+                "business.type4": "Dispensary",
+                "business.type5": "Education Institute",
+                "business.type6": "Financial Institutions",
+                "business.type7": "Hotel",
+                "business.type8": "Hospital",
+                "business.range.title": "Space Availability",
+                "business.range.office": "Office Spaces",
+                "business.range.officeText": "Start from 520 sq. ft. onwards",
+                "business.range.retail": "Retail Shops",
+                "business.range.retailText": "Start from 500 sq. ft. onwards",
+                
+                // Location
+                "location.badge": "Location Advantage",
+                "location.title1": "Prime",
+                "location.title2": "Location",
+                "location.subtitle": "Strategically located in Ahmedabad's fastest-growing commercial corridor",
+                "location.connectivity.title": "Connectivity & Accessibility",
+                "location.connectivity.text": "Naroda is emerging as the primary commercial hub with progressive changes seen through high-scale infrastructure projects transforming the entire area.",
+                "location.address.title": "Site Address",
+                "location.address.text": "Opp. Naroda Business Hub, Near Shivam Arcade, Naroda Dahegam road, Hanspura, Naroda, Ahmedabad.",
+                "location.business.title": "Growing Business Hub",
+                "location.business.text": "With growing infrastructure, Naroda is becoming the preferred destination for FMCG, FMCD, Manufacturers and other businesses.",
+                "location.investment.title": "Investment Potential",
+                "location.investment.text": "High rental yield and appreciation makes this an excellent investment opportunity in Ahmedabad's fastest-growing commercial area.",
+                "location.development.title": "Development Team",
+                "location.developer.title": "Developer",
+                "location.architect.title": "Architect",
+                "location.structural.title": "Structural Engineer",
+                "location.rera.title": "RERA Registration",
+                "location.contact.title": "Contact Information",
+                "location.contact.phone": "Phone Number",
+                
+                // Gallery
+                "gallery.badge": "Project Gallery",
+                "gallery.title1": "Visual",
+                "gallery.title2": "Journey",
+                "gallery.subtitle": "Explore our premium commercial spaces through images",
+                
+                // Pricing
+                "pricing.badge": "Investment Opportunity",
+                "pricing.title1": "Pricing &",
+                "pricing.title2": "Payment Plans",
+                "pricing.subtitle": "Flexible payment options with attractive returns",
+                "pricing.card1.title": "Office Spaces",
+                "pricing.card1.price": "₹ 12,500/sq.ft",
+                "pricing.card1.subtitle": "Starting Price",
+                "pricing.card1.item1": "520 - 5000 Sq. Ft. Available",
+                "pricing.card1.item2": "Flexible Partition Options",
+                "pricing.card1.item3": "Built-to-Suit Available",
+                "pricing.card1.item4": "Leaseback Option",
+                "pricing.card1.button": "Call for Details",
+                "pricing.card2.title": "Retail Shops",
+                "pricing.card2.price": "₹ 18,000/sq.ft",
+                "pricing.card2.subtitle": "Starting Price",
+                "pricing.card2.item1": "Ground Floor Locations",
+                "pricing.card2.item2": "High Street Frontage",
+                "pricing.card2.item3": "Custom Storefronts",
+                "pricing.card2.item4": "Maximum Visibility",
+                "pricing.card2.button": "View Retail Spaces",
+                "pricing.card3.title": "Payment Plans",
+                "pricing.card3.price": "Flexible",
+                "pricing.card3.subtitle": "Choose Your Plan",
+                "pricing.card3.item1": "20:80 Construction Linked",
+                "pricing.card3.item2": "Flexi Payment - 60 Months",
+                "pricing.card3.item3": "Bank Loans Available",
+                "pricing.card3.item4": "Corporate Discounts",
+                "pricing.card3.button": "Calculate EMI",
+                
+                // CTA
+                "cta.title1": "Ready to",
+                "cta.title2": "Elevate Your Business?",
+                "cta.subtitle": "Join premium businesses at Naroda Landmark. Schedule a site visit today and experience commercial excellence firsthand.",
+                "cta.button2": "WhatsApp",
+                "cta.button3": "Visit Site",
+                
+                // Footer
+                "footer.description": "Creating landmark properties that redefine excellence. From premium commercial spaces to luxury residential living, we build dreams with quality and commitment.",
+                "footer.quick_links": "Quick Links",
+                "footer.our_projects": "Our Projects",
+                "footer.landmark_desc": "Premium Commercial Spaces",
+                "footer.irish_desc": "Luxury Residential Living",
+                "footer.view_all_projects": "View All Projects",
+                "footer.explore_portfolio": "Explore our portfolio",
+                "footer.contact_info": "Contact Info",
+                "footer.phone": "Phone Number",
+                "footer.address": "Site Address",
+                "footer.address_text": "Opp. Naroda Business Hub, Near Shivam Arcade, Naroda Dahegam road, Hanspura, Naroda, Ahmedabad.",
+                "footer.rera": "RERA Registration",
+                "footer.rights": "All rights reserved.",
+                "footer.developer": "Developer: SATYASANKALP"
+            },
+            hi: {
+              // Navigation
+                "nav.home": "होम",
+                "nav.about": "हमारे बारे में",
+                "nav.projects": "प्रोजेक्ट्स",
+                "nav.landmark": "नरोड़ा लैंडमार्क",
+                "nav.irish": "नरोड़ा आयरिश",
+                "nav.all_projects": "सभी प्रोजेक्ट्स",
+                "nav.properties": "संपत्तियाँ",
+                "nav.buy": "खरीदें",
+                "nav.rent": "किराए पर लें",
+                "nav.property_details": "संपत्ति विवरण",
+                "nav.gallery": "गैलरी",
+                "nav.more": "अधिक",
+                "nav.blog": "ब्लॉग",
+                "nav.news": "समाचार",
+                "nav.careers": "करियर",
+                "nav.team": "हमारी टीम",
+                "nav.faq": "सामान्य प्रश्न",
+                "nav.contact": "संपर्क करें",
+                "nav.login": "लॉगिन",
+                "nav.search": "खोजें",
+                "nav.account": "खाता",
+                
+                // Hero Section
+                "hero.badge": "अहमदाबाद का प्रीमियम कमर्शियल कॉम्प्लेक्स",
+                "hero.title1": "नरोड़ा बिजनेस",
+                "hero.title2": "लैंडमार्क",
+                "hero.subtitle": "नरोड़ा बिजनेस लैंडमार्क प्रस्तुत करता है - एक ऐसा पता जो न केवल आपके जुनून का प्रतिनिधित्व करता है बल्कि आपके पेशे में भी काफी वृद्धि करता है। नरोड़ा में सोच-समझकर सजाया गया और रणनीतिक रूप से स्थित।",
+                "hero.btn1": "मूल्य देखें",
+                "hero.btn2": "साइट विजिट शेड्यूल करें",
+                "hero.btn3": "अभी कॉल करें",
+                
+                // Stats
+                "stats.storeys": "मंजिलें",
+                "stats.area": "वर्ग फुट क्षेत्र",
+                "stats.parking": "पार्किंग स्थान",
+                "stats.sold": "बिक चुका है",
+                
+                // Overview
+                "overview.badge": "प्रोजेक्ट अवलोकन",
+                "overview.title1": "के बारे में",
+                "overview.title2": "नरोड़ा लैंडमार्क",
+                "overview.subtitle": "एक ऐसा पता जो आपके व्यापार की प्रतिष्ठा को ऊंचा करता है",
+                "overview.heading": "प्रीमियम कमर्शियल डेस्टिनेशन",
+                "overview.text1": "अनूठी संरचना एक भव्य प्रवेश द्वार के लिए टोन सेट करती है जिसमें एक अच्छी तरह से सज्जित लॉबी और प्रीमियम कमर्शियल संपत्तियों का एक फ्रेम है जो पूर्व खुदरा वाणिज्यिक टीमों दोनों को उद्यम शुरू करने की अनुमति देता है।",
+                "overview.text2": "अपनी समकालीन वास्तुकला, स्थायी डिजाइन और विश्व स्तरीय सुविधाओं के साथ, नरोड़ा लैंडमार्क उत्पादकता, सहयोग और व्यावसायिक विकास के लिए एक आदर्श वातावरण प्रदान करता है।",
+                "overview.feature1.title": "स्केलेबल स्पेस",
+                "overview.feature1.text": "520 वर्ग फुट से ऑफिस स्पेस",
+                "overview.feature2.title": "सुंदर डिजाइन",
+                "overview.feature2.text": "लंबे फ़ैसड आर्किटेक्चर के साथ सुंदर डिजाइन",
+                "overview.feature3.title": "RERA अनुमोदित",
+                "overview.feature3.text": "RERA विनियमों के साथ पूरी तरह से अनुपालन",
+                
+                // Amenities
+                "amenities.badge": "विनिर्देश",
+                "amenities.title1": "प्रीमियम",
+                "amenities.title2": "सुविधाएं",
+                "amenities.subtitle": "उत्पादकता और व्यवसाय अनुभव को बढ़ाने के लिए डिज़ाइन किया गया",
+                "amenities.card1.title": "भूकंप प्रतिरोधी",
+                "amenities.card1.text": "भूकंपीय गतिविधि को झेलने के लिए डिज़ाइन की गई RCC संरचना",
+                "amenities.card2.title": "24/7 बिजली और पानी",
+                "amenities.card2.text": "जनरेटर बैकअप के साथ 24 घंटे पानी और बिजली की आपूर्ति",
+                "amenities.card3.title": "सुरक्षा प्रणाली",
+                "amenities.card3.text": "सीसीटीवी सक्षम परिसर सुरक्षा सुनिश्चित करता है",
+                "amenities.card4.title": "पर्याप्त पार्किंग",
+                "amenities.card4.text": "निर्बाध वाहन भंडारण के लिए बेसमेंट स्टैक पार्किंग",
+                "amenities.card5.title": "हाई-एंड एलिवेटर",
+                "amenities.card5.text": "सुविधा के लिए 1 स्ट्रेचर और 2 पैसेंजर एलिवेटर",
+                "amenities.card6.title": "अग्नि सुरक्षा",
+                "amenities.card6.text": "पूरी अग्निशमन प्रणाली स्थापित",
+                "amenities.additional.title": "अतिरिक्त विनिर्देश",
+                "amenities.additional.item1": "• प्रीमियम क्वालिटी फ्लोरिंग",
+                "amenities.additional.item2": "• ऑयल पेंट के साथ प्रीमियम क्वालिटी रोलिंग शटर",
+                "amenities.additional.item3": "• एसी पॉइंट प्रदान",
+                "amenities.additional.item4": "• प्रत्येक दुकान और कार्यालय के लिए निजी शौचालय",
+                "amenities.additional.item5": "• सामान्य उपयोगिताओं के लिए जनरेटर बैकअप",
+                "amenities.additional.item6": "• विट्रिफाइड टाइल फ्लोरिंग",
+                
+                // Floor Plans
+                "floorplans.badge": "फ्लोर प्लान",
+                "floorplans.title1": "स्मार्ट",
+                "floorplans.title2": "लेआउट",
+                "floorplans.subtitle": "अधिकतम दक्षता के लिए डिज़ाइन किए गए लचीले कार्यालय और खुदरा स्थान",
+                "floorplans.tab1": "ग्राउंड फ्लोर",
+                "floorplans.tab2": "1 से 5 मंजिल",
+                "floorplans.tab3": "6 और 7 मंजिल",
+                "floorplans.tab4": "8 और 9 मंजिल",
+                "floorplans.spec1": "कार्यालय आकार (वर्ग फुट)",
+                "floorplans.spec2": "प्रति मंजिल दुकानें",
+                "floorplans.spec3": "लिफ्ट",
+                "floorplans.spec4": "कुल मंजिलें",
+                "floorplans.feature1.title": "दुकान सुविधाएं",
+                "floorplans.feature1.item1": "• प्रवेश द्वार पर रोलिंग शटर लगे",
+                "floorplans.feature1.item2": "• ग्राउंड फ्लोर पर साइनेज का प्रावधान",
+                "floorplans.feature1.item3": "• रेस्तरां रसोई के लिए गैस कनेक्शन",
+                "floorplans.feature2.title": "स्मार्ट प्लानिंग",
+                "floorplans.feature2.text": "स्मार्टली प्लान किए गए रिटेल स्पेस में रेस्तरां के लिए डिज़ाइन किया गया क्षेत्र शामिल है जो पहले स्तर तक फैला हुआ है और ग्राउंड लेवल पर दुकानें हैं।",
+                
+                // Business Types
+                "business.badge": "आदर्श",
+                "business.title1": "एक व्यापार पता",
+                "business.title2": "सभी के लिए उपयुक्त",
+                "business.type1": "शोरूम",
+                "business.type2": "बैंक - एटीएम",
+                "business.type3": "रेस्तरां - कैफे",
+                "business.type4": "डिस्पेंसरी",
+                "business.type5": "शिक्षण संस्थान",
+                "business.type6": "वित्तीय संस्थान",
+                "business.type7": "होटल",
+                "business.type8": "अस्पताल",
+                "business.range.title": "स्थान उपलब्धता",
+                "business.range.office": "कार्यालय स्थान",
+                "business.range.officeText": "520 वर्ग फुट से शुरू",
+                "business.range.retail": "खुदरा दुकानें",
+                "business.range.retailText": "500 वर्ग फुट से शुरू",
+                
+                // Location
+                "location.badge": "स्थान लाभ",
+                "location.title1": "प्राइम",
+                "location.title2": "लोकेशन",
+                "location.subtitle": "अहमदाबाद के सबसे तेजी से बढ़ते कमर्शियल कॉरिडोर में रणनीतिक रूप से स्थित",
+                "location.connectivity.title": "कनेक्टिविटी और पहुंच",
+                "location.connectivity.text": "नरोड़ा प्राथमिक वाणिज्यिक केंद्र के रूप में उभर रहा है जिसमें उच्च पैमाने के बुनियादी ढांचा परियोजनाओं के माध्यम से प्रगतिशील परिवर्तन देखे जा रहे हैं जो पूरे क्षेत्र को बदल रहे हैं।",
+                "location.address.title": "साइट का पता",
+                "location.address.text": "नरोड़ा बिजनेस हब के सामने, शिवम आर्केड के पास, नरोड़ा दहेगम रोड, हंसपुरा, नरोड़ा, अहमदाबाद।",
+                "location.business.title": "बढ़ता व्यापार केंद्र",
+                "location.business.text": "बढ़ती बुनियादी ढांचे के साथ, नरोड़ा एफएमसीजी, एफएमसीडी, निर्माताओं और अन्य व्यवसायों के लिए पसंदीदा गंतव्य बन रहा है।",
+                "location.investment.title": "निवेश संभावना",
+                "location.investment.text": "उच्च किराया उपज और प्रशंसा इसे अहमदाबाद के सबसे तेजी से बढ़ते वाणिज्यिक क्षेत्र में एक उत्कृष्ट निवेश अवसर बनाती है।",
+                "location.development.title": "विकास टीम",
+                "location.developer.title": "डेवलपर",
+                "location.architect.title": "वास्तुकार",
+                "location.structural.title": "संरचनात्मक इंजीनियर",
+                "location.rera.title": "RERA पंजीकरण",
+                "location.contact.title": "संपर्क जानकारी",
+                "location.contact.phone": "फोन नंबर",
+                
+                // Gallery
+                "gallery.badge": "प्रोजेक्ट गैलरी",
+                "gallery.title1": "दृश्य",
+                "gallery.title2": "यात्रा",
+                "gallery.subtitle": "छवियों के माध्यम से हमारे प्रीमियम कमर्शियल स्पेस का अन्वेषण करें",
+                
+                // Pricing
+                "pricing.badge": "निवेश अवसर",
+                "pricing.title1": "मूल्य निर्धारण और",
+                "pricing.title2": "भुगतान योजनाएं",
+                "pricing.subtitle": "आकर्षक रिटर्न के साथ लचीली भुगतान विकल्प",
+                "pricing.card1.title": "कार्यालय स्थान",
+                "pricing.card1.price": "₹ 12,500/वर्ग फुट",
+                "pricing.card1.subtitle": "शुरुआती कीमत",
+                "pricing.card1.item1": "520 - 5000 वर्ग फुट उपलब्ध",
+                "pricing.card1.item2": "लचीला विभाजन विकल्प",
+                "pricing.card1.item3": "बिल्ट-टू-सूट उपलब्ध",
+                "pricing.card1.item4": "लीजबैक विकल्प",
+                "pricing.card1.button": "विवरण के लिए कॉल करें",
+                "pricing.card2.title": "खुदरा दुकानें",
+                "pricing.card2.price": "₹ 18,000/वर्ग फुट",
+                "pricing.card2.subtitle": "शुरुआती कीमत",
+                "pricing.card2.item1": "ग्राउंड फ्लोर लोकेशन",
+                "pricing.card2.item2": "हाई स्ट्रीट फ्रंटेज",
+                "pricing.card2.item3": "कस्टम स्टोरफ्रंट",
+                "pricing.card2.item4": "अधिकतम दृश्यता",
+                "pricing.card2.button": "खुदरा स्थान देखें",
+                "pricing.card3.title": "भुगतान योजनाएं",
+                "pricing.card3.price": "लचीला",
+                "pricing.card3.subtitle": "अपनी योजना चुनें",
+                "pricing.card3.item1": "20:80 निर्माण लिंक्ड",
+                "pricing.card3.item2": "फ्लेक्सी भुगतान - 60 महीने",
+                "pricing.card3.item3": "बैंक लोन उपलब्ध",
+                "pricing.card3.item4": "कॉर्पोरेट छूट",
+                "pricing.card3.button": "ईएमआई की गणना करें",
+                
+                // CTA
+                "cta.title1": "तैयार हैं",
+                "cta.title2": "अपने व्यवसाय को ऊंचा उठाने के लिए?",
+                "cta.subtitle": "नरोड़ा लैंडमार्क में प्रीमियम व्यवसायों में शामिल हों। आज ही साइट विजिट शेड्यूल करें और कमर्शियल एक्सीलेंस का प्रत्यक्ष अनुभव करें।",
+                "cta.button2": "व्हाट्सएप",
+                "cta.button3": "साइट पर जाएं",
+                
+                // Footer
+                "footer.description": "लैंडमार्क संपत्तियाँ बनाना जो उत्कृष्टता को फिर से परिभाषित करती हैं। प्रीमियम कमर्शियल स्पेस से लेकर लग्ज़री रेजिडेंशियल लिविंग तक, हम गुणवत्ता और प्रतिबद्धता के साथ सपने बनाते हैं।",
+                "footer.quick_links": "त्वरित लिंक",
+                "footer.our_projects": "हमारे प्रोजेक्ट्स",
+                "footer.landmark_desc": "प्रीमियम कमर्शियल स्पेस",
+                "footer.irish_desc": "लग्ज़री रेजिडेंशियल लिविंग",
+                "footer.view_all_projects": "सभी प्रोजेक्ट्स देखें",
+                "footer.explore_portfolio": "हमारे पोर्टफोलियो का अन्वेषण करें",
+                "footer.contact_info": "संपर्क जानकारी",
+                "footer.phone": "फोन नंबर",
+                "footer.address": "साइट का पता",
+                "footer.address_text": "नरोड़ा बिजनेस हब के सामने, शिवम आर्केड के पास, नरोड़ा दहेगम रोड, हंसपुरा, नरोड़ा, अहमदाबाद।",
+                "footer.rera": "RERA पंजीकरण",
+                "footer.rights": "सर्वाधिकार सुरक्षित।",
+                "footer.developer": "डेवलपर: सत्यसंकल्प"
+            },
+            gu: {
+                 // Navigation
+                "nav.home": "હોમ",
+                "nav.about": "અમારા વિશે",
+                "nav.projects": "પ્રોજેક્ટ્સ",
+                "nav.landmark": "નરોડા લેન્ડમાર્ક",
+                "nav.irish": "નરોડા આયરિશ",
+                "nav.all_projects": "બધા પ્રોજેક્ટ્સ",
+                "nav.properties": "પ્રોપર્ટીઝ",
+                "nav.buy": "ખરીદો",
+                "nav.rent": "ભાડે લો",
+                "nav.property_details": "પ્રોપર્ટી વિગતો",
+                "nav.gallery": "ગેલેરી",
+                "nav.more": "વધુ",
+                "nav.blog": "બ્લોગ",
+                "nav.news": "સમાચાર",
+                "nav.careers": "કરિયર",
+                "nav.team": "અમારી ટીમ",
+                "nav.faq": "સામાન્ય પ્રશ્નો",
+                "nav.contact": "સંપર્ક કરો",
+                "nav.login": "લોગિન",
+                "nav.search": "શોધો",
+                "nav.account": "એકાઉન્ટ",
+                
+                // Hero Section
+                "hero.badge": "અમદાવાદનો પ્રીમિયમ કોમર્શિયલ કોમ્પ્લેક્સ",
+                "hero.title1": "નરોડા બિઝનેસ",
+                "hero.title2": "લેન્ડમાર્ક",
+                "hero.subtitle": "નરોડા બિઝનેસ લેન્ડમાર્ક પ્રસ્તુત કરે છે - એક સરનામું જે ફક્ત તમારા જુસ્સાનું પ્રતિનિધિત્વ જ કરતું નથી પણ તમારા વ્યવસાયમાં નોંધપાત્ર વધારો પણ કરે છે. નરોડામાં વિચારપૂર્વક સજાવેલું અને વ્યૂહાત્મક રીતે સ્થિત.",
+                "hero.btn1": "કિંમત જુઓ",
+                "hero.btn2": "સાઇટ મુલાકાત શેડ્યૂલ કરો",
+                "hero.btn3": "હમણાં કોલ કરો",
+                
+                // Stats
+                "stats.storeys": "માળ",
+                "stats.area": "ચોરસ ફુટ વિસ્તાર",
+                "stats.parking": "પાર્કિંગ સ્થાન",
+                "stats.sold": "વેચાઈ ગયું",
+                
+                // Overview
+                "overview.badge": "પ્રોજેક્ટ ઓવરવ્યુ",
+                "overview.title1": "બધેથી વિશે",
+                "overview.title2": "નરોડા લેન્ડમાર્ક",
+                "overview.subtitle": "એક સરનામું જે તમારા વેપારની સ્થિતિને ઉંચી કરે છે",
+                "overview.heading": "પ્રીમિયમ કોમર્શિયલ ડેસ્ટિનેશન",
+                "overview.text1": "અનન્ય માળખું એક ભવ્ય પ્રવેશદ્વાર માટે ટોન સેટ કરે છે જેમાં સારી રીતે સજાવેલું લોબી અને પ્રીમિયમ કોમર્શિયલ એસેટ્સનો ફ્રેમ છે જે અગાઉની રિટેલ કોમર્શિયલ ટીમો બંનેને એન્ટરપ્રાઇઝ શરૂ કરવા માટે પરવાનગી આપે છે.",
+                "overview.text2": "તેની સમકાલીન આર્કિટેક્ચર, ટકાઉ ડિઝાઇન અને વર્લ્ડ-ક્લાસ સુવિધાઓ સાથે, નરોડા લેન્ડમાર્ક ઉત્પાદકતા, સહયોગ અને વ્યવસાયિક વૃદ્ધિ માટે આદર્શ વાતાવરણ પ્રદાન કરે છે.",
+                "overview.feature1.title": "સ્કેલેબલ સ્પેસ",
+                "overview.feature1.text": "520 ચોરસ ફુટથી ઓફિસ સ્પેસ",
+                "overview.feature2.title": "સુંદર ડિઝાઇન",
+                "overview.feature2.text": "લાંબા ફેસેડ આર્કિટેક્ચર સાથે સુંદર રીતે ડિઝાઇન કરેલું",
+                "overview.feature3.title": "RERA મંજૂર",
+                "overview.feature3.text": "RERA નિયમો સાથે સંપૂર્ણપણે સુસંગત",
+                
+                // Amenities
+                "amenities.badge": "સ્પેસિફિકેશન્સ",
+                "amenities.title1": "પ્રીમિયમ",
+                "amenities.title2": "સુવિધાઓ",
+                "amenities.subtitle": "ઉત્પાદકતા અને વ્યવસાય અનુભવને વધારવા માટે ડિઝાઇન કરેલ",
+                "amenities.card1.title": "ધરતીકંપ પ્રતિરોધક",
+                "amenities.card1.text": "ભૂકંપી પ્રવૃત્તિને સહન કરવા માટે ડિઝાઇન કરાયેલ RCC માળખું",
+                "amenities.card2.title": "24/7 પાવર અને પાણી",
+                "amenities.card2.text": "જનરેટર બેકઅપ સાથે 24 કલાક પાણી અને ઇલેક્ટ્રિક સપ્લાય",
+                "amenities.card3.title": "સુરક્ષા સિસ્ટમ્સ",
+                "amenities.card3.text": "સુરક્ષા સુનિશ્ચિત કરતી CCTV સક્ષમ પરિસર",
+                "amenities.card4.title": "પર્યાપ્ત પાર્કિંગ",
+                "amenities.card4.text": "નિર્વિઘ્ન વાહન સંગ્રહ માટે બેઝમેન્ટ સ્ટેક પાર્કિંગ",
+                "amenities.card5.title": "હાઇ-એન્ડ એલિવેટર",
+                "amenities.card5.text": "સુવિધા માટે 1 સ્ટ્રેચર અને 2 પેસેન્જર એલિવેટર",
+                "amenities.card6.title": "આગ સુરક્ષા",
+                "amenities.card6.text": "સંપૂર્ણ ફાયર ફાઇટિંગ સિસ્ટમ ઇન્સ્ટોલ",
+                "amenities.additional.title": "વધારાના સ્પેસિફિકેશન્સ",
+                "amenities.additional.item1": "• પ્રીમિયમ ક્વોલિટી ફ્લોરિંગ",
+                "amenities.additional.item2": "• ઓઇલ પેઇન્ટ સાથે પ્રીમિયમ ક્વોલિટી રોલિંગ શટર",
+                "amenities.additional.item3": "• એસી પોઇન્ટ પ્રદાન",
+                "amenities.additional.item4": "• દરેક દુકાન અને ઓફિસ માટે વ્યક્તિગત શૌચાલય",
+                "amenities.additional.item5": "• સામાન્ય ઉપયોગિતાઓ માટે જનરેટર બેકઅપ",
+                "amenities.additional.item6": "• વિટ્રિફાઇડ ટાઇલ ફ્લોરિંગ",
+                
+                // Floor Plans
+                "floorplans.badge": "ફ્લોર પ્લાન",
+                "floorplans.title1": "સ્માર્ટ",
+                "floorplans.title2": "લેઆઉટ",
+                "floorplans.subtitle": "મહત્તમ કાર્યક્ષમતા માટે ડિઝાઇન કરાયેલ લવચીક ઓફિસ અને રિટેલ સ્પેસ",
+                "floorplans.tab1": "ગ્રાઉન્ડ ફ્લોર",
+                "floorplans.tab2": "1 થી 5 માળ",
+                "floorplans.tab3": "6 અને 7 માળ",
+                "floorplans.tab4": "8 અને 9 માળ",
+                "floorplans.spec1": "ઓફિસ કદ (ચોરસ ફુટ)",
+                "floorplans.spec2": "દર માળે દુકાનો",
+                "floorplans.spec3": "લિફ્ટ",
+                "floorplans.spec4": "કુલ માળ",
+                "floorplans.feature1.title": "દુકાન સુવિધાઓ",
+                "floorplans.feature1.item1": "• પ્રવેશદ્વાર પર રોલિંગ શટર ફિક્સ્ડ",
+                "floorplans.feature1.item2": "• ગ્રાઉન્ડ ફ્લોર પર સાઇનેજની તરફેણ",
+                "floorplans.feature1.item3": "• રેસ્ટોરન્ટ રસોડા માટે ગેસ કનેક્શન",
+                "floorplans.feature2.title": "સ્માર્ટ પ્લાનિંગ",
+                "floorplans.feature2.text": "સ્માર્ટલી પ્લાન કરેલા રિટેલ સ્પેસમાં રેસ્ટોરન્ટ માટે ડિઝાઇન કરેલો વિસ્તાર શામેલ છે જે પ્રથમ સ્તર સુધી વિસ્તરે છે અને ગ્રાઉન્ડ લેવલ પર દુકાનો છે.",
+                
+                // Business Types
+                "business.badge": "આદર્શ",
+                "business.title1": "એક વ્યવસાય સરનામું",
+                "business.title2": "બધા માટે યોગ્ય",
+                "business.type1": "શોરૂમ",
+                "business.type2": "બેંક - એટીએમ",
+                "business.type3": "રેસ્ટોરન્ટ - કેફે",
+                "business.type4": "ડિસ્પેન્સરી",
+                "business.type5": "શિક્ષણ સંસ્થા",
+                "business.type6": "નાણાકીય સંસ્થાઓ",
+                "business.type7": "હોટેલ",
+                "business.type8": "હોસ્પિટલ",
+                "business.range.title": "સ્પેસ ઉપલબ્ધતા",
+                "business.range.office": "ઓફિસ સ્પેસ",
+                "business.range.officeText": "520 ચોરસ ફુટથી શરૂ",
+                "business.range.retail": "રિટેલ દુકાનો",
+                "business.range.retailText": "500 ચોરસ ફુટથી શરૂ",
+                
+                // Location
+                "location.badge": "લોકેશન લાભ",
+                "location.title1": "પ્રાઇમ",
+                "location.title2": "લોકેશન",
+                "location.subtitle": "અમદાવાદના સૌથી વેગથી વધતા કોમર્શિયલ કોરિડોરમાં વ્યૂહાત્મક રીતે સ્થિત",
+                "location.connectivity.title": "કનેક્ટિવિટી અને પહોંચ",
+                "location.connectivity.text": "નરોડા પ્રાથમિક વાણિજ્યિક કેન્દ્ર તરીકે ઉભરી રહ્યું છે જેમાં ઉચ્ચ પાયાના ઇન્ફ્રાસ્ટ્રક્ચર પ્રોજેક્ટ્સ દ્વારા પ્રગતિશીલ ફેરફારો જોઈ શકાય છે જે સમગ્ર ક્ષેત્રને પરિવર્તિત કરી રહ્યા છે.",
+                "location.address.title": "સાઇટ સરનામું",
+                "location.address.text": "નરોડા બિઝનેસ હબની સામે, શિવમ આર્કેડની નજીક, નરોડા દહેગમ રોડ, હંસપુરા, નરોડા, અમદાવાદ.",
+                "location.business.title": "વધતું વ્યવસાય કેન્દ્ર",
+                "location.business.text": "વધતા ઇન્ફ્રાસ્ટ્રક્ચર સાથે, નરોડા એફએમસીજી, એફએમસીડી, નિર્માતાઓ અને અન્ય વ્યવસાયો માટે પ્રાધાન્ય ગંતવ્ય બની રહ્યું છે.",
+                "location.investment.title": "નિવેશ સંભાવના",
+                "location.investment.text": "ઉચ્ચ ભાડાનું ઉપજ અને પ્રશંસા તેને અમદાવાદના સૌથી વેગથી વધતા વાણિજ્યિક ક્ષેત્રમાં એક ઉત્તમ નિવેશ તક બનાવે છે.",
+                "location.development.title": "વિકાસ ટીમ",
+                "location.developer.title": "ડેવલપર",
+                "location.architect.title": "આર્કિટેક્ટ",
+                "location.structural.title": "સ્ટ્રક્ચરલ એન્જિનિયર",
+                "location.rera.title": "RERA નોંધણી",
+                "location.contact.title": "સંપર્ક માહિતી",
+                "location.contact.phone": "ફોન નંબર",
+                
+                // Gallery
+                "gallery.badge": "પ્રોજેક્ટ ગેલેરી",
+                "gallery.title1": "દૃશ્ય",
+                "gallery.title2": "યાત્રા",
+                "gallery.subtitle": "છબીઓ દ્વારા અમારા પ્રીમિયમ કોમર્શિયલ સ્પેસનું અન્વેષણ કરો",
+                
+                // Pricing
+                "pricing.badge": "નિવેશ તક",
+                "pricing.title1": "કિંમત નિર્ધારણ અને",
+                "pricing.title2": "ચૂકવણી યોજનાઓ",
+                "pricing.subtitle": "આકર્ષક રિટર્ન સાથે લવચીક ચૂકવણી વિકલ્પો",
+                "pricing.card1.title": "ઓફિસ સ્પેસ",
+                "pricing.card1.price": "₹ 12,500/ચોરસ ફુટ",
+                "pricing.card1.subtitle": "શરૂઆતની કિંમત",
+                "pricing.card1.item1": "520 - 5000 ચોરસ ફુટ ઉપલબ્ધ",
+                "pricing.card1.item2": "લવચીક વિભાજન વિકલ્પો",
+                "pricing.card1.item3": "બિલ્ટ-ટુ-સુટ ઉપલબ્ધ",
+                "pricing.card1.item4": "લીઝબેક વિકલ્પ",
+                "pricing.card1.button": "વિગતો માટે કૉલ કરો",
+                "pricing.card2.title": "રિટેલ દુકાનો",
+                "pricing.card2.price": "₹ 18,000/ચોરસ ફુટ",
+                "pricing.card2.subtitle": "શરૂઆતની કિંમત",
+                "pricing.card2.item1": "ગ્રાઉન્ડ ફ્લોર લોકેશન",
+                "pricing.card2.item2": "હાઇ સ્ટ્રીટ ફ્રન્ટેજ",
+                "pricing.card2.item3": "કસ્ટમ સ્ટોરફ્રન્ટ",
+                "pricing.card2.item4": "મહત્તમ દૃશ્યતા",
+                "pricing.card2.button": "રિટેલ સ્પેસ જુઓ",
+                "pricing.card3.title": "ચૂકવણી યોજનાઓ",
+                "pricing.card3.price": "લવચીક",
+                "pricing.card3.subtitle": "તમારી યોજના પસંદ કરો",
+                "pricing.card3.item1": "20:80 કન્સ્ટ્રક્શન લિંક્ડ",
+                "pricing.card3.item2": "ફ્લેક્સી પેમેન્ટ - 60 મહિના",
+                "pricing.card3.item3": "બેંક લોન ઉપલબ્ધ",
+                "pricing.card3.item4": "કોર્પોરેટ ડિસ્કાઉન્ટ",
+                "pricing.card3.button": "EMI ગણતરી કરો",
+                
+                // CTA
+                "cta.title1": "તૈયાર છો",
+                "cta.title2": "તમારા વ્યવસાયને ઊંચો ઉઠાવવા?",
+                "cta.subtitle": "નરોડા લેન્ડમાર્કમાં પ્રીમિયમ વ્યવસાયોમાં જોડાઓ. આજે જ સાઇટ મુલાકાત શેડ્યૂલ કરો અને કોમર્શિયલ એક્સલન્સનો પ્રત્યક્ષ અનુભવ કરો.",
+                "cta.button2": "વોટ્સએપ",
+                "cta.button3": "સાઇટ પર મુલાકાત",
+                
+                // Footer
+                "footer.description": "લેન્ડમાર્ક પ્રોપર્ટીઝ બનાવવી જે એક્સલન્સને પુનઃવ્યાખ્યાયિત કરે છે. પ્રીમિયમ કોમર્શિયલ સ્પેસથી લગ્ઝરી રેસિડેન્શિયલ લિવિંગ સુધી, અમે ગુણવત્તા અને પ્રતિબદ્ધતા સાથે સપના બનાવીએ છીએ.",
+                "footer.quick_links": "ઝડપી લિંક્સ",
+                "footer.our_projects": "અમારા પ્રોજેક્ટ્સ",
+                "footer.landmark_desc": "પ્રીમિયમ કોમર્શિયલ સ્પેસ",
+                "footer.irish_desc": "લગ્ઝરી રેસિડેન્શિયલ લિવિંગ",
+                "footer.view_all_projects": "બધા પ્રોજેક્ટ્સ જુઓ",
+                "footer.explore_portfolio": "અમારા પોર્ટફોલિયોનું અન્વેષણ કરો",
+                "footer.contact_info": "સંપર્ક માહિતી",
+                "footer.phone": "ફોન નંબર",
+                "footer.address": "સાઇટ સરનામું",
+                "footer.address_text": "નરોડા બિઝનેસ હબની સામે, શિવમ આર્કેડની નજીક, નરોડા દહેગમ રોડ, હંસપુરા, નરોડા, અમદાવાદ.",
+                "footer.rera": "RERA નોંધણી",
+                "footer.rights": "બધા હક્કો સુરક્ષિત.",
+                "footer.developer": "ડેવલપર: સત્યસંકલ્પ"
+            }
+        };
+    </script>
 
     <script>
         // Wait for page to load
@@ -2395,8 +2633,79 @@
                 }, 500);
             }, 1000);
             
+            // Language switching functionality
+            const languageSelectors = document.querySelectorAll('.language-selector');
+            const currentLanguageElement = document.getElementById('currentLanguage');
+            
+            // Load saved language from localStorage or default to English
+            let currentLang = localStorage.getItem('preferredLanguage') || 'en';
+            
+            // Apply language on page load
+            applyLanguage(currentLang);
+            
+            // Set up language selector event listeners
+            languageSelectors.forEach(selector => {
+                selector.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const lang = this.getAttribute('data-lang');
+                    setLanguage(lang);
+                });
+            });
+            
+            function setLanguage(lang) {
+                currentLang = lang;
+                localStorage.setItem('preferredLanguage', lang);
+                applyLanguage(lang);
+                showToast(`Language changed to ${getLanguageName(lang)}`, 'success');
+            }
+            
+            function applyLanguage(lang) {
+                // Update body class for language-specific styling
+                document.body.classList.remove('hindi', 'gujarati');
+                if (lang === 'hi') document.body.classList.add('hindi');
+                if (lang === 'gu') document.body.classList.add('gujarati');
+                
+                // Update current language display
+                currentLanguageElement.textContent = getLanguageCode(lang);
+                
+                // Fade out content
+                document.querySelector('.language-content').style.opacity = '0.5';
+                
+                // Apply translations after a short delay for smoother transition
+                setTimeout(() => {
+                    const elements = document.querySelectorAll('[data-i18n]');
+                    elements.forEach(element => {
+                        const key = element.getAttribute('data-i18n');
+                        if (translations[lang] && translations[lang][key]) {
+                            element.textContent = translations[lang][key];
+                        }
+                    });
+                    
+                    // Fade content back in
+                    document.querySelector('.language-content').style.opacity = '1';
+                }, 300);
+            }
+            
+            function getLanguageName(code) {
+                const names = {
+                    'en': 'English',
+                    'hi': 'Hindi',
+                    'gu': 'Gujarati'
+                };
+                return names[code] || 'English';
+            }
+            
+            function getLanguageCode(code) {
+                const codes = {
+                    'en': 'EN',
+                    'hi': 'HI',
+                    'gu': 'GU'
+                };
+                return codes[code] || 'EN';
+            }
+            
             // Initialize Swiper
-            const swiper = new Swiper('.gallery-slider', {
+            const swiper = new Swiper('.swiper', {
                 loop: true,
                 autoplay: {
                     delay: 5000,
@@ -2413,20 +2722,41 @@
                 effect: 'fade',
                 fadeEffect: {
                     crossFade: true
-                },
-                breakpoints: {
-                    768: {
-                        navigation: {
-                            enabled: true
-                        }
-                    },
-                    320: {
-                        navigation: {
-                            enabled: false
-                        }
-                    }
                 }
             });
+            
+            // Initialize floor plan tabs
+            function initFloorPlanTabs() {
+                const floorTabs = document.querySelectorAll('.floorplan-tab');
+                const floorplanImage = document.getElementById('floorplanImage');
+                
+                const floorImages = {
+                    'ground': 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80',
+                    'first': 'https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80',
+                    'sixth': 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2058&q=80',
+                    'eighth': 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
+                };
+                
+                floorTabs.forEach(tab => {
+                    tab.addEventListener('click', function() {
+                        // Remove active class from all tabs
+                        floorTabs.forEach(t => t.classList.remove('active'));
+                        
+                        // Add active class to clicked tab
+                        this.classList.add('active');
+                        
+                        // Update floor plan image
+                        const floor = this.getAttribute('data-floor');
+                        floorplanImage.src = floorImages[floor];
+                        
+                        // Add loading effect
+                        floorplanImage.style.opacity = '0.5';
+                        setTimeout(() => {
+                            floorplanImage.style.opacity = '1';
+                        }, 300);
+                    });
+                });
+            }
             
             // Initialize back to top button
             function initBackToTop() {
@@ -2485,253 +2815,26 @@
                 };
             }
             
-            // Initialize mobile navigation
-            function initMobileNav() {
-                // Update active nav item based on current page
-                const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-                document.querySelectorAll('.mobile-nav-item').forEach(item => {
-                    const href = item.getAttribute('href');
-                    if (href === currentPage) {
-                        item.classList.add('active');
-                    } else {
-                        item.classList.remove('active');
-                    }
-                });
-            }
-            
-            // Initialize floor plan tabs
-            function initFloorPlanTabs() {
-                const floorTabs = document.querySelectorAll('.floorplan-tab');
-                const floorplanImage = document.getElementById('floorplanImage');
-                
-                const floorImages = {
-                    'ground': 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80',
-                    'first': 'https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80',
-                    'second': 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2058&q=80',
-                    'penthouse': 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
-                };
-                
-                const floorDescriptions = {
-                    'ground': 'Ground Floor: Retail spaces and main lobby area',
-                    'first': 'First Floor: Open office spaces with reception areas',
-                    'second': 'Second Floor: Corporate offices with meeting rooms',
-                    'penthouse': 'Penthouse: Executive suites with premium amenities'
-                };
-                
-                floorTabs.forEach(tab => {
-                    tab.addEventListener('click', function() {
-                        // Remove active class from all tabs
-                        floorTabs.forEach(t => t.classList.remove('active'));
-                        
-                        // Add active class to clicked tab
-                        this.classList.add('active');
-                        
-                        // Update floor plan image
-                        const floor = this.getAttribute('data-floor');
-                        floorplanImage.src = floorImages[floor];
-                        floorplanImage.alt = floorDescriptions[floor];
-                        
-                        // Add loading effect
-                        floorplanImage.style.opacity = '0.5';
-                        setTimeout(() => {
-                            floorplanImage.style.opacity = '1';
-                        }, 300);
-                        
-                        // Update quick link active state
-                        updateQuickLinkActiveState();
-                    });
-                });
-            }
-            
-            // Initialize virtual tour
-            function initVirtualTour() {
-                const virtualTourBtn = document.getElementById('virtualTourBtn');
-                virtualTourBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    // Create modal for virtual tour
-                    const modalHTML = `
-                        <div class="modal fade" id="virtualTourModal" tabindex="-1" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered modal-xl">
-                                <div class="modal-content">
-                                    <div class="modal-header border-0">
-                                        <h5 class="modal-title">Naroda Landmark Virtual Tour</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body p-0">
-                                        <div class="ratio ratio-16x9">
-                                            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" 
-                                                    title="Naroda Landmark Virtual Tour"
-                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                                    allowfullscreen></iframe>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    `;
-                    
-                    document.body.insertAdjacentHTML('beforeend', modalHTML);
-                    
-                    const virtualTourModal = new bootstrap.Modal(document.getElementById('virtualTourModal'));
-                    virtualTourModal.show();
-                    
-                    document.getElementById('virtualTourModal').addEventListener('hidden.bs.modal', function() {
-                        this.remove();
-                    });
-                });
-            }
-            
-            // Initialize download functionality
-            function initDownloads() {
-                // Brochure download
-                const downloadBrochureBtn = document.getElementById('downloadBrochure');
-                if (downloadBrochureBtn) {
-                    downloadBrochureBtn.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        showToast('Brochure download started. Check your downloads folder.', 'success');
-                        
-                        // Simulate download
-                        setTimeout(() => {
-                            showToast('Brochure downloaded successfully!', 'success');
-                        }, 2000);
-                    });
-                }
-                
-                // Floor plans download
-                const downloadFloorplansBtn = document.getElementById('downloadFloorplans');
-                if (downloadFloorplansBtn) {
-                    downloadFloorplansBtn.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        showToast('Floor plans download started. Check your downloads folder.', 'success');
-                        
-                        // Simulate download
-                        setTimeout(() => {
-                            showToast('Floor plans downloaded successfully!', 'success');
-                        }, 2000);
-                    });
-                }
-            }
-            
-            // Initialize quick links navigation
-            function initQuickLinks() {
-                const quickLinks = document.querySelectorAll('.quick-link');
-                
-                quickLinks.forEach(link => {
-                    link.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        
-                        // Remove active class from all links
-                        quickLinks.forEach(l => l.classList.remove('active'));
-                        
-                        // Add active class to clicked link
-                        this.classList.add('active');
-                        
-                        // Scroll to target
-                        const targetId = this.getAttribute('href');
-                        const targetElement = document.querySelector(targetId);
-                        
-                        if (targetElement) {
-                            window.scrollTo({
-                                top: targetElement.offsetTop - 100,
-                                behavior: 'smooth'
-                            });
-                        }
-                    });
-                });
-            }
-            
-            // Update quick link active state on scroll
-            function updateQuickLinkActiveState() {
-                const sections = document.querySelectorAll('section[id]');
-                const quickLinks = document.querySelectorAll('.quick-link');
-                
-                const scrollPosition = window.scrollY + 150;
-                
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    const sectionHeight = section.clientHeight;
-                    const sectionId = section.getAttribute('id');
-                    
-                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                        quickLinks.forEach(link => {
-                            link.classList.remove('active');
-                            if (link.getAttribute('href') === `#${sectionId}`) {
-                                link.classList.add('active');
-                            }
-                        });
-                    }
-                });
-            }
-            
-            // Smooth scrolling for anchor links
-            function initSmoothScroll() {
-                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                    anchor.addEventListener('click', function(e) {
-                        const targetId = this.getAttribute('href');
-                        if (targetId === '#') return;
-                        
-                        const targetElement = document.querySelector(targetId);
-                        if (targetElement) {
-                            e.preventDefault();
-                            
-                            window.scrollTo({
-                                top: targetElement.offsetTop - 80,
-                                behavior: 'smooth'
-                            });
-                            
-                            // Update URL hash without jumping
-                            history.pushState(null, null, targetId);
-                        }
-                    });
-                });
-            }
-            
             // Initialize all functions
+            initFloorPlanTabs();
             initBackToTop();
             initNavbarScroll();
             initToastSystem();
-            initMobileNav();
-            initFloorPlanTabs();
-            initVirtualTour();
-            initDownloads();
-            initQuickLinks();
-            initSmoothScroll();
-            
-            // Update quick links on scroll
-            window.addEventListener('scroll', updateQuickLinkActiveState);
             
             // Show welcome message
             setTimeout(() => {
-                showToast('Welcome to Naroda Landmark! Explore our premium commercial spaces.', 'success');
+                const welcomeMessages = {
+                    'en': 'Welcome to Naroda Landmark! Explore premium commercial spaces.',
+                    'hi': 'नरोड़ा लैंडमार्क में आपका स्वागत है! प्रीमियम कमर्शियल स्पेस का अन्वेषण करें।',
+                    'gu': 'નરોડા લેન્ડમાર્કમાં આપનું સ્વાગત છે! પ્રીમિયમ કોમર્શિયલ સ્પેસનું અન્વેષણ કરો.'
+                };
+                showToast(welcomeMessages[currentLang] || 'Welcome to Naroda Landmark!', 'success');
             }, 1500);
-            
-            // Add responsive class to body for mobile detection
-            function detectMobile() {
-                if (window.innerWidth <= 768) {
-                    document.body.classList.add('mobile');
-                } else {
-                    document.body.classList.remove('mobile');
-                }
-            }
-            
-            window.addEventListener('resize', detectMobile);
-            detectMobile();
         });
-        
-        // Loading overlay functions
-        window.showLoading = function() {
-            document.querySelector('.loading-overlay').classList.add('active');
-        };
-        
-        window.hideLoading = function() {
-            document.querySelector('.loading-overlay').classList.remove('active');
-        };
         
         // Handle image loading errors
         document.addEventListener('error', function(e) {
             if (e.target.tagName === 'IMG') {
-                console.warn('Image failed to load:', e.target.src);
                 e.target.style.display = 'none';
             }
         }, true);
