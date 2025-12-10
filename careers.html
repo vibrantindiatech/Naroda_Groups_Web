@@ -444,6 +444,12 @@
             overflow: hidden;
         }
 
+        @media (max-width: 768px) {
+            .hero-section {
+                background-attachment: scroll;
+            }
+        }
+
         .hero-content {
             position: relative;
             z-index: 2;
@@ -668,6 +674,10 @@
             color: var(--gray-color);
             margin-bottom: 20px;
             line-height: 1.6;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
         }
 
         .job-actions {
@@ -938,6 +948,7 @@
         @media (max-width: 768px) {
             .back-to-top {
                 bottom: 100px;
+                right: 20px;
                 width: 50px;
                 height: 50px;
             }
@@ -971,6 +982,7 @@
         @media (max-width: 768px) {
             .whatsapp-float {
                 bottom: 160px;
+                right: 20px;
                 width: 50px;
                 height: 50px;
             }
@@ -998,14 +1010,12 @@
             
             .hero-section {
                 padding-top: 80px;
+                min-height: 50vh;
             }
             
             .back-to-top,
             .whatsapp-float {
                 bottom: 80px;
-                right: 20px;
-                width: 50px;
-                height: 50px;
             }
             
             .job-header {
@@ -1296,6 +1306,10 @@
                 width: 100%;
                 justify-content: center;
             }
+            
+            .container {
+                padding: 0 15px;
+            }
         }
         
         /* ===== Responsive Fixes ===== */
@@ -1350,10 +1364,6 @@
         }
         
         @media (max-width: 576px) {
-            .container {
-                padding: 0 15px;
-            }
-            
             .hero-title {
                 font-size: 1.8rem;
             }
@@ -1372,14 +1382,26 @@
                 justify-content: flex-start;
                 overflow-x: auto;
                 padding-bottom: 10px;
+                -webkit-overflow-scrolling: touch;
             }
             
             .filter-btn {
                 white-space: nowrap;
+                padding: 8px 16px;
+                font-size: 0.9rem;
             }
             
             .no-jobs-icon {
                 font-size: 3rem;
+            }
+            
+            .job-tags {
+                gap: 8px;
+            }
+            
+            .job-tag {
+                padding: 4px 12px;
+                font-size: 0.8rem;
             }
         }
         
@@ -1460,6 +1482,30 @@
         
         .language-content {
             transition: opacity 0.3s ease;
+        }
+        
+        /* ===== Fix for mobile tap highlights ===== */
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        /* ===== Fix for form elements in mobile ===== */
+        input, select, textarea {
+            font-size: 16px !important; /* Prevents zoom on iOS */
+        }
+        
+        /* ===== Fix for modal on mobile ===== */
+        .modal {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+        
+        /* ===== Fix for AOS animation on mobile ===== */
+        @media (max-width: 768px) {
+            [data-aos] {
+                opacity: 1 !important;
+                transform: none !important;
+            }
         }
     </style>
 </head>
@@ -1693,54 +1739,6 @@
                             </p>
                         </div>
                     </div>
-                    
-                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-                        <div class="benefit-card">
-                            <div class="benefit-icon">
-                                <i class="fas fa-users" aria-hidden="true"></i>
-                            </div>
-                            <h4 class="mb-3" data-i18n="careers.benefits.card5.title">Collaborative Culture</h4>
-                            <p class="text-muted mb-0" data-i18n="careers.benefits.card5.text">
-                                Supportive team environment that encourages innovation and creativity.
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-                        <div class="benefit-card">
-                            <div class="benefit-icon">
-                                <i class="fas fa-home" aria-hidden="true"></i>
-                            </div>
-                            <h4 class="mb-3" data-i18n="careers.benefits.card6.title">Employee Housing</h4>
-                            <p class="text-muted mb-0" data-i18n="careers.benefits.card6.text">
-                                Special discounts on Naroda Group properties for employees.
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-                        <div class="benefit-card">
-                            <div class="benefit-icon">
-                                <i class="fas fa-medal" aria-hidden="true"></i>
-                            </div>
-                            <h4 class="mb-3" data-i18n="careers.benefits.card7.title">Recognition</h4>
-                            <p class="text-muted mb-0" data-i18n="careers.benefits.card7.text">
-                                Regular recognition programs and rewards for outstanding performance.
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
-                        <div class="benefit-card">
-                            <div class="benefit-icon">
-                                <i class="fas fa-umbrella-beach" aria-hidden="true"></i>
-                            </div>
-                            <h4 class="mb-3" data-i18n="careers.benefits.card8.title">Paid Time Off</h4>
-                            <p class="text-muted mb-0" data-i18n="careers.benefits.card8.text">
-                                Generous leave policy including vacation, sick leave, and holidays.
-                            </p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
@@ -1816,7 +1814,7 @@
                                 <div class="job-posted">
                                     <i class="fas fa-calendar" aria-hidden="true"></i> <span data-i18n="careers.jobs.posted">Posted:</span> <span data-i18n="careers.jobs.job1.posted">2 days ago</span>
                                 </div>
-                                <button class="text-gold border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#jobDetails1">
+                                <button class="text-gold border-0 bg-transparent view-details-btn" data-job="1">
                                     <i class="fas fa-info-circle me-1" aria-hidden="true"></i> <span data-i18n="careers.jobs.view_details">View Details</span>
                                 </button>
                             </div>
@@ -1849,7 +1847,7 @@
                                 <div class="job-posted">
                                     <i class="fas fa-calendar" aria-hidden="true"></i> <span data-i18n="careers.jobs.posted">Posted:</span> <span data-i18n="careers.jobs.job2.posted">1 week ago</span>
                                 </div>
-                                <button class="text-gold border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#jobDetails2">
+                                <button class="text-gold border-0 bg-transparent view-details-btn" data-job="2">
                                     <i class="fas fa-info-circle me-1" aria-hidden="true"></i> <span data-i18n="careers.jobs.view_details">View Details</span>
                                 </button>
                             </div>
@@ -1882,106 +1880,7 @@
                                 <div class="job-posted">
                                     <i class="fas fa-calendar" aria-hidden="true"></i> <span data-i18n="careers.jobs.posted">Posted:</span> <span data-i18n="careers.jobs.job3.posted">3 days ago</span>
                                 </div>
-                                <button class="text-gold border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#jobDetails3">
-                                    <i class="fas fa-info-circle me-1" aria-hidden="true"></i> <span data-i18n="careers.jobs.view_details">View Details</span>
-                                </button>
-                            </div>
-                        </div>
-                        
-                        <!-- Operations Jobs -->
-                        <div class="job-card" data-category="operations" data-aos="fade-up" data-aos-delay="100">
-                            <div class="job-header">
-                                <div>
-                                    <h3 class="job-title" data-i18n="careers.jobs.job4.title">Project Manager</h3>
-                                    <span class="job-department" data-i18n="careers.jobs.job4.department">Operations</span>
-                                    <div class="job-tags">
-                                        <span class="job-tag location" data-i18n="careers.jobs.location.ahmedabad">Ahmedabad</span>
-                                        <span class="job-tag type" data-i18n="careers.jobs.type.fulltime">Full-time</span>
-                                        <span class="job-tag experience" data-i18n="careers.jobs.experience.10plus">10+ Years Experience</span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <a href="#apply" class="btn btn-gold" data-job="Project Manager" data-i18n="careers.jobs.apply">
-                                        Apply Now
-                                    </a>
-                                </div>
-                            </div>
-                            <p class="job-description" data-i18n="careers.jobs.job4.description">
-                                Oversee multiple construction projects from planning to completion. 
-                                Manage budgets, timelines, resources, and stakeholder communication. 
-                                PMP certification and large-scale project management experience preferred.
-                            </p>
-                            <div class="job-actions">
-                                <div class="job-posted">
-                                    <i class="fas fa-calendar" aria-hidden="true"></i> <span data-i18n="careers.jobs.posted">Posted:</span> <span data-i18n="careers.jobs.job4.posted">5 days ago</span>
-                                </div>
-                                <button class="text-gold border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#jobDetails4">
-                                    <i class="fas fa-info-circle me-1" aria-hidden="true"></i> <span data-i18n="careers.jobs.view_details">View Details</span>
-                                </button>
-                            </div>
-                        </div>
-                        
-                        <!-- Finance Jobs -->
-                        <div class="job-card" data-category="finance" data-aos="fade-up" data-aos-delay="200">
-                            <div class="job-header">
-                                <div>
-                                    <h3 class="job-title" data-i18n="careers.jobs.job5.title">Legal Executive</h3>
-                                    <span class="job-department" data-i18n="careers.jobs.job5.department">Finance & Legal</span>
-                                    <div class="job-tags">
-                                        <span class="job-tag location" data-i18n="careers.jobs.location.ahmedabad">Ahmedabad</span>
-                                        <span class="job-tag type" data-i18n="careers.jobs.type.fulltime">Full-time</span>
-                                        <span class="job-tag experience" data-i18n="careers.jobs.experience.4plus">4+ Years Experience</span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <a href="#apply" class="btn btn-gold" data-job="Legal Executive" data-i18n="careers.jobs.apply">
-                                        Apply Now
-                                    </a>
-                                </div>
-                            </div>
-                            <p class="job-description" data-i18n="careers.jobs.job5.description">
-                                Handle legal documentation, contracts, and compliance for real estate projects. 
-                                Ensure RERA compliance, manage property registrations, and provide legal advice. 
-                                Law degree with real estate law experience required.
-                            </p>
-                            <div class="job-actions">
-                                <div class="job-posted">
-                                    <i class="fas fa-calendar" aria-hidden="true"></i> <span data-i18n="careers.jobs.posted">Posted:</span> <span data-i18n="careers.jobs.job5.posted">1 week ago</span>
-                                </div>
-                                <button class="text-gold border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#jobDetails5">
-                                    <i class="fas fa-info-circle me-1" aria-hidden="true"></i> <span data-i18n="careers.jobs.view_details">View Details</span>
-                                </button>
-                            </div>
-                        </div>
-                        
-                        <!-- Sales Jobs -->
-                        <div class="job-card" data-category="sales" data-aos="fade-up" data-aos-delay="300">
-                            <div class="job-header">
-                                <div>
-                                    <h3 class="job-title" data-i18n="careers.jobs.job6.title">Marketing Executive</h3>
-                                    <span class="job-department" data-i18n="careers.jobs.job6.department">Sales & Marketing</span>
-                                    <div class="job-tags">
-                                        <span class="job-tag location" data-i18n="careers.jobs.location.ahmedabad">Ahmedabad</span>
-                                        <span class="job-tag type" data-i18n="careers.jobs.type.fulltime">Full-time</span>
-                                        <span class="job-tag experience" data-i18n="careers.jobs.experience.2plus">2+ Years Experience</span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <a href="#apply" class="btn btn-gold" data-job="Marketing Executive" data-i18n="careers.jobs.apply">
-                                        Apply Now
-                                    </a>
-                                </div>
-                            </div>
-                            <p class="job-description" data-i18n="careers.jobs.job6.description">
-                                Develop and implement marketing strategies for real estate projects. 
-                                Manage digital marketing campaigns, content creation, and brand promotion. 
-                                Experience in real estate marketing and social media management preferred.
-                            </p>
-                            <div class="job-actions">
-                                <div class="job-posted">
-                                    <i class="fas fa-calendar" aria-hidden="true"></i> <span data-i18n="careers.jobs.posted">Posted:</span> <span data-i18n="careers.jobs.job6.posted">4 days ago</span>
-                                </div>
-                                <button class="text-gold border-0 bg-transparent" data-bs-toggle="modal" data-bs-target="#jobDetails6">
+                                <button class="text-gold border-0 bg-transparent view-details-btn" data-job="3">
                                     <i class="fas fa-info-circle me-1" aria-hidden="true"></i> <span data-i18n="careers.jobs.view_details">View Details</span>
                                 </button>
                             </div>
@@ -2005,128 +1904,6 @@
                                 Reset Filters
                             </button>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Departments -->
-        <section class="departments-section">
-            <div class="container">
-                <div class="row mb-5">
-                    <div class="col-lg-8 mx-auto text-center">
-                        <h3 class="section-title left mb-4" data-aos="fade-up" data-i18n="careers.departments.title">
-                            Our <span class="gold-text">Departments</span>
-                        </h3>
-                        <p class="text-muted" data-aos="fade-up" data-aos-delay="100" data-i18n="careers.departments.subtitle">
-                            Explore opportunities across various departments
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="row g-4">
-                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-                        <a href="#jobs" class="department-card" data-filter="sales">
-                            <div class="department-icon">
-                                <i class="fas fa-chart-line" aria-hidden="true"></i>
-                            </div>
-                            <h4 class="department-name" data-i18n="careers.departments.dept1.name">Sales & Marketing</h4>
-                            <p class="text-muted mb-0" data-i18n="careers.departments.dept1.description">
-                                Drive sales growth and build our brand presence
-                            </p>
-                            <span class="department-openings" data-i18n="careers.departments.dept1.openings">2 Open Positions</span>
-                        </a>
-                    </div>
-                    
-                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-                        <a href="#jobs" class="department-card" data-filter="construction">
-                            <div class="department-icon">
-                                <i class="fas fa-hard-hat" aria-hidden="true"></i>
-                            </div>
-                            <h4 class="department-name" data-i18n="careers.departments.dept2.name">Construction</h4>
-                            <p class="text-muted mb-0" data-i18n="careers.departments.dept2.description">
-                                Build quality structures with innovative techniques
-                            </p>
-                            <span class="department-openings" data-i18n="careers.departments.dept2.openings">1 Open Position</span>
-                        </a>
-                    </div>
-                    
-                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-                        <a href="#jobs" class="department-card" data-filter="design">
-                            <div class="department-icon">
-                                <i class="fas fa-drafting-compass" aria-hidden="true"></i>
-                            </div>
-                            <h4 class="department-name" data-i18n="careers.departments.dept3.name">Design & Architecture</h4>
-                            <p class="text-muted mb-0" data-i18n="careers.departments.dept3.description">
-                                Create innovative designs for modern living spaces
-                            </p>
-                            <span class="department-openings" data-i18n="careers.departments.dept3.openings">1 Open Position</span>
-                        </a>
-                    </div>
-                    
-                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
-                        <a href="#jobs" class="department-card" data-filter="operations">
-                            <div class="department-icon">
-                                <i class="fas fa-cogs" aria-hidden="true"></i>
-                            </div>
-                            <h4 class="department-name" data-i18n="careers.departments.dept4.name">Operations</h4>
-                            <p class="text-muted mb-0" data-i18n="careers.departments.dept4.description">
-                                Ensure smooth project execution and delivery
-                            </p>
-                            <span class="department-openings" data-i18n="careers.departments.dept4.openings">1 Open Position</span>
-                        </a>
-                    </div>
-                    
-                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-                        <a href="#jobs" class="department-card" data-filter="finance">
-                            <div class="department-icon">
-                                <i class="fas fa-balance-scale" aria-hidden="true"></i>
-                            </div>
-                            <h4 class="department-name" data-i18n="careers.departments.dept5.name">Finance & Legal</h4>
-                            <p class="text-muted mb-0" data-i18n="careers.departments.dept5.description">
-                                Manage financial operations and legal compliance
-                            </p>
-                            <span class="department-openings" data-i18n="careers.departments.dept5.openings">1 Open Position</span>
-                        </a>
-                    </div>
-                    
-                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-                        <a href="#jobs" class="department-card" data-filter="hr">
-                            <div class="department-icon">
-                                <i class="fas fa-users" aria-hidden="true"></i>
-                            </div>
-                            <h4 class="department-name" data-i18n="careers.departments.dept6.name">Human Resources</h4>
-                            <p class="text-muted mb-0" data-i18n="careers.departments.dept6.description">
-                                Nurture talent and build our organizational culture
-                            </p>
-                            <span class="department-openings" data-i18n="careers.departments.dept6.openings">Coming Soon</span>
-                        </a>
-                    </div>
-                    
-                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-                        <a href="#jobs" class="department-card" data-filter="customer">
-                            <div class="department-icon">
-                                <i class="fas fa-headset" aria-hidden="true"></i>
-                            </div>
-                            <h4 class="department-name" data-i18n="careers.departments.dept7.name">Customer Relations</h4>
-                            <p class="text-muted mb-0" data-i18n="careers.departments.dept7.description">
-                                Build lasting relationships with our clients
-                            </p>
-                            <span class="department-openings" data-i18n="careers.departments.dept7.openings">Coming Soon</span>
-                        </a>
-                    </div>
-                    
-                    <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
-                        <a href="#jobs" class="department-card" data-filter="it">
-                            <div class="department-icon">
-                                <i class="fas fa-laptop-code" aria-hidden="true"></i>
-                            </div>
-                            <h4 class="department-name" data-i18n="careers.departments.dept8.name">IT & Technology</h4>
-                            <p class="text-muted mb-0" data-i18n="careers.departments.dept8.description">
-                                Drive digital transformation and innovation
-                            </p>
-                            <span class="department-openings" data-i18n="careers.departments.dept8.openings">Coming Soon</span>
-                        </a>
                     </div>
                 </div>
             </div>
@@ -2347,9 +2124,6 @@
                                                 <option value="Senior Sales Manager" data-i18n="careers.jobs.job1.title">Senior Sales Manager</option>
                                                 <option value="Site Engineer" data-i18n="careers.jobs.job2.title">Site Engineer</option>
                                                 <option value="Interior Designer" data-i18n="careers.jobs.job3.title">Interior Designer</option>
-                                                <option value="Project Manager" data-i18n="careers.jobs.job4.title">Project Manager</option>
-                                                <option value="Legal Executive" data-i18n="careers.jobs.job5.title">Legal Executive</option>
-                                                <option value="Marketing Executive" data-i18n="careers.jobs.job6.title">Marketing Executive</option>
                                                 <option value="Other" data-i18n="careers.apply.form.position.other">Other</option>
                                             </select>
                                         </div>
@@ -2392,16 +2166,6 @@
                                         <input type="file" class="file-input" id="resume" accept=".pdf,.doc,.docx" required>
                                     </div>
                                     <div class="mt-2" id="fileName"></div>
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label class="form-label" data-i18n="careers.apply.form.additional">Additional Documents</label>
-                                    <div class="file-upload" id="additionalUpload">
-                                        <i class="fas fa-file-upload" aria-hidden="true"></i>
-                                        <h5 data-i18n="careers.apply.form.additional.title">Upload additional documents (optional)</h5>
-                                        <p class="text-muted" data-i18n="careers.apply.form.additional.info">Portfolio, certificates, etc.</p>
-                                        <input type="file" class="file-input" id="additionalFiles" multiple>
-                                    </div>
                                 </div>
                                 
                                 <div class="form-group form-check mb-4">
@@ -2536,847 +2300,41 @@
         </div>
     </footer>
 
-    <!-- Job Detail Modals -->
-    <!-- Senior Sales Manager Modal -->
-    <div class="modal fade" id="jobDetails1" tabindex="-1" aria-labelledby="jobDetails1Label" aria-hidden="true">
+    <!-- Job Detail Modal (Dynamic) -->
+    <div class="modal fade" id="jobDetailsModal" tabindex="-1" aria-labelledby="jobDetailsModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="modal-header border-0">
-                    <h5 class="modal-title" id="jobDetails1Label" data-i18n="careers.modal.job1.title">Senior Sales Manager - Job Details</h5>
+                    <h5 class="modal-title" id="jobDetailsModalLabel"></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <h4 class="mb-3" data-i18n="careers.jobs.job1.title">Senior Sales Manager</h4>
-                    <div class="job-tags mb-4">
-                        <span class="job-tag location" data-i18n="careers.jobs.location.ahmedabad">Ahmedabad</span>
-                        <span class="job-tag type" data-i18n="careers.jobs.type.fulltime">Full-time</span>
-                        <span class="job-tag experience" data-i18n="careers.jobs.experience.8plus">8+ Years Experience</span>
-                    </div>
-                    
-                    <h5 data-i18n="careers.modal.jobDescription">Job Description</h5>
-                    <p data-i18n="careers.modal.job1.description">We are looking for an experienced Senior Sales Manager to lead our sales team and drive revenue growth for our premium residential and commercial projects.</p>
-                    
-                    <h5 data-i18n="careers.modal.responsibilities">Responsibilities</h5>
-                    <ul>
-                        <li data-i18n="careers.modal.job1.responsibility1">Develop and implement sales strategies to achieve business targets</li>
-                        <li data-i18n="careers.modal.job1.responsibility2">Lead, mentor, and manage the sales team</li>
-                        <li data-i18n="careers.modal.job1.responsibility3">Build and maintain relationships with key clients and stakeholders</li>
-                        <li data-i18n="careers.modal.job1.responsibility4">Monitor market trends and competitor activities</li>
-                        <li data-i18n="careers.modal.job1.responsibility5">Prepare sales reports and forecasts for management</li>
-                        <li data-i18n="careers.modal.job1.responsibility6">Collaborate with marketing team on promotional activities</li>
-                    </ul>
-                    
-                    <h5 data-i18n="careers.modal.requirements">Requirements</h5>
-                    <ul>
-                        <li data-i18n="careers.modal.job1.requirement1">MBA in Marketing or related field (preferred)</li>
-                        <li data-i18n="careers.modal.job1.requirement2">8+ years of sales experience in real estate</li>
-                        <li data-i18n="careers.modal.job1.requirement3">Proven track record of achieving sales targets</li>
-                        <li data-i18n="careers.modal.job1.requirement4">Strong leadership and team management skills</li>
-                        <li data-i18n="careers.modal.job1.requirement5">Excellent communication and negotiation skills</li>
-                        <li data-i18n="careers.modal.job1.requirement6">Knowledge of Ahmedabad real estate market</li>
-                    </ul>
-                    
-                    <h5 data-i18n="careers.modal.whatWeOffer">What We Offer</h5>
-                    <ul>
-                        <li data-i18n="careers.modal.job1.offer1">Competitive salary with attractive commission structure</li>
-                        <li data-i18n="careers.modal.job1.offer2">Performance bonuses and incentives</li>
-                        <li data-i18n="careers.modal.job1.offer3">Health insurance and other benefits</li>
-                        <li data-i18n="careers.modal.job1.offer4">Opportunities for career advancement</li>
-                        <li data-i18n="careers.modal.job1.offer5">Professional development programs</li>
-                    </ul>
+                <div class="modal-body" id="jobDetailsContent">
+                    <!-- Content will be loaded dynamically -->
                 </div>
                 <div class="modal-footer border-0">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-i18n="careers.modal.close">Close</button>
-                    <a href="#apply" class="btn btn-gold" data-bs-dismiss="modal" data-job="Senior Sales Manager" data-i18n="careers.jobs.apply">Apply Now</a>
+                    <a href="#apply" class="btn btn-gold" data-bs-dismiss="modal" id="modalApplyBtn" data-i18n="careers.jobs.apply">Apply Now</a>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- Site Engineer Modal -->
-    <div class="modal fade" id="jobDetails2" tabindex="-1" aria-labelledby="jobDetails2Label" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-header border-0">
-                    <h5 class="modal-title" id="jobDetails2Label" data-i18n="careers.modal.job2.title">Site Engineer - Job Details</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <h4 class="mb-3" data-i18n="careers.jobs.job2.title">Site Engineer</h4>
-                    <div class="job-tags mb-4">
-                        <span class="job-tag location" data-i18n="careers.jobs.location.ahmedabad">Ahmedabad</span>
-                        <span class="job-tag type" data-i18n="careers.jobs.type.fulltime">Full-time</span>
-                        <span class="job-tag experience" data-i18n="careers.jobs.experience.3plus">3+ Years Experience</span>
-                    </div>
-                    
-                    <h5 data-i18n="careers.modal.jobDescription">Job Description</h5>
-                    <p data-i18n="careers.modal.job2.description">We are seeking a skilled Site Engineer to supervise construction activities and ensure quality control at our project sites.</p>
-                    
-                    <h5 data-i18n="careers.modal.responsibilities">Responsibilities</h5>
-                    <ul>
-                        <li data-i18n="careers.modal.job2.responsibility1">Supervise day-to-day construction activities on site</li>
-                        <li data-i18n="careers.modal.job2.responsibility2">Ensure quality control and adherence to specifications</li>
-                        <li data-i18n="careers.modal.job2.responsibility3">Coordinate with contractors, architects, and project managers</li>
-                        <li data-i18n="careers.modal.job2.responsibility4">Monitor safety standards and compliance</li>
-                        <li data-i18n="careers.modal.job2.responsibility5">Maintain project documentation and reports</li>
-                        <li data-i18n="careers.modal.job2.responsibility6">Resolve technical issues on site</li>
-                    </ul>
-                    
-                    <h5 data-i18n="careers.modal.requirements">Requirements</h5>
-                    <ul>
-                        <li data-i18n="careers.modal.job2.requirement1">Bachelor's degree in Civil Engineering</li>
-                        <li data-i18n="careers.modal.job2.requirement2">3+ years of construction site experience</li>
-                        <li data-i18n="careers.modal.job2.requirement3">Knowledge of construction methods and materials</li>
-                        <li data-i18n="careers.modal.job2.requirement4">Proficiency in AutoCAD and MS Office</li>
-                        <li data-i18n="careers.modal.job2.requirement5">Strong problem-solving skills</li>
-                        <li data-i18n="careers.modal.job2.requirement6">Excellent communication and teamwork abilities</li>
-                    </ul>
-                    
-                    <h5 data-i18n="careers.modal.whatWeOffer">What We Offer</h5>
-                    <ul>
-                        <li data-i18n="careers.modal.job2.offer1">Competitive salary package</li>
-                        <li data-i18n="careers.modal.job2.offer2">Site allowances and benefits</li>
-                        <li data-i18n="careers.modal.job2.offer3">Opportunities for skill development</li>
-                        <li data-i18n="careers.modal.job2.offer4">Career growth in project management</li>
-                        <li data-i18n="careers.modal.job2.offer5">Health and safety equipment provided</li>
-                    </ul>
-                </div>
-                <div class="modal-footer border-0">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-i18n="careers.modal.close">Close</button>
-                    <a href="#apply" class="btn btn-gold" data-bs-dismiss="modal" data-job="Site Engineer" data-i18n="careers.jobs.apply">Apply Now</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Additional modals for other jobs (Interior Designer, Project Manager, Legal Executive, Marketing Executive) -->
-    <!-- These can be added similarly with appropriate translations -->
 
     <!-- Bootstrap 5 JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- AOS Animation Library -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-    <!-- Language Translation Data -->
-    <script>
-        const translations = {
-            en: {
-                // Language Selector
-                "lang.english": "English",
-                "lang.hindi": "हिंदी (Hindi)",
-                "lang.gujarati": "ગુજરાતી (Gujarati)",
-                
-                // Navigation
-                "nav.home": "Home",
-                "nav.about": "About",
-                "nav.projects": "Projects",
-                "nav.landmark": "Naroda Landmark",
-                "nav.irish": "Naroda Irish",
-                "nav.all_projects": "All Projects",
-                "nav.properties": "Properties",
-                "nav.buy": "Buy",
-                "nav.rent": "Rent",
-                "nav.property_details": "Property Details",
-                "nav.gallery": "Gallery",
-                "nav.more": "More",
-                "nav.blog": "Blog",
-                "nav.news": "News",
-                "nav.careers": "Careers",
-                "nav.team": "Our Team",
-                "nav.faq": "FAQ",
-                "nav.contact": "Contact",
-                "nav.login": "Login",
-                "nav.search": "Search",
-                "nav.account": "Account",
-                
-                // Careers Hero Section
-                "careers.hero.title": "Build Your Career With <span class=\"gold-text\">Naroda Group</span>",
-                "careers.hero.subtitle": "Join our team of innovators and help us shape Ahmedabad's skyline. Explore exciting opportunities in real estate development.",
-                "careers.hero.btn1": "View Open Positions",
-                "careers.hero.btn2": "Submit Your CV",
-                
-                // Benefits Section
-                "careers.benefits.badge": "Why Join Us",
-                "careers.benefits.title": "Grow With <span class=\"gold-text\">Excellence</span>",
-                "careers.benefits.subtitle": "We believe in nurturing talent and providing opportunities for professional growth",
-                "careers.benefits.card1.title": "Career Growth",
-                "careers.benefits.card1.text": "Clear career paths with regular promotions and opportunities for advancement.",
-                "careers.benefits.card2.title": "Learning & Development",
-                "careers.benefits.card2.text": "Regular training programs, workshops, and skill enhancement opportunities.",
-                "careers.benefits.card3.title": "Competitive Compensation",
-                "careers.benefits.card3.text": "Attractive salary packages with performance bonuses and incentives.",
-                "careers.benefits.card4.title": "Work-Life Balance",
-                "careers.benefits.card4.text": "Flexible work arrangements and employee wellness programs.",
-                "careers.benefits.card5.title": "Collaborative Culture",
-                "careers.benefits.card5.text": "Supportive team environment that encourages innovation and creativity.",
-                "careers.benefits.card6.title": "Employee Housing",
-                "careers.benefits.card6.text": "Special discounts on Naroda Group properties for employees.",
-                "careers.benefits.card7.title": "Recognition",
-                "careers.benefits.card7.text": "Regular recognition programs and rewards for outstanding performance.",
-                "careers.benefits.card8.title": "Paid Time Off",
-                "careers.benefits.card8.text": "Generous leave policy including vacation, sick leave, and holidays.",
-                
-                // Jobs Section
-                "careers.jobs.badge": "Current Openings",
-                "careers.jobs.title": "Explore <span class=\"gold-text\">Job Opportunities</span>",
-                "careers.jobs.subtitle": "Join our team and contribute to landmark projects that shape Ahmedabad's future",
-                "careers.jobs.search.placeholder": "Search jobs by title, keyword, or department...",
-                "careers.jobs.search.button": "Search",
-                "careers.jobs.filter.all": "All Jobs",
-                "careers.jobs.filter.sales": "Sales & Marketing",
-                "careers.jobs.filter.construction": "Construction",
-                "careers.jobs.filter.design": "Design & Architecture",
-                "careers.jobs.filter.operations": "Operations",
-                "careers.jobs.filter.finance": "Finance & Legal",
-                "careers.jobs.location.ahmedabad": "Ahmedabad",
-                "careers.jobs.type.fulltime": "Full-time",
-                "careers.jobs.experience.8plus": "8+ Years Experience",
-                "careers.jobs.experience.3plus": "3+ Years Experience",
-                "careers.jobs.experience.5plus": "5+ Years Experience",
-                "careers.jobs.experience.10plus": "10+ Years Experience",
-                "careers.jobs.experience.4plus": "4+ Years Experience",
-                "careers.jobs.experience.2plus": "2+ Years Experience",
-                "careers.jobs.apply": "Apply Now",
-                "careers.jobs.posted": "Posted:",
-                "careers.jobs.view_details": "View Details",
-                "careers.jobs.job1.title": "Senior Sales Manager",
-                "careers.jobs.job1.department": "Sales & Marketing",
-                "careers.jobs.job1.description": "Lead the sales team for our premium residential and commercial projects. Develop sales strategies, manage client relationships, and achieve sales targets. Experience in real estate sales and team management required.",
-                "careers.jobs.job1.posted": "2 days ago",
-                "careers.jobs.job2.title": "Site Engineer",
-                "careers.jobs.job2.department": "Construction",
-                "careers.jobs.job2.description": "Supervise construction activities, ensure quality control, and manage on-site operations. Coordinate with contractors, maintain safety standards, and monitor project timelines. Civil Engineering degree with site experience required.",
-                "careers.jobs.job2.posted": "1 week ago",
-                "careers.jobs.job3.title": "Interior Designer",
-                "careers.jobs.job3.department": "Design & Architecture",
-                "careers.jobs.job3.description": "Create innovative interior design concepts for residential and commercial projects. Develop design presentations, select materials, and coordinate with clients and contractors. Proficiency in AutoCAD, 3D Max, and design software required.",
-                "careers.jobs.job3.posted": "3 days ago",
-                "careers.jobs.job4.title": "Project Manager",
-                "careers.jobs.job4.department": "Operations",
-                "careers.jobs.job4.description": "Oversee multiple construction projects from planning to completion. Manage budgets, timelines, resources, and stakeholder communication. PMP certification and large-scale project management experience preferred.",
-                "careers.jobs.job4.posted": "5 days ago",
-                "careers.jobs.job5.title": "Legal Executive",
-                "careers.jobs.job5.department": "Finance & Legal",
-                "careers.jobs.job5.description": "Handle legal documentation, contracts, and compliance for real estate projects. Ensure RERA compliance, manage property registrations, and provide legal advice. Law degree with real estate law experience required.",
-                "careers.jobs.job5.posted": "1 week ago",
-                "careers.jobs.job6.title": "Marketing Executive",
-                "careers.jobs.job6.department": "Sales & Marketing",
-                "careers.jobs.job6.description": "Develop and implement marketing strategies for real estate projects. Manage digital marketing campaigns, content creation, and brand promotion. Experience in real estate marketing and social media management preferred.",
-                "careers.jobs.job6.posted": "4 days ago",
-                "careers.jobs.no_jobs.title": "No Jobs Found",
-                "careers.jobs.no_jobs.message": "We couldn't find any jobs matching your search criteria. Try different keywords or check back later for new openings.",
-                "careers.jobs.no_jobs.reset": "Reset Filters",
-                
-                // Departments Section
-                "careers.departments.title": "Our <span class=\"gold-text\">Departments</span>",
-                "careers.departments.subtitle": "Explore opportunities across various departments",
-                "careers.departments.dept1.name": "Sales & Marketing",
-                "careers.departments.dept1.description": "Drive sales growth and build our brand presence",
-                "careers.departments.dept1.openings": "2 Open Positions",
-                "careers.departments.dept2.name": "Construction",
-                "careers.departments.dept2.description": "Build quality structures with innovative techniques",
-                "careers.departments.dept2.openings": "1 Open Position",
-                "careers.departments.dept3.name": "Design & Architecture",
-                "careers.departments.dept3.description": "Create innovative designs for modern living spaces",
-                "careers.departments.dept3.openings": "1 Open Position",
-                "careers.departments.dept4.name": "Operations",
-                "careers.departments.dept4.description": "Ensure smooth project execution and delivery",
-                "careers.departments.dept4.openings": "1 Open Position",
-                "careers.departments.dept5.name": "Finance & Legal",
-                "careers.departments.dept5.description": "Manage financial operations and legal compliance",
-                "careers.departments.dept5.openings": "1 Open Position",
-                "careers.departments.dept6.name": "Human Resources",
-                "careers.departments.dept6.description": "Nurture talent and build our organizational culture",
-                "careers.departments.dept6.openings": "Coming Soon",
-                "careers.departments.dept7.name": "Customer Relations",
-                "careers.departments.dept7.description": "Build lasting relationships with our clients",
-                "careers.departments.dept7.openings": "Coming Soon",
-                "careers.departments.dept8.name": "IT & Technology",
-                "careers.departments.dept8.description": "Drive digital transformation and innovation",
-                "careers.departments.dept8.openings": "Coming Soon",
-                
-                // Process Section
-                "careers.process.badge": "Hiring Process",
-                "careers.process.title": "How to <span class=\"gold-text\">Apply</span>",
-                "careers.process.subtitle": "Our simple and transparent hiring process",
-                "careers.process.step1.title": "Find Your Role",
-                "careers.process.step1.description": "Browse our current openings and find the perfect match for your skills and aspirations.",
-                "careers.process.step2.title": "Submit Application",
-                "careers.process.step2.description": "Complete the online application form and upload your resume and supporting documents.",
-                "careers.process.step3.title": "Interview Process",
-                "careers.process.step3.description": "Participate in interviews with our HR and department heads to discuss your qualifications.",
-                "careers.process.step4.title": "Job Offer",
-                "careers.process.step4.description": "Receive your offer letter and join our team to start your exciting career journey.",
-                
-                // Testimonials Section
-                "careers.testimonials.badge": "Employee Stories",
-                "careers.testimonials.title": "Life at <span class=\"gold-text\">Naroda Group</span>",
-                "careers.testimonials.subtitle": "Hear from our team members about their experiences",
-                "careers.testimonials.testimonial1": "\"Working at Naroda Group has been transformative for my career. The opportunities for growth and the supportive team environment make it an exceptional workplace.\"",
-                "careers.testimonials.author1.name": "Rahul Sharma",
-                "careers.testimonials.author1.role": "Project Manager, 5 Years",
-                "careers.testimonials.testimonial2": "\"The learning opportunities here are incredible. I've grown from a junior executive to heading a department in just 4 years. The company truly invests in its employees.\"",
-                "careers.testimonials.author2.name": "Priya Patel",
-                "careers.testimonials.author2.role": "Sales Head, 4 Years",
-                "careers.testimonials.testimonial3": "\"What I love most is the work-life balance. The management understands personal needs while ensuring professional growth. It's the perfect workplace.\"",
-                "careers.testimonials.author3.name": "Amit Desai",
-                "careers.testimonials.author3.role": "Site Engineer, 3 Years",
-                
-                // Apply Section
-                "careers.apply.title": "Ready to <span class=\"gold-text\">Apply?</span>",
-                "careers.apply.subtitle": "Submit your application and take the first step toward an exciting career with Naroda Group.",
-                "careers.apply.form.title": "Application Form",
-                "careers.apply.form.fullName": "Full Name *",
-                "careers.apply.form.email": "Email Address *",
-                "careers.apply.form.phone": "Phone Number *",
-                "careers.apply.form.position": "Position Applying For *",
-                "careers.apply.form.position.placeholder": "Select a position",
-                "careers.apply.form.position.other": "Other",
-                "careers.apply.form.experience": "Total Experience (Years) *",
-                "careers.apply.form.experience.placeholder": "Select experience",
-                "careers.apply.form.experience.0-2": "0-2 Years",
-                "careers.apply.form.experience.2-5": "2-5 Years",
-                "careers.apply.form.experience.5-8": "5-8 Years",
-                "careers.apply.form.experience.8-10": "8-10 Years",
-                "careers.apply.form.experience.10plus": "10+ Years",
-                "careers.apply.form.ctc": "Current CTC (₹)",
-                "careers.apply.form.ctc.placeholder": "e.g., 8,00,000",
-                "careers.apply.form.coverLetter": "Cover Letter",
-                "careers.apply.form.coverLetter.placeholder": "Tell us why you're interested in this position...",
-                "careers.apply.form.resume": "Upload Resume *",
-                "careers.apply.form.resume.title": "Click to upload your resume",
-                "careers.apply.form.resume.info": "Supported formats: PDF, DOC, DOCX (Max 5MB)",
-                "careers.apply.form.additional": "Additional Documents",
-                "careers.apply.form.additional.title": "Upload additional documents (optional)",
-                "careers.apply.form.additional.info": "Portfolio, certificates, etc.",
-                "careers.apply.form.agree": "I agree to the <a href=\"privacy.html\" class=\"text-gold\">privacy policy</a> and consent to being contacted about this application",
-                "careers.apply.form.reset": "Reset Form",
-                "careers.apply.form.submit": "Submit Application",
-                
-                // Modal Content
-                "careers.modal.job1.title": "Senior Sales Manager - Job Details",
-                "careers.modal.jobDescription": "Job Description",
-                "careers.modal.job1.description": "We are looking for an experienced Senior Sales Manager to lead our sales team and drive revenue growth for our premium residential and commercial projects.",
-                "careers.modal.responsibilities": "Responsibilities",
-                "careers.modal.job1.responsibility1": "Develop and implement sales strategies to achieve business targets",
-                "careers.modal.job1.responsibility2": "Lead, mentor, and manage the sales team",
-                "careers.modal.job1.responsibility3": "Build and maintain relationships with key clients and stakeholders",
-                "careers.modal.job1.responsibility4": "Monitor market trends and competitor activities",
-                "careers.modal.job1.responsibility5": "Prepare sales reports and forecasts for management",
-                "careers.modal.job1.responsibility6": "Collaborate with marketing team on promotional activities",
-                "careers.modal.requirements": "Requirements",
-                "careers.modal.job1.requirement1": "MBA in Marketing or related field (preferred)",
-                "careers.modal.job1.requirement2": "8+ years of sales experience in real estate",
-                "careers.modal.job1.requirement3": "Proven track record of achieving sales targets",
-                "careers.modal.job1.requirement4": "Strong leadership and team management skills",
-                "careers.modal.job1.requirement5": "Excellent communication and negotiation skills",
-                "careers.modal.job1.requirement6": "Knowledge of Ahmedabad real estate market",
-                "careers.modal.whatWeOffer": "What We Offer",
-                "careers.modal.job1.offer1": "Competitive salary with attractive commission structure",
-                "careers.modal.job1.offer2": "Performance bonuses and incentives",
-                "careers.modal.job1.offer3": "Health insurance and other benefits",
-                "careers.modal.job1.offer4": "Opportunities for career advancement",
-                "careers.modal.job1.offer5": "Professional development programs",
-                "careers.modal.job2.title": "Site Engineer - Job Details",
-                "careers.modal.job2.description": "We are seeking a skilled Site Engineer to supervise construction activities and ensure quality control at our project sites.",
-                "careers.modal.job2.responsibility1": "Supervise day-to-day construction activities on site",
-                "careers.modal.job2.responsibility2": "Ensure quality control and adherence to specifications",
-                "careers.modal.job2.responsibility3": "Coordinate with contractors, architects, and project managers",
-                "careers.modal.job2.responsibility4": "Monitor safety standards and compliance",
-                "careers.modal.job2.responsibility5": "Maintain project documentation and reports",
-                "careers.modal.job2.responsibility6": "Resolve technical issues on site",
-                "careers.modal.job2.requirement1": "Bachelor's degree in Civil Engineering",
-                "careers.modal.job2.requirement2": "3+ years of construction site experience",
-                "careers.modal.job2.requirement3": "Knowledge of construction methods and materials",
-                "careers.modal.job2.requirement4": "Proficiency in AutoCAD and MS Office",
-                "careers.modal.job2.requirement5": "Strong problem-solving skills",
-                "careers.modal.job2.requirement6": "Excellent communication and teamwork abilities",
-                "careers.modal.job2.offer1": "Competitive salary package",
-                "careers.modal.job2.offer2": "Site allowances and benefits",
-                "careers.modal.job2.offer3": "Opportunities for skill development",
-                "careers.modal.job2.offer4": "Career growth in project management",
-                "careers.modal.job2.offer5": "Health and safety equipment provided",
-                "careers.modal.close": "Close",
-                
-                // Footer
-                "footer.description": "Creating landmark properties that redefine excellence. From premium commercial spaces to luxury residential living, we build dreams with quality and commitment.",
-                "footer.quick_links": "Quick Links",
-                "footer.our_projects": "Our Projects",
-                "footer.landmark_desc": "Premium Commercial Spaces",
-                "footer.irish_desc": "Luxury Residential Living",
-                "footer.view_all_projects": "View All Projects",
-                "footer.explore_portfolio": "Explore our portfolio",
-                "footer.contact_info": "Contact Info",
-                "footer.phone": "Phone Number",
-                "footer.phone_hours": "Mon - Sat: 10 AM - 7 PM",
-                "footer.email": "Email Address",
-                "footer.email_response": "We reply within 24 hours",
-                "footer.address": "Office Address",
-                "footer.address_line1": "Naroda - Bhat Road",
-                "footer.address_line2": "Ahmedabad, Gujarat 382330",
-                "footer.rights": "All rights reserved.",
-                "footer.privacy": "Privacy Policy",
-                "footer.terms": "Terms of Service",
-                "footer.rera": "RERA Registration"
-            },
-            hi: {
-                // Language Selector
-                "lang.english": "English",
-                "lang.hindi": "हिंदी",
-                "lang.gujarati": "ગુજરાતી",
-                
-                // Navigation
-                "nav.home": "होम",
-                "nav.about": "हमारे बारे में",
-                "nav.projects": "प्रोजेक्ट्स",
-                "nav.landmark": "नरोड़ा लैंडमार्क",
-                "nav.irish": "नरोड़ा आयरिश",
-                "nav.all_projects": "सभी प्रोजेक्ट्स",
-                "nav.properties": "संपत्तियाँ",
-                "nav.buy": "खरीदें",
-                "nav.rent": "किराए पर लें",
-                "nav.property_details": "संपत्ति विवरण",
-                "nav.gallery": "गैलरी",
-                "nav.more": "अधिक",
-                "nav.blog": "ब्लॉग",
-                "nav.news": "समाचार",
-                "nav.careers": "करियर",
-                "nav.team": "हमारी टीम",
-                "nav.faq": "सामान्य प्रश्न",
-                "nav.contact": "संपर्क करें",
-                "nav.login": "लॉगिन",
-                "nav.search": "खोजें",
-                "nav.account": "खाता",
-                
-                // Careers Hero Section
-                "careers.hero.title": "नरोड़ा ग्रुप के साथ अपना करियर बनाएं",
-                "careers.hero.subtitle": "हमारी नवप्रवर्तक टीम में शामिल हों और अहमदाबाद के स्काईलाइन को आकार देने में हमारी मदद करें। रियल एस्टेट डेवलपमेंट में रोमांचक अवसरों की खोज करें।",
-                "careers.hero.btn1": "खुली पदों को देखें",
-                "careers.hero.btn2": "अपना सीवी जमा करें",
-                
-                // Benefits Section
-                "careers.benefits.badge": "हमें क्यों चुनें",
-                "careers.benefits.title": "उत्कृष्टता के साथ विकसित हों",
-                "careers.benefits.subtitle": "हम प्रतिभा को पोषित करने और पेशेवर विकास के अवसर प्रदान करने में विश्वास करते हैं",
-                "careers.benefits.card1.title": "करियर विकास",
-                "careers.benefits.card1.text": "नियमित पदोन्नति और उन्नति के अवसरों के साथ स्पष्ट करियर पथ।",
-                "careers.benefits.card2.title": "सीखना और विकास",
-                "careers.benefits.card2.text": "नियमित प्रशिक्षण कार्यक्रम, कार्यशालाएं और कौशल वृद्धि के अवसर।",
-                "careers.benefits.card3.title": "प्रतिस्पर्धी मुआवजा",
-                "careers.benefits.card3.text": "प्रदर्शन बोनस और प्रोत्साहन के साथ आकर्षक वेतन पैकेज।",
-                "careers.benefits.card4.title": "कार्य-जीवन संतुलन",
-                "careers.benefits.card4.text": "लचीले कार्य व्यवस्था और कर्मचारी कल्याण कार्यक्रम।",
-                "careers.benefits.card5.title": "सहयोगी संस्कृति",
-                "careers.benefits.card5.text": "समर्थक टीम वातावरण जो नवाचार और रचनात्मकता को प्रोत्साहित करता है।",
-                "careers.benefits.card6.title": "कर्मचारी आवास",
-                "careers.benefits.card6.text": "कर्मचारियों के लिए नरोड़ा ग्रुप संपत्तियों पर विशेष छूट।",
-                "careers.benefits.card7.title": "मान्यता",
-                "careers.benefits.card7.text": "उत्कृष्ट प्रदर्शन के लिए नियमित मान्यता कार्यक्रम और पुरस्कार।",
-                "careers.benefits.card8.title": "भुगतान अवकाश",
-                "careers.benefits.card8.text": "छुट्टी, बीमार अवकाश और छुट्टियों सहित उदार अवकाश नीति।",
-                
-                // Jobs Section
-                "careers.jobs.badge": "वर्तमान रिक्तियां",
-                "careers.jobs.title": "नौकरी के अवसरों का अन्वेषण करें",
-                "careers.jobs.subtitle": "हमारी टीम में शामिल हों और अहमदाबाद के भविष्य को आकार देने वाले लैंडमार्क प्रोजेक्ट्स में योगदान दें",
-                "careers.jobs.search.placeholder": "शीर्षक, कीवर्ड या विभाग द्वारा नौकरियां खोजें...",
-                "careers.jobs.search.button": "खोजें",
-                "careers.jobs.filter.all": "सभी नौकरियां",
-                "careers.jobs.filter.sales": "बिक्री और विपणन",
-                "careers.jobs.filter.construction": "निर्माण",
-                "careers.jobs.filter.design": "डिजाइन और वास्तुकला",
-                "careers.jobs.filter.operations": "संचालन",
-                "careers.jobs.filter.finance": "वित्त और कानूनी",
-                "careers.jobs.location.ahmedabad": "अहमदाबाद",
-                "careers.jobs.type.fulltime": "पूर्णकालिक",
-                "careers.jobs.experience.8plus": "8+ वर्षों का अनुभव",
-                "careers.jobs.experience.3plus": "3+ वर्षों का अनुभव",
-                "careers.jobs.experience.5plus": "5+ वर्षों का अनुभव",
-                "careers.jobs.experience.10plus": "10+ वर्षों का अनुभव",
-                "careers.jobs.experience.4plus": "4+ वर्षों का अनुभव",
-                "careers.jobs.experience.2plus": "2+ वर्षों का अनुभव",
-                "careers.jobs.apply": "अभी आवेदन करें",
-                "careers.jobs.posted": "पोस्ट किया गया:",
-                "careers.jobs.view_details": "विवरण देखें",
-                "careers.jobs.job1.title": "सीनियर सेल्स मैनेजर",
-                "careers.jobs.job1.department": "बिक्री और विपणन",
-                "careers.jobs.job1.description": "हमारे प्रीमियम रेजिडेंशियल और कमर्शियल प्रोजेक्ट्स के लिए बिक्री टीम का नेतृत्व करें। बिक्री रणनीतियाँ विकसित करें, ग्राहक संबंध प्रबंधित करें और बिक्री लक्ष्य प्राप्त करें। रियल एस्टेट बिक्री और टीम प्रबंधन में अनुभव आवश्यक है।",
-                "careers.jobs.job1.posted": "2 दिन पहले",
-                "careers.jobs.job2.title": "साइट इंजीनियर",
-                "careers.jobs.job2.department": "निर्माण",
-                "careers.jobs.job2.description": "निर्माण गतिविधियों का पर्यवेक्षण करें, गुणवत्ता नियंत्रण सुनिश्चित करें और साइट संचालन का प्रबंधन करें। ठेकेदारों के साथ समन्वय करें, सुरक्षा मानकों को बनाए रखें और परियोजना समयसीमा की निगरानी करें। सिविल इंजीनियरिंग डिग्री के साथ साइट अनुभव आवश्यक है।",
-                "careers.jobs.job2.posted": "1 सप्ताह पहले",
-                "careers.jobs.job3.title": "इंटीरियर डिजाइनर",
-                "careers.jobs.job3.department": "डिजाइन और वास्तुकला",
-                "careers.jobs.job3.description": "आवासीय और वाणिज्यिक परियोजनाओं के लिए अभिनव आंतरिक डिजाइन अवधारणाएं बनाएं। डिजाइन प्रस्तुतियाँ विकसित करें, सामग्री का चयन करें और ग्राहकों और ठेकेदारों के साथ समन्वय करें। ऑटोकैड, 3डी मैक्स और डिजाइन सॉफ्टवेयर में प्रवीणता आवश्यक है।",
-                "careers.jobs.job3.posted": "3 दिन पहले",
-                "careers.jobs.job4.title": "प्रोजेक्ट मैनेजर",
-                "careers.jobs.job4.department": "संचालन",
-                "careers.jobs.job4.description": "योजना से लेकर पूरा होने तक कई निर्माण परियोजनाओं का पर्यवेक्षण करें। बजट, समयसीमा, संसाधन और हितधारक संचार का प्रबंधन करें। पीएमपी प्रमाणन और बड़े पैमाने की परियोजना प्रबंधन अनुभव पसंदीदा है।",
-                "careers.jobs.job4.posted": "5 दिन पहले",
-                "careers.jobs.job5.title": "कानूनी कार्यकारी",
-                "careers.jobs.job5.department": "वित्त और कानूनी",
-                "careers.jobs.job5.description": "रियल एस्टेट परियोजनाओं के लिए कानूनी दस्तावेजीकरण, अनुबंध और अनुपालन संभालें। RERA अनुपालन सुनिश्चित करें, संपत्ति पंजीकरण प्रबंधित करें और कानूनी सलाह प्रदान करें। रियल एस्टेट कानून अनुभव के साथ कानून की डिग्री आवश्यक है।",
-                "careers.jobs.job5.posted": "1 सप्ताह पहले",
-                "careers.jobs.job6.title": "विपणन कार्यकारी",
-                "careers.jobs.job6.department": "बिक्री और विपणन",
-                "careers.jobs.job6.description": "रियल एस्टेट परियोजनाओं के लिए विपणन रणनीतियाँ विकसित करें और लागू करें। डिजिटल मार्केटिंग अभियान, सामग्री निर्माण और ब्रांड प्रचार का प्रबंधन करें। रियल एस्टेट मार्केटिंग और सोशल मीडिया प्रबंधन में अनुभव पसंदीदा है।",
-                "careers.jobs.job6.posted": "4 दिन पहले",
-                "careers.jobs.no_jobs.title": "कोई नौकरी नहीं मिली",
-                "careers.jobs.no_jobs.message": "हमें आपकी खोज मानदंड से मेल खाने वाली कोई नौकरी नहीं मिली। विभिन्न कीवर्ड आजमाएं या नए उद्घाटन के लिए बाद में वापस जांचें।",
-                "careers.jobs.no_jobs.reset": "फिल्टर रीसेट करें",
-                
-                // Departments Section
-                "careers.departments.title": "हमारे विभाग",
-                "careers.departments.subtitle": "विभिन्न विभागों में अवसरों का अन्वेषण करें",
-                "careers.departments.dept1.name": "बिक्री और विपणन",
-                "careers.departments.dept1.description": "बिक्री वृद्धि को चलाएं और हमारी ब्रांड उपस्थिति बनाएं",
-                "careers.departments.dept1.openings": "2 खुली पदें",
-                "careers.departments.dept2.name": "निर्माण",
-                "careers.departments.dept2.description": "अभिनव तकनीकों के साथ गुणवत्तापूर्ण संरचनाएं बनाएं",
-                "careers.departments.dept2.openings": "1 खुली पद",
-                "careers.departments.dept3.name": "डिजाइन और वास्तुकला",
-                "careers.departments.dept3.description": "आधुनिक रहने की जगहों के लिए अभिनव डिजाइन बनाएं",
-                "careers.departments.dept3.openings": "1 खुली पद",
-                "careers.departments.dept4.name": "संचालन",
-                "careers.departments.dept4.description": "सुचारू परियोजना क्रियान्वयन और वितरण सुनिश्चित करें",
-                "careers.departments.dept4.openings": "1 खुली पद",
-                "careers.departments.dept5.name": "वित्त और कानूनी",
-                "careers.departments.dept5.description": "वित्तीय संचालन और कानूनी अनुपालन का प्रबंधन करें",
-                "careers.departments.dept5.openings": "1 खुली पद",
-                "careers.departments.dept6.name": "मानव संसाधन",
-                "careers.departments.dept6.description": "प्रतिभा को पोषित करें और हमारी संगठनात्मक संस्कृति बनाएं",
-                "careers.departments.dept6.openings": "जल्द ही आ रहा है",
-                "careers.departments.dept7.name": "ग्राहक संबंध",
-                "careers.departments.dept7.description": "हमारे ग्राहकों के साथ स्थायी संबंध बनाएं",
-                "careers.departments.dept7.openings": "जल्द ही आ रहा है",
-                "careers.departments.dept8.name": "आईटी और प्रौद्योगिकी",
-                "careers.departments.dept8.description": "डिजिटल परिवर्तन और नवाचार को चलाएं",
-                "careers.departments.dept8.openings": "जल्द ही आ रहा है",
-                
-                // Process Section
-                "careers.process.badge": "भर्ती प्रक्रिया",
-                "careers.process.title": "कैसे आवेदन करें",
-                "careers.process.subtitle": "हमारी सरल और पारदर्शी भर्ती प्रक्रिया",
-                "careers.process.step1.title": "अपनी भूमिका खोजें",
-                "careers.process.step1.description": "हमारी वर्तमान रिक्तियों को ब्राउज़ करें और अपने कौशल और आकांक्षाओं के लिए सही मिलान ढूंढें।",
-                "careers.process.step2.title": "आवेदन जमा करें",
-                "careers.process.step2.description": "ऑनलाइन आवेदन पूरा करें और अपना रिज्यूमे और सहायक दस्तावेज़ अपलोड करें।",
-                "careers.process.step3.title": "साक्षात्कार प्रक्रिया",
-                "careers.process.step3.description": "अपनी योग्यताओं पर चर्चा करने के लिए हमारे एचआर और विभाग प्रमुखों के साथ साक्षात्कार में भाग लें।",
-                "careers.process.step4.title": "नौकरी का प्रस्ताव",
-                "careers.process.step4.description": "अपना ऑफर लेटर प्राप्त करें और अपने रोमांचक करियर यात्रा को शुरू करने के लिए हमारी टीम में शामिल हों।",
-                
-                // Testimonials Section
-                "careers.testimonials.badge": "कर्मचारी कहानियां",
-                "careers.testimonials.title": "नरोड़ा ग्रुप में जीवन",
-                "careers.testimonials.subtitle": "हमारी टीम के सदस्यों से उनके अनुभवों के बारे में सुनें",
-                "careers.testimonials.testimonial1": "\"नरोड़ा ग्रुप में काम करना मेरे करियर के लिए परिवर्तनकारी रहा है। विकास के अवसर और सहायक टीम वातावरण इसे एक असाधारण कार्यस्थल बनाते हैं।\"",
-                "careers.testimonials.author1.name": "राहुल शर्मा",
-                "careers.testimonials.author1.role": "प्रोजेक्ट मैनेजर, 5 वर्ष",
-                "careers.testimonials.testimonial2": "\"यहां सीखने के अवसर अविश्वसनीय हैं। मैं सिर्फ 4 साल में एक जूनियर कार्यकारी से विभाग का नेतृत्व करने तक बढ़ा हूं। कंपनी वास्तव में अपने कर्मचारियों में निवेश करती है।\"",
-                "careers.testimonials.author2.name": "प्रिया पटेल",
-                "careers.testimonials.author2.role": "बिक्री प्रमुख, 4 वर्ष",
-                "careers.testimonials.testimonial3": "\"मुझे सबसे ज्यादा काम-जीवन संतुलन पसंद है। प्रबंधन पेशेवर विकास सुनिश्चित करते हुए व्यक्तिगत जरूरतों को समझता है। यह सही कार्यस्थल है।\"",
-                "careers.testimonials.author3.name": "अमित देसाई",
-                "careers.testimonials.author3.role": "साइट इंजीनियर, 3 वर्ष",
-                
-                // Apply Section
-                "careers.apply.title": "आवेदन करने के लिए तैयार हैं?",
-                "careers.apply.subtitle": "अपना आवेदन जमा करें और नरोड़ा ग्रुप के साथ एक रोमांचक करियर की दिशा में पहला कदम उठाएं।",
-                "careers.apply.form.title": "आवेदन फॉर्म",
-                "careers.apply.form.fullName": "पूरा नाम *",
-                "careers.apply.form.email": "ईमेल पता *",
-                "careers.apply.form.phone": "फोन नंबर *",
-                "careers.apply.form.position": "आवेदन करने वाला पद *",
-                "careers.apply.form.position.placeholder": "एक पद चुनें",
-                "careers.apply.form.position.other": "अन्य",
-                "careers.apply.form.experience": "कुल अनुभव (वर्ष) *",
-                "careers.apply.form.experience.placeholder": "अनुभव चुनें",
-                "careers.apply.form.experience.0-2": "0-2 वर्ष",
-                "careers.apply.form.experience.2-5": "2-5 वर्ष",
-                "careers.apply.form.experience.5-8": "5-8 वर्ष",
-                "careers.apply.form.experience.8-10": "8-10 वर्ष",
-                "careers.apply.form.experience.10plus": "10+ वर्ष",
-                "careers.apply.form.ctc": "वर्तमान CTC (₹)",
-                "careers.apply.form.ctc.placeholder": "जैसे, 8,00,000",
-                "careers.apply.form.coverLetter": "कवर लेटर",
-                "careers.apply.form.coverLetter.placeholder": "हमें बताएं कि आप इस पद में क्यों रुचि रखते हैं...",
-                "careers.apply.form.resume": "रिज्यूमे अपलोड करें *",
-                "careers.apply.form.resume.title": "अपना रिज्यूमे अपलोड करने के लिए क्लिक करें",
-                "careers.apply.form.resume.info": "समर्थित प्रारूप: PDF, DOC, DOCX (अधिकतम 5MB)",
-                "careers.apply.form.additional": "अतिरिक्त दस्तावेज़",
-                "careers.apply.form.additional.title": "अतिरिक्त दस्तावेज़ अपलोड करें (वैकल्पिक)",
-                "careers.apply.form.additional.info": "पोर्टफोलियो, प्रमाणपत्र, आदि",
-                "careers.apply.form.agree": "मैं <a href=\"privacy.html\" class=\"text-gold\">गोपनीयता नीति</a> से सहमत हूं और इस आवेदन के बारे में संपर्क किए जाने की सहमति देता हूं",
-                "careers.apply.form.reset": "फॉर्म रीसेट करें",
-                "careers.apply.form.submit": "आवेदन जमा करें",
-                
-                // Modal Content (partial for example)
-                "careers.modal.job1.title": "सीनियर सेल्स मैनेजर - नौकरी विवरण",
-                "careers.modal.jobDescription": "नौकरी विवरण",
-                "careers.modal.job1.description": "हम अपने प्रीमियम आवासीय और वाणिज्यिक परियोजनाओं के लिए बिक्री टीम का नेतृत्व करने और राजस्व वृद्धि को चलाने के लिए एक अनुभवी सीनियर सेल्स मैनेजर की तलाश कर रहे हैं।",
-                "careers.modal.responsibilities": "जिम्मेदारियां",
-                "careers.modal.requirements": "आवश्यकताएं",
-                "careers.modal.whatWeOffer": "हम क्या प्रदान करते हैं",
-                "careers.modal.close": "बंद करें",
-                
-                // Footer
-                "footer.description": "लैंडमार्क संपत्तियाँ बनाना जो उत्कृष्टता को फिर से परिभाषित करती हैं। प्रीमियम वाणिज्यिक स्थानों से लेकर लग्जरी आवासीय जीवन तक, हम गुणवत्ता और प्रतिबद्धता के साथ सपने बनाते हैं।",
-                "footer.quick_links": "त्वरित लिंक",
-                "footer.our_projects": "हमारी परियोजनाएं",
-                "footer.landmark_desc": "प्रीमियम वाणिज्यिक स्थान",
-                "footer.irish_desc": "लग्जरी आवासीय जीवन",
-                "footer.view_all_projects": "सभी परियोजनाएं देखें",
-                "footer.explore_portfolio": "हमारे पोर्टफोलियो का अन्वेषण करें",
-                "footer.contact_info": "संपर्क जानकारी",
-                "footer.phone": "फोन नंबर",
-                "footer.phone_hours": "सोम - शनि: सुबह 10 - शाम 7 बजे",
-                "footer.email": "ईमेल पता",
-                "footer.email_response": "हम 24 घंटे के भीतर जवाब देते हैं",
-                "footer.address": "कार्यालय पता",
-                "footer.address_line1": "नरोड़ा - भाट रोड",
-                "footer.address_line2": "अहमदाबाद, गुजरात 382330",
-                "footer.rights": "सर्वाधिकार सुरक्षित।",
-                "footer.privacy": "गोपनीयता नीति",
-                "footer.terms": "सेवा की शर्तें",
-                "footer.rera": "RERA पंजीकरण"
-            },
-            gu: {
-                // Language Selector
-                "lang.english": "English",
-                "lang.hindi": "हिंदी",
-                "lang.gujarati": "ગુજરાતી",
-                
-                // Navigation
-                "nav.home": "હોમ",
-                "nav.about": "અમારા વિશે",
-                "nav.projects": "પ્રોજેક્ટ્સ",
-                "nav.landmark": "નરોડા લેન્ડમાર્ક",
-                "nav.irish": "નરોડા આયરિશ",
-                "nav.all_projects": "બધા પ્રોજેક્ટ્સ",
-                "nav.properties": "પ્રોપર્ટીઝ",
-                "nav.buy": "ખરીદો",
-                "nav.rent": "ભાડે લો",
-                "nav.property_details": "પ્રોપર્ટી વિગતો",
-                "nav.gallery": "ગેલેરી",
-                "nav.more": "વધુ",
-                "nav.blog": "બ્લોગ",
-                "nav.news": "સમાચાર",
-                "nav.careers": "કરિયર",
-                "nav.team": "અમારી ટીમ",
-                "nav.faq": "સામાન્ય પ્રશ્નો",
-                "nav.contact": "સંપર્ક કરો",
-                "nav.login": "લોગિન",
-                "nav.search": "શોધો",
-                "nav.account": "એકાઉન્ટ",
-                
-                // Careers Hero Section
-                "careers.hero.title": "નરોડા ગ્રુપ સાથે તમારું કરિયર બનાવો",
-                "careers.hero.subtitle": "અમારી નવીન ટીમમાં જોડાઓ અને અમદાવાદના સ્કાયલાઇનને આકાર આપવામાં અમારી મદદ કરો. રિઅલ એસ્ટેટ ડેવલપમેન્ટમાં રોમાંચક તકો શોધો.",
-                "careers.hero.btn1": "ખુલ્લા પદો જુઓ",
-                "careers.hero.btn2": "તમારું સીવી સબમિટ કરો",
-                
-                // Benefits Section
-                "careers.benefits.badge": "અમને શા માટે પસંદ કરો",
-                "careers.benefits.title": "એક્સલન્સ સાથે વિકસિત થાઓ",
-                "careers.benefits.subtitle": "અમે પ્રતિભાને પોષણ આપવામાં અને વ્યાવસાયિક વિકાસ માટે તકો પ્રદાન કરવામાં માનીએ છીએ",
-                "careers.benefits.card1.title": "કરિયર ગ્રોથ",
-                "careers.benefits.card1.text": "નિયમિત પ્રમોશન અને પ્રગતિ માટે તકો સાથે સ્પષ્ટ કરિયર પાથ.",
-                "careers.benefits.card2.title": "લર્નિંગ અને ડેવલપમેન્ટ",
-                "careers.benefits.card2.text": "નિયમિત તાલીમ કાર્યક્રમો, વર્કશોપ અને સ્કિલ એનહેન્સમેન્ટ તકો.",
-                "careers.benefits.card3.title": "કોમ્પીટિટીવ કોમ્પેન્સેશન",
-                "careers.benefits.card3.text": "પરફોર્મન્સ બોનસ અને ઇન્સેન્ટિવ્સ સાથે આકર્ષક સેલરી પેકેજ.",
-                "careers.benefits.card4.title": "વર્ક-લાઇફ બેલેન્સ",
-                "careers.benefits.card4.text": "લવચીક કામની વ્યવસ્થા અને કર્મચારી વેલ્નેસ પ્રોગ્રામ.",
-                "careers.benefits.card5.title": "કોલાબોરેટિવ કલ્ચર",
-                "careers.benefits.card5.text": "સપોર્ટિવ ટીમ એન્વાયરનમેન્ટ જે ઇનોવેશન અને ક્રિએટિવિટીને પ્રોત્સાહન આપે છે.",
-                "careers.benefits.card6.title": "એમ્પ્લોયી હાઉસિંગ",
-                "careers.benefits.card6.text": "કર્મચારીઓ માટે નરોડા ગ્રુપ પ્રોપર્ટીઝ પર સ્પેશિયલ ડિસ્કાઉન્ટ.",
-                "careers.benefits.card7.title": "રેકગ્નિશન",
-                "careers.benefits.card7.text": "ઉત્કૃષ્ટ પરફોર્મન્સ માટે નિયમિત રેકગ્નિશન પ્રોગ્રામ અને રિવોર્ડ્સ.",
-                "careers.benefits.card8.title": "પેઈડ ટાઇમ ઓફ",
-                "careers.benefits.card8.text": "વેકેશન, સિક લીવ અને હોલિડેઝ સહિત ઉદાર છુટ્ટી પોલિસી.",
-                
-                // Jobs Section
-                "careers.jobs.badge": "વર્તમાન ખાલી જગ્યાઓ",
-                "careers.jobs.title": "જોબ ઓપરચ્યુનિટીઝ એક્સપ્લોર કરો",
-                "careers.jobs.subtitle": "અમારી ટીમમાં જોડાઓ અને અમદાવાદના ભવિષ્યને આકાર આપતા લેન્ડમાર્ક પ્રોજેક્ટ્સમાં યોગદાન આપો",
-                "careers.jobs.search.placeholder": "શીર્ષક, કીવર્ડ અથવા ડિપાર્ટમેન્ટ દ્વારા જોબ્સ શોધો...",
-                "careers.jobs.search.button": "શોધો",
-                "careers.jobs.filter.all": "બધી જોબ્સ",
-                "careers.jobs.filter.sales": "સેલ્સ અને માર્કેટિંગ",
-                "careers.jobs.filter.construction": "કન્સ્ટ્રક્શન",
-                "careers.jobs.filter.design": "ડિઝાઇન અને આર્કિટેક્ચર",
-                "careers.jobs.filter.operations": "ઓપરેશન્સ",
-                "careers.jobs.filter.finance": "ફાઇનાન્સ અને લીગલ",
-                "careers.jobs.location.ahmedabad": "અમદાવાદ",
-                "careers.jobs.type.fulltime": "ફુલ-ટાઇમ",
-                "careers.jobs.experience.8plus": "8+ વર્ષનો અનુભવ",
-                "careers.jobs.experience.3plus": "3+ વર્ષનો અનુભવ",
-                "careers.jobs.experience.5plus": "5+ વર્ષનો અનુભવ",
-                "careers.jobs.experience.10plus": "10+ વર્ષનો અનુભવ",
-                "careers.jobs.experience.4plus": "4+ વર્ષનો અનુભવ",
-                "careers.jobs.experience.2plus": "2+ વર્ષનો અનુભવ",
-                "careers.jobs.apply": "અભી અપ્લાય કરો",
-                "careers.jobs.posted": "પોસ્ટ કર્યું:",
-                "careers.jobs.view_details": "વિગતો જુઓ",
-                "careers.jobs.job1.title": "સિનિયર સેલ્સ મેનેજર",
-                "careers.jobs.job1.department": "સેલ્સ અને માર્કેટિંગ",
-                "careers.jobs.job1.description": "અમારા પ્રીમિયમ રેસિડેન્શિયલ અને કોમર્શિયલ પ્રોજેક્ટ્સ માટે સેલ્સ ટીમ લીડ કરો. સેલ્સ સ્ટ્રેટેજી વિકસિત કરો, ક્લાયંટ રિલેશનશિપ મેનેજ કરો અને સેલ્સ ટાર્ગેટ પ્રાપ્ત કરો. રિઅલ એસ્ટેટ સેલ્સ અને ટીમ મેનેજમેન્ટમાં અનુભવ જરૂરી છે.",
-                "careers.jobs.job1.posted": "2 દિવસ પહેલા",
-                "careers.jobs.job2.title": "સાઇટ એન્જિનિયર",
-                "careers.jobs.job2.department": "કન્સ્ટ્રક્શન",
-                "careers.jobs.job2.description": "કન્સ્ટ્રક્શન એક્ટિવિટીઝની સુપરવિઝન કરો, ક્વોલિટી કંટ્રોલ સુનિશ્ચિત કરો અને ઓન-સાઇટ ઓપરેશન્સ મેનેજ કરો. કોન્ટ્રાક્ટર્સ સાથે કોઓર્ડિનેટ કરો, સેફ્ટી સ્ટાન્ડર્ડ્સ મેનેજ કરો અને પ્રોજેક્ટ ટાઇમલાઇન મોનિટર કરો. સિવિલ એન્જિનિયરિંગ ડિગ્રી સાથે સાઇટ અનુભવ જરૂરી છે.",
-                "careers.jobs.job2.posted": "1 અઠવાડિયા પહેલા",
-                "careers.jobs.job3.title": "ઇન્ટિરિયર ડિઝાઇનર",
-                "careers.jobs.job3.department": "ડિઝાઇન અને આર્કિટેક્ચર",
-                "careers.jobs.job3.description": "રેસિડેન્શિયલ અને કોમર્શિયલ પ્રોજેક્ટ્સ માટે ઇનોવેટિવ ઇન્ટિરિયર ડિઝાઇન કન્સેપ્ટ બનાવો. ડિઝાઇન પ્રેઝન્ટેશન વિકસિત કરો, મટીરિયલ સિલેક્ટ કરો અને ક્લાયંટ્સ અને કોન્ટ્રાક્ટર્સ સાથે કોઓર્ડિનેટ કરો. ઑટોકેડ, 3ડી મેક્સ અને ડિઝાઇન સોફ્ટવેરમાં પ્રોફિશિયન્સી જરૂરી છે.",
-                "careers.jobs.job3.posted": "3 દિવસ પહેલા",
-                "careers.jobs.job4.title": "પ્રોજેક્ટ મેનેજર",
-                "careers.jobs.job4.department": "ઓપરેશન્સ",
-                "careers.jobs.job4.description": "પ્લાનિંગથી કમ્પ્લીશન સુધી મલ્ટીપલ કન્સ્ટ્રક્શન પ્રોજેક્ટ્સ ઓવરસી કરો. બજેટ, ટાઇમલાઇન, રિસોર્સ અને સ્ટેકહોલ્ડર કોમ્યુનિકેશન મેનેજ કરો. પીએમપી સર્ટિફિકેશન અને લાર્જ-સ્કેલ પ્રોજેક્ટ મેનેજમેન્ટ અનુભવ પ્રેફર્ડ છે.",
-                "careers.jobs.job4.posted": "5 દિવસ પહેલા",
-                "careers.jobs.job5.title": "લીગલ એક્ઝિક્યુટિવ",
-                "careers.jobs.job5.department": "ફાઇનાન્સ અને લીગલ",
-                "careers.jobs.job5.description": "રિઅલ એસ્ટેટ પ્રોજેક્ટ્સ માટે લીગલ ડોક્યુમેન્ટેશન, કોન્ટ્રાક્ટ અને કમ્પ્લાયન્સ હેન્ડલ કરો. RERA કમ્પ્લાયન્સ સુનિશ્ચિત કરો, પ્રોપર્ટી રજિસ્ટ્રેશન મેનેજ કરો અને લીગલ એડવાઈઝ પ્રોવાઈડ કરો. રિઅલ એસ્ટેટ લો અનુભવ સાથે લો ડિગ્રી જરૂરી છે.",
-                "careers.jobs.job5.posted": "1 અઠવાડિયા પહેલા",
-                "careers.jobs.job6.title": "માર્કેટિંગ એક્ઝિક્યુટિવ",
-                "careers.jobs.job6.department": "સેલ્સ અને માર્કેટિંગ",
-                "careers.jobs.job6.description": "રિઅલ એસ્ટેટ પ્રોજેક્ટ્સ માટે માર્કેટિંગ સ્ટ્રેટેજી વિકસિત કરો અને ઇમ્પ્લિમેન્ટ કરો. ડિજિટલ માર્કેટિંગ કેમ્પેઇન, કન્ટેન્ટ ક્રિએશન અને બ્રાન્ડ પ્રોમોશન મેનેજ કરો. રિઅલ એસ્ટેટ માર્કેટિંગ અને સોશિયલ મીડિયા મેનેજમેન્ટમાં અનુભવ પ્રેફર્ડ છે.",
-                "careers.jobs.job6.posted": "4 દિવસ પહેલા",
-                "careers.jobs.no_jobs.title": "કોઈ જોબ્સ મળી નથી",
-                "careers.jobs.no_jobs.message": "અમને તમારી શોધ માપદંડ સાથે મેળ ખાતી કોઈ જોબ્સ મળી નથી. વિવિધ કીવર્ડ અજમાવો અથવા નવા ઓપનિંગ માટે પાછળથી તપાસો.",
-                "careers.jobs.no_jobs.reset": "ફિલ્ટર રીસેટ કરો",
-                
-                // Departments Section
-                "careers.departments.title": "અમારા ડિપાર્ટમેન્ટ",
-                "careers.departments.subtitle": "વિવિધ ડિપાર્ટમેન્ટમાં તકો એક્સપ્લોર કરો",
-                "careers.departments.dept1.name": "સેલ્સ અને માર્કેટિંગ",
-                "careers.departments.dept1.description": "સેલ્સ ગ્રોથ ડ્રાઇવ કરો અને અમારી બ્રાન્ડ પ્રેઝન્સ બનાવો",
-                "careers.departments.dept1.openings": "2 ખુલ્લા પદો",
-                "careers.departments.dept2.name": "કન્સ્ટ્રક્શન",
-                "careers.departments.dept2.description": "ઇનોવેટિવ ટેકનિક સાથે ક્વોલિટી સ્ટ્રક્ચર બનાવો",
-                "careers.departments.dept2.openings": "1 ખુલ્લું પદ",
-                "careers.departments.dept3.name": "ડિઝાઇન અને આર્કિટેક્ચર",
-                "careers.departments.dept3.description": "મોડર્ન લિવિંગ સ્પેસ માટે ઇનોવેટિવ ડિઝાઇન બનાવો",
-                "careers.departments.dept3.openings": "1 ખુલ્લું પદ",
-                "careers.departments.dept4.name": "ઓપરેશન્સ",
-                "careers.departments.dept4.description": "સ્મૂધ પ્રોજેક્ટ એક્ઝિક્યુશન અને ડિલિવરી સુનિશ્ચિત કરો",
-                "careers.departments.dept4.openings": "1 ખુલ્લું પદ",
-                "careers.departments.dept5.name": "ફાઇનાન્સ અને લીગલ",
-                "careers.departments.dept5.description": "ફાઇનાન્શિયલ ઓપરેશન અને લીગલ કમ્પ્લાયન્સ મેનેજ કરો",
-                "careers.departments.dept5.openings": "1 ખુલ્લું પદ",
-                "careers.departments.dept6.name": "હ્યુમન રિસોર્સ",
-                "careers.departments.dept6.description": "ટેલેન્ટ નર્ચર કરો અને અમારી ઓર્ગેનાઇઝેશનલ કલ્ચર બનાવો",
-                "careers.departments.dept6.openings": "જલ્દી આવી રહ્યું છે",
-                "careers.departments.dept7.name": "કસ્ટમર રિલેશન",
-                "careers.departments.dept7.description": "અમારા ક્લાયંટ્સ સાથે લાસ્ટિંગ રિલેશન બનાવો",
-                "careers.departments.dept7.openings": "જલ્દી આવી રહ્યું છે",
-                "careers.departments.dept8.name": "આઈટી અને ટેક્નોલોજી",
-                "careers.departments.dept8.description": "ડિજિટલ ટ્રાન્સફોર્મેશન અને ઇનોવેશન ડ્રાઇવ કરો",
-                "careers.departments.dept8.openings": "જલ્દી આવી રહ્યું છે",
-                
-                // Process Section
-                "careers.process.badge": "હાયરિંગ પ્રોસેસ",
-                "careers.process.title": "કેવી રીતે અપ્લાય કરવું",
-                "careers.process.subtitle": "અમારી સરળ અને પારદર્શી હાયરિંગ પ્રોસેસ",
-                "careers.process.step1.title": "તમારી રોલ શોધો",
-                "careers.process.step1.description": "અમારી વર્તમાન ખાલી જગ્યાઓ બ્રાઉઝ કરો અને તમારા સ્કિલ અને આકાંક્ષાઓ માટે સાચો મેચ શોધો.",
-                "careers.process.step2.title": "અપ્લિકેશન સબમિટ કરો",
-                "careers.process.step2.description": "ઓનલાઈન અપ્લિકેશન ફોર્મ પૂર્ણ કરો અને તમારું રિઝ્યુમ અને સપોર્ટિંગ ડોક્યુમેન્ટ અપલોડ કરો.",
-                "careers.process.step3.title": "ઇન્ટરવ્યૂ પ્રોસેસ",
-                "careers.process.step3.description": "તમારી યોગ્યતાઓની ચર્ચા કરવા માટે અમારા એચઆર અને ડિપાર્ટમેન્ટ હેડ્સ સાથે ઇન્ટરવ્યૂમાં ભાગ લો.",
-                "careers.process.step4.title": "જોબ ઓફર",
-                "careers.process.step4.description": "તમારું ઓફર લેટર પ્રાપ્ત કરો અને તમારી એક્સાઇટિંગ કરિયર જર્ની શરૂ કરવા અમારી ટીમમાં જોડાઓ.",
-                
-                // Testimonials Section
-                "careers.testimonials.badge": "એમ્પ્લોયી સ્ટોરીઝ",
-                "careers.testimonials.title": "નરોડા ગ્રુપમાં જીવન",
-                "careers.testimonials.subtitle": "અમારી ટીમ મેમ્બર્સ પાસેથી તેમના અનુભવો સાંભળો",
-                "careers.testimonials.testimonial1": "\"નરોડા ગ્રુપમાં કામ કરવું મારા કરિયર માટે ટ્રાન્સફોર્મેટિવ રહ્યું છે. ગ્રોથ માટે તકો અને સપોર્ટિવ ટીમ એન્વાયરનમેન્ટ તેને એક એક્સ્સેપ્શનલ વર્કપ્લેસ બનાવે છે.\"",
-                "careers.testimonials.author1.name": "રાહુલ શર્મા",
-                "careers.testimonials.author1.role": "પ્રોજેક્ટ મેનેજર, 5 વર્ષ",
-                "careers.testimonials.testimonial2": "\"અહીં લર્નિંગ તકો અવિશ્વસનીય છે. હું માત્ર 4 વર્ષમાં જુનિયર એક્ઝિક્યુટિવથી ડિપાર્ટમેન્ટ હેડિંગ સુધી વધ્યો છું. કંપની ખરેખર તેના એમ્પ્લોયીઝમાં ઇન્વેસ્ટ કરે છે.\"",
-                "careers.testimonials.author2.name": "પ્રિયા પટેલ",
-                "careers.testimonials.author2.role": "સેલ્સ હેડ, 4 વર્ષ",
-                "careers.testimonials.testimonial3": "\"મને સૌથી વધુ વર્ક-લાઇફ બેલેન્સ ગમે છે. મેનેજમેન્ટ વ્યાવસાયિક વિકાસ સુનિશ્ચિત કરતી વખતે વ્યક્તિગત જરૂરિયાતો સમજે છે. તે સંપૂર્ણ વર્કપ્લેસ છે.\"",
-                "careers.testimonials.author3.name": "અમિત દેસાઈ",
-                "careers.testimonials.author3.role": "સાઇટ એન્જિનિયર, 3 વર્ષ",
-                
-                // Apply Section
-                "careers.apply.title": "અપ્લાય કરવા માટે તૈયાર છો?",
-                "careers.apply.subtitle": "તમારી અપ્લિકેશન સબમિટ કરો અને નરોડા ગ્રુપ સાથે એક એક્સાઇટિંગ કરિયર તરફ પહેલું પગલું ભરો.",
-                "careers.apply.form.title": "અપ્લિકેશન ફોર્મ",
-                "careers.apply.form.fullName": "પૂરું નામ *",
-                "careers.apply.form.email": "ઇમેલ એડ્રેસ *",
-                "careers.apply.form.phone": "ફોન નંબર *",
-                "careers.apply.form.position": "અપ્લાય કરવાનું પદ *",
-                "careers.apply.form.position.placeholder": "એક પદ પસંદ કરો",
-                "careers.apply.form.position.other": "અન્ય",
-                "careers.apply.form.experience": "કુલ અનુભવ (વર્ષ) *",
-                "careers.apply.form.experience.placeholder": "અનુભવ પસંદ કરો",
-                "careers.apply.form.experience.0-2": "0-2 વર્ષ",
-                "careers.apply.form.experience.2-5": "2-5 વર્ષ",
-                "careers.apply.form.experience.5-8": "5-8 વર્ષ",
-                "careers.apply.form.experience.8-10": "8-10 વર્ષ",
-                "careers.apply.form.experience.10plus": "10+ વર્ષ",
-                "careers.apply.form.ctc": "વર્તમાન CTC (₹)",
-                "careers.apply.form.ctc.placeholder": "જેમ કે, 8,00,000",
-                "careers.apply.form.coverLetter": "કવર લેટર",
-                "careers.apply.form.coverLetter.placeholder": "અમને કહો કે તમે આ પદમાં શા માટે રુચિ રાખો છો...",
-                "careers.apply.form.resume": "રિઝ્યુમ અપલોડ કરો *",
-                "careers.apply.form.resume.title": "તમારું રિઝ્યુમ અપલોડ કરવા ક્લિક કરો",
-                "careers.apply.form.resume.info": "સપોર્ટેડ ફોર્મેટ: PDF, DOC, DOCX (મેક્સ 5MB)",
-                "careers.apply.form.additional": "અતિરિક્ત ડોક્યુમેન્ટ",
-                "careers.apply.form.additional.title": "અતિરિક્ત ડોક્યુમેન્ટ અપલોડ કરો (ઓપ્શનલ)",
-                "careers.apply.form.additional.info": "પોર્ટફોલિયો, સર્ટિફિકેટ, વગેરે",
-                "careers.apply.form.agree": "હું <a href=\"privacy.html\" class=\"text-gold\">પ્રાઈવસી પોલિસી</a> સાથે સંમત છું અને આ અપ્લિકેશન વિશે સંપર્ક કરવા માટે સંમતિ આપું છું",
-                "careers.apply.form.reset": "ફોર્મ રીસેટ કરો",
-                "careers.apply.form.submit": "અપ્લિકેશન સબમિટ કરો",
-                
-                // Modal Content (partial for example)
-                "careers.modal.job1.title": "સિનિયર સેલ્સ મેનેજર - જોબ વિગતો",
-                "careers.modal.jobDescription": "જોબ વર્ણન",
-                "careers.modal.job1.description": "અમે અમારી પ્રીમિયમ રેસિડેન્શિયલ અને કોમર્શિયલ પ્રોજેક્ટ્સ માટે સેલ્સ ટીમ લીડ કરવા અને રેવેન્યુ ગ્રોથ ડ્રાઇવ કરવા માટે એક અનુભવી સિનિયર સેલ્સ મેનેજર શોધી રહ્યા છીએ.",
-                "careers.modal.responsibilities": "જવાબદારીઓ",
-                "careers.modal.requirements": "જરૂરિયાતો",
-                "careers.modal.whatWeOffer": "અમે શું ઓફર કરીએ છીએ",
-                "careers.modal.close": "બંધ કરો",
-                
-                // Footer
-                "footer.description": "લેન્ડમાર્ક પ્રોપર્ટીઝ બનાવવી જે એક્સલન્સને પુનઃવ્યાખ્યાયિત કરે છે. પ્રીમિયમ કોમર્શિયલ સ્પેસથી લગ્ઝરી રેસિડેન્શિયલ લિવિંગ સુધી, અમે ગુણવત્તા અને પ્રતિબદ્ધતા સાથે સપના બનાવીએ છીએ.",
-                "footer.quick_links": "ઝડપી લિંક્સ",
-                "footer.our_projects": "અમારા પ્રોજેક્ટ્સ",
-                "footer.landmark_desc": "પ્રીમિયમ કોમર્શિયલ સ્પેસ",
-                "footer.irish_desc": "લગ્ઝરી રેસિડેન્શિયલ લિવિંગ",
-                "footer.view_all_projects": "બધા પ્રોજેક્ટ્સ જુઓ",
-                "footer.explore_portfolio": "અમારા પોર્ટફોલિયોનું અન્વેષણ કરો",
-                "footer.contact_info": "સંપર્ક માહિતી",
-                "footer.phone": "ફોન નંબર",
-                "footer.phone_hours": "સોમ - શનિ: સવારે 10 - સાંજે 7 વાગ્યા",
-                "footer.email": "ઈમેલ એડ્રેસ",
-                "footer.email_response": "અમે 24 કલાકમાં જવાબ આપીએ છીએ",
-                "footer.address": "ઓફિસ એડ્રેસ",
-                "footer.address_line1": "નરોડા - ભાટ રોડ",
-                "footer.address_line2": "અમદાવાદ, ગુજરાત 382330",
-                "footer.rights": "બધા હક્કો સુરક્ષિત.",
-                "footer.privacy": "ગોપનીયતા નીતિ",
-                "footer.terms": "સેવાની શરતો",
-                "footer.rera": "RERA રજિસ્ટ્રેશન"
-            }
-        };
-    </script>
-
     <script>
         // Wait for page to load
         document.addEventListener('DOMContentLoaded', function() {
-            // Initialize AOS
+            // Initialize AOS with mobile support
             AOS.init({
-                duration: 1000,
-                once: false,
+                duration: 800,
+                once: true,
                 offset: 100,
-                disable: 'mobile'
+                disable: function() {
+                    return window.innerWidth < 768;
+                }
             });
             
             // Remove preloader
@@ -3387,108 +2345,6 @@
                     preloader.style.display = 'none';
                 }, 500);
             }, 1000);
-            
-            // Language switching functionality
-            const languageSelectors = document.querySelectorAll('.language-selector');
-            const currentLanguageElement = document.getElementById('currentLanguage');
-            
-            // Load saved language from localStorage or default to English
-            let currentLang = localStorage.getItem('preferredLanguage') || 'en';
-            
-            // Apply language on page load
-            applyLanguage(currentLang);
-            
-            // Set up language selector event listeners
-            languageSelectors.forEach(selector => {
-                selector.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const lang = this.getAttribute('data-lang');
-                    setLanguage(lang);
-                });
-            });
-            
-            function setLanguage(lang) {
-                currentLang = lang;
-                localStorage.setItem('preferredLanguage', lang);
-                applyLanguage(lang);
-                showToast(`Language changed to ${getLanguageName(lang)}`, 'success');
-            }
-            
-            function applyLanguage(lang) {
-                // Update body class for language-specific styling
-                document.body.classList.remove('hindi', 'gujarati');
-                if (lang === 'hi') document.body.classList.add('hindi');
-                if (lang === 'gu') document.body.classList.add('gujarati');
-                
-                // Update current language display
-                currentLanguageElement.textContent = getLanguageCode(lang);
-                
-                // Fade out content
-                const languageContent = document.querySelector('.language-content');
-                if (languageContent) languageContent.style.opacity = '0.5';
-                
-                // Apply translations after a short delay for smoother transition
-                setTimeout(() => {
-                    // Update all elements with data-i18n attribute
-                    const elements = document.querySelectorAll('[data-i18n]');
-                    elements.forEach(element => {
-                        const key = element.getAttribute('data-i18n');
-                        if (translations[lang] && translations[lang][key]) {
-                            // Handle placeholder replacement
-                            if (element.hasAttribute('data-i18n-placeholder')) {
-                                element.setAttribute('placeholder', translations[lang][key]);
-                            } 
-                            // Handle HTML content replacement
-                            else if (element.hasAttribute('data-i18n-html')) {
-                                element.innerHTML = translations[lang][key];
-                            }
-                            // Handle regular text content
-                            else {
-                                element.textContent = translations[lang][key];
-                            }
-                        }
-                    });
-                    
-                    // Update select options
-                    const selectElements = document.querySelectorAll('select option[data-i18n]');
-                    selectElements.forEach(option => {
-                        const key = option.getAttribute('data-i18n');
-                        if (translations[lang] && translations[lang][key]) {
-                            option.textContent = translations[lang][key];
-                        }
-                    });
-                    
-                    // Update button filter text
-                    const filterButtons = document.querySelectorAll('.filter-btn[data-i18n]');
-                    filterButtons.forEach(button => {
-                        const key = button.getAttribute('data-i18n');
-                        if (translations[lang] && translations[lang][key]) {
-                            button.textContent = translations[lang][key];
-                        }
-                    });
-                    
-                    // Fade content back in
-                    if (languageContent) languageContent.style.opacity = '1';
-                }, 300);
-            }
-            
-            function getLanguageName(code) {
-                const names = {
-                    'en': 'English',
-                    'hi': 'Hindi',
-                    'gu': 'Gujarati'
-                };
-                return names[code] || 'English';
-            }
-            
-            function getLanguageCode(code) {
-                const codes = {
-                    'en': 'EN',
-                    'hi': 'HI',
-                    'gu': 'GU'
-                };
-                return codes[code] || 'EN';
-            }
             
             // Initialize back to top button
             function initBackToTop() {
@@ -3545,20 +2401,6 @@
                         setTimeout(() => toast.remove(), 300);
                     }, 5000);
                 };
-            }
-            
-            // Initialize mobile navigation
-            function initMobileNav() {
-                // Update active nav item based on current page
-                const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-                document.querySelectorAll('.mobile-nav-item').forEach(item => {
-                    const href = item.getAttribute('href');
-                    if (href === currentPage) {
-                        item.classList.add('active');
-                    } else {
-                        item.classList.remove('active');
-                    }
-                });
             }
             
             // Job Search and Filter Functionality
@@ -3649,25 +2491,6 @@
                     }
                 }
                 
-                // Department card filtering
-                document.querySelectorAll('.department-card').forEach(card => {
-                    card.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        const filter = this.getAttribute('data-filter');
-                        
-                        // Update active filter button
-                        filterButtons.forEach(btn => {
-                            btn.classList.remove('active');
-                            if (btn.getAttribute('data-filter') === filter) {
-                                btn.classList.add('active');
-                            }
-                        });
-                        
-                        filterJobs(filter, '');
-                        document.getElementById('jobs').scrollIntoView({ behavior: 'smooth' });
-                    });
-                });
-                
                 // Initialize with all jobs showing
                 filterJobs('all', '');
             }
@@ -3677,8 +2500,6 @@
                 const form = document.getElementById('careerForm');
                 const resumeUpload = document.getElementById('resumeUpload');
                 const resumeInput = document.getElementById('resume');
-                const additionalUpload = document.getElementById('additionalUpload');
-                const additionalInput = document.getElementById('additionalFiles');
                 const fileName = document.getElementById('fileName');
                 
                 if (!form) return;
@@ -3702,12 +2523,6 @@
                                 fileName.innerHTML = `<span class="text-success"><i class="fas fa-check-circle me-2"></i>${file.name} (${(file.size / 1024).toFixed(1)} KB)</span>`;
                             }
                         }
-                    });
-                }
-                
-                if (additionalUpload && additionalInput) {
-                    additionalUpload.addEventListener('click', function() {
-                        additionalInput.click();
                     });
                 }
                 
@@ -3779,7 +2594,7 @@
                         
                         if (targetElement) {
                             window.scrollTo({
-                                top: targetElement.offsetTop - 100,
+                                top: targetElement.offsetTop - 80,
                                 behavior: 'smooth'
                             });
                         }
@@ -3787,48 +2602,208 @@
                 });
             }
             
+            // Job details modal
+            function initJobDetailsModal() {
+                const viewDetailsButtons = document.querySelectorAll('.view-details-btn');
+                const modal = new bootstrap.Modal(document.getElementById('jobDetailsModal'));
+                
+                viewDetailsButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const jobId = this.getAttribute('data-job');
+                        showJobDetails(jobId);
+                        modal.show();
+                    });
+                });
+            }
+            
+            function showJobDetails(jobId) {
+                const jobDetails = {
+                    1: {
+                        title: "Senior Sales Manager - Job Details",
+                        jobTitle: "Senior Sales Manager",
+                        department: "Sales & Marketing",
+                        location: "Ahmedabad",
+                        type: "Full-time",
+                        experience: "8+ Years Experience",
+                        description: "We are looking for an experienced Senior Sales Manager to lead our sales team and drive revenue growth for our premium residential and commercial projects.",
+                        responsibilities: [
+                            "Develop and implement sales strategies to achieve business targets",
+                            "Lead, mentor, and manage the sales team",
+                            "Build and maintain relationships with key clients and stakeholders",
+                            "Monitor market trends and competitor activities",
+                            "Prepare sales reports and forecasts for management",
+                            "Collaborate with marketing team on promotional activities"
+                        ],
+                        requirements: [
+                            "MBA in Marketing or related field (preferred)",
+                            "8+ years of sales experience in real estate",
+                            "Proven track record of achieving sales targets",
+                            "Strong leadership and team management skills",
+                            "Excellent communication and negotiation skills",
+                            "Knowledge of Ahmedabad real estate market"
+                        ],
+                        offers: [
+                            "Competitive salary with attractive commission structure",
+                            "Performance bonuses and incentives",
+                            "Health insurance and other benefits",
+                            "Opportunities for career advancement",
+                            "Professional development programs"
+                        ]
+                    },
+                    2: {
+                        title: "Site Engineer - Job Details",
+                        jobTitle: "Site Engineer",
+                        department: "Construction",
+                        location: "Ahmedabad",
+                        type: "Full-time",
+                        experience: "3+ Years Experience",
+                        description: "We are seeking a skilled Site Engineer to supervise construction activities and ensure quality control at our project sites.",
+                        responsibilities: [
+                            "Supervise day-to-day construction activities on site",
+                            "Ensure quality control and adherence to specifications",
+                            "Coordinate with contractors, architects, and project managers",
+                            "Monitor safety standards and compliance",
+                            "Maintain project documentation and reports",
+                            "Resolve technical issues on site"
+                        ],
+                        requirements: [
+                            "Bachelor's degree in Civil Engineering",
+                            "3+ years of construction site experience",
+                            "Knowledge of construction methods and materials",
+                            "Proficiency in AutoCAD and MS Office",
+                            "Strong problem-solving skills",
+                            "Excellent communication and teamwork abilities"
+                        ],
+                        offers: [
+                            "Competitive salary package",
+                            "Site allowances and benefits",
+                            "Opportunities for skill development",
+                            "Career growth in project management",
+                            "Health and safety equipment provided"
+                        ]
+                    },
+                    3: {
+                        title: "Interior Designer - Job Details",
+                        jobTitle: "Interior Designer",
+                        department: "Design & Architecture",
+                        location: "Ahmedabad",
+                        type: "Full-time",
+                        experience: "5+ Years Experience",
+                        description: "We are looking for a creative Interior Designer to create innovative design concepts for our residential and commercial projects.",
+                        responsibilities: [
+                            "Create interior design concepts and space planning",
+                            "Develop design presentations and 3D visualizations",
+                            "Select materials, finishes, and furnishings",
+                            "Coordinate with clients, architects, and contractors",
+                            "Prepare detailed drawings and specifications",
+                            "Manage project timelines and budgets"
+                        ],
+                        requirements: [
+                            "Degree in Interior Design or related field",
+                            "5+ years of interior design experience",
+                            "Proficiency in AutoCAD, 3D Max, and design software",
+                            "Strong portfolio of completed projects",
+                            "Excellent creative and visualization skills",
+                            "Knowledge of current design trends and materials"
+                        ],
+                        offers: [
+                            "Competitive salary with performance incentives",
+                            "Creative and collaborative work environment",
+                            "Opportunities to work on diverse projects",
+                            "Professional development support",
+                            "Flexible work arrangements"
+                        ]
+                    }
+                };
+                
+                const job = jobDetails[jobId];
+                if (!job) return;
+                
+                document.getElementById('jobDetailsModalLabel').textContent = job.title;
+                document.getElementById('modalApplyBtn').setAttribute('data-job', job.jobTitle);
+                
+                const content = document.getElementById('jobDetailsContent');
+                content.innerHTML = `
+                    <h4 class="mb-3">${job.jobTitle}</h4>
+                    <div class="job-tags mb-4">
+                        <span class="job-tag location">${job.location}</span>
+                        <span class="job-tag type">${job.type}</span>
+                        <span class="job-tag experience">${job.experience}</span>
+                    </div>
+                    
+                    <h5>Job Description</h5>
+                    <p>${job.description}</p>
+                    
+                    <h5>Responsibilities</h5>
+                    <ul>
+                        ${job.responsibilities.map(resp => `<li>${resp}</li>`).join('')}
+                    </ul>
+                    
+                    <h5>Requirements</h5>
+                    <ul>
+                        ${job.requirements.map(req => `<li>${req}</li>`).join('')}
+                    </ul>
+                    
+                    <h5>What We Offer</h5>
+                    <ul>
+                        ${job.offers.map(offer => `<li>${offer}</li>`).join('')}
+                    </ul>
+                `;
+            }
+            
+            // Mobile navigation active state
+            function initMobileNav() {
+                const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+                document.querySelectorAll('.mobile-nav-item').forEach(item => {
+                    const href = item.getAttribute('href');
+                    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+                        item.classList.add('active');
+                    } else {
+                        item.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Loading overlay functions
+            window.showLoading = function() {
+                const overlay = document.querySelector('.loading-overlay');
+                if (overlay) overlay.classList.add('active');
+            };
+            
+            window.hideLoading = function() {
+                const overlay = document.querySelector('.loading-overlay');
+                if (overlay) overlay.classList.remove('active');
+            };
+            
+            // Fix for iOS viewport height
+            function fixViewportHeight() {
+                let vh = window.innerHeight * 0.01;
+                document.documentElement.style.setProperty('--vh', `${vh}px`);
+            }
+            
             // Initialize all functions
             initBackToTop();
             initNavbarScroll();
             initToastSystem();
-            initMobileNav();
             initJobFilters();
             initApplicationForm();
             initSmoothScroll();
+            initJobDetailsModal();
+            initMobileNav();
+            fixViewportHeight();
+            
+            // Fix viewport on resize
+            window.addEventListener('resize', fixViewportHeight);
+            window.addEventListener('orientationchange', fixViewportHeight);
+            
+            // Fix for iOS 100vh issue
+            window.addEventListener('load', fixViewportHeight);
             
             // Show welcome message
             setTimeout(() => {
-                const welcomeMessages = {
-                    'en': 'Explore exciting career opportunities with Naroda Group!',
-                    'hi': 'नरोड़ा ग्रुप के साथ रोमांचक करियर अवसरों की खोज करें!',
-                    'gu': 'નરોડા ગ્રુપ સાથે રોમાંચક કરિયર તકો શોધો!'
-                };
-                showToast(welcomeMessages[currentLang] || 'Explore exciting career opportunities with Naroda Group!', 'success');
+                showToast('Explore exciting career opportunities with Naroda Group!', 'success');
             }, 1500);
-            
-            // Add responsive class to body for mobile detection
-            function detectMobile() {
-                if (window.innerWidth <= 768) {
-                    document.body.classList.add('mobile');
-                } else {
-                    document.body.classList.remove('mobile');
-                }
-            }
-            
-            window.addEventListener('resize', detectMobile);
-            detectMobile();
         });
-        
-        // Loading overlay functions
-        window.showLoading = function() {
-            const overlay = document.querySelector('.loading-overlay');
-            if (overlay) overlay.classList.add('active');
-        };
-        
-        window.hideLoading = function() {
-            const overlay = document.querySelector('.loading-overlay');
-            if (overlay) overlay.classList.remove('active');
-        };
     </script>
 </body>
 </html>

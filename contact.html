@@ -415,6 +415,7 @@
             align-items: center;
             position: relative;
             overflow: hidden;
+            margin-top: 80px; /* Offset for fixed navbar */
         }
 
         .hero-content {
@@ -1002,6 +1003,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 15px;
+            justify-content: center;
         }
         
         @media (max-width: 576px) {
@@ -1045,6 +1047,106 @@
         .language-content {
             transition: opacity 0.3s ease;
         }
+        
+        /* ===== Fix for Fixed Navbar Content Overlap ===== */
+        main {
+            padding-top: 80px;
+        }
+        
+        @media (max-width: 768px) {
+            main {
+                padding-top: 0;
+            }
+        }
+        
+        /* ===== Form Responsive Improvements ===== */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        /* ===== Spinner for Loading Overlay ===== */
+        .spinner-border.text-gold {
+            color: var(--secondary-color) !important;
+        }
+        
+        /* ===== Toast Colors ===== */
+        .toast-success {
+            border-left: 4px solid #28a745;
+        }
+        
+        .toast-warning {
+            border-left: 4px solid #ffc107;
+        }
+        
+        .toast-info {
+            border-left: 4px solid #17a2b8;
+        }
+        
+        .toast-danger {
+            border-left: 4px solid #dc3545;
+        }
+        
+        /* ===== Improved Mobile Responsiveness ===== */
+        @media (max-width: 768px) {
+            .navbar-collapse {
+                background: rgba(10, 42, 74, 0.98);
+                padding: 20px;
+                border-radius: 10px;
+                margin-top: 10px;
+                backdrop-filter: blur(10px);
+            }
+            
+            .nav-link {
+                margin: 5px 0;
+                padding: 12px 20px !important;
+            }
+            
+            .hero-section {
+                min-height: 50vh;
+                margin-top: 0;
+                padding-top: 80px;
+            }
+            
+            .team-contact-card {
+                margin-bottom: 20px;
+            }
+            
+            .footer .row > div {
+                margin-bottom: 30px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .btn-lg {
+                padding: 15px 30px;
+                font-size: 1rem;
+            }
+            
+            .contact-form-card {
+                padding: 15px;
+            }
+            
+            .map-container {
+                height: 250px;
+            }
+            
+            .whatsapp-float, .back-to-top {
+                bottom: 80px;
+                right: 15px;
+            }
+            
+            .whatsapp-float {
+                bottom: 140px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1058,7 +1160,7 @@
 
     <!-- Loading Overlay -->
     <div class="loading-overlay">
-        <div class="spinner-border text-gold" role="status">
+        <div class="spinner-border text-gold" role="status" style="width: 3rem; height: 3rem;">
             <span class="sr-only">Loading...</span>
         </div>
     </div>
@@ -1070,7 +1172,7 @@
 
     <!-- WhatsApp Float -->
     <a href="https://wa.me/917405133695" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
-        <i class="fab fa-whatsapp"></i>
+        <i class="fab fa-whatsapp fa-lg"></i>
     </a>
 
     <!-- Toast Container -->
@@ -1181,7 +1283,7 @@
     </div>
 
     <!-- Main Content -->
-    <main class="language-content">
+    <main>
         <!-- Hero Section -->
         <section class="hero-section">
             <div class="container">
@@ -1234,7 +1336,7 @@
                                     </div>
                                     <div class="col-md-6 mb-4">
                                         <label for="phone" class="form-label" data-i18n="contact.phone">Phone Number *</label>
-                                        <input type="tel" class="form-control" id="phone" required>
+                                        <input type="tel" class="form-control" id="phone" pattern="[0-9]{10}" required>
                                         <div class="invalid-feedback" data-i18n="contact.phone_error">Please enter your phone number.</div>
                                     </div>
                                 </div>
@@ -2153,7 +2255,7 @@
                 duration: 1000,
                 once: false,
                 offset: 100,
-                disable: 'mobile'
+                disable: window.innerWidth < 768
             });
             
             // Remove preloader
@@ -2212,6 +2314,10 @@
                         // Handle options in select elements
                         else if (element.tagName === 'OPTION') {
                             element.textContent = translations[lang][key];
+                        }
+                        // Handle placeholder for input
+                        else if (element.hasAttribute('placeholder')) {
+                            element.setAttribute('placeholder', translations[lang][key]);
                         }
                         // Handle regular text content
                         else {
@@ -2426,6 +2532,14 @@
             backToTop.addEventListener('click', () => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
+            
+            // Accessibility: Add keyboard support
+            backToTop.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
         }
         
         function initNavbarScroll() {
@@ -2508,6 +2622,11 @@
             const overlay = document.querySelector('.loading-overlay');
             if (overlay) overlay.classList.remove('active');
         };
+        
+        // Handle window resize for AOS
+        window.addEventListener('resize', function() {
+            AOS.refresh();
+        });
     </script>
 </body>
 </html>

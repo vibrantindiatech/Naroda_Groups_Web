@@ -761,6 +761,7 @@
         @media (max-width: 768px) {
             .back-to-top {
                 bottom: 100px;
+                right: 20px;
                 width: 50px;
                 height: 50px;
             }
@@ -794,6 +795,7 @@
         @media (max-width: 768px) {
             .whatsapp-float {
                 bottom: 160px;
+                right: 20px;
                 width: 50px;
                 height: 50px;
             }
@@ -1182,6 +1184,59 @@
             font-weight: 700;
             color: var(--primary-color);
         }
+        
+        /* ===== Mobile Category Navigation ===== */
+        .mobile-category-nav {
+            display: none;
+            margin-bottom: 30px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+        }
+        
+        .mobile-category-nav::-webkit-scrollbar {
+            height: 4px;
+        }
+        
+        .mobile-category-nav::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        .mobile-category-nav::-webkit-scrollbar-thumb {
+            background: var(--secondary-color);
+            border-radius: 2px;
+        }
+        
+        @media (max-width: 992px) {
+            .mobile-category-nav {
+                display: flex;
+                gap: 10px;
+            }
+            
+            .category-navigation {
+                display: none;
+            }
+        }
+        
+        .mobile-category-btn {
+            white-space: nowrap;
+            padding: 10px 20px;
+            background: white;
+            border: 1px solid var(--light-gray);
+            border-radius: 30px;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .mobile-category-btn.active {
+            background: var(--gradient-secondary);
+            color: var(--primary-color);
+            border-color: var(--secondary-color);
+        }
+        
+        /* ===== Fix for Accordion First Item Open ===== */
+        #project1 .accordion-collapse {
+            height: auto;
+        }
     </style>
 </head>
 <body>
@@ -1195,8 +1250,8 @@
 
     <!-- Loading Overlay -->
     <div class="loading-overlay">
-        <div class="spinner-border text-gold" role="status">
-            <span class="sr-only">Loading...</span>
+        <div class="loader">
+            <div class="loader-inner"></div>
         </div>
     </div>
 
@@ -1491,6 +1546,18 @@
         <section class="faq-section" id="faqAccordion">
             <div class="container">
                 <div class="row">
+                    <!-- Mobile Category Navigation -->
+                    <div class="col-12 d-lg-none mb-4">
+                        <div class="mobile-category-nav">
+                            <button class="mobile-category-btn active" data-target="#projects">Projects</button>
+                            <button class="mobile-category-btn" data-target="#booking">Booking</button>
+                            <button class="mobile-category-btn" data-target="#payments">Payments</button>
+                            <button class="mobile-category-btn" data-target="#legal">Legal</button>
+                            <button class="mobile-category-btn" data-target="#amenities">Amenities</button>
+                            <button class="mobile-category-btn" data-target="#location">Location</button>
+                        </div>
+                    </div>
+                    
                     <!-- Category Navigation (Desktop) -->
                     <div class="col-lg-3 d-none d-lg-block" data-aos="fade-right">
                         <div class="category-navigation">
@@ -2139,498 +2206,6 @@
     <!-- AOS Animation Library -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-    <!-- Language Translation Data -->
-    <script>
-        const translations = {
-            en: {
-                // Navigation
-                "nav.home": "Home",
-                "nav.about": "About",
-                "nav.projects": "Projects",
-                "nav.landmark": "Naroda Landmark",
-                "nav.irish": "Naroda Irish",
-                "nav.all_projects": "All Projects",
-                "nav.properties": "Properties",
-                "nav.buy": "Buy",
-                "nav.rent": "Rent",
-                "nav.property_details": "Property Details",
-                "nav.gallery": "Gallery",
-                "nav.more": "More",
-                "nav.blog": "Blog",
-                "nav.news": "News",
-                "nav.careers": "Careers",
-                "nav.team": "Our Team",
-                "nav.faq": "FAQ",
-                "nav.contact": "Contact",
-                "nav.login": "Login",
-                "nav.search": "Search",
-                "nav.account": "Account",
-                
-                // FAQ Page
-                "faq.hero.title.part1": "Frequently Asked",
-                "faq.hero.title.part2": "Questions",
-                "faq.hero.subtitle": "Find answers to common questions about our projects, booking process, payment plans, and more",
-                "faq.need_help": "Need Help?",
-                "faq.quick_answers.part1": "Quick Answers to Your",
-                "faq.quick_answers.part2": "Questions",
-                "faq.intro_text": "Browse our comprehensive FAQ section below. If you don't find what you're looking for, feel free to contact our support team.",
-                "faq.search_placeholder": "Search for questions or topics...",
-                "faq.search_button": "Search",
-                "faq.stats1": "Customer Satisfaction",
-                "faq.stats2": "On-Time Delivery",
-                "faq.stats3": "RERA Compliance",
-                "faq.stats4": "Repeat Customers",
-                "faq.browse_by.part1": "Browse by",
-                "faq.browse_by.part2": "Category",
-                "faq.category_text": "Select a category to find relevant questions",
-                "faq.categories": "Categories",
-                
-                // FAQ Categories
-                "faq.category1.title": "Projects",
-                "faq.category1.desc": "Questions about our residential and commercial projects",
-                "faq.category2.title": "Booking Process",
-                "faq.category2.desc": "Information about booking, documentation, and procedures",
-                "faq.category3.title": "Payments & Finance",
-                "faq.category3.desc": "Payment plans, loans, EMIs, and financial queries",
-                "faq.category4.title": "Legal & RERA",
-                "faq.category4.desc": "Legal documentation, RERA compliance, and approvals",
-                "faq.category5.title": "Amenities",
-                "faq.category5.desc": "Facilities, specifications, and features",
-                "faq.category6.title": "Location",
-                "faq.category6.desc": "Address, connectivity, and neighborhood",
-                
-                // FAQ Questions Count
-                "faq.questions_count": "12 Questions",
-                "faq.questions_count2": "8 Questions",
-                "faq.questions_count3": "10 Questions",
-                "faq.questions_count4": "6 Questions",
-                
-                // FAQ Questions and Answers
-                "faq.q1.question": "What types of projects does Naroda Group develop?",
-                "faq.q1.answer.part1": "Naroda Group specializes in both residential and commercial real estate development. Our portfolio includes:",
-                "faq.q1.answer.residential": "Residential Projects:",
-                "faq.q1.answer.residential_desc": "Luxury apartments (Naroda Irish), plotted developments, and gated communities",
-                "faq.q1.answer.commercial": "Commercial Projects:",
-                "faq.q1.answer.commercial_desc": "Office spaces (Naroda Landmark), retail complexes, and mixed-use developments",
-                "faq.q1.answer.mixed": "Mixed-Use Developments:",
-                "faq.q1.answer.mixed_desc": "Integrated townships combining residential, commercial, and recreational spaces",
-                "faq.q1.answer.part2": "All our projects are strategically located in prime areas of Ahmedabad with excellent connectivity and amenities.",
-                
-                "faq.q2.question": "Where are Naroda Group projects located?",
-                "faq.q2.answer.part1": "Our projects are strategically located in Ahmedabad's fastest-growing corridors:",
-                "faq.q2.answer.landmark_loc": "Located on Naroda-Bhat Road, one of Ahmedabad's prime commercial corridors",
-                "faq.q2.answer.irish_loc": "Situated in the developing residential belt of East Ahmedabad",
-                "faq.q2.answer.upcoming": "Upcoming Projects:",
-                "faq.q2.answer.upcoming_loc": "Planned in areas like Nikol, Vastral, and Godhavi",
-                "faq.q2.answer.advantages": "Key advantages of our locations:",
-                "faq.q2.answer.adv1": "Excellent connectivity to major highways and city centers",
-                "faq.q2.answer.adv2": "Proximity to schools, hospitals, shopping centers, and entertainment hubs",
-                "faq.q2.answer.adv3": "Strong potential for property appreciation",
-                "faq.q2.answer.adv4": "Well-developed infrastructure and utilities",
-                
-                "faq.q3.question": "What amenities are provided in Naroda Group projects?",
-                "faq.q3.answer.part1": "We provide world-class amenities in all our projects. The amenities vary by project type:",
-                "faq.q3.answer.residential_title": "For Residential Projects (Naroda Irish):",
-                "faq.q3.answer.res1": "Swimming pool, gymnasium, and clubhouse",
-                "faq.q3.answer.res2": "Children's play area and senior citizen zone",
-                "faq.q3.answer.res3": "Landscaped gardens and jogging tracks",
-                "faq.q3.answer.res4": "24/7 security with CCTV surveillance",
-                "faq.q3.answer.res5": "Power backup and water supply systems",
-                "faq.q3.answer.res6": "Car parking facilities",
-                "faq.q3.answer.res7": "Rainwater harvesting and waste management systems",
-                "faq.q3.answer.commercial_title": "For Commercial Projects (Naroda Landmark):",
-                "faq.q3.answer.com1": "Modern elevators and escalators",
-                "faq.q3.answer.com2": "Central air conditioning",
-                "faq.q3.answer.com3": "High-speed elevators and fire safety systems",
-                "faq.q3.answer.com4": "Adequate parking spaces",
-                "faq.q3.answer.com5": "24/7 power backup",
-                "faq.q3.answer.com6": "Conference rooms and business centers",
-                "faq.q3.answer.com7": "Food courts and retail spaces",
-                
-                "faq.q4.question": "What is the booking process for a Naroda Group property?",
-                "faq.q4.answer.part1": "The booking process is simple and transparent:",
-                "faq.q4.answer.step1": "Site Visit:",
-                "faq.q4.answer.step1_desc": "Schedule a site visit to experience the project firsthand",
-                "faq.q4.answer.step2": "Unit Selection:",
-                "faq.q4.answer.step2_desc": "Choose your preferred unit based on availability",
-                "faq.q4.answer.step3": "Booking Amount:",
-                "faq.q4.answer.step3_desc": "Pay the initial booking amount (typically 10% of property value)",
-                "faq.q4.answer.step4": "Agreement:",
-                "faq.q4.answer.step4_desc": "Sign the booking agreement and receive allotment letter",
-                "faq.q4.answer.step5": "Documentation:",
-                "faq.q4.answer.step5_desc": "Submit required documents for verification",
-                "faq.q4.answer.step6": "Payment Plan:",
-                "faq.q4.answer.step6_desc": "Choose a suitable payment plan as per construction milestones",
-                "faq.q4.answer.step7": "Loan Processing:",
-                "faq.q4.answer.step7_desc": "We assist with home loan processing if required",
-                "faq.q4.answer.step8": "Possession:",
-                "faq.q4.answer.step8_desc": "Receive possession upon project completion and final payment",
-                "faq.q4.answer.note": "Note:",
-                "faq.q4.answer.note_desc": "Our sales team will guide you through each step and ensure a smooth booking experience.",
-                
-                "faq.q5.question": "What documents are required for booking?",
-                "faq.q5.answer.part1": "You will need the following documents for booking a property:",
-                "faq.q5.answer.individual": "For Individuals:",
-                "faq.q5.answer.ind1": "Identity Proof (Aadhar Card, PAN Card, Passport, or Driving License)",
-                "faq.q5.answer.ind2": "Address Proof (Aadhar Card, Passport, Utility Bills, or Bank Statement)",
-                "faq.q5.answer.ind3": "Passport-sized photographs (2 copies)",
-                "faq.q5.answer.ind4": "PAN Card copy (mandatory for registration)",
-                "faq.q5.answer.ind5": "Income proof for loan applicants",
-                "faq.q5.answer.company": "For Companies:",
-                "faq.q5.answer.comp1": "Certificate of Incorporation",
-                "faq.q5.answer.comp2": "Board Resolution authorizing the purchase",
-                "faq.q5.answer.comp3": "PAN Card of the company",
-                "faq.q5.answer.comp4": "Authorized signatory's ID and address proof",
-                "faq.q5.answer.additional": "Additional Documents (if applicable):",
-                "faq.q5.answer.add1": "Power of Attorney (if booking through representative)",
-                "faq.q5.answer.add2": "NRI documents (for NRIs)",
-                "faq.q5.answer.add3": "Previous property documents (for resale properties)",
-                
-                "faq.q6.question": "What payment plans are available?",
-                "faq.q6.answer.part1": "We offer flexible payment plans to suit different financial needs:",
-                "faq.q6.answer.plan1": "Construction-Linked Plan (Most Popular):",
-                "faq.q6.answer.plan1_step1": "10% at time of booking",
-                "faq.q6.answer.plan1_step2": "10% within 30 days of booking",
-                "faq.q6.answer.plan1_step3": "Balance 80% linked to construction milestones",
-                "faq.q6.answer.plan1_step4": "Payments spread over project duration",
-                "faq.q6.answer.plan2": "Down Payment Plan:",
-                "faq.q6.answer.plan2_step1": "20% down payment at time of booking",
-                "faq.q6.answer.plan2_step2": "Balance 80% at time of possession",
-                "faq.q6.answer.plan2_step3": "Suitable for buyers with immediate funds",
-                "faq.q6.answer.plan3": "Flexi Payment Plan:",
-                "faq.q6.answer.plan3_step1": "Customizable payment schedule",
-                "faq.q6.answer.plan3_step2": "Tailored to individual financial situations",
-                "faq.q6.answer.plan3_step3": "Extended payment timelines available",
-                "faq.q6.answer.note": "Note:",
-                "faq.q6.answer.note_desc": "All payment plans are subject to terms and conditions. Our finance team can help you choose the best plan based on your requirements.",
-                
-                "faq.q7.question": "Do you offer home loan assistance?",
-                "faq.q7.answer.part1": "Yes, we provide comprehensive home loan assistance through our tie-ups with leading banks and financial institutions:",
-                "faq.q7.answer.banks": "Partner Banks:",
-                "faq.q7.answer.assistance": "Our Assistance Includes:",
-                "faq.q7.answer.assist1": "Guidance on choosing the right bank and loan product",
-                "faq.q7.answer.assist2": "Documentation support for loan application",
-                "faq.q7.answer.assist3": "Liaison with bank officials for faster processing",
-                "faq.q7.answer.assist4": "Updates on loan sanction status",
-                "faq.q7.answer.assist5": "Assistance with legal and technical verification",
-                "faq.q7.answer.note": "Note:",
-                "faq.q7.answer.note_desc": "Loan approval is subject to the bank's eligibility criteria and documentation. Our team will help you get the best possible terms.",
-                
-                "faq.q8.question": "Are all Naroda Group projects RERA registered?",
-                "faq.q8.answer.part1": "Yes, all our ongoing and upcoming projects are registered under RERA (Real Estate Regulatory Authority).",
-                "faq.q8.answer.part2": "RERA registration ensures:",
-                "faq.q8.answer.rera1": "Transparency in project details and pricing",
-                "faq.q8.answer.rera2": "Adherence to promised timelines",
-                "faq.q8.answer.rera3": "Proper utilization of customer funds in escrow accounts",
-                "faq.q8.answer.rera4": "Legal protection for homebuyers",
-                "faq.q8.answer.rera5": "Quality assurance as per approved plans",
-                "faq.q8.answer.details": "Our RERA Registration Details:",
-                "faq.q8.answer.landmark_rera": "RERA No. GUJRERA/12345/2023",
-                "faq.q8.answer.irish_rera": "RERA No. GUJRERA/67890/2023",
-                "faq.q8.answer.rera_note1": "All registration details are displayed at our sales office and project sites",
-                "faq.q8.answer.rera_note2": "Registration certificates are provided to all customers",
-                "faq.q8.answer.why": "Why RERA Matters:",
-                "faq.q8.answer.why_desc": "RERA registration provides legal protection and ensures that developers deliver projects as promised. It's your assurance of a safe and secure real estate investment.",
-                
-                "faq.q9.question": "What are the specifications for Naroda Landmark?",
-                "faq.q9.answer.part1": "Naroda Landmark offers premium specifications for commercial spaces:",
-                "faq.q9.answer.spec1": "Structure:",
-                "faq.q9.answer.spec1_desc": "Earthquake Resistant RCC Structure",
-                "faq.q9.answer.spec2": "Utilities:",
-                "faq.q9.answer.spec2_desc": "24 Hrs. Water & Electric Supply",
-                "faq.q9.answer.spec3": "Flooring:",
-                "faq.q9.answer.spec3_desc": "Premium Quality Flooring",
-                "faq.q9.answer.spec4": "Security:",
-                "faq.q9.answer.spec4_desc": "CCTV Enabled Premises Ensuring Safety & Security",
-                "faq.q9.answer.spec5": "Parking:",
-                "faq.q9.answer.spec5_desc": "Basement Stack Parking",
-                "faq.q9.answer.spec6": "Elevators:",
-                "faq.q9.answer.spec6_desc": "High End 1 Stretcher & 2 Passenger Elevators",
-                "faq.q9.answer.spec7": "Toilets:",
-                "faq.q9.answer.spec7_desc": "Personal Toilet For Each Shop & Office",
-                "faq.q9.answer.spec8": "Backup:",
-                "faq.q9.answer.spec8_desc": "Generator Backup For Common Utilities",
-                "faq.q9.answer.spec9": "Safety:",
-                "faq.q9.answer.spec9_desc": "Fire Fighting System",
-                "faq.q9.answer.note": "Additional Features:",
-                "faq.q9.answer.add1": "Vitrified tile flooring",
-                "faq.q9.answer.add2": "Rolling shutters fixed on the entrance faced of the shops",
-                "faq.q9.answer.add3": "Provision of space for signage of the shops on the ground floor",
-                "faq.q9.answer.add4": "Provision of gas connection for the kitchen of restaurant",
-                "faq.q9.answer.add5": "Premium Quality Rolling Shutter With Oil Paint",
-                
-                "faq.q10.question": "What is the exact location of Naroda Landmark?",
-                "faq.q10.answer.part1": "Naroda Landmark is strategically located at:",
-                "faq.q10.answer.address": "Address:",
-                "faq.q10.answer.address_detail": "Opp. Naroda Business Hub, Near Shivam Arcade, Naroda Dahegam road, Hanspura, Naroda, Ahmedabad.",
-                "faq.q10.answer.part2": "With the advent of growing infrastructure in and around the vicinity, Naroda is soon becoming the preferred destination for different businesses comprising of:",
-                "faq.q10.answer.business1": "FMCG (Fast Moving Consumer Goods)",
-                "faq.q10.answer.business2": "FMCD (Fast Moving Consumer Durables)",
-                "faq.q10.answer.business3": "Manufacturers",
-                "faq.q10.answer.business4": "Showrooms",
-                "faq.q10.answer.business5": "Banks & ATMs",
-                "faq.q10.answer.business6": "Restaurants & Cafés",
-                "faq.q10.answer.business7": "Dispensaries",
-                "faq.q10.answer.business8": "Education Institutes",
-                "faq.q10.answer.business9": "Financial Institutions",
-                "faq.q10.answer.business10": "Hotels & Hospitals",
-                "faq.q10.answer.part3": "The unique structure sets the tone for a grand entrance with a well-studied lobby and a frame of premier commercial assets that allows both former retail commercial teams to launch enterprises.",
-                
-                "faq.q11.question": "What are the size options available?",
-                "faq.q11.answer.part1": "We offer a variety of size options to suit different business needs:",
-                "faq.q11.answer.office_spaces": "Office Spaces:",
-                "faq.q11.answer.office1": "Scalable office spaces starting from 200 sq. ft to 2000 sq. ft",
-                "faq.q11.answer.office2": "Flexibly designed with long facade",
-                "faq.q11.answer.office3": "Various layout options available",
-                "faq.q11.answer.retail_spaces": "Retail Spaces:",
-                "faq.q11.answer.retail1": "Retail shops starting from 100 sq. ft to 1000 sq. ft",
-                "faq.q11.answer.retail2": "Smartly planned retail spaces",
-                "faq.q11.answer.retail3": "Designed area for restaurant extending to first level",
-                "faq.q11.answer.retail4": "Space for shops on ground level",
-                "faq.q11.answer.retail5": "Every convenience considered in design",
-                "faq.q11.answer.note": "Note:",
-                "faq.q11.answer.note_desc": "Exact dimensions and layouts are available in our detailed floor plans. Our sales team can provide customized solutions based on your specific requirements.",
-                
-                // Help Section
-                "faq.still_have.part1": "Still Have",
-                "faq.still_have.part2": "Questions?",
-                "faq.help_text": "We're here to help you with any other queries",
-                "faq.help1.title": "Call Us",
-                "faq.help1.desc": "Speak directly with our customer support team for immediate assistance.",
-                "faq.help2.title": "Email Us",
-                "faq.help2.desc": "Send us your detailed query and we'll respond within 24 hours.",
-                "faq.help3.title": "Live Chat",
-                "faq.help3.desc": "Chat with our representatives in real-time for quick answers.",
-                "faq.help3.button": "Start Live Chat",
-                
-                // CTA Section
-                "faq.cta.title.part1": "Can't Find Your",
-                "faq.cta.title.part2": "Answer?",
-                "faq.cta.subtitle": "Our team is ready to assist you with any questions not covered in our FAQ section.",
-                "faq.cta.button1": "Contact Form",
-                "faq.cta.button2": "Visit Our Office",
-                "faq.cta.button3": "Schedule Site Visit",
-                
-                // Footer
-                "footer.description": "Creating landmark properties that redefine excellence. From premium commercial spaces to luxury residential living, we build dreams with quality and commitment.",
-                "footer.quick_links": "Quick Links",
-                "footer.our_projects": "Our Projects",
-                "footer.landmark_desc": "Premium Commercial Spaces",
-                "footer.irish_desc": "Luxury Residential Living",
-                "footer.view_all_projects": "View All Projects",
-                "footer.explore_portfolio": "Explore our portfolio",
-                "footer.contact_info": "Contact Info",
-                "footer.phone": "Phone Number",
-                "footer.phone_hours": "Mon - Sat: 10 AM - 7 PM",
-                "footer.email": "Email Address",
-                "footer.email_response": "We reply within 24 hours",
-                "footer.address": "Office Address",
-                "footer.address_line1": "Naroda - Bhat Road",
-                "footer.address_line2": "Ahmedabad, Gujarat 382330",
-                "footer.rights": "All rights reserved.",
-                "footer.privacy": "Privacy Policy",
-                "footer.terms": "Terms of Service",
-                "footer.rera": "RERA Registration"
-            },
-            hi: {
-                // Navigation
-                "nav.home": "होम",
-                "nav.about": "हमारे बारे में",
-                "nav.projects": "प्रोजेक्ट्स",
-                "nav.landmark": "नरोड़ा लैंडमार्क",
-                "nav.irish": "नरोड़ा आयरिश",
-                "nav.all_projects": "सभी प्रोजेक्ट्स",
-                "nav.properties": "संपत्तियाँ",
-                "nav.buy": "खरीदें",
-                "nav.rent": "किराए पर लें",
-                "nav.property_details": "संपत्ति विवरण",
-                "nav.gallery": "गैलरी",
-                "nav.more": "अधिक",
-                "nav.blog": "ब्लॉग",
-                "nav.news": "समाचार",
-                "nav.careers": "करियर",
-                "nav.team": "हमारी टीम",
-                "nav.faq": "सामान्य प्रश्न",
-                "nav.contact": "संपर्क करें",
-                "nav.login": "लॉगिन",
-                "nav.search": "खोजें",
-                "nav.account": "खाता",
-                
-                // FAQ Page
-                "faq.hero.title.part1": "अक्सर पूछे जाने वाले",
-                "faq.hero.title.part2": "प्रश्न",
-                "faq.hero.subtitle": "हमारे प्रोजेक्ट्स, बुकिंग प्रक्रिया, भुगतान योजनाओं और अधिक के बारे में सामान्य प्रश्नों के उत्तर खोजें",
-                "faq.need_help": "सहायता चाहिए?",
-                "faq.quick_answers.part1": "आपके प्रश्नों के",
-                "faq.quick_answers.part2": "त्वरित उत्तर",
-                "faq.intro_text": "नीचे हमारे व्यापक एफएक्यू अनुभाग को ब्राउज़ करें। यदि आपको वह नहीं मिल रहा है जो आप ढूंढ रहे हैं, तो कृपया हमारी सहायता टीम से संपर्क करें।",
-                "faq.search_placeholder": "प्रश्न या विषय खोजें...",
-                "faq.search_button": "खोजें",
-                "faq.stats1": "ग्राहक संतुष्टि",
-                "faq.stats2": "समय पर वितरण",
-                "faq.stats3": "RERA अनुपालन",
-                "faq.stats4": "दोहराया ग्राहक",
-                "faq.browse_by.part1": "द्वारा ब्राउज़ करें",
-                "faq.browse_by.part2": "श्रेणी",
-                "faq.category_text": "प्रासंगिक प्रश्न खोजने के लिए एक श्रेणी चुनें",
-                "faq.categories": "श्रेणियाँ",
-                
-                // FAQ Categories
-                "faq.category1.title": "प्रोजेक्ट्स",
-                "faq.category1.desc": "हमारे आवासीय और वाणिज्यिक परियोजनाओं के बारे में प्रश्न",
-                "faq.category2.title": "बुकिंग प्रक्रिया",
-                "faq.category2.desc": "बुकिंग, दस्तावेज़ीकरण और प्रक्रियाओं के बारे में जानकारी",
-                "faq.category3.title": "भुगतान और वित्त",
-                "faq.category3.desc": "भुगतान योजनाएं, ऋण, ईएमआई और वित्तीय प्रश्न",
-                "faq.category4.title": "कानूनी और RERA",
-                "faq.category4.desc": "कानूनी दस्तावेज़, RERA अनुपालन और अनुमोदन",
-                "faq.category5.title": "सुविधाएं",
-                "faq.category5.desc": "सुविधाएं, विशिष्टताएं और विशेषताएं",
-                "faq.category6.title": "स्थान",
-                "faq.category6.desc": "पता, कनेक्टिविटी और पड़ोस",
-                
-                // Help Section
-                "faq.still_have.part1": "अभी भी हैं",
-                "faq.still_have.part2": "प्रश्न?",
-                "faq.help_text": "हम आपकी किसी भी अन्य जिज्ञासा में मदद के लिए यहां हैं",
-                "faq.help1.title": "हमें कॉल करें",
-                "faq.help1.desc": "तत्काल सहायता के लिए सीधे हमारी ग्राहक सहायता टीम से बात करें।",
-                "faq.help2.title": "हमें ईमेल करें",
-                "faq.help2.desc": "हमें अपना विस्तृत प्रश्न भेजें और हम 24 घंटों के भीतर जवाब देंगे।",
-                "faq.help3.title": "लाइव चैट",
-                "faq.help3.desc": "त्वरित उत्तरों के लिए हमारे प्रतिनिधियों के साथ वास्तविक समय में चैट करें।",
-                "faq.help3.button": "लाइव चैट शुरू करें",
-                
-                // CTA Section
-                "faq.cta.title.part1": "नहीं मिल रहा है आपका",
-                "faq.cta.title.part2": "उत्तर?",
-                "faq.cta.subtitle": "हमारी टीम हमारे एफएक्यू अनुभाग में शामिल नहीं किए गए किसी भी प्रश्न में आपकी सहायता के लिए तैयार है।",
-                "faq.cta.button1": "संपर्क फॉर्म",
-                "faq.cta.button2": "हमारे कार्यालय में जाएँ",
-                "faq.cta.button3": "साइट विजिट शेड्यूल करें",
-                
-                // Footer
-                "footer.description": "लैंडमार्क संपत्तियाँ बनाना जो उत्कृष्टता को फिर से परिभाषित करती हैं। प्रीमियम कमर्शियल स्पेस से लेकर लग्ज़री रेजिडेंशियल लिविंग तक, हम गुणवत्ता और प्रतिबद्धता के साथ सपने बनाते हैं।",
-                "footer.quick_links": "त्वरित लिंक",
-                "footer.our_projects": "हमारे प्रोजेक्ट्स",
-                "footer.landmark_desc": "प्रीमियम कमर्शियल स्पेस",
-                "footer.irish_desc": "लग्ज़री रेजिडेंशियल लिविंग",
-                "footer.view_all_projects": "सभी प्रोजेक्ट्स देखें",
-                "footer.explore_portfolio": "हमारे पोर्टफोलियो का अन्वेषण करें",
-                "footer.contact_info": "संपर्क जानकारी",
-                "footer.phone": "फोन नंबर",
-                "footer.phone_hours": "सोम - शनि: सुबह 10 - शाम 7 बजे",
-                "footer.email": "ईमेल पता",
-                "footer.email_response": "हम 24 घंटे के भीतर जवाब देते हैं",
-                "footer.address": "कार्यालय पता",
-                "footer.address_line1": "नरोड़ा - भाट रोड",
-                "footer.address_line2": "अहमदाबाद, गुजरात 382330",
-                "footer.rights": "सर्वाधिकार सुरक्षित।",
-                "footer.privacy": "गोपनीयता नीति",
-                "footer.terms": "सेवा की शर्तें",
-                "footer.rera": "RERA पंजीकरण"
-            },
-            gu: {
-                // Navigation
-                "nav.home": "હોમ",
-                "nav.about": "અમારા વિશે",
-                "nav.projects": "પ્રોજેક્ટ્સ",
-                "nav.landmark": "નરોડા લેન્ડમાર્ક",
-                "nav.irish": "નરોડા આયરિશ",
-                "nav.all_projects": "બધા પ્રોજેક્ટ્સ",
-                "nav.properties": "પ્રોપર્ટીઝ",
-                "nav.buy": "ખરીદો",
-                "nav.rent": "ભાડે લો",
-                "nav.property_details": "પ્રોપર્ટી વિગતો",
-                "nav.gallery": "ગેલેરી",
-                "nav.more": "વધુ",
-                "nav.blog": "બ્લોગ",
-                "nav.news": "સમાચાર",
-                "nav.careers": "કરિયર",
-                "nav.team": "અમારી ટીમ",
-                "nav.faq": "સામાન્ય પ્રશ્નો",
-                "nav.contact": "સંપર્ક કરો",
-                "nav.login": "લોગિન",
-                "nav.search": "શોધો",
-                "nav.account": "એકાઉન્ટ",
-                
-                // FAQ Page
-                "faq.hero.title.part1": "વારંવાર પૂછાતા",
-                "faq.hero.title.part2": "પ્રશ્નો",
-                "faq.hero.subtitle": "અમારા પ્રોજેક્ટ્સ, બુકિંગ પ્રક્રિયા, ચુકવણી યોજનાઓ અને વધુ વિશે સામાન્ય પ્રશ્નોના જવાબ શોધો",
-                "faq.need_help": "સહાયતા જોઈએ છે?",
-                "faq.quick_answers.part1": "તમારા પ્રશ્નોના",
-                "faq.quick_answers.part2": "ઝડપી જવાબો",
-                "faq.intro_text": "નીચે અમારા વ્યાપક એફએક્યુ વિભાગને બ્રાઉઝ કરો. જો તમને જે શોધી રહ્યાં છો તે ન મળે, તો કૃપા કરીને અમારી સપોર્ટ ટીમનો સંપર્ક કરો.",
-                "faq.search_placeholder": "પ્રશ્નો અથવા વિષયો શોધો...",
-                "faq.search_button": "શોધો",
-                "faq.stats1": "ગ્રાહક સંતુષ્ટિ",
-                "faq.stats2": "સમયસર ડિલિવરી",
-                "faq.stats3": "RERA અનુકૂલન",
-                "faq.stats4": "પુનરાવર્તિત ગ્રાહકો",
-                "faq.browse_by.part1": "દ્વારા બ્રાઉઝ કરો",
-                "faq.browse_by.part2": "શ્રેણી",
-                "faq.category_text": "સંબંધિત પ્રશ્નો શોધવા માટે એક શ્રેણી પસંદ કરો",
-                "faq.categories": "શ્રેણીઓ",
-                
-                // FAQ Categories
-                "faq.category1.title": "પ્રોજેક્ટ્સ",
-                "faq.category1.desc": "અમારી રહેણાંક અને વાણિજ્યિક પ્રોજેક્ટ્સ વિશે પ્રશ્નો",
-                "faq.category2.title": "બુકિંગ પ્રક્રિયા",
-                "faq.category2.desc": "બુકિંગ, દસ્તાવેજીકરણ અને પ્રક્રિયાઓ વિશેની માહિતી",
-                "faq.category3.title": "ચુકવણી અને ફાઇનાન્સ",
-                "faq.category3.desc": "ચુકવણી યોજનાઓ, લોન, EMI અને ફાઇનાન્શિયલ પ્રશ્નો",
-                "faq.category4.title": "કાનૂની અને RERA",
-                "faq.category4.desc": "કાનૂની દસ્તાવેજો, RERA અનુકૂલન અને મંજૂરીઓ",
-                "faq.category5.title": "સુવિધાઓ",
-                "faq.category5.desc": "સુવિધાઓ, સ્પેસિફિકેશનો અને ફીચર્સ",
-                "faq.category6.title": "લોકેશન",
-                "faq.category6.desc": "સરનામું, કનેક્ટિવિટી અને પડોશ",
-                
-                // Help Section
-                "faq.still_have.part1": "હજી પણ છે",
-                "faq.still_have.part2": "પ્રશ્નો?",
-                "faq.help_text": "અમે તમારી કોઈપણ અન્ય પ્રશ્નોમાં મદદ માટે અહીં છીએ",
-                "faq.help1.title": "અમને કોલ કરો",
-                "faq.help1.desc": "તાત્કાલિક સહાયતા માટે સીધા અમારી ગ્રાહક સપોર્ટ ટીમ સાથે વાત કરો.",
-                "faq.help2.title": "અમને ઇમેઇલ કરો",
-                "faq.help2.desc": "અમને તમારો વિગતવાર પ્રશ્ન મોકલો અને અમે 24 કલાકમાં જવાબ આપીશું.",
-                "faq.help3.title": "લાઇવ ચેટ",
-                "faq.help3.desc": "ઝડપી જવાબો માટે અમારા પ્રતિનિધિઓ સાથે રીઅલ-ટાઈમમાં ચેટ કરો.",
-                "faq.help3.button": "લાઇવ ચેટ શરૂ કરો",
-                
-                // CTA Section
-                "faq.cta.title.part1": "નથી મળી રહ્યો તમારો",
-                "faq.cta.title.part2": "જવાબ?",
-                "faq.cta.subtitle": "અમારી ટીમ અમારા એફએક્યુ વિભાગમાં શામેલ ન થયેલા કોઈપણ પ્રશ્નોમાં તમારી સહાયતા માટે તૈયાર છે.",
-                "faq.cta.button1": "સંપર્ક ફોર્મ",
-                "faq.cta.button2": "અમારા ઓફિસમાં મુલાકાત લો",
-                "faq.cta.button3": "સાઇટ વિઝિટ શેડ્યૂલ કરો",
-                
-                // Footer
-                "footer.description": "લેન્ડમાર્ક પ્રોપર્ટીઝ બનાવવી જે એક્સલન્સને ફરીથી વ્યાખ્યાયિત કરે છે. પ્રીમિયમ કોમર્શિયલ સ્પેસથી લગ્ઝરી રેસિડેન્શિયલ લિવિંગ સુધી, અમે ગુણવત્તા અને પ્રતિબદ્ધતા સાથે સપના બનાવીએ છીએ.",
-                "footer.quick_links": "ઝડપી લિંક્સ",
-                "footer.our_projects": "અમારા પ્રોજેક્ટ્સ",
-                "footer.landmark_desc": "પ્રીમિયમ કોમર્શિયલ સ્પેસ",
-                "footer.irish_desc": "લગ્ઝરી રેસિડેન્શિયલ લિવિંગ",
-                "footer.view_all_projects": "બધા પ્રોજેક્ટ્સ જુઓ",
-                "footer.explore_portfolio": "અમારા પોર્ટફોલિયોનું અન્વેષણ કરો",
-                "footer.contact_info": "સંપર્ક માહિતી",
-                "footer.phone": "ફોન નંબર",
-                "footer.phone_hours": "સોમ - શનિ: સવારે 10 - સાંજે 7 વાગ્યા",
-                "footer.email": "ઈમેલ એડ્રેસ",
-                "footer.email_response": "અમે 24 કલાકમાં જવાબ આપીએ છીએ",
-                "footer.address": "ઓફિસ એડ્રેસ",
-                "footer.address_line1": "નરોડા - ભાટ રોડ",
-                "footer.address_line2": "અમદાવાદ, ગુજરાત 382330",
-                "footer.rights": "બધા હક્કો સુરક્ષિત.",
-                "footer.privacy": "ગોપનીયતા નીતિ",
-                "footer.terms": "સેવાની શરતો",
-                "footer.rera": "RERA રજિસ્ટ્રેશન"
-            }
-        };
-    </script>
-
     <script>
         // Wait for page to load
         document.addEventListener('DOMContentLoaded', function() {
@@ -2639,7 +2214,9 @@
                 duration: 1000,
                 once: false,
                 offset: 100,
-                disable: 'mobile'
+                disable: function() {
+                    return window.innerWidth < 768;
+                }
             });
             
             // Remove preloader
@@ -2650,83 +2227,6 @@
                     preloader.style.display = 'none';
                 }, 500);
             }, 1000);
-            
-            // Language switching functionality
-            const languageSelectors = document.querySelectorAll('.language-selector');
-            const currentLanguageElement = document.getElementById('currentLanguage');
-            
-            // Load saved language from localStorage or default to English
-            let currentLang = localStorage.getItem('preferredLanguage') || 'en';
-            
-            // Apply language on page load
-            applyLanguage(currentLang);
-            
-            // Set up language selector event listeners
-            languageSelectors.forEach(selector => {
-                selector.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const lang = this.getAttribute('data-lang');
-                    setLanguage(lang);
-                });
-            });
-            
-            function setLanguage(lang) {
-                currentLang = lang;
-                localStorage.setItem('preferredLanguage', lang);
-                applyLanguage(lang);
-                showToast(`Language changed to ${getLanguageName(lang)}`, 'success');
-            }
-            
-            function applyLanguage(lang) {
-                // Update body class for language-specific styling
-                document.body.classList.remove('hindi', 'gujarati');
-                if (lang === 'hi') document.body.classList.add('hindi');
-                if (lang === 'gu') document.body.classList.add('gujarati');
-                
-                // Update current language display
-                currentLanguageElement.textContent = getLanguageCode(lang);
-                
-                // Fade out content
-                document.querySelector('.language-content').style.opacity = '0.5';
-                
-                // Apply translations after a short delay for smoother transition
-                setTimeout(() => {
-                    const elements = document.querySelectorAll('[data-i18n]');
-                    elements.forEach(element => {
-                        const key = element.getAttribute('data-i18n');
-                        if (translations[lang] && translations[lang][key]) {
-                            if (element.hasAttribute('data-i18n-placeholder')) {
-                                element.setAttribute('placeholder', translations[lang][key]);
-                            } else if (element.hasAttribute('data-i18n-html')) {
-                                element.innerHTML = translations[lang][key];
-                            } else {
-                                element.textContent = translations[lang][key];
-                            }
-                        }
-                    });
-                    
-                    // Fade content back in
-                    document.querySelector('.language-content').style.opacity = '1';
-                }, 300);
-            }
-            
-            function getLanguageName(code) {
-                const names = {
-                    'en': 'English',
-                    'hi': 'Hindi',
-                    'gu': 'Gujarati'
-                };
-                return names[code] || 'English';
-            }
-            
-            function getLanguageCode(code) {
-                const codes = {
-                    'en': 'EN',
-                    'hi': 'HI',
-                    'gu': 'GU'
-                };
-                return codes[code] || 'EN';
-            }
             
             // Initialize back to top button
             function initBackToTop() {
@@ -2812,6 +2312,10 @@
                         // Show all items
                         document.querySelectorAll('.accordion-item').forEach(item => {
                             item.style.display = 'block';
+                        });
+                        // Remove all highlights
+                        document.querySelectorAll('.search-highlight').forEach(highlight => {
+                            highlight.outerHTML = highlight.innerHTML;
                         });
                         return;
                     }
@@ -2937,7 +2441,36 @@
                             });
                             this.classList.add('active');
                             
+                            // Update mobile category buttons
+                            document.querySelectorAll('.mobile-category-btn').forEach(btn => {
+                                btn.classList.remove('active');
+                            });
+                            
                             // Scroll to target
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 100,
+                                behavior: 'smooth'
+                            });
+                        }
+                    });
+                });
+            }
+            
+            // Mobile category navigation
+            function initMobileCategoryNav() {
+                const mobileCategoryBtns = document.querySelectorAll('.mobile-category-btn');
+                
+                mobileCategoryBtns.forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const targetId = this.getAttribute('data-target');
+                        const targetElement = document.querySelector(targetId);
+                        
+                        if (targetElement) {
+                            // Update active button
+                            mobileCategoryBtns.forEach(b => b.classList.remove('active'));
+                            this.classList.add('active');
+                            
+                            // Scroll to section
                             window.scrollTo({
                                 top: targetElement.offsetTop - 100,
                                 behavior: 'smooth'
@@ -2951,6 +2484,7 @@
             function initScrollSpy() {
                 const categoryHeaders = document.querySelectorAll('.faq-category-header');
                 const categoryLinks = document.querySelectorAll('.category-nav-list a');
+                const mobileCategoryBtns = document.querySelectorAll('.mobile-category-btn');
                 
                 function updateActiveCategory() {
                     let currentCategory = '';
@@ -2962,10 +2496,19 @@
                         }
                     });
                     
+                    // Update desktop navigation
                     categoryLinks.forEach(link => {
                         link.classList.remove('active');
                         if (link.getAttribute('href') === `#${currentCategory}`) {
                             link.classList.add('active');
+                        }
+                    });
+                    
+                    // Update mobile navigation
+                    mobileCategoryBtns.forEach(btn => {
+                        btn.classList.remove('active');
+                        if (btn.getAttribute('data-target') === `#${currentCategory}`) {
+                            btn.classList.add('active');
                         }
                     });
                 }
@@ -2985,6 +2528,27 @@
                 });
             }
             
+            // Fix for accordion first item open
+            function fixAccordionFirstItem() {
+                const firstAccordion = document.querySelector('#project1');
+                if (firstAccordion) {
+                    // Make sure first item is open by default
+                    const collapseElement = firstAccordion.querySelector('.accordion-collapse');
+                    if (collapseElement) {
+                        collapseElement.classList.add('show');
+                    }
+                }
+            }
+            
+            // Loading overlay functions
+            window.showLoading = function() {
+                document.querySelector('.loading-overlay').classList.add('active');
+            };
+            
+            window.hideLoading = function() {
+                document.querySelector('.loading-overlay').classList.remove('active');
+            };
+            
             // Initialize all functions
             initBackToTop();
             initNavbarScroll();
@@ -2993,17 +2557,14 @@
             initFAQSearch();
             initLiveChat();
             initSmoothScroll();
+            initMobileCategoryNav();
             initScrollSpy();
             animateProgressCircles();
+            fixAccordionFirstItem();
             
             // Show welcome message
             setTimeout(() => {
-                const welcomeMessages = {
-                    'en': 'Browse our FAQ for quick answers to common questions!',
-                    'hi': 'सामान्य प्रश्नों के त्वरित उत्तरों के लिए हमारे एफएक्यू को ब्राउज़ करें!',
-                    'gu': 'સામાન્ય પ્રશ્નોના ઝડપી જવાબો માટે અમારા એફએક્યુ બ્રાઉઝ કરો!'
-                };
-                showToast(welcomeMessages[currentLang] || 'Browse our FAQ for quick answers to common questions!', 'success');
+                showToast('Browse our FAQ for quick answers to common questions!', 'success');
             }, 1500);
             
             // Add responsive class to body for mobile detection
@@ -3019,19 +2580,12 @@
             detectMobile();
         });
         
-        // Loading overlay functions
-        window.showLoading = function() {
-            document.querySelector('.loading-overlay').classList.add('active');
-        };
-        
-        window.hideLoading = function() {
-            document.querySelector('.loading-overlay').classList.remove('active');
-        };
-        
         // Handle image loading errors
         document.addEventListener('error', function(e) {
             if (e.target.tagName === 'IMG') {
                 console.warn('Image failed to load:', e.target.src);
+                // Set a fallback image
+                e.target.src = 'https://via.placeholder.com/1920x1080?text=Naroda+Group';
             }
         }, true);
     </script>

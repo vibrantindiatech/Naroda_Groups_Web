@@ -379,6 +379,12 @@
             }
         }
 
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+        }
+
         .hero-subtitle {
             font-size: 1.25rem;
             margin-bottom: 2.5rem;
@@ -387,10 +393,22 @@
             line-height: 1.8;
         }
 
+        @media (max-width: 768px) {
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+        }
+
         /* ===== Blog Content ===== */
         .blog-section {
             padding: 100px 0;
             background: #f9fafb;
+        }
+
+        @media (max-width: 768px) {
+            .blog-section {
+                padding: 60px 0;
+            }
         }
 
         .blog-container {
@@ -411,6 +429,12 @@
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 30px;
             margin-bottom: 50px;
+        }
+
+        @media (max-width: 992px) {
+            .blog-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
         }
 
         @media (max-width: 768px) {
@@ -446,6 +470,12 @@
             position: relative;
         }
 
+        @media (max-width: 576px) {
+            .blog-image {
+                height: 200px;
+            }
+        }
+
         .blog-image img {
             width: 100%;
             height: 100%;
@@ -478,6 +508,12 @@
             flex-direction: column;
         }
 
+        @media (max-width: 576px) {
+            .blog-content {
+                padding: 20px;
+            }
+        }
+
         .blog-meta {
             display: flex;
             align-items: center;
@@ -486,6 +522,13 @@
             font-size: 0.9rem;
             flex-wrap: wrap;
             gap: 20px;
+        }
+
+        @media (max-width: 576px) {
+            .blog-meta {
+                gap: 10px;
+                font-size: 0.8rem;
+            }
         }
 
         .blog-meta-item {
@@ -504,6 +547,13 @@
             margin-top: auto;
             padding-top: 20px;
             border-top: 1px solid var(--light-gray);
+        }
+
+        @media (max-width: 576px) {
+            .blog-author {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
         }
 
         .blog-author-img {
@@ -540,6 +590,12 @@
             padding: 30px;
             margin-bottom: 30px;
             box-shadow: var(--shadow);
+        }
+
+        @media (max-width: 576px) {
+            .sidebar-widget {
+                padding: 20px;
+            }
         }
 
         .widget-title {
@@ -649,6 +705,13 @@
             flex-shrink: 0;
         }
 
+        @media (max-width: 576px) {
+            .recent-post-img {
+                width: 60px;
+                height: 60px;
+            }
+        }
+
         .recent-post-img img {
             width: 100%;
             height: 100%;
@@ -707,71 +770,6 @@
             background: var(--gradient-secondary);
         }
 
-        /* ===== Blog Details ===== */
-        .blog-detail-section {
-            padding: 100px 0;
-            background: white;
-        }
-
-        .blog-detail-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .blog-detail-header {
-            margin-bottom: 40px;
-        }
-
-        .blog-detail-title {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .blog-detail-image {
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            margin-bottom: 40px;
-            box-shadow: var(--shadow);
-        }
-
-        .blog-detail-image img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-        }
-
-        .blog-detail-content {
-            line-height: 1.8;
-        }
-
-        .blog-detail-content h3 {
-            margin: 30px 0 15px;
-            color: var(--primary-color);
-        }
-
-        .blog-detail-content p {
-            margin-bottom: 20px;
-        }
-
-        .blog-detail-content blockquote {
-            border-left: 4px solid var(--secondary-color);
-            padding-left: 20px;
-            margin: 30px 0;
-            font-style: italic;
-            color: var(--gray-color);
-            font-size: 1.1rem;
-        }
-
-        .blog-detail-content ul,
-        .blog-detail-content ol {
-            margin: 20px 0;
-            padding-left: 20px;
-        }
-
-        .blog-detail-content li {
-            margin-bottom: 10px;
-        }
-
         /* ===== Pagination ===== */
         .pagination {
             justify-content: center;
@@ -797,11 +795,25 @@
             color: var(--primary-color);
         }
 
+        @media (max-width: 576px) {
+            .page-link {
+                width: 40px;
+                height: 40px;
+                margin: 0 3px;
+            }
+        }
+
         /* ===== Footer ===== */
         .footer {
             background: var(--primary-dark);
             color: #b0b7c3;
             padding-top: 80px;
+        }
+
+        @media (max-width: 768px) {
+            .footer {
+                padding-top: 60px;
+            }
         }
 
         .footer-title {
@@ -862,6 +874,15 @@
             box-shadow: 0 15px 35px rgba(201, 169, 110, 0.4);
         }
 
+        @media (max-width: 768px) {
+            .back-to-top {
+                width: 50px;
+                height: 50px;
+                bottom: 80px;
+                right: 20px;
+            }
+        }
+
         /* ===== WhatsApp Float ===== */
         .whatsapp-float {
             position: fixed;
@@ -887,6 +908,15 @@
             box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
         }
 
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 140px;
+                right: 20px;
+            }
+        }
+
         /* ===== Mobile Bottom Nav ===== */
         .mobile-bottom-nav {
             position: fixed;
@@ -906,14 +936,6 @@
             .mobile-bottom-nav {
                 display: flex;
             }
-            
-            .back-to-top {
-                bottom: 80px;
-            }
-            
-            .whatsapp-float {
-                bottom: 150px;
-            }
         }
 
         /* ===== Toast Notifications ===== */
@@ -922,6 +944,16 @@
             top: 100px;
             right: 20px;
             z-index: 9999;
+            max-width: 350px;
+        }
+
+        @media (max-width: 768px) {
+            .toast-container {
+                top: 80px;
+                right: 10px;
+                left: 10px;
+                max-width: none;
+            }
         }
 
         .toast {
@@ -933,12 +965,22 @@
             transform: translateX(100%);
             opacity: 0;
             transition: transform 0.3s ease, opacity 0.3s ease;
-            max-width: 350px;
+            max-width: 100%;
         }
 
         .toast.show {
             transform: translateX(0);
             opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .toast {
+                transform: translateX(0) translateY(20px);
+            }
+            
+            .toast.show {
+                transform: translateX(0) translateY(0);
+            }
         }
 
         /* ===== Loading Overlay ===== */
@@ -1010,6 +1052,7 @@
             padding: 5px 10px;
             border-radius: 8px;
             transition: var(--transition);
+            font-size: 0.8rem;
         }
         
         .mobile-nav-item.active {
@@ -1139,6 +1182,13 @@
             margin-bottom: 40px;
         }
 
+        @media (max-width: 576px) {
+            .blog-filter {
+                gap: 8px;
+                margin-bottom: 30px;
+            }
+        }
+
         .filter-btn {
             padding: 10px 24px;
             background: white;
@@ -1148,6 +1198,14 @@
             color: var(--dark-color);
             transition: var(--transition);
             cursor: pointer;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 576px) {
+            .filter-btn {
+                padding: 8px 16px;
+                font-size: 0.85rem;
+            }
         }
 
         .filter-btn:hover,
@@ -1176,41 +1234,38 @@
             margin-bottom: 20px;
         }
 
-        /* ===== Responsive Adjustments ===== */
         @media (max-width: 576px) {
-            .hero-section {
+            .no-results-icon {
+                font-size: 3rem;
+            }
+        }
+
+        /* ===== Search Reset Button ===== */
+        .search-reset-btn {
+            display: block;
+            margin: 30px auto 0;
+        }
+
+        /* ===== Responsive Spacing Fixes ===== */
+        .min-vh-60 {
+            min-height: 60vh;
+        }
+
+        @media (max-width: 768px) {
+            .min-vh-60 {
                 min-height: 50vh;
             }
             
-            .blog-grid {
-                grid-template-columns: 1fr;
+            .btn {
+                padding: 12px 24px;
             }
             
-            .blog-filter {
-                gap: 8px;
+            .btn-lg {
+                padding: 14px 28px;
             }
             
-            .filter-btn {
-                padding: 8px 16px;
-                font-size: 0.9rem;
-            }
-            
-            .blog-content {
-                padding: 20px;
-            }
-            
-            .blog-author {
-                flex-wrap: wrap;
-                gap: 15px;
-            }
-            
-            .blog-author .btn {
-                width: 100%;
-                margin-top: 10px;
-            }
-            
-            .sidebar-widget {
-                padding: 20px;
+            .footer .row {
+                row-gap: 40px;
             }
         }
 
@@ -1221,6 +1276,54 @@
         
         .language-content {
             transition: opacity 0.3s ease;
+        }
+        
+        /* ===== Dropdown Accessibility ===== */
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        
+        /* ===== Image Loading Fix ===== */
+        img[loading="lazy"] {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        img[loading="lazy"].loaded {
+            opacity: 1;
+        }
+        
+        /* ===== Form Control Focus ===== */
+        .form-control:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 0.25rem rgba(201, 169, 110, 0.25);
+        }
+        
+        /* ===== Navbar Toggler Fix ===== */
+        .navbar-toggler {
+            border: none;
+            padding: 0.25rem 0.5rem;
+        }
+        
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+        
+        /* ===== Container Fluid Adjustment ===== */
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 15px;
+            }
+        }
+        
+        /* ===== Typography Fix ===== */
+        h1, h2, h3, h4, h5, h6 {
+            word-break: break-word;
+        }
+        
+        /* ===== Mobile Navigation Active State ===== */
+        .mobile-nav-item.active {
+            color: var(--secondary-color);
         }
     </style>
 </head>
@@ -1446,6 +1549,11 @@
                             <p class="text-muted mb-4" data-i18n="blog.no_results.text">Try selecting a different category</p>
                         </div>
                         
+                        <!-- Search Reset Button (hidden by default) -->
+                        <button class="btn btn-outline-primary mt-4 search-reset-btn" id="searchResetBtn" style="display: none;">
+                            <i class="fas fa-redo me-2"></i> <span data-i18n="blog.show_all">Show All Articles</span>
+                        </button>
+                        
                         <!-- Pagination -->
                         <nav aria-label="Page navigation" class="mt-5">
                             <ul class="pagination" id="pagination">
@@ -1460,8 +1568,8 @@
                         <div class="sidebar-widget" data-aos="fade-left" data-aos-delay="100">
                             <h4 class="widget-title" data-i18n="blog.sidebar.search">Search Articles</h4>
                             <div class="search-widget">
-                                <input type="text" class="search-input" placeholder="Search articles..." data-i18n="blog.sidebar.search_placeholder">
-                                <button class="search-btn">
+                                <input type="text" class="search-input" id="searchInput" placeholder="Search articles..." data-i18n="blog.sidebar.search_placeholder">
+                                <button class="search-btn" id="searchBtn">
                                     <i class="fas fa-search"></i>
                                 </button>
                             </div>
@@ -1723,6 +1831,7 @@
                 "blog.read_more": "Read More",
                 "blog.no_results.title": "No Articles Found",
                 "blog.no_results.text": "Try selecting a different category",
+                "blog.show_all": "Show All Articles",
                 
                 // CTA Section
                 "blog.cta.title": "Looking for Property Advice?",
@@ -1823,6 +1932,7 @@
                 "blog.read_more": "और पढ़ें",
                 "blog.no_results.title": "कोई लेख नहीं मिला",
                 "blog.no_results.text": "एक अलग श्रेणी चुनने का प्रयास करें",
+                "blog.show_all": "सभी लेख दिखाएं",
                 
                 // CTA Section
                 "blog.cta.title": "संपत्ति सलाह की तलाश में?",
@@ -1923,6 +2033,7 @@
                 "blog.read_more": "વધુ વાંચો",
                 "blog.no_results.title": "કોઈ લેખ મળ્યો નથી",
                 "blog.no_results.text": "વિવિધ શ્રેણી પસંદ કરવાનો પ્રયાસ કરો",
+                "blog.show_all": "બધા લેખો બતાવો",
                 
                 // CTA Section
                 "blog.cta.title": "પ્રોપર્ટી સલાહ શોધી રહ્યાં છો?",
@@ -1965,23 +2076,7 @@
                 author: 'Naroda Group',
                 date: 'Jan 20, 2025',
                 readTime: '6 min',
-                featured: false,
-                pdfData: {
-                    location: 'Opp. Naroda Business Hub, Near Shivam Arcade, Naroda Dahegam road, Hanspura, Naroda, Ahmedabad',
-                    features: [
-                        'Earthquake Resistant RCC Structure',
-                        '24 Hrs. Water & Electric Supply',
-                        'Premium Quality Flooring',
-                        'CCTV Enabled Premise',
-                        'Basement Stack Parking',
-                        'High End Elevators',
-                        'Personal Toilet For Each Shop & Office',
-                        'Generator Backup',
-                        'Fire Fighting System'
-                    ],
-                    spaces: 'Office Spaces: 2000 sq.ft to 25000 sq.ft | Retail Shops: 1000 sq.ft to 5000 sq.ft',
-                    idealFor: 'SHOWROOMS, BANK - ATM, RESTAURANT - CAFÉ, DISPENSARY, EDUCATION INSTITUTE, FINANCIAL INSTITUTIONS, HOTEL, HOSPITAL'
-                }
+                featured: false
             },
             {
                 id: 2,
@@ -1992,22 +2087,7 @@
                 author: 'Naroda Group',
                 date: 'Jan 18, 2025',
                 readTime: '7 min',
-                featured: false,
-                pdfData: {
-                    projectType: '2 & 3 BHK Luxurious Flats & Retail Shop',
-                    towers: '14 Storey, 6 Magnificent Tower',
-                    units: '354 Units',
-                    parking: '2 Basement for Ample Parking Space',
-                    amenities: [
-                        'Swimming Pool',
-                        'Clubhouse',
-                        'Gymnasium',
-                        'Kids Play Area',
-                        'Landscaped Gardens',
-                        'Jogging Track',
-                        'Community Hall'
-                    ]
-                }
+                featured: false
             },
             {
                 id: 3,
@@ -2087,6 +2167,13 @@
             { name: 'Sustainability', count: 1, slug: 'sustainability' }
         ];
 
+        // Global variables
+        let currentFilter = 'all';
+        let currentPage = 1;
+        const itemsPerPage = 6;
+        let currentLang = 'en';
+        let isSearching = false;
+
         // Wait for page to load
         document.addEventListener('DOMContentLoaded', function() {
             // Initialize AOS
@@ -2102,7 +2189,7 @@
             const currentLanguageElement = document.getElementById('currentLanguage');
             
             // Load saved language from localStorage or default to English
-            let currentLang = localStorage.getItem('preferredLanguage') || 'en';
+            currentLang = localStorage.getItem('preferredLanguage') || 'en';
             
             // Apply language on page load
             applyLanguage(currentLang);
@@ -2133,7 +2220,10 @@
                 currentLanguageElement.textContent = getLanguageCode(lang);
                 
                 // Fade out content
-                document.querySelector('.language-content').style.opacity = '0.5';
+                const languageContent = document.querySelector('.language-content');
+                if (languageContent) {
+                    languageContent.style.opacity = '0.5';
+                }
                 
                 // Apply translations after a short delay for smoother transition
                 setTimeout(() => {
@@ -2141,15 +2231,22 @@
                     elements.forEach(element => {
                         const key = element.getAttribute('data-i18n');
                         if (translations[lang] && translations[lang][key]) {
-                            element.textContent = translations[lang][key];
+                            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                                element.placeholder = translations[lang][key];
+                            } else {
+                                element.textContent = translations[lang][key];
+                            }
                         }
                     });
                     
                     // Fade content back in
-                    document.querySelector('.language-content').style.opacity = '1';
+                    if (languageContent) {
+                        languageContent.style.opacity = '1';
+                    }
                     
                     // Reload blog posts with new language
                     loadBlogPosts();
+                    updatePagination();
                 }, 300);
             }
             
@@ -2174,10 +2271,12 @@
             // Remove preloader
             const preloader = document.getElementById('preloader');
             setTimeout(() => {
-                preloader.style.opacity = '0';
-                setTimeout(() => {
-                    preloader.style.display = 'none';
-                }, 500);
+                if (preloader) {
+                    preloader.style.opacity = '0';
+                    setTimeout(() => {
+                        preloader.style.display = 'none';
+                    }, 500);
+                }
             }, 1000);
             
             // Initialize blog
@@ -2219,10 +2318,7 @@
             const filterButtons = document.querySelectorAll('.filter-btn');
             const pagination = document.getElementById('pagination');
             const noResults = document.getElementById('noResults');
-            
-            let currentFilter = 'all';
-            let currentPage = 1;
-            const itemsPerPage = 6;
+            const searchResetBtn = document.getElementById('searchResetBtn');
             
             // Load initial content
             loadBlogPosts();
@@ -2239,6 +2335,7 @@
                     
                     // Update filter
                     currentFilter = this.getAttribute('data-filter');
+                    isSearching = false;
                     
                     // Reset page
                     currentPage = 1;
@@ -2246,6 +2343,9 @@
                     // Load filtered posts
                     loadBlogPosts();
                     updatePagination();
+                    
+                    // Hide search reset button
+                    searchResetBtn.style.display = 'none';
                     
                     // Show toast
                     const filterName = currentFilter === 'all' ? 'All Articles' : this.textContent;
@@ -2271,8 +2371,12 @@
                     // Update filter and load posts
                     currentFilter = categorySlug;
                     currentPage = 1;
+                    isSearching = false;
                     loadBlogPosts();
                     updatePagination();
+                    
+                    // Hide search reset button
+                    searchResetBtn.style.display = 'none';
                     
                     // Scroll to blog grid
                     blogGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -2280,15 +2384,32 @@
             });
             
             function loadBlogPosts() {
-                blogGrid.innerHTML = '';
-                noResults.style.display = 'none';
+                if (!blogGrid) return;
                 
-                const filteredPosts = currentFilter === 'all' 
-                    ? blogData 
-                    : blogData.filter(post => post.category === currentFilter);
+                blogGrid.innerHTML = '';
+                if (noResults) noResults.style.display = 'none';
+                
+                let filteredPosts = [];
+                
+                if (isSearching) {
+                    // For search results
+                    const searchQuery = document.getElementById('searchInput').value.toLowerCase();
+                    filteredPosts = blogData.filter(post => 
+                        post.title.toLowerCase().includes(searchQuery) ||
+                        post.excerpt.toLowerCase().includes(searchQuery) ||
+                        post.author.toLowerCase().includes(searchQuery) ||
+                        post.category.toLowerCase().includes(searchQuery)
+                    );
+                } else {
+                    // For category filtering
+                    filteredPosts = currentFilter === 'all' 
+                        ? blogData 
+                        : blogData.filter(post => post.category === currentFilter);
+                }
                 
                 if (filteredPosts.length === 0) {
-                    noResults.style.display = 'block';
+                    if (noResults) noResults.style.display = 'block';
+                    if (pagination) pagination.style.display = 'none';
                     return;
                 }
                 
@@ -2309,6 +2430,9 @@
                 
                 // Format category name
                 const categoryName = categoriesData.find(c => c.slug === post.category)?.name || post.category;
+                
+                // Get language text
+                const readMoreText = translations[currentLang]?.blog?.read_more || 'Read More';
                 
                 card.innerHTML = `
                     <div class="blog-image">
@@ -2340,7 +2464,7 @@
                                 <small class="text-muted">${post.author === 'Naroda Group' ? 'Real Estate Developer' : 'Real Estate Expert'}</small>
                             </div>
                             <a href="blog-detail.html?id=${post.id}" class="btn btn-gold ms-auto">
-                                Read More
+                                ${readMoreText}
                             </a>
                         </div>
                     </div>
@@ -2350,6 +2474,8 @@
             }
             
             function loadCategories() {
+                if (!categoriesList) return;
+                
                 categoriesList.innerHTML = '';
                 
                 categoriesData.forEach(category => {
@@ -2365,6 +2491,8 @@
             }
             
             function loadRecentPosts() {
+                if (!recentPosts) return;
+                
                 recentPosts.innerHTML = '';
                 
                 // Get 3 most recent posts
@@ -2391,12 +2519,33 @@
             }
             
             function updatePagination() {
-                const filteredPosts = currentFilter === 'all' 
-                    ? blogData 
-                    : blogData.filter(post => post.category === currentFilter);
+                if (!pagination) return;
+                
+                let filteredPosts = [];
+                
+                if (isSearching) {
+                    const searchQuery = document.getElementById('searchInput').value.toLowerCase();
+                    filteredPosts = blogData.filter(post => 
+                        post.title.toLowerCase().includes(searchQuery) ||
+                        post.excerpt.toLowerCase().includes(searchQuery) ||
+                        post.author.toLowerCase().includes(searchQuery) ||
+                        post.category.toLowerCase().includes(searchQuery)
+                    );
+                } else {
+                    filteredPosts = currentFilter === 'all' 
+                        ? blogData 
+                        : blogData.filter(post => post.category === currentFilter);
+                }
                 
                 const totalPages = Math.ceil(filteredPosts.length / itemsPerPage);
                 pagination.innerHTML = '';
+                
+                if (totalPages <= 1) {
+                    pagination.style.display = 'none';
+                    return;
+                }
+                
+                pagination.style.display = 'flex';
                 
                 // Previous button
                 const prevLi = document.createElement('li');
@@ -2413,7 +2562,10 @@
                         currentPage--;
                         loadBlogPosts();
                         updatePagination();
-                        window.scrollTo({ top: blogGrid.offsetTop - 100, behavior: 'smooth' });
+                        const blogGrid = document.getElementById('blogGrid');
+                        if (blogGrid) {
+                            window.scrollTo({ top: blogGrid.offsetTop - 100, behavior: 'smooth' });
+                        }
                     }
                 });
                 
@@ -2443,7 +2595,10 @@
                         currentPage = i;
                         loadBlogPosts();
                         updatePagination();
-                        window.scrollTo({ top: blogGrid.offsetTop - 100, behavior: 'smooth' });
+                        const blogGrid = document.getElementById('blogGrid');
+                        if (blogGrid) {
+                            window.scrollTo({ top: blogGrid.offsetTop - 100, behavior: 'smooth' });
+                        }
                     });
                     
                     li.appendChild(a);
@@ -2465,40 +2620,67 @@
                         currentPage++;
                         loadBlogPosts();
                         updatePagination();
-                        window.scrollTo({ top: blogGrid.offsetTop - 100, behavior: 'smooth' });
+                        const blogGrid = document.getElementById('blogGrid');
+                        if (blogGrid) {
+                            window.scrollTo({ top: blogGrid.offsetTop - 100, behavior: 'smooth' });
+                        }
                     }
                 });
                 
                 nextLi.appendChild(nextA);
                 pagination.appendChild(nextLi);
             }
+            
+            // Expose updatePagination globally
+            window.updatePagination = updatePagination;
+            window.loadBlogPosts = loadBlogPosts;
         }
         
         function initSearch() {
-            const searchInput = document.querySelector('.search-input');
-            const searchBtn = document.querySelector('.search-btn');
+            const searchInput = document.getElementById('searchInput');
+            const searchBtn = document.getElementById('searchBtn');
+            const searchResetBtn = document.getElementById('searchResetBtn');
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            
+            if (!searchInput || !searchBtn) return;
             
             searchBtn.addEventListener('click', function() {
-                performSearch(searchInput.value);
+                performSearch();
             });
             
             searchInput.addEventListener('keypress', function(e) {
                 if (e.key === 'Enter') {
-                    performSearch(this.value);
+                    performSearch();
                 }
             });
             
-            function performSearch(query) {
-                if (!query.trim()) {
+            searchResetBtn.addEventListener('click', function() {
+                resetSearch();
+            });
+            
+            function performSearch() {
+                const query = searchInput.value.trim();
+                
+                if (!query) {
                     showToast('Please enter a search term', 'warning');
                     return;
                 }
                 
-                const blogGrid = document.getElementById('blogGrid');
-                const noResults = document.getElementById('noResults');
-                const pagination = document.getElementById('pagination');
+                isSearching = true;
+                currentFilter = 'all';
+                currentPage = 1;
                 
-                // Filter blog posts
+                // Remove active class from all filter buttons
+                filterButtons.forEach(b => b.classList.remove('active'));
+                
+                // Load search results
+                loadBlogPosts();
+                updatePagination();
+                
+                // Show reset button
+                searchResetBtn.style.display = 'block';
+                
+                // Show toast
                 const filteredPosts = blogData.filter(post => 
                     post.title.toLowerCase().includes(query.toLowerCase()) ||
                     post.excerpt.toLowerCase().includes(query.toLowerCase()) ||
@@ -2506,104 +2688,37 @@
                     post.category.toLowerCase().includes(query.toLowerCase())
                 );
                 
-                // Update UI
-                blogGrid.innerHTML = '';
-                
-                if (filteredPosts.length === 0) {
-                    noResults.style.display = 'block';
-                } else {
-                    noResults.style.display = 'none';
-                    
-                    filteredPosts.forEach(post => {
-                        const blogCard = createBlogCard(post);
-                        blogGrid.appendChild(blogCard);
-                    });
-                    
-                    showToast(`Found ${filteredPosts.length} articles for "${query}"`, 'success');
-                }
-                
-                // Hide pagination during search
-                pagination.style.display = 'none';
-                
-                // Remove existing reset button if any
-                const existingResetBtn = document.querySelector('.search-reset-btn');
-                if (existingResetBtn) {
-                    existingResetBtn.remove();
-                }
-                
-                // Add reset button to show all
-                const resetBtn = document.createElement('button');
-                resetBtn.className = 'btn btn-outline-primary mt-4 search-reset-btn';
-                resetBtn.innerHTML = '<i class="fas fa-redo me-2"></i> Show All Articles';
-                resetBtn.addEventListener('click', function() {
-                    blogGrid.innerHTML = '';
-                    pagination.style.display = 'flex';
-                    searchInput.value = '';
-                    
-                    // Re-initialize blog
-                    const filterButtons = document.querySelectorAll('.filter-btn');
-                    filterButtons.forEach(b => b.classList.remove('active'));
-                    filterButtons[0].classList.add('active');
-                    
-                    currentFilter = 'all';
-                    currentPage = 1;
-                    loadBlogPosts();
-                    updatePagination();
-                    
-                    this.remove();
-                });
-                
-                blogGrid.parentNode.insertBefore(resetBtn, blogGrid.nextSibling);
+                showToast(`Found ${filteredPosts.length} articles for "${query}"`, 'success');
             }
             
-            function createBlogCard(post) {
-                const card = document.createElement('article');
-                card.className = 'blog-card';
+            function resetSearch() {
+                searchInput.value = '';
+                isSearching = false;
+                currentFilter = 'all';
+                currentPage = 1;
                 
-                const categoryName = categoriesData.find(c => c.slug === post.category)?.name || post.category;
+                // Reset filter buttons
+                filterButtons.forEach(b => b.classList.remove('active'));
+                if (filterButtons[0]) {
+                    filterButtons[0].classList.add('active');
+                }
                 
-                card.innerHTML = `
-                    <div class="blog-image">
-                        <img src="${post.image}" alt="${post.title}" loading="lazy">
-                        <span class="blog-category">${categoryName}</span>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <div class="blog-meta-item">
-                                <i class="far fa-calendar"></i> ${post.date}
-                            </div>
-                            <div class="blog-meta-item">
-                                <i class="far fa-user"></i> By ${post.author}
-                            </div>
-                            <span class="read-time">
-                                <i class="far fa-clock"></i> ${post.readTime} read
-                            </span>
-                        </div>
-                        <h3 class="mb-3">${post.title}</h3>
-                        <p class="text-muted mb-4">${post.excerpt}</p>
-                        <div class="blog-author">
-                            <div class="blog-author-img">
-                                <img src="https://randomuser.me/api/portraits/${post.author === 'Priya Shah' || post.author === 'Neha Gupta' ? 'women' : 'men'}/${Math.floor(Math.random() * 70)}.jpg" 
-                                     alt="${post.author}" loading="lazy">
-                            </div>
-                            <div>
-                                <h6 class="mb-1">${post.author}</h6>
-                                <small class="text-muted">${post.author === 'Naroda Group' ? 'Real Estate Developer' : 'Real Estate Expert'}</small>
-                            </div>
-                            <a href="blog-detail.html?id=${post.id}" class="btn btn-gold ms-auto">
-                                Read More
-                            </a>
-                        </div>
-                    </div>
-                `;
+                // Hide reset button
+                searchResetBtn.style.display = 'none';
                 
-                return card;
+                // Reload posts
+                loadBlogPosts();
+                updatePagination();
+                
+                showToast('Showing all articles', 'info');
             }
         }
         
         function initNewsletter() {
             const newsletterBtn = document.getElementById('newsletterBtn');
             const newsletterEmail = document.getElementById('newsletterEmail');
+            
+            if (!newsletterBtn || !newsletterEmail) return;
             
             newsletterBtn.addEventListener('click', function() {
                 const email = newsletterEmail.value.trim();
@@ -2637,6 +2752,8 @@
         function initBackToTop() {
             const backToTop = document.querySelector('.back-to-top');
             
+            if (!backToTop) return;
+            
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 300) {
                     backToTop.classList.add('active');
@@ -2653,6 +2770,8 @@
         function initNavbarScroll() {
             const navbar = document.querySelector('.navbar');
             
+            if (!navbar) return;
+            
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 50) {
                     navbar.classList.add('scrolled');
@@ -2665,6 +2784,8 @@
         function initToastSystem() {
             window.showToast = function(message, type = 'success') {
                 const toastContainer = document.querySelector('.toast-container');
+                if (!toastContainer) return;
+                
                 const toast = document.createElement('div');
                 toast.className = `toast toast-${type}`;
                 
@@ -2718,12 +2839,33 @@
         
         // Loading overlay functions
         window.showLoading = function() {
-            document.querySelector('.loading-overlay').classList.add('active');
+            const loadingOverlay = document.querySelector('.loading-overlay');
+            if (loadingOverlay) {
+                loadingOverlay.classList.add('active');
+            }
         };
         
         window.hideLoading = function() {
-            document.querySelector('.loading-overlay').classList.remove('active');
+            const loadingOverlay = document.querySelector('.loading-overlay');
+            if (loadingOverlay) {
+                loadingOverlay.classList.remove('active');
+            }
         };
+        
+        // Image lazy loading
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('img[loading="lazy"]');
+            
+            images.forEach(img => {
+                if (img.complete) {
+                    img.classList.add('loaded');
+                } else {
+                    img.addEventListener('load', function() {
+                        this.classList.add('loaded');
+                    });
+                }
+            });
+        });
     </script>
 </body>
 </html>
