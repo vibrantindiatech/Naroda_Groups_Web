@@ -94,12 +94,10 @@
         
         body[data-lang="hi"] {
             font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
-            direction: ltr;
         }
         
         body[data-lang="gu"] {
             font-family: 'Noto Sans Gujarati', 'Inter', sans-serif;
-            direction: ltr;
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -135,9 +133,21 @@
             position: relative;
         }
 
+        @media (max-width: 992px) {
+            section {
+                padding: 80px 0;
+            }
+        }
+
         @media (max-width: 768px) {
             section {
                 padding: 60px 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            section {
+                padding: 50px 0;
             }
         }
 
@@ -276,6 +286,18 @@
             color: white;
             font-weight: 900;
             font-size: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .logo-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+            
+            .navbar-brand {
+                font-size: 1.4rem;
+            }
         }
 
         .nav-link {
@@ -471,6 +493,18 @@
             font-size: 1.1rem;
         }
 
+        @media (max-width: 768px) {
+            .btn {
+                padding: 12px 24px;
+                font-size: 0.9rem;
+            }
+            
+            .btn-lg {
+                padding: 15px 30px;
+                font-size: 1rem;
+            }
+        }
+
         /* ===== Hero Section ===== */
         .hero-section {
             min-height: 80vh;
@@ -482,6 +516,21 @@
             align-items: center;
             position: relative;
             overflow: hidden;
+            padding: 120px 0 60px;
+        }
+
+        @media (max-width: 992px) {
+            .hero-section {
+                min-height: 60vh;
+                padding: 100px 0 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                min-height: 50vh;
+                padding: 80px 0 40px;
+            }
         }
 
         .hero-title {
@@ -502,12 +551,34 @@
             }
         }
 
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .hero-title br {
+                display: none;
+            }
+        }
+
         .hero-subtitle {
             font-size: 1.25rem;
             margin-bottom: 2.5rem;
             opacity: 0.9;
             font-weight: 300;
             line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-subtitle {
+                font-size: 1rem;
+            }
         }
 
         .hero-badge {
@@ -523,6 +594,21 @@
             letter-spacing: 1px;
         }
 
+        @media (max-width: 768px) {
+            .hero-badge {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+                margin-bottom: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-badge {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
+        }
+
         /* ===== Project Stats ===== */
         .project-stats {
             background: white;
@@ -535,9 +621,42 @@
             border: 1px solid rgba(0, 0, 0, 0.05);
         }
 
+        @media (max-width: 992px) {
+            .project-stats {
+                margin-top: -60px;
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .project-stats {
+                margin-top: -40px;
+                padding: 25px 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .project-stats {
+                margin-top: -30px;
+                padding: 20px 15px;
+            }
+        }
+
         .stat-item {
             text-align: center;
             padding: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .stat-item {
+                padding: 15px 10px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .stat-item {
+                padding: 10px 5px;
+            }
         }
 
         .stat-number {
@@ -546,6 +665,18 @@
             color: var(--accent-color);
             margin-bottom: 10px;
             line-height: 1;
+        }
+
+        @media (max-width: 768px) {
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .stat-number {
+                font-size: 1.8rem;
+            }
         }
 
         .stat-text {
@@ -588,6 +719,13 @@
             margin-bottom: 25px;
         }
 
+        @media (max-width: 576px) {
+            .overview-feature {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
         .feature-icon {
             width: 60px;
             height: 60px;
@@ -600,6 +738,13 @@
             flex-shrink: 0;
             color: var(--accent-color);
             font-size: 1.5rem;
+        }
+
+        @media (max-width: 576px) {
+            .feature-icon {
+                margin-bottom: 15px;
+                margin-right: 0;
+            }
         }
 
         /* ===== Amenities Section ===== */
@@ -617,6 +762,12 @@
             transition: var(--transition);
             border: 1px solid rgba(0, 0, 0, 0.05);
             text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .amenity-card {
+                padding: 25px 20px;
+            }
         }
 
         .amenity-card:hover {
@@ -651,6 +802,13 @@
             margin-bottom: 40px;
         }
 
+        @media (max-width: 576px) {
+            .apartment-tabs {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+
         .apartment-tab {
             padding: 15px 30px;
             background: white;
@@ -660,6 +818,19 @@
             color: var(--gray-color);
             transition: var(--transition);
             cursor: pointer;
+        }
+
+        @media (max-width: 992px) {
+            .apartment-tab {
+                padding: 12px 20px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .apartment-tab {
+                text-align: center;
+            }
         }
 
         .apartment-tab.active {
@@ -681,6 +852,12 @@
             box-shadow: var(--shadow);
         }
 
+        @media (max-width: 768px) {
+            .apartment-content {
+                padding: 25px 20px;
+            }
+        }
+
         .apartment-image {
             border-radius: var(--border-radius);
             overflow: hidden;
@@ -700,6 +877,19 @@
             margin-top: 30px;
         }
 
+        @media (max-width: 768px) {
+            .apartment-specs {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .apartment-specs {
+                grid-template-columns: 1fr;
+            }
+        }
+
         .spec-item {
             padding: 20px;
             background: rgba(46, 139, 87, 0.05);
@@ -707,11 +897,23 @@
             text-align: center;
         }
 
+        @media (max-width: 768px) {
+            .spec-item {
+                padding: 15px;
+            }
+        }
+
         .spec-value {
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--accent-color);
             margin-bottom: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .spec-value {
+                font-size: 1.3rem;
+            }
         }
 
         .spec-label {
@@ -771,6 +973,12 @@
             border: 1px solid rgba(0, 0, 0, 0.05);
         }
 
+        @media (max-width: 768px) {
+            .location-card {
+                padding: 25px 20px;
+            }
+        }
+
         .location-feature {
             display: flex;
             align-items: center;
@@ -811,6 +1019,18 @@
             height: 500px;
         }
 
+        @media (max-width: 992px) {
+            .swiper-slide {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .swiper-slide {
+                height: 300px;
+            }
+        }
+
         .swiper-slide img {
             width: 100%;
             height: 100%;
@@ -825,6 +1045,16 @@
             background: linear-gradient(to top, rgba(10, 42, 74, 0.9), transparent);
             color: white;
             padding: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-overlay {
+                padding: 20px;
+            }
+            
+            .gallery-overlay h4 {
+                font-size: 1.2rem;
+            }
         }
 
         /* ===== Price Section ===== */
@@ -844,11 +1074,23 @@
             text-align: center;
         }
 
+        @media (max-width: 768px) {
+            .price-card {
+                padding: 30px 20px;
+            }
+        }
+
         .price-amount {
             font-size: 3rem;
             font-weight: 900;
             margin-bottom: 10px;
             color: white;
+        }
+
+        @media (max-width: 768px) {
+            .price-amount {
+                font-size: 2.5rem;
+            }
         }
 
         .price-details {
@@ -882,6 +1124,12 @@
             padding-top: 80px;
         }
 
+        @media (max-width: 768px) {
+            .footer {
+                padding-top: 60px;
+            }
+        }
+
         .footer-title {
             color: white;
             font-size: 1.3rem;
@@ -908,6 +1156,13 @@
             text-align: center;
         }
 
+        @media (max-width: 768px) {
+            .copyright {
+                margin-top: 40px;
+                padding: 20px 0;
+            }
+        }
+
         /* ===== Back to Top ===== */
         .back-to-top {
             position: fixed;
@@ -928,6 +1183,15 @@
             transition: var(--transition);
             box-shadow: 0 10px 30px rgba(46, 139, 87, 0.3);
             border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .back-to-top {
+                bottom: 80px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+            }
         }
 
         .back-to-top.active {
@@ -960,6 +1224,15 @@
             text-decoration: none;
         }
 
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                bottom: 80px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+            }
+        }
+
         .whatsapp-float:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
@@ -983,32 +1256,6 @@
         @media (max-width: 768px) {
             .mobile-bottom-nav {
                 display: flex;
-            }
-            
-            .back-to-top,
-            .whatsapp-float {
-                bottom: 80px;
-                right: 20px;
-                width: 50px;
-                height: 50px;
-            }
-            
-            .project-stats {
-                margin-top: -40px;
-                padding: 30px 20px;
-            }
-            
-            .stat-item {
-                padding: 15px 10px;
-            }
-            
-            .stat-number {
-                font-size: 2rem;
-            }
-            
-            .hero-badge {
-                padding: 8px 16px;
-                font-size: 0.9rem;
             }
         }
 
@@ -1157,6 +1404,12 @@
             margin-top: 30px;
         }
         
+        @media (max-width: 768px) {
+            .timeline {
+                padding-left: 20px;
+            }
+        }
+        
         .timeline:before {
             content: '';
             position: absolute;
@@ -1173,6 +1426,12 @@
             padding-left: 30px;
         }
         
+        @media (max-width: 768px) {
+            .timeline-item {
+                padding-left: 20px;
+            }
+        }
+        
         .timeline-item:before {
             content: '';
             position: absolute;
@@ -1182,6 +1441,12 @@
             height: 12px;
             background: var(--accent-color);
             border-radius: 50%;
+        }
+        
+        @media (max-width: 768px) {
+            .timeline-item:before {
+                left: -26px;
+            }
         }
         
         .timeline-date {
@@ -1206,6 +1471,12 @@
             text-align: center;
             border: 1px solid rgba(0, 0, 0, 0.05);
             transition: var(--transition);
+        }
+        
+        @media (max-width: 768px) {
+            .download-card {
+                padding: 25px 20px;
+            }
         }
         
         .download-card:hover {
@@ -1234,9 +1505,24 @@
             backdrop-filter: blur(10px);
         }
         
+        @media (max-width: 768px) {
+            .swiper-button-next,
+            .swiper-button-prev {
+                width: 40px;
+                height: 40px;
+            }
+        }
+        
         .swiper-button-next:after,
         .swiper-button-prev:after {
             font-size: 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .swiper-button-next:after,
+            .swiper-button-prev:after {
+                font-size: 1.2rem;
+            }
         }
         
         .swiper-pagination-bullet {
@@ -1257,6 +1543,18 @@
             overflow: hidden;
             height: 400px;
             margin-bottom: 30px;
+        }
+        
+        @media (max-width: 992px) {
+            .virtual-apartment {
+                height: 350px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .virtual-apartment {
+                height: 250px;
+            }
         }
         
         .virtual-apartment img {
@@ -1303,6 +1601,15 @@
             z-index: 2;
         }
         
+        @media (max-width: 768px) {
+            .walkthrough-btn {
+                bottom: 20px;
+                right: 20px;
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+        }
+        
         .feature-bullets {
             list-style: none;
             padding: 0;
@@ -1328,182 +1635,35 @@
             font-weight: 900;
         }
         
-        /* ===== Responsive Fixes ===== */
-        @media (max-width: 992px) {
-            .hero-section {
-                min-height: 60vh;
-            }
-            
-            .swiper-slide {
-                height: 400px;
-            }
-            
-            .virtual-apartment {
-                height: 350px;
-            }
-            
-            .apartment-tabs {
-                gap: 10px;
-            }
-            
-            .apartment-tab {
-                padding: 12px 20px;
-                font-size: 0.9rem;
-            }
+        /* ===== Button Spacing Fixes ===== */
+        .d-flex.flex-wrap.gap-3 {
+            gap: 15px !important;
         }
         
         @media (max-width: 768px) {
-            .hero-section {
-                min-height: 50vh;
-                padding: 80px 0 40px;
-            }
-            
-            .swiper-slide {
-                height: 300px;
-            }
-            
-            .gallery-overlay {
-                padding: 20px;
-            }
-            
-            .gallery-overlay h4 {
-                font-size: 1.2rem;
-            }
-            
-            .virtual-apartment {
-                height: 250px;
-            }
-            
-            .walkthrough-btn {
-                bottom: 20px;
-                right: 20px;
-                padding: 8px 16px;
-                font-size: 0.9rem;
-            }
-            
-            .apartment-content {
-                padding: 25px 20px;
-            }
-            
-            .apartment-specs {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
-            }
-            
-            .spec-item {
-                padding: 15px;
-            }
-            
-            .spec-value {
-                font-size: 1.3rem;
-            }
-            
-            .location-card {
-                padding: 25px 20px;
-            }
-            
-            .price-card {
-                padding: 30px 20px;
-            }
-            
-            .price-amount {
-                font-size: 2.5rem;
-            }
-            
-            .download-card {
-                padding: 25px 20px;
-            }
-            
-            .timeline {
-                padding-left: 20px;
-            }
-            
-            .timeline-item {
-                padding-left: 20px;
-            }
-            
-            .timeline-item:before {
-                left: -26px;
-            }
-            
-            .btn-lg {
-                padding: 15px 30px;
-                font-size: 1rem;
-            }
-            
-            .hero-title br {
-                display: none;
+            .d-flex.flex-column.flex-sm-row.justify-content-center.gap-4 {
+                gap: 15px !important;
             }
         }
         
+        /* ===== Hero Button Container ===== */
+        .hero-buttons-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        @media (max-width: 576px) {
+            .hero-buttons-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+        
+        /* ===== Container Padding Fix ===== */
         @media (max-width: 576px) {
             .container {
                 padding: 0 15px;
-            }
-            
-            .hero-title {
-                font-size: 1.8rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1rem;
-            }
-            
-            .section-title:after {
-                width: 60px;
-                bottom: -12px;
-            }
-            
-            .project-stats {
-                margin-top: -30px;
-                padding: 20px 15px;
-            }
-            
-            .stat-item {
-                padding: 10px 5px;
-            }
-            
-            .stat-number {
-                font-size: 1.8rem;
-            }
-            
-            .overview-feature {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .feature-icon {
-                margin-bottom: 15px;
-                margin-right: 0;
-            }
-            
-            .apartment-tabs {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            
-            .apartment-tab {
-                text-align: center;
-            }
-            
-            .apartment-specs {
-                grid-template-columns: 1fr;
-            }
-            
-            .swiper-button-next,
-            .swiper-button-prev {
-                width: 40px;
-                height: 40px;
-            }
-            
-            .swiper-button-next:after,
-            .swiper-button-prev:after {
-                font-size: 1.2rem;
-            }
-            
-            .language-switcher .btn {
-                padding: 6px 12px;
-                font-size: 0.8rem;
             }
         }
         
@@ -1753,7 +1913,7 @@
         <!-- Hero Section -->
         <section class="hero-section">
             <div class="container">
-                <div class="row min-vh-80 align-items-center">
+                <div class="row align-items-center">
                     <div class="col-lg-8">
                         <div class="hero-badge" data-aos="fade-up">
                             <i class="fas fa-award"></i> <span data-translate="irish.hero.badge">Ahmedabad's Premier Luxury Residences</span>
@@ -1769,7 +1929,7 @@
                             world-class amenities, and a community that celebrates modern living.
                         </p>
                         
-                        <div class="d-flex flex-wrap gap-3" data-aos="fade-up" data-aos-delay="300">
+                        <div class="hero-buttons-container" data-aos="fade-up" data-aos-delay="300">
                             <a href="#pricing" class="btn btn-gold btn-lg">
                                 <i class="fas fa-tag me-2" aria-hidden="true"></i> <span data-translate="irish.hero.btn1">View Pricing</span>
                             </a>
@@ -3078,7 +3238,7 @@
 
         // Flag images data
         const flagImages = {
-            'en': 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyNCAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTAgMEgyNFYxNkgwVjBaIiBmaWxsPSIjRjJCMkIyIi8+CjxwYXRoIGQ9Ik0wIDBIMTBWMTZIMFYwWiIgZmlsbD0iIzAwMjY3RiIvPgo8cGF0aCBkPSJNMTQgMEgyNFYxNkgxNFYwWiIgZmlsbD0iI0M4MDMwMyIvPgo8L3N2Zz4K',
+            'en': 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyNCAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTAgMEgyNFYxNkgwVjBaIiBmaWxsPSIjRjJCMkIyIi8+CjxwYXRoIGQ9Ik0wIDBIMTBWMTZIMFYwWiIgZmlsbD0iIzAwMjY3FiIvPgo8cGF0aCBkPSJNMTQgMEgyNFYxNkgxNFYwWiIgZmlsbD0iI0M4MDMwMyIvPgo8L3N2Zz4K',
             'hi': 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyNCAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE2IiBmaWxsPSIjRkZGMjVFIi8+CjxwYXRoIGQ9Ik0wIDBIMjRWNUgwVjBaIiBmaWxsPSIjRjUyNzI0Ii8+CjxwYXRoIGQ9Ik0wIDExSDI0VjE2SDBWMTFaIiBmaWxsPSIjMTM4ODA4Ii8+CjxjaXJjbGUgY3g9IjEyIiBjeT0iOCIgcj0iMi41IiBmaWxsPSIjRkZGMjVFIi8+CjxjaXJjbGUgY3g9IjEyIiBjeT0iOCIgcj0iMSIgZmlsbD0iIzEzODgwOCIvPgo8L3N2Zz4K',
             'gu': 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAyNCAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjI0IiBoZWlnaHQ9IjE2IiBmaWxsPSIjRkZGMjVFIi8+CjxwYXRoIGQ9Ik0wIDBIMjRWNUgwVjBaIiBmaWxsPSIjRjUyNzI0Ii8+CjxwYXRoIGQ9Ik0wIDExSDI0VjE2SDBWMTFaIiBmaWxsPSIjMTM4ODA4Ii8+CjxjaXJjbGUgY3g9IjEyIiBjeT0iOCIgcj0iMi41IiBmaWxsPSIjRkZGMjVFIi8+Cjwvc3ZnPgo='
         };
